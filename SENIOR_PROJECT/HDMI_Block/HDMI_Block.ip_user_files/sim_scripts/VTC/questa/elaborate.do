@@ -1,0 +1,1 @@
+vopt +acc=npr -l elaborate.log -L xil_defaultlib -L xilinx_vip -L xpm -L axi_lite_ipif_v3_0_4 -L v_tc_v6_2_3 -L unisims_ver -L unimacro_ver -L secureip -work xil_defaultlib xil_defaultlib.VTC xil_defaultlib.glbl -o VTC_opt

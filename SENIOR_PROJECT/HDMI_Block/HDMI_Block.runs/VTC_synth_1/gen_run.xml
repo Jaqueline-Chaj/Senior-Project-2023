@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="VTC_synth_1" LaunchPart="xc7a100tfgg484-2L" LaunchTime="1694993729">
+  <File Type="PA-TCL" Name="VTC.tcl"/>
+  <File Type="REPORTS-TCL" Name="VTC_reports.tcl"/>
+  <File Type="RDS-RDS" Name="VTC.vds"/>
+  <File Type="RDS-UTIL" Name="VTC_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="VTC_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="VTC.dcp"/>
+  <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/VTC">
+    <File Path="$PSRCDIR/sources_1/ip/VTC/VTC.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Users/leopole1/HDMI IP TEST/HDMI IP TEST.srcs/sources_1/ip/VTC/VTC.xci"/>
+        <Attr Name="ImportTime" Val="1695926713"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="VTC"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/VTC">
+    <File Path="$PSRCDIR/sources_1/ip/VTC/VTC.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../Users/leopole1/HDMI IP TEST/HDMI IP TEST.srcs/sources_1/ip/VTC/VTC.xci"/>
+        <Attr Name="ImportTime" Val="1695926713"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopModule" Val="VTC"/>
+      <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Sun Sep 17 18:04:35 2023
+# Process ID: 9304
+# Current directory: H:/Users/leopole1/HDMI IP TEST/HDMI IP TEST.runs/bd_5fd0_v_hdmi_tx_0_synth_1
+# Command line: vivado.exe -log bd_5fd0_v_hdmi_tx_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source bd_5fd0_v_hdmi_tx_0.tcl
+# Log file: H:/Users/leopole1/HDMI IP TEST/HDMI IP TEST.runs/bd_5fd0_v_hdmi_tx_0_synth_1/bd_5fd0_v_hdmi_tx_0.vds
+# Journal file: H:/Users/leopole1/HDMI IP TEST/HDMI IP TEST.runs/bd_5fd0_v_hdmi_tx_0_synth_1\vivado.jou
+# Running On: ARM144-12, OS: Windows, CPU Frequency: 2112 MHz, CPU Physical cores: 12, Host memory: 34050 MB
+#-----------------------------------------------------------
+source bd_5fd0_v_hdmi_tx_0.tcl -notrace
