@@ -1,0 +1,1 @@
+vopt +acc=npr -l elaborate.log -L xil_defaultlib -L xilinx_vip -L xpm -L v_hdmi_tx_v3_0_0 -L xlconstant_v1_1_7 -L unisims_ver -L unimacro_ver -L secureip -work xil_defaultlib xil_defaultlib.HDMI_transmitter xil_defaultlib.glbl -o HDMI_transmitter_opt

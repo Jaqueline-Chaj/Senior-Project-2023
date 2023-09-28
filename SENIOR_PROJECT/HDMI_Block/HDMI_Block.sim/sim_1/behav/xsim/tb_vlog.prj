@@ -1,0 +1,18 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  --include "../../../../HDMI IP TEST.gen/sources_1/ip/clk_wiz_0" --include "C:/Xilinx/Vivado/2021.2/data/xilinx_vip/include" \
+"../../../../HDMI IP TEST.gen/sources_1/ip/HDMI_transmitter/bd_0/ip/ip_0/sim/bd_5fd0_v_hdmi_tx_0.sv" \
+
+verilog xil_defaultlib  --include "../../../../HDMI IP TEST.gen/sources_1/ip/clk_wiz_0" --include "C:/Xilinx/Vivado/2021.2/data/xilinx_vip/include" \
+"../../../../HDMI IP TEST.gen/sources_1/ip/HDMI_transmitter/bd_0/ip/ip_1/sim/bd_5fd0_const_0_1bit_0.v" \
+"../../../../HDMI IP TEST.gen/sources_1/ip/HDMI_transmitter/bd_0/sim/bd_5fd0.v" \
+"../../../../HDMI IP TEST.gen/sources_1/ip/HDMI_transmitter/sim/HDMI_transmitter.v" \
+
+sv xil_defaultlib  --include "../../../../HDMI IP TEST.gen/sources_1/ip/clk_wiz_0" --include "C:/Xilinx/Vivado/2021.2/data/xilinx_vip/include" \
+"../../../../HDMI IP TEST.srcs/sources_1/new/Display_gen.v" \
+"../../../../HDMI IP TEST.srcs/sources_1/new/tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
