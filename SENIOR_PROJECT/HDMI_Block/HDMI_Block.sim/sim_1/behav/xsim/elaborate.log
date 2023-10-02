@@ -231,11 +231,3 @@ WARNING: [VRFC 10-3705] select index 3 into 'ctl' is out of bounds [/wrk/ci/prod
 WARNING: [VRFC 10-3705] select index 3 into 'dat' is out of bounds [/wrk/ci/prod/2021.2/sw/continuous/8687/packages/customer/vivado/data/ip/xilinx/v_hdmi_tx_v3_0/hdl/v_hdmi_tx_v3_0_rfs.sv:10282]
 WARNING: [VRFC 10-3705] select index 3 into 'strb' is out of bounds [/wrk/ci/prod/2021.2/sw/continuous/8687/packages/customer/vivado/data/ip/xilinx/v_hdmi_tx_v3_0/hdl/v_hdmi_tx_v3_0_rfs.sv:10283]
 WARNING: [VRFC 10-3705] select index 3 into 'ctl' is out of bounds [/wrk/ci/prod/2021.2/sw/continuous/8687/packages/customer/vivado/data/ip/xilinx/v_hdmi_tx_v3_0/hdl/v_hdmi_tx_v3_0_rfs.sv:10297]
-Compiling module unisims_ver.RAM64X1S(INIT=64'b10000000000000...
-Compiling module xil_defaultlib.bd_5fd0_v_hdmi_tx_0
-Compiling module xil_defaultlib.bd_5fd0
-Compiling module xil_defaultlib.HDMI_transmitter
-Compiling module xil_defaultlib.Display_gen
-Compiling module xil_defaultlib.tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_behav
