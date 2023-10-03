@@ -1,0 +1,6 @@
+H:\Senior-Project-2023\PSoC\HostDesign.cydsn\HostDesign.cyprj|c276918a-4d22-4661-a19a-6ebe118873cd
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|ecdd7435-e009-4a27-9643-99303996d7b3
+C:\Users\dibiana1\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|9e438b36-c566-4566-bae5-26cf69e39fb9
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|1dd5fd1d-f4df-4661-ab61-d78652647b92
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|17cd9529-163d-426f-880e-b372c20c604a
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|e5a9ee10-735a-4a15-bde0-70adbbff99dc
