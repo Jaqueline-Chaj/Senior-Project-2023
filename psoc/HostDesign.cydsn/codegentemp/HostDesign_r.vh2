@@ -1,5 +1,5 @@
 -- Project:   HostDesign
--- Generated: 10/04/2023 12:17:53
+-- Generated: 10/04/2023 12:46:58
 -- PSoC Creator  4.4
 
 ENTITY HostDesign IS
@@ -101,7 +101,7 @@ ARCHITECTURE __DEFAULT__ OF HostDesign IS
     ATTRIBUTE lib_model OF H2G_STRB_IN(0) : LABEL IS "iocell13";
     ATTRIBUTE Location OF H2G_STRB_IN(0) : LABEL IS "P3[0]";
     ATTRIBUTE lib_model OF H2G_STRB_OUT(0) : LABEL IS "iocell14";
-    ATTRIBUTE Location OF H2G_STRB_OUT(0) : LABEL IS "P3[1]";
+    ATTRIBUTE Location OF H2G_STRB_OUT(0) : LABEL IS "P3[5]";
     ATTRIBUTE lib_model OF SW3(0) : LABEL IS "iocell15";
     ATTRIBUTE Location OF SW3(0) : LABEL IS "P15[5]";
     ATTRIBUTE lib_model OF \LEDreg:Sync:ctrl_reg\ : LABEL IS "controlcell1";
@@ -698,7 +698,7 @@ BEGIN
 
     H2G_STRB_IN:logicalport
         GENERIC MAP(
-            drive_mode => "001",
+            drive_mode => "011",
             ibuf_enabled => "1",
             id => "8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba",
             init_dr_st => "0",
