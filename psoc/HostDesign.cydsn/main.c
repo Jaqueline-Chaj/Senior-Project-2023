@@ -58,16 +58,17 @@ int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     LCD_Start();
     LCD_ClearDisplay();
     
-    char dispMsg[] = "Hex value: ";
     char dispVal[1];
+    char rcvdStatus[1];
     int breakflag = 0;
     
     LCD_Position(0,0);
-    LCD_PrintString(dispMsg);
+    LCD_PrintString("Hex value:");
+    LCD_Position(1,0);
+    LCD_PrintString("Received?:");
     
     for(;;)
     {
@@ -85,16 +86,31 @@ int main(void)
             }
             //writes hex value to the "port" (LEDs for now)
             val2segs(i);
-            //toggles out handshake to 1 to tell nexys that data is valid
-            H2G_STRB_OUT_Write(1);
-            //should this stay on until strb_in is toggled on? aka continuously send the same valid data until received
             
             sprintf( dispVal, "%x", i);
             LCD_Position(0, 11);
             LCD_PrintString(dispVal);
+            //Delay of 1 clock cycle before toggling H2G_STRB_OUT on
+            CyDelayCycles(1);          
+            H2G_STRB_OUT_Write(1);
+            
+            while(!H2G_STRB_IN_Read()){           
+                LCD_Position(1, 11);
+                sprintf( rcvdStatus, "%d", H2G_STRB_IN_Read());
+                LCD_PrintString(rcvdStatus);
+                if(!SW3_Read()){
+                    CyDelay(50);
+                    
+                }
+                    
+                
+            }
+            
+            
+            // 1 second delay until sending next number
             CyDelay(1000);   
-        } 
-        /* Place your application code here. */
+        }
+        
     }
     
     LCD_Position(0,0);
