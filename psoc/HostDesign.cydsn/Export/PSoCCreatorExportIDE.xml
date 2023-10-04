@@ -112,6 +112,9 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\H2G_STRB_OUT_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\H2G_STRB_OUT.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\H2G_STRB_OUT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\SW3_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\SW3.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\SW3.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\Export\ARM_GCC_Generic">

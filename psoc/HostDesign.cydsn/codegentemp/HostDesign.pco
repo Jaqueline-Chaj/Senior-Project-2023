@@ -1,5 +1,5 @@
 # HostDesign
-# 2023-10-03 17:30:09Z
+# 2023-10-04 16:17:53Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -20,6 +20,7 @@ set_io "LEDstrip(0)" iocell 0 0
 set_io "LEDstrip(1)" iocell 0 1
 set_io "LEDstrip(2)" iocell 0 2
 set_io "LEDstrip(3)" iocell 0 3
-set_io "H2G_STRB_IN(0)" iocell 0 4
-set_io "H2G_STRB_OUT(0)" iocell 0 5
-set_location "\LEDreg:Sync:ctrl_reg\" 3 0 6
+set_io "H2G_STRB_IN(0)" iocell 3 0
+set_io "H2G_STRB_OUT(0)" iocell 3 1
+set_io "SW3(0)" iocell 15 5
+set_location "\LEDreg:Sync:ctrl_reg\" 3 4 6

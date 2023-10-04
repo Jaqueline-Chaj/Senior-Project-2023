@@ -29,6 +29,8 @@
 #include "H2G_STRB_IN.h"
 #include "H2G_STRB_OUT_aliases.h"
 #include "H2G_STRB_OUT.h"
+#include "SW3_aliases.h"
+#include "SW3.h"
 #include "LCD_LCDPort_aliases.h"
 #include "LCD_LCDPort.h"
 #include "core_cm3_psoc5.h"
