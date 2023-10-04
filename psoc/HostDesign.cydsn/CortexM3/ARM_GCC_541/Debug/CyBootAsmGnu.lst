@@ -11572,11 +11572,11 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  263              	.set H2G_STRB_IN__SLW, CYREG_PRT3_SLW
  264              	
  265              	/* H2G_STRB_OUT */
- 266              	.set H2G_STRB_OUT__0__INTTYPE, CYREG_PICU3_INTTYPE1
- 267              	.set H2G_STRB_OUT__0__MASK, 0x02
- 268              	.set H2G_STRB_OUT__0__PC, CYREG_PRT3_PC1
+ 266              	.set H2G_STRB_OUT__0__INTTYPE, CYREG_PICU3_INTTYPE5
+ 267              	.set H2G_STRB_OUT__0__MASK, 0x20
+ 268              	.set H2G_STRB_OUT__0__PC, CYREG_PRT3_PC5
  269              	.set H2G_STRB_OUT__0__PORT, 3
- 270              	.set H2G_STRB_OUT__0__SHIFT, 1
+ 270              	.set H2G_STRB_OUT__0__SHIFT, 5
  271              	.set H2G_STRB_OUT__AG, CYREG_PRT3_AG
 ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 194
 
@@ -11594,7 +11594,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  282              	.set H2G_STRB_OUT__INTTYPE_BASE, CYDEV_PICU_INTTYPE_PICU3_BASE
  283              	.set H2G_STRB_OUT__LCD_COM_SEG, CYREG_PRT3_LCD_COM_SEG
  284              	.set H2G_STRB_OUT__LCD_EN, CYREG_PRT3_LCD_EN
- 285              	.set H2G_STRB_OUT__MASK, 0x02
+ 285              	.set H2G_STRB_OUT__MASK, 0x20
  286              	.set H2G_STRB_OUT__PORT, 3
  287              	.set H2G_STRB_OUT__PRT, CYREG_PRT3_PRT
  288              	.set H2G_STRB_OUT__PRTDSI__CAPS_SEL, CYREG_PRT3_CAPS_SEL
@@ -11605,7 +11605,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  293              	.set H2G_STRB_OUT__PRTDSI__OUT_SEL1, CYREG_PRT3_OUT_SEL1
  294              	.set H2G_STRB_OUT__PRTDSI__SYNC_OUT, CYREG_PRT3_SYNC_OUT
  295              	.set H2G_STRB_OUT__PS, CYREG_PRT3_PS
- 296              	.set H2G_STRB_OUT__SHIFT, 1
+ 296              	.set H2G_STRB_OUT__SHIFT, 5
  297              	.set H2G_STRB_OUT__SLW, CYREG_PRT3_SLW
  298              	
  299              	/* Miscellaneous */

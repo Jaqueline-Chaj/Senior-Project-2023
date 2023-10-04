@@ -64,7 +64,10 @@ int main(void)
     char dispVal[1];
     char rcvdStatus[1];
     int breakflag = 0;
-    
+    int psoc_fpga_xfc = 0;  // state of output strobe
+    int fpga_psoc_xfc = 0;  // state of input strobe
+    H2G_STRB_OUT_Write(psoc_fpga_xfc);
+
     LCD_Position(0,0);
     LCD_PrintString("Hex value:");
     LCD_Position(1,0);
@@ -77,11 +80,7 @@ int main(void)
         }
         for (int i = 0; i<16; i++){
             if(!SW2_Read()){
-                CyDelay(50);
                 breakflag = 1;
-                CyDelay(50);
-            }
-            if(breakflag){
                 break;
             }
             //writes hex value to the "port" (LEDs for now)
@@ -92,20 +91,24 @@ int main(void)
             LCD_PrintString(dispVal);
             //Delay of 1 clock cycle before toggling H2G_STRB_OUT on
             CyDelayCycles(1);          
-            H2G_STRB_OUT_Write(1);
             
-            while(!H2G_STRB_IN_Read()){           
-                LCD_Position(1, 11);
+            // First write Data
+            
+            // Second, toggle strobe
+            psoc_fpga_xfc = 1-psoc_fpga_xfc;
+            H2G_STRB_OUT_Write(psoc_fpga_xfc);
+            
+            // Idle, until strobe toggles
+            while(H2G_STRB_IN_Read() == fpga_psoc_xfc){
                 sprintf( rcvdStatus, "%d", H2G_STRB_IN_Read());
+                LCD_Position(1, 11);
                 LCD_PrintString(rcvdStatus);
-                if(!SW3_Read()){
-                    CyDelay(50);
-                    
-                }
-                    
-                
             }
             
+            fpga_psoc_xfc = 1-fpga_psoc_xfc;
+            LCD_Position(1, 11);
+            sprintf( rcvdStatus, "%d", H2G_STRB_IN_Read());
+            LCD_PrintString(rcvdStatus);
             
             // 1 second delay until sending next number
             CyDelay(1000);   
