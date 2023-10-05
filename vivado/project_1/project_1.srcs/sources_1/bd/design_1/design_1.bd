@@ -1,0 +1,59 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7a200tsbg484-1",
+      "gen_directory": "../../../../project_1.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2021.2"
+    },
+    "design_tree": {
+      "PmodOLED_0": ""
+    },
+    "interface_ports": {
+      "oled": {
+        "mode": "Master",
+        "vlnv_bus_definition": "digilentinc.com:interface:pmod:1.0",
+        "vlnv": "digilentinc.com:interface:pmod_rtl:1.0"
+      }
+    },
+    "components": {
+      "PmodOLED_0": {
+        "vlnv": "digilentinc.com:IP:PmodOLED:1.0",
+        "xci_name": "design_1_PmodOLED_0_0",
+        "xci_path": "ip\\design_1_PmodOLED_0_0\\design_1_PmodOLED_0_0.xci",
+        "inst_hier_path": "PmodOLED_0",
+        "parameters": {
+          "PMOD": {
+            "value": "oled"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
+          }
+        },
+        "interface_ports": {
+          "AXI_LITE_SPI": {
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "mode": "Slave",
+            "memory_map_ref": "AXI_LITE_SPI"
+          },
+          "AXI_LITE_GPIO": {
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "mode": "Slave",
+            "memory_map_ref": "AXI_LITE_GPIO"
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "PmodOLED_0_Pmod_out": {
+        "interface_ports": [
+          "oled",
+          "PmodOLED_0/Pmod_out"
+        ]
+      }
+    }
+  }
+}
