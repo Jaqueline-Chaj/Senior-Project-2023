@@ -42,6 +42,7 @@ begin
         psoc_data <= 0;
     else if (state == `STATE_S1)
         psoc_data <= psoc_if_d;
+        state <= `STATE_S0;
 end
 
 endmodule
