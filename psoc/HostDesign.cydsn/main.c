@@ -1,7 +1,7 @@
 #include "project.h"
 #include "stdio.h"
 
-    void val2segs (int i){
+    void val2leds (int i){
         switch (i){
             case 0: {(LEDreg_Write(0x00));
                 break;}
@@ -74,7 +74,8 @@ int main(void)
     LCD_PrintString("Received?:");
     
     for(;;)
-    {
+    {   
+        //conditions to break out of infinite for loop, to end program
         if (breakflag){
             break;
         }
@@ -83,37 +84,34 @@ int main(void)
                 breakflag = 1;
                 break;
             }
-            //writes hex value to the "port" (LEDs for now)
-            val2segs(i);
-            
+            //First, write data
+            val2leds(i);
+
             sprintf( dispVal, "%x", i);
             LCD_Position(0, 11);
             LCD_PrintString(dispVal);
             //Delay of 1 clock cycle before toggling H2G_STRB_OUT on
             CyDelayCycles(1);          
-            
-            // First write Data
-            
+
             // Second, toggle strobe
             psoc_fpga_xfc = 1-psoc_fpga_xfc;
             H2G_STRB_OUT_Write(psoc_fpga_xfc);
-            
+
             // Idle, until strobe toggles
             while(H2G_STRB_IN_Read() == fpga_psoc_xfc){
                 sprintf( rcvdStatus, "%d", H2G_STRB_IN_Read());
                 LCD_Position(1, 11);
                 LCD_PrintString(rcvdStatus);
             }
-            
+
             fpga_psoc_xfc = 1-fpga_psoc_xfc;
             LCD_Position(1, 11);
             sprintf( rcvdStatus, "%d", H2G_STRB_IN_Read());
             LCD_PrintString(rcvdStatus);
-            
-            // 1 second delay until sending next number
-            CyDelay(1000);   
+
+            // 1 second delay until sending next number (byte in general)
+            CyDelay(1000);
         }
-        
     }
     
     LCD_Position(0,0);
