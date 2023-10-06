@@ -2,44 +2,58 @@
 
 
 module tb();
-logic clk, reset_n, link_clk;
+logic clk, resetn,pixel_clk;
 
- logic  DDC_OUT_scl_i,
-  DDC_OUT_scl_o,
-  DDC_OUT_scl_t,
-  DDC_OUT_sda_i,
-  DDC_OUT_sda_o,
-  DDC_OUT_sda_t,
-  
-  LINK_DATA0_OUT_tvalid,
+logic sof_state,
 
-  LINK_DATA1_OUT_tvalid,
+clken,
 
-  LINK_DATA2_OUT_tvalid;
-  logic [19:0]LINK_DATA0_OUT_tdata,  
-  LINK_DATA2_OUT_tdata,
-  LINK_DATA1_OUT_tdata;
+gen_clken,
+
+active_video_out,
+
+hsync_out,
+
+vsync_out;
+
+//DIGILENT PORTS
+
+logic NATIVE_VID_IN_active_video;
+
+logic NATIVE_VID_IN_hsync;
+
+logic NATIVE_VID_IN_vsync;
+ 
+
+ogic TMDS_Clk_p;
+logic TMDS_Clk_n;
+logic[2:0] TMDS_Data_p;
+logic[2:0] TMDS_Data_n;
+
+/* input  */ logic aRst;   // --asynchronous reset; must be reset when RefClk is not within spec
+
+/* input  */ logic aRst_n; // --asynchronous reset; must be reset when RefClk is not within spec
+
+/*        */   // Video in
+
+/* input  */ logic [23:0] vid_pData ;
+/* input  */ logic vid_pVDE  ;
+/* input  */ logic vid_pHSync;
+/* input  */ logic vid_pVSync;
+/* input  */ logic PixelClk  ;
+
   
 
 assign DDC_OUT_sda_i=1;
 assign DDC_OUT_scl_i=1;
 
-Display_gen disp(.clk(clk),
-.link_clk(link_clk),
-.resetn(reset_n),
-  .DDC_OUT_scl_i(  DDC_OUT_scl_i),
-.DDC_OUT_scl_o(DDC_OUT_scl_o),
-  .DDC_OUT_scl_t(DDC_OUT_scl_t),
-  .DDC_OUT_sda_i(DDC_OUT_sda_i),
-  .DDC_OUT_sda_o(DDC_OUT_sda_o),
-  .DDC_OUT_sda_t(DDC_OUT_sda_t),
-  .LINK_DATA0_OUT_tdata(LINK_DATA0_OUT_tdata),
-  .LINK_DATA0_OUT_tvalid(LINK_DATA0_OUT_tvalid),
-  .LINK_DATA1_OUT_tdata(LINK_DATA1_OUT_tdata),
-  .LINK_DATA1_OUT_tvalid(LINK_DATA1_OUT_tvalid),
- .LINK_DATA2_OUT_tdata(LINK_DATA2_OUT_tdata),
- .LINK_DATA2_OUT_tvalid(LINK_DATA2_OUT_tvalid)
- );
+
+Display_Gen_Digilent disp_gen (
+.clk(clk),
+.resetn(resetn)
+
+);
+
 
 int i=0;
 initial begin
