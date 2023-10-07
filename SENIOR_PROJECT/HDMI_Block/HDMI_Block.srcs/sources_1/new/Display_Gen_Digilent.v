@@ -2,10 +2,10 @@
 
 module Display_Gen_Digilent(
 
-input clk,
+input SerialClk,
 
 input resetn,
-input PixelClk,
+input clk,
 
  
 
@@ -87,9 +87,9 @@ rgb2dvi_0 rgb2dvi (
 
 .TMDS_Data_n(TMDS_Data_n),
 
-.aRst       (aRst       ),
+.aRst       (aRst     ),
 
-.aRst_n     (aRst_n     ),
+.aRst_n     (resetn     ),
 
 .vid_pData  (vid_pData  ),
 
@@ -99,9 +99,9 @@ rgb2dvi_0 rgb2dvi (
 
 .vid_pVSync (vid_pVSync ),
 
-.PixelClk   (PixelClk   ),
+.PixelClk   (clk ),
 
-.SerialClk  (clk  )
+.SerialClk  (SerialClk  )
 
 );
 

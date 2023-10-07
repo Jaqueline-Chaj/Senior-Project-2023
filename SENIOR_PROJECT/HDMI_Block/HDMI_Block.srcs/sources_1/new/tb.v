@@ -18,14 +18,8 @@ vsync_out;
 
 //DIGILENT PORTS
 
-logic NATIVE_VID_IN_active_video;
 
-logic NATIVE_VID_IN_hsync;
-
-logic NATIVE_VID_IN_vsync;
- 
-
-ogic TMDS_Clk_p;
+logic TMDS_Clk_p;
 logic TMDS_Clk_n;
 logic[2:0] TMDS_Data_p;
 logic[2:0] TMDS_Data_n;
@@ -49,8 +43,31 @@ assign DDC_OUT_scl_i=1;
 
 
 Display_Gen_Digilent disp_gen (
-.clk(clk),
-.resetn(resetn)
+
+
+.TMDS_Clk_p (TMDS_Clk_p ),     
+
+ .TMDS_Clk_n (TMDS_Clk_n ),
+
+.TMDS_Data_p(TMDS_Data_p),
+
+.TMDS_Data_n(TMDS_Data_n),
+
+.aRst       (aRst       ),
+
+.aRst_n     (aRst_n     ),
+
+.vid_pData  (vid_pData  ),
+
+.vid_pVDE   (vid_pVDE   ),
+
+.vid_pHSync (vid_pHSync ),
+
+.vid_pVSync (vid_pVSync ),
+
+.PixelClk   (PixelClk   ),
+
+.SerialClk  (SerialClk  )
 
 );
 
@@ -63,17 +80,16 @@ for(i=0; i<5000000000; i=i+1)
 $finish;
 end
 
+int k=0;
+initial begin
+clk=1;
+for(k=0; k<5000000000; k=k+1) 
+    #1.346 SerialClk=SerialClk;
+$finish;
+end
 
 initial begin
 reset_n=0;
 #100 reset_n=1;
-end
-
-int j=0;
-initial begin
-link_clk=1;
-for(j=0; j<5000000000; j=j+1) 
-    #13.46 link_clk=~link_clk;
-$finish;
 end
 endmodule
