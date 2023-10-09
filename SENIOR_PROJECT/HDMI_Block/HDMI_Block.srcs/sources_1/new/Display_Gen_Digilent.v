@@ -2,10 +2,10 @@
 
 module Display_Gen_Digilent(
 
-input SerialClk,
+//input SerialClk,
 
 input resetn,
-input clk,
+input PixelClk,
 
  
 
@@ -33,10 +33,10 @@ active_video_out,
 
 hsync_out,
 
-vsync_out;
+vsync_out,
 
+SerialClk;
  
-
  
 
 ///* output */ logic TMDS_Clk_p;
@@ -71,8 +71,6 @@ vsync_out;
 
 /*        */
 
-/* input  */ logic SerialClk;   // 5x PixelClk
-
  
 
  
@@ -87,9 +85,9 @@ rgb2dvi_0 rgb2dvi (
 
 .TMDS_Data_n(TMDS_Data_n),
 
-.aRst       (aRst     ),
+.aRst       (resetn  ),
 
-.aRst_n     (resetn     ),
+//.aRst_n     (resetn     ),
 
 .vid_pData  (vid_pData  ),
 
@@ -99,9 +97,9 @@ rgb2dvi_0 rgb2dvi (
 
 .vid_pVSync (vid_pVSync ),
 
-.PixelClk   (clk ),
+.PixelClk   (PixelClk )
 
-.SerialClk  (SerialClk  )
+//.SerialClk  (SerialClk  )
 
 );
 
