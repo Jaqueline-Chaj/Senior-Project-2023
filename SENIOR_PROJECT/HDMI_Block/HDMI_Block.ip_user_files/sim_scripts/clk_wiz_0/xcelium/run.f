@@ -18,8 +18,8 @@
   "C:/Xilinx/Vivado/2021.2/data/ip/xpm/xpm_VCOMP.vhd" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
-  "../../../../HDMI IP TEST.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
-  "../../../../HDMI IP TEST.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" \
+  "../../../../HDMI_Block.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
+  "../../../../HDMI_Block.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v

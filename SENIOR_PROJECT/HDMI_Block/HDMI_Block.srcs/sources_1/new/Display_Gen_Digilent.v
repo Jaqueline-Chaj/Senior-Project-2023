@@ -2,24 +2,18 @@
 
 module Display_Gen_Digilent(
 
-//input SerialClk,
+input cpu_resetn,
+input clk,
 
-input resetn,
-input PixelClk,
+output hdmi_tx_clk_p,
 
- 
+output hdmi_tx_clk_n,
 
-output TMDS_Clk_p,
+output [2:0] hdmi_tx_p,
 
-output TMDS_Clk_n,
-
-output [2:0] TMDS_Data_p,
-
-output [2:0] TMDS_Data_n
+output [2:0] hdmi_tx_n
 
     );
-
- 
 
 //VTC PORTS
 
@@ -33,32 +27,13 @@ active_video_out,
 
 hsync_out,
 
-vsync_out,
-
-SerialClk;
- 
- 
-
-///* output */ logic TMDS_Clk_p;
-
-///* output */ logic TMDS_Clk_n;
-
-///* output */ logic[2:0] TMDS_Data_p;
-
-///* output */ logic[2:0] TMDS_Data_n;
-
- 
+vsync_out;
 
 /*        */   // Auxiliary signals
 
 /* input  */ logic aRst;   // --asynchronous reset; must be reset when RefClk is not within spec
-
-/* input  */ logic aRst_n; // --asynchronous reset; must be reset when RefClk is not within spec
-
-/*        */
-
 /*        */   // Video in
-
+/* input  */ logic PixelClk;
 /* input  */ logic [23:0] vid_pData ;
 
 /* input  */ logic vid_pVDE  ;
@@ -67,25 +42,50 @@ SerialClk;
 
 /* input  */ logic vid_pVSync;
 
+assign vid_pData=24'h00_FF_00;
 
 
-/*        */
+//reset flip_flop to avoid metastability
+logic res_d1;
+logic res_d2;
+logic reset;
+logic resetn;
+always_ff@(posedge PixelClk)
+begin
+    res_d1<=~cpu_resetn;
+    res_d2<=res_d1;
+    reset<=res_d2;
+end
 
- 
+assign resetn=~reset;
 
- 
+//Clocking wizard
+clk_wiz_0 clk_wiz 
+ (
+  // Clock out ports
+ .clk_out1(PixelClk),
+  // Status and control signals
+ .reset(~cpu_resetn),
+ // output   locked,
+ // Clock in ports
+  .clk_in1(clk)
+ );
 
+
+
+
+//Display IP
 rgb2dvi_0 rgb2dvi (
 
-.TMDS_Clk_p (TMDS_Clk_p ),     
+.TMDS_Clk_p (hdmi_tx_clk_p ),     
 
- .TMDS_Clk_n (TMDS_Clk_n ),
+ .TMDS_Clk_n (hdmi_tx_clk_n ),
 
-.TMDS_Data_p(TMDS_Data_p),
+.TMDS_Data_p(hdmi_tx_p),
 
-.TMDS_Data_n(TMDS_Data_n),
+.TMDS_Data_n(hdmi_tx_n),
 
-.aRst       (resetn  ),
+.aRst       (~resetn  ),
 
 //.aRst_n     (resetn     ),
 
@@ -97,17 +97,17 @@ rgb2dvi_0 rgb2dvi (
 
 .vid_pVSync (vid_pVSync ),
 
-.PixelClk   (PixelClk )
+.PixelClk   (PixelClk )//,
 
 //.SerialClk  (SerialClk  )
 
 );
 
  
-
+//VTC IP
 VTC vtc(
 
-.clk(clk),
+.clk(PixelClk),
 
 .clken(1'b1),
 
@@ -117,7 +117,7 @@ VTC vtc(
 
 .sof_state(sof_state),
 
-.active_video_out(VID_pVDE),
+.active_video_out(vid_pVDE),
 
 .hsync_out(vid_pHSync),
 

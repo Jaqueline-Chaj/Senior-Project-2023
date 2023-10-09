@@ -2,12 +2,12 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Sun Sep 17 19:37:06 2023
-# Process ID: 11252
-# Current directory: H:/Users/leopole1/HDMI IP TEST/HDMI IP TEST.runs/synth_1
-# Command line: vivado.exe -log Display_gen.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Display_gen.tcl
-# Log file: H:/Users/leopole1/HDMI IP TEST/HDMI IP TEST.runs/synth_1/Display_gen.vds
-# Journal file: H:/Users/leopole1/HDMI IP TEST/HDMI IP TEST.runs/synth_1\vivado.jou
-# Running On: ARM144-12, OS: Windows, CPU Frequency: 2112 MHz, CPU Physical cores: 12, Host memory: 34050 MB
+# Start of session at: Mon Oct  9 16:40:56 2023
+# Process ID: 15560
+# Current directory: H:/Senior-Project-2023/SENIOR_PROJECT/HDMI_Block/HDMI_Block.runs/synth_1
+# Command line: vivado.exe -log Display_Gen_Digilent.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Display_Gen_Digilent.tcl
+# Log file: H:/Senior-Project-2023/SENIOR_PROJECT/HDMI_Block/HDMI_Block.runs/synth_1/Display_Gen_Digilent.vds
+# Journal file: H:/Senior-Project-2023/SENIOR_PROJECT/HDMI_Block/HDMI_Block.runs/synth_1\vivado.jou
+# Running On: ARM144-11, OS: Windows, CPU Frequency: 2112 MHz, CPU Physical cores: 12, Host memory: 34050 MB
 #-----------------------------------------------------------
-source Display_gen.tcl -notrace
+source Display_Gen_Digilent.tcl -notrace

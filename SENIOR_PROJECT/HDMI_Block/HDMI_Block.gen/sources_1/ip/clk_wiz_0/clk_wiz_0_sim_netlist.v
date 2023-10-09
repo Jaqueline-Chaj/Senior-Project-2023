@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Sat Sep 16 18:58:31 2023
-// Host        : ARM144-12 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim {h:/Users/leopole1/HDMI IP TEST/HDMI IP
-//               TEST.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v}
+// Date        : Mon Oct  9 15:19:27 2023
+// Host        : ARM144-11 running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim
+//               h:/Senior-Project-2023/SENIOR_PROJECT/HDMI_Block/HDMI_Block.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.v
 // Design      : clk_wiz_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -95,7 +95,7 @@ module clk_wiz_0_clk_wiz
     .CLKFBOUT_USE_FINE_PS("FALSE"),
     .CLKIN1_PERIOD(10.000000),
     .CLKIN2_PERIOD(0.000000),
-    .CLKOUT0_DIVIDE_F(25.000000),
+    .CLKOUT0_DIVIDE_F(12.500000),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
     .CLKOUT0_USE_FINE_PS("FALSE"),

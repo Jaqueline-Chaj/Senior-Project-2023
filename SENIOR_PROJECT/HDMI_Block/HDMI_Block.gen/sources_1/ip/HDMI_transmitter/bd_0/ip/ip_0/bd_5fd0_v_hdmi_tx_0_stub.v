@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Sun Sep 17 18:05:54 2023
-// Host        : ARM144-12 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub {h:/Users/leopole1/HDMI IP TEST/HDMI IP
-//               TEST.gen/sources_1/ip/HDMI_transmitter/bd_0/ip/ip_0/bd_5fd0_v_hdmi_tx_0_stub.v}
+// Date        : Mon Oct  9 15:57:10 2023
+// Host        : ARM144-11 running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub
+//               h:/Senior-Project-2023/SENIOR_PROJECT/HDMI_Block/HDMI_Block.gen/sources_1/ip/HDMI_transmitter/bd_0/ip/ip_0/bd_5fd0_v_hdmi_tx_0_stub.v
 // Design      : bd_5fd0_v_hdmi_tx_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tfgg484-2L
