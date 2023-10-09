@@ -1,4 +1,21 @@
 # compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../HDMI_Block.gen/sources_1/ip/clk_wiz_0" --include "C:/Xilinx/Vivado/2021.2/data/xilinx_vip/include" \
+"../../../../HDMI_Block.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
+"../../../../HDMI_Block.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" \
+
+sv xil_defaultlib  --include "../../../../HDMI_Block.gen/sources_1/ip/clk_wiz_0" --include "C:/Xilinx/Vivado/2021.2/data/xilinx_vip/include" \
+"../../../../HDMI_Block.gen/sources_1/ip/HDMI_transmitter/bd_0/ip/ip_0/sim/bd_5fd0_v_hdmi_tx_0.sv" \
+
+verilog xil_defaultlib  --include "../../../../HDMI_Block.gen/sources_1/ip/clk_wiz_0" --include "C:/Xilinx/Vivado/2021.2/data/xilinx_vip/include" \
+"../../../../HDMI_Block.gen/sources_1/ip/HDMI_transmitter/bd_0/ip/ip_1/sim/bd_5fd0_const_0_1bit_0.v" \
+"../../../../HDMI_Block.gen/sources_1/ip/HDMI_transmitter/bd_0/sim/bd_5fd0.v" \
+"../../../../HDMI_Block.gen/sources_1/ip/HDMI_transmitter/sim/HDMI_transmitter.v" \
+"../../../../HDMI_Block.gen/sources_1/ip/VTC/VTC/demo_tb/axi4lite_mst.v" \
+"../../../../HDMI_Block.gen/sources_1/ip/VTC/VTC/demo_tb/axi4s_video_slv.v" \
+"../../../../HDMI_Block.gen/sources_1/ip/VTC/VTC/demo_tb/axi4s_video_mst.v" \
+"../../../../HDMI_Block.gen/sources_1/ip/VTC/VTC/demo_tb/ce_generator.v" \
+"../../../../HDMI_Block.gen/sources_1/ip/VTC/VTC/demo_tb/tb_VTC.v" \
+
 sv xil_defaultlib  --include "../../../../HDMI_Block.gen/sources_1/ip/clk_wiz_0" --include "C:/Xilinx/Vivado/2021.2/data/xilinx_vip/include" \
 "../../../../HDMI_Block.srcs/sources_1/new/Display_Gen_Digilent.v" \
 "../../../../HDMI_Block.srcs/sources_1/new/tb.v" \

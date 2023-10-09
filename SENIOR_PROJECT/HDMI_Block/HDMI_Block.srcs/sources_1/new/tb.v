@@ -2,19 +2,7 @@
 
 
 module tb();
-logic clk, resetn,pixel_clk;
-
-logic sof_state,
-
-clken,
-
-gen_clken,
-
-active_video_out,
-
-hsync_out,
-
-vsync_out;
+logic PixelClk,resetn,SerialClk;
 
 //DIGILENT PORTS
 
@@ -34,12 +22,7 @@ logic[2:0] TMDS_Data_n;
 /* input  */ logic vid_pVDE  ;
 /* input  */ logic vid_pHSync;
 /* input  */ logic vid_pVSync;
-/* input  */ logic PixelClk  ;
-
   
-
-assign DDC_OUT_sda_i=1;
-assign DDC_OUT_scl_i=1;
 
 
 Display_Gen_Digilent disp_gen (
@@ -53,43 +36,33 @@ Display_Gen_Digilent disp_gen (
 
 .TMDS_Data_n(TMDS_Data_n),
 
-.aRst       (aRst       ),
+.resetn(resetn),
 
-.aRst_n     (aRst_n     ),
+.PixelClk   (PixelClk   )
 
-.vid_pData  (vid_pData  ),
-
-.vid_pVDE   (vid_pVDE   ),
-
-.vid_pHSync (vid_pHSync ),
-
-.vid_pVSync (vid_pVSync ),
-
-.PixelClk   (PixelClk   ),
-
-.SerialClk  (SerialClk  )
+//.SerialClk  (SerialClk  )
 
 );
 
 
 int i=0;
 initial begin
-clk=1;
-for(i=0; i<5000000000; i=i+1) 
-    #6.73 clk=~clk;
+PixelClk=1;
+for(i=0; i<2147483647; i=i+1) 
+    #6.73 PixelClk=~PixelClk;
 $finish;
 end
 
 int k=0;
 initial begin
-clk=1;
-for(k=0; k<5000000000; k=k+1) 
-    #1.346 SerialClk=SerialClk;
+SerialClk=1;
+for(k=0; k<2147483647; k=k+1) 
+    #1.346 SerialClk=~SerialClk;
 $finish;
 end
 
 initial begin
-reset_n=0;
-#100 reset_n=1;
+resetn=1;
+#100 resetn=0;
 end
 endmodule
