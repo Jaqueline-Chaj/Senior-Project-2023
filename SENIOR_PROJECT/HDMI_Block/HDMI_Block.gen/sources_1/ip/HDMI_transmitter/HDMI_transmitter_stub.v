@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Sun Sep 17 18:06:26 2023
-// Host        : ARM144-12 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub {h:/Users/leopole1/HDMI IP TEST/HDMI IP
-//               TEST.gen/sources_1/ip/HDMI_transmitter/HDMI_transmitter_stub.v}
+// Date        : Mon Oct  9 15:57:51 2023
+// Host        : ARM144-11 running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub
+//               h:/Senior-Project-2023/SENIOR_PROJECT/HDMI_Block/HDMI_Block.gen/sources_1/ip/HDMI_transmitter/HDMI_transmitter_stub.v
 // Design      : HDMI_transmitter
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tfgg484-2L

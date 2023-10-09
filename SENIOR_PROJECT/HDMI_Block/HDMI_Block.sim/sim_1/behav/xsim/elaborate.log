@@ -25,6 +25,11 @@ Compiling package v_tc_v6_2_3.video_ctrl_pkg
 Compiling package xpm.vcomponents
 Compiling package v_tc_v6_2_3.hwt_pkg
 Compiling package axi_lite_ipif_v3_0_4.ipif_pkg
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=37.12...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
 Compiling architecture plle2_adv_v of entity unisim.PLLE2_ADV [\PLLE2_ADV(clkfbout_mult=20,clki...]
 Compiling architecture behavioral of entity xil_defaultlib.SyncAsync [\SyncAsync(kresetto='1')\]
 Compiling architecture behavioral of entity xil_defaultlib.ResetBridge [resetbridge_default]

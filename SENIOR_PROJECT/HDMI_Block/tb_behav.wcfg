@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="dvi_constants" />
+            <top_module name="glbl" />
+            <top_module name="ipif_pkg" />
+            <top_module name="tb" />
+            <top_module name="vcomponents" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="809.726060 us"></ZoomEndTime>
+      <Cursor1Time time="553.945963 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="19" />
+   <wvobject fp_name="/tb/PixelClk" type="logic">
+      <obj_property name="ElementShortName">PixelClk</obj_property>
+      <obj_property name="ObjectShortName">PixelClk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/resetn" type="logic">
+      <obj_property name="ElementShortName">resetn</obj_property>
+      <obj_property name="ObjectShortName">resetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/TMDS_Clk_p" type="logic">
+      <obj_property name="ElementShortName">TMDS_Clk_p</obj_property>
+      <obj_property name="ObjectShortName">TMDS_Clk_p</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/TMDS_Clk_n" type="logic">
+      <obj_property name="ElementShortName">TMDS_Clk_n</obj_property>
+      <obj_property name="ObjectShortName">TMDS_Clk_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/TMDS_Data_p" type="array">
+      <obj_property name="ElementShortName">TMDS_Data_p[2:0]</obj_property>
+      <obj_property name="ObjectShortName">TMDS_Data_p[2:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/TMDS_Data_n" type="array">
+      <obj_property name="ElementShortName">TMDS_Data_n[2:0]</obj_property>
+      <obj_property name="ObjectShortName">TMDS_Data_n[2:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/disp_gen/rgb2dvi/TMDS_Clk_p" type="logic">
+      <obj_property name="ElementShortName">TMDS_Clk_p</obj_property>
+      <obj_property name="ObjectShortName">TMDS_Clk_p</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/disp_gen/rgb2dvi/TMDS_Clk_n" type="logic">
+      <obj_property name="ElementShortName">TMDS_Clk_n</obj_property>
+      <obj_property name="ObjectShortName">TMDS_Clk_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/disp_gen/rgb2dvi/TMDS_Data_p" type="array">
+      <obj_property name="ElementShortName">TMDS_Data_p[2:0]</obj_property>
+      <obj_property name="ObjectShortName">TMDS_Data_p[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/disp_gen/rgb2dvi/TMDS_Data_n" type="array">
+      <obj_property name="ElementShortName">TMDS_Data_n[2:0]</obj_property>
+      <obj_property name="ObjectShortName">TMDS_Data_n[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/disp_gen/rgb2dvi/aRst" type="logic">
+      <obj_property name="ElementShortName">aRst</obj_property>
+      <obj_property name="ObjectShortName">aRst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/disp_gen/rgb2dvi/vid_pData" type="array">
+      <obj_property name="ElementShortName">vid_pData[23:0]</obj_property>
+      <obj_property name="ObjectShortName">vid_pData[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/disp_gen/rgb2dvi/vid_pVDE" type="logic">
+      <obj_property name="ElementShortName">vid_pVDE</obj_property>
+      <obj_property name="ObjectShortName">vid_pVDE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/disp_gen/rgb2dvi/vid_pHSync" type="logic">
+      <obj_property name="ElementShortName">vid_pHSync</obj_property>
+      <obj_property name="ObjectShortName">vid_pHSync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/disp_gen/rgb2dvi/vid_pVSync" type="logic">
+      <obj_property name="ElementShortName">vid_pVSync</obj_property>
+      <obj_property name="ObjectShortName">vid_pVSync</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/disp_gen/rgb2dvi/PixelClk" type="logic">
+      <obj_property name="ElementShortName">PixelClk</obj_property>
+      <obj_property name="ObjectShortName">PixelClk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/disp_gen/vid_pData" type="array">
+      <obj_property name="ElementShortName">vid_pData[23:0]</obj_property>
+      <obj_property name="ObjectShortName">vid_pData[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/disp_gen/vtc/active_video_out" type="logic">
+      <obj_property name="ElementShortName">active_video_out</obj_property>
+      <obj_property name="ObjectShortName">active_video_out</obj_property>
+   </wvobject>
+</wave_config>

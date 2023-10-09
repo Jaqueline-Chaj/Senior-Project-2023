@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='H:/Users/leopole1/HDMI IP TEST/HDMI IP TEST.runs/synth_1'
+HD_PWD='H:/Senior-Project-2023/SENIOR_PROJECT/HDMI_Block/HDMI_Block.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Display_gen.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Display_gen.tcl
+EAStep vivado -log Display_Gen_Digilent.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Display_Gen_Digilent.tcl

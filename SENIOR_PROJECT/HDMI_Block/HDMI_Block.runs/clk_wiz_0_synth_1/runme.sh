@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='H:/Users/leopole1/HDMI IP TEST/HDMI IP TEST.runs/clk_wiz_0_synth_1'
+HD_PWD='H:/Senior-Project-2023/SENIOR_PROJECT/HDMI_Block/HDMI_Block.runs/clk_wiz_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
