@@ -120,7 +120,7 @@ set_property used_in_implementation false [get_files H:/Senior-Project-2023/SENI
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -incremental H:/Users/leopole1/HDMI IP TEST/HDMI IP TEST.srcs/utils_1/imports/synth_1/Display_Gen_Digilent.dcp
+read_checkpoint -auto_incremental -incremental H:/Users/leopole1/HDMI IP TEST/HDMI IP TEST.srcs/utils_1/imports/synth_1/Display_Gen_Digilent.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
