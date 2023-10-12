@@ -29,6 +29,8 @@ hsync_out,
 
 vsync_out;
 
+
+
 /*        */   // Auxiliary signals
 
 /* input  */ logic aRst;   // --asynchronous reset; must be reset when RefClk is not within spec
