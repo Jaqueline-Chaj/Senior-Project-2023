@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tfgg484-2L" LaunchTime="1696884054" LaunchIncrCheckpoint="$PPRDIR/../../../Users/leopole1/HDMI IP TEST/HDMI IP TEST.srcs/utils_1/imports/synth_1/Display_Gen_Digilent.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a100tfgg484-2L" LaunchTime="1696884265" LaunchIncrCheckpoint="$PPRDIR/../../../Users/leopole1/HDMI IP TEST/HDMI IP TEST.srcs/utils_1/imports/synth_1/Display_Gen_Digilent.dcp" LaunchWriteIncrSynthDcp="true">
   <File Type="PA-TCL" Name="Display_Gen_Digilent.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="Display_Gen_Digilent_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Display_Gen_Digilent_reports.tcl"/>

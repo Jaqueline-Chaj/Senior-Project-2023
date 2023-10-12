@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../DIGLENT_BLOCK.gen/sources_1/ip/v_tc_0/sim/v_tc_0.vhd" \
+
+nosort
