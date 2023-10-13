@@ -1,6 +1,8 @@
 #include "project.h"
 #include "stdio.h"
 
+// Test comment to see commit changes 
+
     void val2leds (int i){
         switch (i){
             case 0: {(LEDreg_Write(0x00));

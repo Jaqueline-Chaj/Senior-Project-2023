@@ -18,7 +18,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot">
 <ExpandedNodeIds>
 <v>HostDesign-000</v>
 <v>HostDesign-000\HostDesign</v>
@@ -192,7 +192,6 @@
 <v>HostDesign-000\HostDesign\PSoC 5LP Architecture TRM</v>
 <v>HostDesign-000\HostDesign\CY8C58LP Family Datasheet</v>
 <v>HostDesign-000\HostDesign\System Reference Guides</v>
-<v>HostDesign-000\HostDesign\System Reference Guides\cy_boot_v6_10</v>
 <v>HostDesign-000\HostDesign\CharLCD_v2_20.pdf</v>
 <v>HostDesign-000\HostDesign\cy_pins_v2_20</v>
 <v>HostDesign-000\HostDesign\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
@@ -204,7 +203,6 @@
 <v>HostDesign-000\HostDesign\PSoC 5LP Architecture TRM</v>
 <v>HostDesign-000\HostDesign\CY8C58LP Family Datasheet</v>
 <v>HostDesign-000\HostDesign\System Reference Guides</v>
-<v>HostDesign-000\HostDesign\System Reference Guides\cy_boot_v6_10</v>
 <v>HostDesign-000\HostDesign\CharLCD_v2_20.pdf</v>
 <v>HostDesign-000\HostDesign\cy_pins_v2_20</v>
 <v>HostDesign-000\HostDesign\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
@@ -228,7 +226,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1341, 831" SelectedTabbedMdiWindow="8c994d1e-ca60-4b94-8986-bce900c04a91"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="74d3dae0-d923-47fa-a57d-ddf3736a6b24" /><DocumentWindow Key="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\TopDesign\TopDesign.cysch" Guid="6b99caf8-ecc3-4aab-ba50-80aacd4c89e2" /><DocumentWindow Key="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\HostDesign.cydwr" Guid="7d66e42e-5b60-4d40-acdd-e0872d939713" /><DocumentWindow Key="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\main.c" Guid="8c994d1e-ca60-4b94-8986-bce900c04a91" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1268, 831" SelectedTabbedMdiWindow="8c994d1e-ca60-4b94-8986-bce900c04a91"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="74d3dae0-d923-47fa-a57d-ddf3736a6b24" /><DocumentWindow Key="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\TopDesign\TopDesign.cysch" Guid="6b99caf8-ecc3-4aab-ba50-80aacd4c89e2" /><DocumentWindow Key="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\HostDesign.cydwr" Guid="7d66e42e-5b60-4d40-acdd-e0872d939713" /><DocumentWindow Key="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\main.c" Guid="8c994d1e-ca60-4b94-8986-bce900c04a91" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
