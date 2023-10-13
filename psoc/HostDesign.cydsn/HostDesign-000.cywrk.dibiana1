@@ -18,7 +18,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
 <v>HostDesign-000</v>
 <v>HostDesign-000\HostDesign</v>
@@ -146,36 +146,6 @@
 <VisibleNodeIds>
 <v>HostDesign-000</v>
 <v>HostDesign-000\HostDesign</v>
-<v>HostDesign-000\HostDesign\CortexM3</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\H2G_STRB_IN.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\H2G_STRB_OUT.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\LEDreg.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\LEDreg_PM.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\LEDstrip.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\SW2.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\SW3.lst</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\HostDesign.elf</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\HostDesign.hex</v>
-<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\HostDesign.map</v>
-<v>HostDesign-000\HostDesign\HostDesign.gpdsc</v>
 <v>HostDesign-000\HostDesign\HostDesign.rpt</v>
 <v>HostDesign-000\HostDesign\HostDesign_timing.html</v>
 </VisibleNodeIds>

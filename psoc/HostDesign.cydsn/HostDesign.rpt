@@ -1,4 +1,4 @@
-Loading plugins phase: Elapsed time ==> 0s.091ms
+Loading plugins phase: Elapsed time ==> 0s.081ms
 <CYPRESSTAG name="CyDsfit arguments...">
 cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p H:\Senior-Project-2023\PSoC\HostDesign.cydsn\HostDesign.cyprj -d CY8C5868AXI-LP035 -s H:\Senior-Project-2023\PSoC\HostDesign.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 </CYPRESSTAG>
@@ -6,4 +6,4 @@ cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabd
 ADD: sdb.M0052: error: Unable to find component "cy_boot_v6_10".
 
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 0s.453ms
+Elaboration phase: Elapsed time ==> 0s.455ms
