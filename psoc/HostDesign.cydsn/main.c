@@ -1,57 +1,58 @@
 #include "project.h"
 #include "stdio.h"
 
-void cmd2byte (int i){
-    switch (i){
-        case 0: {(LEDreg_Write(0x00));
-            break;}
-            
-        case 1: {(LEDreg_Write(0x01));
-            break;}
-            
-        case 2: {(LEDreg_Write(0x02));
+    void val2leds (int i){
+        switch (i){
+            case 0: {(LEDreg_Write(0x00));
                 break;}
             
-        case 3: {(LEDreg_Write(0x03));
+            case 1: {(LEDreg_Write(0x01));
                 break;}
             
-        case 4: {(LEDreg_Write(0x04));
+            case 2: {(LEDreg_Write(0x02));
                 break;}
             
-        case 5: {(LEDreg_Write(0x05));
+            case 3: {(LEDreg_Write(0x03));
                 break;}
             
-        case 6: {(LEDreg_Write(0x06));
-            break;}
-        
-        case 7: {(LEDreg_Write(0x07));
-            break;}
+            case 4: {(LEDreg_Write(0x04));
+                break;}
             
-        case 8: {(LEDreg_Write(0x08));
-            break;}
+            case 5: {(LEDreg_Write(0x05));
+                break;}
             
-        case 9: {(LEDreg_Write(0x09));
-            break;}
+            case 6: {(LEDreg_Write(0x06));
+                break;}
             
-        case 10:{(LEDreg_Write(0x0A));
-            break;}
+            case 7: {(LEDreg_Write(0x07));
+                break;}
             
-        case 11:{(LEDreg_Write(0x0B));
-            break;}
+            case 8: {(LEDreg_Write(0x08));
+                break;}
             
-        case 12:{(LEDreg_Write(0x0C));
-            break;}
+            case 9: {(LEDreg_Write(0x09));
+                break;}
             
-        case 13:{(LEDreg_Write(0x0D));
-            break;}
+            case 10:{(LEDreg_Write(0x0A));
+                break;}
             
-        case 14:{(LEDreg_Write(0x0E));
-            break;}
+            case 11:{(LEDreg_Write(0x0B));
+                break;}
             
-        case 15:{(LEDreg_Write(0x0F));
-            break;}           
+            case 12:{(LEDreg_Write(0x0C));
+                break;}
+            
+            case 13:{(LEDreg_Write(0x0D));
+                break;}
+            
+            case 14:{(LEDreg_Write(0x0E));
+                break;}
+            
+            case 15:{(LEDreg_Write(0x0F));
+                break;}           
         }
     }
+
 
 int main(void)
 {
@@ -84,7 +85,7 @@ int main(void)
                 break;
             }
             //First, write data
-            cmd2byte(i);
+            val2leds(i);
 
             sprintf( dispVal, "%x", i);
             LCD_Position(0, 11);

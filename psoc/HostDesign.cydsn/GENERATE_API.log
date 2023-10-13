@@ -1,6 +1,3 @@
---------------- Build Started: 10/13/2023 11:16:52 Project: HostDesign, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
-cydsfit.exe -.appdatapath "C:\Users\dibiana1\AppData\Local\Cypress Semiconductor\PSoC Creator\4.4" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p H:\Senior-Project-2023\PSoC\HostDesign.cydsn\HostDesign.cyprj -d CY8C5868AXI-LP035 -s H:\Senior-Project-2023\PSoC\HostDesign.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
-Elaborating Design...
-ADD: sdb.M0052: error: Unable to find component "cy_boot_v6_10".
-Error: fit.M0050: The fitter aborted due to errors, please address all errors and rebuild. (App=cydsfit)
---------------- Build Failed: 10/13/2023 11:16:53 ---------------
+--------------- Build Started: 10/04/2023 12:42:09 Project: HostDesign, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+The code generation step is up to date.
+--------------- Build Skipped: 10/04/2023 12:42:09 ---------------
