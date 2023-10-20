@@ -26,26 +26,31 @@ module tb(
     .psoc_fpga_xfc(psoc_fpga_xfc),
     .clk(clk),
     .reset_n(reset_n),
-    .fpga_psoc_xfc(fpga_psoc_xfc));
-
-    initial begin
+    .fpga_psoc_xfc(fpga_psoc_xfc)
+    );
+    
+    
+initial begin
     clk = 0;
     while (1)
         #5 clk = ~clk;
-    end
+end
     
-    initial begin
+    
+initial begin
         reset_n = 0;
         #87 reset_n = 1;
-    end
+end
     
-    always_ff @ (posedge clk)
-    begin
+    
+always_ff @ (posedge clk)
+begin
     if (reset)
         psoc_if_d <= 0;
     else if (fpga_psoc_xfc_toggle)
         psoc_if_d += 1;
-    end
+end
+    
     
 always_ff @ (posedge clk)
 begin
@@ -60,6 +65,7 @@ begin
         fpga_psoc_xfc_prev <= fpga_psoc_xfc;    
     end
 end
+
 
 always_ff @ (posedge clk)
 begin

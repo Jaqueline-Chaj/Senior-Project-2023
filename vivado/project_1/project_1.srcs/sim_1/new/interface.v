@@ -8,7 +8,7 @@ module host_interface(
     input psoc_fpga_xfc,
     input clk,
     input reset_n,
-    output logic fpga_psoc_xfc
+    output logic fpga_psoc_xfc,
     );
 
 logic psoc_fpga_xfc_prev;
@@ -36,7 +36,7 @@ begin
         fpga_psoc_xfc <= ~fpga_psoc_xfc;
 end
 
-//stores incoming byte to register
+//stores incoming byte to psoc_data
 always_ff @ (posedge clk)
 begin
     if (reset)
@@ -46,6 +46,7 @@ begin
         
 end
 
+//State transition logic
 always_ff @ (posedge clk)
 begin
     if (reset)
@@ -55,7 +56,8 @@ begin
     else if (psoc_fpga_xfc != psoc_fpga_xfc_prev)
         state <= `STATE_S1;  
 end
-    
+
+//reset flip flop
 always_ff @ (posedge clk)
 begin
     reset1 <= ~reset_n;
