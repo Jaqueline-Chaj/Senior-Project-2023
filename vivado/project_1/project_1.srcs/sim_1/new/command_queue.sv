@@ -1,7 +1,6 @@
 `timescale 1ns / 1ps
 
 module command_queue #(parameter DEPTH=16, WIDTH=8) (
-
         input clk,
         input reset,
     //Input interface 
@@ -20,7 +19,6 @@ reg [$clog2(DEPTH):0] readptr;
 
 assign IN_RTR = ((writeptr + 1'b1) != readptr); // not full
 assign OUT_RTS = (writeptr != readptr);  // not empty
- 
 
 //sets everything to 0 on reset
 always_ff @ (posedge clk)
@@ -48,7 +46,8 @@ always_ff @ (posedge clk)
 begin
     if(OUT_RTR && OUT_RTS)
         OUT_DATA <= array[readptr];
-        readptr = readptr + 1 ;
+        readptr = readptr + 1;
 end
+
 
 endmodule
