@@ -8,7 +8,7 @@ module host_interface(
     input psoc_fpga_xfc,
     input clk,
     input reset_n,
-    output logic fpga_psoc_xfc,
+    output logic fpga_psoc_xfc
     );
 
 logic psoc_fpga_xfc_prev;
