@@ -13,18 +13,23 @@ module command_queue #(parameter DEPTH=16, WIDTH=8) (
         input logic OUT_RTR
     );
 
-reg [WIDTH-1:0] array [DEPTH-1:0];
-reg [$clog2(DEPTH):0] writeptr;
-reg [$clog2(DEPTH):0] readptr;
+logic [WIDTH-1:0] array [DEPTH-1:0];
+logic [$clog2(DEPTH)-1:0] writeptr, next_write_ptr;
+logic [$clog2(DEPTH)-1:0] readptr, next_read_ptr;
+logic IF_FIFO_XFC;
+logic FIFO_PROC_XFC;
 
-assign IN_RTR = ((writeptr + 1'b1) != readptr); // not full
+assign next_write_ptr = writeptr + 1'b1;
+assign next_read_ptr = readptr + 1'b1;
+assign IN_RTR = (next_write_ptr != readptr); // not full
 assign OUT_RTS = (writeptr != readptr);  // not empty
+assign IN_XFC = IN_RTS && IN_RTR;
+assign OUT_XFC = OUT_RTS && OUT_RTR;
 
 //sets everything to 0 on reset
 always_ff @ (posedge clk)
 begin
     if(reset)
-        OUT_DATA <= 0;
         for(int i = 0; i < DEPTH; i++)
         begin
             array[i] <= 0;
@@ -36,9 +41,11 @@ always_ff @ (posedge clk)
 begin
     if(reset)
         writeptr <= 0;
-    else if(IN_RTR && IN_RTS)
+    else if(IN_XFC)
+    begin
         array[writeptr] <= IN_DATA;
-        writeptr = writeptr + 1;
+        writeptr <= next_write_ptr;
+    end
 end
 
 // sends data to cmd proc if cmd proc is ready to receive and queue is not empty
@@ -46,10 +53,12 @@ always_ff @ (posedge clk)
 begin
     if(reset)
         readptr <= 0;
-    else if(OUT_RTR && OUT_RTS)
-        OUT_DATA <= array[readptr];
-        readptr = readptr + 1;
+    else if(OUT_XFC)
+    begin
+        readptr <= next_read_ptr;
+    end
 end
 
+assign OUT_DATA = array[readptr];
 
 endmodule
