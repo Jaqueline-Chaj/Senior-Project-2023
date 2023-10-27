@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/Senior-Project-2023/vivado/project_1/project_1.srcs/sim_1/new/command_queue.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module command_queue
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/Senior-Project-2023/vivado/project_1/project_1.srcs/sim_1/new/queueTB.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module queueTB

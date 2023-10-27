@@ -24,8 +24,6 @@ assign OUT_RTS = (writeptr != readptr);  // not empty
 always_ff @ (posedge clk)
 begin
     if(reset)
-        writeptr <= 0;
-        readptr <= 0;
         OUT_DATA <= 0;
         for(int i = 0; i < DEPTH; i++)
         begin
@@ -36,7 +34,9 @@ end
 // writes data into a queue slot if not full and data is valid
 always_ff @ (posedge clk)
 begin
-    if(IN_RTR && IN_RTS)
+    if(reset)
+        writeptr <= 0;
+    else if(IN_RTR && IN_RTS)
         array[writeptr] <= IN_DATA;
         writeptr = writeptr + 1;
 end
@@ -44,7 +44,9 @@ end
 // sends data to cmd proc if cmd proc is ready to receive and queue is not empty
 always_ff @ (posedge clk) 
 begin
-    if(OUT_RTR && OUT_RTS)
+    if(reset)
+        readptr <= 0;
+    else if(OUT_RTR && OUT_RTS)
         OUT_DATA <= array[readptr];
         readptr = readptr + 1;
 end
