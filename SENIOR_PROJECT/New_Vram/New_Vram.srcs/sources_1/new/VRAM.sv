@@ -11,6 +11,8 @@ logic[19:0] addra;
 logic wea;
 
 assign wea=0;
+assign addra=0;
+assign dina=0;
 blk_mem_gen_0 blk_mem(
 .clka(clk),
 .addra(addra),
