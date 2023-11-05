@@ -70,8 +70,11 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+<<<<<<< HEAD
 set_param chipscope.maxJobs 5
 set_param xicom.use_bs_reader 1
+=======
+>>>>>>> 9c971ac2998e47faaabea0845235ccde257fe477
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-3
 
@@ -91,20 +94,36 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv H:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.srcs/sources_1/new/Display_Gen_Digilent.sv
+<<<<<<< HEAD
 read_ip -quiet H:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.srcs/sources_1/ip/v_tc_0/v_tc_0.xci
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/v_tc_0/v_tc_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/v_tc_0/v_tc_0_ooc.xdc]
 
 read_ip -quiet H:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0.xci
+=======
+read_ip -quiet h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.srcs/sources_1/ip/v_tc_0/v_tc_0.xci
+set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/v_tc_0/v_tc_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/v_tc_0/v_tc_0_ooc.xdc]
+
+read_ip -quiet h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+
+read_ip -quiet h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0.xci
+>>>>>>> 9c971ac2998e47faaabea0845235ccde257fe477
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/rgb2dvi_0/src/rgb2dvi.xdc]
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/rgb2dvi_0/src/rgb2dvi_ooc.xdc]
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/rgb2dvi_0/src/rgb2dvi_clocks.xdc]
 
+<<<<<<< HEAD
 read_ip -quiet H:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_board.xdc]
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_ooc.xdc]
 
+=======
+>>>>>>> 9c971ac2998e47faaabea0845235ccde257fe477
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -118,8 +137,11 @@ read_xdc H:/Nexys-Video-Master.xdc
 set_property used_in_implementation false [get_files H:/Nexys-Video-Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
+<<<<<<< HEAD
 
 read_checkpoint -auto_incremental -incremental H:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.srcs/utils_1/imports/synth_1/Display_Gen_Digilent.dcp
+=======
+>>>>>>> 9c971ac2998e47faaabea0845235ccde257fe477
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

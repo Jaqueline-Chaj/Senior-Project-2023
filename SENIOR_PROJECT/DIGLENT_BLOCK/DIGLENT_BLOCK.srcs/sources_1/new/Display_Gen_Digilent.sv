@@ -27,6 +27,7 @@ active_video_out,
 
 hsync_out,
 
+<<<<<<< HEAD
 vsync_out,
 
 h_blank,
@@ -34,6 +35,9 @@ h_blank,
 v_blank;
 
 
+=======
+vsync_out;
+>>>>>>> 9c971ac2998e47faaabea0845235ccde257fe477
 
 /*        */   // Auxiliary signals
 
@@ -45,6 +49,7 @@ v_blank;
 /* input  */ logic vid_pVDE  ;
 
 /* input  */ logic vid_pHSync;
+<<<<<<< HEAD
 /*input */   logic vid_pVSync;
 
 
@@ -76,6 +81,13 @@ assign olive=23'h80_00_80;
 assign peach=23'h00_B9_DA;
 
 /* input  */ 
+=======
+
+/* input  */ logic vid_pVSync;
+
+assign vid_pData=24'h00_FF_00;
+
+>>>>>>> 9c971ac2998e47faaabea0845235ccde257fe477
 
 //reset flip_flop to avoid metastability
 logic res_d1;
@@ -103,6 +115,12 @@ clk_wiz_0 clk_wiz
   .clk_in1(clk)
  );
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 9c971ac2998e47faaabea0845235ccde257fe477
 //Display IP
 rgb2dvi_0 rgb2dvi (
 
@@ -150,6 +168,7 @@ v_tc_0 vtc(
 
 .hsync_out(vid_pHSync),
 
+<<<<<<< HEAD
 .vsync_out(vid_pVSync),
  
 .hblank_out(h_blank),
@@ -207,5 +226,12 @@ case(disp_x[10:7])
 end
     
 
+=======
+.vsync_out(vid_pVSync)
+
+);
+
+
+>>>>>>> 9c971ac2998e47faaabea0845235ccde257fe477
 
 endmodule
