@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Thu Oct 12 16:36:16 2023
+| Date         : Mon Oct 23 15:56:26 2023
 | Host         : ARM144-12 running 64-bit major release  (build 9200)
 | Command      : report_drc -file Display_Gen_Digilent_drc_routed.rpt -pb Display_Gen_Digilent_drc_routed.pb -rpx Display_Gen_Digilent_drc_routed.rpx
 | Design       : Display_Gen_Digilent

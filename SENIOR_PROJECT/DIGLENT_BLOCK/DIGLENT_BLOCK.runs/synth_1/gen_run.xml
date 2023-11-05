@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-3" LaunchTime="1697142870" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Display_Gen_Digilent.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-3" LaunchTime="1698090876" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Display_Gen_Digilent.dcp">
   <File Type="PA-TCL" Name="Display_Gen_Digilent.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="Display_Gen_Digilent_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Display_Gen_Digilent_reports.tcl"/>
   <File Type="RDS-RDS" Name="Display_Gen_Digilent.vds"/>
   <File Type="RDS-UTIL" Name="Display_Gen_Digilent_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="Display_Gen_Digilent_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="Display_Gen_Digilent.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="Display_Gen_Digilent_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="Display_Gen_Digilent_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/Display_Gen_Digilent.sv">

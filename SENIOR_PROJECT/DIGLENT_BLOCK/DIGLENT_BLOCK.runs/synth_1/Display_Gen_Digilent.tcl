@@ -100,7 +100,7 @@ set_property used_in_implementation false [get_files -all h:/Senior-Project-2023
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/rgb2dvi_0/src/rgb2dvi_ooc.xdc]
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/rgb2dvi_0/src/rgb2dvi_clocks.xdc]
 
-read_ip -quiet h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
+read_ip -quiet H:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_board.xdc]
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_ooc.xdc]
