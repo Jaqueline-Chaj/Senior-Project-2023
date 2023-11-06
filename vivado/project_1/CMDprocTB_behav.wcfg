@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="CMDprocTB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="CMDprocTB" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="9.615 ns"></ZoomStartTime>
+      <ZoomEndTime time="283.120 ns"></ZoomEndTime>
+      <Cursor1Time time="150.166 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="198"></NameColumnWidth>
+      <ValueColumnWidth column_width="83"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/CMDprocTB/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CMDprocTB/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CMDprocTB/reset_n" type="logic">
+      <obj_property name="ElementShortName">reset_n</obj_property>
+      <obj_property name="ObjectShortName">reset_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CMDprocTB/OUT_RTS" type="logic">
+      <obj_property name="ElementShortName">OUT_RTS</obj_property>
+      <obj_property name="ObjectShortName">OUT_RTS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CMDprocTB/OUT_RTR" type="logic">
+      <obj_property name="ElementShortName">OUT_RTR</obj_property>
+      <obj_property name="ObjectShortName">OUT_RTR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CMDprocTB/inData" type="array">
+      <obj_property name="ElementShortName">inData[7:0]</obj_property>
+      <obj_property name="ObjectShortName">inData[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CMDprocTB/outData" type="array">
+      <obj_property name="ElementShortName">outData[31:0]</obj_property>
+      <obj_property name="ObjectShortName">outData[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CMDprocTB/REG_WE" type="logic">
+      <obj_property name="ElementShortName">REG_WE</obj_property>
+      <obj_property name="ObjectShortName">REG_WE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CMDprocTB/Q_PROC_XFC" type="logic">
+      <obj_property name="ElementShortName">Q_PROC_XFC</obj_property>
+      <obj_property name="ObjectShortName">Q_PROC_XFC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CMDprocTB/CMDp/tempData" type="array">
+      <obj_property name="ElementShortName">tempData[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tempData[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CMDprocTB/CMDp/tempData" type="array">
+      <obj_property name="ElementShortName">tempData[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tempData[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CMDprocTB/CMDp/prevState" type="array">
+      <obj_property name="ElementShortName">prevState[2:0]</obj_property>
+      <obj_property name="ObjectShortName">prevState[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/CMDprocTB/CMDp/state" type="array">
+      <obj_property name="ElementShortName">state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state[2:0]</obj_property>
+   </wvobject>
+</wave_config>
