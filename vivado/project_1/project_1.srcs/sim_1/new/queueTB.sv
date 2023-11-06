@@ -30,6 +30,7 @@ module queueTB(
       
       assign reset = ~reset_n;
       assign IF_FIFO_XFC  = IN_RTR && IN_RTS;
+      
 initial begin
     clk = 0;
     while(1)
