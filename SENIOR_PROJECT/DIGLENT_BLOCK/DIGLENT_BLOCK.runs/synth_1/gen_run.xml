@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-3" LaunchTime="1697142870" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Display_Gen_Digilent.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-3" LaunchTime="1699299674" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Display_Gen_Digilent.dcp">
   <File Type="PA-TCL" Name="Display_Gen_Digilent.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="Display_Gen_Digilent_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Display_Gen_Digilent_reports.tcl"/>
@@ -58,9 +58,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="v_tc_0"/>

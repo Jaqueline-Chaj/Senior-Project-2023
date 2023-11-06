@@ -115,6 +115,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -122,8 +123,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 5
-  set_param xicom.use_bs_reader 1
+  set_param chipscope.maxJobs 1
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a200tsbg484-3
   set_property design_mode GateLvl [current_fileset]
@@ -142,7 +142,7 @@ OPTRACE "add files" START { }
   add_files -quiet H:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.runs/synth_1/Display_Gen_Digilent.dcp
   read_ip -quiet H:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.srcs/sources_1/ip/v_tc_0/v_tc_0.xci
   read_ip -quiet H:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0.xci
-  read_ip -quiet h:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
+  read_ip -quiet H:/Senior-Project-2023/SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc H:/Nexys-Video-Master.xdc
 OPTRACE "read constraints: implementation" END { }
