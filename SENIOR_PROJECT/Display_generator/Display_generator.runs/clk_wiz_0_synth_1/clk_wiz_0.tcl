@@ -85,11 +85,13 @@ set_property parent.project_path H:/Senior-Project-2023/SENIOR_PROJECT/Display_g
 set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
+set_property ip_repo_paths h:/Senior-Project-2023/vivado-library [current_project]
+update_ip_catalog
 set_property ip_output_repo h:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet h:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
+read_ip -quiet H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_board.xdc]
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_ooc.xdc]
