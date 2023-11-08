@@ -27,13 +27,12 @@ active_video_out,
 
 hsync_out,
 
+
 vsync_out,
 
 h_blank,
 
 v_blank;
-
-
 
 /*        */   // Auxiliary signals
 
@@ -45,6 +44,7 @@ v_blank;
 /* input  */ logic vid_pVDE  ;
 
 /* input  */ logic vid_pHSync;
+
 /*input */   logic vid_pVSync;
 
 
@@ -62,20 +62,26 @@ logic[9:0]disp_y;
 assign black=23'h00_00_00;
 assign green=23'h00_00_FF;
 assign yellow=23'hFF_00_FF;
-assign orange=23'hFF_00_B5;
+assign orange=23'hFF_00_A5;
 assign blue=23'h00_FF_00;
 assign purple=23'h80_80_00;
 assign red=23'hFF_00_00;
 assign white=23'hFF_FF_FF;
 assign cyan=23'h00_FF_FF;
 assign magenta=23'hFF_FF_00;
-assign brown=23'hB5_2A_2A;
+assign brown=23'hBA_2A_2A;
 assign navy_blue=23'h00_80_00;
 assign silver=23'hC0_C0_C0;
 assign olive=23'h80_00_80;
 assign peach=23'h00_B9_DA;
 
 /* input  */ 
+
+
+/* input  */ logic vid_pVSync;
+
+assign vid_pData=24'h00_FF_00;
+
 
 //reset flip_flop to avoid metastability
 logic res_d1;
@@ -102,6 +108,10 @@ clk_wiz_0 clk_wiz
  // Clock in ports
   .clk_in1(clk)
  );
+
+
+
+
 
 //Display IP
 rgb2dvi_0 rgb2dvi (
@@ -187,17 +197,17 @@ end
 
 always@(disp_x[10:7]) begin
 case(disp_x[10:7])
-    4'b0000: vid_pData=black;
-    4'b0001: vid_pData=blue;
-    4'b0010: vid_pData=orange;
-    4'b0011: vid_pData=green;
-    4'b0100: vid_pData=yellow;
-    4'b0101: vid_pData=cyan;
-    4'b0110: vid_pData=red;
-    4'b0111: vid_pData=silver;
-    4'b1000: vid_pData=purple;
-    4'b1001: vid_pData=magenta;
-    4'b1010: vid_pData=peach;
+    4'b0000: vid_pData<=black;
+    4'b0001: vid_pData<=blue;
+    4'b0010: vid_pData<=orange;
+    4'b0011: vid_pData<=brown;
+    4'b0100: vid_pData<=yellow;
+    4'b0101: vid_pData<=cyan;
+    4'b0110: vid_pData<=red;
+    4'b0111: vid_pData<=green;
+    4'b1000: vid_pData<=purple;
+    4'b1001: vid_pData<=magenta;
+    4'b1010: vid_pData<=peach;
     4'b1011: vid_pData=olive;
     4'b1100: vid_pData=white;
     4'b1101: vid_pData=navy_blue;
@@ -206,6 +216,10 @@ case(disp_x[10:7])
     endcase
 end
     
+
+
+
+
 
 
 endmodule
