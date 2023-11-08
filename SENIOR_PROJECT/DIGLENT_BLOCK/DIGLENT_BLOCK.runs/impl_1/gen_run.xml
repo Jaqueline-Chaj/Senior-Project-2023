@@ -1,62 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a200tsbg484-3" LaunchTime="1697142870">
+<GenRun Id="impl_1" LaunchPart="xc7a200tsbg484-3" LaunchTime="1699303136">
   <File Type="ROUTE-PWR" Name="Display_Gen_Digilent_power_routed.rpt"/>
   <File Type="PA-TCL" Name="Display_Gen_Digilent.tcl"/>
+  <File Type="BITSTR-MMI" Name="Display_Gen_Digilent.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="Display_Gen_Digilent_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="Display_Gen_Digilent_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="Display_Gen_Digilent_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="Display_Gen_Digilent_reports.tcl"/>
-  <File Type="BITSTR-MSK" Name="Display_Gen_Digilent.msk"/>
-  <File Type="ROUTE-CLK" Name="Display_Gen_Digilent_clock_utilization_routed.rpt"/>
-  <File Type="RDI-RDI" Name="Display_Gen_Digilent.vdi"/>
-  <File Type="BG-BIT" Name="Display_Gen_Digilent.bit"/>
-  <File Type="BG-DRC" Name="Display_Gen_Digilent.drc"/>
-  <File Type="BG-BGN" Name="Display_Gen_Digilent.bgn"/>
-  <File Type="BG-BIN" Name="Display_Gen_Digilent.bin"/>
-  <File Type="BITSTR-RBT" Name="Display_Gen_Digilent.rbt"/>
-  <File Type="BITSTR-NKY" Name="Display_Gen_Digilent.nky"/>
-  <File Type="BITSTR-BMM" Name="Display_Gen_Digilent_bd.bmm"/>
-  <File Type="BITSTR-MMI" Name="Display_Gen_Digilent.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="Display_Gen_Digilent_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-SYSDEF" Name="Display_Gen_Digilent.sysdef"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="Display_Gen_Digilent.ltx"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="OPT-TIMING" Name="Display_Gen_Digilent_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="Display_Gen_Digilent_opt.dcp"/>
   <File Type="OPT-DRC" Name="Display_Gen_Digilent_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="Display_Gen_Digilent.hwdef"/>
+  <File Type="PWROPT-DCP" Name="Display_Gen_Digilent_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="Display_Gen_Digilent_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="Display_Gen_Digilent_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="Display_Gen_Digilent_placed.dcp"/>
   <File Type="PLACE-IO" Name="Display_Gen_Digilent_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="Display_Gen_Digilent_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="Display_Gen_Digilent_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="Display_Gen_Digilent_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="Display_Gen_Digilent_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="Display_Gen_Digilent_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="Display_Gen_Digilent_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="Display_Gen_Digilent.bin"/>
+  <File Type="PLACE-TIMING" Name="Display_Gen_Digilent_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="Display_Gen_Digilent_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="Display_Gen_Digilent.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="Display_Gen_Digilent_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="Display_Gen_Digilent_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="Display_Gen_Digilent_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="Display_Gen_Digilent.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="Display_Gen_Digilent_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="Display_Gen_Digilent_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="Display_Gen_Digilent_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="Display_Gen_Digilent_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="Display_Gen_Digilent_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="Display_Gen_Digilent_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="Display_Gen_Digilent_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="Display_Gen_Digilent_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Display_Gen_Digilent_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Display_Gen_Digilent_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="Display_Gen_Digilent_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="Display_Gen_Digilent_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="Display_Gen_Digilent_route_status.pb"/>
-  <File Type="ROUTE-DCP" Name="Display_Gen_Digilent_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="Display_Gen_Digilent_routed_error.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="Display_Gen_Digilent_routed_bb.dcp"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="Display_Gen_Digilent_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="Display_Gen_Digilent_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="Display_Gen_Digilent_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="Display_Gen_Digilent_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="Display_Gen_Digilent_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="Display_Gen_Digilent_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="Display_Gen_Digilent_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="Display_Gen_Digilent_bus_skew_routed.rpx"/>
-  <File Type="OPT-DCP" Name="Display_Gen_Digilent_opt.dcp"/>
-  <File Type="PLACE-DCP" Name="Display_Gen_Digilent_placed.dcp"/>
-  <File Type="PWROPT-DCP" Name="Display_Gen_Digilent_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="Display_Gen_Digilent_postplace_pwropt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="Display_Gen_Digilent_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="Display_Gen_Digilent_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Display_Gen_Digilent_postroute_physopt_bb.dcp"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Display_Gen_Digilent_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="Display_Gen_Digilent_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Display_Gen_Digilent_methodology_drc_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Display_Gen_Digilent_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Display_Gen_Digilent_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Display_Gen_Digilent_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="Display_Gen_Digilent_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="Display_Gen_Digilent.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="Display_Gen_Digilent_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="Display_Gen_Digilent_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="Display_Gen_Digilent.nky"/>
+  <File Type="BITSTR-BMM" Name="Display_Gen_Digilent_bd.bmm"/>
   <File Type="PDI-FILE" Name="Display_Gen_Digilent.pdi"/>
   <File Type="RCFI_FILE" Name="Display_Gen_Digilent.rcfi"/>
   <File Type="CFI_FILE" Name="Display_Gen_Digilent.cfi"/>
   <File Type="RNPI_FILE" Name="Display_Gen_Digilent.rnpi"/>
   <File Type="NPI_FILE" Name="Display_Gen_Digilent.npi"/>
   <File Type="RBD_FILE" Name="Display_Gen_Digilent.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="Display_Gen_Digilent.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="Display_Gen_Digilent.sysdef"/>
+  <File Type="BG-BGN" Name="Display_Gen_Digilent.bgn"/>
+  <File Type="BG-DRC" Name="Display_Gen_Digilent.drc"/>
+  <File Type="RDI-RDI" Name="Display_Gen_Digilent.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/Display_Gen_Digilent.sv">
@@ -106,7 +124,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
@@ -115,8 +135,9 @@
     <Step Id="phys_opt_design"/>
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
-    <Step Id="write_bitstream"/>
-    <Step Id="write_device_image"/>
+    <Step Id="write_bitstream">
+      <Option Id="BinFile">1</Option>
+    </Step>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="v_tc_0"/>
   <BlockFileSet Type="BlockSrcs" Name="rgb2dvi_0"/>
