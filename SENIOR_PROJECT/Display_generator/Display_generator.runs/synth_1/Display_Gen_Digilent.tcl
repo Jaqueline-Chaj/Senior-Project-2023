@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 5
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-1
 
@@ -90,14 +89,14 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.srcs/sources_1/new/Display_Generator.sv
-read_ip -quiet H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.srcs/sources_1/ip/v_tc_0/v_tc_0.xci
-set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/v_tc_0/v_tc_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/v_tc_0/v_tc_0_ooc.xdc]
-
 read_ip -quiet H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xci
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_board.xdc]
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_ooc.xdc]
+
+read_ip -quiet H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.srcs/sources_1/ip/v_tc_0/v_tc_0.xci
+set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/v_tc_0/v_tc_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/v_tc_0/v_tc_0_ooc.xdc]
 
 read_ip -quiet H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.srcs/sources_1/ip/rgb2dvi_0/rgb2dvi_0.xci
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/rgb2dvi_0/src/rgb2dvi.xdc]
@@ -116,6 +115,8 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc H:/Nexys-Video-Master.xdc
 set_property used_in_implementation false [get_files H:/Nexys-Video-Master.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.srcs/utils_1/imports/synth_1/Display_Gen_Digilent.dcp

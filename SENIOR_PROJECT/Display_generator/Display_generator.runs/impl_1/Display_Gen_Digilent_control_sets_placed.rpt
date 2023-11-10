@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Wed Nov  8 14:33:57 2023
+| Date         : Fri Nov 10 11:23:14 2023
 | Host         : ARM144-10 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Display_Gen_Digilent_control_sets_placed.rpt
 | Design       : Display_Gen_Digilent
@@ -58,9 +58,9 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              95 |           31 |
+| No           | No                    | No                     |              95 |           32 |
 | No           | No                    | Yes                    |               8 |            3 |
-| No           | Yes                   | No                     |             129 |           49 |
+| No           | Yes                   | No                     |             129 |           51 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              23 |            7 |
@@ -82,8 +82,8 @@ Table of Contents
 |  clk_wiz/inst/clk_out1 | vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/v_count | vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/v_count[0]_i_1_n_0                     |                3 |             12 |         4.00 |
 |  clk_wiz/inst/clk_out1 |                                                | vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/p_4_in                                 |                7 |             20 |         2.86 |
 |  clk_wiz/inst/clk_out1 |                                                | rgb2dvi/U0/DataEncoders[0].DataEncoder/SR[0]                                  |               17 |             32 |         1.88 |
-|  clk_wiz/inst/clk_out1 |                                                | vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/htotal[11]_i_1_n_0                     |               18 |             54 |         3.00 |
-|  clk_wiz/inst/clk_out1 |                                                |                                                                               |               31 |             96 |         3.10 |
+|  clk_wiz/inst/clk_out1 |                                                | vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/htotal[11]_i_1_n_0                     |               20 |             54 |         2.70 |
+|  clk_wiz/inst/clk_out1 |                                                |                                                                               |               32 |             96 |         3.00 |
 +------------------------+------------------------------------------------+-------------------------------------------------------------------------------+------------------+----------------+--------------+
 
 

@@ -1,9 +1,5 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-<<<<<<< HEAD:SENIOR_PROJECT/DIGLENT_BLOCK/DIGLENT_BLOCK.runs/impl_1/.vivado.begin.rst
-    <Process Command="vivado.bat" Owner="leopole1" Host="ARM144-10" Pid="10012" HostCore="20" HostMemory="034050908160">
-=======
-    <Process Command="vivado.bat" Owner="leopole1" Host="ARM144-10" Pid="17116" HostCore="20" HostMemory="034050908160">
->>>>>>> b2019a162d79d249857bae538557ec2cf4a18e88:SENIOR_PROJECT/New_Vram/New_Vram.runs/blk_mem_gen_0_synth_1/.vivado.begin.rst
+    <Process Command="vivado.bat" Owner="leopole1" Host="ARM144-12" Pid="11400" HostCore="20" HostMemory="034050908160">
     </Process>
 </ProcessHandle>

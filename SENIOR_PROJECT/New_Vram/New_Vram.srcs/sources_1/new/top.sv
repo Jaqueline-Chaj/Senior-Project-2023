@@ -2,30 +2,37 @@
 
 
 module top(
-input clk, reset,
+input clk, cpu_resetn,
+
 //input wr_en,
 //input logic[19:0] Wr_addr,
 //input logic[7:0] Wr_data,
-output logic[23:0] rbgtodvi
+output hdmi_tx_clk_p,
+
+output hdmi_tx_clk_n,
+
+output [2:0] hdmi_tx_p,
+
+output [2:0] hdmi_tx_n
     );
 logic[7:0] RD_data;
-logic[2:0] red;
-logic[2:0] blue;
-logic[1:0] green;
+logic[7:0] red;
+logic[7:0] blue;
+logic[7:0] green;
+logic[23:0] rgbtodvi;
 
 assign red=RD_data[7:5];
 assign blue=RD_data[4:2];
 assign green=RD_data[1:0];
 
-assign rbgtodvi[23:16]={(red),5'b0};
-assign rbgtodvi[15:8]={(blue),5'b0};
-assign rbgtodvi[7:0]={(green),6'b0};
-
+assign rgbtodvi[23:16]=red;
+assign rgbtodvi[15:8]=blue;
+assign rgbtodvi[7:0]=green;
 logic[19:0] RD_addr;
 
 Disp_Counter Disp(
 .clk(clk),
-.reset(reset),
+.reset(~cpu_resetn),
 .RD_addr(RD_addr)
 );
 
@@ -34,8 +41,15 @@ VRAM VRAM(
 .RD_addr(RD_addr),
 .RD_Data(RD_data));
 
+Display_Gen_Digilent Display_Gen(
+.clk(clk),
+.cpu_resetn(cpu_resetn),
+.rgbtodvi(rgbtodvi),
+.hdmi_tx_clk_n(hdmi_tx_clk_n),
+.hdmi_tx_clk_p(hdmi_tx_clk_p),
+.hdmi_tx_n(hdmi_tx_n),
+.hdmi_tx_p(hdmi_tx_p)
 
-
-
+);
 
 endmodule
