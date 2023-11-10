@@ -6,17 +6,20 @@
 module host_interface(
     input [7:0] psoc_if_d, 
     input psoc_fpga_xfc,
+    input QUEUE_RTR,
     input clk,
     input reset_n,
-    output logic fpga_psoc_xfc
+    output logic fpga_psoc_xfc,
+    output [7:0] psoc_data,
+    output logic IF_RTS
     );
 
 logic psoc_fpga_xfc_prev;
 logic state;
-logic [7:0] psoc_data;
 logic reset1;
 logic reset2;
 logic reset;
+logic QUEUE_XFC = IF_RTS && QUEUE_RTR;
 
 //gets the incoming handshake signal from PSOC
 always_ff @ (posedge clk)
