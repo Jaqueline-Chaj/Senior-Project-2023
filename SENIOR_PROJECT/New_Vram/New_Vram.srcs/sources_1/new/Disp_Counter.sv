@@ -12,7 +12,7 @@ logic[12:0] prod;
 always_ff@(posedge clk) begin
 	if(reset)
 		disp_x<=0;
-	else if(disp_x<1279) 
+	else if(disp_x<1649) 
 			disp_x<=disp_x+1;
 		else
 			disp_x<=0;
@@ -23,8 +23,8 @@ end
 always_ff@(posedge clk) begin
 	if(reset)
 		disp_y<=0;
-	else if(disp_x==1279) begin
-		  if(disp_y<719) 
+	else if(disp_x==1649) begin
+		  if(disp_y<749) 
 			disp_y<=disp_y+1;
 		else
 			disp_y<=0;

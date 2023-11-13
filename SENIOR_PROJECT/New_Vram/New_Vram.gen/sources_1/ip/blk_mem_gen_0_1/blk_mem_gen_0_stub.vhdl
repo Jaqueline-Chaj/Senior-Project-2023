@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
--- Date        : Thu Nov  9 17:12:19 2023
+-- Date        : Thu Nov  9 17:12:12 2023
 -- Host        : ARM144-12 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               h:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.gen/sources_1/ip/blk_mem_gen_0_1/blk_mem_gen_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top blk_mem_gen_0 -prefix
+--               blk_mem_gen_0_ blk_mem_gen_0_stub.vhdl
 -- Design      : blk_mem_gen_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a200tsbg484-1

@@ -3,7 +3,9 @@
 module Display_Gen_Digilent(
 
 input cpu_resetn,
-input clk,
+
+input PixelClk,
+
 input [23:0] rgbtodvi,
 
 output hdmi_tx_clk_p,
@@ -40,7 +42,6 @@ v_blank;
 
 /* input  */ logic aRst;   // --asynchronous reset; must be reset when RefClk is not within spec
 /*        */   // Video in
-/* input  */ logic PixelClk;
 /* input  */ logic [23:0] vid_pData ;
 
 /* input  */ logic vid_pVDE  ;
@@ -90,17 +91,7 @@ end
 
 assign resetn=~reset;
 
-//Clocking wizard
-clk_wiz_0 clk_wiz 
- (
-  // Clock out ports
- .clk_out1(PixelClk),
-  // Status and control signals
- .reset(~cpu_resetn),
- // output   locked,
- // Clock in ports
-  .clk_in1(clk)
- );
+
 
 //Display IP
 rgb2dvi_0 rgb2dvi (
