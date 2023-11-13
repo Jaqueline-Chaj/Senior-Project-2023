@@ -39,7 +39,7 @@ begin
         fpga_psoc_xfc <= ~fpga_psoc_xfc;
 end
 
-//stores incoming byte to psoc_data
+//updates psoc_data with new incoming data byte
 always_ff @ (posedge clk)
 begin
     if (reset)
