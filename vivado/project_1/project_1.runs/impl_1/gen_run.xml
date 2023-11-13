@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1696614105">
-  <File Type="ROUTE-PWR" Name="host_interface_power_routed.rpt"/>
   <File Type="PA-TCL" Name="host_interface.tcl"/>
-  <File Type="ROUTE-PWR-SUM" Name="host_interface_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="host_interface_reports.tcl"/>
   <File Type="BITSTR-MSK" Name="host_interface.msk"/>
-  <File Type="ROUTE-CLK" Name="host_interface_clock_utilization_routed.rpt"/>
   <File Type="RDI-RDI" Name="host_interface.vdi"/>
   <File Type="BG-BIT" Name="host_interface.bit"/>
   <File Type="BG-DRC" Name="host_interface.drc"/>
@@ -15,33 +12,16 @@
   <File Type="BITSTR-NKY" Name="host_interface.nky"/>
   <File Type="BITSTR-BMM" Name="host_interface_bd.bmm"/>
   <File Type="BITSTR-MMI" Name="host_interface.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="host_interface_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-SYSDEF" Name="host_interface.sysdef"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="host_interface_methodology_drc_routed.pb"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="host_interface.ltx"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="OPT-DRC" Name="host_interface_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="host_interface.hwdef"/>
-  <File Type="PLACE-IO" Name="host_interface_io_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="host_interface_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="host_interface_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="host_interface_control_sets_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="host_interface_incremental_reuse_pre_placed.rpt"/>
-  <File Type="ROUTE-DRC" Name="host_interface_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="host_interface_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="host_interface_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="host_interface_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="host_interface_route_status.pb"/>
   <File Type="ROUTE-DCP" Name="host_interface_routed.dcp"/>
   <File Type="ROUTE-ERROR-DCP" Name="host_interface_routed_error.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="host_interface_routed_bb.dcp"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="host_interface_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="host_interface_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="host_interface_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-BUS-SKEW" Name="host_interface_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="host_interface_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="host_interface_bus_skew_routed.rpx"/>
   <File Type="OPT-DCP" Name="host_interface_opt.dcp"/>
   <File Type="PLACE-DCP" Name="host_interface_placed.dcp"/>
   <File Type="PWROPT-DCP" Name="host_interface_pwropt.dcp"/>
@@ -49,8 +29,6 @@
   <File Type="PHYSOPT-DCP" Name="host_interface_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="host_interface_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="host_interface_postroute_physopt_bb.dcp"/>
-  <File Type="ROUTE-DRC-RPX" Name="host_interface_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="host_interface_methodology_drc_routed.rpx"/>
   <File Type="PDI-FILE" Name="host_interface.pdi"/>
   <File Type="RCFI_FILE" Name="host_interface.rcfi"/>
   <File Type="CFI_FILE" Name="host_interface.cfi"/>

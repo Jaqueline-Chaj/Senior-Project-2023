@@ -13,6 +13,7 @@ module tb(
     logic reset_n;
     logic fpga_psoc_xfc;
     logic fpga_psoc_xfc_prev;
+    logic fpga_psoc_xfc_prev;
     logic fpga_psoc_xfc_toggle;
     logic fpga_psoc_xfc_toggle_d1;
     

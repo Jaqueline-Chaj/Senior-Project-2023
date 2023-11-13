@@ -10,7 +10,7 @@ module host_interface(
     input clk,
     input reset_n,
     output logic fpga_psoc_xfc,
-    output [7:0] psoc_data,
+    output logic [7:0] psoc_data,
     output logic IF_RTS
     );
 
@@ -37,6 +37,15 @@ begin
         fpga_psoc_xfc <= 0;
     else if (state == `STATE_S1)
         fpga_psoc_xfc <= ~fpga_psoc_xfc;
+end
+
+//sets IF_RTS high if data is valid
+always_ff @ (posedge clk)
+begin
+    if (reset)
+        IF_RTS <= 0;
+    else if (state == `STATE_S1)
+        IF_RTS <= 1;
 end
 
 //updates psoc_data with new incoming data byte
