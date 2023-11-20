@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1696614105">
+  <File Type="PA-TCL" Name="host_interface.tcl"/>
+  <File Type="REPORTS-TCL" Name="host_interface_reports.tcl"/>
+  <File Type="BITSTR-MSK" Name="host_interface.msk"/>
+  <File Type="RDI-RDI" Name="host_interface.vdi"/>
+  <File Type="BG-BIT" Name="host_interface.bit"/>
+  <File Type="BG-DRC" Name="host_interface.drc"/>
+  <File Type="BG-BGN" Name="host_interface.bgn"/>
+  <File Type="BG-BIN" Name="host_interface.bin"/>
+  <File Type="BITSTR-RBT" Name="host_interface.rbt"/>
+  <File Type="BITSTR-NKY" Name="host_interface.nky"/>
+  <File Type="BITSTR-BMM" Name="host_interface_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="host_interface.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="host_interface.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="host_interface.ltx"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="OPT-HWDEF" Name="host_interface.hwdef"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="host_interface_incremental_reuse_pre_placed.rpt"/>
+  <File Type="ROUTE-DCP" Name="host_interface_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="host_interface_routed_error.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="host_interface_routed_bb.dcp"/>
+  <File Type="ROUTE-TIMING-PB" Name="host_interface_timing_summary_routed.pb"/>
+  <File Type="OPT-DCP" Name="host_interface_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="host_interface_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="host_interface_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="host_interface_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="host_interface_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="host_interface_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="host_interface_postroute_physopt_bb.dcp"/>
+  <File Type="PDI-FILE" Name="host_interface.pdi"/>
+  <File Type="RCFI_FILE" Name="host_interface.rcfi"/>
+  <File Type="CFI_FILE" Name="host_interface.cfi"/>
+  <File Type="RNPI_FILE" Name="host_interface.rnpi"/>
+  <File Type="NPI_FILE" Name="host_interface.npi"/>
+  <File Type="RBD_FILE" Name="host_interface.rbd"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/new/interface.v">
+      <FileInfo SFType="SVerilog">
+        <Attr Name="ImportPath" Val="$PSRCDIR/sim_1/new/interface.v"/>
+        <Attr Name="ImportTime" Val="1696610692"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="host_interface"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../../../Nexys-Video-Master.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PPRDIR/../../../vivado_projects/project_1/project_1.srcs/utils_1/imports/synth_1/host_interface.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
+  </Strategy>
+</GenRun>
