@@ -12,9 +12,8 @@ module topleveltb(
     logic [31:0] REG_WR_DATA;
     logic reset;
     
-    
-    
     assign reset = ~reset_n;
+    
     TopLevelInterface TLIF(
         .clk(clk),
         .reset_n(reset_n),
