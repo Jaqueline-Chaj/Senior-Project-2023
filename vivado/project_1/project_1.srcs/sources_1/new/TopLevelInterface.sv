@@ -17,17 +17,6 @@ module TopLevelInterface(
     logic [7:0] psoc_data;
     logic IF_RTS;
     logic QUEUE_RTR;
-    logic psoc_fpga_xfc_prev;
-    logic psoc_fpga_xfc_toggle;
-    logic reset_d1;
-
-    logic fpga_psoc_xfc_prev;
-    logic fpga_psoc_xfc_toggle;
-    logic fpga_psoc_xfc_toggle_d1;
-    
-   
-    assign psoc_fpga_xfc_toggle = psoc_fpga_xfc != psoc_fpga_xfc_prev;
-    assign fpga_psoc_xfc_toggle = fpga_psoc_xfc != fpga_psoc_xfc_prev;
     
     //connections between CMDQueue and CMDProc
     logic [7:0] CMD_Q_OUT_DATA;
