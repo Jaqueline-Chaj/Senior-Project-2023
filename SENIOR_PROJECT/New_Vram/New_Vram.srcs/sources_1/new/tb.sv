@@ -1,13 +1,23 @@
 `timescale 1ns / 1ps
 
 module tb();
-logic clk, reset;
-logic[23:0] rbgtodvi;
+logic clk, cpu_resetn;
+logic hdmi_tx_clk_p,
+
+hdmi_tx_clk_n;
+
+logic[2:0] hdmi_tx_p;
+
+logic[2:0] hdmi_tx_n;
 
 
 top t0(.clk(clk),
-.reset(reset),
-.rbgtodvi(rbgtodvi));
+.cpu_resetn(cpu_resetn),
+.hdmi_tx_clk_p(hdmi_tx_clk_p),
+.hdmi_tx_clk_n(hdmi_tx_clk_n),
+.hdmi_tx_p(hdmi_tx_p),
+.hdmi_tx_n(hdmi_tx_n)
+);
 
 
 int i=0;
@@ -19,8 +29,8 @@ $finish;
 end
 
 initial begin
-reset=1;
-#57 reset=0;
+cpu_resetn=0;
+#57 cpu_resetn=1;
 end
 endmodule
 

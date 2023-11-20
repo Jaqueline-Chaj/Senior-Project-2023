@@ -3,7 +3,7 @@
 Oct 19 2021
 03:16:22
 H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0.v,1699468110,verilog,,,,clk_wiz_0,,uvm,../../../../Display_generator.gen/sources_1/ip/clk_wiz_0_1,,,,,
-H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_clk_wiz.v,1699468110,verilog,,H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0.v,,clk_wiz_0_clk_wiz,,uvm,../../../../Display_generator.gen/sources_1/ip/clk_wiz_0_1,,,,,
+H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0_clk_wiz.v,1699471912,verilog,,H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/clk_wiz_0_1/clk_wiz_0.v,,clk_wiz_0_clk_wiz,,uvm,../../../../Display_generator.gen/sources_1/ip/clk_wiz_0_1,,,,,
 H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/rgb2dvi_0/sim/rgb2dvi_0.vhd,1699468557,vhdl,,,,rgb2dvi_0,,,,,,,,
 H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.gen/sources_1/ip/v_tc_0/sim/v_tc_0.vhd,1699467881,vhdl,,,,v_tc_0,,,,,,,,
 H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.ip_user_files/ipstatic/src/ClockGen.vhd,1699468560,vhdl,H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.ip_user_files/ipstatic/src/rgb2dvi.vhd,,,clockgen,,,,,,,,
