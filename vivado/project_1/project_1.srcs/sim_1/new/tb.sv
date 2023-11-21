@@ -13,7 +13,6 @@ module tb(
     logic reset_n;
     logic fpga_psoc_xfc;
     logic fpga_psoc_xfc_prev;
-    logic fpga_psoc_xfc_prev;
     logic fpga_psoc_xfc_toggle;
     logic fpga_psoc_xfc_toggle_d1;
     
@@ -79,7 +78,6 @@ end
 
 always_ff @ (posedge clk)
 begin
-    
     reset_d1 <= reset;
     if (reset)
         fpga_psoc_xfc_toggle_d1 <=0;

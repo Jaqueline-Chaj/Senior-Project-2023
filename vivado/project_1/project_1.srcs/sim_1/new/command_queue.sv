@@ -16,8 +16,6 @@ module command_queue #(parameter DEPTH=16, WIDTH=8) (
 logic [WIDTH-1:0] array [DEPTH-1:0];
 logic [$clog2(DEPTH)-1:0] writeptr, next_write_ptr;
 logic [$clog2(DEPTH)-1:0] readptr, next_read_ptr;
-logic IF_FIFO_XFC;
-logic FIFO_PROC_XFC;
 
 assign next_write_ptr = writeptr + 1'b1;
 assign next_read_ptr = readptr + 1'b1;
