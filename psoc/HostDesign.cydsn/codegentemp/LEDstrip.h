@@ -68,7 +68,7 @@ uint8   LEDstrip_ClearInterrupt(void);
 /* Digital Port Constants */
 #define LEDstrip_MASK               LEDstrip__MASK
 #define LEDstrip_SHIFT              LEDstrip__SHIFT
-#define LEDstrip_WIDTH              4u
+#define LEDstrip_WIDTH              8u
 
 /* Interrupt constants */
 #if defined(LEDstrip__INTSTAT)
@@ -158,6 +158,10 @@ uint8   LEDstrip_ClearInterrupt(void);
 	#define LEDstrip_1_INTTYPE_REG 		(* (reg8 *) LEDstrip__1__INTTYPE)
 	#define LEDstrip_2_INTTYPE_REG 		(* (reg8 *) LEDstrip__2__INTTYPE)
 	#define LEDstrip_3_INTTYPE_REG 		(* (reg8 *) LEDstrip__3__INTTYPE)
+	#define LEDstrip_4_INTTYPE_REG 		(* (reg8 *) LEDstrip__4__INTTYPE)
+	#define LEDstrip_5_INTTYPE_REG 		(* (reg8 *) LEDstrip__5__INTTYPE)
+	#define LEDstrip_6_INTTYPE_REG 		(* (reg8 *) LEDstrip__6__INTTYPE)
+	#define LEDstrip_7_INTTYPE_REG 		(* (reg8 *) LEDstrip__7__INTTYPE)
 #endif /* (LEDstrip__INTSTAT) */
 
 #endif /* CY_PSOC5A... */

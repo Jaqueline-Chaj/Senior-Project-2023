@@ -3,57 +3,28 @@
 
 // Test comment to see commit changes 
 
-    void val2leds (int i){
-        switch (i){
-            case 0: {(LEDreg_Write(0x00));
-                break;}
-            
-            case 1: {(LEDreg_Write(0x01));
-                break;}
-            
-            case 2: {(LEDreg_Write(0x02));
-                break;}
-            
-            case 3: {(LEDreg_Write(0x03));
-                break;}
-            
-            case 4: {(LEDreg_Write(0x04));
-                break;}
-            
-            case 5: {(LEDreg_Write(0x05));
-                break;}
-            
-            case 6: {(LEDreg_Write(0x06));
-                break;}
-            
-            case 7: {(LEDreg_Write(0x07));
-                break;}
-            
-            case 8: {(LEDreg_Write(0x08));
-                break;}
-            
-            case 9: {(LEDreg_Write(0x09));
-                break;}
-            
-            case 10:{(LEDreg_Write(0x0A));
-                break;}
-            
-            case 11:{(LEDreg_Write(0x0B));
-                break;}
-            
-            case 12:{(LEDreg_Write(0x0C));
-                break;}
-            
-            case 13:{(LEDreg_Write(0x0D));
-                break;}
-            
-            case 14:{(LEDreg_Write(0x0E));
-                break;}
-            
-            case 15:{(LEDreg_Write(0x0F));
-                break;}           
+void sendByte (int byte){
+
+    OUT_BYTE_Write(byte);
+    // switch (i){
+    //     case 0: {(LEDreg_Write(0x00));
+    //         break;}
+
+}
+
+void selectPayloadValue(stage){
+    switch (stage){
+        case 0: {
+            //byte value selection and shift based on stage
+            //
+            break;
         }
+
     }
+
+}
+
+//function to map ADC (potentiometer) from 0 to 255 (11111111) 
 
 
 int main(void)
@@ -66,54 +37,64 @@ int main(void)
     char dispVal[1];
     char rcvdStatus[1];
     int breakflag = 0;
+    int addr_flag = 0;
+    int payload_flag = 0;
+    int payload_bytes[4];
     int psoc_fpga_xfc = 0;  // state of output strobe
     int fpga_psoc_xfc = 0;  // state of input strobe
     H2G_STRB_OUT_Write(psoc_fpga_xfc);
 
-    LCD_Position(0,0);
-    LCD_PrintString("Hex value:");
-    LCD_Position(1,0);
-    LCD_PrintString("Received?:");
+
     
     for(;;)
     {   
+        addr_flag = 0;
         //conditions to break out of infinite for loop, to end program
         if (breakflag){
             break;
         }
-        for (int i = 0; i<16; i++){
-            if(!SW2_Read()){
-                breakflag = 1;
-                break;
-            }
-            //First, write data
-            val2leds(i);
-
-            sprintf( dispVal, "%x", i);
-            LCD_Position(0, 11);
-            LCD_PrintString(dispVal);
-            //Delay of 1 clock cycle before toggling H2G_STRB_OUT on
-            CyDelayCycles(1);          
-
-            // Second, toggle strobe
-            psoc_fpga_xfc = 1-psoc_fpga_xfc;
-            H2G_STRB_OUT_Write(psoc_fpga_xfc);
-
-            // Idle, until strobe toggles
-            while(H2G_STRB_IN_Read() == fpga_psoc_xfc){
-                sprintf( rcvdStatus, "%d", H2G_STRB_IN_Read());
-                LCD_Position(1, 11);
-                LCD_PrintString(rcvdStatus);
-            }
-
-            fpga_psoc_xfc = 1-fpga_psoc_xfc;
-            LCD_Position(1, 11);
-            sprintf( rcvdStatus, "%d", H2G_STRB_IN_Read());
-            LCD_PrintString(rcvdStatus);
-
-            // 1 second delay until sending next number (byte in general)
-            CyDelay(1000);
+        //button sets breakflag to 1 (true)
+        if(!SW2_Read()){
+            breakflag = 1;
+            break;
         }
+
+        LCD_Position(0,0);
+        LCD_PrintString("RegWrite CMD");
+        LCD_Position(1,0);
+        LCD_PrintString("5 bytes total");
+
+        CyDelay(750);
+        
+        LCD_ClearDisplay();
+        
+        int addrVal = 0;
+        char dispString[2];
+        
+        LCD_Position(0,0);
+        LCD_PrintString("Select an addr:");
+        LCD_Position(1,0);
+        LCD_PrintString("Addr:");
+        //loop for user to select one of 8 registers to write to
+        while(addr_flag != 1){
+            if(!SW3_Read()){
+                addr_flag = 1;
+            }
+            
+            LCD_Position(1,5);
+            sprintf(dispString, "%d", addrVal);
+            LCD_PrintString(dispString);
+
+            CyDelay(100);
+            addrVal = addrVal + 1;
+        }
+
+        //small loop for user to select values for each payload byte, stored to be sent after all have been selected.
+        for(int stage = 0; stage < 4; stage++){
+            //selectPayloadValue function, taking stage as argument
+        }    
+        
+        LCD_ClearDisplay();
     }
     
     LCD_Position(0,0);

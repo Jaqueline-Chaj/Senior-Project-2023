@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="749.396 ns"></ZoomEndTime>
-      <Cursor1Time time="148.268 ns"></Cursor1Time>
+      <ZoomEndTime time="718.877 ns"></ZoomEndTime>
+      <Cursor1Time time="341.827 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="213"></NameColumnWidth>
-      <ValueColumnWidth column_width="147"></ValueColumnWidth>
+      <ValueColumnWidth column_width="143"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="57" />
+   <WVObjectSize size="36" />
    <wvobject fp_name="/topleveltb/TLIF/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -123,90 +123,6 @@
    <wvobject fp_name="/topleveltb/TLIF/CMDQ/OUT_XFC" type="logic">
       <obj_property name="ElementShortName">OUT_XFC</obj_property>
       <obj_property name="ObjectShortName">OUT_XFC</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/DEPTH" type="array">
-      <obj_property name="ElementShortName">DEPTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">DEPTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/WIDTH" type="array">
-      <obj_property name="ElementShortName">WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/IN_RTS" type="logic">
-      <obj_property name="ElementShortName">IN_RTS</obj_property>
-      <obj_property name="ObjectShortName">IN_RTS</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/IN_DATA" type="array">
-      <obj_property name="ElementShortName">IN_DATA[7:0]</obj_property>
-      <obj_property name="ObjectShortName">IN_DATA[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/IN_RTR" type="logic">
-      <obj_property name="ElementShortName">IN_RTR</obj_property>
-      <obj_property name="ObjectShortName">IN_RTR</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/OUT_RTS" type="logic">
-      <obj_property name="ElementShortName">OUT_RTS</obj_property>
-      <obj_property name="ObjectShortName">OUT_RTS</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/OUT_DATA" type="array">
-      <obj_property name="ElementShortName">OUT_DATA[7:0]</obj_property>
-      <obj_property name="ObjectShortName">OUT_DATA[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/OUT_RTR" type="logic">
-      <obj_property name="ElementShortName">OUT_RTR</obj_property>
-      <obj_property name="ObjectShortName">OUT_RTR</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/array" type="array">
-      <obj_property name="ElementShortName">array[15:0][7:0]</obj_property>
-      <obj_property name="ObjectShortName">array[15:0][7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/writeptr" type="array">
-      <obj_property name="ElementShortName">writeptr[3:0]</obj_property>
-      <obj_property name="ObjectShortName">writeptr[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/next_write_ptr" type="array">
-      <obj_property name="ElementShortName">next_write_ptr[3:0]</obj_property>
-      <obj_property name="ObjectShortName">next_write_ptr[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/readptr" type="array">
-      <obj_property name="ElementShortName">readptr[3:0]</obj_property>
-      <obj_property name="ObjectShortName">readptr[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/next_read_ptr" type="array">
-      <obj_property name="ElementShortName">next_read_ptr[3:0]</obj_property>
-      <obj_property name="ObjectShortName">next_read_ptr[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/IN_XFC" type="logic">
-      <obj_property name="ElementShortName">IN_XFC</obj_property>
-      <obj_property name="ObjectShortName">IN_XFC</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/OUT_XFC" type="logic">
-      <obj_property name="ElementShortName">OUT_XFC</obj_property>
-      <obj_property name="ObjectShortName">OUT_XFC</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/DEPTH" type="array">
-      <obj_property name="ElementShortName">DEPTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">DEPTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDQ/WIDTH" type="array">
-      <obj_property name="ElementShortName">WIDTH[31:0]</obj_property>
-      <obj_property name="ObjectShortName">WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDP/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDP/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
    <wvobject fp_name="/topleveltb/TLIF/CMDP/HOST_RTS" type="logic">
       <obj_property name="ElementShortName">HOST_RTS</obj_property>

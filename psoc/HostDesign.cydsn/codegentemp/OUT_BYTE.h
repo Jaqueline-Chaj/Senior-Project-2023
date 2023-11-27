@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: LEDreg.h  
+* File Name: OUT_BYTE.h  
 * Version 1.80
 *
 * Description:
@@ -14,8 +14,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_CONTROL_REG_LEDreg_H) /* CY_CONTROL_REG_LEDreg_H */
-#define CY_CONTROL_REG_LEDreg_H
+#if !defined(CY_CONTROL_REG_OUT_BYTE_H) /* CY_CONTROL_REG_OUT_BYTE_H */
+#define CY_CONTROL_REG_OUT_BYTE_H
 
 #include "cyfitter.h"
 
@@ -37,20 +37,20 @@ typedef struct
 {
     uint8 controlState;
 
-} LEDreg_BACKUP_STRUCT;
+} OUT_BYTE_BACKUP_STRUCT;
 
 
 /***************************************
 *         Function Prototypes 
 ***************************************/
 
-void    LEDreg_Write(uint8 control) ;
-uint8   LEDreg_Read(void) ;
+void    OUT_BYTE_Write(uint8 control) ;
+uint8   OUT_BYTE_Read(void) ;
 
-void LEDreg_SaveConfig(void) ;
-void LEDreg_RestoreConfig(void) ;
-void LEDreg_Sleep(void) ; 
-void LEDreg_Wakeup(void) ;
+void OUT_BYTE_SaveConfig(void) ;
+void OUT_BYTE_RestoreConfig(void) ;
+void OUT_BYTE_Sleep(void) ; 
+void OUT_BYTE_Wakeup(void) ;
 
 
 /***************************************
@@ -58,10 +58,10 @@ void LEDreg_Wakeup(void) ;
 ***************************************/
 
 /* Control Register */
-#define LEDreg_Control        (* (reg8 *) LEDreg_Sync_ctrl_reg__CONTROL_REG )
-#define LEDreg_Control_PTR    (  (reg8 *) LEDreg_Sync_ctrl_reg__CONTROL_REG )
+#define OUT_BYTE_Control        (* (reg8 *) OUT_BYTE_Sync_ctrl_reg__CONTROL_REG )
+#define OUT_BYTE_Control_PTR    (  (reg8 *) OUT_BYTE_Sync_ctrl_reg__CONTROL_REG )
 
-#endif /* End CY_CONTROL_REG_LEDreg_H */
+#endif /* End CY_CONTROL_REG_OUT_BYTE_H */
 
 
 /* [] END OF FILE */

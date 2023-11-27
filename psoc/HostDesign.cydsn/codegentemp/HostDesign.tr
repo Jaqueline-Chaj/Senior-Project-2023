@@ -58,9 +58,13 @@ Port Name  Setup to Clk  Clock Name:Phase
 Port Name        Clock to Out  Clock Name:Phase  
 ---------------  ------------  ----------------  
 LEDstrip(0)_PAD  24434         CyBUS_CLK:R       
-LEDstrip(1)_PAD  24858         CyBUS_CLK:R       
-LEDstrip(2)_PAD  23745         CyBUS_CLK:R       
+LEDstrip(1)_PAD  24844         CyBUS_CLK:R       
+LEDstrip(2)_PAD  23788         CyBUS_CLK:R       
 LEDstrip(3)_PAD  23893         CyBUS_CLK:R       
+LEDstrip(4)_PAD  24007         CyBUS_CLK:R       
+LEDstrip(5)_PAD  23162         CyBUS_CLK:R       
+LEDstrip(6)_PAD  24765         CyBUS_CLK:R       
+LEDstrip(7)_PAD  24505         CyBUS_CLK:R       
 
 
                          3.3::Pad to Pad

@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: LEDreg_PM.c
+* File Name: OUT_BYTE_PM.c
 * Version 1.80
 *
 * Description:
@@ -15,16 +15,16 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#include "LEDreg.h"
+#include "OUT_BYTE.h"
 
 /* Check for removal by optimization */
-#if !defined(LEDreg_Sync_ctrl_reg__REMOVED)
+#if !defined(OUT_BYTE_Sync_ctrl_reg__REMOVED)
 
-static LEDreg_BACKUP_STRUCT  LEDreg_backup = {0u};
+static OUT_BYTE_BACKUP_STRUCT  OUT_BYTE_backup = {0u};
 
     
 /*******************************************************************************
-* Function Name: LEDreg_SaveConfig
+* Function Name: OUT_BYTE_SaveConfig
 ********************************************************************************
 *
 * Summary:
@@ -37,14 +37,14 @@ static LEDreg_BACKUP_STRUCT  LEDreg_backup = {0u};
 *  None
 *
 *******************************************************************************/
-void LEDreg_SaveConfig(void) 
+void OUT_BYTE_SaveConfig(void) 
 {
-    LEDreg_backup.controlState = LEDreg_Control;
+    OUT_BYTE_backup.controlState = OUT_BYTE_Control;
 }
 
 
 /*******************************************************************************
-* Function Name: LEDreg_RestoreConfig
+* Function Name: OUT_BYTE_RestoreConfig
 ********************************************************************************
 *
 * Summary:
@@ -58,14 +58,14 @@ void LEDreg_SaveConfig(void)
 *
 *
 *******************************************************************************/
-void LEDreg_RestoreConfig(void) 
+void OUT_BYTE_RestoreConfig(void) 
 {
-     LEDreg_Control = LEDreg_backup.controlState;
+     OUT_BYTE_Control = OUT_BYTE_backup.controlState;
 }
 
 
 /*******************************************************************************
-* Function Name: LEDreg_Sleep
+* Function Name: OUT_BYTE_Sleep
 ********************************************************************************
 *
 * Summary:
@@ -78,14 +78,14 @@ void LEDreg_RestoreConfig(void)
 *  None
 *
 *******************************************************************************/
-void LEDreg_Sleep(void) 
+void OUT_BYTE_Sleep(void) 
 {
-    LEDreg_SaveConfig();
+    OUT_BYTE_SaveConfig();
 }
 
 
 /*******************************************************************************
-* Function Name: LEDreg_Wakeup
+* Function Name: OUT_BYTE_Wakeup
 ********************************************************************************
 *
 * Summary:
@@ -98,9 +98,9 @@ void LEDreg_Sleep(void)
 *  None
 *
 *******************************************************************************/
-void LEDreg_Wakeup(void)  
+void OUT_BYTE_Wakeup(void)  
 {
-    LEDreg_RestoreConfig();
+    OUT_BYTE_RestoreConfig();
 }
 
 #endif /* End check for removal by optimization */

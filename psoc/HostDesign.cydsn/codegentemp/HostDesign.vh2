@@ -2,7 +2,7 @@
 --	Conversion of HostDesign.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Fri Oct 13 11:47:11 2023
+--	Mon Nov 27 14:55:58 2023
 --
 
 USE cypress.cypress.all;
@@ -42,48 +42,56 @@ SIGNAL Net_2 : bit;
 SIGNAL tmpIO_0__SW2_net_0 : bit;
 TERMINAL tmpSIOVREF__SW2_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__SW2_net_0 : bit;
-SIGNAL \LEDreg:clk\ : bit;
-SIGNAL \LEDreg:rst\ : bit;
-SIGNAL \LEDreg:control_bus_7\ : bit;
-ATTRIBUTE port_state_att of \LEDreg:control_bus_7\:SIGNAL IS 2;
-SIGNAL \LEDreg:control_out_7\ : bit;
-SIGNAL \LEDreg:control_bus_6\ : bit;
-ATTRIBUTE port_state_att of \LEDreg:control_bus_6\:SIGNAL IS 2;
-SIGNAL \LEDreg:control_out_6\ : bit;
-SIGNAL \LEDreg:control_bus_5\ : bit;
-ATTRIBUTE port_state_att of \LEDreg:control_bus_5\:SIGNAL IS 2;
-SIGNAL \LEDreg:control_out_5\ : bit;
-SIGNAL \LEDreg:control_bus_4\ : bit;
-ATTRIBUTE port_state_att of \LEDreg:control_bus_4\:SIGNAL IS 2;
-SIGNAL \LEDreg:control_out_4\ : bit;
+SIGNAL \OUT_BYTE:clk\ : bit;
+SIGNAL \OUT_BYTE:rst\ : bit;
+SIGNAL Net_13_7 : bit;
+SIGNAL \OUT_BYTE:control_out_7\ : bit;
+SIGNAL Net_13_6 : bit;
+SIGNAL \OUT_BYTE:control_out_6\ : bit;
+SIGNAL Net_13_5 : bit;
+SIGNAL \OUT_BYTE:control_out_5\ : bit;
+SIGNAL Net_13_4 : bit;
+SIGNAL \OUT_BYTE:control_out_4\ : bit;
 SIGNAL Net_13_3 : bit;
-SIGNAL \LEDreg:control_out_3\ : bit;
+SIGNAL \OUT_BYTE:control_out_3\ : bit;
 SIGNAL Net_13_2 : bit;
-SIGNAL \LEDreg:control_out_2\ : bit;
+SIGNAL \OUT_BYTE:control_out_2\ : bit;
 SIGNAL Net_13_1 : bit;
-SIGNAL \LEDreg:control_out_1\ : bit;
+SIGNAL \OUT_BYTE:control_out_1\ : bit;
 SIGNAL Net_13_0 : bit;
-SIGNAL \LEDreg:control_out_0\ : bit;
-SIGNAL \LEDreg:control_7\ : bit;
-SIGNAL \LEDreg:control_6\ : bit;
-SIGNAL \LEDreg:control_5\ : bit;
-SIGNAL \LEDreg:control_4\ : bit;
-SIGNAL \LEDreg:control_3\ : bit;
-SIGNAL \LEDreg:control_2\ : bit;
-SIGNAL \LEDreg:control_1\ : bit;
-SIGNAL \LEDreg:control_0\ : bit;
+SIGNAL \OUT_BYTE:control_out_0\ : bit;
+SIGNAL \OUT_BYTE:control_7\ : bit;
+SIGNAL \OUT_BYTE:control_6\ : bit;
+SIGNAL \OUT_BYTE:control_5\ : bit;
+SIGNAL \OUT_BYTE:control_4\ : bit;
+SIGNAL \OUT_BYTE:control_3\ : bit;
+SIGNAL \OUT_BYTE:control_2\ : bit;
+SIGNAL \OUT_BYTE:control_1\ : bit;
+SIGNAL \OUT_BYTE:control_0\ : bit;
+SIGNAL tmpOE__LEDstrip_net_7 : bit;
+SIGNAL tmpOE__LEDstrip_net_6 : bit;
+SIGNAL tmpOE__LEDstrip_net_5 : bit;
+SIGNAL tmpOE__LEDstrip_net_4 : bit;
 SIGNAL tmpOE__LEDstrip_net_3 : bit;
 SIGNAL tmpOE__LEDstrip_net_2 : bit;
 SIGNAL tmpOE__LEDstrip_net_1 : bit;
 SIGNAL tmpOE__LEDstrip_net_0 : bit;
-SIGNAL tmpFB_3__LEDstrip_net_3 : bit;
-SIGNAL tmpFB_3__LEDstrip_net_2 : bit;
-SIGNAL tmpFB_3__LEDstrip_net_1 : bit;
-SIGNAL tmpFB_3__LEDstrip_net_0 : bit;
-SIGNAL tmpIO_3__LEDstrip_net_3 : bit;
-SIGNAL tmpIO_3__LEDstrip_net_2 : bit;
-SIGNAL tmpIO_3__LEDstrip_net_1 : bit;
-SIGNAL tmpIO_3__LEDstrip_net_0 : bit;
+SIGNAL tmpFB_7__LEDstrip_net_7 : bit;
+SIGNAL tmpFB_7__LEDstrip_net_6 : bit;
+SIGNAL tmpFB_7__LEDstrip_net_5 : bit;
+SIGNAL tmpFB_7__LEDstrip_net_4 : bit;
+SIGNAL tmpFB_7__LEDstrip_net_3 : bit;
+SIGNAL tmpFB_7__LEDstrip_net_2 : bit;
+SIGNAL tmpFB_7__LEDstrip_net_1 : bit;
+SIGNAL tmpFB_7__LEDstrip_net_0 : bit;
+SIGNAL tmpIO_7__LEDstrip_net_7 : bit;
+SIGNAL tmpIO_7__LEDstrip_net_6 : bit;
+SIGNAL tmpIO_7__LEDstrip_net_5 : bit;
+SIGNAL tmpIO_7__LEDstrip_net_4 : bit;
+SIGNAL tmpIO_7__LEDstrip_net_3 : bit;
+SIGNAL tmpIO_7__LEDstrip_net_2 : bit;
+SIGNAL tmpIO_7__LEDstrip_net_1 : bit;
+SIGNAL tmpIO_7__LEDstrip_net_0 : bit;
 TERMINAL tmpSIOVREF__LEDstrip_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__LEDstrip_net_0 : bit;
 SIGNAL tmpOE__H2G_STRB_IN_net_0 : bit;
@@ -253,7 +261,7 @@ SW2:cy_psoc3_pins_v1_10
 		out_clock_en=>one,
 		out_reset=>zero,
 		interrupt=>tmpINTERRUPT_0__SW2_net_0);
-\LEDreg:Sync:ctrl_reg\:cy_psoc3_control
+\OUT_BYTE:Sync:ctrl_reg\:cy_psoc3_control
 	GENERIC MAP(cy_init_value=>"00000000",
 		cy_force_order=>'1',
 		cy_ctrl_mode_1=>"00000000",
@@ -261,71 +269,77 @@ SW2:cy_psoc3_pins_v1_10
 		cy_ext_reset=>'0')
 	PORT MAP(reset=>zero,
 		clock=>zero,
-		control=>(\LEDreg:control_7\, \LEDreg:control_6\, \LEDreg:control_5\, \LEDreg:control_4\,
+		control=>(Net_13_7, Net_13_6, Net_13_5, Net_13_4,
 			Net_13_3, Net_13_2, Net_13_1, Net_13_0));
 LEDstrip:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"e851a3b9-efb8-48be-bbb8-b303b216c393",
-		drive_mode=>"110110110110",
-		ibuf_enabled=>"1111",
-		init_dr_st=>"0000",
-		input_sync=>"1111",
+		drive_mode=>"110110110110110110110110",
+		ibuf_enabled=>"11111111",
+		init_dr_st=>"00000000",
+		input_sync=>"11111111",
 		input_clk_en=>'0',
-		input_sync_mode=>"0000",
-		intr_mode=>"00000000",
+		input_sync_mode=>"00000000",
+		intr_mode=>"0000000000000000",
 		invert_in_clock=>'0',
 		invert_in_clock_en=>'0',
 		invert_in_reset=>'0',
 		invert_out_clock=>'0',
 		invert_out_clock_en=>'0',
 		invert_out_reset=>'0',
-		io_voltage=>",,,",
+		io_voltage=>",,,,,,,",
 		layout_mode=>"CONTIGUOUS",
-		output_conn=>"1111",
-		output_sync=>"0000",
+		output_conn=>"11111111",
+		output_sync=>"00000000",
 		output_clk_en=>'0',
-		output_mode=>"0000",
+		output_mode=>"00000000",
 		output_reset=>'0',
-		output_clock_mode=>"0000",
-		oe_sync=>"0000",
-		oe_conn=>"0000",
+		output_clock_mode=>"00000000",
+		oe_sync=>"00000000",
+		oe_conn=>"00000000",
 		oe_reset=>'0',
-		pin_aliases=>",,,",
-		pin_mode=>"OOOO",
+		pin_aliases=>",,,,,,,",
+		pin_mode=>"OOOOOOOO",
 		por_state=>4,
 		sio_group_cnt=>0,
 		sio_hifreq=>"00000000",
-		sio_hyst=>"1111",
+		sio_hyst=>"11111111",
 		sio_ibuf=>"00000000",
-		sio_info=>"00000000",
+		sio_info=>"0000000000000000",
 		sio_obuf=>"00000000",
 		sio_refsel=>"00000000",
 		sio_vtrip=>"00000000",
 		sio_vohsel=>"00000000",
-		slew_rate=>"0000",
+		slew_rate=>"00000000",
 		spanning=>'0',
 		sw_only=>'0',
-		vtrip=>"10101010",
-		width=>4,
+		vtrip=>"1010101010101010",
+		width=>8,
 		port_alias_required=>'0',
 		port_alias_group=>"",
-		use_annotation=>"0000",
+		use_annotation=>"00000000",
 		pa_in_clock=>-1,
 		pa_in_clock_en=>-1,
 		pa_in_reset=>-1,
 		pa_out_clock=>-1,
 		pa_out_clock_en=>-1,
 		pa_out_reset=>-1,
-		ovt_needed=>"0000",
-		ovt_slew_control=>"00000000",
-		ovt_hyst_trim=>"0000",
-		input_buffer_sel=>"00000000")
-	PORT MAP(oe=>(one, one, one, one),
-		y=>(Net_13_3, Net_13_2, Net_13_1, Net_13_0),
-		fb=>(tmpFB_3__LEDstrip_net_3, tmpFB_3__LEDstrip_net_2, tmpFB_3__LEDstrip_net_1, tmpFB_3__LEDstrip_net_0),
-		analog=>(open, open, open, open),
-		io=>(tmpIO_3__LEDstrip_net_3, tmpIO_3__LEDstrip_net_2, tmpIO_3__LEDstrip_net_1, tmpIO_3__LEDstrip_net_0),
+		ovt_needed=>"00000000",
+		ovt_slew_control=>"0000000000000000",
+		ovt_hyst_trim=>"00000000",
+		input_buffer_sel=>"0000000000000000")
+	PORT MAP(oe=>(one, one, one, one,
+			one, one, one, one),
+		y=>(Net_13_7, Net_13_6, Net_13_5, Net_13_4,
+			Net_13_3, Net_13_2, Net_13_1, Net_13_0),
+		fb=>(tmpFB_7__LEDstrip_net_7, tmpFB_7__LEDstrip_net_6, tmpFB_7__LEDstrip_net_5, tmpFB_7__LEDstrip_net_4,
+			tmpFB_7__LEDstrip_net_3, tmpFB_7__LEDstrip_net_2, tmpFB_7__LEDstrip_net_1, tmpFB_7__LEDstrip_net_0),
+		analog=>(open, open, open, open,
+			open, open, open, open),
+		io=>(tmpIO_7__LEDstrip_net_7, tmpIO_7__LEDstrip_net_6, tmpIO_7__LEDstrip_net_5, tmpIO_7__LEDstrip_net_4,
+			tmpIO_7__LEDstrip_net_3, tmpIO_7__LEDstrip_net_2, tmpIO_7__LEDstrip_net_1, tmpIO_7__LEDstrip_net_0),
 		siovref=>(tmpSIOVREF__LEDstrip_net_0),
-		annotation=>(open, open, open, open),
+		annotation=>(open, open, open, open,
+			open, open, open, open),
 		in_clock=>zero,
 		in_clock_en=>one,
 		in_reset=>zero,

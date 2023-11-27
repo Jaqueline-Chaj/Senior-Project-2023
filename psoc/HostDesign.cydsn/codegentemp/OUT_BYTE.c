@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: LEDreg.c  
+* File Name: OUT_BYTE.c  
 * Version 1.80
 *
 * Description:
@@ -14,14 +14,14 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#include "LEDreg.h"
+#include "OUT_BYTE.h"
 
 /* Check for removal by optimization */
-#if !defined(LEDreg_Sync_ctrl_reg__REMOVED)
+#if !defined(OUT_BYTE_Sync_ctrl_reg__REMOVED)
 
     
 /*******************************************************************************
-* Function Name: LEDreg_Write
+* Function Name: OUT_BYTE_Write
 ********************************************************************************
 *
 * Summary:
@@ -34,14 +34,14 @@
 *  None.
 *
 *******************************************************************************/
-void LEDreg_Write(uint8 control) 
+void OUT_BYTE_Write(uint8 control) 
 {
-    LEDreg_Control = control;
+    OUT_BYTE_Control = control;
 }
 
 
 /*******************************************************************************
-* Function Name: LEDreg_Read
+* Function Name: OUT_BYTE_Read
 ********************************************************************************
 *
 * Summary:
@@ -54,9 +54,9 @@ void LEDreg_Write(uint8 control)
 *  Returns the current value in the Control Register.
 *
 *******************************************************************************/
-uint8 LEDreg_Read(void) 
+uint8 OUT_BYTE_Read(void) 
 {
-    return LEDreg_Control;
+    return OUT_BYTE_Control;
 }
 
 #endif /* End check for removal by optimization */

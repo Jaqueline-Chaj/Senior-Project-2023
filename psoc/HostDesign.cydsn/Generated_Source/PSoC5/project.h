@@ -22,7 +22,7 @@
 #include "LCD.h"
 #include "SW2_aliases.h"
 #include "SW2.h"
-#include "LEDreg.h"
+#include "OUT_BYTE.h"
 #include "LEDstrip_aliases.h"
 #include "LEDstrip.h"
 #include "H2G_STRB_IN_aliases.h"

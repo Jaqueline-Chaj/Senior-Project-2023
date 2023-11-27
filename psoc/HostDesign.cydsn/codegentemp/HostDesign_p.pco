@@ -9,13 +9,17 @@ set_io "\LCD:LCDPort(3)\" iocell 2 3
 set_io "\LCD:LCDPort(4)\" iocell 2 4
 set_location "ClockBlock" clockblockcell -1 -1 0
 set_io "LEDstrip(2)" iocell 0 2
+set_io "LEDstrip(4)" iocell 0 4
+set_io "LEDstrip(7)" iocell 0 7
 set_io "LEDstrip(1)" iocell 0 1
 set_io "LEDstrip(3)" iocell 0 3
 set_io "SW2(0)" iocell 6 1
+set_location "\OUT_BYTE:Sync:ctrl_reg\" controlcell 3 4 6 
+set_io "LEDstrip(5)" iocell 0 5
 set_io "\LCD:LCDPort(0)\" iocell 2 0
 set_io "H2G_STRB_OUT(0)" iocell 3 5
 set_io "H2G_STRB_IN(0)" iocell 3 0
 set_io "LEDstrip(0)" iocell 0 0
-set_location "\LEDreg:Sync:ctrl_reg\" controlcell 3 4 6 
+set_io "LEDstrip(6)" iocell 0 6
 set_io "\LCD:LCDPort(2)\" iocell 2 2
 set_io "\LCD:LCDPort(1)\" iocell 2 1

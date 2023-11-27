@@ -24,9 +24,9 @@
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\SW2_aliases.h" value="HEADER;;;;;SW2" />
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\SW2.c" value="SOURCE_C;CortexM3;;;;SW2" />
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\SW2.h" value="HEADER;;;;;SW2" />
-  <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\LEDreg.h" value="HEADER;;;;;LEDreg" />
-  <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\LEDreg.c" value="SOURCE_C;CortexM3;;;;LEDreg" />
-  <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\LEDreg_PM.c" value="SOURCE_C;CortexM3;;;;LEDreg" />
+  <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\OUT_BYTE.h" value="HEADER;;;;;OUT_BYTE" />
+  <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\OUT_BYTE.c" value="SOURCE_C;CortexM3;;;;OUT_BYTE" />
+  <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\OUT_BYTE_PM.c" value="SOURCE_C;CortexM3;;;;OUT_BYTE" />
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\LEDstrip_aliases.h" value="HEADER;;;;;LEDstrip" />
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\LEDstrip.c" value="SOURCE_C;CortexM3;;;;LEDstrip" />
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\LEDstrip.h" value="HEADER;;;;;LEDstrip" />
