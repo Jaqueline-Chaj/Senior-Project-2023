@@ -2,8 +2,8 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Mon Nov 13 16:49:30 2023
-# Process ID: 2096
+# Start of session at: Mon Nov 20 16:33:08 2023
+# Process ID: 4324
 # Current directory: H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/top.vds
@@ -14,7 +14,7 @@ source top.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'h:/Senior-Project-2023/vivado-library'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.2/data/ip'.
-update_ip_catalog: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1255.008 ; gain = 0.000
+update_ip_catalog: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1254.215 ; gain = 0.000
 Command: read_checkpoint -auto_incremental -incremental H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/utils_1/imports/synth_1/top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -27,47 +27,47 @@ WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis b
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 10504
-WARNING: [Synth 8-992] PixelClk is already implicitly declared earlier [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/top.sv:57]
+INFO: [Synth 8-7075] Helper process launched with PID 13368
+WARNING: [Synth 8-992] PixelClk is already implicitly declared earlier [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/top.sv:60]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1255.008 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1254.215 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/top.sv:4]
 INFO: [Synth 8-6157] synthesizing module 'Disp_Counter' [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/Disp_Counter.sv:4]
 INFO: [Synth 8-6155] done synthesizing module 'Disp_Counter' (1#1) [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/Disp_Counter.sv:4]
 INFO: [Synth 8-6157] synthesizing module 'VRAM' [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/VRAM.sv:1]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/.Xil/Vivado-2096-ARM144-12/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (2#1) [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/.Xil/Vivado-2096-ARM144-12/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/.Xil/Vivado-4324-ARM144-12/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (2#1) [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/.Xil/Vivado-4324-ARM144-12/realtime/blk_mem_gen_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'VRAM' (3#1) [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/VRAM.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'Display_Gen_Digilent' [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/imports/new/Display_Generator.sv:3]
-INFO: [Synth 8-6157] synthesizing module 'rgb2dvi_0' [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/.Xil/Vivado-2096-ARM144-12/realtime/rgb2dvi_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'rgb2dvi_0' (4#1) [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/.Xil/Vivado-2096-ARM144-12/realtime/rgb2dvi_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'v_tc_0' [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/.Xil/Vivado-2096-ARM144-12/realtime/v_tc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'v_tc_0' (5#1) [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/.Xil/Vivado-2096-ARM144-12/realtime/v_tc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'rgb2dvi_0' [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/.Xil/Vivado-4324-ARM144-12/realtime/rgb2dvi_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'rgb2dvi_0' (4#1) [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/.Xil/Vivado-4324-ARM144-12/realtime/rgb2dvi_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'v_tc_0' [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/.Xil/Vivado-4324-ARM144-12/realtime/v_tc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'v_tc_0' (5#1) [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/.Xil/Vivado-4324-ARM144-12/realtime/v_tc_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'fsync_out' of module 'v_tc_0' is unconnected for instance 'vtc' [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/imports/new/Display_Generator.sv:127]
 WARNING: [Synth 8-7023] instance 'vtc' of module 'v_tc_0' has 11 connections declared, but only 10 given [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/imports/new/Display_Generator.sv:127]
 WARNING: [Synth 8-6014] Unused sequential element disp_x_reg was removed.  [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/imports/new/Display_Generator.sv:154]
 WARNING: [Synth 8-6014] Unused sequential element disp_y_reg was removed.  [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/imports/new/Display_Generator.sv:166]
 WARNING: [Synth 8-3848] Net sof_state in module/entity Display_Gen_Digilent does not have driver. [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/imports/new/Display_Generator.sv:23]
 INFO: [Synth 8-6155] done synthesizing module 'Display_Gen_Digilent' (6#1) [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/imports/new/Display_Generator.sv:3]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/.Xil/Vivado-2096-ARM144-12/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (7#1) [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/.Xil/Vivado-2096-ARM144-12/realtime/clk_wiz_0_stub.v:5]
-WARNING: [Synth 8-7071] port 'locked' of module 'clk_wiz_0' is unconnected for instance 'clk_wiz' [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/top.sv:58]
-WARNING: [Synth 8-7023] instance 'clk_wiz' of module 'clk_wiz_0' has 4 connections declared, but only 3 given [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/top.sv:58]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/.Xil/Vivado-4324-ARM144-12/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (7#1) [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/.Xil/Vivado-4324-ARM144-12/realtime/clk_wiz_0_stub.v:5]
+WARNING: [Synth 8-7071] port 'locked' of module 'clk_wiz_0' is unconnected for instance 'clk_wiz' [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/top.sv:61]
+WARNING: [Synth 8-7023] instance 'clk_wiz' of module 'clk_wiz_0' has 4 connections declared, but only 3 given [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/top.sv:61]
 INFO: [Synth 8-6155] done synthesizing module 'top' (8#1) [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/top.sv:4]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1255.008 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1254.215 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1255.008 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1254.215 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1255.008 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1254.215 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1255.008 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1254.215 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -85,29 +85,31 @@ WARNING: [Vivado 12-584] No ports matched 'hdmi_tx_cec'. [H:/Senior-Project-2023
 WARNING: [Vivado 12-584] No ports matched 'hdmi_tx_hpd'. [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/constrs_1/imports/Nexys-Video-Master.xdc:81]
 WARNING: [Vivado 12-584] No ports matched 'hdmi_tx_rscl'. [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/constrs_1/imports/Nexys-Video-Master.xdc:82]
 WARNING: [Vivado 12-584] No ports matched 'hdmi_tx_rsda'. [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/constrs_1/imports/Nexys-Video-Master.xdc:83]
+WARNING: [Vivado 12-584] No ports matched 'ja[0]'. [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/constrs_1/imports/Nexys-Video-Master.xdc:109]
+WARNING: [Vivado 12-584] No ports matched 'ja[1]'. [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/constrs_1/imports/Nexys-Video-Master.xdc:110]
 Finished Parsing XDC File [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/constrs_1/imports/Nexys-Video-Master.xdc]
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/constrs_1/imports/Nexys-Video-Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/constrs_1/imports/Nexys-Video-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1309.125 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1311.074 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1309.125 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1311.074 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'VRAM/blk_mem' at clock pin 'clka' is different from the actual clock period '13.468', this can lead to different synthesis results.
 WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1314.328 ; gain = 59.320
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1314.039 ; gain = 59.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a200tsbg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1314.328 ; gain = 59.320
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1314.039 ; gain = 59.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -135,10 +137,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for Display_Gen/rgb2dvi. (constraint 
 Applied set_property KEEP_HIERARCHY = SOFT for Display_Gen/vtc. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for clk_wiz. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1314.328 ; gain = 59.320
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1314.039 ; gain = 59.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1314.328 ; gain = 59.320
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1314.039 ; gain = 59.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -171,25 +173,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1314.328 ; gain = 59.320
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1314.039 ; gain = 59.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.328 ; gain = 59.320
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.039 ; gain = 59.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.328 ; gain = 59.320
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.039 ; gain = 59.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.328 ; gain = 59.320
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.039 ; gain = 59.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -208,37 +210,37 @@ Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 CRITICAL WARNING: [Synth 8-4442] BlackBox module \Display_Gen/vtc  has unconnected pin sof_state
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1314.328 ; gain = 59.320
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1314.039 ; gain = 59.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1314.328 ; gain = 59.320
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1314.039 ; gain = 59.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1314.328 ; gain = 59.320
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1314.039 ; gain = 59.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1314.328 ; gain = 59.320
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1314.039 ; gain = 59.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1314.328 ; gain = 59.320
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1314.039 ; gain = 59.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1314.328 ; gain = 59.320
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1314.039 ; gain = 59.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -288,27 +290,27 @@ Report Cell Usage:
 |14    |IBUF        |     1|
 +------+------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1314.328 ; gain = 59.320
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1314.039 ; gain = 59.824
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 1 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1314.328 ; gain = 0.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1314.328 ; gain = 59.320
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1314.039 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1314.039 ; gain = 59.824
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1314.328 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1314.039 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 7 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1314.328 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1314.039 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 Synth Design complete, checksum: 5068d2f9
 INFO: [Common 17-83] Releasing license: Synthesis
-38 Infos, 17 Warnings, 1 Critical Warnings and 0 Errors encountered.
+38 Infos, 19 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1314.328 ; gain = 59.320
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 1314.039 ; gain = 59.824
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint 'H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Nov 13 16:50:03 2023...
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 20 16:33:42 2023...

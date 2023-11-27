@@ -48,9 +48,64 @@ v_blank;
 
 /* input  */ logic vid_pHSync;
 /*input */   logic vid_pVSync;
+             logic rgb;
 
 
-assign vid_pData=rgbtodvi;
+always_comb
+
+begin
+
+    if (disp_x >=640) begin
+
+    // Right half of screen
+
+    case (disp_y[2:0])
+
+        0:  rgb = 24'hFF0000;// red
+
+        1:  rgb = 24'hFF7F00;// orange
+
+        2:  rgb = 24'hFFFF00;// yellow
+
+        3:  rgb = 24'h00FF00;// green
+
+        4:  rgb = 24'h0000FF;// blue
+
+        5:  rgb = 24'h7F00FF;// indigo
+
+        6:  rgb = 24'hFF00FF;// violet
+
+        7:  rgb = 24'hFFFFFF;// white
+
+    endcase
+    end
+    else
+
+    // Left half of screen
+
+    case (disp_y[2:0])
+
+        7:  rgb = 24'hFF0000;// red
+
+        6:  rgb = 24'hFF7F00;// orange
+
+        5:  rgb = 24'hFFFF00;// yellow
+
+        4:  rgb = 24'h00FF00;// green
+
+        3:  rgb = 24'h0000FF;// blue
+
+        2:  rgb = 24'h7F00FF;// indigo
+
+        1:  rgb = 24'hFF00FF;// violet
+
+        0:  rgb = 24'hFFFFFF;// white
+
+    endcase
+
+end
+
+assign vid_pData=rgb;
 //Counting and color active_video_out
 
 /*Test pattern stuff */

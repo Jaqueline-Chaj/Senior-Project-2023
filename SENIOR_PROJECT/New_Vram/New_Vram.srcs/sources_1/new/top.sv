@@ -13,7 +13,9 @@ output hdmi_tx_clk_n,
 
 output [2:0] hdmi_tx_p,
 
-output [2:0] hdmi_tx_n
+output [2:0] hdmi_tx_n//,
+//Outputting the VRAM ports to Ja for testing purposes to make sure timing is correct
+//output[1:0] ja
     );
 logic[7:0] RD_data;
 logic[7:0] red;
@@ -53,6 +55,7 @@ Display_Gen_Digilent Display_Gen(
 .hdmi_tx_n(hdmi_tx_n),
 .hdmi_tx_p(hdmi_tx_p));
 
+//assign ja[1]=hdmi_tx_clk_p;
 //Clocking wizard
 logic PixelClk;
 clk_wiz_0 clk_wiz 

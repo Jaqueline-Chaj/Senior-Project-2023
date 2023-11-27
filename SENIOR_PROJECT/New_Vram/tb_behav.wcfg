@@ -14,15 +14,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="238.615 ns"></ZoomEndTime>
-      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
+      <ZoomStartTime time="10,798.192 ns"></ZoomStartTime>
+      <ZoomEndTime time="10,836.269 ns"></ZoomEndTime>
+      <Cursor1Time time="11,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="276"></NameColumnWidth>
-      <ValueColumnWidth column_width="104"></ValueColumnWidth>
+      <ValueColumnWidth column_width="100"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
+   <WVObjectSize size="12" />
    <wvobject fp_name="/tb/t0/VRAM/blk_mem/clka" type="logic">
       <obj_property name="ElementShortName">clka</obj_property>
       <obj_property name="ObjectShortName">clka</obj_property>
@@ -71,9 +71,5 @@
    <wvobject fp_name="/tb/t0/hdmi_tx_n" type="array">
       <obj_property name="ElementShortName">hdmi_tx_n[2:0]</obj_property>
       <obj_property name="ObjectShortName">hdmi_tx_n[2:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/rgbtodvi" type="array">
-      <obj_property name="ElementShortName">rgbtodvi[23:0]</obj_property>
-      <obj_property name="ObjectShortName">rgbtodvi[23:0]</obj_property>
    </wvobject>
 </wave_config>
