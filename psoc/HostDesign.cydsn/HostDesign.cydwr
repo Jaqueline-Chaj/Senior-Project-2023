@@ -256,7 +256,7 @@
       <Data key="60b4be11-5f04-48ff-8990-4e1dbac0277c" value="H2G_STRB_OUT" />
       <Data key="77715107-f8d5-47e5-a629-0fb83101ac6b" value="SW2" />
       <Data key="ba14b45d-9733-420c-a373-97312625c1ca" value="SW3" />
-      <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="LEDstrip" />
+      <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="OUT_PINS" />
     </Group>
   </Group>
   <Group key="EEPROM">
@@ -3412,6 +3412,8 @@
         <Data key="Port Format" value="0,7" />
       </Group>
     </Group>
+    <Group key="UnAssigned Pins" />
+    <Group key="Unlocked Pins" />
   </Group>
   <Group key="PlaceDir">
     <Data key="count" value="0" />

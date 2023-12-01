@@ -1,31 +1,69 @@
 #include "project.h"
 #include "stdio.h"
 
-// Test comment to see commit changes 
 
-void sendByte (int byte){
+uint cmdBytes[5];
 
+//Method to write a byte value to the output port
+void sendByte(int byte){
     OUT_BYTE_Write(byte);
-    // switch (i){
-    //     case 0: {(LEDreg_Write(0x00));
-    //         break;}
-
 }
 
+//Method to set the values for each of the payload bytes
 void selectPayloadValue(stage){
-    switch (stage){
-        case 0: {
-            //byte value selection and shift based on stage
-            //
-            break;
+    LCD_ClearDisplay();
+    LCD_Position(0,0);
+    LCD_PrintString("Send a value:");
+    LCD_Position(1,0);
+    LCD_PrintString("Value:");
+    
+    char dispStr[2];
+    char setMsg[16];
+    int selected = 0;
+    int byteVal = 0x00;
+    
+    while(selected != 1){
+        if(!SW3_Read()){
+            selected = 1;
         }
-
+        
+        LCD_Position(1,6);
+        sprintf(dispStr, "%x", byteVal);
+        LCD_PrintString(dispStr);
+        CyDelay(100);
+    
+        if (byteVal == 255){
+                byteVal = 0x00;
+            }
+        else{
+                byteVal += 1;
+            }
     }
 
+    if(stage == 1){
+        cmdBytes[1] = byteVal;    
+    }
+    else if(stage == 2){
+        cmdBytes[2] = byteVal;
+    }
+    else if(stage == 3){
+        cmdBytes[3] = byteVal;
+    }
+    else{
+        cmdBytes[4] = byteVal;
+    }
+    
+    LCD_ClearDisplay();
+    LCD_Position(0,0);
+    sprintf(setMsg, "Byte%d value set.", stage);
+    LCD_PrintString(setMsg);
+    LCD_Position(1,0);
+    LCD_PrintString("Value:");
+    LCD_Position(1,6);
+    sprintf(dispStr, "%x", byteVal);
+    LCD_PrintString(dispStr);
+    CyDelay(1000);
 }
-
-//function to map ADC (potentiometer) from 0 to 255 (11111111) 
-
 
 int main(void)
 {
@@ -36,28 +74,19 @@ int main(void)
     
     char dispVal[1];
     char rcvdStatus[1];
-    int breakflag = 0;
+
     int addr_flag = 0;
-    int payload_flag = 0;
-    int payload_bytes[4];
     int psoc_fpga_xfc = 0;  // state of output strobe
     int fpga_psoc_xfc = 0;  // state of input strobe
     H2G_STRB_OUT_Write(psoc_fpga_xfc);
 
-
+    //SW2 used for selection of data
+    //SW3 used to progress to next stage
     
     for(;;)
     {   
         addr_flag = 0;
-        //conditions to break out of infinite for loop, to end program
-        if (breakflag){
-            break;
-        }
-        //button sets breakflag to 1 (true)
-        if(!SW2_Read()){
-            breakflag = 1;
-            break;
-        }
+        
 
         LCD_Position(0,0);
         LCD_PrintString("RegWrite CMD");
@@ -69,12 +98,14 @@ int main(void)
         LCD_ClearDisplay();
         
         int addrVal = 0;
+        
         char dispString[2];
         
         LCD_Position(0,0);
         LCD_PrintString("Select an addr:");
         LCD_Position(1,0);
         LCD_PrintString("Addr:");
+        
         //loop for user to select one of 8 registers to write to
         while(addr_flag != 1){
             if(!SW3_Read()){
@@ -82,23 +113,97 @@ int main(void)
             }
             
             LCD_Position(1,5);
-            sprintf(dispString, "%d", addrVal);
+            sprintf(dispString, "%x", addrVal);
             LCD_PrintString(dispString);
 
             CyDelay(100);
+            
+            if( addrVal == 15){
+                addrVal = 0x00;
+            }
+            else{
             addrVal = addrVal + 1;
+            }
         }
-
-        //small loop for user to select values for each payload byte, stored to be sent after all have been selected.
-        for(int stage = 0; stage < 4; stage++){
-            //selectPayloadValue function, taking stage as argument
-        }    
+        cmdBytes[0] = addrVal;
         
         LCD_ClearDisplay();
+        LCD_Position(0,0);
+        LCD_PrintString("Address set.");
+        LCD_Position(1,0);
+        LCD_PrintString("Address:");
+        sprintf(dispString, "%x", cmdBytes[0]);
+        LCD_Position(1,8);
+        LCD_PrintString(dispString);
+        CyDelay(1000);
+        
+        //small loop for user to select values for each payload byte, stored to be sent after all have been selected.
+        for(int stage = 1; stage <5; stage++){
+            //selectPayloadValue function, taking stage as argument
+            selectPayloadValue(stage);
+        }    
+        LCD_ClearDisplay();
+        
+        while(SW3_Read()){
+        LCD_Position(0,0);
+        LCD_PrintString("CMD to be sent: ");
+        LCD_Position(1,0);
+        LCD_PrintHexUint8(cmdBytes[0]);
+        LCD_Position(1,3);
+        LCD_PrintHexUint8(cmdBytes[1]);
+        LCD_Position(1,6);
+        LCD_PrintHexUint8(cmdBytes[2]);
+        LCD_Position(1,9);
+        LCD_PrintHexUint8(cmdBytes[3]);
+        LCD_Position(1,12);
+        LCD_PrintHexUint8(cmdBytes[4]);
+        CyDelay(1000);
+        LCD_Position(0,0);
+        LCD_PrintString("Addr,B1,B2,B3,B4");
+        CyDelay(1000);
+        }
+        
+        LCD_ClearDisplay();
+        LCD_Position(0,0);
+        LCD_PrintString("Sending bytes...");
+        
+        //write bytes to output
+        //send CMDcode/addrss byte first, then loop through payload bytes to send correctly
+        sendByte(cmdBytes[0]);
+        CyDelayCycles(1);
+        psoc_fpga_xfc = 1 - psoc_fpga_xfc;
+        H2G_STRB_OUT_Write(psoc_fpga_xfc);
+        
+        while(H2G_STRB_IN_Read() == fpga_psoc_xfc){
+            //Idle until incoming handshake is toggled
+        }
+        fpga_psoc_xfc = 1 - fpga_psoc_xfc;
+        LCD_ClearDisplay();
+        LCD_Position(0,0);
+        LCD_PrintString("Addr received");
+        CyDelay(500);
+        LCD_Position(0,0);
+        LCD_PrintString("Sending payload...");
+        for(int i = 4; i >=1; i--){
+            sendByte(cmdBytes[i]); 
+            
+            CyDelayCycles(1);
+            psoc_fpga_xfc = 1 - psoc_fpga_xfc;
+            H2G_STRB_OUT_Write(psoc_fpga_xfc);
+        
+            while(H2G_STRB_IN_Read() == fpga_psoc_xfc){
+            //Idle until incoming handshake is toggled
+            }
+            fpga_psoc_xfc = 1 - fpga_psoc_xfc;
+        }
+        
+        LCD_ClearDisplay();
+        LCD_PrintString("Command sent!");
+        CyDelay(2000);
+        
     }
     
-    LCD_Position(0,0);
-    LCD_PrintString("Program Stopped");
+
 }
 
 /* [] END OF FILE */

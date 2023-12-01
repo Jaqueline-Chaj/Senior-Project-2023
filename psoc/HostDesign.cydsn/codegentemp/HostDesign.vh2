@@ -2,7 +2,7 @@
 --	Conversion of HostDesign.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Nov 27 14:55:58 2023
+--	Fri Dec 01 14:04:07 2023
 --
 
 USE cypress.cypress.all;
@@ -68,32 +68,32 @@ SIGNAL \OUT_BYTE:control_3\ : bit;
 SIGNAL \OUT_BYTE:control_2\ : bit;
 SIGNAL \OUT_BYTE:control_1\ : bit;
 SIGNAL \OUT_BYTE:control_0\ : bit;
-SIGNAL tmpOE__LEDstrip_net_7 : bit;
-SIGNAL tmpOE__LEDstrip_net_6 : bit;
-SIGNAL tmpOE__LEDstrip_net_5 : bit;
-SIGNAL tmpOE__LEDstrip_net_4 : bit;
-SIGNAL tmpOE__LEDstrip_net_3 : bit;
-SIGNAL tmpOE__LEDstrip_net_2 : bit;
-SIGNAL tmpOE__LEDstrip_net_1 : bit;
-SIGNAL tmpOE__LEDstrip_net_0 : bit;
-SIGNAL tmpFB_7__LEDstrip_net_7 : bit;
-SIGNAL tmpFB_7__LEDstrip_net_6 : bit;
-SIGNAL tmpFB_7__LEDstrip_net_5 : bit;
-SIGNAL tmpFB_7__LEDstrip_net_4 : bit;
-SIGNAL tmpFB_7__LEDstrip_net_3 : bit;
-SIGNAL tmpFB_7__LEDstrip_net_2 : bit;
-SIGNAL tmpFB_7__LEDstrip_net_1 : bit;
-SIGNAL tmpFB_7__LEDstrip_net_0 : bit;
-SIGNAL tmpIO_7__LEDstrip_net_7 : bit;
-SIGNAL tmpIO_7__LEDstrip_net_6 : bit;
-SIGNAL tmpIO_7__LEDstrip_net_5 : bit;
-SIGNAL tmpIO_7__LEDstrip_net_4 : bit;
-SIGNAL tmpIO_7__LEDstrip_net_3 : bit;
-SIGNAL tmpIO_7__LEDstrip_net_2 : bit;
-SIGNAL tmpIO_7__LEDstrip_net_1 : bit;
-SIGNAL tmpIO_7__LEDstrip_net_0 : bit;
-TERMINAL tmpSIOVREF__LEDstrip_net_0 : bit;
-SIGNAL tmpINTERRUPT_0__LEDstrip_net_0 : bit;
+SIGNAL tmpOE__OUT_PINS_net_7 : bit;
+SIGNAL tmpOE__OUT_PINS_net_6 : bit;
+SIGNAL tmpOE__OUT_PINS_net_5 : bit;
+SIGNAL tmpOE__OUT_PINS_net_4 : bit;
+SIGNAL tmpOE__OUT_PINS_net_3 : bit;
+SIGNAL tmpOE__OUT_PINS_net_2 : bit;
+SIGNAL tmpOE__OUT_PINS_net_1 : bit;
+SIGNAL tmpOE__OUT_PINS_net_0 : bit;
+SIGNAL tmpFB_7__OUT_PINS_net_7 : bit;
+SIGNAL tmpFB_7__OUT_PINS_net_6 : bit;
+SIGNAL tmpFB_7__OUT_PINS_net_5 : bit;
+SIGNAL tmpFB_7__OUT_PINS_net_4 : bit;
+SIGNAL tmpFB_7__OUT_PINS_net_3 : bit;
+SIGNAL tmpFB_7__OUT_PINS_net_2 : bit;
+SIGNAL tmpFB_7__OUT_PINS_net_1 : bit;
+SIGNAL tmpFB_7__OUT_PINS_net_0 : bit;
+SIGNAL tmpIO_7__OUT_PINS_net_7 : bit;
+SIGNAL tmpIO_7__OUT_PINS_net_6 : bit;
+SIGNAL tmpIO_7__OUT_PINS_net_5 : bit;
+SIGNAL tmpIO_7__OUT_PINS_net_4 : bit;
+SIGNAL tmpIO_7__OUT_PINS_net_3 : bit;
+SIGNAL tmpIO_7__OUT_PINS_net_2 : bit;
+SIGNAL tmpIO_7__OUT_PINS_net_1 : bit;
+SIGNAL tmpIO_7__OUT_PINS_net_0 : bit;
+TERMINAL tmpSIOVREF__OUT_PINS_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__OUT_PINS_net_0 : bit;
 SIGNAL tmpOE__H2G_STRB_IN_net_0 : bit;
 SIGNAL tmpFB_0__H2G_STRB_IN_net_0 : bit;
 SIGNAL tmpIO_0__H2G_STRB_IN_net_0 : bit;
@@ -271,7 +271,7 @@ SW2:cy_psoc3_pins_v1_10
 		clock=>zero,
 		control=>(Net_13_7, Net_13_6, Net_13_5, Net_13_4,
 			Net_13_3, Net_13_2, Net_13_1, Net_13_0));
-LEDstrip:cy_psoc3_pins_v1_10
+OUT_PINS:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"e851a3b9-efb8-48be-bbb8-b303b216c393",
 		drive_mode=>"110110110110110110110110",
 		ibuf_enabled=>"11111111",
@@ -331,13 +331,13 @@ LEDstrip:cy_psoc3_pins_v1_10
 			one, one, one, one),
 		y=>(Net_13_7, Net_13_6, Net_13_5, Net_13_4,
 			Net_13_3, Net_13_2, Net_13_1, Net_13_0),
-		fb=>(tmpFB_7__LEDstrip_net_7, tmpFB_7__LEDstrip_net_6, tmpFB_7__LEDstrip_net_5, tmpFB_7__LEDstrip_net_4,
-			tmpFB_7__LEDstrip_net_3, tmpFB_7__LEDstrip_net_2, tmpFB_7__LEDstrip_net_1, tmpFB_7__LEDstrip_net_0),
+		fb=>(tmpFB_7__OUT_PINS_net_7, tmpFB_7__OUT_PINS_net_6, tmpFB_7__OUT_PINS_net_5, tmpFB_7__OUT_PINS_net_4,
+			tmpFB_7__OUT_PINS_net_3, tmpFB_7__OUT_PINS_net_2, tmpFB_7__OUT_PINS_net_1, tmpFB_7__OUT_PINS_net_0),
 		analog=>(open, open, open, open,
 			open, open, open, open),
-		io=>(tmpIO_7__LEDstrip_net_7, tmpIO_7__LEDstrip_net_6, tmpIO_7__LEDstrip_net_5, tmpIO_7__LEDstrip_net_4,
-			tmpIO_7__LEDstrip_net_3, tmpIO_7__LEDstrip_net_2, tmpIO_7__LEDstrip_net_1, tmpIO_7__LEDstrip_net_0),
-		siovref=>(tmpSIOVREF__LEDstrip_net_0),
+		io=>(tmpIO_7__OUT_PINS_net_7, tmpIO_7__OUT_PINS_net_6, tmpIO_7__OUT_PINS_net_5, tmpIO_7__OUT_PINS_net_4,
+			tmpIO_7__OUT_PINS_net_3, tmpIO_7__OUT_PINS_net_2, tmpIO_7__OUT_PINS_net_1, tmpIO_7__OUT_PINS_net_0),
+		siovref=>(tmpSIOVREF__OUT_PINS_net_0),
 		annotation=>(open, open, open, open,
 			open, open, open, open),
 		in_clock=>zero,
@@ -346,7 +346,7 @@ LEDstrip:cy_psoc3_pins_v1_10
 		out_clock=>zero,
 		out_clock_en=>one,
 		out_reset=>zero,
-		interrupt=>tmpINTERRUPT_0__LEDstrip_net_0);
+		interrupt=>tmpINTERRUPT_0__OUT_PINS_net_0);
 H2G_STRB_IN:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba",
 		drive_mode=>"011",

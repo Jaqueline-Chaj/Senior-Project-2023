@@ -1,6 +1,6 @@
 // ======================================================================
 // HostDesign.v generated from TopDesign.cysch
-// 11/27/2023 at 14:55
+// 12/01/2023 at 14:04
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -359,11 +359,11 @@ module top ;
     defparam OUT_BYTE.ExtrReset = 0;
     defparam OUT_BYTE.NumOutputs = 8;
 
-	wire [7:0] tmpOE__LEDstrip_net;
-	wire [7:0] tmpFB_7__LEDstrip_net;
-	wire [7:0] tmpIO_7__LEDstrip_net;
-	wire [0:0] tmpINTERRUPT_0__LEDstrip_net;
-	electrical [0:0] tmpSIOVREF__LEDstrip_net;
+	wire [7:0] tmpOE__OUT_PINS_net;
+	wire [7:0] tmpFB_7__OUT_PINS_net;
+	wire [7:0] tmpIO_7__OUT_PINS_net;
+	wire [0:0] tmpINTERRUPT_0__OUT_PINS_net;
+	electrical [0:0] tmpSIOVREF__OUT_PINS_net;
 
 	cy_psoc3_pins_v1_10
 		#(.id("e851a3b9-efb8-48be-bbb8-b303b216c393"),
@@ -418,13 +418,13 @@ module top ;
 		  .ovt_needed(8'b0_0_0_0_0_0_0_0),
 		  .ovt_slew_control(16'b00_00_00_00_00_00_00_00),
 		  .input_buffer_sel(16'b00_00_00_00_00_00_00_00))
-		LEDstrip
-		 (.oe(tmpOE__LEDstrip_net),
+		OUT_PINS
+		 (.oe(tmpOE__OUT_PINS_net),
 		  .y({Net_13[7:0]}),
-		  .fb({tmpFB_7__LEDstrip_net[7:0]}),
-		  .io({tmpIO_7__LEDstrip_net[7:0]}),
-		  .siovref(tmpSIOVREF__LEDstrip_net),
-		  .interrupt({tmpINTERRUPT_0__LEDstrip_net[0:0]}),
+		  .fb({tmpFB_7__OUT_PINS_net[7:0]}),
+		  .io({tmpIO_7__OUT_PINS_net[7:0]}),
+		  .siovref(tmpSIOVREF__OUT_PINS_net),
+		  .interrupt({tmpINTERRUPT_0__OUT_PINS_net[0:0]}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
 		  .in_reset({1'b0}),
@@ -432,7 +432,7 @@ module top ;
 		  .out_clock_en({1'b1}),
 		  .out_reset({1'b0}));
 
-	assign tmpOE__LEDstrip_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{8'b11111111} : {8'b11111111};
+	assign tmpOE__OUT_PINS_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{8'b11111111} : {8'b11111111};
 
 	wire [0:0] tmpOE__H2G_STRB_IN_net;
 	wire [0:0] tmpFB_0__H2G_STRB_IN_net;
