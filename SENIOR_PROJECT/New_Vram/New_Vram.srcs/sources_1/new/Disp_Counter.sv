@@ -5,7 +5,6 @@ module Disp_Counter(
 input logic clk, reset,
 output logic[19:0] RD_addr
 
-
 );
 
 logic[10:0] disp_x;

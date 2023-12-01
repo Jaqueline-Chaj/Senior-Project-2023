@@ -14,7 +14,9 @@ output hdmi_tx_clk_n,
 
 output [2:0] hdmi_tx_p,
 
-output [2:0] hdmi_tx_n
+output [2:0] hdmi_tx_n,
+
+output [19:0] RD_addr
 
     );
 
@@ -48,9 +50,12 @@ v_blank;
 
 /* input  */ logic vid_pHSync;
 /*input */   logic vid_pVSync;
-             logic rgb;
+           
+             logic[11:0]disp_x;
+             logic[9:0]disp_y;
+             logic[12:0] prod;
 
-
+/*
 always_comb
 
 begin
@@ -61,21 +66,21 @@ begin
 
     case (disp_y[2:0])
 
-        0:  rgb = 24'hFF0000;// red
+        0:  vid_pData = 24'hFF0000;// red
 
-        1:  rgb = 24'hFF7F00;// orange
+        1:  vid_pData = 24'hFF7F00;// orange
 
-        2:  rgb = 24'hFFFF00;// yellow
+        2:  vid_pData = 24'hFFFF00;// yellow
 
-        3:  rgb = 24'h00FF00;// green
+        3:  vid_pData = 24'h00FF00;// green
 
-        4:  rgb = 24'h0000FF;// blue
+        4:  vid_pData = 24'h0000FF;// blue
 
-        5:  rgb = 24'h7F00FF;// indigo
+        5:  vid_pData = 24'h7F00FF;// indigo
 
-        6:  rgb = 24'hFF00FF;// violet
+        6:  vid_pData = 24'hFF00FF;// violet
 
-        7:  rgb = 24'hFFFFFF;// white
+        7:  vid_pData = 24'hFFFFFF;// white
 
     endcase
     end
@@ -85,35 +90,43 @@ begin
 
     case (disp_y[2:0])
 
-        7:  rgb = 24'hFF0000;// red
+        7:  vid_pData = 24'hFF0000;// red
 
-        6:  rgb = 24'hFF7F00;// orange
+        6:  vid_pData = 24'hFF7F00;// orange
 
-        5:  rgb = 24'hFFFF00;// yellow
+        5:  vid_pData = 24'hFFFF00;// yellow
 
-        4:  rgb = 24'h00FF00;// green
+        4:  vid_pData = 24'h00FF00;// green
 
-        3:  rgb = 24'h0000FF;// blue
+        3:  vid_pData = 24'h0000FF;// blue
 
-        2:  rgb = 24'h7F00FF;// indigo
+        2:  vid_pData = 24'h7F00FF;// indigo
 
-        1:  rgb = 24'hFF00FF;// violet
+        1:  vid_pData = 24'hFF00FF;// violet
 
-        0:  rgb = 24'hFFFFFF;// white
+        0:  vid_pData = 24'hFFFFFF;// white
 
     endcase
 
 end
+*/ 
+/*
+always_comb begin
+    if (disp_y[2:0]==disp_x[5:3])
+     vid_pData<=24'hFFFFFF;
+     else
+     vid_pData<=000000;
+ end
+*/
 
-assign vid_pData=rgb;
 //Counting and color active_video_out
 
 /*Test pattern stuff */
+/*
 logic[23:0] black, green, yellow, orange, blue, purple, 
 red, white, cyan, magenta, brown, navy_blue, silver, olive, peach;
 
-logic[11:0]disp_x;
-logic[9:0]disp_y;
+;
 
 assign black=23'h00_00_00;
 assign green=23'h00_00_FF;
@@ -131,7 +144,7 @@ assign silver=23'hC0_C0_C0;
 assign olive=23'h80_00_80;
 assign peach=23'h00_B9_DA;
 
-
+*/
 //reset flip_flop to avoid metastability
 logic res_d1;
 logic res_d2;
@@ -202,6 +215,7 @@ v_tc_0 vtc(
 .vblank_out(v_blank)
 );
 
+//VRAM
 assign vid_pData=rgbtodvi;
 //Counter and case statement
 always_ff@(posedge PixelClk) begin
@@ -220,7 +234,7 @@ always_ff@(posedge PixelClk) begin
 	if(reset)
 		disp_y<=0;
 	if(~v_blank) begin
-		if(disp_x<1279) begin
+		if(disp_x==1279) begin
 		  if(disp_y<719) 
 			disp_y<=disp_y+1;
 		else
@@ -229,6 +243,10 @@ always_ff@(posedge PixelClk) begin
 			
     end	
 end
+
+assign prod = disp_y * 5;
+  
+assign RD_addr= {prod, 8'b0} +disp_x;  
 /*
 always@(disp_x[10:7]) begin
 case(disp_x[10:7])

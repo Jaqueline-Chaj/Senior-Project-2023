@@ -34,21 +34,35 @@ assign rgbtodvi[23:16]=RD_data;
 assign rgbtodvi[15:8]=RD_data;
 assign rgbtodvi[7:0]=RD_data;
 logic[19:0] RD_addr;
-
+logic[19:0] waddr;
+logic[7:0]  wr_vram;
+/*
 Disp_Counter Disp(
 .clk(PixelClk),
 .reset(~cpu_resetn),
 .RD_addr(RD_addr)
 );
+*/
 
+pattern_gen pattern_gen(
+.clk(PixelClk),
+.reset(~cpu_resetn),
+.waddr(waddr) ,
+.wr_vram(wr_vram)
+
+);
 VRAM VRAM(
 .clk(PixelClk),
+.wr_en(1'b1),
+.waddr(waddr),
+.wr_data(wr_vram),
 .RD_addr(RD_addr),
 .RD_Data(RD_data));
 
 Display_Gen_Digilent Display_Gen(
 .PixelClk(PixelClk),
 .cpu_resetn(cpu_resetn),
+.RD_addr(RD_addr),
 .rgbtodvi(rgbtodvi),
 .hdmi_tx_clk_n(hdmi_tx_clk_n),
 .hdmi_tx_clk_p(hdmi_tx_clk_p),
