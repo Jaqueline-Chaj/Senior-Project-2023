@@ -5,7 +5,7 @@
 
 module host_interface(
     input [7:0] host_hostif_d, 
-    input host_hostif_host_xfc,
+    input host_hostif_host_xfc_raw,
     input hostif_queue_RTR,
     input clk,
     input reset_n,
@@ -19,6 +19,11 @@ logic state;
 logic reset1;
 logic reset2;
 logic reset;
+
+logic host_hostif_host_xfc1;
+logic host_hostif_host_xfc2;
+logic host_hostif_host_xfc;
+
 logic QUEUE_XFC = hostif_queue_RTS && hostif_queue_RTR;
 
 //gets the incoming handshake signal from PSOC
@@ -77,7 +82,13 @@ begin
     reset1 <= ~reset_n;
     reset2 <= reset1;
     reset <= reset2;
+    
+    host_hostif_host_xfc1 <= host_hostif_host_xfc_raw;
+    host_hostif_host_xfc2 <= host_hostif_host_xfc1;
+    host_hostif_host_xfc <= host_hostif_host_xfc2;
 end
+
+
 
 
 endmodule

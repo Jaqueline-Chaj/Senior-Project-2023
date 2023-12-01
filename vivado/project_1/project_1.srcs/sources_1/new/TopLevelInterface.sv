@@ -4,7 +4,7 @@ module TopLevelInterface(
     input clk,
     input reset_n,
     input [7:0] host_hostif_d,
-    input host_hostif_host_xfc,
+    input host_hostif_host_xfc_raw,
     output logic host_hostif_fpga_xfc,
     output logic REG_WE,
     output [31:0] REG_DATA,
@@ -27,7 +27,7 @@ module TopLevelInterface(
     // PSOC <---> FPGA Interface
     host_interface HOST_IF( 
     .host_hostif_d(host_hostif_d), //[7:0]
-    .host_hostif_host_xfc(host_hostif_host_xfc),
+    .host_hostif_host_xfc_raw(host_hostif_host_xfc_raw),
     .hostif_queue_RTR(hostif_queue_RTR),
     .clk(clk),
     .reset_n(reset_n),

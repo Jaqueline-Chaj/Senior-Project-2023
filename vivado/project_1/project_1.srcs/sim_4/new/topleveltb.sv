@@ -32,7 +32,7 @@ module topleveltb(
         .clk(clk),
         .reset_n(reset_n),
         .host_hostif_d(host_hostif_d),
-        .host_hostif_host_xfc(host_hostif_host_xfc),
+        .host_hostif_host_xfc_raw(host_hostif_host_xfc),
         .host_hostif_fpga_xfc(host_hostif_fpga_xfc),
         .REG_WE(REG_WE),
         .REG_DATA(REG_DATA),
