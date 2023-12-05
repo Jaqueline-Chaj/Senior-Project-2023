@@ -1,5 +1,5 @@
 -- Project:   HostDesign
--- Generated: 12/01/2023 14:04:14
+-- Generated: 12/04/2023 19:50:54
 -- PSoC Creator  4.4
 
 ENTITY HostDesign IS
@@ -115,7 +115,7 @@ ARCHITECTURE __DEFAULT__ OF HostDesign IS
     ATTRIBUTE lib_model OF OUT_PINS(7) : LABEL IS "iocell16";
     ATTRIBUTE Location OF OUT_PINS(7) : LABEL IS "P0[7]";
     ATTRIBUTE lib_model OF H2G_STRB_IN(0) : LABEL IS "iocell17";
-    ATTRIBUTE Location OF H2G_STRB_IN(0) : LABEL IS "P3[0]";
+    ATTRIBUTE Location OF H2G_STRB_IN(0) : LABEL IS "P12[0]";
     ATTRIBUTE lib_model OF H2G_STRB_OUT(0) : LABEL IS "iocell18";
     ATTRIBUTE Location OF H2G_STRB_OUT(0) : LABEL IS "P3[5]";
     ATTRIBUTE lib_model OF SW3(0) : LABEL IS "iocell19";
@@ -575,7 +575,7 @@ BEGIN
             invert_out_clock_en => 0,
             invert_out_reset => 0,
             io_voltage => ",,,,,,,",
-            layout_mode => "CONTIGUOUS",
+            layout_mode => "NONCONTIGUOUS",
             oe_conn => "00000000",
             oe_reset => 0,
             oe_sync => "00000000",
@@ -609,7 +609,7 @@ BEGIN
             sio_vohsel => "00000000",
             sio_vtrip => "00000000",
             slew_rate => "00000000",
-            spanning => 0,
+            spanning => 1,
             sw_only => 0,
             use_annotation => "00000000",
             vtrip => "1010101010101010",

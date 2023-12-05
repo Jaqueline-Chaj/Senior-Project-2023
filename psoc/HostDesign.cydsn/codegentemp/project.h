@@ -24,7 +24,6 @@
 #include "SW2.h"
 #include "OUT_BYTE.h"
 #include "OUT_PINS_aliases.h"
-#include "OUT_PINS.h"
 #include "H2G_STRB_IN_aliases.h"
 #include "H2G_STRB_IN.h"
 #include "H2G_STRB_OUT_aliases.h"

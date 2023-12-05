@@ -1,6 +1,6 @@
 // ======================================================================
 // HostDesign.v generated from TopDesign.cysch
-// 12/01/2023 at 14:04
+// 12/04/2023 at 19:50
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -381,7 +381,7 @@ module top ;
 		  .invert_out_clock_en(0),
 		  .invert_out_reset(0),
 		  .io_voltage(",,,,,,,"),
-		  .layout_mode("CONTIGUOUS"),
+		  .layout_mode("NONCONTIGUOUS"),
 		  .oe_conn(8'b0_0_0_0_0_0_0_0),
 		  .oe_reset(0),
 		  .oe_sync(8'b0_0_0_0_0_0_0_0),
@@ -410,7 +410,7 @@ module top ;
 		  .sio_hifreq(""),
 		  .sio_vohsel(""),
 		  .slew_rate(8'b0_0_0_0_0_0_0_0),
-		  .spanning(0),
+		  .spanning(1),
 		  .use_annotation(8'b0_0_0_0_0_0_0_0),
 		  .vtrip(16'b10_10_10_10_10_10_10_10),
 		  .width(8),

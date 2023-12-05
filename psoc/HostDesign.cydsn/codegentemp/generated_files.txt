@@ -28,8 +28,6 @@
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\OUT_BYTE.c" value="SOURCE_C;CortexM3;;;;OUT_BYTE" />
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\OUT_BYTE_PM.c" value="SOURCE_C;CortexM3;;;;OUT_BYTE" />
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\OUT_PINS_aliases.h" value="HEADER;;;;;OUT_PINS" />
-  <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\OUT_PINS.c" value="SOURCE_C;CortexM3;;;;OUT_PINS" />
-  <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\OUT_PINS.h" value="HEADER;;;;;OUT_PINS" />
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\H2G_STRB_IN_aliases.h" value="HEADER;;;;;H2G_STRB_IN" />
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\H2G_STRB_IN.c" value="SOURCE_C;CortexM3;;;;H2G_STRB_IN" />
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\H2G_STRB_IN.h" value="HEADER;;;;;H2G_STRB_IN" />

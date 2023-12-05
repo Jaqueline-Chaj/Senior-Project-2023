@@ -13,7 +13,19 @@ void sendByte(int byte){
 void selectPayloadValue(stage){
     LCD_ClearDisplay();
     LCD_Position(0,0);
-    LCD_PrintString("Send a value:");
+    if(stage == 1){
+    LCD_PrintString("Set b7:0 ");   
+    }
+    else if(stage == 2){
+    LCD_PrintString("Set b15:8 ");
+    }
+    else if(stage == 3){
+    LCD_PrintString("Set b23:16 ");
+    }
+    else{
+    LCD_PrintString("Set b31:24 ");
+    }
+    
     LCD_Position(1,0);
     LCD_PrintString("Value:");
     
@@ -87,7 +99,7 @@ int main(void)
     {   
         addr_flag = 0;
         
-
+        LCD_ClearDisplay();
         LCD_Position(0,0);
         LCD_PrintString("RegWrite CMD");
         LCD_Position(1,0);
@@ -150,22 +162,22 @@ int main(void)
         LCD_Position(1,0);
         LCD_PrintHexUint8(cmdBytes[0]);
         LCD_Position(1,3);
-        LCD_PrintHexUint8(cmdBytes[1]);
-        LCD_Position(1,6);
-        LCD_PrintHexUint8(cmdBytes[2]);
-        LCD_Position(1,9);
-        LCD_PrintHexUint8(cmdBytes[3]);
-        LCD_Position(1,12);
         LCD_PrintHexUint8(cmdBytes[4]);
+        LCD_Position(1,6);
+        LCD_PrintHexUint8(cmdBytes[3]);
+        LCD_Position(1,9);
+        LCD_PrintHexUint8(cmdBytes[2]);
+        LCD_Position(1,12);
+        LCD_PrintHexUint8(cmdBytes[1]);
         CyDelay(1000);
         LCD_Position(0,0);
-        LCD_PrintString("Addr,B1,B2,B3,B4");
+        LCD_PrintString("Addr,B4,B3,B2,B1");
         CyDelay(1000);
         }
         
-        LCD_ClearDisplay();
+
         LCD_Position(0,0);
-        LCD_PrintString("Sending bytes...");
+        LCD_PrintString("Sending addr... ");
         
         //write bytes to output
         //send CMDcode/addrss byte first, then loop through payload bytes to send correctly
@@ -177,17 +189,19 @@ int main(void)
         while(H2G_STRB_IN_Read() == fpga_psoc_xfc){
             //Idle until incoming handshake is toggled
         }
+        CyDelayCycles(1);
         fpga_psoc_xfc = 1 - fpga_psoc_xfc;
-        LCD_ClearDisplay();
+        
+
         LCD_Position(0,0);
         LCD_PrintString("Addr received");
         CyDelay(500);
         LCD_Position(0,0);
         LCD_PrintString("Sending payload...");
-        for(int i = 4; i >=1; i--){
+        for(int i = 1 ; i <5; i++){
             sendByte(cmdBytes[i]); 
             
-            CyDelayCycles(1);
+            
             psoc_fpga_xfc = 1 - psoc_fpga_xfc;
             H2G_STRB_OUT_Write(psoc_fpga_xfc);
         
