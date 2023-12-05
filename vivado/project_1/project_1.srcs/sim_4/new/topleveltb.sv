@@ -4,24 +4,39 @@ module topleveltb(
     );
     
     logic clk;
+    logic reset;
     logic reset_n;
-    logic [7:0] psoc_if_d;
-    logic psoc_fpga_xfc;
-    logic fpga_psoc_xfc;
+    logic reset_d1;
+    logic [7:0] host_hostif_d;  //was psoc_if_d
+    
+    logic host_hostif_host_xfc; //was psoc_fgpa_xfc
+    logic host_hostif_host_xfc_prev;
+    logic host_hostif_host_xfc_toggle;
+    
+    logic host_hostif_fpga_xfc; //was fpga_psoc_xfc
+    logic host_hostif_fpga_xfc_prev;
+    logic host_hostif_fpga_xfc_toggle;
+    logic host_hostif_fpga_xfc_toggle_d1;    
+    
+    assign host_hostif_host_xfc_toggle = host_hostif_host_xfc != host_hostif_host_xfc_prev;
+    assign host_hostif_fpga_xfc_toggle = host_hostif_fpga_xfc != host_hostif_fpga_xfc_prev;   
+    
     logic REG_WE;
     logic [31:0] REG_WR_DATA;
-    logic reset;
+    logic [3:0] REG_ADDR;
+    
     
     assign reset = ~reset_n;
     
     TopLevelInterface TLIF(
         .clk(clk),
         .reset_n(reset_n),
-        .psoc_if_d(psoc_if_d),
-        .psoc_fpga_xfc(psoc_fpga_xfc),
-        .fpga_psoc_xfc(fpga_psoc_xfc),
+        .host_hostif_d(host_hostif_d),
+        .host_hostif_host_xfc_raw(host_hostif_host_xfc),
+        .host_hostif_fpga_xfc(host_hostif_fpga_xfc),
         .REG_WE(REG_WE),
-        .REG_WR_DATA(REG_WR_DATA)
+        .REG_DATA(REG_DATA),
+        .REG_ADDR(REG_ADDR)
     );
     
 initial begin
@@ -35,20 +50,46 @@ initial begin
     #87 reset_n = 1;
 end
 
-//dummy data being sent. Increments by 2 every cycle
 always_ff @ (posedge clk)
 begin
-    if(reset)
-        psoc_if_d <= 0;
+    if (reset)
+        host_hostif_d <= 0;
+    else if (host_hostif_fpga_xfc_toggle)
+        host_hostif_d <= host_hostif_d + 4'b0010;
+end
+    
+    
+always_ff @ (posedge clk)
+begin
+    if (reset)
+    begin
+        host_hostif_host_xfc_prev <= 0;
+        host_hostif_fpga_xfc_prev <= 0;
+    end
     else
-        psoc_if_d <= psoc_if_d + 4'b0010;
+    begin
+        host_hostif_host_xfc_prev <= host_hostif_host_xfc;
+        host_hostif_fpga_xfc_prev <= host_hostif_fpga_xfc;    
+    end
 end
 
-//fake psoc_fpga_xfc handshake signal
+
 always_ff @ (posedge clk)
+begin
     if (reset)
-        psoc_fpga_xfc <= 0;
-    else if (fpga_psoc_xfc)
-        psoc_fpga_xfc <= ~psoc_fpga_xfc;
+        host_hostif_host_xfc <= 0;
+    else if (host_hostif_fpga_xfc_toggle_d1 || reset_d1)
+        host_hostif_host_xfc <= ~host_hostif_host_xfc;
+end   
+
+
+always_ff @ (posedge clk)
+begin
+    reset_d1 <= reset;
+    if (reset)
+        host_hostif_fpga_xfc_toggle_d1 <=0;
+    else 
+        host_hostif_fpga_xfc_toggle_d1 <= host_hostif_fpga_xfc_toggle;
+end
 
 endmodule

@@ -1,6 +1,6 @@
 // ======================================================================
 // HostDesign.v generated from TopDesign.cysch
-// 10/13/2023 at 11:47
+// 12/04/2023 at 19:50
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -256,7 +256,7 @@ module top ;
           wire  Net_17;
           wire  Net_3;
           wire  Net_2;
-          wire [3:0] Net_13;
+          wire [7:0] Net_13;
 
     CharLCD_v2_20_0 LCD ();
 
@@ -334,7 +334,7 @@ module top ;
 
 	assign tmpOE__SW2_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{1'b1} : {1'b1};
 
-    CyControlReg_v1_80 LEDreg (
+    CyControlReg_v1_80 OUT_BYTE (
         .clock(1'b0),
         .control_0(Net_17),
         .control_1(Net_16),
@@ -344,87 +344,87 @@ module top ;
         .control_5(Net_19),
         .control_6(Net_20),
         .control_7(Net_21),
-        .control_bus(Net_13[3:0]),
+        .control_bus(Net_13[7:0]),
         .reset(1'b0));
-    defparam LEDreg.Bit0Mode = 0;
-    defparam LEDreg.Bit1Mode = 0;
-    defparam LEDreg.Bit2Mode = 0;
-    defparam LEDreg.Bit3Mode = 0;
-    defparam LEDreg.Bit4Mode = 0;
-    defparam LEDreg.Bit5Mode = 0;
-    defparam LEDreg.Bit6Mode = 0;
-    defparam LEDreg.Bit7Mode = 0;
-    defparam LEDreg.BitValue = 0;
-    defparam LEDreg.BusDisplay = 1;
-    defparam LEDreg.ExtrReset = 0;
-    defparam LEDreg.NumOutputs = 4;
+    defparam OUT_BYTE.Bit0Mode = 0;
+    defparam OUT_BYTE.Bit1Mode = 0;
+    defparam OUT_BYTE.Bit2Mode = 0;
+    defparam OUT_BYTE.Bit3Mode = 0;
+    defparam OUT_BYTE.Bit4Mode = 0;
+    defparam OUT_BYTE.Bit5Mode = 0;
+    defparam OUT_BYTE.Bit6Mode = 0;
+    defparam OUT_BYTE.Bit7Mode = 0;
+    defparam OUT_BYTE.BitValue = 0;
+    defparam OUT_BYTE.BusDisplay = 1;
+    defparam OUT_BYTE.ExtrReset = 0;
+    defparam OUT_BYTE.NumOutputs = 8;
 
-	wire [3:0] tmpOE__LEDstrip_net;
-	wire [3:0] tmpFB_3__LEDstrip_net;
-	wire [3:0] tmpIO_3__LEDstrip_net;
-	wire [0:0] tmpINTERRUPT_0__LEDstrip_net;
-	electrical [0:0] tmpSIOVREF__LEDstrip_net;
+	wire [7:0] tmpOE__OUT_PINS_net;
+	wire [7:0] tmpFB_7__OUT_PINS_net;
+	wire [7:0] tmpIO_7__OUT_PINS_net;
+	wire [0:0] tmpINTERRUPT_0__OUT_PINS_net;
+	electrical [0:0] tmpSIOVREF__OUT_PINS_net;
 
 	cy_psoc3_pins_v1_10
 		#(.id("e851a3b9-efb8-48be-bbb8-b303b216c393"),
-		  .drive_mode(12'b110_110_110_110),
-		  .ibuf_enabled(4'b1_1_1_1),
-		  .init_dr_st(4'b0_0_0_0),
+		  .drive_mode(24'b110_110_110_110_110_110_110_110),
+		  .ibuf_enabled(8'b1_1_1_1_1_1_1_1),
+		  .init_dr_st(8'b0_0_0_0_0_0_0_0),
 		  .input_clk_en(0),
-		  .input_sync(4'b1_1_1_1),
-		  .input_sync_mode(4'b0_0_0_0),
-		  .intr_mode(8'b00_00_00_00),
+		  .input_sync(8'b1_1_1_1_1_1_1_1),
+		  .input_sync_mode(8'b0_0_0_0_0_0_0_0),
+		  .intr_mode(16'b00_00_00_00_00_00_00_00),
 		  .invert_in_clock(0),
 		  .invert_in_clock_en(0),
 		  .invert_in_reset(0),
 		  .invert_out_clock(0),
 		  .invert_out_clock_en(0),
 		  .invert_out_reset(0),
-		  .io_voltage(",,,"),
-		  .layout_mode("CONTIGUOUS"),
-		  .oe_conn(4'b0_0_0_0),
+		  .io_voltage(",,,,,,,"),
+		  .layout_mode("NONCONTIGUOUS"),
+		  .oe_conn(8'b0_0_0_0_0_0_0_0),
 		  .oe_reset(0),
-		  .oe_sync(4'b0_0_0_0),
+		  .oe_sync(8'b0_0_0_0_0_0_0_0),
 		  .output_clk_en(0),
-		  .output_clock_mode(4'b0_0_0_0),
-		  .output_conn(4'b1_1_1_1),
-		  .output_mode(4'b0_0_0_0),
+		  .output_clock_mode(8'b0_0_0_0_0_0_0_0),
+		  .output_conn(8'b1_1_1_1_1_1_1_1),
+		  .output_mode(8'b0_0_0_0_0_0_0_0),
 		  .output_reset(0),
-		  .output_sync(4'b0_0_0_0),
+		  .output_sync(8'b0_0_0_0_0_0_0_0),
 		  .pa_in_clock(-1),
 		  .pa_in_clock_en(-1),
 		  .pa_in_reset(-1),
 		  .pa_out_clock(-1),
 		  .pa_out_clock_en(-1),
 		  .pa_out_reset(-1),
-		  .pin_aliases(",,,"),
-		  .pin_mode("OOOO"),
+		  .pin_aliases(",,,,,,,"),
+		  .pin_mode("OOOOOOOO"),
 		  .por_state(4),
 		  .sio_group_cnt(0),
-		  .sio_hyst(4'b1_1_1_1),
+		  .sio_hyst(8'b1_1_1_1_1_1_1_1),
 		  .sio_ibuf(""),
-		  .sio_info(8'b00_00_00_00),
+		  .sio_info(16'b00_00_00_00_00_00_00_00),
 		  .sio_obuf(""),
 		  .sio_refsel(""),
 		  .sio_vtrip(""),
 		  .sio_hifreq(""),
 		  .sio_vohsel(""),
-		  .slew_rate(4'b0_0_0_0),
-		  .spanning(0),
-		  .use_annotation(4'b0_0_0_0),
-		  .vtrip(8'b10_10_10_10),
-		  .width(4),
-		  .ovt_hyst_trim(4'b0_0_0_0),
-		  .ovt_needed(4'b0_0_0_0),
-		  .ovt_slew_control(8'b00_00_00_00),
-		  .input_buffer_sel(8'b00_00_00_00))
-		LEDstrip
-		 (.oe(tmpOE__LEDstrip_net),
-		  .y({Net_13[3:0]}),
-		  .fb({tmpFB_3__LEDstrip_net[3:0]}),
-		  .io({tmpIO_3__LEDstrip_net[3:0]}),
-		  .siovref(tmpSIOVREF__LEDstrip_net),
-		  .interrupt({tmpINTERRUPT_0__LEDstrip_net[0:0]}),
+		  .slew_rate(8'b0_0_0_0_0_0_0_0),
+		  .spanning(1),
+		  .use_annotation(8'b0_0_0_0_0_0_0_0),
+		  .vtrip(16'b10_10_10_10_10_10_10_10),
+		  .width(8),
+		  .ovt_hyst_trim(8'b0_0_0_0_0_0_0_0),
+		  .ovt_needed(8'b0_0_0_0_0_0_0_0),
+		  .ovt_slew_control(16'b00_00_00_00_00_00_00_00),
+		  .input_buffer_sel(16'b00_00_00_00_00_00_00_00))
+		OUT_PINS
+		 (.oe(tmpOE__OUT_PINS_net),
+		  .y({Net_13[7:0]}),
+		  .fb({tmpFB_7__OUT_PINS_net[7:0]}),
+		  .io({tmpIO_7__OUT_PINS_net[7:0]}),
+		  .siovref(tmpSIOVREF__OUT_PINS_net),
+		  .interrupt({tmpINTERRUPT_0__OUT_PINS_net[0:0]}),
 		  .in_clock({1'b0}),
 		  .in_clock_en({1'b1}),
 		  .in_reset({1'b0}),
@@ -432,7 +432,7 @@ module top ;
 		  .out_clock_en({1'b1}),
 		  .out_reset({1'b0}));
 
-	assign tmpOE__LEDstrip_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{4'b1111} : {4'b1111};
+	assign tmpOE__OUT_PINS_net = (`CYDEV_CHIP_MEMBER_USED == `CYDEV_CHIP_MEMBER_3A && `CYDEV_CHIP_REVISION_USED < `CYDEV_CHIP_REVISION_3A_ES3) ? ~{8'b11111111} : {8'b11111111};
 
 	wire [0:0] tmpOE__H2G_STRB_IN_net;
 	wire [0:0] tmpFB_0__H2G_STRB_IN_net;

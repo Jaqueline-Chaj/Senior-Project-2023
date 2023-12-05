@@ -16,8 +16,6 @@ module command_queue #(parameter DEPTH=16, WIDTH=8) (
 logic [WIDTH-1:0] array [DEPTH-1:0];
 logic [$clog2(DEPTH)-1:0] writeptr, next_write_ptr;
 logic [$clog2(DEPTH)-1:0] readptr, next_read_ptr;
-logic IF_FIFO_XFC;
-logic FIFO_PROC_XFC;
 
 assign next_write_ptr = writeptr + 1'b1;
 assign next_read_ptr = readptr + 1'b1;
@@ -26,21 +24,18 @@ assign OUT_RTS = (writeptr != readptr);  // not empty
 assign IN_XFC = IN_RTS && IN_RTR;
 assign OUT_XFC = OUT_RTS && OUT_RTR;
 
-//sets everything to 0 on reset
-always_ff @ (posedge clk)
-begin
-    if(reset)
-        for(int i = 0; i < DEPTH; i++)
-        begin
-            array[i] <= 0;
-        end 
-end
-
 // writes data into a queue slot if not full and data is valid
 always_ff @ (posedge clk)
 begin
     if(reset)
+    begin
         writeptr <= 0;
+        for(int i = 0; i < DEPTH; i++)
+        begin
+            array[i] <= 0;
+        end         
+    end
+        
     else if(IN_XFC)
     begin
         array[writeptr] <= IN_DATA;

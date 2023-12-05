@@ -1,5 +1,5 @@
 # HostDesign
-# 2023-10-13 15:47:20Z
+# 2023-12-05 00:50:54Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -16,11 +16,15 @@ set_io "\LCD:LCDPort(4)\" iocell 2 4
 set_io "\LCD:LCDPort(5)\" iocell 2 5
 set_io "\LCD:LCDPort(6)\" iocell 2 6
 set_io "SW2(0)" iocell 6 1
-set_io "LEDstrip(0)" iocell 0 0
-set_io "LEDstrip(1)" iocell 0 1
-set_io "LEDstrip(2)" iocell 0 2
-set_io "LEDstrip(3)" iocell 0 3
-set_io "H2G_STRB_IN(0)" iocell 3 0
+set_io "OUT_PINS(0)" iocell 0 0
+set_io "OUT_PINS(1)" iocell 0 1
+set_io "OUT_PINS(2)" iocell 0 2
+set_io "OUT_PINS(3)" iocell 0 3
+set_io "OUT_PINS(4)" iocell 0 4
+set_io "OUT_PINS(5)" iocell 0 5
+set_io "OUT_PINS(6)" iocell 0 6
+set_io "OUT_PINS(7)" iocell 0 7
+set_io "H2G_STRB_IN(0)" iocell 12 0
 set_io "H2G_STRB_OUT(0)" iocell 3 5
 set_io "SW3(0)" iocell 15 5
-set_location "\LEDreg:Sync:ctrl_reg\" 3 4 6
+set_location "\OUT_BYTE:Sync:ctrl_reg\" 3 4 6

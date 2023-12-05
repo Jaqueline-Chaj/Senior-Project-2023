@@ -7,7 +7,7 @@
   <width>32</width>
   <peripherals>
     <peripheral>
-      <name>LEDreg</name>
+      <name>OUT_BYTE</name>
       <description>No description available</description>
       <baseAddress>0x0</baseAddress>
       <addressBlock>
@@ -17,7 +17,7 @@
       </addressBlock>
       <registers>
         <register>
-          <name>LEDreg_CONTROL_REG</name>
+          <name>OUT_BYTE_CONTROL_REG</name>
           <description>No description available</description>
           <addressOffset>0x40006472</addressOffset>
           <size>8</size>

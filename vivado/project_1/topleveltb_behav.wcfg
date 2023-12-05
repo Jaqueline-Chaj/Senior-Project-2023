@@ -12,61 +12,141 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,000.001 ns"></ZoomEndTime>
-      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
+      <ZoomEndTime time="718.877 ns"></ZoomEndTime>
+      <Cursor1Time time="341.827 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="198"></NameColumnWidth>
-      <ValueColumnWidth column_width="79"></ValueColumnWidth>
+      <NameColumnWidth column_width="213"></NameColumnWidth>
+      <ValueColumnWidth column_width="143"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="17" />
-   <wvobject fp_name="/topleveltb/clk" type="logic">
+   <WVObjectSize size="36" />
+   <wvobject fp_name="/topleveltb/TLIF/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/topleveltb/reset_n" type="logic">
+   <wvobject fp_name="/topleveltb/TLIF/reset_n" type="logic">
       <obj_property name="ElementShortName">reset_n</obj_property>
       <obj_property name="ObjectShortName">reset_n</obj_property>
    </wvobject>
-   <wvobject fp_name="/topleveltb/psoc_if_d" type="array">
-      <obj_property name="ElementShortName">psoc_if_d[7:0]</obj_property>
-      <obj_property name="ObjectShortName">psoc_if_d[7:0]</obj_property>
+   <wvobject fp_name="/topleveltb/TLIF/host_hostif_d" type="array">
+      <obj_property name="ElementShortName">host_hostif_d[7:0]</obj_property>
+      <obj_property name="ObjectShortName">host_hostif_d[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/topleveltb/psoc_fpga_xfc" type="logic">
-      <obj_property name="ElementShortName">psoc_fpga_xfc</obj_property>
-      <obj_property name="ObjectShortName">psoc_fpga_xfc</obj_property>
+   <wvobject fp_name="/topleveltb/TLIF/host_hostif_host_xfc" type="logic">
+      <obj_property name="ElementShortName">host_hostif_host_xfc</obj_property>
+      <obj_property name="ObjectShortName">host_hostif_host_xfc</obj_property>
    </wvobject>
-   <wvobject fp_name="/topleveltb/fpga_psoc_xfc" type="logic">
-      <obj_property name="ElementShortName">fpga_psoc_xfc</obj_property>
-      <obj_property name="ObjectShortName">fpga_psoc_xfc</obj_property>
+   <wvobject fp_name="/topleveltb/TLIF/host_hostif_fpga_xfc" type="logic">
+      <obj_property name="ElementShortName">host_hostif_fpga_xfc</obj_property>
+      <obj_property name="ObjectShortName">host_hostif_fpga_xfc</obj_property>
    </wvobject>
-   <wvobject fp_name="/topleveltb/REG_WE" type="logic">
+   <wvobject fp_name="/topleveltb/TLIF/REG_WE" type="logic">
       <obj_property name="ElementShortName">REG_WE</obj_property>
       <obj_property name="ObjectShortName">REG_WE</obj_property>
    </wvobject>
-   <wvobject fp_name="/topleveltb/REG_WR_DATA" type="array">
-      <obj_property name="ElementShortName">REG_WR_DATA[31:0]</obj_property>
-      <obj_property name="ObjectShortName">REG_WR_DATA[31:0]</obj_property>
+   <wvobject fp_name="/topleveltb/TLIF/REG_ADDR" type="array">
+      <obj_property name="ElementShortName">REG_ADDR[3:0]</obj_property>
+      <obj_property name="ObjectShortName">REG_ADDR[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/topleveltb/reset" type="logic">
+   <wvobject fp_name="/topleveltb/TLIF/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDP/inData" type="array">
-      <obj_property name="ElementShortName">inData[7:0]</obj_property>
-      <obj_property name="ObjectShortName">inData[7:0]</obj_property>
+   <wvobject fp_name="/topleveltb/TLIF/hostif_queue_DATA" type="array">
+      <obj_property name="ElementShortName">hostif_queue_DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">hostif_queue_DATA[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDP/OUT_RTR" type="logic">
+   <wvobject fp_name="/topleveltb/TLIF/hostif_queue_RTS" type="logic">
+      <obj_property name="ElementShortName">hostif_queue_RTS</obj_property>
+      <obj_property name="ObjectShortName">hostif_queue_RTS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/HOST_IF/state" type="logic">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/hostif_queue_RTR" type="logic">
+      <obj_property name="ElementShortName">hostif_queue_RTR</obj_property>
+      <obj_property name="ObjectShortName">hostif_queue_RTR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/REG_DATA" type="array">
+      <obj_property name="ElementShortName">REG_DATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">REG_DATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/CMDQ/IN_RTS" type="logic">
+      <obj_property name="ElementShortName">IN_RTS</obj_property>
+      <obj_property name="ObjectShortName">IN_RTS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/CMDQ/IN_DATA" type="array">
+      <obj_property name="ElementShortName">IN_DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">IN_DATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/CMDQ/IN_RTR" type="logic">
+      <obj_property name="ElementShortName">IN_RTR</obj_property>
+      <obj_property name="ObjectShortName">IN_RTR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/CMDQ/OUT_RTS" type="logic">
+      <obj_property name="ElementShortName">OUT_RTS</obj_property>
+      <obj_property name="ObjectShortName">OUT_RTS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/CMDQ/OUT_DATA" type="array">
+      <obj_property name="ElementShortName">OUT_DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">OUT_DATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/CMDQ/OUT_RTR" type="logic">
       <obj_property name="ElementShortName">OUT_RTR</obj_property>
       <obj_property name="ObjectShortName">OUT_RTR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/CMDQ/array" type="array">
+      <obj_property name="ElementShortName">array[15:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">array[15:0][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/CMDQ/writeptr" type="array">
+      <obj_property name="ElementShortName">writeptr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">writeptr[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/CMDQ/next_write_ptr" type="array">
+      <obj_property name="ElementShortName">next_write_ptr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">next_write_ptr[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/CMDQ/readptr" type="array">
+      <obj_property name="ElementShortName">readptr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">readptr[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/CMDQ/next_read_ptr" type="array">
+      <obj_property name="ElementShortName">next_read_ptr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">next_read_ptr[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/CMDQ/IN_XFC" type="logic">
+      <obj_property name="ElementShortName">IN_XFC</obj_property>
+      <obj_property name="ObjectShortName">IN_XFC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/CMDQ/OUT_XFC" type="logic">
+      <obj_property name="ElementShortName">OUT_XFC</obj_property>
+      <obj_property name="ObjectShortName">OUT_XFC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/CMDP/HOST_RTS" type="logic">
+      <obj_property name="ElementShortName">HOST_RTS</obj_property>
+      <obj_property name="ObjectShortName">HOST_RTS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/CMDP/HOST_DATA" type="array">
+      <obj_property name="ElementShortName">HOST_DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">HOST_DATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/CMDP/HOST_RTR" type="logic">
+      <obj_property name="ElementShortName">HOST_RTR</obj_property>
+      <obj_property name="ObjectShortName">HOST_RTR</obj_property>
    </wvobject>
    <wvobject fp_name="/topleveltb/TLIF/CMDP/REG_WE" type="logic">
       <obj_property name="ElementShortName">REG_WE</obj_property>
       <obj_property name="ObjectShortName">REG_WE</obj_property>
    </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDP/outData" type="array">
-      <obj_property name="ElementShortName">outData[31:0]</obj_property>
-      <obj_property name="ObjectShortName">outData[31:0]</obj_property>
+   <wvobject fp_name="/topleveltb/TLIF/CMDP/REG_DATA" type="array">
+      <obj_property name="ElementShortName">REG_DATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">REG_DATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/CMDP/REG_ADDR" type="array">
+      <obj_property name="ElementShortName">REG_ADDR[3:0]</obj_property>
+      <obj_property name="ObjectShortName">REG_ADDR[3:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/topleveltb/TLIF/CMDP/prevState" type="array">
       <obj_property name="ElementShortName">prevState[2:0]</obj_property>
@@ -75,10 +155,6 @@
    <wvobject fp_name="/topleveltb/TLIF/CMDP/tempData" type="array">
       <obj_property name="ElementShortName">tempData[31:0]</obj_property>
       <obj_property name="ObjectShortName">tempData[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/CMDP/regAddr" type="array">
-      <obj_property name="ElementShortName">regAddr[3:0]</obj_property>
-      <obj_property name="ObjectShortName">regAddr[3:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/topleveltb/TLIF/CMDP/state" type="array">
       <obj_property name="ElementShortName">state[2:0]</obj_property>
