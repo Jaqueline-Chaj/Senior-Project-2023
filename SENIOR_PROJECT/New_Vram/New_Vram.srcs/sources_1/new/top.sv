@@ -2,7 +2,8 @@
 
 
 module top(
-input clk, cpu_resetn,
+input clk, cpu_resetn, 
+input sw_0,
 
 //input wr_en,
 //input logic[19:0] Wr_addr,
@@ -27,12 +28,12 @@ assign red=RD_data[7:5];
 assign blue=RD_data[4:2];
 assign green=RD_data[1:0];
 
-//assign rgbtodvi[23:16]={(red),5'b0};
-//assign rgbtodvi[15:8]={(blue), 5'b0};
-//assign rgbtodvi[7:0]={(green), 5'b0};
-assign rgbtodvi[23:16]=RD_data;
-assign rgbtodvi[15:8]=RD_data;
-assign rgbtodvi[7:0]=RD_data;
+assign rgbtodvi[23:16]={(red),5'b1};
+assign rgbtodvi[15:8]={(green), 5'b1};
+assign rgbtodvi[7:0]={(blue), 5'b1};
+//assign rgbtodvi[23:16]=RD_data[7:5];
+//assign rgbtodvi[15:8]=RD_data[4:2];
+//assign rgbtodvi[7:0]=RD_data[1:0];
 logic[19:0] RD_addr;
 logic[19:0] waddr;
 logic[7:0]  wr_vram;
@@ -48,9 +49,13 @@ pattern_gen pattern_gen(
 .clk(PixelClk),
 .reset(~cpu_resetn),
 .waddr(waddr) ,
-.wr_vram(wr_vram)
+.wr_vram(wr_vram),
+.sw(sw)
 
 );
+assign sw=sw_0;
+
+
 VRAM VRAM(
 .clk(PixelClk),
 .wr_en(1'b1),

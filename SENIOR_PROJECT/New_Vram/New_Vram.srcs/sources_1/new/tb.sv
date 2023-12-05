@@ -2,13 +2,23 @@
 
 module tb();
 logic clk, cpu_resetn;
-logic hdmi_tx_clk_p,
-
-hdmi_tx_clk_n;
+logic hdmi_tx_clk_p;
+logic hdmi_tx_clk_n;
 
 logic[2:0] hdmi_tx_p;
 
 logic[2:0] hdmi_tx_n;
+logic sw_0;
+
+
+ initial begin
+   sw_0=1;
+   
+   #47  sw_0=~sw_0;
+   
+   $finish;
+    end
+
 
 
 top t0(.clk(clk),
@@ -16,7 +26,8 @@ top t0(.clk(clk),
 .hdmi_tx_clk_p(hdmi_tx_clk_p),
 .hdmi_tx_clk_n(hdmi_tx_clk_n),
 .hdmi_tx_p(hdmi_tx_p),
-.hdmi_tx_n(hdmi_tx_n)
+.hdmi_tx_n(hdmi_tx_n),
+.sw_0(sw_0)
 );
 
 

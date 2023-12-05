@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Fri Dec  1 16:36:05 2023
+| Date         : Tue Dec  5 02:42:30 2023
 | Host         : ARM144-12 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    15 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    70 |
+| Unused register locations in slices containing registers |    68 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -58,9 +58,9 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             129 |           66 |
+| No           | No                    | No                     |             115 |           65 |
 | No           | No                    | Yes                    |               8 |            4 |
-| No           | Yes                   | No                     |             135 |           53 |
+| No           | Yes                   | No                     |             135 |           58 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              74 |           21 |
@@ -76,18 +76,18 @@ Table of Contents
 |  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/in0                                     |                1 |              2 |         2.00 |
 |  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/reset                                                                         |                2 |              3 |         1.50 |
 |  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/LockLostReset/SyncAsyncx/oSyncStages[1] |                2 |              4 |         2.00 |
-|  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/rgb2dvi/U0/DataEncoders[0].DataEncoder/pDataOutRaw[9]_i_1__1_n_0              |                3 |             10 |         3.33 |
-|  clk_wiz/inst/clk_out1 | pattern_gen/mx                                             | pattern_gen/SR[0]                                                                         |                3 |             10 |         3.33 |
+|  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/rgb2dvi/U0/DataEncoders[0].DataEncoder/pDataOutRaw[9]_i_1__1_n_0              |                4 |             10 |         2.50 |
 |  clk_wiz/inst/clk_out1 | Display_Gen/CEA2                                           | Display_Gen/disp_y[9]_i_1_n_0                                                             |                3 |             10 |         3.33 |
-|  clk_wiz/inst/clk_out1 | pattern_gen/mx[10]_i_2_n_0                                 | pattern_gen/mx[10]_i_1_n_0                                                                |                3 |             11 |         3.67 |
+|  clk_wiz/inst/clk_out1 | pattern_gen/mx                                             | pattern_gen/SR[0]                                                                         |                3 |             10 |         3.33 |
 |  clk_wiz/inst/clk_out1 | Display_Gen/sel                                            | Display_Gen/disp_x[10]_i_1_n_0                                                            |                4 |             11 |         2.75 |
+|  clk_wiz/inst/clk_out1 | pattern_gen/mx[10]_i_2_n_0                                 | pattern_gen/mx[10]_i_1_n_0                                                                |                3 |             11 |         3.67 |
 |  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/h_count[0]_i_1_n_0                     |                3 |             12 |         4.00 |
 |  clk_wiz/inst/clk_out1 | Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/v_count | Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/v_count[0]_i_1_n_0                     |                3 |             12 |         4.00 |
 |  clk_wiz/inst/clk_out1 | pattern_gen/mx[10]_i_2_n_0                                 | pattern_gen/SR[0]                                                                         |                5 |             20 |         4.00 |
 |  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/p_4_in                                 |                9 |             22 |         2.44 |
-|  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/rgb2dvi/U0/DataEncoders[0].DataEncoder/SR[0]                                  |               15 |             32 |         2.13 |
+|  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/rgb2dvi/U0/DataEncoders[0].DataEncoder/SR[0]                                  |               19 |             32 |         1.68 |
 |  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/htotal[11]_i_1_n_0                     |               22 |             58 |         2.64 |
-|  clk_wiz/inst/clk_out1 |                                                            |                                                                                           |               66 |            130 |         1.97 |
+|  clk_wiz/inst/clk_out1 |                                                            |                                                                                           |               65 |            116 |         1.78 |
 +------------------------+------------------------------------------------------------+-------------------------------------------------------------------------------------------+------------------+----------------+--------------+
 
 
