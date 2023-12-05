@@ -1,0 +1,14 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Display_generator.gen/sources_1/ip/v_tc_0/sim/v_tc_0.vhd" \
+"../../../../Display_generator.ip_user_files/ipstatic/src/ClockGen.vhd" \
+"../../../../Display_generator.ip_user_files/ipstatic/src/SyncAsync.vhd" \
+"../../../../Display_generator.ip_user_files/ipstatic/src/SyncAsyncReset.vhd" \
+"../../../../Display_generator.ip_user_files/ipstatic/src/DVI_Constants.vhd" \
+"../../../../Display_generator.ip_user_files/ipstatic/src/OutputSERDES.vhd" \
+"../../../../Display_generator.ip_user_files/ipstatic/src/TMDS_Encoder.vhd" \
+"../../../../Display_generator.ip_user_files/ipstatic/src/rgb2dvi.vhd" \
+"../../../../Display_generator.gen/sources_1/ip/rgb2dvi_0/sim/rgb2dvi_0.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,10 @@
+Time resolution is 1 ps
+Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+Time: 20 ns  Iteration: 2  Process: /tb/disp_gen/rgb2dvi/U0/\DataEncoders(0)\/DataEncoder/line__154  File: H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.ip_user_files/ipstatic/src/TMDS_Encoder.vhd
+Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+Time: 20 ns  Iteration: 2  Process: /tb/disp_gen/rgb2dvi/U0/\DataEncoders(1)\/DataEncoder/line__154  File: H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.ip_user_files/ipstatic/src/TMDS_Encoder.vhd
+Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+Time: 20 ns  Iteration: 2  Process: /tb/disp_gen/rgb2dvi/U0/\DataEncoders(2)\/DataEncoder/line__154  File: H:/Senior-Project-2023/SENIOR_PROJECT/Display_generator/Display_generator.ip_user_files/ipstatic/src/TMDS_Encoder.vhd
+Warning: Warning : input CLKIN1 period and attribute CLKIN1_PERIOD are not same.
+Time: 11081240 ps  Iteration: 4  Process: /tb/disp_gen/rgb2dvi/U0/clockgeninternal/ClockGenX/genpll/DVI_ClkGenerator/pchk_p  File: C:/Xilinx/Vivado/2021.2/data/vhdl/src/unisims/primitive/PLLE2_ADV.vhd
+INFO: xsimkernel Simulation Memory Usage: 24620 KB (Peak: 24620 KB), Simulation CPU Usage: 23858 ms
