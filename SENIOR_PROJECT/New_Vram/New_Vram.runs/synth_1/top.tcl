@@ -95,6 +95,7 @@ read_verilog -library xil_defaultlib -sv {
   H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/top.sv
   H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/tb.sv
   H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/imports/new/Display_Generator.sv
+  H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/pattern_gen.sv
 }
 read_ip -quiet H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/ip/blk_mem_gen_0_1/blk_mem_gen_0.xci
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.gen/sources_1/ip/blk_mem_gen_0_1/blk_mem_gen_0_ooc.xdc]
