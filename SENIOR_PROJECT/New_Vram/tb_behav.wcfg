@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="dvi_constants" />
+            <top_module name="glbl" />
+            <top_module name="ipif_pkg" />
+            <top_module name="tb" />
+            <top_module name="vcomponents" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="238.615 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="104"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/tb/t0/VRAM/blk_mem/clka" type="logic">
+      <obj_property name="ElementShortName">clka</obj_property>
+      <obj_property name="ObjectShortName">clka</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/VRAM/blk_mem/wea" type="array">
+      <obj_property name="ElementShortName">wea[0:0]</obj_property>
+      <obj_property name="ObjectShortName">wea[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/VRAM/blk_mem/addra" type="array">
+      <obj_property name="ElementShortName">addra[19:0]</obj_property>
+      <obj_property name="ObjectShortName">addra[19:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/VRAM/blk_mem/dina" type="array">
+      <obj_property name="ElementShortName">dina[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dina[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/VRAM/blk_mem/clkb" type="logic">
+      <obj_property name="ElementShortName">clkb</obj_property>
+      <obj_property name="ObjectShortName">clkb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/VRAM/blk_mem/addrb" type="array">
+      <obj_property name="ElementShortName">addrb[19:0]</obj_property>
+      <obj_property name="ObjectShortName">addrb[19:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/VRAM/blk_mem/doutb" type="array">
+      <obj_property name="ElementShortName">doutb[7:0]</obj_property>
+      <obj_property name="ObjectShortName">doutb[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/Disp/RD_addr" type="array">
+      <obj_property name="ElementShortName">RD_addr[19:0]</obj_property>
+      <obj_property name="ObjectShortName">RD_addr[19:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/hdmi_tx_clk_p" type="logic">
+      <obj_property name="ElementShortName">hdmi_tx_clk_p</obj_property>
+      <obj_property name="ObjectShortName">hdmi_tx_clk_p</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/hdmi_tx_clk_n" type="logic">
+      <obj_property name="ElementShortName">hdmi_tx_clk_n</obj_property>
+      <obj_property name="ObjectShortName">hdmi_tx_clk_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/hdmi_tx_p" type="array">
+      <obj_property name="ElementShortName">hdmi_tx_p[2:0]</obj_property>
+      <obj_property name="ObjectShortName">hdmi_tx_p[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/hdmi_tx_n" type="array">
+      <obj_property name="ElementShortName">hdmi_tx_n[2:0]</obj_property>
+      <obj_property name="ObjectShortName">hdmi_tx_n[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/rgbtodvi" type="array">
+      <obj_property name="ElementShortName">rgbtodvi[23:0]</obj_property>
+      <obj_property name="ObjectShortName">rgbtodvi[23:0]</obj_property>
+   </wvobject>
+</wave_config>
