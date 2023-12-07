@@ -4,44 +4,91 @@
 `define STATE_S1 (1'b1)
 
 module host_interface(
-    //data input from psoc
-    input [7:0] psoc_if_d,
-    input psoc_fpga_xfc,
+    input [7:0] host_hostif_d, 
+    input host_hostif_host_xfc_raw,
+    input hostif_queue_RTR,
     input clk,
-    input reset,
-    output logic fpga_psoc_xfc,
-    reg xfc_prev,
-    reg [7:0] psoc_data
+    input reset_n,
+    output logic host_hostif_fpga_xfc,
+    output logic [7:0] hostif_queue_DATA,
+    output logic hostif_queue_RTS
     );
 
-reg state;
-reg next_state;
+logic host_hostif_host_xfc_prev;
+logic state;
+logic reset1;
+logic reset2;
+logic reset;
+
+logic host_hostif_host_xfc1;
+logic host_hostif_host_xfc2;
+logic host_hostif_host_xfc;
+
+logic QUEUE_XFC = hostif_queue_RTS && hostif_queue_RTR;
 
 //gets the incoming handshake signal from PSOC
 always_ff @ (posedge clk)
 begin
     if(reset)
-        xfc_prev <= 0;
+        host_hostif_host_xfc_prev <= 0;
     else if (state == `STATE_S1)
-        xfc_prev <= psoc_fpga_xfc;
+        host_hostif_host_xfc_prev <= host_hostif_host_xfc;
 end    
 
 //toggles on/off the outgoing handshake signal to PSOC
 always_ff @ (posedge clk)
 begin
     if (reset)
-        fpga_psoc_xfc <= 0;
+        host_hostif_fpga_xfc <= 0;
     else if (state == `STATE_S1)
-        fpga_psoc_xfc <= ~fpga_psoc_xfc;
+        host_hostif_fpga_xfc <= ~host_hostif_fpga_xfc;
 end
 
-//stores incoming byte to register
+//sets IF_RTS high if data is valid
 always_ff @ (posedge clk)
 begin
     if (reset)
-        psoc_data <= 0;
+        hostif_queue_RTS <= 0;
+    else if (state == `STATE_S0)
+        hostif_queue_RTS <= 0;
     else if (state == `STATE_S1)
-        psoc_data <= psoc_if_d;
+        hostif_queue_RTS <= 1;
 end
+
+//updates hostif_queue_DATA with new incoming data byte
+always_ff @ (posedge clk)
+begin
+    if (reset)
+        hostif_queue_DATA <= 0;
+    else if (state == `STATE_S1)
+        hostif_queue_DATA <= host_hostif_d;
+        
+end
+
+//State transition logic
+always_ff @ (posedge clk)
+begin
+    if (reset)
+        state <= `STATE_S0;
+    else if (state == `STATE_S1)
+        state <= `STATE_S0;
+    else if (host_hostif_host_xfc != host_hostif_host_xfc_prev)
+        state <= `STATE_S1;  
+end
+
+//reset flip flop
+always_ff @ (posedge clk)
+begin
+    reset1 <= ~reset_n;
+    reset2 <= reset1;
+    reset <= reset2;
+    
+    host_hostif_host_xfc1 <= host_hostif_host_xfc_raw;
+    host_hostif_host_xfc2 <= host_hostif_host_xfc1;
+    host_hostif_host_xfc <= host_hostif_host_xfc2;
+end
+
+
+
 
 endmodule

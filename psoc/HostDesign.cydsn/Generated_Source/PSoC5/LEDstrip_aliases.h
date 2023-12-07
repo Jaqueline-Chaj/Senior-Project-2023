@@ -37,7 +37,19 @@
 #define LEDstrip_3			(LEDstrip__3__PC)
 #define LEDstrip_3_INTR	((uint16)((uint16)0x0001u << LEDstrip__3__SHIFT))
 
-#define LEDstrip_INTR_ALL	 ((uint16)(LEDstrip_0_INTR| LEDstrip_1_INTR| LEDstrip_2_INTR| LEDstrip_3_INTR))
+#define LEDstrip_4			(LEDstrip__4__PC)
+#define LEDstrip_4_INTR	((uint16)((uint16)0x0001u << LEDstrip__4__SHIFT))
+
+#define LEDstrip_5			(LEDstrip__5__PC)
+#define LEDstrip_5_INTR	((uint16)((uint16)0x0001u << LEDstrip__5__SHIFT))
+
+#define LEDstrip_6			(LEDstrip__6__PC)
+#define LEDstrip_6_INTR	((uint16)((uint16)0x0001u << LEDstrip__6__SHIFT))
+
+#define LEDstrip_7			(LEDstrip__7__PC)
+#define LEDstrip_7_INTR	((uint16)((uint16)0x0001u << LEDstrip__7__SHIFT))
+
+#define LEDstrip_INTR_ALL	 ((uint16)(LEDstrip_0_INTR| LEDstrip_1_INTR| LEDstrip_2_INTR| LEDstrip_3_INTR| LEDstrip_4_INTR| LEDstrip_5_INTR| LEDstrip_6_INTR| LEDstrip_7_INTR))
 
 #endif /* End Pins LEDstrip_ALIASES_H */
 

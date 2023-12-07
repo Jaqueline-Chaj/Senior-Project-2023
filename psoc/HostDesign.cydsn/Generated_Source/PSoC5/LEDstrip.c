@@ -93,6 +93,10 @@ void LEDstrip_SetDriveMode(uint8 mode)
 	CyPins_SetPinDriveMode(LEDstrip_1, mode);
 	CyPins_SetPinDriveMode(LEDstrip_2, mode);
 	CyPins_SetPinDriveMode(LEDstrip_3, mode);
+	CyPins_SetPinDriveMode(LEDstrip_4, mode);
+	CyPins_SetPinDriveMode(LEDstrip_5, mode);
+	CyPins_SetPinDriveMode(LEDstrip_6, mode);
+	CyPins_SetPinDriveMode(LEDstrip_7, mode);
 }
 
 
@@ -204,6 +208,22 @@ uint8 LEDstrip_ReadDataReg(void)
 		if((position & LEDstrip_3_INTR) != 0u) 
 		{ 
 			 LEDstrip_3_INTTYPE_REG = (uint8)mode; 
+		} 
+		if((position & LEDstrip_4_INTR) != 0u) 
+		{ 
+			 LEDstrip_4_INTTYPE_REG = (uint8)mode; 
+		} 
+		if((position & LEDstrip_5_INTR) != 0u) 
+		{ 
+			 LEDstrip_5_INTTYPE_REG = (uint8)mode; 
+		} 
+		if((position & LEDstrip_6_INTR) != 0u) 
+		{ 
+			 LEDstrip_6_INTTYPE_REG = (uint8)mode; 
+		} 
+		if((position & LEDstrip_7_INTR) != 0u) 
+		{ 
+			 LEDstrip_7_INTTYPE_REG = (uint8)mode; 
 		}
     }
     
