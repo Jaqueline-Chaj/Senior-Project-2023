@@ -3,7 +3,14 @@
 
 module top(
 input clk, cpu_resetn, 
-input sw_0,
+input[0:0] sw_0,
+input[0:0] sw_1,
+input[0:0] sw_2,
+input[0:0] sw_3,
+input[0:0] sw_4,
+input[0:0] sw_5,
+input[0:0] sw_6,
+input[0:0] sw_7,
 
 //input wr_en,
 //input logic[19:0] Wr_addr,
@@ -44,16 +51,34 @@ Disp_Counter Disp(
 .RD_addr(RD_addr)
 );
 */
+assign sw=sw_0;
+assign sw1=sw_1;
+assign sw2=sw_2;
+assign sw3=sw_3;
+assign sw4=sw_4;
+assign sw5=sw_5;
+assign sw6=sw_6;
+assign sw7=sw_7;
+
+
+
+
 
 pattern_gen pattern_gen(
 .clk(PixelClk),
 .reset(~cpu_resetn),
 .waddr(waddr) ,
 .wr_vram(wr_vram),
-.sw(sw)
-
+.sw(sw),
+.sw1(sw1),
+.sw2(sw2),
+.sw3(sw3),
+.sw4(sw4),
+.sw5(sw5),
+.sw6(sw6),
+.sw7(sw7)
 );
-assign sw=sw_0;
+
 
 
 VRAM VRAM(
