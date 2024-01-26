@@ -10,7 +10,7 @@ logic[2:0] hdmi_tx_p;
 logic[2:0] hdmi_tx_n;
 logic sw_0,
 sw_1,
-sw_2,
+sw_2,  //Subsequent switches are integrated for later usagefor later usage
 sw_3,
 sw_4,
 sw_5,

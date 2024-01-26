@@ -68,8 +68,7 @@ end
 
 logic[2:0] red_sw, blue_sw;
 logic[1:0] green_sw;
-logic A;
-assign A=sw7;
+
 logic[7:0] transposed_swt_color;
 /*
    assign red_sw[2]=sw7;
@@ -117,5 +116,21 @@ always@(posedge clk) begin
    end
    
 end    
-    
+logic[3:0] S;
+logic NX_S, CUR_S;
+reg[3:0] S;
+reg NX_S;
+reg CUR_S;
+logic S0,S1,S2,S3;
+assign S0=S[0];
+assign S1=S[1];
+assign S2=S[2];
+assign S3=S[3];
+
+
+//Creating a state machine.  
+always@(posedge clk) begin
+
+
+end    
 endmodule

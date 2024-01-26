@@ -55,6 +55,132 @@ v_blank;
              logic[9:0]disp_y;
              logic[12:0] prod;
 
+
+//reset flip_flop to avoid metastability
+logic res_d1;
+logic res_d2;
+logic reset;
+logic resetn;
+always_ff@(posedge PixelClk)
+begin
+    res_d1<=~cpu_resetn;
+    res_d2<=res_d1;
+    reset<=res_d2;
+end
+
+assign resetn=~reset;
+
+//ASSIGN THE DATA FROM THE VRAM INTO THE PORT THAT WILL GO INTO THE HDMI
+assign vid_pData=rgbtodvi;
+
+
+
+//Display IP
+rgb2dvi_0 rgb2dvi (
+
+.TMDS_Clk_p (hdmi_tx_clk_p ),     
+
+ .TMDS_Clk_n (hdmi_tx_clk_n ),
+
+.TMDS_Data_p(hdmi_tx_p),
+
+.TMDS_Data_n(hdmi_tx_n),
+
+.aRst       (~resetn  ),
+
+//.aRst_n     (resetn     ),
+
+.vid_pData  (vid_pData  ),
+
+.vid_pVDE   (vid_pVDE   ),
+
+.vid_pHSync (vid_pHSync ),
+
+.vid_pVSync (vid_pVSync ),
+
+.PixelClk   (PixelClk )//,
+
+//.SerialClk  (SerialClk  )
+
+);
+
+ 
+//VTC IP
+v_tc_0 vtc(
+
+.clk(PixelClk),
+
+.clken(1'b1),
+
+.gen_clken(1'b1),
+
+.resetn(resetn),
+
+.sof_state(sof_state),
+
+.active_video_out(vid_pVDE),
+
+.hsync_out(vid_pHSync),
+
+.vsync_out(vid_pVSync),
+ 
+.hblank_out(h_blank),
+
+.vblank_out(v_blank)
+);
+
+
+//Counter and case statement
+always_ff@(posedge PixelClk) begin  //These two always statements read through the VRAM for each possible pixel.
+	if(reset)
+		disp_x<=0;
+	if(~h_blank) begin
+		if(disp_x<1279) 
+			disp_x<=disp_x+1;
+		else
+			disp_x<=0;
+    end	
+end
+
+
+always_ff@(posedge PixelClk) begin   
+	if(reset)
+		disp_y<=0;
+	if(~v_blank) begin
+		if(disp_x==1279) begin
+		  if(disp_y<719) 
+			disp_y<=disp_y+1;
+		else
+			disp_y<=0;
+		end
+			
+    end	
+end
+
+assign prod = disp_y * 5;
+  
+assign RD_addr= {prod, 8'b0} +disp_x;  //This puts the pixel data from the counters into a format for the VRAM.
+/*
+always@(disp_x[10:7]) begin
+case(disp_x[10:7])
+    4'b0000: vid_pData<=black;
+    4'b0001: vid_pData<=blue;
+    4'b0010: vid_pData<=orange;
+    4'b0011: vid_pData<=green;
+    4'b0100: vid_pData<=yellow;
+    4'b0101: vid_pData<=cyan;
+    4'b0110: vid_pData<=red;
+    4'b0111: vid_pData<=silver;
+    4'b1000: vid_pData<=purple;
+    4'b1001: vid_pData<=magenta;
+    4'b1010: vid_pData<=peach;
+    4'b1011: vid_pData<=olive;
+    4'b1100: vid_pData<=white;
+    4'b1101: vid_pData<=navy_blue;
+    4'b1110: vid_pData<=brown;
+    4'b1111: vid_pData<=yellow;
+    endcase
+end*/   
 /*
 always_comb
 
@@ -145,129 +271,6 @@ assign olive=23'h80_00_80;
 assign peach=23'h00_B9_DA;
 
 */
-//reset flip_flop to avoid metastability
-logic res_d1;
-logic res_d2;
-logic reset;
-logic resetn;
-always_ff@(posedge PixelClk)
-begin
-    res_d1<=~cpu_resetn;
-    res_d2<=res_d1;
-    reset<=res_d2;
-end
-
-assign resetn=~reset;
-
-
-
-//Display IP
-rgb2dvi_0 rgb2dvi (
-
-.TMDS_Clk_p (hdmi_tx_clk_p ),     
-
- .TMDS_Clk_n (hdmi_tx_clk_n ),
-
-.TMDS_Data_p(hdmi_tx_p),
-
-.TMDS_Data_n(hdmi_tx_n),
-
-.aRst       (~resetn  ),
-
-//.aRst_n     (resetn     ),
-
-.vid_pData  (vid_pData  ),
-
-.vid_pVDE   (vid_pVDE   ),
-
-.vid_pHSync (vid_pHSync ),
-
-.vid_pVSync (vid_pVSync ),
-
-.PixelClk   (PixelClk )//,
-
-//.SerialClk  (SerialClk  )
-
-);
-
- 
-//VTC IP
-v_tc_0 vtc(
-
-.clk(PixelClk),
-
-.clken(1'b1),
-
-.gen_clken(1'b1),
-
-.resetn(resetn),
-
-.sof_state(sof_state),
-
-.active_video_out(vid_pVDE),
-
-.hsync_out(vid_pHSync),
-
-.vsync_out(vid_pVSync),
- 
-.hblank_out(h_blank),
-
-.vblank_out(v_blank)
-);
-
-//VRAM
-assign vid_pData=rgbtodvi;
-//Counter and case statement
-always_ff@(posedge PixelClk) begin
-	if(reset)
-		disp_x<=0;
-	if(~h_blank) begin
-		if(disp_x<1279) 
-			disp_x<=disp_x+1;
-		else
-			disp_x<=0;
-    end	
-end
-
-
-always_ff@(posedge PixelClk) begin
-	if(reset)
-		disp_y<=0;
-	if(~v_blank) begin
-		if(disp_x==1279) begin
-		  if(disp_y<719) 
-			disp_y<=disp_y+1;
-		else
-			disp_y<=0;
-		end
-			
-    end	
-end
-
-assign prod = disp_y * 5;
-  
-assign RD_addr= {prod, 8'b0} +disp_x;  
-/*
-always@(disp_x[10:7]) begin
-case(disp_x[10:7])
-    4'b0000: vid_pData<=black;
-    4'b0001: vid_pData<=blue;
-    4'b0010: vid_pData<=orange;
-    4'b0011: vid_pData<=green;
-    4'b0100: vid_pData<=yellow;
-    4'b0101: vid_pData<=cyan;
-    4'b0110: vid_pData<=red;
-    4'b0111: vid_pData<=silver;
-    4'b1000: vid_pData<=purple;
-    4'b1001: vid_pData<=magenta;
-    4'b1010: vid_pData<=peach;
-    4'b1011: vid_pData<=olive;
-    4'b1100: vid_pData<=white;
-    4'b1101: vid_pData<=navy_blue;
-    4'b1110: vid_pData<=brown;
-    4'b1111: vid_pData<=yellow;
-    endcase
-end*/   
 
 
 endmodule
