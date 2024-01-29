@@ -1,47 +1,67 @@
-`define CMD_REG (0000)
+
 
 module RectFill (
-input logic reg_wr_en,clk,reset,
-input[3:0] reg_addr_dat,
-input[31:0] command_reg,
-input[15:0] top,left,bot,right,
-input[31:0] color_reg,
-input[4:0] reg_addr
+input[23:0] foreground_color,
+input start_trigger,
+input clk, reset, 
+input[10:0] lft, rgt,
+input[9:0] top, bot,
+output[10:0] marx,
+output[9:0] mary,
+output wr_en, 
+output[7:0] pixel_val
 
 );
-logic[30:0] command;
+
+assign wr_en=rect_state;
 
 //The states of the rectangle draw:  
 logic rect_state_idle;   //Rectangle draw idle
 logic rect_state_active; //Rectangle draw active
-logic cur_rect_state;    //Current rectangle fill state
-logic nx_rect_state;     //Next rectangle fill state
-logic[19:0] marx;
-logic[11:0] mary;
+logic rect_state;
 
-always_ff@(posedge clk) begin
+
+logic[10:0] marx;
+logic[9:0] mary;
+assign pixel_val[7:5]=foreground_color[23:21];
+assign pixel_val[4:2]=foreground_color[15:13];
+assign pixel_val[1:0]=foreground_color[7:6];
+always_ff@(posedge clk) begin  //Sets the conditions for the state machine to progress
 
 if(reset)
-cur_rect_state<=rect_state_idle;
-else if(reg_wr_en && `CMD_REG==reg_addr  &&reg_dat[0])
-cur_rect_state<=rect_state_active;
-else if(marx==right && mary==bot)
-cur_rect_state<=rect_state_idle;
-
+    rect_state<=0;
+else if(start_trigger)
+    rect_state<=1;
+else if(marx==rgt && mary==bot)
+    rect_state<=0;
 
 end
 
-
-
-
-
-
-
-
-
-
-
-
-
+always_ff@(posedge clk) begin //Sets the actions at each state
+if(reset || rect_state==0) begin
+    marx<=lft; mary<=top; end
+else 
+    begin
+        if(rect_state==1)
+            if(marx<rgt)
+                marx<=marx+1;
+            else begin
+                marx<=lft;
+                mary<=mary+1;
+            end
+    end
+end
 
 endmodule
+
+
+
+
+
+
+
+
+
+
+
+
