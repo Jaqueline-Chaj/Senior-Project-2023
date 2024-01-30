@@ -130,7 +130,7 @@ int main(void)
 
             CyDelay(100);
             
-            if( addrVal == 15){
+            if(addrVal == 15){
                 addrVal = 0x00;
             }
             else{
