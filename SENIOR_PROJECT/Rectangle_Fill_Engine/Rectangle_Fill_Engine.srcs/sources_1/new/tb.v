@@ -69,12 +69,15 @@ $finish;
 end
 
 initial begin
-reset=0;
-start_trigger=0;
-#57 reset=1;
+reset=1;
 #57 reset=0;
-#57 start_trigger=1;
-#57 start_trigger=0;
 
+
+end
+
+initial begin
+start_trigger=0;
+#65 start_trigger=1;
+#10 start_trigger=0;
 end
 endmodule
