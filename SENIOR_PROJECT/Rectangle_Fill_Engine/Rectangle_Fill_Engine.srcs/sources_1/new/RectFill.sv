@@ -6,9 +6,8 @@ input start_trigger,
 input clk, reset, 
 input[10:0] lft, rgt,
 input[9:0] top, bot,
-output[10:0] marx,
-output[9:0] mary,
 output wr_en, 
+output[19:0] waddr,
 output[7:0] pixel_val
 
 );
@@ -51,6 +50,11 @@ else
             end
     end
 end
+
+//Helps assign the write address value for the vram
+logic[11:0] y_logic;
+assign y_logic=mary*5;
+assign waddr={y_logic, 8'b0} + marx;
 
 endmodule
 

@@ -3,14 +3,7 @@
 
 module top(
 input clk, cpu_resetn, 
-input[0:0] sw_0,
-input[0:0] sw_1,
-input[0:0] sw_2,
-input[0:0] sw_3,
-input[0:0] sw_4,
-input[0:0] sw_5,
-input[0:0] sw_6,
-input[0:0] sw_7,
+
 
 //input wr_en,
 //input logic[19:0] Wr_addr,
@@ -42,8 +35,13 @@ assign rgbtodvi[7:0]={(blue), 5'b1};
 //assign rgbtodvi[15:8]=RD_data[4:2];
 //assign rgbtodvi[7:0]=RD_data[1:0];
 logic[19:0] RD_addr;
+logic[19:0] pattern_waddr;
+logic[19:0] rect_waddr;
 logic[19:0] waddr;
-logic[7:0]  wr_vram;
+logic[7:0]  pat_vram;
+logic[7:0] rect_vram;
+logic[7:0] wr_vram;
+logic start_trigger;
 /*
 Disp_Counter Disp(
 .clk(PixelClk),
@@ -51,33 +49,48 @@ Disp_Counter Disp(
 .RD_addr(RD_addr)
 );
 */
-assign sw=sw_0;
-assign sw1=sw_1;
-assign sw2=sw_2;
-assign sw3=sw_3;
-assign sw4=sw_4;
-assign sw5=sw_5;
-assign sw6=sw_6;
-assign sw7=sw_7;
-
-
-
-
 
 pattern_gen pattern_gen(
 .clk(PixelClk),
 .reset(~cpu_resetn),
-.waddr(waddr) ,
-.wr_vram(wr_vram),
-.sw(sw),
-.sw1(sw1),
-.sw2(sw2),
-.sw3(sw3),
-.sw4(sw4),
-.sw5(sw5),
-.sw6(sw6),
-.sw7(sw7)
+.waddr(pattern_waddr),
+.wr_vram(pat_vram),
+.wr_en(pat_wr_en)
 );
+
+RectFill RectFill(
+.clk(PixelClk),
+.reset(~cpu_resetn),
+.waddr(rect_waddr),
+.foreground_color(23'h00FF00),
+.start_trigger(start_trigger),
+.top(10'b0000100000), //30
+.lft(11'b00000100000),//30
+.bot(10'b0011111111),
+.rgt(11'b00011111111),
+.pixel_val(rect_vram),
+.wr_en(rect_wr_en)
+);     
+logic pat_wr_en_p1;
+assign start_trigger=~pat_wr_en & pat_wr_en_p1;
+
+always@(posedge clk) begin
+pat_wr_en_p1<=pat_wr_en; end
+/*this is a temporary simulation of the start trigger.  It ensures that a pulse emanates when the 
+pattern generator goes to idle, and then stops after the next clock cycle */
+
+logic[19:0] pat_bitwise_and;
+logic[19:0] rect_bitwise_and;
+logic[7:0] pat_wr_bitwise_and;
+logic[7:0] rect_wr_bitwise_and;
+//Chooses which engine adddress and color value we want.
+assign pat_bitwise_and=pattern_waddr & {20{pat_wr_en}};  //If the pattern write enable is active, then bitwise and returns the pattern write address
+assign rect_bitwise_and=rect_waddr & {20{rect_wr_en}};
+assign waddr=rect_bitwise_and | pat_bitwise_and;
+
+assign pat_wr_bitwise_and=pat_vram & {8{pat_wr_en}};  //If the pattern write enable is active, then bitwise and returns the pattern write address
+assign rect_wr_bitwise_and=rect_vram & {8{rect_wr_en}};
+assign wr_vram=rect_wr_bitwise_and | pat_wr_bitwise_and;
 
 
 
