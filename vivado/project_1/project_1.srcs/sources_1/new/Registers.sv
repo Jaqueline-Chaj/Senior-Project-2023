@@ -20,7 +20,7 @@ module Register(
     output logic[10:0] reg_bot_right_x,
     output logic[10:0] reg_bot_right_y,
     output logic[23:0] fill_color,
-    output logic[4:0]  test_pat_mode,
+    output logic[4:0] test_pat_mode,
     output logic trig_rect_fill_eng 
     );
 
