@@ -1,7 +1,5 @@
 `timescale 1ns / 1ps
 
-
-
 module pattern_gen(
 output[19:0] waddr,
 input reset,clk,
@@ -28,7 +26,7 @@ else if(mx==1279 && my==719)
     pat_state<=0;
 end
 
-assign wr_en=pat_state;
+assign wr_en=~pat_state;
 always@(posedge clk) begin
     if(reset || pat_state==0) begin
         waddr<=0;
@@ -38,7 +36,6 @@ always@(posedge clk) begin
     else if(pat_state==1) begin
         
             if(mx!=1279 | my !=719) begin
-                waddr<=waddr+1;
                 if(mx<1279)
                     mx<=mx+1;
                 else begin
@@ -56,6 +53,10 @@ always@(posedge clk) begin
    
 end
 
+logic[11:0] y_logic;
+assign y_logic=my*5;
+assign waddr={y_logic, 8'b0} + mx;
+
 
 
 //The states of the rectangle draw:  
@@ -71,7 +72,6 @@ always_ff@(posedge clk) begin
             wr_vram<=8'h1C; end //Blue
         else begin
             wr_vram<=8'h03; end
-   
 end    
 
 endmodule

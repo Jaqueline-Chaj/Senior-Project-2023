@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2023 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2024 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -96,8 +96,8 @@ output wire [7 : 0] doutb;
     .C_BYTE_SIZE(8),
     .C_ALGORITHM(1),
     .C_PRIM_TYPE(1),
-    .C_LOAD_INIT_FILE(1),
-    .C_INIT_FILE_NAME("blk_mem_gen_0.mif"),
+    .C_LOAD_INIT_FILE(0),
+    .C_INIT_FILE_NAME("no_coe_file_loaded"),
     .C_INIT_FILE("blk_mem_gen_0.mem"),
     .C_USE_DEFAULT_DATA(0),
     .C_DEFAULT_DATA("0"),

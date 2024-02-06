@@ -14,15 +14,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="10,798.192 ns"></ZoomStartTime>
-      <ZoomEndTime time="10,836.269 ns"></ZoomEndTime>
-      <Cursor1Time time="11,000.000 ns"></Cursor1Time>
+      <ZoomStartTime time="11,323.324998 us"></ZoomStartTime>
+      <ZoomEndTime time="13,004.914436 us"></ZoomEndTime>
+      <Cursor1Time time="12,724.649529 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="276"></NameColumnWidth>
-      <ValueColumnWidth column_width="100"></ValueColumnWidth>
+      <ValueColumnWidth column_width="88"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="12" />
+   <WVObjectSize size="20" />
    <wvobject fp_name="/tb/t0/VRAM/blk_mem/clka" type="logic">
       <obj_property name="ElementShortName">clka</obj_property>
       <obj_property name="ObjectShortName">clka</obj_property>
@@ -51,11 +51,6 @@
       <obj_property name="ElementShortName">doutb[7:0]</obj_property>
       <obj_property name="ObjectShortName">doutb[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/t0/Disp/RD_addr" type="array">
-      <obj_property name="ElementShortName">RD_addr[19:0]</obj_property>
-      <obj_property name="ObjectShortName">RD_addr[19:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
    <wvobject fp_name="/tb/t0/hdmi_tx_clk_p" type="logic">
       <obj_property name="ElementShortName">hdmi_tx_clk_p</obj_property>
       <obj_property name="ObjectShortName">hdmi_tx_clk_p</obj_property>
@@ -71,5 +66,41 @@
    <wvobject fp_name="/tb/t0/hdmi_tx_n" type="array">
       <obj_property name="ElementShortName">hdmi_tx_n[2:0]</obj_property>
       <obj_property name="ObjectShortName">hdmi_tx_n[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/pattern_gen/pat_state_idle" type="logic">
+      <obj_property name="ElementShortName">pat_state_idle</obj_property>
+      <obj_property name="ObjectShortName">pat_state_idle</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/pattern_gen/pat_state" type="logic">
+      <obj_property name="ElementShortName">pat_state</obj_property>
+      <obj_property name="ObjectShortName">pat_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/pattern_gen/pat_state_active" type="logic">
+      <obj_property name="ElementShortName">pat_state_active</obj_property>
+      <obj_property name="ObjectShortName">pat_state_active</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/pattern_gen/mb_x" type="logic">
+      <obj_property name="ElementShortName">mb_x</obj_property>
+      <obj_property name="ObjectShortName">mb_x</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/pattern_gen/mb_y" type="logic">
+      <obj_property name="ElementShortName">mb_y</obj_property>
+      <obj_property name="ObjectShortName">mb_y</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/pattern_gen/mx" type="array">
+      <obj_property name="ElementShortName">mx[10:0]</obj_property>
+      <obj_property name="ObjectShortName">mx[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/pattern_gen/my" type="array">
+      <obj_property name="ElementShortName">my[9:0]</obj_property>
+      <obj_property name="ObjectShortName">my[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/RectFill/rect_state" type="logic">
+      <obj_property name="ElementShortName">rect_state</obj_property>
+      <obj_property name="ObjectShortName">rect_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/RectFill/start_trigger" type="logic">
+      <obj_property name="ElementShortName">start_trigger</obj_property>
+      <obj_property name="ObjectShortName">start_trigger</obj_property>
    </wvobject>
 </wave_config>

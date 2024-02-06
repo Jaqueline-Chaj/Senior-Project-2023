@@ -70,14 +70,21 @@ RectFill RectFill(
 .rgt(11'b00011111111),
 .pixel_val(rect_vram),
 .wr_en(rect_wr_en)
-);     
-logic pat_wr_en_p1;
-assign start_trigger=~pat_wr_en & pat_wr_en_p1;
-
-always@(posedge clk) begin
-pat_wr_en_p1<=pat_wr_en; end
-/*this is a temporary simulation of the start trigger.  It ensures that a pulse emanates when the 
+);  
+ 
+ /*this is a temporary simulation of the start trigger.  It ensures that a pulse emanates when the 
 pattern generator goes to idle, and then stops after the next clock cycle */
+   
+logic pat_wr_en_p1,pat_wr_en_p2;
+assign start_trigger=pat_wr_en & ~pat_wr_en_p2;
+always@(posedge clk) begin
+    pat_wr_en_p1<=pat_wr_en; 
+    pat_wr_en_p2<=pat_wr_en_p1;
+end
+
+
+
+
 
 logic[19:0] pat_bitwise_and;
 logic[19:0] rect_bitwise_and;
