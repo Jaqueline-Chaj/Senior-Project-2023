@@ -22,11 +22,11 @@ module tb(
     assign reset = ~reset_n;
     
     host_interface IF(
-    .host_hostif_d(psoc_if_d),
-    .host_hostif_host_xfc_raw(psoc_fpga_xfc),
+    .psoc_if_d(psoc_if_d),
+    .psoc_fpga_xfc(psoc_fpga_xfc),
     .clk(clk),
     .reset_n(reset_n),
-    .host_hostif_fpga_xfc(fpga_psoc_xfc)
+    .fpga_psoc_xfc(fpga_psoc_xfc)
     );
     
     
