@@ -31,7 +31,6 @@ module topleveltb(
     logic [10:0] reg_bot_right_y;
     logic [23:0] fill_color;
     logic [4:0]  test_pat_mode;    
-    logic trig_rect_fill_eng;
     
     assign reset = ~reset_n;
     
@@ -46,8 +45,7 @@ module topleveltb(
         .reg_bot_right_x(reg_bot_right_x),
         .reg_bot_right_y(reg_bot_right_y),
         .fill_color(fill_color),
-        .test_pat_mode(test_pat_mode),
-        .trig_rect_fill_eng(trig_rect_fill_eng)
+        .test_pat_mode(test_pat_mode)
     );
     
     

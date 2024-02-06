@@ -4,9 +4,7 @@ Running: C:/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'ENGINE_ID' [H:/Senior-Project-2023/vivado/project_1/project_1.srcs/sources_1/new/TopLevelInterface.sv:71]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 4 for port 'engine_id' [H:/Senior-Project-2023/vivado/project_1/project_1.srcs/sources_1/new/TopLevelInterface.sv:78]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 11 for port 'reg_bot_right_y' [H:/Senior-Project-2023/vivado/project_1/project_1.srcs/sources_1/new/TopLevelInterface.sv:85]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'REG_DATA' [H:/Senior-Project-2023/vivado/project_1/project_1.srcs/sim_4/new/topleveltb.sv:38]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -14,7 +12,6 @@ Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.host_interface
 Compiling module xil_defaultlib.command_queue
 Compiling module xil_defaultlib.CMDproc
-Compiling module xil_defaultlib.Register
 Compiling module xil_defaultlib.TopLevelInterface
 Compiling module xil_defaultlib.topleveltb
 Compiling module xil_defaultlib.glbl
