@@ -11,7 +11,8 @@ module TopLevelInterface(
     output logic [10:0] reg_bot_right_x,
     output logic [10:0] reg_bot_right_y,
     output logic [23:0] fill_color,
-    output logic [4:0] test_pat_mode
+    output logic [4:0] test_pat_mode,
+    output logic trig_rect_fill_eng
     );
     
     logic reset;
@@ -31,7 +32,6 @@ module TopLevelInterface(
     logic REG_WE;
     logic [31:0] REG_DATA;
     logic [3:0] REG_ADDR;
-    
     
     // PSOC <---> FPGA Interface
     host_interface HOST_IF( 
@@ -84,7 +84,8 @@ module TopLevelInterface(
     .reg_bot_right_x(reg_bot_right_x),
     .reg_bot_right_y(eg_bot_right_y),
     .fill_color(fill_color),
-    .test_pat_mode(test_pat_mode)
+    .test_pat_mode(test_pat_mode),
+    .trig_rect_fill_eng(trig_rect_fill_eng)
     );
 
 endmodule  
