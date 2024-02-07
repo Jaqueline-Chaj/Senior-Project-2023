@@ -6,9 +6,14 @@ module TopLevelInterface(
     input [7:0] host_hostif_d,
     input host_hostif_host_xfc_raw,
     output logic host_hostif_fpga_xfc,
-    output logic REG_WE,
-    output [31:0] REG_DATA,
-    output [3:0] REG_ADDR
+    
+    output logic [10:0] reg_top_left_x,
+    output logic [10:0] reg_top_left_y,
+    output logic [10:0] reg_bot_right_x,
+    output logic [10:0] reg_bot_right_y,
+    output logic [23:0] fill_color,
+    output logic [4:0] test_pat_mode,
+    output logic [3:0] engine_trigger
     );
     
     logic reset;
@@ -23,6 +28,10 @@ module TopLevelInterface(
     logic [7:0] queue_proc_DATA;
     logic queue_proc_RTS;
     logic queue_proc_RTR;
+    
+    logic [3:0] REG_ADDR;
+    logic [31:0] REG_DATA;
+    logic REG_WE;
     
     // PSOC <---> FPGA Interface
     host_interface HOST_IF( 
@@ -60,6 +69,21 @@ module TopLevelInterface(
     .REG_WE(REG_WE),
     .REG_DATA(REG_DATA),
     .REG_ADDR(REG_ADDR)
+    );
+    
+    Register RegisterBlock(
+    .clk(clk),
+    .reset(reset),
+    .addr(REG_ADDR),
+    .M_dat(REG_DATA),
+    .wr_en(REG_WE),
+    .reg_top_left_x(reg_top_left_x),
+    .reg_top_left_y(reg_top_left_y),
+    .reg_bot_right_x(reg_bot_right_x),
+    .reg_bot_right_y(reg_bot_right_y),
+    .fill_color(fill_color),
+    .test_pat_mode(test_pat_mode),
+    .engine_trigger(engine_trigger)
     );
 
 endmodule  
