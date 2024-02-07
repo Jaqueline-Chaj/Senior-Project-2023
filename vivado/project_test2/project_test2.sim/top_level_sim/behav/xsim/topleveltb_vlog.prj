@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../../../../sp_sources/design sources/CMDproc.sv" \
+"../../../../../../../sp_sources/design sources/Register.sv" \
+"../../../../../../../sp_sources/design sources/TopLevelInterface.sv" \
+"../../../../../../../sp_sources/design sources/command_queue.sv" \
+"../../../../../../../sp_sources/design sources/interface.v" \
+"../../../../../../../sp_sources/simulation sources/topleveltb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -44,12 +44,18 @@ void selectPayloadValue(stage){
         LCD_PrintString(dispStr);
         CyDelay(100);
     
-        if (byteVal == 255){
-                byteVal = 0x00;
-            }
+        if(stage == 1){
+            byteVal = 0x02;
+        }
+        else if (stage == 2){
+            byteVal = 0x04;
+        }    
+        else if (stage == 3){
+            byteVal = 0x06;        
+        }
         else{
-                byteVal += 1;
-            }
+            byteVal = 0x08;
+        }
     }
 
     if(stage == 1){
@@ -128,6 +134,8 @@ int main(void)
             sprintf(dispString, "%x", addrVal);
             LCD_PrintString(dispString);
 
+            addrVal = 0x00;  //setting explicitly for testing fpga
+            /*
             CyDelay(100);
             
             if( addrVal == 15){
@@ -136,6 +144,7 @@ int main(void)
             else{
             addrVal = addrVal + 1;
             }
+            */
         }
         cmdBytes[0] = addrVal;
         
@@ -219,5 +228,3 @@ int main(void)
     
 
 }
-
-/* [] END OF FILE */

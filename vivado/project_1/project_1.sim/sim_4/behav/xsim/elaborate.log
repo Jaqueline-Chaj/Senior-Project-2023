@@ -4,7 +4,6 @@ Running: C:/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3823] variable 'reg_top_left_x' might have multiple concurrent drivers [H:/Senior-Project-2023/vivado/project_1/project_1.srcs/sim_4/new/topleveltb.sv:52]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis

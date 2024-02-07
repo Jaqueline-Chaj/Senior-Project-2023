@@ -13,11 +13,25 @@ module TopLevelInterface(
     output logic [10:0] reg_bot_right_y,
     output logic [23:0] fill_color,
     output logic [4:0] test_pat_mode,
-    output logic [3:0] engine_trigger
+    output logic [3:0] engine_trigger,
+    output logic led0,
+    output logic led1,
+    output logic led2,
+    output logic led3,
+    output logic led4,
+    output logic led5,
+    output logic led6,
+    output logic led7
     );
     
     logic reset;
-    assign reset = ~reset_n;
+    logic resetp1;
+    
+    always_ff @ (posedge clk)
+    begin
+        resetp1 <= ~reset_n;
+        reset <= resetp1;
+    end
     
     //connections between Host_IF and CMDQueue
     logic [7:0] hostif_queue_DATA;
@@ -77,13 +91,25 @@ module TopLevelInterface(
     .addr(REG_ADDR),
     .M_dat(REG_DATA),
     .wr_en(REG_WE),
-    .reg_top_left_x(reg_top_left_x),
-    .reg_top_left_y(reg_top_left_y),
+    .reg_lft_x(reg_top_left_x),
+    .reg_top_y(reg_top_left_y),
     .reg_bot_right_x(reg_bot_right_x),
     .reg_bot_right_y(reg_bot_right_y),
     .fill_color(fill_color),
     .test_pat_mode(test_pat_mode),
     .engine_trigger(engine_trigger)
     );
+
+assign led0 = reg_top_left_x[0];
+assign led1 = reg_top_left_x[1];
+assign led2 = reg_top_left_x[2];
+assign led3 = reg_top_left_x[3];
+assign led4 = reg_bot_right_y[0];
+assign led5 = reg_bot_right_y[1];
+assign led6 = reg_bot_right_y[2];
+assign led7 = reg_bot_right_y[3];
+
+
+  
 
 endmodule  

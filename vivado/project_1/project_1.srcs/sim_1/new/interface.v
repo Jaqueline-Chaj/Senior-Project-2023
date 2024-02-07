@@ -88,7 +88,4 @@ begin
     host_hostif_host_xfc <= host_hostif_host_xfc2;
 end
 
-
-
-
 endmodule

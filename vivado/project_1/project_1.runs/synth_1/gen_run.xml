@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1701737237" LaunchIncrCheckpoint="$PPRDIR/../../../vivado_projects/project_1/project_1.srcs/utils_1/imports/synth_1/host_interface.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1707334705" LaunchIncrCheckpoint="$PPRDIR/../../../vivado_projects/project_1/project_1.srcs/utils_1/imports/synth_1/host_interface.dcp">
   <File Type="PA-TCL" Name="TopLevelInterface.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="TopLevelInterface_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="TopLevelInterface_reports.tcl"/>
   <File Type="RDS-RDS" Name="TopLevelInterface.vds"/>
   <File Type="RDS-UTIL" Name="TopLevelInterface_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="TopLevelInterface_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="TopLevelInterface.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="TopLevelInterface_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="TopLevelInterface_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../../../CMDproc.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Register.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

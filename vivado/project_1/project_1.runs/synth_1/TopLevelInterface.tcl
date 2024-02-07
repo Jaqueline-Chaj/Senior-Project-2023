@@ -90,6 +90,7 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
   H:/CMDproc.sv
+  H:/Senior-Project-2023/vivado/project_1/project_1.srcs/sources_1/new/Register.sv
   H:/Senior-Project-2023/vivado/project_1/project_1.srcs/sim_1/new/command_queue.sv
   H:/Senior-Project-2023/vivado/project_1/project_1.srcs/sim_1/new/interface.v
   H:/Senior-Project-2023/vivado/project_1/project_1.srcs/sources_1/new/TopLevelInterface.sv

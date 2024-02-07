@@ -49,7 +49,7 @@ module topleveltb(
         .host_hostif_host_xfc_raw(host_hostif_host_xfc),
         .host_hostif_fpga_xfc(host_hostif_fpga_xfc),
         .reg_top_left_x(reg_top_left_x),
-        .reg_top_left_y(reg_top_left_x),
+        .reg_top_left_y(reg_top_left_y),
         .reg_bot_right_x(reg_bot_right_x),
         .reg_bot_right_y(reg_bot_right_y),
         .fill_color(fill_color),

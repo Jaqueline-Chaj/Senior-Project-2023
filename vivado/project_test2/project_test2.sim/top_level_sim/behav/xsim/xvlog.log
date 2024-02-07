@@ -1,0 +1,14 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/sp_sources/design sources/CMDproc.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CMDproc
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/sp_sources/design sources/Register.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Register
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/sp_sources/design sources/TopLevelInterface.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TopLevelInterface
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/sp_sources/design sources/command_queue.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module command_queue
+INFO: [VRFC 10-2458] undeclared symbol IN_XFC, assumed default net type wire [H:/sp_sources/design sources/command_queue.sv:24]
+INFO: [VRFC 10-2458] undeclared symbol OUT_XFC, assumed default net type wire [H:/sp_sources/design sources/command_queue.sv:25]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/sp_sources/design sources/interface.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module host_interface
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "H:/sp_sources/simulation sources/topleveltb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module topleveltb
