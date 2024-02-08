@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date             : Tue Feb  6 13:34:14 2024
+| Date             : Thu Feb  8 14:58:24 2024
 | Host             : ARM144-12 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.560        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.408        |
+| Dynamic (W)              | 0.407        |
 | Device Static (W)        | 0.153        |
 | Effective TJA (C/W)      | 3.3          |
 | Max Ambient (C)          | 83.1         |
@@ -52,15 +52,15 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.012 |        9 |       --- |             --- |
-| Slice Logic             |     0.001 |     3393 |       --- |             --- |
-|   LUT as Logic          |     0.001 |     1463 |    133800 |            1.09 |
-|   Register              |    <0.001 |      352 |    269200 |            0.13 |
-|   CARRY4                |    <0.001 |       45 |     33450 |            0.13 |
+| Clocks                  |     0.013 |       14 |       --- |             --- |
+| Slice Logic             |     0.001 |     3570 |       --- |             --- |
+|   LUT as Logic          |     0.001 |     1480 |    133800 |            1.11 |
+|   Register              |    <0.001 |      311 |    269200 |            0.12 |
 |   F7/F8 Muxes           |    <0.001 |      408 |    133800 |            0.30 |
-|   Others                |     0.000 |      821 |       --- |             --- |
-|   LUT as Shift Register |     0.000 |        1 |     46200 |           <0.01 |
-| Signals                 |     0.004 |     3630 |       --- |             --- |
+|   CARRY4                |    <0.001 |       40 |     33450 |            0.12 |
+|   Others                |     0.000 |     1076 |       --- |             --- |
+|   LUT as Shift Register |     0.000 |        2 |     46200 |           <0.01 |
+| Signals                 |     0.003 |     3577 |       --- |             --- |
 | Block RAM               |     0.003 |      256 |       365 |           70.14 |
 | MMCM                    |     0.116 |        1 |        10 |           10.00 |
 | PLL                     |     0.135 |        1 |        10 |           10.00 |
@@ -129,17 +129,22 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+--------------------+-------------------------------------------------------------+-----------------+
-| Clock              | Domain                                                      | Constraint (ns) |
-+--------------------+-------------------------------------------------------------+-----------------+
-| CLKFBIN            | Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/CLKFBIN   |            13.5 |
-| PixelClkIO         | Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/PixelClk  |            13.5 |
-| SerialClkIO        | Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/SerialClk |             2.7 |
-| clk_out1_clk_wiz_0 | clk_wiz/inst/clk_out1_clk_wiz_0                             |            13.5 |
-| clkfbout_clk_wiz_0 | clk_wiz/inst/clkfbout_clk_wiz_0                             |            40.0 |
-| sys_clk_pin        | clk                                                         |            10.0 |
-| sys_clk_pin        | clk_IBUF                                                    |            10.0 |
-+--------------------+-------------------------------------------------------------+-----------------+
++----------------------+-------------------------------------------------------------+-----------------+
+| Clock                | Domain                                                      | Constraint (ns) |
++----------------------+-------------------------------------------------------------+-----------------+
+| CLKFBIN              | Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/CLKFBIN   |            13.5 |
+| CLKFBIN_1            | Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/CLKFBIN   |            13.5 |
+| PixelClkIO           | Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/PixelClk  |            13.5 |
+| PixelClkIO_1         | Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/PixelClk  |            13.5 |
+| SerialClkIO          | Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/SerialClk |             2.7 |
+| SerialClkIO_1        | Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/SerialClk |             2.7 |
+| clk                  | clk                                                         |            10.0 |
+| clk_out1_clk_wiz_0   | clk_wiz/inst/clk_out1_clk_wiz_0                             |            13.5 |
+| clk_out1_clk_wiz_0_1 | clk_wiz/inst/clk_out1_clk_wiz_0                             |            13.5 |
+| clkfbout_clk_wiz_0   | clk_wiz/inst/clkfbout_clk_wiz_0                             |            40.0 |
+| clkfbout_clk_wiz_0_1 | clk_wiz/inst/clkfbout_clk_wiz_0                             |            40.0 |
+| sys_clk_pin          | clk                                                         |            10.0 |
++----------------------+-------------------------------------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -151,18 +156,18 @@ Table of Contents
 +---------------+-----------+
 | Name          | Power (W) |
 +---------------+-----------+
-| top           |     0.408 |
-|   Display_Gen |     0.281 |
-|     rgb2dvi   |     0.278 |
-|       U0      |     0.278 |
+| top           |     0.407 |
+|   Display_Gen |     0.282 |
+|     rgb2dvi   |     0.279 |
+|       U0      |     0.279 |
 |     vtc       |     0.002 |
 |       U0      |     0.002 |
+|   RectFill    |     0.002 |
 |   VRAM        |     0.008 |
 |     blk_mem   |     0.008 |
 |       U0      |     0.008 |
 |   clk_wiz     |     0.117 |
 |     inst      |     0.117 |
-|   pattern_gen |     0.002 |
 +---------------+-----------+
 
 

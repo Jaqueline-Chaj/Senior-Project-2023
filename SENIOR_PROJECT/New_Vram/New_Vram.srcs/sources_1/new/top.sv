@@ -23,7 +23,18 @@ logic[7:0] red;
 logic[7:0] blue;
 logic[7:0] green;
 logic[23:0] rgbtodvi;
+logic PixelClk;
 
+logic reset_p1;
+logic reset_p2;
+logic reset;
+
+always_ff @ (posedge PixelClk)
+begin
+    reset_p1 <= ~cpu_resetn;
+    reset_p2 <= reset_p1;
+    reset <= reset_p2;
+end   
 assign red=RD_data[7:5];
 assign blue=RD_data[4:2];
 assign green=RD_data[1:0];
@@ -52,7 +63,7 @@ Disp_Counter Disp(
 
 pattern_gen pattern_gen(
 .clk(PixelClk),
-.reset(~cpu_resetn),
+.reset(reset),
 .waddr(pattern_waddr),
 .wr_vram(pat_vram),
 .wr_en(pat_wr_en)
@@ -60,14 +71,14 @@ pattern_gen pattern_gen(
 
 RectFill RectFill(
 .clk(PixelClk),
-.reset(~cpu_resetn),
+.reset(reset),
 .waddr(rect_waddr),
-.foreground_color(23'h00FF00),
+.foreground_color(24'hFFFF00),
 .start_trigger(start_trigger),
 .top(10'b0000100000), //30
 .lft(11'b00000100000),//30
-.bot(10'b0011111111),
-.rgt(11'b00011111111),
+.bot(10'b00_1111_1111),
+.rgt(11'b000_1111_1111),
 .pixel_val(rect_vram),
 .wr_en(rect_wr_en)
 );  
@@ -75,11 +86,10 @@ RectFill RectFill(
  /*this is a temporary simulation of the start trigger.  It ensures that a pulse emanates when the 
 pattern generator goes to idle, and then stops after the next clock cycle */
    
-logic pat_wr_en_p1,pat_wr_en_p2;
-assign start_trigger=pat_wr_en & ~pat_wr_en_p2;
-always@(posedge clk) begin
+logic pat_wr_en_p1;
+assign start_trigger=(~pat_wr_en) & pat_wr_en_p1;
+always@(posedge PixelClk) begin
     pat_wr_en_p1<=pat_wr_en; 
-    pat_wr_en_p2<=pat_wr_en_p1;
 end
 
 
@@ -103,7 +113,7 @@ assign wr_vram=rect_wr_bitwise_and | pat_wr_bitwise_and;
 
 VRAM VRAM(
 .clk(PixelClk),
-.wr_en(1'b1),
+.wr_en(pat_wr_en | rect_wr_en),
 .waddr(waddr),
 .wr_data(wr_vram),
 .RD_addr(RD_addr),
@@ -111,7 +121,7 @@ VRAM VRAM(
 
 Display_Gen_Digilent Display_Gen(
 .PixelClk(PixelClk),
-.cpu_resetn(cpu_resetn),
+.cpu_resetn(~reset),
 .RD_addr(RD_addr),
 .rgbtodvi(rgbtodvi),
 .hdmi_tx_clk_n(hdmi_tx_clk_n),
@@ -121,7 +131,7 @@ Display_Gen_Digilent Display_Gen(
 
 //assign ja[1]=hdmi_tx_clk_p;
 //Clocking wizard
-logic PixelClk;
+
 clk_wiz_0 clk_wiz 
  (
   // Clock out ports

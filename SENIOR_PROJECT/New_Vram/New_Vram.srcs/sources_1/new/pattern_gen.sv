@@ -15,18 +15,28 @@ reg[7:0] wr_vram;
 logic mb_x;
 logic mb_y;
 
+//The states of the rectangle draw:  
+logic [1:0] pat_state;
+
 assign mb_x=mx[5];
 assign mb_y=my[5];  
 
 
 always_ff@(posedge clk) begin
-if(reset)
-   pat_state<=1;
-else if(mx==1279 && my==719)
-    pat_state<=0;
+    if(reset)
+       pat_state<=0;
+    else
+    begin
+//                          my==719
+        if( (mx==1279 && my==719) || (pat_state == 2) )
+            pat_state<=2;
+        else
+            pat_state <= 1;
+    end
 end
 
-assign wr_en=~pat_state;
+assign wr_en=pat_state;
+
 always@(posedge clk) begin
     if(reset || pat_state==0) begin
         waddr<=0;
@@ -59,10 +69,6 @@ assign waddr={y_logic, 8'b0} + mx;
 
 
 
-//The states of the rectangle draw:  
-logic pat_state_idle;   //Rectangle draw idle
-logic pat_state_active; //Rectangle draw active
-logic pat_state;
 
 
 
