@@ -69,6 +69,15 @@ pattern_gen pattern_gen(
 .wr_en(pat_wr_en)
 );
 
+/*
+logic pat_wr_en_p1;
+assign start_trigger=(~pat_wr_en) & pat_wr_en_p1;
+always@(posedge PixelClk) begin
+    pat_wr_en_p1<=pat_wr_en; 
+end
+*/
+//TEMPRARY measure
+assign start_trigger=1; //Seeing what happens if rectangle never triggered.
 RectFill RectFill(
 .clk(PixelClk),
 .reset(reset),
@@ -86,11 +95,7 @@ RectFill RectFill(
  /*this is a temporary simulation of the start trigger.  It ensures that a pulse emanates when the 
 pattern generator goes to idle, and then stops after the next clock cycle */
    
-logic pat_wr_en_p1;
-assign start_trigger=(~pat_wr_en) & pat_wr_en_p1;
-always@(posedge PixelClk) begin
-    pat_wr_en_p1<=pat_wr_en; 
-end
+
 
 
 
@@ -102,7 +107,10 @@ logic[7:0] pat_wr_bitwise_and;
 logic[7:0] rect_wr_bitwise_and;
 //Chooses which engine adddress and color value we want.
 assign pat_bitwise_and=pattern_waddr & {20{pat_wr_en}};  //If the pattern write enable is active, then bitwise and returns the pattern write address
+
+    
 assign rect_bitwise_and=rect_waddr & {20{rect_wr_en}};
+
 assign waddr=rect_bitwise_and | pat_bitwise_and;
 
 assign pat_wr_bitwise_and=pat_vram & {8{pat_wr_en}};  //If the pattern write enable is active, then bitwise and returns the pattern write address
@@ -121,7 +129,7 @@ VRAM VRAM(
 
 Display_Gen_Digilent Display_Gen(
 .PixelClk(PixelClk),
-.cpu_resetn(~reset),
+.cpu_resetn(cpu_resetn),
 .RD_addr(RD_addr),
 .rgbtodvi(rgbtodvi),
 .hdmi_tx_clk_n(hdmi_tx_clk_n),

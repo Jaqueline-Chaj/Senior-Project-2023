@@ -35,7 +35,11 @@ always_ff@(posedge clk) begin
     end
 end
 
-assign wr_en=pat_state;
+//TEMPORARY: 
+assign wr_en=0;
+
+//PERMANENT
+//assign wr_en=pat_state[0];
 
 always@(posedge clk) begin
     if(reset || pat_state==0) begin
@@ -54,12 +58,12 @@ always@(posedge clk) begin
                 end
             end
     end
-    else
+   /* else
     begin
         waddr <= 0;
         mx <= 0;
         my <= 0;
-    end
+    end */
    
 end
 

@@ -14,7 +14,7 @@ output[7:0] pixel_val
 
 logic rect_state;
 
-assign wr_en=rect_state;
+
 
 //The states of the rectangle draw:  
 logic rect_state_idle;   //Rectangle draw idle
@@ -58,6 +58,8 @@ end
 logic[11:0] y_logic;
 assign y_logic=mary*5;
 assign waddr={y_logic, 8'b0} + marx;
+
+assign wr_en=rect_state;
 
 endmodule
 
