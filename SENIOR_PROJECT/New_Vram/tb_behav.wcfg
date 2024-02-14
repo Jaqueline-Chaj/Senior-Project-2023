@@ -14,22 +14,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="990,545.621 ns"></ZoomStartTime>
-      <ZoomEndTime time="990,609.173 ns"></ZoomEndTime>
-      <Cursor1Time time="990,605.058 ns"></Cursor1Time>
+      <ZoomStartTime time="93,082.279 ns"></ZoomStartTime>
+      <ZoomEndTime time="93,451.747 ns"></ZoomEndTime>
+      <Cursor1Time time="93,390.169 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="276"></NameColumnWidth>
-      <ValueColumnWidth column_width="64"></ValueColumnWidth>
+      <NameColumnWidth column_width="262"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="24" />
    <wvobject fp_name="/tb/t0/VRAM/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/t0/VRAM/RD_addr" type="array">
-      <obj_property name="ElementShortName">RD_addr[19:0]</obj_property>
-      <obj_property name="ObjectShortName">RD_addr[19:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/t0/VRAM/wr_en" type="logic">
       <obj_property name="ElementShortName">wr_en</obj_property>
@@ -43,8 +39,84 @@
       <obj_property name="ElementShortName">wr_data[7:0]</obj_property>
       <obj_property name="ObjectShortName">wr_data[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/t0/VRAM/RD_Data" type="array">
-      <obj_property name="ElementShortName">RD_Data[7:0]</obj_property>
-      <obj_property name="ObjectShortName">RD_Data[7:0]</obj_property>
+   <wvobject fp_name="/tb/t0/RectFill/start_trigger" type="logic">
+      <obj_property name="ElementShortName">start_trigger</obj_property>
+      <obj_property name="ObjectShortName">start_trigger</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/reset_p1" type="logic">
+      <obj_property name="ElementShortName">reset_p1</obj_property>
+      <obj_property name="ObjectShortName">reset_p1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/reset_p2" type="logic">
+      <obj_property name="ElementShortName">reset_p2</obj_property>
+      <obj_property name="ObjectShortName">reset_p2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/cpu_resetn" type="logic">
+      <obj_property name="ElementShortName">cpu_resetn</obj_property>
+      <obj_property name="ObjectShortName">cpu_resetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/start_trigger" type="logic">
+      <obj_property name="ElementShortName">start_trigger</obj_property>
+      <obj_property name="ObjectShortName">start_trigger</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/RectFill/start_trigger" type="logic">
+      <obj_property name="ElementShortName">start_trigger</obj_property>
+      <obj_property name="ObjectShortName">start_trigger</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/RectFill/marx" type="array">
+      <obj_property name="ElementShortName">marx[10:0]</obj_property>
+      <obj_property name="ObjectShortName">marx[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/RectFill/mary" type="array">
+      <obj_property name="ElementShortName">mary[9:0]</obj_property>
+      <obj_property name="ObjectShortName">mary[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/RectFill/rect_state" type="logic">
+      <obj_property name="ElementShortName">rect_state</obj_property>
+      <obj_property name="ObjectShortName">rect_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/RectFill/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/start_trigger" type="logic">
+      <obj_property name="ElementShortName">start_trigger</obj_property>
+      <obj_property name="ObjectShortName">start_trigger</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/start_trigger_ff" type="array">
+      <obj_property name="ElementShortName">start_trigger_ff[2:0]</obj_property>
+      <obj_property name="ObjectShortName">start_trigger_ff[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/start_trigger_p1" type="logic">
+      <obj_property name="ElementShortName">start_trigger_p1</obj_property>
+      <obj_property name="ObjectShortName">start_trigger_p1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/RectFill/rect_wr_data" type="array">
+      <obj_property name="ElementShortName">rect_wr_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rect_wr_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/RectFill/rect_state" type="logic">
+      <obj_property name="ElementShortName">rect_state</obj_property>
+      <obj_property name="ObjectShortName">rect_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/RectFill/rect_wr_en" type="logic">
+      <obj_property name="ElementShortName">rect_wr_en</obj_property>
+      <obj_property name="ObjectShortName">rect_wr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/rect_wr_en" type="logic">
+      <obj_property name="ElementShortName">rect_wr_en</obj_property>
+      <obj_property name="ObjectShortName">rect_wr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/rect_wr_bitwise_and" type="array">
+      <obj_property name="ElementShortName">rect_wr_bitwise_and[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rect_wr_bitwise_and[7:0]</obj_property>
    </wvobject>
 </wave_config>

@@ -3,8 +3,8 @@
 module pattern_gen(
 output[19:0] waddr,
 input reset,clk,
-output[7:0] wr_vram,
-output wr_en
+output logic[7:0] pat_wr_data,
+output pat_wr_en
 
     );
 logic[10:0] mx;
@@ -12,6 +12,7 @@ logic[9:0]  my;
 
 reg[19:0] waddr;
 reg[7:0] wr_vram;
+
 logic mb_x;
 logic mb_y;
 
@@ -36,7 +37,7 @@ always_ff@(posedge clk) begin
 end
 
 //TEMPORARY: 
-assign wr_en=0;
+assign pat_wr_en=0;
 
 //PERMANENT
 //assign wr_en=pat_state[0];
@@ -79,9 +80,9 @@ assign waddr={y_logic, 8'b0} + mx;
 //Creates the initial test pattern
 always_ff@(posedge clk) begin
         if(mb_x==mb_y) begin 
-            wr_vram<=8'h1C; end //Blue
+            pat_wr_data<=8'h1C; end //Blue
         else begin
-            wr_vram<=8'h03; end
+            pat_wr_data=8'h03; end
 end    
 
 endmodule
