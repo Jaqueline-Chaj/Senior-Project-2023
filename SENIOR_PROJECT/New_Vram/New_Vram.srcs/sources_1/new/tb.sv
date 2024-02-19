@@ -9,6 +9,10 @@ logic[2:0] hdmi_tx_p;
 
 logic[2:0] hdmi_tx_n;
 
+logic[23:0] foreground_color;
+logic[10:0] top, bot;
+logic[11:0] lft,rgt;
+
 
 
 
@@ -18,7 +22,12 @@ top t0(.clk(clk),
 .hdmi_tx_clk_p(hdmi_tx_clk_p),
 .hdmi_tx_clk_n(hdmi_tx_clk_n),
 .hdmi_tx_p(hdmi_tx_p),
-.hdmi_tx_n(hdmi_tx_n)
+.hdmi_tx_n(hdmi_tx_n),
+.top(top),
+.lft(lft),
+.bot(bot),
+.rgt(rgt),
+.foreground_color(foreground_color)
 );
 
 
@@ -32,8 +41,19 @@ end
 
 initial begin
 cpu_resetn=0;
-#57 cpu_resetn=1;
+#721 cpu_resetn=1;
 end
+
+initial begin
+    foreground_color=24'hFFFF00;
+    top=32;
+    bot=255;
+    lft=32;
+    rgt=255;
+end
+
 endmodule
+
+
 
 

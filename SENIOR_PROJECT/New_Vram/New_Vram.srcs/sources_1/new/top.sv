@@ -3,6 +3,9 @@
 
 module top(
 input clk, cpu_resetn, 
+input[10:0] lft, rgt,
+input[9:0] top, bot,
+input[23:0] foreground_color,
 
 output hdmi_tx_clk_p,
 
@@ -23,6 +26,19 @@ logic PixelClk;
 logic reset_p1;
 logic reset_p2;
 logic reset;
+
+//Clocking wizard
+
+clk_wiz_0 clk_wiz 
+ (
+  // Clock out ports
+ .clk_out1(PixelClk),
+  // Status and control signals
+ .reset(~cpu_resetn),
+ // output   locked,
+ // Clock in ports
+  .clk_in1(clk)
+ );
 logic pat_wr_en;
 
 always_ff @ (posedge PixelClk)
@@ -48,26 +64,7 @@ logic start_trigger;
 logic[2:0] start_trigger_ff;  //Im delaying the start trigger so it doesnt proc at the same time as reset.
 logic start_trigger_p1;
 
-assign start_trigger_p1=(reset) & (~reset_p2);
 
-always_ff @(posedge PixelClk) begin 
-    if(reset)begin
-       // start_trigger_p1<=0;
-        start_trigger_ff<=0;end  //Delay the start trigger by 4 clock cycles.
-    if(start_trigger_p1) 
-        start_trigger_ff<=1;
-    else if(start_trigger_ff==1)
-        start_trigger_ff<=2;
-    else if(start_trigger_ff==2)
-        start_trigger_ff<=3;
-   else if(start_trigger_ff==3)
-        start_trigger_ff<=4;
-   else if(start_trigger_ff==4)begin
-        start_trigger<=1; start_trigger_ff<=5; end //Set the start triger for a pulse
-    else if(start_trigger_ff==5) begin
-        start_trigger<=0;
-        start_trigger_ff<=5; end
-end
 
 
 pattern_gen pattern_gen(
@@ -75,33 +72,36 @@ pattern_gen pattern_gen(
 .reset(reset),
 .waddr(pattern_waddr),
 .pat_wr_data(pat_wr_data),
-.pat_wr_en()
+.pat_wr_en(pat_wr_en)
 );
 
-/*
+
 logic pat_wr_en_p1;
-assign start_trigger=(~pat_wr_en) & pat_wr_en_p1;
+
 always@(posedge PixelClk) begin
     pat_wr_en_p1<=pat_wr_en; 
 end
-*/
+assign start_trigger=(~pat_wr_en) & pat_wr_en_p1;
+;
+
+
 
 RectFill RectFill(
 .clk(PixelClk),
 .reset(reset),
 .waddr(rect_waddr),
-.foreground_color(24'hFFFF00),
+.foreground_color(foreground_color),
 .start_trigger(start_trigger),
-.top(10'b00_0100_0000), //32
-.lft(11'b000_1100_0000),//32
-.bot(10'b01_1111_1111), //255
-.rgt(11'b001_1111_1111),//255
+.top(top), 
+.lft(lft),
+.bot(bot), 
+.rgt(rgt),
 .rect_wr_data(rect_wr_data),
 .rect_wr_en(rect_wr_en)
 );  
  
 
-assign pat_wr_en=0; //Temporary
+ //Temporary
 
 
 logic[19:0] pat_bitwise_and;
@@ -150,16 +150,5 @@ Display_Gen_Digilent Display_Gen(
 .hdmi_tx_p(hdmi_tx_p));
 
 //assign ja[1]=hdmi_tx_clk_p;
-//Clocking wizard
 
-clk_wiz_0 clk_wiz 
- (
-  // Clock out ports
- .clk_out1(PixelClk),
-  // Status and control signals
- .reset(~cpu_resetn),
- // output   locked,
- // Clock in ports
-  .clk_in1(clk)
- );
 endmodule

@@ -36,11 +36,10 @@ always_ff@(posedge clk) begin
     end
 end
 
-//TEMPORARY: 
-assign pat_wr_en=0;
+
 
 //PERMANENT
-//assign wr_en=pat_state[0];
+assign pat_wr_en=pat_state[0];
 
 always@(posedge clk) begin
     if(reset || pat_state==0) begin

@@ -41,6 +41,8 @@ v_blank;
 
 logic h_drive_start;
 logic h_blank_p1;
+logic v_drive_start;
+logic v_blank_p1;
 
 /*        */   // Auxiliary signals
 
@@ -125,9 +127,11 @@ v_tc_0 vtc(
 
 always_ff@(posedge PixelClk) begin
     h_blank_p1<=h_blank;
+    v_blank_p1<=v_blank;
 end
 
 assign h_drive_start=~(h_blank) & h_blank_p1;
+assign v_drive_start=~(v_blank) & v_blank_p1;  //Unsure if needed but added just in case
 //
 always_ff@(posedge PixelClk) begin  //These two always statements read through the VRAM for each possible pixel.
 	if(reset || h_drive_start)
@@ -148,7 +152,8 @@ always_ff@(posedge PixelClk) begin
 		disp_y<=0;
 	else begin 
         if(~v_blank) begin
-            if(disp_x==1279) begin  //Same here- Should we do this via blanking rather than #'s(?)
+            if(h_drive_start) begin
+            //if(disp_x==1279) begin  //Same here- Should we do this via blanking rather than #'s(?)
               if(disp_y<719) 
                 disp_y<=disp_y+1;
             else
