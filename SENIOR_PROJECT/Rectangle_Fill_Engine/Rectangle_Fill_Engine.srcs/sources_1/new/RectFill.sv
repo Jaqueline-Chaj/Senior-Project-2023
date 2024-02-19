@@ -50,7 +50,7 @@ if(reset || rect_state==0) begin
     marx<=lft; mary<=top; end
 else 
     begin
-        if(rect_state==1 && pace_counter[11:0] == 0)
+        if(rect_state==1 && pace_counter[11:0] == 0)  
         begin
             if(marx<rgt)
                 marx<=marx+1;

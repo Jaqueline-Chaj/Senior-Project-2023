@@ -39,6 +39,8 @@ h_blank,
 v_blank;
 
 
+logic h_drive_start;
+logic h_blank_p1;
 
 /*        */   // Auxiliary signals
 
@@ -105,9 +107,9 @@ v_tc_0 vtc(
 
 .resetn(~reset),
 
-.sof_state(sof_state),
+.sof_state(sof_state),      // INP -- only used for AXI4
 
-.active_video_out(vid_pVDE),
+.active_video_out(vid_pVDE), // OUT - generated active video signal, active for non-blanking liness
 
 .hsync_out(vid_pHSync),
 
@@ -121,31 +123,39 @@ v_tc_0 vtc(
 
 //Counter and case statement
 
+always_ff@(posedge PixelClk) begin
+    h_blank_p1<=h_blank;
+end
+
+assign h_drive_start=~(h_blank) & h_blank_p1;
 //
 always_ff@(posedge PixelClk) begin  //These two always statements read through the VRAM for each possible pixel.
-	if(reset)
+	if(reset || h_drive_start)
 		disp_x<=0;
-	if(~h_blank) begin  //Only counts if it is not horizontally blanking 
-		if(disp_x<1279) //Could this be v_blank instead?
-			disp_x<=disp_x+1;
-		else
-			disp_x<=0;  //Counts up the display engine x counter
-    end	
+    else begin
+        if(~h_blank) begin  //Only counts if it is not horizontally blanking 
+            if(disp_x<1279) //Could this be v_blank instead?
+                disp_x<=disp_x+1;
+            else
+                disp_x<=0;  //Counts up the display engine x counter
+        end	
+    end
 end
 
 
 always_ff@(posedge PixelClk) begin   
 	if(reset)
 		disp_y<=0;
-	if(~v_blank) begin
-		if(disp_x==1279) begin  //Same here- Should we do this via blanking rather than #'s
-		  if(disp_y<719) 
-			disp_y<=disp_y+1;
-		else
-			disp_y<=0;
-		end
-			
-    end	
+	else begin 
+        if(~v_blank) begin
+            if(disp_x==1279) begin  //Same here- Should we do this via blanking rather than #'s(?)
+              if(disp_y<719) 
+                disp_y<=disp_y+1;
+            else
+                disp_y<=0;
+            end     
+       end	
+    end
 end
 
 assign prod = disp_y * 5;

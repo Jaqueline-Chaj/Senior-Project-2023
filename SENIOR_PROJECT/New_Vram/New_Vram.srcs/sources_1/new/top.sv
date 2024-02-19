@@ -37,8 +37,8 @@ end
 //assign rgbtodvi[23:16]=RD_data[7:5];
 //assign rgbtodvi[15:8]=RD_data[4:2];
 //assign rgbtodvi[7:0]=RD_data[1:0];
-logic[19:0] rd_addr;
-logic[19:0] pattern_waddr;
+logic[19:0] rd_addr; //Read address
+logic[19:0] pattern_waddr;  //Write address from the pattern generator
 logic[19:0] rect_waddr;
 logic[19:0] waddr;
 logic[7:0] pat_wr_data;
@@ -113,7 +113,7 @@ logic[7:0] rect_wr_bitwise_and;
 assign pat_bitwise_and=pattern_waddr & {20{pat_wr_en}};  //If the pattern write enable is active, then bitwise and returns the pattern write address
 
     
-assign rect_bitwise_and=rect_waddr & {20{rect_wr_en}};
+assign rect_bitwise_and=rect_waddr & {20{rect_wr_en}};  //Similar
 
 assign waddr=rect_bitwise_and | pat_bitwise_and;
 
