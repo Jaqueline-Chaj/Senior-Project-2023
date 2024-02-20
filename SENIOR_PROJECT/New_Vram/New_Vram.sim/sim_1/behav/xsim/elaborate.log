@@ -4,8 +4,8 @@ Running: C:/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3823] variable 'waddr' might have multiple concurrent drivers [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/pattern_gen.sv:72]
-WARNING: [VRFC 10-5021] port 'fsync_out' is not connected on this instance [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/imports/new/Display_Generator.sv:102]
+WARNING: [VRFC 10-3823] variable 'waddr' might have multiple concurrent drivers [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/pattern_gen.sv:78]
+WARNING: [VRFC 10-5021] port 'fsync_out' is not connected on this instance [H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/imports/new/Display_Generator.sv:98]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/VRAM.sv" Line 1. Module VRAM doesn't have a timescale but at least one module in design has a timescale.

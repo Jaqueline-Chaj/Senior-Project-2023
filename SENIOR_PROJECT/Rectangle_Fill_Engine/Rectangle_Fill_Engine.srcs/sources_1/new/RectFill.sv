@@ -23,8 +23,7 @@ begin
 end
 
 //The states of the rectangle draw:  
-logic rect_state_idle;   //Rectangle draw idle
-logic rect_state_active; //Rectangle draw active
+
 
 
 logic[10:0] marx;

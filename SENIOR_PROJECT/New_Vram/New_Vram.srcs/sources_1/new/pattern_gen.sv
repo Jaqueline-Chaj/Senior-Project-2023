@@ -8,7 +8,8 @@ output pat_wr_en
 
     );
 logic[10:0] mx;
-logic[9:0]  my;  
+logic[9:0]  my;
+logic[19:0] pace_counter;  
 
 reg[19:0] waddr;
 reg[7:0] wr_vram;
@@ -22,6 +23,11 @@ logic [1:0] pat_state;
 assign mb_x=mx[5];
 assign mb_y=my[5];  
 
+always_ff @ (posedge clk)
+begin
+    if (reset)  pace_counter <=0;
+    else        pace_counter <= pace_counter + 1;
+end
 
 always_ff@(posedge clk) begin
     if(reset)
@@ -48,7 +54,7 @@ always@(posedge clk) begin
         my<=0;
     end
     else if(pat_state==1) begin
-        
+                            //my !=719
             if(mx!=1279 | my !=719) begin
                 if(mx<1279)
                     mx<=mx+1;
@@ -78,10 +84,10 @@ assign waddr={y_logic, 8'b0} + mx;
 
 //Creates the initial test pattern
 always_ff@(posedge clk) begin
-        if(mb_x==mb_y) begin 
-            pat_wr_data<=8'h1C; end //Blue
+        if(mx[4]==0) begin 
+            pat_wr_data<=8'hFF; end //Blue
         else begin
-            pat_wr_data=8'h03; end
+            pat_wr_data=8'h00; end
 end    
 
 endmodule

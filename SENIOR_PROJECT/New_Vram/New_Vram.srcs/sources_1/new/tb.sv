@@ -22,12 +22,7 @@ top t0(.clk(clk),
 .hdmi_tx_clk_p(hdmi_tx_clk_p),
 .hdmi_tx_clk_n(hdmi_tx_clk_n),
 .hdmi_tx_p(hdmi_tx_p),
-.hdmi_tx_n(hdmi_tx_n),
-.top(top),
-.lft(lft),
-.bot(bot),
-.rgt(rgt),
-.foreground_color(foreground_color)
+.hdmi_tx_n(hdmi_tx_n)
 );
 
 
@@ -46,10 +41,10 @@ end
 
 initial begin
     foreground_color=24'hFFFF00;
-    top=32;
-    bot=255;
-    lft=32;
-    rgt=255;
+    top=10'b00_0010_0000;
+    bot=10'b00_1111_1111;
+    lft=11'b000_0010_0000;
+    rgt=11'b000_1111_1111;
 end
 
 endmodule

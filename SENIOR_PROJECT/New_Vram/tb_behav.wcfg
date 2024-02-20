@@ -14,54 +14,22 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="3,980.534 ns"></ZoomStartTime>
-      <ZoomEndTime time="4,249.083 ns"></ZoomEndTime>
-      <Cursor1Time time="69,424.983 ns"></Cursor1Time>
+      <ZoomStartTime time="133.469029 us"></ZoomStartTime>
+      <ZoomEndTime time="262.337386 us"></ZoomEndTime>
+      <Cursor1Time time="240.859326 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="242"></NameColumnWidth>
+      <NameColumnWidth column_width="222"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="25" />
-   <wvobject fp_name="/tb/t0/Display_Gen/vid_pHSync" type="logic">
-      <obj_property name="ElementShortName">vid_pHSync</obj_property>
-      <obj_property name="ObjectShortName">vid_pHSync</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/t0/Display_Gen/vid_pVSync" type="logic">
-      <obj_property name="ElementShortName">vid_pVSync</obj_property>
-      <obj_property name="ObjectShortName">vid_pVSync</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/t0/Display_Gen/disp_x" type="array">
-      <obj_property name="ElementShortName">disp_x[11:0]</obj_property>
-      <obj_property name="ObjectShortName">disp_x[11:0]</obj_property>
-   </wvobject>
+   <WVObjectSize size="28" />
    <wvobject fp_name="/tb/t0/Display_Gen/vid_pVDE" type="logic">
       <obj_property name="ElementShortName">vid_pVDE</obj_property>
       <obj_property name="ObjectShortName">vid_pVDE</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/t0/Display_Gen/disp_x" type="array">
-      <obj_property name="ElementShortName">disp_x[11:0]</obj_property>
-      <obj_property name="ObjectShortName">disp_x[11:0]</obj_property>
-   </wvobject>
    <wvobject fp_name="/tb/t0/Display_Gen/PixelClk" type="logic">
       <obj_property name="ElementShortName">PixelClk</obj_property>
       <obj_property name="ObjectShortName">PixelClk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/t0/Display_Gen/h_blank" type="logic">
-      <obj_property name="ElementShortName">h_blank</obj_property>
-      <obj_property name="ObjectShortName">h_blank</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/t0/Display_Gen/v_blank" type="logic">
-      <obj_property name="ElementShortName">v_blank</obj_property>
-      <obj_property name="ObjectShortName">v_blank</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/t0/Display_Gen/hsync_out" type="logic">
-      <obj_property name="ElementShortName">hsync_out</obj_property>
-      <obj_property name="ObjectShortName">hsync_out</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/t0/Display_Gen/vsync_out" type="logic">
-      <obj_property name="ElementShortName">vsync_out</obj_property>
-      <obj_property name="ObjectShortName">vsync_out</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/t0/Display_Gen/h_drive_start" type="logic">
       <obj_property name="ElementShortName">h_drive_start</obj_property>
@@ -95,26 +63,6 @@
       <obj_property name="ElementShortName">pat_state[1:0]</obj_property>
       <obj_property name="ObjectShortName">pat_state[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb/t0/pattern_gen/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/t0/cpu_resetn" type="logic">
-      <obj_property name="ElementShortName">cpu_resetn</obj_property>
-      <obj_property name="ObjectShortName">cpu_resetn</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/t0/reset_p1" type="logic">
-      <obj_property name="ElementShortName">reset_p1</obj_property>
-      <obj_property name="ObjectShortName">reset_p1</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/t0/reset_p2" type="logic">
-      <obj_property name="ElementShortName">reset_p2</obj_property>
-      <obj_property name="ObjectShortName">reset_p2</obj_property>
-   </wvobject>
-   <wvobject fp_name="/tb/t0/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
    <wvobject fp_name="/tb/t0/PixelClk" type="logic">
       <obj_property name="ElementShortName">PixelClk</obj_property>
       <obj_property name="ObjectShortName">PixelClk</obj_property>
@@ -122,5 +70,69 @@
    <wvobject fp_name="/tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/pattern_gen/mx" type="array">
+      <obj_property name="ElementShortName">mx[10:0]</obj_property>
+      <obj_property name="ObjectShortName">mx[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/pattern_gen/my" type="array">
+      <obj_property name="ElementShortName">my[9:0]</obj_property>
+      <obj_property name="ObjectShortName">my[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/RectFill/marx" type="array">
+      <obj_property name="ElementShortName">marx[10:0]</obj_property>
+      <obj_property name="ObjectShortName">marx[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/RectFill/mary" type="array">
+      <obj_property name="ElementShortName">mary[9:0]</obj_property>
+      <obj_property name="ObjectShortName">mary[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/rect_waddr" type="array">
+      <obj_property name="ElementShortName">rect_waddr[19:0]</obj_property>
+      <obj_property name="ObjectShortName">rect_waddr[19:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/rect_wr_en" type="logic">
+      <obj_property name="ElementShortName">rect_wr_en</obj_property>
+      <obj_property name="ObjectShortName">rect_wr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/pat_wr_en_p1" type="logic">
+      <obj_property name="ElementShortName">pat_wr_en_p1</obj_property>
+      <obj_property name="ObjectShortName">pat_wr_en_p1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/pat_wr_en" type="logic">
+      <obj_property name="ElementShortName">pat_wr_en</obj_property>
+      <obj_property name="ObjectShortName">pat_wr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/pat_wr_data" type="array">
+      <obj_property name="ElementShortName">pat_wr_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">pat_wr_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/rect_wr_data" type="array">
+      <obj_property name="ElementShortName">rect_wr_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rect_wr_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/wr_data" type="array">
+      <obj_property name="ElementShortName">wr_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/pattern_waddr" type="array">
+      <obj_property name="ElementShortName">pattern_waddr[19:0]</obj_property>
+      <obj_property name="ObjectShortName">pattern_waddr[19:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/waddr" type="array">
+      <obj_property name="ElementShortName">waddr[19:0]</obj_property>
+      <obj_property name="ObjectShortName">waddr[19:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/VRAM/waddr" type="array">
+      <obj_property name="ElementShortName">waddr[19:0]</obj_property>
+      <obj_property name="ObjectShortName">waddr[19:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/VRAM/wr_data" type="array">
+      <obj_property name="ElementShortName">wr_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/t0/rd_data" type="array">
+      <obj_property name="ElementShortName">rd_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_data[7:0]</obj_property>
    </wvobject>
 </wave_config>

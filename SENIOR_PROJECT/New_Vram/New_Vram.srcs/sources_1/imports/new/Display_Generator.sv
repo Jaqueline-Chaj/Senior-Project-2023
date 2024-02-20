@@ -30,10 +30,6 @@ gen_clken,
 
 active_video_out,
 
-hsync_out,
-
-vsync_out,
-
 h_blank,
 
 v_blank;

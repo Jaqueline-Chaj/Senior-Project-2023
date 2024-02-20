@@ -3,9 +3,9 @@
 
 module top(
 input clk, cpu_resetn, 
-input[10:0] lft, rgt,
-input[9:0] top, bot,
-input[23:0] foreground_color,
+//input[10:0] lft, rgt,
+//input[9:0] top, bot,
+//input[23:0] foreground_color,
 
 output hdmi_tx_clk_p,
 
@@ -64,8 +64,17 @@ logic start_trigger;
 logic[2:0] start_trigger_ff;  //Im delaying the start trigger so it doesnt proc at the same time as reset.
 logic start_trigger_p1;
 
+logic[23:0]     foreground_color;
+logic[9:0]    top;
+logic[9:0]    bot;
+logic[10:0]    lft;
+logic[10:0]    rgt;
 
-
+assign   foreground_color=24'hFFFF00;
+assign    top=10'b00_0010_0000;
+assign    bot=10'b00_1111_1111;
+assign    lft=11'b000_0010_0000;
+assign    rgt=11'b000_1111_1111;
 
 pattern_gen pattern_gen(
 .clk(PixelClk),
