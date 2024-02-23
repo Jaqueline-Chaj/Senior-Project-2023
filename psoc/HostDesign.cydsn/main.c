@@ -103,6 +103,7 @@ int main(void)
     int fpga_psoc_xfc = 0;  // state of input strobe
     
     //Send reset signal to Nexys board
+    CyDelay(100);
     PSOC_RESET_RAW_Write(1);
     CyDelay(100);
     PSOC_RESET_RAW_Write(0);

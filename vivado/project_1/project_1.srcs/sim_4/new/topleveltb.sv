@@ -71,6 +71,12 @@ initial begin
     #87 reset_n = 1;
 end
 
+initial begin
+    psoc_reset_raw = 1;
+    #100 psoc_reset_raw = 0;
+end
+
+
 always_ff @ (posedge clk)
 begin
     if (reset)

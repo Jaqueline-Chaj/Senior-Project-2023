@@ -12,82 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="831.023 ns"></ZoomEndTime>
-      <Cursor1Time time="615.085 ns"></Cursor1Time>
+      <ZoomEndTime time="1,258.009 ns"></ZoomEndTime>
+      <Cursor1Time time="445.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="213"></NameColumnWidth>
-      <ValueColumnWidth column_width="123"></ValueColumnWidth>
+      <ValueColumnWidth column_width="111"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="52" />
-   <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/addr" type="array">
-      <obj_property name="ElementShortName">addr[3:0]</obj_property>
-      <obj_property name="ObjectShortName">addr[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/M_dat" type="array">
-      <obj_property name="ElementShortName">M_dat[31:0]</obj_property>
-      <obj_property name="ObjectShortName">M_dat[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/wr_en" type="logic">
-      <obj_property name="ElementShortName">wr_en</obj_property>
-      <obj_property name="ObjectShortName">wr_en</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/reg_lft_x" type="array">
-      <obj_property name="ElementShortName">reg_lft_x[10:0]</obj_property>
-      <obj_property name="ObjectShortName">reg_lft_x[10:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/reg_top_y" type="array">
-      <obj_property name="ElementShortName">reg_top_y[10:0]</obj_property>
-      <obj_property name="ObjectShortName">reg_top_y[10:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/reg_bot_right_x" type="array">
-      <obj_property name="ElementShortName">reg_bot_right_x[10:0]</obj_property>
-      <obj_property name="ObjectShortName">reg_bot_right_x[10:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/reg_bot_right_y" type="array">
-      <obj_property name="ElementShortName">reg_bot_right_y[10:0]</obj_property>
-      <obj_property name="ObjectShortName">reg_bot_right_y[10:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/fill_color" type="array">
-      <obj_property name="ElementShortName">fill_color[23:0]</obj_property>
-      <obj_property name="ObjectShortName">fill_color[23:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/test_pat_mode" type="array">
-      <obj_property name="ElementShortName">test_pat_mode[4:0]</obj_property>
-      <obj_property name="ObjectShortName">test_pat_mode[4:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/engine_trigger" type="array">
-      <obj_property name="ElementShortName">engine_trigger[3:0]</obj_property>
-      <obj_property name="ObjectShortName">engine_trigger[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/reg_0" type="array">
-      <obj_property name="ElementShortName">reg_0[31:0]</obj_property>
-      <obj_property name="ObjectShortName">reg_0[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/reg_1" type="array">
-      <obj_property name="ElementShortName">reg_1[31:0]</obj_property>
-      <obj_property name="ObjectShortName">reg_1[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/reg_2" type="array">
-      <obj_property name="ElementShortName">reg_2[31:0]</obj_property>
-      <obj_property name="ObjectShortName">reg_2[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/reg_3" type="array">
-      <obj_property name="ElementShortName">reg_3[31:0]</obj_property>
-      <obj_property name="ObjectShortName">reg_3[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/reg_4" type="array">
-      <obj_property name="ElementShortName">reg_4[31:0]</obj_property>
-      <obj_property name="ObjectShortName">reg_4[31:0]</obj_property>
-   </wvobject>
+   <WVObjectSize size="30" />
    <wvobject fp_name="/topleveltb/TLIF/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -99,6 +31,10 @@
    <wvobject fp_name="/topleveltb/TLIF/psoc_reset_raw" type="logic">
       <obj_property name="ElementShortName">psoc_reset_raw</obj_property>
       <obj_property name="ObjectShortName">psoc_reset_raw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/psoc_reset" type="logic">
+      <obj_property name="ElementShortName">psoc_reset</obj_property>
+      <obj_property name="ObjectShortName">psoc_reset</obj_property>
    </wvobject>
    <wvobject fp_name="/topleveltb/TLIF/host_hostif_d" type="array">
       <obj_property name="ElementShortName">host_hostif_d[7:0]</obj_property>
@@ -144,33 +80,13 @@
       <obj_property name="ElementShortName">led0</obj_property>
       <obj_property name="ObjectShortName">led0</obj_property>
    </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/led1" type="logic">
-      <obj_property name="ElementShortName">led1</obj_property>
-      <obj_property name="ObjectShortName">led1</obj_property>
-   </wvobject>
    <wvobject fp_name="/topleveltb/TLIF/led2" type="logic">
       <obj_property name="ElementShortName">led2</obj_property>
       <obj_property name="ObjectShortName">led2</obj_property>
    </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/led3" type="logic">
-      <obj_property name="ElementShortName">led3</obj_property>
-      <obj_property name="ObjectShortName">led3</obj_property>
-   </wvobject>
    <wvobject fp_name="/topleveltb/TLIF/led4" type="logic">
       <obj_property name="ElementShortName">led4</obj_property>
       <obj_property name="ObjectShortName">led4</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/led5" type="logic">
-      <obj_property name="ElementShortName">led5</obj_property>
-      <obj_property name="ObjectShortName">led5</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/led6" type="logic">
-      <obj_property name="ElementShortName">led6</obj_property>
-      <obj_property name="ObjectShortName">led6</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/led7" type="logic">
-      <obj_property name="ElementShortName">led7</obj_property>
-      <obj_property name="ObjectShortName">led7</obj_property>
    </wvobject>
    <wvobject fp_name="/topleveltb/TLIF/fpga_reset" type="logic">
       <obj_property name="ElementShortName">fpga_reset</obj_property>
@@ -179,10 +95,6 @@
    <wvobject fp_name="/topleveltb/TLIF/fpga_resetp1" type="logic">
       <obj_property name="ElementShortName">fpga_resetp1</obj_property>
       <obj_property name="ObjectShortName">fpga_resetp1</obj_property>
-   </wvobject>
-   <wvobject fp_name="/topleveltb/TLIF/psoc_reset" type="logic">
-      <obj_property name="ElementShortName">psoc_reset</obj_property>
-      <obj_property name="ObjectShortName">psoc_reset</obj_property>
    </wvobject>
    <wvobject fp_name="/topleveltb/TLIF/psoc_reset_rawp1" type="logic">
       <obj_property name="ElementShortName">psoc_reset_rawp1</obj_property>

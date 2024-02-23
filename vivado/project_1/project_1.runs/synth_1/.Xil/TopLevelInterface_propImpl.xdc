@@ -38,6 +38,6 @@ set_property -dict { PACKAGE_PIN AA18  IOSTANDARD LVCMOS33 } [get_ports { host_h
 set_property src_info {type:XDC file:1 line:120 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN V9    IOSTANDARD LVCMOS33 } [get_ports { host_hostif_host_xfc_raw }]; #IO_L21P_T3_DQS_34 Sch=jb_p[1]  1
 set_property src_info {type:XDC file:1 line:122 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN V7    IOSTANDARD LVCMOS33 } [get_ports { host_hostif_fpga_xfc }]; #IO_L19P_T3_34 Sch=jb_p[2]  3
+set_property -dict { PACKAGE_PIN V7    IOSTANDARD LVCMOS33 } [get_ports { host_hostif_fpga_xfc }]; #IO_L19P_T3_34 Sch=jb_p[2]  2
 set_property src_info {type:XDC file:1 line:124 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN W9    IOSTANDARD LVCMOS33 } [get_ports { psoc_reset_raw }]; #IO_L24P_T3_34 Sch=jb_p[3]  7
+set_property -dict { PACKAGE_PIN W9    IOSTANDARD LVCMOS33 } [get_ports { psoc_reset_raw }]; #IO_L24P_T3_34 Sch=jb_p[3]  3

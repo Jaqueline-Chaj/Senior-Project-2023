@@ -121,7 +121,7 @@ module TopLevelInterface(
 
 assign led0 = host_hostif_host_xfc_raw;
 assign led2 = host_hostif_fpga_xfc;
-assign led4 = psoc_reset;
+assign led4 = reset;
   
 
 endmodule  
