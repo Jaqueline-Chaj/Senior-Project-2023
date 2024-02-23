@@ -29,8 +29,8 @@ end
 logic[10:0] marx;
 logic[9:0] mary;
 assign rect_wr_data[7:5]=foreground_color[23:21];
-assign rect_wr_data[4:2]=foreground_color[15:13];
-assign rect_wr_data[1:0]=foreground_color[7:6];
+assign rect_wr_data[4:3]=foreground_color[15:14];
+assign rect_wr_data[2:0]=foreground_color[7:5];
 
 always_ff@(posedge clk) begin  //Sets the conditions for the state machine to progress
 

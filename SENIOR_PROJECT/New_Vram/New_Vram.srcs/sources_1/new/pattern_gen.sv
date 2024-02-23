@@ -49,11 +49,11 @@ assign pat_wr_en=pat_state[0];
 
 always@(posedge clk) begin
     if(reset || pat_state==0) begin
-        waddr<=0;
+       // waddr<=0;
         mx<=0;
         my<=0;
     end
-    else if(pat_state==1) begin
+    else if(pat_state==1 && pace_counter[8:0] == 0) begin
                             //my !=719
             if(mx!=1279 | my !=719) begin
                 if(mx<1279)
@@ -84,10 +84,10 @@ assign waddr={y_logic, 8'b0} + mx;
 
 //Creates the initial test pattern
 always_ff@(posedge clk) begin
-        if(mx[4]==0) begin 
-            pat_wr_data<=8'hFF; end //Blue
+        if(mx[4]== my[4]) begin 
+            pat_wr_data<=8'b00011000; end //Blue 
         else begin
-            pat_wr_data=8'h00; end
+            pat_wr_data=8'h1001000; end
 end    
 
 endmodule

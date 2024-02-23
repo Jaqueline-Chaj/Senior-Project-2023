@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Tue Feb 20 14:06:25 2024
+| Date         : Fri Feb 23 13:23:23 2024
 | Host         : ARM144-12 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             116 |           73 |
+| No           | No                    | No                     |             115 |           66 |
 | No           | No                    | Yes                    |               8 |            3 |
-| No           | Yes                   | No                     |             149 |           58 |
-| Yes          | No                    | No                     |              18 |            8 |
+| No           | Yes                   | No                     |             150 |           60 |
+| Yes          | No                    | No                     |              18 |            7 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              54 |           15 |
+| Yes          | Yes                   | No                     |              54 |           18 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -75,20 +75,20 @@ Table of Contents
 +------------------------+------------------------------------------------------------+-------------------------------------------------------------------------------------------+------------------+----------------+--------------+
 |  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/in0                                     |                1 |              2 |         2.00 |
 |  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/LockLostReset/SyncAsyncx/oSyncStages[1] |                1 |              4 |         4.00 |
-|  clk_wiz/inst/clk_out1 | pattern_gen/E[0]                                           |                                                                                           |                5 |              8 |         1.60 |
-|  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/rgb2dvi/U0/DataEncoders[0].DataEncoder/pDataOutRaw[9]_i_1__1_n_0              |                3 |             10 |         3.33 |
-|  clk_wiz/inst/clk_out1 | RectFill/sel                                               |                                                                                           |                3 |             10 |         3.33 |
-|  clk_wiz/inst/clk_out1 | pattern_gen/mx                                             | pattern_gen/waddr_reg0                                                                    |                4 |             10 |         2.50 |
+|  clk_wiz/inst/clk_out1 | pattern_gen/E[0]                                           |                                                                                           |                4 |              8 |         2.00 |
+|  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/rgb2dvi/U0/DataEncoders[0].DataEncoder/pDataOutRaw[9]_i_1__1_n_0              |                4 |             10 |         2.50 |
+|  clk_wiz/inst/clk_out1 | pattern_gen/mx                                             | pattern_gen/my[9]_i_1_n_0                                                                 |                4 |             10 |         2.50 |
+|  clk_wiz/inst/clk_out1 | pattern_gen/pace_counter_reg[9]_0[0]                       |                                                                                           |                3 |             10 |         3.33 |
 |  clk_wiz/inst/clk_out1 | Display_Gen/disp_y                                         | Display_Gen/clear                                                                         |                3 |             10 |         3.33 |
-|  clk_wiz/inst/clk_out1 | pattern_gen/mx[10]_i_2_n_0                                 | pattern_gen/mx[10]_i_1_n_0                                                                |                2 |             11 |         5.50 |
-|  clk_wiz/inst/clk_out1 | Display_Gen/disp_x[10]_i_2_n_0                             | Display_Gen/disp_x[10]_i_1_n_0                                                            |                3 |             11 |         3.67 |
+|  clk_wiz/inst/clk_out1 | pattern_gen/mx[10]_i_2_n_0                                 | pattern_gen/mx[10]_i_1_n_0                                                                |                4 |             11 |         2.75 |
+|  clk_wiz/inst/clk_out1 | Display_Gen/disp_x[10]_i_2_n_0                             | Display_Gen/disp_x[10]_i_1_n_0                                                            |                4 |             11 |         2.75 |
 |  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/h_count[0]_i_1_n_0                     |                3 |             12 |         4.00 |
 |  clk_wiz/inst/clk_out1 | Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/v_count | Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/v_count[0]_i_1_n_0                     |                3 |             12 |         4.00 |
-|  clk_wiz/inst/clk_out1 |                                                            | reset                                                                                     |                7 |             17 |         2.43 |
-|  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/p_4_in                                 |                8 |             22 |         2.75 |
-|  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/rgb2dvi/U0/DataEncoders[0].DataEncoder/SR[0]                                  |               17 |             32 |         1.88 |
-|  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/htotal[11]_i_1_n_0                     |               21 |             58 |         2.76 |
-|  clk_wiz/inst/clk_out1 |                                                            |                                                                                           |               73 |            117 |         1.60 |
+|  clk_wiz/inst/clk_out1 |                                                            | reset                                                                                     |                7 |             18 |         2.57 |
+|  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/p_4_in                                 |                9 |             22 |         2.44 |
+|  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/rgb2dvi/U0/DataEncoders[0].DataEncoder/SR[0]                                  |               18 |             32 |         1.78 |
+|  clk_wiz/inst/clk_out1 |                                                            | Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/htotal[11]_i_1_n_0                     |               20 |             58 |         2.90 |
+|  clk_wiz/inst/clk_out1 |                                                            |                                                                                           |               66 |            116 |         1.76 |
 +------------------------+------------------------------------------------------------+-------------------------------------------------------------------------------------------+------------------+----------------+--------------+
 
 

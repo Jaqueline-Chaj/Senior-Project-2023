@@ -140,13 +140,13 @@ VRAM VRAM(
 .rd_addr(rd_addr),
 .rd_data(rd_data));
 
-assign red=rd_data[7:5];
-assign blue=rd_data[4:2];
-assign green=rd_data[1:0];
+assign red={rd_data[7:5], 5'b1};
+assign blue={rd_data[4:3], 6'b1};
+assign green={rd_data[2:0], 5'b1};
 
-assign rgbtodvi[23:16]={(red),5'b1};
-assign rgbtodvi[15:8]={(green), 5'b1};
-assign rgbtodvi[7:0]={(blue), 5'b1};
+assign rgbtodvi[23:16]=red;
+assign rgbtodvi[15:8]=blue;
+assign rgbtodvi[7:0]=green;
 
 Display_Gen_Digilent Display_Gen(
 .PixelClk(PixelClk),

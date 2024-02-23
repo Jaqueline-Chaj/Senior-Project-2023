@@ -126,7 +126,7 @@ always_ff@(posedge PixelClk) begin
     v_blank_p1<=v_blank;
 end
 
-assign h_drive_start=~(h_blank) & h_blank_p1;
+assign h_drive_start=~(h_blank) & h_blank_p1; //Pulse on the falling ende of h blankj
 assign v_drive_start=~(v_blank) & v_blank_p1;  //Unsure if needed but added just in case
 //
 always_ff@(posedge PixelClk) begin  //These two always statements read through the VRAM for each possible pixel.

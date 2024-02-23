@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date             : Tue Feb 20 14:07:33 2024
+| Date             : Fri Feb 23 13:24:27 2024
 | Host             : ARM144-12 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.564        |
+| Total On-Chip Power (W)  | 0.563        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.411        |
+| Dynamic (W)              | 0.410        |
 | Device Static (W)        | 0.153        |
 | Effective TJA (C/W)      | 3.3          |
 | Max Ambient (C)          | 83.1         |
@@ -52,21 +52,21 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.013 |       14 |       --- |             --- |
-| Slice Logic             |     0.002 |     3643 |       --- |             --- |
-|   LUT as Logic          |     0.001 |     1536 |    133800 |            1.15 |
+| Clocks                  |     0.012 |       14 |       --- |             --- |
+| Slice Logic             |     0.001 |     3858 |       --- |             --- |
+|   LUT as Logic          |     0.001 |     1654 |    133800 |            1.24 |
+|   CARRY4                |    <0.001 |       50 |     33450 |            0.15 |
 |   Register              |    <0.001 |      345 |    269200 |            0.13 |
-|   CARRY4                |    <0.001 |       43 |     33450 |            0.13 |
-|   Others                |     0.000 |     1075 |       --- |             --- |
+|   Others                |     0.000 |     1076 |       --- |             --- |
 |   F7/F8 Muxes           |     0.000 |      408 |    133800 |            0.30 |
 |   LUT as Shift Register |     0.000 |        1 |     46200 |           <0.01 |
-| Signals                 |     0.007 |     3628 |       --- |             --- |
+| Signals                 |     0.007 |     3851 |       --- |             --- |
 | Block RAM               |     0.002 |      256 |       365 |           70.14 |
 | MMCM                    |     0.116 |        1 |        10 |           10.00 |
 | PLL                     |     0.135 |        1 |        10 |           10.00 |
 | I/O                     |     0.136 |       10 |       285 |            3.51 |
 | Static Power            |     0.153 |          |           |                 |
-| Total                   |     0.564 |          |           |                 |
+| Total                   |     0.563 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.077 |       0.039 |      0.038 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.076 |       0.038 |      0.038 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.163 |       0.132 |      0.031 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.046 |       0.041 |      0.005 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -156,10 +156,10 @@ Table of Contents
 +---------------+-----------+
 | Name          | Power (W) |
 +---------------+-----------+
-| top           |     0.411 |
-|   Display_Gen |     0.281 |
-|     rgb2dvi   |     0.277 |
-|       U0      |     0.277 |
+| top           |     0.410 |
+|   Display_Gen |     0.280 |
+|     rgb2dvi   |     0.276 |
+|       U0      |     0.276 |
 |     vtc       |     0.002 |
 |       U0      |     0.002 |
 |   VRAM        |     0.012 |
