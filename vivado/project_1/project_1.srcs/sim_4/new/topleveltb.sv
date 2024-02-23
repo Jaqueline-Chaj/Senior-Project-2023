@@ -14,6 +14,7 @@ module topleveltb(
     logic reset;
     logic reset_n;
     logic reset_d1;
+    logic psoc_reset_raw;
     logic [7:0] host_hostif_d;  //was psoc_if_d
     
     logic host_hostif_host_xfc; //was psoc_fgpa_xfc
@@ -31,6 +32,7 @@ module topleveltb(
     
     assign host_hostif_host_xfc_toggle = host_hostif_host_xfc != host_hostif_host_xfc_prev;
     assign host_hostif_fpga_xfc_toggle = host_hostif_fpga_xfc != host_hostif_fpga_xfc_prev;   
+    assign psoc_reset_raw = 0;
     
     logic[10:0] reg_top_left_x;
     logic[10:0] reg_top_left_y;
@@ -45,6 +47,7 @@ module topleveltb(
     TopLevelInterface TLIF(
         .clk(clk),
         .reset_n(reset_n),
+        .psoc_reset_raw(psoc_reset_raw),
         .host_hostif_d(host_hostif_d),
         .host_hostif_host_xfc_raw(host_hostif_host_xfc),
         .host_hostif_fpga_xfc(host_hostif_fpga_xfc),

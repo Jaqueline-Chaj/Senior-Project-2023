@@ -1,5 +1,10 @@
 # compile verilog/system verilog design source files
 sv xil_defaultlib  \
+"../../../../../../../CMDproc.sv" \
+"../../../../project_1.srcs/sources_1/new/Register.sv" \
+"../../../../project_1.srcs/sources_1/new/TopLevelInterface.sv" \
+"../../../../project_1.srcs/sim_1/new/command_queue.sv" \
+"../../../../project_1.srcs/sim_1/new/interface.v" \
 "../../../../project_1.srcs/sim_4/new/topleveltb.sv" \
 
 # compile glbl module

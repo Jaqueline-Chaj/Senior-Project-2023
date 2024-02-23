@@ -113,6 +113,9 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\OUT_BYTE.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\OUT_BYTE_PM.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\OUT_PINS_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PSOC_RESET_RAW_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PSOC_RESET_RAW.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\PSOC_RESET_RAW.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\Export\ARM_GCC_Generic">

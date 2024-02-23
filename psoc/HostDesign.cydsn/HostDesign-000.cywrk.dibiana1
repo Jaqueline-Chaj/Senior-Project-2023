@@ -18,7 +18,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="HostDesign-000">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="HostDesign-000\HostDesign\Source Files\main.c">
 <ExpandedNodeIds>
 <v>HostDesign-000</v>
 <v>HostDesign-000\HostDesign</v>
@@ -139,6 +139,7 @@
 <v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
 <v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\OUT_BYTE.lst</v>
 <v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\OUT_BYTE_PM.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\PSOC_RESET_RAW.lst</v>
 <v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\SW2.lst</v>
 <v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\SW3.lst</v>
 <v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\HostDesign.elf</v>
@@ -174,6 +175,7 @@
 <v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
 <v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\OUT_BYTE.lst</v>
 <v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\OUT_BYTE_PM.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\PSOC_RESET_RAW.lst</v>
 <v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\SW2.lst</v>
 <v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\SW3.lst</v>
 <v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\HostDesign.elf</v>
@@ -232,7 +234,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1398, 831" SelectedTabbedMdiWindow="c5521733-702c-4cc9-bcef-a9180f774817"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="74d3dae0-d923-47fa-a57d-ddf3736a6b24" /><DocumentWindow Key="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\TopDesign\TopDesign.cysch" Guid="6b99caf8-ecc3-4aab-ba50-80aacd4c89e2" /><DocumentWindow Key="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\HostDesign.cydwr" Guid="7d66e42e-5b60-4d40-acdd-e0872d939713" /><DocumentWindow Key="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\main.c" Guid="c5521733-702c-4cc9-bcef-a9180f774817" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1439, 831" SelectedTabbedMdiWindow="c5521733-702c-4cc9-bcef-a9180f774817"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="74d3dae0-d923-47fa-a57d-ddf3736a6b24" /><DocumentWindow Key="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\TopDesign\TopDesign.cysch" Guid="6b99caf8-ecc3-4aab-ba50-80aacd4c89e2" /><DocumentWindow Key="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\HostDesign.cydwr" Guid="7d66e42e-5b60-4d40-acdd-e0872d939713" /><DocumentWindow Key="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\main.c" Guid="c5521733-702c-4cc9-bcef-a9180f774817" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

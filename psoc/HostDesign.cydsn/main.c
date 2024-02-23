@@ -83,6 +83,11 @@ void selectPayloadValue(stage){
     CyDelay(1000);
 }
 
+void reg_write( uint8_t bytes[8] )
+{
+    // send each of the 5 bytes, wait until handshake is complete to return
+}
+
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
@@ -96,6 +101,14 @@ int main(void)
     int addr_flag = 0;
     int psoc_fpga_xfc = 0;  // state of output strobe
     int fpga_psoc_xfc = 0;  // state of input strobe
+    
+    //Send reset signal to Nexys board
+    PSOC_RESET_RAW_Write(1);
+    CyDelay(100);
+    PSOC_RESET_RAW_Write(0);
+    CyDelay(100);
+    
+    //write initial handshake to Nexys FPGA.
     H2G_STRB_OUT_Write(psoc_fpga_xfc);
 
     //SW2 used for selection of data

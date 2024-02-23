@@ -3,6 +3,7 @@
 module TopLevelInterface(
     input clk,
     input reset_n,
+    input psoc_reset_raw,
     input [7:0] host_hostif_d,
     input host_hostif_host_xfc_raw,
     output logic host_hostif_fpga_xfc,
@@ -24,13 +25,22 @@ module TopLevelInterface(
     output logic led7
     );
     
+    logic fpga_reset;
+    logic fpga_resetp1;
+    
+    logic psoc_reset;
+    logic psoc_reset_rawp1;
     logic reset;
-    logic resetp1;
     
     always_ff @ (posedge clk)
     begin
-        resetp1 <= ~reset_n;
-        reset <= resetp1;
+        fpga_resetp1 <= ~reset_n;
+        fpga_reset <= fpga_resetp1;
+        
+        psoc_reset_rawp1 <= psoc_reset_raw;
+        psoc_reset <= psoc_reset_rawp1;
+        
+        reset <= (psoc_reset | fpga_reset);
     end
     
     //connections between Host_IF and CMDQueue
@@ -53,7 +63,7 @@ module TopLevelInterface(
     .host_hostif_host_xfc_raw(host_hostif_host_xfc_raw),
     .hostif_queue_RTR(hostif_queue_RTR),
     .clk(clk),
-    .reset_n(reset_n),
+    .reset(reset),
     .host_hostif_fpga_xfc(host_hostif_fpga_xfc),
     .hostif_queue_DATA(hostif_queue_DATA),  //[7:0]
     .hostif_queue_RTS(hostif_queue_RTS)
@@ -100,16 +110,18 @@ module TopLevelInterface(
     .engine_trigger(engine_trigger)
     );
 
-assign led0 = reg_top_left_x[0];
-assign led1 = reg_top_left_x[1];
-assign led2 = reg_top_left_x[2];
-assign led3 = reg_top_left_x[3];
-assign led4 = reg_bot_right_y[0];
-assign led5 = reg_bot_right_y[1];
-assign led6 = reg_bot_right_y[2];
-assign led7 = reg_bot_right_y[3];
+//assign led0 = reg_top_left_x[0];
+//assign led1 = reg_top_left_x[1];
+//assign led2 = reg_top_left_x[2];
+//assign led3 = reg_top_left_x[3];
+//assign led4 = reg_bot_right_y[0];
+//assign led5 = reg_bot_right_y[1];
+//assign led6 = reg_bot_right_y[2];
+//assign led7 = reg_bot_right_y[3];
 
-
+assign led0 = host_hostif_host_xfc_raw;
+assign led2 = host_hostif_fpga_xfc;
+assign led4 = psoc_reset;
   
 
 endmodule  

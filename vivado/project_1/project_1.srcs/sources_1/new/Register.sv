@@ -27,11 +27,11 @@ logic [31:0] reg_4;
 
 always_ff @(posedge clk) begin
     if(reset) begin 
-        reg_0 <= 8'h0806_0402;
-        reg_1 <= 8'hffff_ffff;
-        reg_2 <= 0;
-        reg_3 <= 0;
-        reg_4 <= 0;
+        reg_0 <= 0;  //Top left x and y
+        reg_1 <= 0;  //bot right x and y
+        reg_2 <= 0; //fill color
+        reg_3 <= 0; //test pat mode
+        reg_4 <= 0; //engine id
     end
     else begin
         if (wr_en) begin

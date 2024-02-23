@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="671.992 ns"></ZoomEndTime>
+      <ZoomEndTime time="831.023 ns"></ZoomEndTime>
       <Cursor1Time time="615.085 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="213"></NameColumnWidth>
-      <ValueColumnWidth column_width="127"></ValueColumnWidth>
+      <ValueColumnWidth column_width="123"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="17" />
+   <WVObjectSize size="52" />
    <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -87,5 +87,145 @@
    <wvobject fp_name="/topleveltb/TLIF/RegisterBlock/reg_4" type="array">
       <obj_property name="ElementShortName">reg_4[31:0]</obj_property>
       <obj_property name="ObjectShortName">reg_4[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/reset_n" type="logic">
+      <obj_property name="ElementShortName">reset_n</obj_property>
+      <obj_property name="ObjectShortName">reset_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/psoc_reset_raw" type="logic">
+      <obj_property name="ElementShortName">psoc_reset_raw</obj_property>
+      <obj_property name="ObjectShortName">psoc_reset_raw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/host_hostif_d" type="array">
+      <obj_property name="ElementShortName">host_hostif_d[7:0]</obj_property>
+      <obj_property name="ObjectShortName">host_hostif_d[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/host_hostif_host_xfc_raw" type="logic">
+      <obj_property name="ElementShortName">host_hostif_host_xfc_raw</obj_property>
+      <obj_property name="ObjectShortName">host_hostif_host_xfc_raw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/host_hostif_fpga_xfc" type="logic">
+      <obj_property name="ElementShortName">host_hostif_fpga_xfc</obj_property>
+      <obj_property name="ObjectShortName">host_hostif_fpga_xfc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/reg_top_left_x" type="array">
+      <obj_property name="ElementShortName">reg_top_left_x[10:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_top_left_x[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/reg_top_left_y" type="array">
+      <obj_property name="ElementShortName">reg_top_left_y[10:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_top_left_y[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/reg_bot_right_x" type="array">
+      <obj_property name="ElementShortName">reg_bot_right_x[10:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_bot_right_x[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/reg_bot_right_y" type="array">
+      <obj_property name="ElementShortName">reg_bot_right_y[10:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_bot_right_y[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/fill_color" type="array">
+      <obj_property name="ElementShortName">fill_color[23:0]</obj_property>
+      <obj_property name="ObjectShortName">fill_color[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/test_pat_mode" type="array">
+      <obj_property name="ElementShortName">test_pat_mode[4:0]</obj_property>
+      <obj_property name="ObjectShortName">test_pat_mode[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/engine_trigger" type="array">
+      <obj_property name="ElementShortName">engine_trigger[3:0]</obj_property>
+      <obj_property name="ObjectShortName">engine_trigger[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/led0" type="logic">
+      <obj_property name="ElementShortName">led0</obj_property>
+      <obj_property name="ObjectShortName">led0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/led1" type="logic">
+      <obj_property name="ElementShortName">led1</obj_property>
+      <obj_property name="ObjectShortName">led1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/led2" type="logic">
+      <obj_property name="ElementShortName">led2</obj_property>
+      <obj_property name="ObjectShortName">led2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/led3" type="logic">
+      <obj_property name="ElementShortName">led3</obj_property>
+      <obj_property name="ObjectShortName">led3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/led4" type="logic">
+      <obj_property name="ElementShortName">led4</obj_property>
+      <obj_property name="ObjectShortName">led4</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/led5" type="logic">
+      <obj_property name="ElementShortName">led5</obj_property>
+      <obj_property name="ObjectShortName">led5</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/led6" type="logic">
+      <obj_property name="ElementShortName">led6</obj_property>
+      <obj_property name="ObjectShortName">led6</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/led7" type="logic">
+      <obj_property name="ElementShortName">led7</obj_property>
+      <obj_property name="ObjectShortName">led7</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/fpga_reset" type="logic">
+      <obj_property name="ElementShortName">fpga_reset</obj_property>
+      <obj_property name="ObjectShortName">fpga_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/fpga_resetp1" type="logic">
+      <obj_property name="ElementShortName">fpga_resetp1</obj_property>
+      <obj_property name="ObjectShortName">fpga_resetp1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/psoc_reset" type="logic">
+      <obj_property name="ElementShortName">psoc_reset</obj_property>
+      <obj_property name="ObjectShortName">psoc_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/psoc_reset_rawp1" type="logic">
+      <obj_property name="ElementShortName">psoc_reset_rawp1</obj_property>
+      <obj_property name="ObjectShortName">psoc_reset_rawp1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/hostif_queue_DATA" type="array">
+      <obj_property name="ElementShortName">hostif_queue_DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">hostif_queue_DATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/hostif_queue_RTS" type="logic">
+      <obj_property name="ElementShortName">hostif_queue_RTS</obj_property>
+      <obj_property name="ObjectShortName">hostif_queue_RTS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/hostif_queue_RTR" type="logic">
+      <obj_property name="ElementShortName">hostif_queue_RTR</obj_property>
+      <obj_property name="ObjectShortName">hostif_queue_RTR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/queue_proc_DATA" type="array">
+      <obj_property name="ElementShortName">queue_proc_DATA[7:0]</obj_property>
+      <obj_property name="ObjectShortName">queue_proc_DATA[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/queue_proc_RTS" type="logic">
+      <obj_property name="ElementShortName">queue_proc_RTS</obj_property>
+      <obj_property name="ObjectShortName">queue_proc_RTS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/queue_proc_RTR" type="logic">
+      <obj_property name="ElementShortName">queue_proc_RTR</obj_property>
+      <obj_property name="ObjectShortName">queue_proc_RTR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/REG_ADDR" type="array">
+      <obj_property name="ElementShortName">REG_ADDR[3:0]</obj_property>
+      <obj_property name="ObjectShortName">REG_ADDR[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/REG_DATA" type="array">
+      <obj_property name="ElementShortName">REG_DATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">REG_DATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/topleveltb/TLIF/REG_WE" type="logic">
+      <obj_property name="ElementShortName">REG_WE</obj_property>
+      <obj_property name="ObjectShortName">REG_WE</obj_property>
    </wvobject>
 </wave_config>
