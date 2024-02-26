@@ -8,7 +8,7 @@ module host_interface(
     input host_hostif_host_xfc_raw,
     input hostif_queue_RTR,
     input clk,
-    input reset_n,
+    input reset,
     output logic host_hostif_fpga_xfc,
     output logic [7:0] hostif_queue_DATA,
     output logic hostif_queue_RTS
@@ -16,8 +16,6 @@ module host_interface(
 
 logic host_hostif_host_xfc_prev;
 logic state;
-logic reset1;
-logic reset2;
 logic reset;
 
 logic host_hostif_host_xfc1;
@@ -79,16 +77,9 @@ end
 //reset flip flop
 always_ff @ (posedge clk)
 begin
-    reset1 <= ~reset_n;
-    reset2 <= reset1;
-    reset <= reset2;
-    
     host_hostif_host_xfc1 <= host_hostif_host_xfc_raw;
     host_hostif_host_xfc2 <= host_hostif_host_xfc1;
     host_hostif_host_xfc <= host_hostif_host_xfc2;
 end
-
-
-
 
 endmodule

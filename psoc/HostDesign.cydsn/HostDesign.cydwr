@@ -251,6 +251,7 @@
   <Data key="DataVersionKey" value="2" />
   <Group key="DWRInstGuidMapping">
     <Group key="Pin">
+      <Data key="0fed6b05-345f-4578-beea-d5a9f15bf365" value="PSOC_RESET_RAW" />
       <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="H2G_STRB_IN" />
       <Data key="8e03be18-010e-4e7a-b5db-bd995421c28c/ed092b9b-d398-4703-be89-cebf998501f6" value="LCD_LCDPort" />
       <Data key="60b4be11-5f04-48ff-8990-4e1dbac0277c" value="H2G_STRB_OUT" />
@@ -3343,6 +3344,11 @@
     </Group>
   </Group>
   <Group key="Pin2">
+    <Group key="0fed6b05-345f-4578-beea-d5a9f15bf365">
+      <Group key="0">
+        <Data key="Port Format" value="4,0" />
+      </Group>
+    </Group>
     <Group key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba">
       <Group key="0">
         <Data key="Port Format" value="12,0" />

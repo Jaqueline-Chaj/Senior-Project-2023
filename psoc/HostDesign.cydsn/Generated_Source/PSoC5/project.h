@@ -30,6 +30,8 @@
 #include "H2G_STRB_OUT.h"
 #include "SW3_aliases.h"
 #include "SW3.h"
+#include "PSOC_RESET_RAW_aliases.h"
+#include "PSOC_RESET_RAW.h"
 #include "LCD_LCDPort_aliases.h"
 #include "LCD_LCDPort.h"
 #include "core_cm3_psoc5.h"

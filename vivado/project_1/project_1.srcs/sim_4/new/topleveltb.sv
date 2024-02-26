@@ -1,5 +1,12 @@
 `timescale 1ns / 1ps
 
+//`define STATE_B0 (3'b000)   
+//`define STATE_B1 (3'b001)     
+//`define STATE_B2 (3'b010)   
+//`define STATE_B3 (3'b011)   
+//`define STATE_B4 (3'b100)   
+
+
 module topleveltb(
     );
     
@@ -7,6 +14,7 @@ module topleveltb(
     logic reset;
     logic reset_n;
     logic reset_d1;
+    logic psoc_reset_raw;
     logic [7:0] host_hostif_d;  //was psoc_if_d
     
     logic host_hostif_host_xfc; //was psoc_fgpa_xfc
@@ -20,23 +28,32 @@ module topleveltb(
     
     assign host_hostif_host_xfc_toggle = host_hostif_host_xfc != host_hostif_host_xfc_prev;
     assign host_hostif_fpga_xfc_toggle = host_hostif_fpga_xfc != host_hostif_fpga_xfc_prev;   
+    //assign psoc_reset_raw = 0;
     
-    logic REG_WE;
-    logic [31:0] REG_WR_DATA;
-    logic [3:0] REG_ADDR;
-    
+    logic[10:0] reg_top_left_x;
+    logic[10:0] reg_top_left_y;
+    logic[10:0] reg_bot_right_x;
+    logic[10:0] reg_bot_right_y;
+    logic[23:0] fill_color;
+    logic[4:0] test_pat_mode;
+    logic[3:0] engine_trigger;
     
     assign reset = ~reset_n;
     
     TopLevelInterface TLIF(
         .clk(clk),
         .reset_n(reset_n),
+        .psoc_reset_raw(psoc_reset_raw),
         .host_hostif_d(host_hostif_d),
         .host_hostif_host_xfc_raw(host_hostif_host_xfc),
         .host_hostif_fpga_xfc(host_hostif_fpga_xfc),
-        .REG_WE(REG_WE),
-        .REG_DATA(REG_DATA),
-        .REG_ADDR(REG_ADDR)
+        .reg_top_left_x(reg_top_left_x),
+        .reg_top_left_y(reg_top_left_y),
+        .reg_bot_right_x(reg_bot_right_x),
+        .reg_bot_right_y(reg_bot_right_y),
+        .fill_color(fill_color),
+        .test_pat_mode(test_pat_mode),
+        .engine_trigger(engine_trigger)
     );
     
 initial begin
@@ -49,6 +66,12 @@ initial begin
     reset_n = 0;
     #87 reset_n = 1;
 end
+
+initial begin
+    psoc_reset_raw = 1;
+    #100 psoc_reset_raw = 0;
+end
+
 
 always_ff @ (posedge clk)
 begin

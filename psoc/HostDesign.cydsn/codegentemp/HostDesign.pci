@@ -1,5 +1,5 @@
 # HostDesign
-# 2023-12-05 00:50:50Z
+# 2024-02-26 17:24:09Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -26,3 +26,4 @@ set_io "OUT_PINS(7)" iocell 0 7
 set_io "H2G_STRB_IN(0)" iocell 12 0
 set_io "H2G_STRB_OUT(0)" iocell 3 5
 set_io "SW3(0)" iocell 15 5
+set_io "PSOC_RESET_RAW(0)" iocell 4 0

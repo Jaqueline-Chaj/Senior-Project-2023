@@ -37,6 +37,9 @@
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\SW3_aliases.h" value="HEADER;;;;;SW3" />
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\SW3.c" value="SOURCE_C;CortexM3;;;;SW3" />
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\SW3.h" value="HEADER;;;;;SW3" />
+  <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\PSOC_RESET_RAW_aliases.h" value="HEADER;;;;;PSOC_RESET_RAW" />
+  <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\PSOC_RESET_RAW.c" value="SOURCE_C;CortexM3;;;;PSOC_RESET_RAW" />
+  <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\PSOC_RESET_RAW.h" value="HEADER;;;;;PSOC_RESET_RAW" />
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\LCD_LCDPort_aliases.h" value="HEADER;;;;;LCD_LCDPort" />
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\LCD_LCDPort.c" value="SOURCE_C;CortexM3;;;;LCD_LCDPort" />
   <file name="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\codegentemp\LCD_LCDPort.h" value="HEADER;;;;;LCD_LCDPort" />

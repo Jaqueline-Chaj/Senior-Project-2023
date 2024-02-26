@@ -9,6 +9,11 @@ void sendByte(int byte){
     OUT_BYTE_Write(byte);
 }
 
+int b1Val = 0x01;
+int b2Val = 0x02;
+int b3Val = 0x03;
+int b4Val = 0x04;
+
 //Method to set the values for each of the payload bytes
 void selectPayloadValue(stage){
     LCD_ClearDisplay();
@@ -44,12 +49,22 @@ void selectPayloadValue(stage){
         LCD_PrintString(dispStr);
         CyDelay(100);
     
-        if (byteVal == 255){
-                byteVal = 0x00;
-            }
+        if(stage == 1){
+            byteVal = b1Val;
+            b1Val++;
+        }
+        else if (stage == 2){
+            byteVal = b2Val;
+            b2Val++;
+        }    
+        else if (stage == 3){
+            byteVal = b3Val;        
+            b3Val++;
+        }
         else{
-                byteVal += 1;
-            }
+            byteVal = b4Val;
+            b4Val++;
+        }
     }
 
     if(stage == 1){
@@ -77,6 +92,11 @@ void selectPayloadValue(stage){
     CyDelay(1000);
 }
 
+void reg_write( uint8_t bytes[8] )
+{
+    // send each of the 5 bytes, wait until handshake is complete to return
+}
+
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
@@ -90,6 +110,15 @@ int main(void)
     int addr_flag = 0;
     int psoc_fpga_xfc = 0;  // state of output strobe
     int fpga_psoc_xfc = 0;  // state of input strobe
+    
+    //Send reset signal to Nexys board
+    CyDelay(100);
+    PSOC_RESET_RAW_Write(1);
+    CyDelay(100);
+    PSOC_RESET_RAW_Write(0);
+    CyDelay(100);
+    
+    //write initial handshake to Nexys FPGA.
     H2G_STRB_OUT_Write(psoc_fpga_xfc);
 
     //SW2 used for selection of data
@@ -100,14 +129,14 @@ int main(void)
         addr_flag = 0;
         
         LCD_ClearDisplay();
-        LCD_Position(0,0);
-        LCD_PrintString("RegWrite CMD");
-        LCD_Position(1,0);
-        LCD_PrintString("5 bytes total");
+        //LCD_Position(0,0);
+        //LCD_PrintString("RegWrite CMD");
+        //LCD_Position(1,0);
+        //LCD_PrintString("5 bytes total");
 
-        CyDelay(750);
+        //CyDelay(750);
         
-        LCD_ClearDisplay();
+        //LCD_ClearDisplay();
         
         int addrVal = 0;
         
@@ -128,6 +157,8 @@ int main(void)
             sprintf(dispString, "%x", addrVal);
             LCD_PrintString(dispString);
 
+            addrVal = 0x00;  //setting explicitly for testing fpga
+            /*
             CyDelay(100);
             
             if( addrVal == 15){
@@ -136,6 +167,7 @@ int main(void)
             else{
             addrVal = addrVal + 1;
             }
+            */
         }
         cmdBytes[0] = addrVal;
         
@@ -156,7 +188,8 @@ int main(void)
         }    
         LCD_ClearDisplay();
         
-        while(SW3_Read()){
+        //while(SW3_Read()){
+        
         LCD_Position(0,0);
         LCD_PrintString("CMD to be sent: ");
         LCD_Position(1,0);
@@ -173,7 +206,7 @@ int main(void)
         LCD_Position(0,0);
         LCD_PrintString("Addr,B4,B3,B2,B1");
         CyDelay(1000);
-        }
+       
         
 
         LCD_Position(0,0);
@@ -219,5 +252,3 @@ int main(void)
     
 
 }
-
-/* [] END OF FILE */

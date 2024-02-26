@@ -25,6 +25,8 @@
 <dep name=".\Generated_Source\PSoC5\LCD_LCDPort_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\OUT_BYTE.h" />
 <dep name=".\Generated_Source\PSoC5\OUT_PINS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\PSOC_RESET_RAW.h" />
+<dep name=".\Generated_Source\PSoC5\PSOC_RESET_RAW_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\SW2.h" />
 <dep name=".\Generated_Source\PSoC5\SW2_aliases.h" />
 <dep name=".\Generated_Source\PSoC5\SW3.h" />
@@ -59,6 +61,8 @@
 <file name=".\Generated_Source\PSoC5\LCD_LCDPort_aliases.h" />
 <file name=".\Generated_Source\PSoC5\OUT_BYTE.h" />
 <file name=".\Generated_Source\PSoC5\OUT_PINS_aliases.h" />
+<file name=".\Generated_Source\PSoC5\PSOC_RESET_RAW.h" />
+<file name=".\Generated_Source\PSoC5\PSOC_RESET_RAW_aliases.h" />
 <file name=".\Generated_Source\PSoC5\SW2.h" />
 <file name=".\Generated_Source\PSoC5\SW2_aliases.h" />
 <file name=".\Generated_Source\PSoC5\SW3.h" />
@@ -217,6 +221,17 @@
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\OUT_BYTE_PM.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\PSOC_RESET_RAW.o">
+<dep name=".\Generated_Source\PSoC5\PSOC_RESET_RAW.c" />
+<dep name=".\Generated_Source\PSoC5\PSOC_RESET_RAW.h" />
+<dep name=".\Generated_Source\PSoC5\PSOC_RESET_RAW_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\PSOC_RESET_RAW.c" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\SW2.o">
 <dep name=".\Generated_Source\PSoC5\SW2.c" />
 <dep name=".\Generated_Source\PSoC5\SW2.h" />
@@ -375,6 +390,7 @@
 <dep name=".\CortexM3\ARM_GCC_541\Debug\SW3.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\OUT_BYTE.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\OUT_BYTE_PM.o" />
+<dep name=".\CortexM3\ARM_GCC_541\Debug\PSOC_RESET_RAW.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\HostDesign.a" />
 <dep name="${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" />
 </file>
@@ -415,6 +431,7 @@
 <name_val_pair name="Generated_Source\PSoC5\OUT_BYTE.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
 <name_val_pair name="Generated_Source\PSoC5\OUT_BYTE_PM.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
 <name_val_pair name="Generated_Source\PSoC5\OUT_PINS.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC5\PSOC_RESET_RAW.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
 </name>
 </genericCmdLineData>
 <codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\dibiana1\AppData\Local\Cypress Semiconductor\PSoC Creator\4.4&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p H:\Senior-Project-2023\PSoC\HostDesign.cydsn\HostDesign.cyprj -d CY8C5868AXI-LP035 -s H:\Senior-Project-2023\PSoC\HostDesign.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
@@ -628,6 +645,9 @@
 <v>Generated_Source\PSoC5\OUT_PINS_aliases.h</v>
 <v>Generated_Source\PSoC5\OUT_PINS.c</v>
 <v>Generated_Source\PSoC5\OUT_PINS.h</v>
+<v>Generated_Source\PSoC5\PSOC_RESET_RAW_aliases.h</v>
+<v>Generated_Source\PSoC5\PSOC_RESET_RAW.c</v>
+<v>Generated_Source\PSoC5\PSOC_RESET_RAW.h</v>
 </gen_list>
 <warp_dep>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
@@ -636,9 +656,9 @@
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\cy_psoc3_inc.v</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 </warp_dep>
-<deps_time v="133462110603270833" />
+<deps_time v="133534418601573430" />
 <top_block v="TopDesign" />
-<last_generation v="252" />
+<last_generation v="420" />
 <pdl_path v="" />
 <sw_packages />
 </CyGuid_925cc1e1-309e-4e08-b0a1-09a83c35b157>
@@ -646,7 +666,7 @@
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
 <link_deps_times>
-<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="133462113126793814" />
+<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="133534418626904816" />
 </link_deps_times>
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
