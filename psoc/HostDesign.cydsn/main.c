@@ -9,6 +9,11 @@ void sendByte(int byte){
     OUT_BYTE_Write(byte);
 }
 
+int b1Val = 0x01;
+int b2Val = 0x02;
+int b3Val = 0x03;
+int b4Val = 0x04;
+
 //Method to set the values for each of the payload bytes
 void selectPayloadValue(stage){
     LCD_ClearDisplay();
@@ -45,16 +50,20 @@ void selectPayloadValue(stage){
         CyDelay(100);
     
         if(stage == 1){
-            byteVal = 0x02;
+            byteVal = b1Val;
+            b1Val++;
         }
         else if (stage == 2){
-            byteVal = 0x04;
+            byteVal = b2Val;
+            b2Val++;
         }    
         else if (stage == 3){
-            byteVal = 0x06;        
+            byteVal = b3Val;        
+            b3Val++;
         }
         else{
-            byteVal = 0x08;
+            byteVal = b4Val;
+            b4Val++;
         }
     }
 
@@ -120,14 +129,14 @@ int main(void)
         addr_flag = 0;
         
         LCD_ClearDisplay();
-        LCD_Position(0,0);
-        LCD_PrintString("RegWrite CMD");
-        LCD_Position(1,0);
-        LCD_PrintString("5 bytes total");
+        //LCD_Position(0,0);
+        //LCD_PrintString("RegWrite CMD");
+        //LCD_Position(1,0);
+        //LCD_PrintString("5 bytes total");
 
-        CyDelay(750);
+        //CyDelay(750);
         
-        LCD_ClearDisplay();
+        //LCD_ClearDisplay();
         
         int addrVal = 0;
         
@@ -179,7 +188,8 @@ int main(void)
         }    
         LCD_ClearDisplay();
         
-        while(SW3_Read()){
+        //while(SW3_Read()){
+        
         LCD_Position(0,0);
         LCD_PrintString("CMD to be sent: ");
         LCD_Position(1,0);
@@ -196,7 +206,7 @@ int main(void)
         LCD_Position(0,0);
         LCD_PrintString("Addr,B4,B3,B2,B1");
         CyDelay(1000);
-        }
+       
         
 
         LCD_Position(0,0);

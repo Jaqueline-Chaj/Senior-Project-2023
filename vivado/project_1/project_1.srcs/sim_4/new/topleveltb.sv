@@ -21,10 +21,6 @@ module topleveltb(
     logic host_hostif_host_xfc_prev;
     logic host_hostif_host_xfc_toggle;
     
-//    logic [2:0] state;
-//    logic [7:0] addr_val;
-//    logic [7:0] data_val;
-    
     logic host_hostif_fpga_xfc; //was fpga_psoc_xfc
     logic host_hostif_fpga_xfc_prev;
     logic host_hostif_fpga_xfc_toggle;
@@ -32,7 +28,7 @@ module topleveltb(
     
     assign host_hostif_host_xfc_toggle = host_hostif_host_xfc != host_hostif_host_xfc_prev;
     assign host_hostif_fpga_xfc_toggle = host_hostif_fpga_xfc != host_hostif_fpga_xfc_prev;   
-    assign psoc_reset_raw = 0;
+    //assign psoc_reset_raw = 0;
     
     logic[10:0] reg_top_left_x;
     logic[10:0] reg_top_left_y;
@@ -118,40 +114,5 @@ begin
     else 
         host_hostif_fpga_xfc_toggle_d1 <= host_hostif_fpga_xfc_toggle;
 end
-
-////byte value state transtition addr_val
-//always_ff @ (posedge clk)
-//begin
-//    if (reset)
-//        state <= 0;
-//    else if (host_hostif_fpga_xfc_toggle)
-//        if (state == `STATE_B0)
-//            state <= `STATE_B1;
-//        else if (state == `STATE_B1)
-//            state <= `STATE_B2;
-//        else if (state == `STATE_B2)
-//            state <= `STATE_B3;        
-//        else if (state == `STATE_B3)
-//            state <= `STATE_B4;        
-//        else if (state == `STATE_B4)
-//            state <= `STATE_B0;        
-//end
-
-////addr and data value incrementing logic
-//always_ff @ (posedge clk)
-//begin
-//    if (reset)
-//    begin
-//        addr_val <= 0;
-//        data_val <= 0;
-//    end
-//    else if (host_hostif_host_xfc_toggle)
-//    begin
-//        if (state == `STATE_B0)
-//            addr_val <= addr_val + 1;
-//        else 
-//            data_val <= data_val + 2;
-//    end
-//end
 
 endmodule
