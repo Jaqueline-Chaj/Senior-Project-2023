@@ -15,7 +15,7 @@ module Register(
     output logic[23:0] fill_color,
     output logic[4:0] test_pat_mode,
     //output logic[3:0] engine_trigger,
-    output logic engine_rect_fill_trigger,
+    output logic engine_rect_fill_trigger
     //output logic engine_test_pat_trigger
     );
 
@@ -30,7 +30,7 @@ logic [31:0] reg_4;
 always_ff @(posedge clk) begin
     if(reset) begin 
         reg_0 <= 0;  //Top left x and y
-        reg_1 <= 32'hffff_ffff;  //bot right x and y
+        reg_1 <= 0;  //bot right x and y
         reg_2 <= 0; //fill color
         reg_3 <= 0; //test pat mode
         reg_4 <= 0; //engine id
