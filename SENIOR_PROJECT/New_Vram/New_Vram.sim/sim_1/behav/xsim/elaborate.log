@@ -61,7 +61,7 @@ Compiling architecture rtl of entity v_tc_v6_2_3.tc_top [\tc_top(c_detect_en=0,c
 Compiling architecture imp of entity v_tc_v6_2_3.v_tc [\v_tc(c_has_axi4_lite=0,c_gen_vi...]
 Compiling architecture v_tc_0_arch of entity xil_defaultlib.v_tc_0 [v_tc_0_default]
 Compiling module xil_defaultlib.Display_Gen_Digilent
-Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.Display_gen
 Compiling module xil_defaultlib.tb
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot tb_behav

@@ -5,7 +5,7 @@ input[23:0] foreground_color,
 input start_trigger,
 input clk, reset, 
 input[10:0] lft, rgt,
-input[9:0] top, bot,
+input[10:0] top, bot,
 output rect_wr_en, 
 output[19:0] waddr,
 output[7:0] rect_wr_data
@@ -14,13 +14,6 @@ output[7:0] rect_wr_data
 
 logic rect_state;
 
-logic [19:0] pace_counter;
-
-always_ff @ (posedge clk)
-begin
-    if (reset)  pace_counter <=0;
-    else        pace_counter <= pace_counter + 1;
-end
 
 //The states of the rectangle draw:  
 
@@ -49,7 +42,7 @@ if(reset || rect_state==0) begin
     marx<=lft; mary<=top; end
 else 
     begin
-        if(rect_state==1 && pace_counter[11:0] == 0)  
+        if(rect_state==1)  
         begin
             if(marx<rgt)
                 marx<=marx+1;

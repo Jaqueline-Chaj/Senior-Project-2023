@@ -1,12 +1,12 @@
 `timescale 1ns / 1ps
 
 
-module top(
+module Display_gen(
 input clk, cpu_resetn, 
-//input[10:0] lft, rgt,
-//input[9:0] top, bot,
-//input[23:0] foreground_color,
-
+input[10:0] lft, rgt,
+input[10:0] top, bot,
+input[23:0] foreground_color,
+input start_trigger,
 output hdmi_tx_clk_p,
 
 output hdmi_tx_clk_n,
@@ -60,21 +60,11 @@ logic[19:0] waddr;
 logic[7:0] pat_wr_data;
 logic[7:0] rect_wr_data;
 logic[7:0] wr_data;
-logic start_trigger;
+
 logic[2:0] start_trigger_ff;  //Im delaying the start trigger so it doesnt proc at the same time as reset.
 logic start_trigger_p1;
 
-logic[23:0]     foreground_color;
-logic[9:0]    top;
-logic[9:0]    bot;
-logic[10:0]    lft;
-logic[10:0]    rgt;
 
-assign   foreground_color=24'hFFFF00;
-assign    top=10'b00_0010_0000;
-assign    bot=10'b00_1111_1111;
-assign    lft=11'b000_0010_0000;
-assign    rgt=11'b000_1111_1111;
 
 pattern_gen pattern_gen(
 .clk(PixelClk),
@@ -90,8 +80,8 @@ logic pat_wr_en_p1;
 always@(posedge PixelClk) begin
     pat_wr_en_p1<=pat_wr_en; 
 end
-assign start_trigger=(~pat_wr_en) & pat_wr_en_p1;
-;
+
+
 
 
 

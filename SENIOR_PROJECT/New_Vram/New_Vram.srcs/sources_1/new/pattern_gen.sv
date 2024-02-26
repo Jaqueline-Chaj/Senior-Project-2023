@@ -23,11 +23,6 @@ logic [1:0] pat_state;
 assign mb_x=mx[5];
 assign mb_y=my[5];  
 
-always_ff @ (posedge clk)
-begin
-    if (reset)  pace_counter <=0;
-    else        pace_counter <= pace_counter + 1;
-end
 
 always_ff@(posedge clk) begin
     if(reset)
@@ -53,7 +48,7 @@ always@(posedge clk) begin
         mx<=0;
         my<=0;
     end
-    else if(pat_state==1 && pace_counter[8:0] == 0) begin
+    else if(pat_state==1) begin
                             //my !=719
             if(mx!=1279 | my !=719) begin
                 if(mx<1279)
