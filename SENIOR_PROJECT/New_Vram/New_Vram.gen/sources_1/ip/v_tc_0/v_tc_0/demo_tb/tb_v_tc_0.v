@@ -372,7 +372,7 @@ endmodule
 `define T_TESTNUM  008
 `define T_NUM_REG_CHECKS 0 // set to 0 if detect_en = 0
 
-`define C_HAS_AXI4_LITE 1
+`define C_HAS_AXI4_LITE 0
 `define C_DETECT_EN 0
 `define C_DET_ACHROMA_EN 0
 `define C_DET_AVIDEO_EN 1
@@ -799,28 +799,6 @@ end
   (
 
 
-        .s_axi_aclk     (tb_clk_axi),
-        .s_axi_aclken   (tb_ce_axi),
-        .s_axi_aresetn  (tb_sclr_n_axi),
-        .s_axi_awready  (m_awready_w),
-        .s_axi_awvalid  (m_awvalid_w),
-        .s_axi_awaddr   (m_awaddr_w),
-        .s_axi_wready   (m_wready_w),
-        .s_axi_wvalid   (m_wvalid_w),
-        .s_axi_wdata    (m_wdata_w),
-        .s_axi_wstrb    (m_wstrb_w),
-        .s_axi_bvalid   (m_bvalid_w),
-        .s_axi_bresp    (m_bresp_w),
-        .s_axi_bready   (m_bready_w),
-        .s_axi_arready  (m_arready_w),
-        .s_axi_arvalid  (m_arvalid_w),
-        .s_axi_araddr   (m_araddr_w),
-        .s_axi_rvalid   (m_rvalid_w),
-        .s_axi_rdata    (m_rdata_w),
-        .s_axi_rresp    (m_rresp_w),
-        .s_axi_rready   (m_rready_w),
-        .irq      	     (irq_w),
-        .fsync_in            (1'b0),
         .gen_clken           (tb_ce),
         .vblank_out          (vblank_outnetlist),
         .hblank_out          (hblank_outnetlist),
@@ -1708,134 +1686,6 @@ wait_cycle(10);
    integer reg_index;
    begin
 
-       //***************************************************************
-       // START OF REG TEST SEQUENCE
-       //***************************************************************
-       // REGISTER CONFIGURATION, TB COMPONENT CONFIGURATION
-       // AND ALL OTHER CONTROLS YOU WANT TO SET FOR THE TEST
-       //***************************************************************
-
-       //==============================================
-       // CHECKING THE DEFAULT VALUE AT POWERUP OF CORE
-       //==============================================
-       $display("==== TEST_REG_DEF_PWR_UP : BEGIN ==== \n");
-       CE_GEN.start;
-       wait_cycle(10); //wait arbitrary cycles
-       default_check_all;
-       wait_cycle(10);
-       $display("==== TEST_REG_DEF_PWR_UP : END ==== \n");
-
-
-       //=============================================================
-       // CHECKING THE DEFAULT VALUE AFTER HARD RESET (Idle Condition)
-       //=============================================================
-       $display("==== TEST_REG_HW_RESET_IDLE : BEGIN ==== \n");
-       reset(100);    
-       CE_GEN.start;
-       wait_cycle(10);
-       default_check_all;
-       wait_cycle(10);
-       $display("==== TEST_REG_HW_RESET_IDLE : END ==== \n");
-
-
-       //=============================================================
-       // CHECKING THE DEFAULT VALUE AFTER HARD RESET (Busy Condition)
-       //=============================================================
-       $display("==== TEST_REG_HW_RESET_BUSY : BEGIN ==== \n");
-       //configure MST & SLV
-       MST.debug_on;
-       SLV.debug_on;
-       //MST.use_file("./stimuli/test_common_reg_stimuli.txt"); //This will set master to look for the given file path in run dir
-       //SLV.use_file("./expected/test_common_reg_golden.txt"); //This will set slave to look for the given file path in run dir
-       SLV.data_check_off; 
-       //start AXI4S Video transaction
-       $display("\nSTART OF TRANSACTION \n");
-       //MST.start;
-       //SLV.start;
-       wait_cycle(50);
-       reset(100);    
-       CE_GEN.start;
-       wait_cycle(10);
-       default_check_all;
-       wait_cycle(10);
-       $display("==== TEST_REG_HW_RESET_BUSY : END ==== \n");
-
-
-       //=============================================================
-       // CHECKING THE DEFAULT VALUE AFTER S/W RESET (Idle Condition)
-       //=============================================================
-       $display("==== TEST_REG_SW_RESET_IDLE : BEGIN ==== \n");
-       reset(100);
-       CE_GEN.start;
-       wait_cycle(50);
-
-       write_all_reg(32'h000F0000);
-       // Asserted Bit[31] of CONTROL register for S/W RESET
-       $display("==== ASSERTING S/W RESET ==== \n");
-       AXI4LITE_MST.wr(32'h00, 32'h80000000);
-
-       wait_cycle(10); //wait arbitrary cycles
-       default_check_all;
-       $display("==== TEST_REG_SW_RESET_IDLE : END ==== \n");
-
-
-       //=============================================================
-       // CHECKING THE DEFAULT VALUE AFTER S/W RESET (Busy Condition)
-       //=============================================================
-       $display("==== TEST_REG_SW_RESET_BUSY : BEGIN ==== \n");
-       //configure MST & SLV
-       MST.debug_on;            //Turn debug messages ON
-       SLV.debug_on;            //Turn debug messages ON
-       //MST.use_file("./stimuli/test_common_reg_stimuli.txt"); //This will set master to look for the given file path in run dir
-       //SLV.use_file("./expected/test_common_reg_golden.txt"); //This will set slave to look for the given file path in run dir
-       SLV.data_check_off; 
-
-       $display("\nSTART OF TRANSACTION \n");
-       //CE_GEN.start;
-       //MST.start;
-       //SLV.start;
-
-       wait_cycle(20); //wait arbitrary cycles
-
-       // Asserted Bit[31] of CONTROL register for S/W RESET
-       AXI4LITE_MST.wr(32'h00, 32'h80000000);
-
-       MST.stop;
-       SLV.stop; 
-       wait_cycle(10);
-       default_check_all;
-       wait_cycle(10);
-       $display("==== TEST_REG_SW_RESET_BUSY : END ==== \n");
-
-
-       //=============================================================
-       // CHECKING THE READ ONLY REGISTERS
-       //=============================================================
-       $display("==== TEST_REG_READ_ONLY : BEGIN ==== \n");
-       reset(100);
-       CE_GEN.start;
-       wait_cycle(10);
-       read_only_check_all;
-       wait_cycle(10);
-       $display("==== TEST_REG_READ_ONLY : END ==== \n");
-
-
-       //=============================================================
-       // CHECKING THE READ-WRITE REGISTERS
-       //=============================================================
-       $display("==== TEST_REG_WRITE_READ : BEGIN ==== \n");
-       reset(100);    
-       wait_cycle(10);
-       CE_GEN.start;
-       wait_cycle(10);
-       write_read_check_all;
-       $display("==== TEST_REG_WRITE_READ : END ==== \n");
-
-       //**************************************************************************
-       // END OF REG TEST SEQUENCE
-       //**************************************************************************
-
-
 
 
        CE_GEN.start;
@@ -1861,20 +1711,6 @@ wait_cycle(10);
            ////////////////////////////////////////////////////////////////////
            MST.is_ramp_gen(`C_GEN_F0_VFRAME_SIZE, `C_GEN_HFRAME_SIZE, 2); // Change to is_time_gen
            SLV.is_passive;
-           AXI4LITE_MST.wr(32'h00, 32'h00000002);
-           AXI4LITE_MST.wr(32'h60, 32'h01200160);
-           AXI4LITE_MST.wr(32'h68, 32'h00000080);
-           AXI4LITE_MST.wr(32'h6c, 32'h0000001f);
-           AXI4LITE_MST.wr(32'h70, 32'h000001ad);
-           AXI4LITE_MST.wr(32'h74, 32'h00000129);
-           AXI4LITE_MST.wr(32'h78, 32'h017e016d);
-           AXI4LITE_MST.wr(32'h7c, 32'h01600160);
-           AXI4LITE_MST.wr(32'h80, 32'h01230120);
-           AXI4LITE_MST.wr(32'h84, 32'h01600160);
-           AXI4LITE_MST.wr(32'h88, 32'h01600160);
-           AXI4LITE_MST.wr(32'h8c, 32'h00000000);
-           AXI4LITE_MST.wr(32'h90, 32'h01600160);
-           AXI4LITE_MST.wr(32'h00, 32'h0377ff05);
 
 
              if(`C_DETECT_EN != 0)

@@ -103,9 +103,7 @@ v_tc_0 vtc(
 
 .gen_clken(1'b1),
 
-.resetn(~reset),
-
-.sof_state(sof_state),      // INP -- only used for AXI4
+.resetn(~reset),     
 
 .active_video_out(vid_pVDE), // OUT - generated active video signal, active for non-blanking liness
 

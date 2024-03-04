@@ -2,7 +2,7 @@
 
 
 module Display_gen(
-input clk, cpu_resetn, 
+input PixelClk, reset, 
 input[10:0] lft, rgt,
 input[10:0] top, bot,
 input[23:0] foreground_color,
@@ -21,32 +21,23 @@ logic[7:0] red;
 logic[7:0] blue;
 logic[7:0] green;
 logic[23:0] rgbtodvi;
-logic PixelClk;
 
+/*
 logic reset_p1;
 logic reset_p2;
-logic reset;
+logic reset;*/
 
 //Clocking wizard
 
-clk_wiz_0 clk_wiz 
- (
-  // Clock out ports
- .clk_out1(PixelClk),
-  // Status and control signals
- .reset(~cpu_resetn),
- // output   locked,
- // Clock in ports
-  .clk_in1(clk)
- );
-logic pat_wr_en;
 
+logic pat_wr_en;
+/*
 always_ff @ (posedge PixelClk)
 begin
     reset_p1 <= ~cpu_resetn;
     reset_p2 <= reset_p1;
     reset <= reset_p2;
-end   
+end   */
  //Not permanent:  Meant to just simulate rectangle engine.
 
 

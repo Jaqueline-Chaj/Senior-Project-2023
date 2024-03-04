@@ -11,8 +11,7 @@ logic[10:0] mx;
 logic[9:0]  my;
 logic[19:0] pace_counter;  
 
-reg[19:0] waddr;
-reg[7:0] wr_vram;
+
 
 logic mb_x;
 logic mb_y;
@@ -82,7 +81,7 @@ always_ff@(posedge clk) begin
         if(mx[4]== my[4]) begin 
             pat_wr_data<=8'b00011000; end //Blue 
         else begin
-            pat_wr_data=8'h1001000; end
+            pat_wr_data=8'h10010000; end //Purpleish
 end    
 
 endmodule
