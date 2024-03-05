@@ -6,6 +6,7 @@ module TopLevelInterface(
     input psoc_reset_raw,
     input [7:0] host_hostif_d,
     input host_hostif_host_xfc_raw,
+    output logic reset,
     output logic host_hostif_fpga_xfc,
     
     output logic [10:0] reg_top_left_x,
@@ -30,7 +31,6 @@ module TopLevelInterface(
     
     logic psoc_reset;
     logic psoc_reset_rawp1;
-    logic reset;
     
     always_ff @ (posedge clk)
     begin

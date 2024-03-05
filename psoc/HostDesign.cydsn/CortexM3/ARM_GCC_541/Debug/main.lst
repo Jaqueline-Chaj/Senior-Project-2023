@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 1
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 1
 
 
    1              		.syntax unified
@@ -19,3413 +19,1760 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 1
   16              		.text
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
-  19              		.section	.text.sendByte,"ax",%progbits
+  19              		.section	.text.req_user_values,"ax",%progbits
   20              		.align	2
-  21              		.global	sendByte
+  21              		.global	req_user_values
   22              		.thumb
   23              		.thumb_func
-  24              		.type	sendByte, %function
-  25              	sendByte:
+  24              		.type	req_user_values, %function
+  25              	req_user_values:
   26              	.LFB64:
-  27              		.file 1 "main.c"
-   1:main.c        **** #include "project.h"
-   2:main.c        **** #include "stdio.h"
-   3:main.c        **** 
-   4:main.c        **** 
-   5:main.c        **** uint cmdBytes[5];
-   6:main.c        **** 
-   7:main.c        **** //Method to write a byte value to the output port
-   8:main.c        **** void sendByte(int byte){
-  28              		.loc 1 8 0
+  27              		.file 1 "helper_functions.c"
+   1:helper_functions.c **** #ifndef helper_functions_h
+   2:helper_functions.c **** #define helper_functions_h
+   3:helper_functions.c **** 
+   4:helper_functions.c **** #include "project.h"
+   5:helper_functions.c **** #include "stdio.h"
+   6:helper_functions.c **** 
+   7:helper_functions.c **** /*
+   8:helper_functions.c **** Function to request values from user, for now it just sets the values explicitly.
+   9:helper_functions.c **** */
+  10:helper_functions.c **** void req_user_values(int array[5][5]){
+  28              		.loc 1 10 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
-  32              	.LVL0:
-  33 0000 08B5     		push	{r3, lr}
-  34              		.cfi_def_cfa_offset 8
-  35              		.cfi_offset 3, -8
-  36              		.cfi_offset 14, -4
-   9:main.c        ****     OUT_BYTE_Write(byte);
-  37              		.loc 1 9 0
-  38 0002 C0B2     		uxtb	r0, r0
-  39              	.LVL1:
-  40 0004 FFF7FEFF 		bl	OUT_BYTE_Write
-  41              	.LVL2:
-  42 0008 08BD     		pop	{r3, pc}
-  43              		.cfi_endproc
-  44              	.LFE64:
-  45              		.size	sendByte, .-sendByte
-  46 000a 00BF     		.section	.text.selectPayloadValue,"ax",%progbits
-  47              		.align	2
-  48              		.global	selectPayloadValue
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 2
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  34 0000 10B4     		push	{r4}
+  35              		.cfi_def_cfa_offset 4
+  36              		.cfi_offset 4, -4
+  11:helper_functions.c ****     array[0][0] = 0x00; //x1 and y1
+  37              		.loc 1 11 0
+  38 0002 0023     		movs	r3, #0
+  39 0004 0360     		str	r3, [r0]
+  12:helper_functions.c ****     array[0][1] = 0xc8;
+  40              		.loc 1 12 0
+  41 0006 C822     		movs	r2, #200
+  42 0008 4260     		str	r2, [r0, #4]
+  13:helper_functions.c ****     array[0][2] = 0xb0;
+  43              		.loc 1 13 0
+  44 000a B022     		movs	r2, #176
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 2
 
 
-  49              		.thumb
-  50              		.thumb_func
-  51              		.type	selectPayloadValue, %function
-  52              	selectPayloadValue:
-  53              	.LFB65:
-  10:main.c        **** }
-  11:main.c        **** 
-  12:main.c        **** int b1Val = 0x01;
-  13:main.c        **** int b2Val = 0x02;
-  14:main.c        **** int b3Val = 0x03;
-  15:main.c        **** int b4Val = 0x04;
-  16:main.c        **** 
-  17:main.c        **** //Method to set the values for each of the payload bytes
-  18:main.c        **** void selectPayloadValue(stage){
+  45 000c 8260     		str	r2, [r0, #8]
+  14:helper_functions.c ****     array[0][3] = 0x04;
+  46              		.loc 1 14 0
+  47 000e 0422     		movs	r2, #4
+  48 0010 C260     		str	r2, [r0, #12]
+  15:helper_functions.c ****     array[0][4] = 0x00;
+  49              		.loc 1 15 0
+  50 0012 0361     		str	r3, [r0, #16]
+  16:helper_functions.c ****     
+  17:helper_functions.c ****     array[1][0] = 0x01;//x2 and y2
+  51              		.loc 1 17 0
+  52 0014 0121     		movs	r1, #1
+  53 0016 4161     		str	r1, [r0, #20]
+  18:helper_functions.c ****     array[1][1] = 0xee;
   54              		.loc 1 18 0
-  55              		.cfi_startproc
-  56              		@ args = 0, pretend = 0, frame = 24
-  57              		@ frame_needed = 0, uses_anonymous_args = 0
-  58              	.LVL3:
-  59 0000 70B5     		push	{r4, r5, r6, lr}
-  60              		.cfi_def_cfa_offset 16
-  61              		.cfi_offset 4, -16
-  62              		.cfi_offset 5, -12
-  63              		.cfi_offset 6, -8
-  64              		.cfi_offset 14, -4
-  65 0002 86B0     		sub	sp, sp, #24
-  66              		.cfi_def_cfa_offset 40
-  67 0004 0546     		mov	r5, r0
-  19:main.c        ****     LCD_ClearDisplay();
-  68              		.loc 1 19 0
-  69 0006 0120     		movs	r0, #1
-  70              	.LVL4:
-  71 0008 FFF7FEFF 		bl	LCD_WriteControl
-  72              	.LVL5:
-  20:main.c        ****     LCD_Position(0,0);
-  73              		.loc 1 20 0
-  74 000c 0021     		movs	r1, #0
-  75 000e 0846     		mov	r0, r1
-  76 0010 FFF7FEFF 		bl	LCD_Position
-  77              	.LVL6:
-  21:main.c        ****     if(stage == 1){
-  78              		.loc 1 21 0
-  79 0014 012D     		cmp	r5, #1
-  80 0016 03D1     		bne	.L4
-  22:main.c        ****     LCD_PrintString("Set b7:0 ");   
-  81              		.loc 1 22 0
-  82 0018 4148     		ldr	r0, .L21
-  83 001a FFF7FEFF 		bl	LCD_PrintString
-  84              	.LVL7:
-  85 001e 0EE0     		b	.L5
-  86              	.L4:
-  23:main.c        ****     }
-  24:main.c        ****     else if(stage == 2){
-  87              		.loc 1 24 0
-  88 0020 022D     		cmp	r5, #2
-  89 0022 03D1     		bne	.L6
-  25:main.c        ****     LCD_PrintString("Set b15:8 ");
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 3
+  55 0018 EE21     		movs	r1, #238
+  56 001a 8161     		str	r1, [r0, #24]
+  19:helper_functions.c ****     array[1][2] = 0x52;
+  57              		.loc 1 19 0
+  58 001c 5221     		movs	r1, #82
+  59 001e C161     		str	r1, [r0, #28]
+  20:helper_functions.c ****     array[1][3] = 0x14;
+  60              		.loc 1 20 0
+  61 0020 1421     		movs	r1, #20
+  62 0022 0162     		str	r1, [r0, #32]
+  21:helper_functions.c ****     array[1][4] = 0x00;
+  63              		.loc 1 21 0
+  64 0024 4362     		str	r3, [r0, #36]
+  22:helper_functions.c ****     
+  23:helper_functions.c ****     array[2][0] = 0x02;//color
+  65              		.loc 1 23 0
+  66 0026 0224     		movs	r4, #2
+  67 0028 8462     		str	r4, [r0, #40]
+  24:helper_functions.c ****     array[2][1] = 0xe1;
+  68              		.loc 1 24 0
+  69 002a E124     		movs	r4, #225
+  70 002c C462     		str	r4, [r0, #44]
+  25:helper_functions.c ****     array[2][2] = 0x69;
+  71              		.loc 1 25 0
+  72 002e 6924     		movs	r4, #105
+  73 0030 0463     		str	r4, [r0, #48]
+  26:helper_functions.c ****     array[2][3] = 0x14;
+  74              		.loc 1 26 0
+  75 0032 4163     		str	r1, [r0, #52]
+  27:helper_functions.c ****     array[2][4] = 0x00;
+  76              		.loc 1 27 0
+  77 0034 8363     		str	r3, [r0, #56]
+  28:helper_functions.c ****     
+  29:helper_functions.c ****     array[3][0] = 0x03;//test pat
+  78              		.loc 1 29 0
+  79 0036 0321     		movs	r1, #3
+  80 0038 C163     		str	r1, [r0, #60]
+  30:helper_functions.c ****     array[3][1] = 0x00;
+  81              		.loc 1 30 0
+  82 003a 0364     		str	r3, [r0, #64]
+  31:helper_functions.c ****     array[3][2] = 0x00;
+  83              		.loc 1 31 0
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 3
 
 
-  90              		.loc 1 25 0
-  91 0024 3F48     		ldr	r0, .L21+4
-  92 0026 FFF7FEFF 		bl	LCD_PrintString
-  93              	.LVL8:
-  94 002a 08E0     		b	.L5
-  95              	.L6:
-  26:main.c        ****     }
-  27:main.c        ****     else if(stage == 3){
-  96              		.loc 1 27 0
-  97 002c 032D     		cmp	r5, #3
-  98 002e 03D1     		bne	.L7
-  28:main.c        ****     LCD_PrintString("Set b23:16 ");
-  99              		.loc 1 28 0
- 100 0030 3D48     		ldr	r0, .L21+8
- 101 0032 FFF7FEFF 		bl	LCD_PrintString
- 102              	.LVL9:
- 103 0036 02E0     		b	.L5
- 104              	.L7:
-  29:main.c        ****     }
-  30:main.c        ****     else{
-  31:main.c        ****     LCD_PrintString("Set b31:24 ");
- 105              		.loc 1 31 0
- 106 0038 3C48     		ldr	r0, .L21+12
- 107 003a FFF7FEFF 		bl	LCD_PrintString
- 108              	.LVL10:
- 109              	.L5:
-  32:main.c        ****     }
-  33:main.c        ****     
-  34:main.c        ****     LCD_Position(1,0);
- 110              		.loc 1 34 0
- 111 003e 0021     		movs	r1, #0
- 112 0040 0120     		movs	r0, #1
- 113 0042 FFF7FEFF 		bl	LCD_Position
- 114              	.LVL11:
-  35:main.c        ****     LCD_PrintString("Value:");
- 115              		.loc 1 35 0
- 116 0046 3A48     		ldr	r0, .L21+16
- 117 0048 FFF7FEFF 		bl	LCD_PrintString
- 118              	.LVL12:
-  36:main.c        ****     
-  37:main.c        ****     char dispStr[2];
-  38:main.c        ****     char setMsg[16];
-  39:main.c        ****     int selected = 0;
-  40:main.c        ****     int byteVal = 0x00;
- 119              		.loc 1 40 0
- 120 004c 0024     		movs	r4, #0
-  39:main.c        ****     int byteVal = 0x00;
- 121              		.loc 1 39 0
- 122 004e 2646     		mov	r6, r4
-  41:main.c        ****     
-  42:main.c        ****     while(selected != 1){
- 123              		.loc 1 42 0
- 124 0050 2BE0     		b	.L8
- 125              	.LVL13:
- 126              	.L14:
-  43:main.c        ****         if(!SW3_Read()){
- 127              		.loc 1 43 0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 4
+  84 003c 4364     		str	r3, [r0, #68]
+  32:helper_functions.c ****     array[3][3] = 0x00;
+  85              		.loc 1 32 0
+  86 003e 8364     		str	r3, [r0, #72]
+  33:helper_functions.c ****     array[3][4] = 0x00;
+  87              		.loc 1 33 0
+  88 0040 C364     		str	r3, [r0, #76]
+  34:helper_functions.c ****     
+  35:helper_functions.c ****     array[4][0] = 0x04;//end id
+  89              		.loc 1 35 0
+  90 0042 0265     		str	r2, [r0, #80]
+  36:helper_functions.c ****     array[4][1] = 0x00;
+  91              		.loc 1 36 0
+  92 0044 4365     		str	r3, [r0, #84]
+  37:helper_functions.c ****     array[4][2] = 0x00;
+  93              		.loc 1 37 0
+  94 0046 8365     		str	r3, [r0, #88]
+  38:helper_functions.c ****     array[4][3] = 0x00;
+  95              		.loc 1 38 0
+  96 0048 C365     		str	r3, [r0, #92]
+  39:helper_functions.c ****     array[4][4] = 0x00;
+  97              		.loc 1 39 0
+  98 004a 0366     		str	r3, [r0, #96]
+  40:helper_functions.c **** }
+  99              		.loc 1 40 0
+ 100 004c 10BC     		pop	{r4}
+ 101              		.cfi_restore 4
+ 102              		.cfi_def_cfa_offset 0
+ 103 004e 7047     		bx	lr
+ 104              		.cfi_endproc
+ 105              	.LFE64:
+ 106              		.size	req_user_values, .-req_user_values
+ 107              		.section	.text.sendByte,"ax",%progbits
+ 108              		.align	2
+ 109              		.global	sendByte
+ 110              		.thumb
+ 111              		.thumb_func
+ 112              		.type	sendByte, %function
+ 113              	sendByte:
+ 114              	.LFB65:
+  41:helper_functions.c **** 
+  42:helper_functions.c **** /*
+  43:helper_functions.c **** Func 2
+  44:helper_functions.c **** */
+  45:helper_functions.c **** void sendByte(int byte){
+ 115              		.loc 1 45 0
+ 116              		.cfi_startproc
+ 117              		@ args = 0, pretend = 0, frame = 0
+ 118              		@ frame_needed = 0, uses_anonymous_args = 0
+ 119              	.LVL1:
+ 120 0000 08B5     		push	{r3, lr}
+ 121              		.cfi_def_cfa_offset 8
+ 122              		.cfi_offset 3, -8
+ 123              		.cfi_offset 14, -4
+  46:helper_functions.c ****     OUT_BYTE_Write(byte);
+ 124              		.loc 1 46 0
+ 125 0002 C0B2     		uxtb	r0, r0
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 4
 
 
- 128 0052 FFF7FEFF 		bl	SW3_Read
- 129              	.LVL14:
- 130 0056 00B9     		cbnz	r0, .L9
-  44:main.c        ****             selected = 1;
- 131              		.loc 1 44 0
- 132 0058 0126     		movs	r6, #1
- 133              	.LVL15:
- 134              	.L9:
-  45:main.c        ****         }
-  46:main.c        ****         
-  47:main.c        ****         LCD_Position(1,6);
- 135              		.loc 1 47 0
- 136 005a 0621     		movs	r1, #6
- 137 005c 0120     		movs	r0, #1
- 138 005e FFF7FEFF 		bl	LCD_Position
- 139              	.LVL16:
-  48:main.c        ****         sprintf(dispStr, "%x", byteVal);
- 140              		.loc 1 48 0
- 141 0062 2246     		mov	r2, r4
- 142 0064 3349     		ldr	r1, .L21+20
- 143 0066 05A8     		add	r0, sp, #20
- 144 0068 FFF7FEFF 		bl	sprintf
- 145              	.LVL17:
-  49:main.c        ****         LCD_PrintString(dispStr);
- 146              		.loc 1 49 0
- 147 006c 05A8     		add	r0, sp, #20
- 148 006e FFF7FEFF 		bl	LCD_PrintString
- 149              	.LVL18:
-  50:main.c        ****         CyDelay(100);
- 150              		.loc 1 50 0
- 151 0072 6420     		movs	r0, #100
- 152 0074 FFF7FEFF 		bl	CyDelay
- 153              	.LVL19:
-  51:main.c        ****     
-  52:main.c        ****         if(stage == 1){
- 154              		.loc 1 52 0
- 155 0078 012D     		cmp	r5, #1
- 156 007a 04D1     		bne	.L10
-  53:main.c        ****             byteVal = b1Val;
- 157              		.loc 1 53 0
- 158 007c 2E4B     		ldr	r3, .L21+24
- 159 007e 1C68     		ldr	r4, [r3]
- 160              	.LVL20:
-  54:main.c        ****             b1Val++;
- 161              		.loc 1 54 0
- 162 0080 621C     		adds	r2, r4, #1
- 163 0082 1A60     		str	r2, [r3]
- 164 0084 11E0     		b	.L8
- 165              	.L10:
-  55:main.c        ****         }
-  56:main.c        ****         else if (stage == 2){
- 166              		.loc 1 56 0
- 167 0086 022D     		cmp	r5, #2
- 168 0088 04D1     		bne	.L12
-  57:main.c        ****             byteVal = b2Val;
- 169              		.loc 1 57 0
- 170 008a 2B4B     		ldr	r3, .L21+24
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 5
+ 126              	.LVL2:
+ 127 0004 FFF7FEFF 		bl	OUT_BYTE_Write
+ 128              	.LVL3:
+ 129 0008 08BD     		pop	{r3, pc}
+ 130              		.cfi_endproc
+ 131              	.LFE65:
+ 132              		.size	sendByte, .-sendByte
+ 133              		.section	.text.reg_write,"ax",%progbits
+ 134              		.align	2
+ 135              		.global	reg_write
+ 136              		.thumb
+ 137              		.thumb_func
+ 138              		.type	reg_write, %function
+ 139              	reg_write:
+ 140              	.LFB66:
+  47:helper_functions.c **** }
+  48:helper_functions.c **** 
+  49:helper_functions.c **** /*
+  50:helper_functions.c **** Func 3
+  51:helper_functions.c **** */
+  52:helper_functions.c **** void reg_write(uint8_t bytes[5], int psoc_fpga_xfc, int fpga_psoc_xfc)
+  53:helper_functions.c **** {
+ 141              		.loc 1 53 0
+ 142              		.cfi_startproc
+ 143              		@ args = 0, pretend = 0, frame = 0
+ 144              		@ frame_needed = 0, uses_anonymous_args = 0
+ 145              	.LVL4:
+ 146 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 147              		.cfi_def_cfa_offset 24
+ 148              		.cfi_offset 3, -24
+ 149              		.cfi_offset 4, -20
+ 150              		.cfi_offset 5, -16
+ 151              		.cfi_offset 6, -12
+ 152              		.cfi_offset 7, -8
+ 153              		.cfi_offset 14, -4
+ 154 0002 0746     		mov	r7, r0
+ 155 0004 0E46     		mov	r6, r1
+ 156 0006 1446     		mov	r4, r2
+ 157              	.LVL5:
+ 158              	.LBB2:
+  54:helper_functions.c ****     // send each of the 5 bytes, wait until handshake is complete to return
+  55:helper_functions.c ****     for(int i = 0; i < 5; i++){
+ 159              		.loc 1 55 0
+ 160 0008 0025     		movs	r5, #0
+ 161 000a 14E0     		b	.L6
+ 162              	.LVL6:
+ 163              	.L8:
+  56:helper_functions.c ****         sendByte(bytes[i]);
+ 164              		.loc 1 56 0
+ 165 000c 785D     		ldrb	r0, [r7, r5]	@ zero_extendqisi2
+ 166 000e FFF7FEFF 		bl	sendByte
+ 167              	.LVL7:
+  57:helper_functions.c ****         CyDelayCycles(1);
+ 168              		.loc 1 57 0
+ 169 0012 0120     		movs	r0, #1
+ 170 0014 FFF7FEFF 		bl	CyDelayCycles
+ 171              	.LVL8:
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 5
 
 
- 171 008c 5C68     		ldr	r4, [r3, #4]
- 172              	.LVL21:
-  58:main.c        ****             b2Val++;
- 173              		.loc 1 58 0
- 174 008e 621C     		adds	r2, r4, #1
- 175 0090 5A60     		str	r2, [r3, #4]
- 176 0092 0AE0     		b	.L8
- 177              	.L12:
-  59:main.c        ****         }    
-  60:main.c        ****         else if (stage == 3){
- 178              		.loc 1 60 0
- 179 0094 032D     		cmp	r5, #3
- 180 0096 04D1     		bne	.L13
-  61:main.c        ****             byteVal = b3Val;        
- 181              		.loc 1 61 0
- 182 0098 274B     		ldr	r3, .L21+24
- 183 009a 9C68     		ldr	r4, [r3, #8]
- 184              	.LVL22:
-  62:main.c        ****             b3Val++;
- 185              		.loc 1 62 0
- 186 009c 621C     		adds	r2, r4, #1
- 187 009e 9A60     		str	r2, [r3, #8]
- 188 00a0 03E0     		b	.L8
- 189              	.L13:
-  63:main.c        ****         }
-  64:main.c        ****         else{
-  65:main.c        ****             byteVal = b4Val;
- 190              		.loc 1 65 0
- 191 00a2 254B     		ldr	r3, .L21+24
- 192 00a4 DC68     		ldr	r4, [r3, #12]
- 193              	.LVL23:
-  66:main.c        ****             b4Val++;
- 194              		.loc 1 66 0
- 195 00a6 621C     		adds	r2, r4, #1
- 196 00a8 DA60     		str	r2, [r3, #12]
- 197              	.LVL24:
- 198              	.L8:
-  42:main.c        ****         if(!SW3_Read()){
- 199              		.loc 1 42 0
- 200 00aa 002E     		cmp	r6, #0
- 201 00ac D1D0     		beq	.L14
-  67:main.c        ****         }
-  68:main.c        ****     }
+  58:helper_functions.c ****         psoc_fpga_xfc = 1 - psoc_fpga_xfc;
+ 172              		.loc 1 58 0
+ 173 0018 C6F10106 		rsb	r6, r6, #1
+ 174              	.LVL9:
+  59:helper_functions.c ****         H2G_STRB_OUT_Write(psoc_fpga_xfc);
+ 175              		.loc 1 59 0
+ 176 001c F0B2     		uxtb	r0, r6
+ 177 001e FFF7FEFF 		bl	H2G_STRB_OUT_Write
+ 178              	.LVL10:
+ 179              	.L7:
+  60:helper_functions.c ****         
+  61:helper_functions.c ****         while(H2G_STRB_IN_Read() == fpga_psoc_xfc){
+ 180              		.loc 1 61 0 discriminator 1
+ 181 0022 FFF7FEFF 		bl	H2G_STRB_IN_Read
+ 182              	.LVL11:
+ 183 0026 8442     		cmp	r4, r0
+ 184 0028 FBD0     		beq	.L7
+  62:helper_functions.c ****             //Idle until incoming handshake is toggled
+  63:helper_functions.c ****         }
+  64:helper_functions.c ****         CyDelayCycles(1);
+ 185              		.loc 1 64 0 discriminator 2
+ 186 002a 0120     		movs	r0, #1
+ 187 002c FFF7FEFF 		bl	CyDelayCycles
+ 188              	.LVL12:
+  65:helper_functions.c ****         fpga_psoc_xfc = 1 - fpga_psoc_xfc;
+ 189              		.loc 1 65 0 discriminator 2
+ 190 0030 C4F10104 		rsb	r4, r4, #1
+ 191              	.LVL13:
+  55:helper_functions.c ****         sendByte(bytes[i]);
+ 192              		.loc 1 55 0 discriminator 2
+ 193 0034 0135     		adds	r5, r5, #1
+ 194              	.LVL14:
+ 195              	.L6:
+  55:helper_functions.c ****         sendByte(bytes[i]);
+ 196              		.loc 1 55 0 is_stmt 0 discriminator 1
+ 197 0036 042D     		cmp	r5, #4
+ 198 0038 E8DD     		ble	.L8
+ 199              	.LBE2:
+  66:helper_functions.c ****     }
+  67:helper_functions.c **** }
+ 200              		.loc 1 67 0 is_stmt 1
+ 201 003a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 202              		.cfi_endproc
+ 203              	.LFE66:
+ 204              		.size	reg_write, .-reg_write
+ 205              		.section	.text.main,"ax",%progbits
+ 206              		.align	2
+ 207              		.global	main
+ 208              		.thumb
+ 209              		.thumb_func
+ 210              		.type	main, %function
+ 211              	main:
+ 212              	.LFB67:
+ 213              		.file 2 "main.c"
+   1:main.c        **** #include "project.h"
+   2:main.c        **** #include "stdio.h"
+   3:main.c        **** #include "helper_functions.c"
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 6
+
+
+   4:main.c        **** 
+   5:main.c        **** int psoc_fpga_xfc;  // state of output strobe
+   6:main.c        **** int fpga_psoc_xfc;  // state of input strobe
+   7:main.c        **** 
+   8:main.c        **** int *rect_full[5][5];
+   9:main.c        **** int x1, y1, x2, y2, fill_color, test_pat_mode, engine_id; //values required for commands
+  10:main.c        **** 
+  11:main.c        **** int main(void)
+  12:main.c        **** {
+ 214              		.loc 2 12 0
+ 215              		.cfi_startproc
+ 216              		@ args = 0, pretend = 0, frame = 0
+ 217              		@ frame_needed = 0, uses_anonymous_args = 0
+ 218 0000 38B5     		push	{r3, r4, r5, lr}
+ 219              		.cfi_def_cfa_offset 16
+ 220              		.cfi_offset 3, -16
+ 221              		.cfi_offset 4, -12
+ 222              		.cfi_offset 5, -8
+ 223              		.cfi_offset 14, -4
+  13:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+ 224              		.loc 2 13 0
+ 225              		.syntax unified
+ 226              	@ 13 "main.c" 1
+ 227 0002 62B6     		CPSIE   i
+ 228              	@ 0 "" 2
+  14:main.c        **** 
+  15:main.c        ****     LCD_Start();
+ 229              		.loc 2 15 0
+ 230              		.thumb
+ 231              		.syntax unified
+ 232 0004 FFF7FEFF 		bl	LCD_Start
+ 233              	.LVL15:
+  16:main.c        ****     LCD_ClearDisplay();
+ 234              		.loc 2 16 0
+ 235 0008 0120     		movs	r0, #1
+ 236 000a FFF7FEFF 		bl	LCD_WriteControl
+ 237              	.LVL16:
+  17:main.c        ****     
+  18:main.c        ****     char dispVal[1];
+  19:main.c        ****     char rcvdStatus[1];
+  20:main.c        **** 
+  21:main.c        ****     int addr_flag = 0;
+  22:main.c        ****     psoc_fpga_xfc = 0;  // state of output strobe
+ 238              		.loc 2 22 0
+ 239 000e 1A4D     		ldr	r5, .L13
+ 240 0010 0024     		movs	r4, #0
+ 241 0012 2C60     		str	r4, [r5]
+  23:main.c        ****     fpga_psoc_xfc = 0;  // state of output strobe
+ 242              		.loc 2 23 0
+ 243 0014 194B     		ldr	r3, .L13+4
+ 244 0016 1C60     		str	r4, [r3]
+  24:main.c        ****     
+  25:main.c        ****     
+  26:main.c        ****     //Send reset signal to Nexys board
+  27:main.c        ****     CyDelay(100);
+ 245              		.loc 2 27 0
+ 246 0018 6420     		movs	r0, #100
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 7
+
+
+ 247 001a FFF7FEFF 		bl	CyDelay
+ 248              	.LVL17:
+  28:main.c        ****     PSOC_RESET_RAW_Write(1);
+ 249              		.loc 2 28 0
+ 250 001e 0120     		movs	r0, #1
+ 251 0020 FFF7FEFF 		bl	PSOC_RESET_RAW_Write
+ 252              	.LVL18:
+  29:main.c        ****     CyDelay(100);
+ 253              		.loc 2 29 0
+ 254 0024 6420     		movs	r0, #100
+ 255 0026 FFF7FEFF 		bl	CyDelay
+ 256              	.LVL19:
+  30:main.c        ****     PSOC_RESET_RAW_Write(0);
+ 257              		.loc 2 30 0
+ 258 002a 2046     		mov	r0, r4
+ 259 002c FFF7FEFF 		bl	PSOC_RESET_RAW_Write
+ 260              	.LVL20:
+  31:main.c        ****     CyDelay(100);
+ 261              		.loc 2 31 0
+ 262 0030 6420     		movs	r0, #100
+ 263 0032 FFF7FEFF 		bl	CyDelay
+ 264              	.LVL21:
+  32:main.c        ****     
+  33:main.c        ****     //write initial handshake to Nexys FPGA.
+  34:main.c        ****     H2G_STRB_OUT_Write(psoc_fpga_xfc);
+ 265              		.loc 2 34 0
+ 266 0036 2878     		ldrb	r0, [r5]	@ zero_extendqisi2
+ 267 0038 FFF7FEFF 		bl	H2G_STRB_OUT_Write
+ 268              	.LVL22:
+  35:main.c        ****     
+  36:main.c        ****     //manually set defatult Stest rectangle payloads to draw a rectangle with coords (200, 150) and
+  37:main.c        ****     req_user_values(&rect_full[5][5]);
+ 269              		.loc 2 37 0
+ 270 003c 1048     		ldr	r0, .L13+8
+ 271 003e FFF7FEFF 		bl	req_user_values
+ 272              	.LVL23:
+ 273              	.L11:
+ 274              	.LBB3:
+  38:main.c        ****     
+  39:main.c        ****     for(;;)
+  40:main.c        ****     {   
+  41:main.c        ****         x1 = 0; //reset all user values to 0 before a new command is parsed.
+ 275              		.loc 2 41 0 discriminator 1
+ 276 0042 0023     		movs	r3, #0
+ 277 0044 0F4A     		ldr	r2, .L13+12
+ 278 0046 1360     		str	r3, [r2]
+  42:main.c        ****         y1 = 0;
+ 279              		.loc 2 42 0 discriminator 1
+ 280 0048 0F4A     		ldr	r2, .L13+16
+ 281 004a 1360     		str	r3, [r2]
+  43:main.c        ****         x2 = 0;
+ 282              		.loc 2 43 0 discriminator 1
+ 283 004c 0F4A     		ldr	r2, .L13+20
+ 284 004e 1360     		str	r3, [r2]
+  44:main.c        ****         y2 = 0;
+ 285              		.loc 2 44 0 discriminator 1
+ 286 0050 0F4A     		ldr	r2, .L13+24
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 8
+
+
+ 287 0052 1360     		str	r3, [r2]
+  45:main.c        ****         fill_color = 0;
+ 288              		.loc 2 45 0 discriminator 1
+ 289 0054 0F4A     		ldr	r2, .L13+28
+ 290 0056 1360     		str	r3, [r2]
+  46:main.c        ****         test_pat_mode = 0;
+ 291              		.loc 2 46 0 discriminator 1
+ 292 0058 0F4A     		ldr	r2, .L13+32
+ 293 005a 1360     		str	r3, [r2]
+  47:main.c        ****         engine_id = 0; 
+ 294              		.loc 2 47 0 discriminator 1
+ 295 005c 0F4A     		ldr	r2, .L13+36
+ 296 005e 1360     		str	r3, [r2]
+ 297              	.LVL24:
+  48:main.c        ****         int word32_count = 0;
+  49:main.c        ****         
+  50:main.c        ****         //get command type from user.
+  51:main.c        ****         engine_id = 0x0; //update to let user choose via knob, always rect command right now
+  52:main.c        ****         
+  53:main.c        ****         //get values from user, stored in global vars.
+  54:main.c        ****         
+  55:main.c        ****         //while(word32_cnt < 5){
+  56:main.c        ****             //pack into specific row of 2d array
+  57:main.c        ****         //}
+  58:main.c        ****         
+  59:main.c        ****         //display all values given by user and "ready to send" msg
+  60:main.c        ****         
+  61:main.c        ****         //wait for button press
+  62:main.c        ****         
+  63:main.c        ****         //on button press
+  64:main.c        ****             //iterate over each row and send each 
+  65:main.c        **** 
+  66:main.c        ****         
+  67:main.c        ****         //write bytes to output
+  68:main.c        ****         //send CMDcode/adderss byte first, then loop through payload bytes to send correctly
   69:main.c        **** 
-  70:main.c        ****     if(stage == 1){
- 202              		.loc 1 70 0
- 203 00ae 012D     		cmp	r5, #1
- 204 00b0 02D1     		bne	.L15
-  71:main.c        ****         cmdBytes[1] = byteVal;    
- 205              		.loc 1 71 0
- 206 00b2 224B     		ldr	r3, .L21+28
- 207 00b4 5C60     		str	r4, [r3, #4]
- 208 00b6 0BE0     		b	.L16
- 209              	.L15:
-  72:main.c        ****     }
-  73:main.c        ****     else if(stage == 2){
- 210              		.loc 1 73 0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 6
-
-
- 211 00b8 022D     		cmp	r5, #2
- 212 00ba 02D1     		bne	.L17
-  74:main.c        ****         cmdBytes[2] = byteVal;
- 213              		.loc 1 74 0
- 214 00bc 1F4B     		ldr	r3, .L21+28
- 215 00be 9C60     		str	r4, [r3, #8]
- 216 00c0 06E0     		b	.L16
- 217              	.L17:
-  75:main.c        ****     }
-  76:main.c        ****     else if(stage == 3){
- 218              		.loc 1 76 0
- 219 00c2 032D     		cmp	r5, #3
- 220 00c4 02D1     		bne	.L18
-  77:main.c        ****         cmdBytes[3] = byteVal;
- 221              		.loc 1 77 0
- 222 00c6 1D4B     		ldr	r3, .L21+28
- 223 00c8 DC60     		str	r4, [r3, #12]
- 224 00ca 01E0     		b	.L16
- 225              	.L18:
-  78:main.c        ****     }
-  79:main.c        ****     else{
-  80:main.c        ****         cmdBytes[4] = byteVal;
- 226              		.loc 1 80 0
- 227 00cc 1B4B     		ldr	r3, .L21+28
- 228 00ce 1C61     		str	r4, [r3, #16]
- 229              	.L16:
-  81:main.c        ****     }
-  82:main.c        ****     
-  83:main.c        ****     LCD_ClearDisplay();
- 230              		.loc 1 83 0
- 231 00d0 0120     		movs	r0, #1
- 232 00d2 FFF7FEFF 		bl	LCD_WriteControl
- 233              	.LVL25:
-  84:main.c        ****     LCD_Position(0,0);
- 234              		.loc 1 84 0
- 235 00d6 0021     		movs	r1, #0
- 236 00d8 0846     		mov	r0, r1
- 237 00da FFF7FEFF 		bl	LCD_Position
- 238              	.LVL26:
-  85:main.c        ****     sprintf(setMsg, "Byte%d value set.", stage);
- 239              		.loc 1 85 0
- 240 00de 2A46     		mov	r2, r5
- 241 00e0 1749     		ldr	r1, .L21+32
- 242 00e2 01A8     		add	r0, sp, #4
- 243 00e4 FFF7FEFF 		bl	sprintf
- 244              	.LVL27:
-  86:main.c        ****     LCD_PrintString(setMsg);
- 245              		.loc 1 86 0
- 246 00e8 01A8     		add	r0, sp, #4
- 247 00ea FFF7FEFF 		bl	LCD_PrintString
- 248              	.LVL28:
-  87:main.c        ****     LCD_Position(1,0);
- 249              		.loc 1 87 0
- 250 00ee 0021     		movs	r1, #0
- 251 00f0 0120     		movs	r0, #1
- 252 00f2 FFF7FEFF 		bl	LCD_Position
- 253              	.LVL29:
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 7
-
-
-  88:main.c        ****     LCD_PrintString("Value:");
- 254              		.loc 1 88 0
- 255 00f6 0E48     		ldr	r0, .L21+16
- 256 00f8 FFF7FEFF 		bl	LCD_PrintString
- 257              	.LVL30:
-  89:main.c        ****     LCD_Position(1,6);
- 258              		.loc 1 89 0
- 259 00fc 0621     		movs	r1, #6
- 260 00fe 0120     		movs	r0, #1
- 261 0100 FFF7FEFF 		bl	LCD_Position
- 262              	.LVL31:
-  90:main.c        ****     sprintf(dispStr, "%x", byteVal);
- 263              		.loc 1 90 0
- 264 0104 2246     		mov	r2, r4
- 265 0106 0B49     		ldr	r1, .L21+20
- 266 0108 05A8     		add	r0, sp, #20
- 267 010a FFF7FEFF 		bl	sprintf
- 268              	.LVL32:
-  91:main.c        ****     LCD_PrintString(dispStr);
- 269              		.loc 1 91 0
- 270 010e 05A8     		add	r0, sp, #20
- 271 0110 FFF7FEFF 		bl	LCD_PrintString
- 272              	.LVL33:
-  92:main.c        ****     CyDelay(1000);
- 273              		.loc 1 92 0
- 274 0114 4FF47A70 		mov	r0, #1000
- 275 0118 FFF7FEFF 		bl	CyDelay
- 276              	.LVL34:
-  93:main.c        **** }
- 277              		.loc 1 93 0
- 278 011c 06B0     		add	sp, sp, #24
- 279              		.cfi_def_cfa_offset 16
- 280              		@ sp needed
- 281 011e 70BD     		pop	{r4, r5, r6, pc}
- 282              	.LVL35:
- 283              	.L22:
- 284              		.align	2
- 285              	.L21:
- 286 0120 00000000 		.word	.LC0
- 287 0124 0C000000 		.word	.LC1
- 288 0128 18000000 		.word	.LC2
- 289 012c 24000000 		.word	.LC3
- 290 0130 30000000 		.word	.LC4
- 291 0134 38000000 		.word	.LC5
- 292 0138 00000000 		.word	.LANCHOR0
- 293 013c 00000000 		.word	cmdBytes
- 294 0140 3C000000 		.word	.LC6
- 295              		.cfi_endproc
- 296              	.LFE65:
- 297              		.size	selectPayloadValue, .-selectPayloadValue
- 298              		.section	.text.reg_write,"ax",%progbits
- 299              		.align	2
- 300              		.global	reg_write
- 301              		.thumb
- 302              		.thumb_func
- 303              		.type	reg_write, %function
- 304              	reg_write:
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 8
-
-
- 305              	.LFB66:
-  94:main.c        **** 
-  95:main.c        **** void reg_write( uint8_t bytes[8] )
-  96:main.c        **** {
- 306              		.loc 1 96 0
- 307              		.cfi_startproc
- 308              		@ args = 0, pretend = 0, frame = 0
- 309              		@ frame_needed = 0, uses_anonymous_args = 0
- 310              		@ link register save eliminated.
- 311              	.LVL36:
- 312 0000 7047     		bx	lr
- 313              		.cfi_endproc
- 314              	.LFE66:
- 315              		.size	reg_write, .-reg_write
- 316 0002 00BF     		.section	.text.main,"ax",%progbits
- 317              		.align	2
- 318              		.global	main
- 319              		.thumb
- 320              		.thumb_func
- 321              		.type	main, %function
- 322              	main:
- 323              	.LFB67:
-  97:main.c        ****     // send each of the 5 bytes, wait until handshake is complete to return
-  98:main.c        **** }
-  99:main.c        **** 
- 100:main.c        **** int main(void)
- 101:main.c        **** {
- 324              		.loc 1 101 0
- 325              		.cfi_startproc
- 326              		@ args = 0, pretend = 0, frame = 8
- 327              		@ frame_needed = 0, uses_anonymous_args = 0
- 328              		.loc 1 101 0
- 329 0000 F0B5     		push	{r4, r5, r6, r7, lr}
- 330              		.cfi_def_cfa_offset 20
- 331              		.cfi_offset 4, -20
- 332              		.cfi_offset 5, -16
- 333              		.cfi_offset 6, -12
- 334              		.cfi_offset 7, -8
- 335              		.cfi_offset 14, -4
- 336 0002 83B0     		sub	sp, sp, #12
- 337              		.cfi_def_cfa_offset 32
- 102:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
- 338              		.loc 1 102 0
- 339              		.syntax unified
- 340              	@ 102 "main.c" 1
- 341 0004 62B6     		CPSIE   i
- 342              	@ 0 "" 2
- 103:main.c        **** 
- 104:main.c        ****     LCD_Start();
- 343              		.loc 1 104 0
- 344              		.thumb
- 345              		.syntax unified
- 346 0006 FFF7FEFF 		bl	LCD_Start
- 347              	.LVL37:
- 105:main.c        ****     LCD_ClearDisplay();
- 348              		.loc 1 105 0
- 349 000a 0120     		movs	r0, #1
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 9
-
-
- 350 000c FFF7FEFF 		bl	LCD_WriteControl
- 351              	.LVL38:
- 106:main.c        ****     
- 107:main.c        ****     char dispVal[1];
- 108:main.c        ****     char rcvdStatus[1];
- 109:main.c        **** 
- 110:main.c        ****     int addr_flag = 0;
- 111:main.c        ****     int psoc_fpga_xfc = 0;  // state of output strobe
- 112:main.c        ****     int fpga_psoc_xfc = 0;  // state of input strobe
- 113:main.c        ****     
- 114:main.c        ****     //Send reset signal to Nexys board
- 115:main.c        ****     CyDelay(100);
- 352              		.loc 1 115 0
- 353 0010 6420     		movs	r0, #100
- 354 0012 FFF7FEFF 		bl	CyDelay
- 355              	.LVL39:
- 116:main.c        ****     PSOC_RESET_RAW_Write(1);
- 356              		.loc 1 116 0
- 357 0016 0120     		movs	r0, #1
- 358 0018 FFF7FEFF 		bl	PSOC_RESET_RAW_Write
- 359              	.LVL40:
- 117:main.c        ****     CyDelay(100);
- 360              		.loc 1 117 0
- 361 001c 6420     		movs	r0, #100
- 362 001e FFF7FEFF 		bl	CyDelay
- 363              	.LVL41:
- 118:main.c        ****     PSOC_RESET_RAW_Write(0);
- 364              		.loc 1 118 0
- 365 0022 0020     		movs	r0, #0
- 366 0024 FFF7FEFF 		bl	PSOC_RESET_RAW_Write
- 367              	.LVL42:
- 119:main.c        ****     CyDelay(100);
- 368              		.loc 1 119 0
- 369 0028 6420     		movs	r0, #100
- 370 002a FFF7FEFF 		bl	CyDelay
- 371              	.LVL43:
- 120:main.c        ****     
- 121:main.c        ****     //write initial handshake to Nexys FPGA.
- 122:main.c        ****     H2G_STRB_OUT_Write(psoc_fpga_xfc);
- 372              		.loc 1 122 0
- 373 002e 0020     		movs	r0, #0
- 374 0030 FFF7FEFF 		bl	H2G_STRB_OUT_Write
- 375              	.LVL44:
- 112:main.c        ****     
- 376              		.loc 1 112 0
- 377 0034 0024     		movs	r4, #0
- 111:main.c        ****     int fpga_psoc_xfc = 0;  // state of input strobe
- 378              		.loc 1 111 0
- 379 0036 2646     		mov	r6, r4
- 380              	.LVL45:
- 381              	.L34:
- 382              	.LBB2:
- 123:main.c        **** 
- 124:main.c        ****     //SW2 used for selection of data
- 125:main.c        ****     //SW3 used to progress to next stage
- 126:main.c        ****     
- 127:main.c        ****     for(;;)
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 10
-
-
- 128:main.c        ****     {   
- 129:main.c        ****         addr_flag = 0;
- 130:main.c        ****         
- 131:main.c        ****         LCD_ClearDisplay();
- 383              		.loc 1 131 0
- 384 0038 0120     		movs	r0, #1
- 385 003a FFF7FEFF 		bl	LCD_WriteControl
- 386              	.LVL46:
- 132:main.c        ****         //LCD_Position(0,0);
- 133:main.c        ****         //LCD_PrintString("RegWrite CMD");
- 134:main.c        ****         //LCD_Position(1,0);
- 135:main.c        ****         //LCD_PrintString("5 bytes total");
- 136:main.c        **** 
- 137:main.c        ****         //CyDelay(750);
- 138:main.c        ****         
- 139:main.c        ****         //LCD_ClearDisplay();
- 140:main.c        ****         
- 141:main.c        ****         int addrVal = 0;
- 142:main.c        ****         
- 143:main.c        ****         char dispString[2];
- 144:main.c        ****         
- 145:main.c        ****         LCD_Position(0,0);
- 387              		.loc 1 145 0
- 388 003e 0021     		movs	r1, #0
- 389 0040 0846     		mov	r0, r1
- 390 0042 FFF7FEFF 		bl	LCD_Position
- 391              	.LVL47:
- 146:main.c        ****         LCD_PrintString("Select an addr:");
- 392              		.loc 1 146 0
- 393 0046 6A48     		ldr	r0, .L37
- 394 0048 FFF7FEFF 		bl	LCD_PrintString
- 395              	.LVL48:
- 147:main.c        ****         LCD_Position(1,0);
- 396              		.loc 1 147 0
- 397 004c 0021     		movs	r1, #0
- 398 004e 0120     		movs	r0, #1
- 399 0050 FFF7FEFF 		bl	LCD_Position
- 400              	.LVL49:
- 148:main.c        ****         LCD_PrintString("Addr:");
- 401              		.loc 1 148 0
- 402 0054 6748     		ldr	r0, .L37+4
- 403 0056 FFF7FEFF 		bl	LCD_PrintString
- 404              	.LVL50:
- 129:main.c        ****         
- 405              		.loc 1 129 0
- 406 005a 0025     		movs	r5, #0
- 149:main.c        ****         
- 150:main.c        ****         //loop for user to select one of 8 registers to write to
- 151:main.c        ****         while(addr_flag != 1){
- 407              		.loc 1 151 0
- 408 005c 0FE0     		b	.L25
- 409              	.LVL51:
- 410              	.L27:
- 152:main.c        ****             if(!SW3_Read()){
- 411              		.loc 1 152 0
- 412 005e FFF7FEFF 		bl	SW3_Read
- 413              	.LVL52:
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 11
-
-
- 414 0062 00B9     		cbnz	r0, .L26
- 153:main.c        ****                 addr_flag = 1;
- 415              		.loc 1 153 0
- 416 0064 0125     		movs	r5, #1
- 417              	.LVL53:
- 418              	.L26:
- 154:main.c        ****             }
- 155:main.c        ****             
- 156:main.c        ****             LCD_Position(1,5);
- 419              		.loc 1 156 0
- 420 0066 0521     		movs	r1, #5
- 421 0068 0120     		movs	r0, #1
- 422 006a FFF7FEFF 		bl	LCD_Position
- 423              	.LVL54:
- 157:main.c        ****             sprintf(dispString, "%x", addrVal);
- 424              		.loc 1 157 0
- 425 006e 0022     		movs	r2, #0
- 426 0070 6149     		ldr	r1, .L37+8
- 427 0072 01A8     		add	r0, sp, #4
- 428 0074 FFF7FEFF 		bl	sprintf
- 429              	.LVL55:
- 158:main.c        ****             LCD_PrintString(dispString);
- 430              		.loc 1 158 0
- 431 0078 01A8     		add	r0, sp, #4
- 432 007a FFF7FEFF 		bl	LCD_PrintString
- 433              	.LVL56:
- 434              	.L25:
- 151:main.c        ****             if(!SW3_Read()){
- 435              		.loc 1 151 0
- 436 007e 002D     		cmp	r5, #0
- 437 0080 EDD0     		beq	.L27
- 159:main.c        **** 
- 160:main.c        ****             addrVal = 0x00;  //setting explicitly for testing fpga
- 161:main.c        ****             /*
- 162:main.c        ****             CyDelay(100);
- 163:main.c        ****             
- 164:main.c        ****             if( addrVal == 15){
- 165:main.c        ****                 addrVal = 0x00;
- 166:main.c        ****             }
- 167:main.c        ****             else{
- 168:main.c        ****             addrVal = addrVal + 1;
- 169:main.c        ****             }
- 170:main.c        ****             */
- 171:main.c        ****         }
- 172:main.c        ****         cmdBytes[0] = addrVal;
- 438              		.loc 1 172 0
- 439 0082 5E4F     		ldr	r7, .L37+12
- 440 0084 0025     		movs	r5, #0
- 441              	.LVL57:
- 442 0086 3D60     		str	r5, [r7]
- 173:main.c        ****         
- 174:main.c        ****         LCD_ClearDisplay();
- 443              		.loc 1 174 0
- 444 0088 0120     		movs	r0, #1
- 445 008a FFF7FEFF 		bl	LCD_WriteControl
- 446              	.LVL58:
- 175:main.c        ****         LCD_Position(0,0);
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 12
-
-
- 447              		.loc 1 175 0
- 448 008e 2946     		mov	r1, r5
- 449 0090 2846     		mov	r0, r5
- 450 0092 FFF7FEFF 		bl	LCD_Position
- 451              	.LVL59:
- 176:main.c        ****         LCD_PrintString("Address set.");
- 452              		.loc 1 176 0
- 453 0096 5A48     		ldr	r0, .L37+16
- 454 0098 FFF7FEFF 		bl	LCD_PrintString
- 455              	.LVL60:
- 177:main.c        ****         LCD_Position(1,0);
- 456              		.loc 1 177 0
- 457 009c 2946     		mov	r1, r5
- 458 009e 0120     		movs	r0, #1
- 459 00a0 FFF7FEFF 		bl	LCD_Position
- 460              	.LVL61:
- 178:main.c        ****         LCD_PrintString("Address:");
- 461              		.loc 1 178 0
- 462 00a4 5748     		ldr	r0, .L37+20
- 463 00a6 FFF7FEFF 		bl	LCD_PrintString
- 464              	.LVL62:
- 179:main.c        ****         sprintf(dispString, "%x", cmdBytes[0]);
- 465              		.loc 1 179 0
- 466 00aa 3A68     		ldr	r2, [r7]
- 467 00ac 5249     		ldr	r1, .L37+8
- 468 00ae 01A8     		add	r0, sp, #4
- 469 00b0 FFF7FEFF 		bl	sprintf
- 470              	.LVL63:
- 180:main.c        ****         LCD_Position(1,8);
- 471              		.loc 1 180 0
- 472 00b4 0821     		movs	r1, #8
- 473 00b6 0120     		movs	r0, #1
- 474 00b8 FFF7FEFF 		bl	LCD_Position
- 475              	.LVL64:
- 181:main.c        ****         LCD_PrintString(dispString);
- 476              		.loc 1 181 0
- 477 00bc 01A8     		add	r0, sp, #4
- 478 00be FFF7FEFF 		bl	LCD_PrintString
- 479              	.LVL65:
- 182:main.c        ****         CyDelay(1000);
- 480              		.loc 1 182 0
- 481 00c2 4FF47A70 		mov	r0, #1000
- 482 00c6 FFF7FEFF 		bl	CyDelay
- 483              	.LVL66:
- 484              	.LBB3:
- 183:main.c        ****         
- 184:main.c        ****         //small loop for user to select values for each payload byte, stored to be sent after all h
- 185:main.c        ****         for(int stage = 1; stage <5; stage++){
- 485              		.loc 1 185 0
- 486 00ca 0125     		movs	r5, #1
- 487 00cc 03E0     		b	.L28
- 488              	.LVL67:
- 489              	.L29:
- 186:main.c        ****             //selectPayloadValue function, taking stage as argument
- 187:main.c        ****             selectPayloadValue(stage);
- 490              		.loc 1 187 0 discriminator 3
- 491 00ce 2846     		mov	r0, r5
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 13
-
-
- 492 00d0 FFF7FEFF 		bl	selectPayloadValue
- 493              	.LVL68:
- 185:main.c        ****             //selectPayloadValue function, taking stage as argument
- 494              		.loc 1 185 0 discriminator 3
- 495 00d4 0135     		adds	r5, r5, #1
- 496              	.LVL69:
- 497              	.L28:
- 185:main.c        ****             //selectPayloadValue function, taking stage as argument
- 498              		.loc 1 185 0 is_stmt 0 discriminator 1
- 499 00d6 042D     		cmp	r5, #4
- 500 00d8 F9DD     		ble	.L29
- 501              	.LBE3:
- 188:main.c        ****         }    
- 189:main.c        ****         LCD_ClearDisplay();
- 502              		.loc 1 189 0 is_stmt 1
- 503 00da 0120     		movs	r0, #1
- 504 00dc FFF7FEFF 		bl	LCD_WriteControl
- 505              	.LVL70:
- 190:main.c        ****         
- 191:main.c        ****         //while(SW3_Read()){
- 192:main.c        ****         
- 193:main.c        ****         LCD_Position(0,0);
- 506              		.loc 1 193 0
- 507 00e0 0021     		movs	r1, #0
- 508 00e2 0846     		mov	r0, r1
- 509 00e4 FFF7FEFF 		bl	LCD_Position
- 510              	.LVL71:
- 194:main.c        ****         LCD_PrintString("CMD to be sent: ");
- 511              		.loc 1 194 0
- 512 00e8 4748     		ldr	r0, .L37+24
- 513 00ea FFF7FEFF 		bl	LCD_PrintString
- 514              	.LVL72:
- 195:main.c        ****         LCD_Position(1,0);
- 515              		.loc 1 195 0
- 516 00ee 0021     		movs	r1, #0
- 517 00f0 0120     		movs	r0, #1
- 518 00f2 FFF7FEFF 		bl	LCD_Position
- 519              	.LVL73:
- 196:main.c        ****         LCD_PrintHexUint8(cmdBytes[0]);
- 520              		.loc 1 196 0
- 521 00f6 414D     		ldr	r5, .L37+12
- 522              	.LVL74:
- 523 00f8 2878     		ldrb	r0, [r5]	@ zero_extendqisi2
- 524 00fa FFF7FEFF 		bl	LCD_PrintInt8
- 525              	.LVL75:
- 197:main.c        ****         LCD_Position(1,3);
- 526              		.loc 1 197 0
- 527 00fe 0321     		movs	r1, #3
- 528 0100 0120     		movs	r0, #1
- 529 0102 FFF7FEFF 		bl	LCD_Position
- 530              	.LVL76:
- 198:main.c        ****         LCD_PrintHexUint8(cmdBytes[4]);
- 531              		.loc 1 198 0
- 532 0106 287C     		ldrb	r0, [r5, #16]	@ zero_extendqisi2
- 533 0108 FFF7FEFF 		bl	LCD_PrintInt8
- 534              	.LVL77:
- 199:main.c        ****         LCD_Position(1,6);
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 14
-
-
- 535              		.loc 1 199 0
- 536 010c 0621     		movs	r1, #6
- 537 010e 0120     		movs	r0, #1
- 538 0110 FFF7FEFF 		bl	LCD_Position
- 539              	.LVL78:
- 200:main.c        ****         LCD_PrintHexUint8(cmdBytes[3]);
- 540              		.loc 1 200 0
- 541 0114 287B     		ldrb	r0, [r5, #12]	@ zero_extendqisi2
- 542 0116 FFF7FEFF 		bl	LCD_PrintInt8
- 543              	.LVL79:
- 201:main.c        ****         LCD_Position(1,9);
- 544              		.loc 1 201 0
- 545 011a 0921     		movs	r1, #9
- 546 011c 0120     		movs	r0, #1
- 547 011e FFF7FEFF 		bl	LCD_Position
- 548              	.LVL80:
- 202:main.c        ****         LCD_PrintHexUint8(cmdBytes[2]);
- 549              		.loc 1 202 0
- 550 0122 287A     		ldrb	r0, [r5, #8]	@ zero_extendqisi2
- 551 0124 FFF7FEFF 		bl	LCD_PrintInt8
- 552              	.LVL81:
- 203:main.c        ****         LCD_Position(1,12);
- 553              		.loc 1 203 0
- 554 0128 0C21     		movs	r1, #12
- 555 012a 0120     		movs	r0, #1
- 556 012c FFF7FEFF 		bl	LCD_Position
- 557              	.LVL82:
- 204:main.c        ****         LCD_PrintHexUint8(cmdBytes[1]);
- 558              		.loc 1 204 0
- 559 0130 2879     		ldrb	r0, [r5, #4]	@ zero_extendqisi2
- 560 0132 FFF7FEFF 		bl	LCD_PrintInt8
- 561              	.LVL83:
- 205:main.c        ****         CyDelay(1000);
- 562              		.loc 1 205 0
- 563 0136 4FF47A70 		mov	r0, #1000
- 564 013a FFF7FEFF 		bl	CyDelay
- 565              	.LVL84:
- 206:main.c        ****         LCD_Position(0,0);
- 566              		.loc 1 206 0
- 567 013e 0021     		movs	r1, #0
- 568 0140 0846     		mov	r0, r1
- 569 0142 FFF7FEFF 		bl	LCD_Position
- 570              	.LVL85:
- 207:main.c        ****         LCD_PrintString("Addr,B4,B3,B2,B1");
- 571              		.loc 1 207 0
- 572 0146 3148     		ldr	r0, .L37+28
- 573 0148 FFF7FEFF 		bl	LCD_PrintString
- 574              	.LVL86:
- 208:main.c        ****         CyDelay(1000);
- 575              		.loc 1 208 0
- 576 014c 4FF47A70 		mov	r0, #1000
- 577 0150 FFF7FEFF 		bl	CyDelay
- 578              	.LVL87:
- 209:main.c        ****        
- 210:main.c        ****         
- 211:main.c        **** 
- 212:main.c        ****         LCD_Position(0,0);
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 15
-
-
- 579              		.loc 1 212 0
- 580 0154 0021     		movs	r1, #0
- 581 0156 0846     		mov	r0, r1
- 582 0158 FFF7FEFF 		bl	LCD_Position
- 583              	.LVL88:
- 213:main.c        ****         LCD_PrintString("Sending addr... ");
- 584              		.loc 1 213 0
- 585 015c 2C48     		ldr	r0, .L37+32
- 586 015e FFF7FEFF 		bl	LCD_PrintString
- 587              	.LVL89:
- 214:main.c        ****         
- 215:main.c        ****         //write bytes to output
- 216:main.c        ****         //send CMDcode/addrss byte first, then loop through payload bytes to send correctly
- 217:main.c        ****         sendByte(cmdBytes[0]);
- 588              		.loc 1 217 0
- 589 0162 2868     		ldr	r0, [r5]
- 590 0164 FFF7FEFF 		bl	sendByte
- 591              	.LVL90:
- 218:main.c        ****         CyDelayCycles(1);
- 592              		.loc 1 218 0
- 593 0168 0120     		movs	r0, #1
- 594 016a FFF7FEFF 		bl	CyDelayCycles
- 595              	.LVL91:
- 219:main.c        ****         psoc_fpga_xfc = 1 - psoc_fpga_xfc;
- 596              		.loc 1 219 0
- 597 016e C6F10106 		rsb	r6, r6, #1
- 598              	.LVL92:
- 220:main.c        ****         H2G_STRB_OUT_Write(psoc_fpga_xfc);
- 599              		.loc 1 220 0
- 600 0172 F0B2     		uxtb	r0, r6
- 601 0174 FFF7FEFF 		bl	H2G_STRB_OUT_Write
- 602              	.LVL93:
- 603              	.L30:
- 221:main.c        ****         
- 222:main.c        ****         while(H2G_STRB_IN_Read() == fpga_psoc_xfc){
- 604              		.loc 1 222 0 discriminator 1
- 605 0178 FFF7FEFF 		bl	H2G_STRB_IN_Read
- 606              	.LVL94:
- 607 017c 8442     		cmp	r4, r0
- 608 017e FBD0     		beq	.L30
- 223:main.c        ****             //Idle until incoming handshake is toggled
- 224:main.c        ****         }
- 225:main.c        ****         CyDelayCycles(1);
- 609              		.loc 1 225 0
- 610 0180 0120     		movs	r0, #1
- 611 0182 FFF7FEFF 		bl	CyDelayCycles
- 612              	.LVL95:
- 226:main.c        ****         fpga_psoc_xfc = 1 - fpga_psoc_xfc;
- 613              		.loc 1 226 0
- 614 0186 C4F10104 		rsb	r4, r4, #1
- 615              	.LVL96:
- 227:main.c        ****         
- 228:main.c        **** 
- 229:main.c        ****         LCD_Position(0,0);
- 616              		.loc 1 229 0
- 617 018a 0021     		movs	r1, #0
- 618 018c 0846     		mov	r0, r1
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 16
-
-
- 619 018e FFF7FEFF 		bl	LCD_Position
- 620              	.LVL97:
- 230:main.c        ****         LCD_PrintString("Addr received");
- 621              		.loc 1 230 0
- 622 0192 2048     		ldr	r0, .L37+36
- 623 0194 FFF7FEFF 		bl	LCD_PrintString
- 624              	.LVL98:
- 231:main.c        ****         CyDelay(500);
- 625              		.loc 1 231 0
- 626 0198 4FF4FA70 		mov	r0, #500
- 627 019c FFF7FEFF 		bl	CyDelay
- 628              	.LVL99:
- 232:main.c        ****         LCD_Position(0,0);
- 629              		.loc 1 232 0
- 630 01a0 0021     		movs	r1, #0
- 631 01a2 0846     		mov	r0, r1
- 632 01a4 FFF7FEFF 		bl	LCD_Position
- 633              	.LVL100:
- 233:main.c        ****         LCD_PrintString("Sending payload...");
- 634              		.loc 1 233 0
- 635 01a8 1B48     		ldr	r0, .L37+40
- 636 01aa FFF7FEFF 		bl	LCD_PrintString
- 637              	.LVL101:
- 638              	.LBB4:
- 234:main.c        ****         for(int i = 1 ; i <5; i++){
- 639              		.loc 1 234 0
- 640 01ae 0125     		movs	r5, #1
- 641 01b0 10E0     		b	.L31
- 642              	.LVL102:
- 643              	.L33:
- 235:main.c        ****             sendByte(cmdBytes[i]); 
- 644              		.loc 1 235 0
- 645 01b2 124B     		ldr	r3, .L37+12
- 646 01b4 53F82500 		ldr	r0, [r3, r5, lsl #2]
- 647 01b8 FFF7FEFF 		bl	sendByte
- 648              	.LVL103:
- 236:main.c        ****             
- 237:main.c        ****             
- 238:main.c        ****             psoc_fpga_xfc = 1 - psoc_fpga_xfc;
- 649              		.loc 1 238 0
- 650 01bc C6F10106 		rsb	r6, r6, #1
- 651              	.LVL104:
- 239:main.c        ****             H2G_STRB_OUT_Write(psoc_fpga_xfc);
- 652              		.loc 1 239 0
- 653 01c0 F0B2     		uxtb	r0, r6
- 654 01c2 FFF7FEFF 		bl	H2G_STRB_OUT_Write
- 655              	.LVL105:
- 656              	.L32:
- 240:main.c        ****         
- 241:main.c        ****             while(H2G_STRB_IN_Read() == fpga_psoc_xfc){
- 657              		.loc 1 241 0 discriminator 1
- 658 01c6 FFF7FEFF 		bl	H2G_STRB_IN_Read
- 659              	.LVL106:
- 660 01ca 8442     		cmp	r4, r0
- 661 01cc FBD0     		beq	.L32
- 242:main.c        ****             //Idle until incoming handshake is toggled
- 243:main.c        ****             }
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 17
-
-
- 244:main.c        ****             fpga_psoc_xfc = 1 - fpga_psoc_xfc;
- 662              		.loc 1 244 0 discriminator 2
- 663 01ce C4F10104 		rsb	r4, r4, #1
- 664              	.LVL107:
- 234:main.c        ****             sendByte(cmdBytes[i]); 
- 665              		.loc 1 234 0 discriminator 2
- 666 01d2 0135     		adds	r5, r5, #1
- 667              	.LVL108:
- 668              	.L31:
- 234:main.c        ****             sendByte(cmdBytes[i]); 
- 669              		.loc 1 234 0 is_stmt 0 discriminator 1
- 670 01d4 042D     		cmp	r5, #4
- 671 01d6 ECDD     		ble	.L33
- 672              	.LBE4:
- 245:main.c        ****         }
- 246:main.c        ****         
- 247:main.c        ****         LCD_ClearDisplay();
- 673              		.loc 1 247 0 is_stmt 1
- 674 01d8 0120     		movs	r0, #1
- 675 01da FFF7FEFF 		bl	LCD_WriteControl
- 676              	.LVL109:
- 248:main.c        ****         LCD_PrintString("Command sent!");
- 677              		.loc 1 248 0
- 678 01de 0F48     		ldr	r0, .L37+44
- 679 01e0 FFF7FEFF 		bl	LCD_PrintString
- 680              	.LVL110:
- 249:main.c        ****         CyDelay(2000);
- 681              		.loc 1 249 0
- 682 01e4 4FF4FA60 		mov	r0, #2000
- 683 01e8 FFF7FEFF 		bl	CyDelay
- 684              	.LVL111:
- 685              	.LBE2:
- 250:main.c        ****         
- 251:main.c        ****     }
- 686              		.loc 1 251 0
- 687 01ec 24E7     		b	.L34
- 688              	.L38:
- 689 01ee 00BF     		.align	2
- 690              	.L37:
- 691 01f0 50000000 		.word	.LC7
- 692 01f4 60000000 		.word	.LC8
- 693 01f8 38000000 		.word	.LC5
- 694 01fc 00000000 		.word	cmdBytes
- 695 0200 68000000 		.word	.LC9
- 696 0204 78000000 		.word	.LC10
- 697 0208 84000000 		.word	.LC11
- 698 020c 98000000 		.word	.LC12
- 699 0210 AC000000 		.word	.LC13
- 700 0214 C0000000 		.word	.LC14
- 701 0218 D0000000 		.word	.LC15
- 702 021c E4000000 		.word	.LC16
- 703              		.cfi_endproc
- 704              	.LFE67:
- 705              		.size	main, .-main
- 706              		.global	b4Val
- 707              		.global	b3Val
- 708              		.global	b2Val
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 18
-
-
- 709              		.global	b1Val
- 710              		.comm	cmdBytes,20,4
- 711              		.data
- 712              		.align	2
- 713              		.set	.LANCHOR0,. + 0
- 714              		.type	b1Val, %object
- 715              		.size	b1Val, 4
- 716              	b1Val:
- 717 0000 01000000 		.word	1
- 718              		.type	b2Val, %object
- 719              		.size	b2Val, 4
- 720              	b2Val:
- 721 0004 02000000 		.word	2
- 722              		.type	b3Val, %object
- 723              		.size	b3Val, 4
- 724              	b3Val:
- 725 0008 03000000 		.word	3
- 726              		.type	b4Val, %object
- 727              		.size	b4Val, 4
- 728              	b4Val:
- 729 000c 04000000 		.word	4
- 730              		.section	.rodata.str1.4,"aMS",%progbits,1
- 731              		.align	2
- 732              	.LC0:
- 733 0000 53657420 		.ascii	"Set b7:0 \000"
- 733      62373A30 
- 733      2000
- 734 000a 0000     		.space	2
- 735              	.LC1:
- 736 000c 53657420 		.ascii	"Set b15:8 \000"
- 736      6231353A 
- 736      382000
- 737 0017 00       		.space	1
- 738              	.LC2:
- 739 0018 53657420 		.ascii	"Set b23:16 \000"
- 739      6232333A 
- 739      31362000 
- 740              	.LC3:
- 741 0024 53657420 		.ascii	"Set b31:24 \000"
- 741      6233313A 
- 741      32342000 
- 742              	.LC4:
- 743 0030 56616C75 		.ascii	"Value:\000"
- 743      653A00
- 744 0037 00       		.space	1
- 745              	.LC5:
- 746 0038 257800   		.ascii	"%x\000"
- 747 003b 00       		.space	1
- 748              	.LC6:
- 749 003c 42797465 		.ascii	"Byte%d value set.\000"
- 749      25642076 
- 749      616C7565 
- 749      20736574 
- 749      2E00
- 750 004e 0000     		.space	2
- 751              	.LC7:
- 752 0050 53656C65 		.ascii	"Select an addr:\000"
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 19
-
-
- 752      63742061 
- 752      6E206164 
- 752      64723A00 
- 753              	.LC8:
- 754 0060 41646472 		.ascii	"Addr:\000"
- 754      3A00
- 755 0066 0000     		.space	2
- 756              	.LC9:
- 757 0068 41646472 		.ascii	"Address set.\000"
- 757      65737320 
- 757      7365742E 
- 757      00
- 758 0075 000000   		.space	3
- 759              	.LC10:
- 760 0078 41646472 		.ascii	"Address:\000"
- 760      6573733A 
- 760      00
- 761 0081 000000   		.space	3
- 762              	.LC11:
- 763 0084 434D4420 		.ascii	"CMD to be sent: \000"
- 763      746F2062 
- 763      65207365 
- 763      6E743A20 
- 763      00
- 764 0095 000000   		.space	3
- 765              	.LC12:
- 766 0098 41646472 		.ascii	"Addr,B4,B3,B2,B1\000"
- 766      2C42342C 
- 766      42332C42 
- 766      322C4231 
- 766      00
- 767 00a9 000000   		.space	3
- 768              	.LC13:
- 769 00ac 53656E64 		.ascii	"Sending addr... \000"
- 769      696E6720 
- 769      61646472 
- 769      2E2E2E20 
- 769      00
- 770 00bd 000000   		.space	3
- 771              	.LC14:
- 772 00c0 41646472 		.ascii	"Addr received\000"
- 772      20726563 
- 772      65697665 
- 772      6400
- 773 00ce 0000     		.space	2
- 774              	.LC15:
- 775 00d0 53656E64 		.ascii	"Sending payload...\000"
- 775      696E6720 
- 775      7061796C 
- 775      6F61642E 
- 775      2E2E00
- 776 00e3 00       		.space	1
- 777              	.LC16:
- 778 00e4 436F6D6D 		.ascii	"Command sent!\000"
- 778      616E6420 
- 778      73656E74 
- 778      2100
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 20
-
-
- 779              		.text
- 780              	.Letext0:
- 781              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 782              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 783              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 784              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
- 785              		.file 6 "Generated_Source\\PSoC5/OUT_BYTE.h"
- 786              		.file 7 "Generated_Source\\PSoC5/LCD.h"
- 787              		.file 8 "Generated_Source\\PSoC5/SW3.h"
- 788              		.file 9 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 789              		.file 10 "Generated_Source\\PSoC5/CyLib.h"
- 790              		.file 11 "Generated_Source\\PSoC5/H2G_STRB_OUT.h"
- 791              		.file 12 "Generated_Source\\PSoC5/H2G_STRB_IN.h"
- 792              		.file 13 "Generated_Source\\PSoC5/PSOC_RESET_RAW.h"
- 793              		.section	.debug_info,"",%progbits
- 794              	.Ldebug_info0:
- 795 0000 4B0A0000 		.4byte	0xa4b
- 796 0004 0400     		.2byte	0x4
- 797 0006 00000000 		.4byte	.Ldebug_abbrev0
- 798 000a 04       		.byte	0x4
- 799 000b 01       		.uleb128 0x1
- 800 000c BE000000 		.4byte	.LASF54
- 801 0010 0C       		.byte	0xc
- 802 0011 84020000 		.4byte	.LASF55
- 803 0015 3D000000 		.4byte	.LASF56
- 804 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 805 001d 00000000 		.4byte	0
- 806 0021 00000000 		.4byte	.Ldebug_line0
- 807 0025 02       		.uleb128 0x2
- 808 0026 01       		.byte	0x1
- 809 0027 06       		.byte	0x6
- 810 0028 86010000 		.4byte	.LASF0
- 811 002c 03       		.uleb128 0x3
- 812 002d 14000000 		.4byte	.LASF4
- 813 0031 02       		.byte	0x2
- 814 0032 1D       		.byte	0x1d
- 815 0033 37000000 		.4byte	0x37
- 816 0037 02       		.uleb128 0x2
- 817 0038 01       		.byte	0x1
- 818 0039 08       		.byte	0x8
- 819 003a B0000000 		.4byte	.LASF1
- 820 003e 02       		.uleb128 0x2
- 821 003f 02       		.byte	0x2
- 822 0040 05       		.byte	0x5
- 823 0041 D6010000 		.4byte	.LASF2
- 824 0045 02       		.uleb128 0x2
- 825 0046 02       		.byte	0x2
- 826 0047 07       		.byte	0x7
- 827 0048 73010000 		.4byte	.LASF3
- 828 004c 03       		.uleb128 0x3
- 829 004d 33000000 		.4byte	.LASF5
- 830 0051 02       		.byte	0x2
- 831 0052 3F       		.byte	0x3f
- 832 0053 57000000 		.4byte	0x57
- 833 0057 02       		.uleb128 0x2
- 834 0058 04       		.byte	0x4
- 835 0059 05       		.byte	0x5
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 21
-
-
- 836 005a D2020000 		.4byte	.LASF6
- 837 005e 02       		.uleb128 0x2
- 838 005f 04       		.byte	0x4
- 839 0060 07       		.byte	0x7
- 840 0061 61010000 		.4byte	.LASF7
- 841 0065 02       		.uleb128 0x2
- 842 0066 08       		.byte	0x8
- 843 0067 05       		.byte	0x5
- 844 0068 76020000 		.4byte	.LASF8
- 845 006c 02       		.uleb128 0x2
- 846 006d 08       		.byte	0x8
- 847 006e 07       		.byte	0x7
- 848 006f 99000000 		.4byte	.LASF9
- 849 0073 04       		.uleb128 0x4
- 850 0074 04       		.byte	0x4
- 851 0075 05       		.byte	0x5
- 852 0076 696E7400 		.ascii	"int\000"
- 853 007a 02       		.uleb128 0x2
- 854 007b 04       		.byte	0x4
- 855 007c 07       		.byte	0x7
- 856 007d 0D020000 		.4byte	.LASF10
- 857 0081 03       		.uleb128 0x3
- 858 0082 24020000 		.4byte	.LASF11
- 859 0086 03       		.byte	0x3
- 860 0087 18       		.byte	0x18
- 861 0088 2C000000 		.4byte	0x2c
- 862 008c 03       		.uleb128 0x3
- 863 008d 60020000 		.4byte	.LASF12
- 864 0091 03       		.byte	0x3
- 865 0092 2C       		.byte	0x2c
- 866 0093 4C000000 		.4byte	0x4c
- 867 0097 02       		.uleb128 0x2
- 868 0098 04       		.byte	0x4
- 869 0099 04       		.byte	0x4
- 870 009a 8A000000 		.4byte	.LASF13
- 871 009e 02       		.uleb128 0x2
- 872 009f 08       		.byte	0x8
- 873 00a0 04       		.byte	0x4
- 874 00a1 B0010000 		.4byte	.LASF14
- 875 00a5 02       		.uleb128 0x2
- 876 00a6 01       		.byte	0x1
- 877 00a7 08       		.byte	0x8
- 878 00a8 8B020000 		.4byte	.LASF15
- 879 00ac 02       		.uleb128 0x2
- 880 00ad 04       		.byte	0x4
- 881 00ae 07       		.byte	0x7
- 882 00af 68020000 		.4byte	.LASF16
- 883 00b3 02       		.uleb128 0x2
- 884 00b4 08       		.byte	0x8
- 885 00b5 04       		.byte	0x4
- 886 00b6 E9020000 		.4byte	.LASF17
- 887 00ba 03       		.uleb128 0x3
- 888 00bb FA010000 		.4byte	.LASF18
- 889 00bf 04       		.byte	0x4
- 890 00c0 6C       		.byte	0x6c
- 891 00c1 7A000000 		.4byte	0x7a
- 892 00c5 05       		.uleb128 0x5
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 22
-
-
- 893 00c6 B8020000 		.4byte	.LASF25
- 894 00ca 01       		.byte	0x1
- 895 00cb 08       		.byte	0x8
- 896 00cc 00000000 		.4byte	.LFB64
- 897 00d0 0A000000 		.4byte	.LFE64-.LFB64
- 898 00d4 01       		.uleb128 0x1
- 899 00d5 9C       		.byte	0x9c
- 900 00d6 FB000000 		.4byte	0xfb
- 901 00da 06       		.uleb128 0x6
- 902 00db 6A000000 		.4byte	.LASF19
- 903 00df 01       		.byte	0x1
- 904 00e0 08       		.byte	0x8
- 905 00e1 73000000 		.4byte	0x73
- 906 00e5 00000000 		.4byte	.LLST0
- 907 00e9 07       		.uleb128 0x7
- 908 00ea 08000000 		.4byte	.LVL2
- 909 00ee BF090000 		.4byte	0x9bf
- 910 00f2 08       		.uleb128 0x8
- 911 00f3 01       		.uleb128 0x1
- 912 00f4 50       		.byte	0x50
- 913 00f5 03       		.uleb128 0x3
- 914 00f6 F3       		.byte	0xf3
- 915 00f7 01       		.uleb128 0x1
- 916 00f8 50       		.byte	0x50
- 917 00f9 00       		.byte	0
- 918 00fa 00       		.byte	0
- 919 00fb 09       		.uleb128 0x9
- 920 00fc 47020000 		.4byte	.LASF57
- 921 0100 01       		.byte	0x1
- 922 0101 12       		.byte	0x12
- 923 0102 00000000 		.4byte	.LFB65
- 924 0106 44010000 		.4byte	.LFE65-.LFB65
- 925 010a 01       		.uleb128 0x1
- 926 010b 9C       		.byte	0x9c
- 927 010c 6D030000 		.4byte	0x36d
- 928 0110 06       		.uleb128 0x6
- 929 0111 6F000000 		.4byte	.LASF20
- 930 0115 01       		.byte	0x1
- 931 0116 12       		.byte	0x12
- 932 0117 73000000 		.4byte	0x73
- 933 011b 21000000 		.4byte	.LLST1
- 934 011f 0A       		.uleb128 0xa
- 935 0120 F5020000 		.4byte	.LASF21
- 936 0124 01       		.byte	0x1
- 937 0125 25       		.byte	0x25
- 938 0126 6D030000 		.4byte	0x36d
- 939 012a 02       		.uleb128 0x2
- 940 012b 91       		.byte	0x91
- 941 012c 6C       		.sleb128 -20
- 942 012d 0A       		.uleb128 0xa
- 943 012e FD020000 		.4byte	.LASF22
- 944 0132 01       		.byte	0x1
- 945 0133 26       		.byte	0x26
- 946 0134 7D030000 		.4byte	0x37d
- 947 0138 02       		.uleb128 0x2
- 948 0139 91       		.byte	0x91
- 949 013a 5C       		.sleb128 -36
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 23
-
-
- 950 013b 0B       		.uleb128 0xb
- 951 013c C1020000 		.4byte	.LASF23
- 952 0140 01       		.byte	0x1
- 953 0141 27       		.byte	0x27
- 954 0142 73000000 		.4byte	0x73
- 955 0146 4D000000 		.4byte	.LLST2
- 956 014a 0B       		.uleb128 0xb
- 957 014b 3F020000 		.4byte	.LASF24
- 958 014f 01       		.byte	0x1
- 959 0150 28       		.byte	0x28
- 960 0151 73000000 		.4byte	0x73
- 961 0155 6C000000 		.4byte	.LLST3
- 962 0159 0C       		.uleb128 0xc
- 963 015a 0C000000 		.4byte	.LVL5
- 964 015e CA090000 		.4byte	0x9ca
- 965 0162 6C010000 		.4byte	0x16c
- 966 0166 08       		.uleb128 0x8
- 967 0167 01       		.uleb128 0x1
- 968 0168 50       		.byte	0x50
- 969 0169 01       		.uleb128 0x1
- 970 016a 31       		.byte	0x31
- 971 016b 00       		.byte	0
- 972 016c 0C       		.uleb128 0xc
- 973 016d 14000000 		.4byte	.LVL6
- 974 0171 D5090000 		.4byte	0x9d5
- 975 0175 84010000 		.4byte	0x184
- 976 0179 08       		.uleb128 0x8
- 977 017a 01       		.uleb128 0x1
- 978 017b 50       		.byte	0x50
- 979 017c 01       		.uleb128 0x1
- 980 017d 30       		.byte	0x30
- 981 017e 08       		.uleb128 0x8
- 982 017f 01       		.uleb128 0x1
- 983 0180 51       		.byte	0x51
- 984 0181 01       		.uleb128 0x1
- 985 0182 30       		.byte	0x30
- 986 0183 00       		.byte	0
- 987 0184 0C       		.uleb128 0xc
- 988 0185 1E000000 		.4byte	.LVL7
- 989 0189 E0090000 		.4byte	0x9e0
- 990 018d 9B010000 		.4byte	0x19b
- 991 0191 08       		.uleb128 0x8
- 992 0192 01       		.uleb128 0x1
- 993 0193 50       		.byte	0x50
- 994 0194 05       		.uleb128 0x5
- 995 0195 03       		.byte	0x3
- 996 0196 00000000 		.4byte	.LC0
- 997 019a 00       		.byte	0
- 998 019b 0C       		.uleb128 0xc
- 999 019c 2A000000 		.4byte	.LVL8
- 1000 01a0 E0090000 		.4byte	0x9e0
- 1001 01a4 B2010000 		.4byte	0x1b2
- 1002 01a8 08       		.uleb128 0x8
- 1003 01a9 01       		.uleb128 0x1
- 1004 01aa 50       		.byte	0x50
- 1005 01ab 05       		.uleb128 0x5
- 1006 01ac 03       		.byte	0x3
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 24
-
-
- 1007 01ad 0C000000 		.4byte	.LC1
- 1008 01b1 00       		.byte	0
- 1009 01b2 0C       		.uleb128 0xc
- 1010 01b3 36000000 		.4byte	.LVL9
- 1011 01b7 E0090000 		.4byte	0x9e0
- 1012 01bb C9010000 		.4byte	0x1c9
- 1013 01bf 08       		.uleb128 0x8
- 1014 01c0 01       		.uleb128 0x1
- 1015 01c1 50       		.byte	0x50
- 1016 01c2 05       		.uleb128 0x5
- 1017 01c3 03       		.byte	0x3
- 1018 01c4 18000000 		.4byte	.LC2
- 1019 01c8 00       		.byte	0
- 1020 01c9 0C       		.uleb128 0xc
- 1021 01ca 3E000000 		.4byte	.LVL10
- 1022 01ce E0090000 		.4byte	0x9e0
- 1023 01d2 E0010000 		.4byte	0x1e0
- 1024 01d6 08       		.uleb128 0x8
- 1025 01d7 01       		.uleb128 0x1
- 1026 01d8 50       		.byte	0x50
- 1027 01d9 05       		.uleb128 0x5
- 1028 01da 03       		.byte	0x3
- 1029 01db 24000000 		.4byte	.LC3
- 1030 01df 00       		.byte	0
- 1031 01e0 0C       		.uleb128 0xc
- 1032 01e1 46000000 		.4byte	.LVL11
- 1033 01e5 D5090000 		.4byte	0x9d5
- 1034 01e9 F8010000 		.4byte	0x1f8
- 1035 01ed 08       		.uleb128 0x8
- 1036 01ee 01       		.uleb128 0x1
- 1037 01ef 50       		.byte	0x50
- 1038 01f0 01       		.uleb128 0x1
- 1039 01f1 31       		.byte	0x31
- 1040 01f2 08       		.uleb128 0x8
- 1041 01f3 01       		.uleb128 0x1
- 1042 01f4 51       		.byte	0x51
- 1043 01f5 01       		.uleb128 0x1
- 1044 01f6 30       		.byte	0x30
- 1045 01f7 00       		.byte	0
- 1046 01f8 0C       		.uleb128 0xc
- 1047 01f9 4C000000 		.4byte	.LVL12
- 1048 01fd E0090000 		.4byte	0x9e0
- 1049 0201 0F020000 		.4byte	0x20f
- 1050 0205 08       		.uleb128 0x8
- 1051 0206 01       		.uleb128 0x1
- 1052 0207 50       		.byte	0x50
- 1053 0208 05       		.uleb128 0x5
- 1054 0209 03       		.byte	0x3
- 1055 020a 30000000 		.4byte	.LC4
- 1056 020e 00       		.byte	0
- 1057 020f 0D       		.uleb128 0xd
- 1058 0210 56000000 		.4byte	.LVL14
- 1059 0214 EB090000 		.4byte	0x9eb
- 1060 0218 0C       		.uleb128 0xc
- 1061 0219 62000000 		.4byte	.LVL16
- 1062 021d D5090000 		.4byte	0x9d5
- 1063 0221 30020000 		.4byte	0x230
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 25
-
-
- 1064 0225 08       		.uleb128 0x8
- 1065 0226 01       		.uleb128 0x1
- 1066 0227 50       		.byte	0x50
- 1067 0228 01       		.uleb128 0x1
- 1068 0229 31       		.byte	0x31
- 1069 022a 08       		.uleb128 0x8
- 1070 022b 01       		.uleb128 0x1
- 1071 022c 51       		.byte	0x51
- 1072 022d 01       		.uleb128 0x1
- 1073 022e 36       		.byte	0x36
- 1074 022f 00       		.byte	0
- 1075 0230 0C       		.uleb128 0xc
- 1076 0231 6C000000 		.4byte	.LVL17
- 1077 0235 F6090000 		.4byte	0x9f6
- 1078 0239 53020000 		.4byte	0x253
- 1079 023d 08       		.uleb128 0x8
- 1080 023e 01       		.uleb128 0x1
- 1081 023f 50       		.byte	0x50
- 1082 0240 02       		.uleb128 0x2
- 1083 0241 91       		.byte	0x91
- 1084 0242 6C       		.sleb128 -20
- 1085 0243 08       		.uleb128 0x8
- 1086 0244 01       		.uleb128 0x1
- 1087 0245 51       		.byte	0x51
- 1088 0246 05       		.uleb128 0x5
- 1089 0247 03       		.byte	0x3
- 1090 0248 38000000 		.4byte	.LC5
- 1091 024c 08       		.uleb128 0x8
- 1092 024d 01       		.uleb128 0x1
- 1093 024e 52       		.byte	0x52
- 1094 024f 02       		.uleb128 0x2
- 1095 0250 74       		.byte	0x74
- 1096 0251 00       		.sleb128 0
- 1097 0252 00       		.byte	0
- 1098 0253 0C       		.uleb128 0xc
- 1099 0254 72000000 		.4byte	.LVL18
- 1100 0258 E0090000 		.4byte	0x9e0
- 1101 025c 67020000 		.4byte	0x267
- 1102 0260 08       		.uleb128 0x8
- 1103 0261 01       		.uleb128 0x1
- 1104 0262 50       		.byte	0x50
- 1105 0263 02       		.uleb128 0x2
- 1106 0264 91       		.byte	0x91
- 1107 0265 6C       		.sleb128 -20
- 1108 0266 00       		.byte	0
- 1109 0267 0C       		.uleb128 0xc
- 1110 0268 78000000 		.4byte	.LVL19
- 1111 026c 010A0000 		.4byte	0xa01
- 1112 0270 7B020000 		.4byte	0x27b
- 1113 0274 08       		.uleb128 0x8
- 1114 0275 01       		.uleb128 0x1
- 1115 0276 50       		.byte	0x50
- 1116 0277 02       		.uleb128 0x2
- 1117 0278 08       		.byte	0x8
- 1118 0279 64       		.byte	0x64
- 1119 027a 00       		.byte	0
- 1120 027b 0C       		.uleb128 0xc
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 26
-
-
- 1121 027c D6000000 		.4byte	.LVL25
- 1122 0280 CA090000 		.4byte	0x9ca
- 1123 0284 8E020000 		.4byte	0x28e
- 1124 0288 08       		.uleb128 0x8
- 1125 0289 01       		.uleb128 0x1
- 1126 028a 50       		.byte	0x50
- 1127 028b 01       		.uleb128 0x1
- 1128 028c 31       		.byte	0x31
- 1129 028d 00       		.byte	0
- 1130 028e 0C       		.uleb128 0xc
- 1131 028f DE000000 		.4byte	.LVL26
- 1132 0293 D5090000 		.4byte	0x9d5
- 1133 0297 A6020000 		.4byte	0x2a6
- 1134 029b 08       		.uleb128 0x8
- 1135 029c 01       		.uleb128 0x1
- 1136 029d 50       		.byte	0x50
- 1137 029e 01       		.uleb128 0x1
- 1138 029f 30       		.byte	0x30
- 1139 02a0 08       		.uleb128 0x8
- 1140 02a1 01       		.uleb128 0x1
- 1141 02a2 51       		.byte	0x51
- 1142 02a3 01       		.uleb128 0x1
- 1143 02a4 30       		.byte	0x30
- 1144 02a5 00       		.byte	0
- 1145 02a6 0C       		.uleb128 0xc
- 1146 02a7 E8000000 		.4byte	.LVL27
- 1147 02ab F6090000 		.4byte	0x9f6
- 1148 02af C9020000 		.4byte	0x2c9
- 1149 02b3 08       		.uleb128 0x8
- 1150 02b4 01       		.uleb128 0x1
- 1151 02b5 50       		.byte	0x50
- 1152 02b6 02       		.uleb128 0x2
- 1153 02b7 91       		.byte	0x91
- 1154 02b8 5C       		.sleb128 -36
- 1155 02b9 08       		.uleb128 0x8
- 1156 02ba 01       		.uleb128 0x1
- 1157 02bb 51       		.byte	0x51
- 1158 02bc 05       		.uleb128 0x5
- 1159 02bd 03       		.byte	0x3
- 1160 02be 3C000000 		.4byte	.LC6
- 1161 02c2 08       		.uleb128 0x8
- 1162 02c3 01       		.uleb128 0x1
- 1163 02c4 52       		.byte	0x52
- 1164 02c5 02       		.uleb128 0x2
- 1165 02c6 75       		.byte	0x75
- 1166 02c7 00       		.sleb128 0
- 1167 02c8 00       		.byte	0
- 1168 02c9 0C       		.uleb128 0xc
- 1169 02ca EE000000 		.4byte	.LVL28
- 1170 02ce E0090000 		.4byte	0x9e0
- 1171 02d2 DD020000 		.4byte	0x2dd
- 1172 02d6 08       		.uleb128 0x8
- 1173 02d7 01       		.uleb128 0x1
- 1174 02d8 50       		.byte	0x50
- 1175 02d9 02       		.uleb128 0x2
- 1176 02da 91       		.byte	0x91
- 1177 02db 5C       		.sleb128 -36
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 27
-
-
- 1178 02dc 00       		.byte	0
- 1179 02dd 0C       		.uleb128 0xc
- 1180 02de F6000000 		.4byte	.LVL29
- 1181 02e2 D5090000 		.4byte	0x9d5
- 1182 02e6 F5020000 		.4byte	0x2f5
- 1183 02ea 08       		.uleb128 0x8
- 1184 02eb 01       		.uleb128 0x1
- 1185 02ec 50       		.byte	0x50
- 1186 02ed 01       		.uleb128 0x1
- 1187 02ee 31       		.byte	0x31
- 1188 02ef 08       		.uleb128 0x8
- 1189 02f0 01       		.uleb128 0x1
- 1190 02f1 51       		.byte	0x51
- 1191 02f2 01       		.uleb128 0x1
- 1192 02f3 30       		.byte	0x30
- 1193 02f4 00       		.byte	0
- 1194 02f5 0C       		.uleb128 0xc
- 1195 02f6 FC000000 		.4byte	.LVL30
- 1196 02fa E0090000 		.4byte	0x9e0
- 1197 02fe 0C030000 		.4byte	0x30c
- 1198 0302 08       		.uleb128 0x8
- 1199 0303 01       		.uleb128 0x1
- 1200 0304 50       		.byte	0x50
- 1201 0305 05       		.uleb128 0x5
- 1202 0306 03       		.byte	0x3
- 1203 0307 30000000 		.4byte	.LC4
- 1204 030b 00       		.byte	0
- 1205 030c 0C       		.uleb128 0xc
- 1206 030d 04010000 		.4byte	.LVL31
- 1207 0311 D5090000 		.4byte	0x9d5
- 1208 0315 24030000 		.4byte	0x324
- 1209 0319 08       		.uleb128 0x8
- 1210 031a 01       		.uleb128 0x1
- 1211 031b 50       		.byte	0x50
- 1212 031c 01       		.uleb128 0x1
- 1213 031d 31       		.byte	0x31
- 1214 031e 08       		.uleb128 0x8
- 1215 031f 01       		.uleb128 0x1
- 1216 0320 51       		.byte	0x51
- 1217 0321 01       		.uleb128 0x1
- 1218 0322 36       		.byte	0x36
- 1219 0323 00       		.byte	0
- 1220 0324 0C       		.uleb128 0xc
- 1221 0325 0E010000 		.4byte	.LVL32
- 1222 0329 F6090000 		.4byte	0x9f6
- 1223 032d 47030000 		.4byte	0x347
- 1224 0331 08       		.uleb128 0x8
- 1225 0332 01       		.uleb128 0x1
- 1226 0333 50       		.byte	0x50
- 1227 0334 02       		.uleb128 0x2
- 1228 0335 91       		.byte	0x91
- 1229 0336 6C       		.sleb128 -20
- 1230 0337 08       		.uleb128 0x8
- 1231 0338 01       		.uleb128 0x1
- 1232 0339 51       		.byte	0x51
- 1233 033a 05       		.uleb128 0x5
- 1234 033b 03       		.byte	0x3
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 28
-
-
- 1235 033c 38000000 		.4byte	.LC5
- 1236 0340 08       		.uleb128 0x8
- 1237 0341 01       		.uleb128 0x1
- 1238 0342 52       		.byte	0x52
- 1239 0343 02       		.uleb128 0x2
- 1240 0344 74       		.byte	0x74
- 1241 0345 00       		.sleb128 0
- 1242 0346 00       		.byte	0
- 1243 0347 0C       		.uleb128 0xc
- 1244 0348 14010000 		.4byte	.LVL33
- 1245 034c E0090000 		.4byte	0x9e0
- 1246 0350 5B030000 		.4byte	0x35b
- 1247 0354 08       		.uleb128 0x8
- 1248 0355 01       		.uleb128 0x1
- 1249 0356 50       		.byte	0x50
- 1250 0357 02       		.uleb128 0x2
- 1251 0358 91       		.byte	0x91
- 1252 0359 6C       		.sleb128 -20
- 1253 035a 00       		.byte	0
- 1254 035b 07       		.uleb128 0x7
- 1255 035c 1C010000 		.4byte	.LVL34
- 1256 0360 010A0000 		.4byte	0xa01
- 1257 0364 08       		.uleb128 0x8
- 1258 0365 01       		.uleb128 0x1
- 1259 0366 50       		.byte	0x50
- 1260 0367 03       		.uleb128 0x3
- 1261 0368 0A       		.byte	0xa
- 1262 0369 E803     		.2byte	0x3e8
- 1263 036b 00       		.byte	0
- 1264 036c 00       		.byte	0
- 1265 036d 0E       		.uleb128 0xe
- 1266 036e A5000000 		.4byte	0xa5
- 1267 0372 7D030000 		.4byte	0x37d
- 1268 0376 0F       		.uleb128 0xf
- 1269 0377 AC000000 		.4byte	0xac
- 1270 037b 01       		.byte	0x1
- 1271 037c 00       		.byte	0
- 1272 037d 0E       		.uleb128 0xe
- 1273 037e A5000000 		.4byte	0xa5
- 1274 0382 8D030000 		.4byte	0x38d
- 1275 0386 0F       		.uleb128 0xf
- 1276 0387 AC000000 		.4byte	0xac
- 1277 038b 0F       		.byte	0xf
- 1278 038c 00       		.byte	0
- 1279 038d 05       		.uleb128 0x5
- 1280 038e E0010000 		.4byte	.LASF26
- 1281 0392 01       		.byte	0x1
- 1282 0393 5F       		.byte	0x5f
- 1283 0394 00000000 		.4byte	.LFB66
- 1284 0398 02000000 		.4byte	.LFE66-.LFB66
- 1285 039c 01       		.uleb128 0x1
- 1286 039d 9C       		.byte	0x9c
- 1287 039e B0030000 		.4byte	0x3b0
- 1288 03a2 10       		.uleb128 0x10
- 1289 03a3 E3020000 		.4byte	.LASF27
- 1290 03a7 01       		.byte	0x1
- 1291 03a8 5F       		.byte	0x5f
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 29
-
-
- 1292 03a9 B0030000 		.4byte	0x3b0
- 1293 03ad 01       		.uleb128 0x1
- 1294 03ae 50       		.byte	0x50
- 1295 03af 00       		.byte	0
- 1296 03b0 11       		.uleb128 0x11
- 1297 03b1 04       		.byte	0x4
- 1298 03b2 81000000 		.4byte	0x81
- 1299 03b6 12       		.uleb128 0x12
- 1300 03b7 71020000 		.4byte	.LASF58
- 1301 03bb 01       		.byte	0x1
- 1302 03bc 64       		.byte	0x64
- 1303 03bd 73000000 		.4byte	0x73
- 1304 03c1 00000000 		.4byte	.LFB67
- 1305 03c5 20020000 		.4byte	.LFE67-.LFB67
- 1306 03c9 01       		.uleb128 0x1
- 1307 03ca 9C       		.byte	0x9c
- 1308 03cb 39090000 		.4byte	0x939
- 1309 03cf 13       		.uleb128 0x13
- 1310 03d0 DB020000 		.4byte	.LASF28
- 1311 03d4 01       		.byte	0x1
- 1312 03d5 6B       		.byte	0x6b
- 1313 03d6 39090000 		.4byte	0x939
- 1314 03da 13       		.uleb128 0x13
- 1315 03db 28000000 		.4byte	.LASF29
- 1316 03df 01       		.byte	0x1
- 1317 03e0 6C       		.byte	0x6c
- 1318 03e1 39090000 		.4byte	0x939
- 1319 03e5 0B       		.uleb128 0xb
- 1320 03e6 1A020000 		.4byte	.LASF30
- 1321 03ea 01       		.byte	0x1
- 1322 03eb 6E       		.byte	0x6e
- 1323 03ec 73000000 		.4byte	0x73
- 1324 03f0 8B000000 		.4byte	.LLST4
- 1325 03f4 0B       		.uleb128 0xb
- 1326 03f5 B7010000 		.4byte	.LASF31
- 1327 03f9 01       		.byte	0x1
- 1328 03fa 6F       		.byte	0x6f
- 1329 03fb 73000000 		.4byte	0x73
- 1330 03ff AA000000 		.4byte	.LLST5
- 1331 0403 0B       		.uleb128 0xb
- 1332 0404 FF010000 		.4byte	.LASF32
- 1333 0408 01       		.byte	0x1
- 1334 0409 70       		.byte	0x70
- 1335 040a 73000000 		.4byte	0x73
- 1336 040e C9000000 		.4byte	.LLST6
- 1337 0412 14       		.uleb128 0x14
- 1338 0413 38000000 		.4byte	.LBB2
- 1339 0417 B4010000 		.4byte	.LBE2-.LBB2
- 1340 041b AB080000 		.4byte	0x8ab
- 1341 041f 15       		.uleb128 0x15
- 1342 0420 CA020000 		.4byte	.LASF33
- 1343 0424 01       		.byte	0x1
- 1344 0425 8D       		.byte	0x8d
- 1345 0426 73000000 		.4byte	0x73
- 1346 042a 00       		.byte	0
- 1347 042b 0A       		.uleb128 0xa
- 1348 042c 9F010000 		.4byte	.LASF34
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 30
-
-
- 1349 0430 01       		.byte	0x1
- 1350 0431 8F       		.byte	0x8f
- 1351 0432 6D030000 		.4byte	0x36d
- 1352 0436 02       		.uleb128 0x2
- 1353 0437 91       		.byte	0x91
- 1354 0438 64       		.sleb128 -28
- 1355 0439 14       		.uleb128 0x14
- 1356 043a CA000000 		.4byte	.LBB3
- 1357 043e 10000000 		.4byte	.LBE3-.LBB3
- 1358 0442 66040000 		.4byte	0x466
- 1359 0446 0B       		.uleb128 0xb
- 1360 0447 6F000000 		.4byte	.LASF20
- 1361 044b 01       		.byte	0x1
- 1362 044c B9       		.byte	0xb9
- 1363 044d 73000000 		.4byte	0x73
- 1364 0451 E8000000 		.4byte	.LLST7
- 1365 0455 07       		.uleb128 0x7
- 1366 0456 D4000000 		.4byte	.LVL68
- 1367 045a FB000000 		.4byte	0xfb
- 1368 045e 08       		.uleb128 0x8
- 1369 045f 01       		.uleb128 0x1
- 1370 0460 50       		.byte	0x50
- 1371 0461 02       		.uleb128 0x2
- 1372 0462 75       		.byte	0x75
- 1373 0463 00       		.sleb128 0
- 1374 0464 00       		.byte	0
- 1375 0465 00       		.byte	0
- 1376 0466 14       		.uleb128 0x14
- 1377 0467 AE010000 		.4byte	.LBB4
- 1378 046b 2A000000 		.4byte	.LBE4-.LBB4
- 1379 046f A7040000 		.4byte	0x4a7
- 1380 0473 16       		.uleb128 0x16
- 1381 0474 6900     		.ascii	"i\000"
- 1382 0476 01       		.byte	0x1
- 1383 0477 EA       		.byte	0xea
- 1384 0478 73000000 		.4byte	0x73
- 1385 047c 07010000 		.4byte	.LLST8
- 1386 0480 0D       		.uleb128 0xd
- 1387 0481 BC010000 		.4byte	.LVL103
- 1388 0485 C5000000 		.4byte	0xc5
- 1389 0489 0C       		.uleb128 0xc
- 1390 048a C6010000 		.4byte	.LVL105
- 1391 048e 0C0A0000 		.4byte	0xa0c
- 1392 0492 9D040000 		.4byte	0x49d
- 1393 0496 08       		.uleb128 0x8
- 1394 0497 01       		.uleb128 0x1
- 1395 0498 50       		.byte	0x50
- 1396 0499 02       		.uleb128 0x2
- 1397 049a 76       		.byte	0x76
- 1398 049b 00       		.sleb128 0
- 1399 049c 00       		.byte	0
- 1400 049d 0D       		.uleb128 0xd
- 1401 049e CA010000 		.4byte	.LVL106
- 1402 04a2 170A0000 		.4byte	0xa17
- 1403 04a6 00       		.byte	0
- 1404 04a7 0C       		.uleb128 0xc
- 1405 04a8 3E000000 		.4byte	.LVL46
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 31
-
-
- 1406 04ac CA090000 		.4byte	0x9ca
- 1407 04b0 BA040000 		.4byte	0x4ba
- 1408 04b4 08       		.uleb128 0x8
- 1409 04b5 01       		.uleb128 0x1
- 1410 04b6 50       		.byte	0x50
- 1411 04b7 01       		.uleb128 0x1
- 1412 04b8 31       		.byte	0x31
- 1413 04b9 00       		.byte	0
- 1414 04ba 0C       		.uleb128 0xc
- 1415 04bb 46000000 		.4byte	.LVL47
- 1416 04bf D5090000 		.4byte	0x9d5
- 1417 04c3 D2040000 		.4byte	0x4d2
- 1418 04c7 08       		.uleb128 0x8
- 1419 04c8 01       		.uleb128 0x1
- 1420 04c9 50       		.byte	0x50
- 1421 04ca 01       		.uleb128 0x1
- 1422 04cb 30       		.byte	0x30
- 1423 04cc 08       		.uleb128 0x8
- 1424 04cd 01       		.uleb128 0x1
- 1425 04ce 51       		.byte	0x51
- 1426 04cf 01       		.uleb128 0x1
- 1427 04d0 30       		.byte	0x30
- 1428 04d1 00       		.byte	0
- 1429 04d2 0C       		.uleb128 0xc
- 1430 04d3 4C000000 		.4byte	.LVL48
- 1431 04d7 E0090000 		.4byte	0x9e0
- 1432 04db E9040000 		.4byte	0x4e9
- 1433 04df 08       		.uleb128 0x8
- 1434 04e0 01       		.uleb128 0x1
- 1435 04e1 50       		.byte	0x50
- 1436 04e2 05       		.uleb128 0x5
- 1437 04e3 03       		.byte	0x3
- 1438 04e4 50000000 		.4byte	.LC7
- 1439 04e8 00       		.byte	0
- 1440 04e9 0C       		.uleb128 0xc
- 1441 04ea 54000000 		.4byte	.LVL49
- 1442 04ee D5090000 		.4byte	0x9d5
- 1443 04f2 01050000 		.4byte	0x501
- 1444 04f6 08       		.uleb128 0x8
- 1445 04f7 01       		.uleb128 0x1
- 1446 04f8 50       		.byte	0x50
- 1447 04f9 01       		.uleb128 0x1
- 1448 04fa 31       		.byte	0x31
- 1449 04fb 08       		.uleb128 0x8
- 1450 04fc 01       		.uleb128 0x1
- 1451 04fd 51       		.byte	0x51
- 1452 04fe 01       		.uleb128 0x1
- 1453 04ff 30       		.byte	0x30
- 1454 0500 00       		.byte	0
- 1455 0501 0C       		.uleb128 0xc
- 1456 0502 5A000000 		.4byte	.LVL50
- 1457 0506 E0090000 		.4byte	0x9e0
- 1458 050a 18050000 		.4byte	0x518
- 1459 050e 08       		.uleb128 0x8
- 1460 050f 01       		.uleb128 0x1
- 1461 0510 50       		.byte	0x50
- 1462 0511 05       		.uleb128 0x5
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 32
-
-
- 1463 0512 03       		.byte	0x3
- 1464 0513 60000000 		.4byte	.LC8
- 1465 0517 00       		.byte	0
- 1466 0518 0D       		.uleb128 0xd
- 1467 0519 62000000 		.4byte	.LVL52
- 1468 051d EB090000 		.4byte	0x9eb
- 1469 0521 0C       		.uleb128 0xc
- 1470 0522 6E000000 		.4byte	.LVL54
- 1471 0526 D5090000 		.4byte	0x9d5
- 1472 052a 39050000 		.4byte	0x539
- 1473 052e 08       		.uleb128 0x8
- 1474 052f 01       		.uleb128 0x1
- 1475 0530 50       		.byte	0x50
- 1476 0531 01       		.uleb128 0x1
- 1477 0532 31       		.byte	0x31
- 1478 0533 08       		.uleb128 0x8
- 1479 0534 01       		.uleb128 0x1
- 1480 0535 51       		.byte	0x51
- 1481 0536 01       		.uleb128 0x1
- 1482 0537 35       		.byte	0x35
- 1483 0538 00       		.byte	0
- 1484 0539 0C       		.uleb128 0xc
- 1485 053a 78000000 		.4byte	.LVL55
- 1486 053e F6090000 		.4byte	0x9f6
- 1487 0542 5B050000 		.4byte	0x55b
- 1488 0546 08       		.uleb128 0x8
- 1489 0547 01       		.uleb128 0x1
- 1490 0548 50       		.byte	0x50
- 1491 0549 02       		.uleb128 0x2
- 1492 054a 91       		.byte	0x91
- 1493 054b 64       		.sleb128 -28
- 1494 054c 08       		.uleb128 0x8
- 1495 054d 01       		.uleb128 0x1
- 1496 054e 51       		.byte	0x51
- 1497 054f 05       		.uleb128 0x5
- 1498 0550 03       		.byte	0x3
- 1499 0551 38000000 		.4byte	.LC5
- 1500 0555 08       		.uleb128 0x8
- 1501 0556 01       		.uleb128 0x1
- 1502 0557 52       		.byte	0x52
- 1503 0558 01       		.uleb128 0x1
- 1504 0559 30       		.byte	0x30
- 1505 055a 00       		.byte	0
- 1506 055b 0C       		.uleb128 0xc
- 1507 055c 7E000000 		.4byte	.LVL56
- 1508 0560 E0090000 		.4byte	0x9e0
- 1509 0564 6F050000 		.4byte	0x56f
- 1510 0568 08       		.uleb128 0x8
- 1511 0569 01       		.uleb128 0x1
- 1512 056a 50       		.byte	0x50
- 1513 056b 02       		.uleb128 0x2
- 1514 056c 91       		.byte	0x91
- 1515 056d 64       		.sleb128 -28
- 1516 056e 00       		.byte	0
- 1517 056f 0C       		.uleb128 0xc
- 1518 0570 8E000000 		.4byte	.LVL58
- 1519 0574 CA090000 		.4byte	0x9ca
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 33
-
-
- 1520 0578 82050000 		.4byte	0x582
- 1521 057c 08       		.uleb128 0x8
- 1522 057d 01       		.uleb128 0x1
- 1523 057e 50       		.byte	0x50
- 1524 057f 01       		.uleb128 0x1
- 1525 0580 31       		.byte	0x31
- 1526 0581 00       		.byte	0
- 1527 0582 0C       		.uleb128 0xc
- 1528 0583 96000000 		.4byte	.LVL59
- 1529 0587 D5090000 		.4byte	0x9d5
- 1530 058b 9C050000 		.4byte	0x59c
- 1531 058f 08       		.uleb128 0x8
- 1532 0590 01       		.uleb128 0x1
- 1533 0591 50       		.byte	0x50
- 1534 0592 02       		.uleb128 0x2
- 1535 0593 75       		.byte	0x75
- 1536 0594 00       		.sleb128 0
- 1537 0595 08       		.uleb128 0x8
- 1538 0596 01       		.uleb128 0x1
- 1539 0597 51       		.byte	0x51
- 1540 0598 02       		.uleb128 0x2
- 1541 0599 75       		.byte	0x75
- 1542 059a 00       		.sleb128 0
- 1543 059b 00       		.byte	0
- 1544 059c 0C       		.uleb128 0xc
- 1545 059d 9C000000 		.4byte	.LVL60
- 1546 05a1 E0090000 		.4byte	0x9e0
- 1547 05a5 B3050000 		.4byte	0x5b3
- 1548 05a9 08       		.uleb128 0x8
- 1549 05aa 01       		.uleb128 0x1
- 1550 05ab 50       		.byte	0x50
- 1551 05ac 05       		.uleb128 0x5
- 1552 05ad 03       		.byte	0x3
- 1553 05ae 68000000 		.4byte	.LC9
- 1554 05b2 00       		.byte	0
- 1555 05b3 0C       		.uleb128 0xc
- 1556 05b4 A4000000 		.4byte	.LVL61
- 1557 05b8 D5090000 		.4byte	0x9d5
- 1558 05bc CC050000 		.4byte	0x5cc
- 1559 05c0 08       		.uleb128 0x8
- 1560 05c1 01       		.uleb128 0x1
- 1561 05c2 50       		.byte	0x50
- 1562 05c3 01       		.uleb128 0x1
- 1563 05c4 31       		.byte	0x31
- 1564 05c5 08       		.uleb128 0x8
- 1565 05c6 01       		.uleb128 0x1
- 1566 05c7 51       		.byte	0x51
- 1567 05c8 02       		.uleb128 0x2
- 1568 05c9 75       		.byte	0x75
- 1569 05ca 00       		.sleb128 0
- 1570 05cb 00       		.byte	0
- 1571 05cc 0C       		.uleb128 0xc
- 1572 05cd AA000000 		.4byte	.LVL62
- 1573 05d1 E0090000 		.4byte	0x9e0
- 1574 05d5 E3050000 		.4byte	0x5e3
- 1575 05d9 08       		.uleb128 0x8
- 1576 05da 01       		.uleb128 0x1
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 34
-
-
- 1577 05db 50       		.byte	0x50
- 1578 05dc 05       		.uleb128 0x5
- 1579 05dd 03       		.byte	0x3
- 1580 05de 78000000 		.4byte	.LC10
- 1581 05e2 00       		.byte	0
- 1582 05e3 0C       		.uleb128 0xc
- 1583 05e4 B4000000 		.4byte	.LVL63
- 1584 05e8 F6090000 		.4byte	0x9f6
- 1585 05ec 00060000 		.4byte	0x600
- 1586 05f0 08       		.uleb128 0x8
- 1587 05f1 01       		.uleb128 0x1
- 1588 05f2 50       		.byte	0x50
- 1589 05f3 02       		.uleb128 0x2
- 1590 05f4 91       		.byte	0x91
- 1591 05f5 64       		.sleb128 -28
- 1592 05f6 08       		.uleb128 0x8
- 1593 05f7 01       		.uleb128 0x1
- 1594 05f8 51       		.byte	0x51
- 1595 05f9 05       		.uleb128 0x5
- 1596 05fa 03       		.byte	0x3
- 1597 05fb 38000000 		.4byte	.LC5
- 1598 05ff 00       		.byte	0
- 1599 0600 0C       		.uleb128 0xc
- 1600 0601 BC000000 		.4byte	.LVL64
- 1601 0605 D5090000 		.4byte	0x9d5
- 1602 0609 18060000 		.4byte	0x618
- 1603 060d 08       		.uleb128 0x8
- 1604 060e 01       		.uleb128 0x1
- 1605 060f 50       		.byte	0x50
- 1606 0610 01       		.uleb128 0x1
- 1607 0611 31       		.byte	0x31
- 1608 0612 08       		.uleb128 0x8
- 1609 0613 01       		.uleb128 0x1
- 1610 0614 51       		.byte	0x51
- 1611 0615 01       		.uleb128 0x1
- 1612 0616 38       		.byte	0x38
- 1613 0617 00       		.byte	0
- 1614 0618 0C       		.uleb128 0xc
- 1615 0619 C2000000 		.4byte	.LVL65
- 1616 061d E0090000 		.4byte	0x9e0
- 1617 0621 2C060000 		.4byte	0x62c
- 1618 0625 08       		.uleb128 0x8
- 1619 0626 01       		.uleb128 0x1
- 1620 0627 50       		.byte	0x50
- 1621 0628 02       		.uleb128 0x2
- 1622 0629 91       		.byte	0x91
- 1623 062a 64       		.sleb128 -28
- 1624 062b 00       		.byte	0
- 1625 062c 0C       		.uleb128 0xc
- 1626 062d CA000000 		.4byte	.LVL66
- 1627 0631 010A0000 		.4byte	0xa01
- 1628 0635 41060000 		.4byte	0x641
- 1629 0639 08       		.uleb128 0x8
- 1630 063a 01       		.uleb128 0x1
- 1631 063b 50       		.byte	0x50
- 1632 063c 03       		.uleb128 0x3
- 1633 063d 0A       		.byte	0xa
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 35
-
-
- 1634 063e E803     		.2byte	0x3e8
- 1635 0640 00       		.byte	0
- 1636 0641 0C       		.uleb128 0xc
- 1637 0642 E0000000 		.4byte	.LVL70
- 1638 0646 CA090000 		.4byte	0x9ca
- 1639 064a 54060000 		.4byte	0x654
- 1640 064e 08       		.uleb128 0x8
- 1641 064f 01       		.uleb128 0x1
- 1642 0650 50       		.byte	0x50
- 1643 0651 01       		.uleb128 0x1
- 1644 0652 31       		.byte	0x31
- 1645 0653 00       		.byte	0
- 1646 0654 0C       		.uleb128 0xc
- 1647 0655 E8000000 		.4byte	.LVL71
- 1648 0659 D5090000 		.4byte	0x9d5
- 1649 065d 6C060000 		.4byte	0x66c
- 1650 0661 08       		.uleb128 0x8
- 1651 0662 01       		.uleb128 0x1
- 1652 0663 50       		.byte	0x50
- 1653 0664 01       		.uleb128 0x1
- 1654 0665 30       		.byte	0x30
- 1655 0666 08       		.uleb128 0x8
- 1656 0667 01       		.uleb128 0x1
- 1657 0668 51       		.byte	0x51
- 1658 0669 01       		.uleb128 0x1
- 1659 066a 30       		.byte	0x30
- 1660 066b 00       		.byte	0
- 1661 066c 0C       		.uleb128 0xc
- 1662 066d EE000000 		.4byte	.LVL72
- 1663 0671 E0090000 		.4byte	0x9e0
- 1664 0675 83060000 		.4byte	0x683
- 1665 0679 08       		.uleb128 0x8
- 1666 067a 01       		.uleb128 0x1
- 1667 067b 50       		.byte	0x50
- 1668 067c 05       		.uleb128 0x5
- 1669 067d 03       		.byte	0x3
- 1670 067e 84000000 		.4byte	.LC11
- 1671 0682 00       		.byte	0
- 1672 0683 0C       		.uleb128 0xc
- 1673 0684 F6000000 		.4byte	.LVL73
- 1674 0688 D5090000 		.4byte	0x9d5
- 1675 068c 9B060000 		.4byte	0x69b
- 1676 0690 08       		.uleb128 0x8
- 1677 0691 01       		.uleb128 0x1
- 1678 0692 50       		.byte	0x50
- 1679 0693 01       		.uleb128 0x1
- 1680 0694 31       		.byte	0x31
- 1681 0695 08       		.uleb128 0x8
- 1682 0696 01       		.uleb128 0x1
- 1683 0697 51       		.byte	0x51
- 1684 0698 01       		.uleb128 0x1
- 1685 0699 30       		.byte	0x30
- 1686 069a 00       		.byte	0
- 1687 069b 0D       		.uleb128 0xd
- 1688 069c FE000000 		.4byte	.LVL75
- 1689 06a0 220A0000 		.4byte	0xa22
- 1690 06a4 0C       		.uleb128 0xc
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 36
-
-
- 1691 06a5 06010000 		.4byte	.LVL76
- 1692 06a9 D5090000 		.4byte	0x9d5
- 1693 06ad BC060000 		.4byte	0x6bc
- 1694 06b1 08       		.uleb128 0x8
- 1695 06b2 01       		.uleb128 0x1
- 1696 06b3 50       		.byte	0x50
- 1697 06b4 01       		.uleb128 0x1
- 1698 06b5 31       		.byte	0x31
- 1699 06b6 08       		.uleb128 0x8
- 1700 06b7 01       		.uleb128 0x1
- 1701 06b8 51       		.byte	0x51
- 1702 06b9 01       		.uleb128 0x1
- 1703 06ba 33       		.byte	0x33
- 1704 06bb 00       		.byte	0
- 1705 06bc 0D       		.uleb128 0xd
- 1706 06bd 0C010000 		.4byte	.LVL77
- 1707 06c1 220A0000 		.4byte	0xa22
- 1708 06c5 0C       		.uleb128 0xc
- 1709 06c6 14010000 		.4byte	.LVL78
- 1710 06ca D5090000 		.4byte	0x9d5
- 1711 06ce DD060000 		.4byte	0x6dd
- 1712 06d2 08       		.uleb128 0x8
- 1713 06d3 01       		.uleb128 0x1
- 1714 06d4 50       		.byte	0x50
- 1715 06d5 01       		.uleb128 0x1
- 1716 06d6 31       		.byte	0x31
- 1717 06d7 08       		.uleb128 0x8
- 1718 06d8 01       		.uleb128 0x1
- 1719 06d9 51       		.byte	0x51
- 1720 06da 01       		.uleb128 0x1
- 1721 06db 36       		.byte	0x36
- 1722 06dc 00       		.byte	0
- 1723 06dd 0D       		.uleb128 0xd
- 1724 06de 1A010000 		.4byte	.LVL79
- 1725 06e2 220A0000 		.4byte	0xa22
- 1726 06e6 0C       		.uleb128 0xc
- 1727 06e7 22010000 		.4byte	.LVL80
- 1728 06eb D5090000 		.4byte	0x9d5
- 1729 06ef FE060000 		.4byte	0x6fe
- 1730 06f3 08       		.uleb128 0x8
- 1731 06f4 01       		.uleb128 0x1
- 1732 06f5 50       		.byte	0x50
- 1733 06f6 01       		.uleb128 0x1
- 1734 06f7 31       		.byte	0x31
- 1735 06f8 08       		.uleb128 0x8
- 1736 06f9 01       		.uleb128 0x1
- 1737 06fa 51       		.byte	0x51
- 1738 06fb 01       		.uleb128 0x1
- 1739 06fc 39       		.byte	0x39
- 1740 06fd 00       		.byte	0
- 1741 06fe 0D       		.uleb128 0xd
- 1742 06ff 28010000 		.4byte	.LVL81
- 1743 0703 220A0000 		.4byte	0xa22
- 1744 0707 0C       		.uleb128 0xc
- 1745 0708 30010000 		.4byte	.LVL82
- 1746 070c D5090000 		.4byte	0x9d5
- 1747 0710 1F070000 		.4byte	0x71f
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 37
-
-
- 1748 0714 08       		.uleb128 0x8
- 1749 0715 01       		.uleb128 0x1
- 1750 0716 50       		.byte	0x50
- 1751 0717 01       		.uleb128 0x1
- 1752 0718 31       		.byte	0x31
- 1753 0719 08       		.uleb128 0x8
- 1754 071a 01       		.uleb128 0x1
- 1755 071b 51       		.byte	0x51
- 1756 071c 01       		.uleb128 0x1
- 1757 071d 3C       		.byte	0x3c
- 1758 071e 00       		.byte	0
- 1759 071f 0D       		.uleb128 0xd
- 1760 0720 36010000 		.4byte	.LVL83
- 1761 0724 220A0000 		.4byte	0xa22
- 1762 0728 0C       		.uleb128 0xc
- 1763 0729 3E010000 		.4byte	.LVL84
- 1764 072d 010A0000 		.4byte	0xa01
- 1765 0731 3D070000 		.4byte	0x73d
- 1766 0735 08       		.uleb128 0x8
- 1767 0736 01       		.uleb128 0x1
- 1768 0737 50       		.byte	0x50
- 1769 0738 03       		.uleb128 0x3
- 1770 0739 0A       		.byte	0xa
- 1771 073a E803     		.2byte	0x3e8
- 1772 073c 00       		.byte	0
- 1773 073d 0C       		.uleb128 0xc
- 1774 073e 46010000 		.4byte	.LVL85
- 1775 0742 D5090000 		.4byte	0x9d5
- 1776 0746 55070000 		.4byte	0x755
- 1777 074a 08       		.uleb128 0x8
- 1778 074b 01       		.uleb128 0x1
- 1779 074c 50       		.byte	0x50
- 1780 074d 01       		.uleb128 0x1
- 1781 074e 30       		.byte	0x30
- 1782 074f 08       		.uleb128 0x8
- 1783 0750 01       		.uleb128 0x1
- 1784 0751 51       		.byte	0x51
- 1785 0752 01       		.uleb128 0x1
- 1786 0753 30       		.byte	0x30
- 1787 0754 00       		.byte	0
- 1788 0755 0C       		.uleb128 0xc
- 1789 0756 4C010000 		.4byte	.LVL86
- 1790 075a E0090000 		.4byte	0x9e0
- 1791 075e 6C070000 		.4byte	0x76c
- 1792 0762 08       		.uleb128 0x8
- 1793 0763 01       		.uleb128 0x1
- 1794 0764 50       		.byte	0x50
- 1795 0765 05       		.uleb128 0x5
- 1796 0766 03       		.byte	0x3
- 1797 0767 98000000 		.4byte	.LC12
- 1798 076b 00       		.byte	0
- 1799 076c 0C       		.uleb128 0xc
- 1800 076d 54010000 		.4byte	.LVL87
- 1801 0771 010A0000 		.4byte	0xa01
- 1802 0775 81070000 		.4byte	0x781
- 1803 0779 08       		.uleb128 0x8
- 1804 077a 01       		.uleb128 0x1
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 38
-
-
- 1805 077b 50       		.byte	0x50
- 1806 077c 03       		.uleb128 0x3
- 1807 077d 0A       		.byte	0xa
- 1808 077e E803     		.2byte	0x3e8
- 1809 0780 00       		.byte	0
- 1810 0781 0C       		.uleb128 0xc
- 1811 0782 5C010000 		.4byte	.LVL88
- 1812 0786 D5090000 		.4byte	0x9d5
- 1813 078a 99070000 		.4byte	0x799
- 1814 078e 08       		.uleb128 0x8
- 1815 078f 01       		.uleb128 0x1
- 1816 0790 50       		.byte	0x50
- 1817 0791 01       		.uleb128 0x1
- 1818 0792 30       		.byte	0x30
- 1819 0793 08       		.uleb128 0x8
- 1820 0794 01       		.uleb128 0x1
- 1821 0795 51       		.byte	0x51
- 1822 0796 01       		.uleb128 0x1
- 1823 0797 30       		.byte	0x30
- 1824 0798 00       		.byte	0
- 1825 0799 0C       		.uleb128 0xc
- 1826 079a 62010000 		.4byte	.LVL89
- 1827 079e E0090000 		.4byte	0x9e0
- 1828 07a2 B0070000 		.4byte	0x7b0
- 1829 07a6 08       		.uleb128 0x8
- 1830 07a7 01       		.uleb128 0x1
- 1831 07a8 50       		.byte	0x50
- 1832 07a9 05       		.uleb128 0x5
- 1833 07aa 03       		.byte	0x3
- 1834 07ab AC000000 		.4byte	.LC13
- 1835 07af 00       		.byte	0
- 1836 07b0 0D       		.uleb128 0xd
- 1837 07b1 68010000 		.4byte	.LVL90
- 1838 07b5 C5000000 		.4byte	0xc5
- 1839 07b9 0C       		.uleb128 0xc
- 1840 07ba 6E010000 		.4byte	.LVL91
- 1841 07be 2D0A0000 		.4byte	0xa2d
- 1842 07c2 CC070000 		.4byte	0x7cc
- 1843 07c6 08       		.uleb128 0x8
- 1844 07c7 01       		.uleb128 0x1
- 1845 07c8 50       		.byte	0x50
- 1846 07c9 01       		.uleb128 0x1
- 1847 07ca 31       		.byte	0x31
- 1848 07cb 00       		.byte	0
- 1849 07cc 0C       		.uleb128 0xc
- 1850 07cd 78010000 		.4byte	.LVL93
- 1851 07d1 0C0A0000 		.4byte	0xa0c
- 1852 07d5 E0070000 		.4byte	0x7e0
- 1853 07d9 08       		.uleb128 0x8
- 1854 07da 01       		.uleb128 0x1
- 1855 07db 50       		.byte	0x50
- 1856 07dc 02       		.uleb128 0x2
- 1857 07dd 76       		.byte	0x76
- 1858 07de 00       		.sleb128 0
- 1859 07df 00       		.byte	0
- 1860 07e0 0D       		.uleb128 0xd
- 1861 07e1 7C010000 		.4byte	.LVL94
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 39
-
-
- 1862 07e5 170A0000 		.4byte	0xa17
- 1863 07e9 0C       		.uleb128 0xc
- 1864 07ea 86010000 		.4byte	.LVL95
- 1865 07ee 2D0A0000 		.4byte	0xa2d
- 1866 07f2 FC070000 		.4byte	0x7fc
- 1867 07f6 08       		.uleb128 0x8
- 1868 07f7 01       		.uleb128 0x1
- 1869 07f8 50       		.byte	0x50
- 1870 07f9 01       		.uleb128 0x1
- 1871 07fa 31       		.byte	0x31
- 1872 07fb 00       		.byte	0
- 1873 07fc 0C       		.uleb128 0xc
- 1874 07fd 92010000 		.4byte	.LVL97
- 1875 0801 D5090000 		.4byte	0x9d5
- 1876 0805 14080000 		.4byte	0x814
- 1877 0809 08       		.uleb128 0x8
- 1878 080a 01       		.uleb128 0x1
- 1879 080b 50       		.byte	0x50
- 1880 080c 01       		.uleb128 0x1
- 1881 080d 30       		.byte	0x30
- 1882 080e 08       		.uleb128 0x8
- 1883 080f 01       		.uleb128 0x1
- 1884 0810 51       		.byte	0x51
- 1885 0811 01       		.uleb128 0x1
- 1886 0812 30       		.byte	0x30
- 1887 0813 00       		.byte	0
- 1888 0814 0C       		.uleb128 0xc
- 1889 0815 98010000 		.4byte	.LVL98
- 1890 0819 E0090000 		.4byte	0x9e0
- 1891 081d 2B080000 		.4byte	0x82b
- 1892 0821 08       		.uleb128 0x8
- 1893 0822 01       		.uleb128 0x1
- 1894 0823 50       		.byte	0x50
- 1895 0824 05       		.uleb128 0x5
- 1896 0825 03       		.byte	0x3
- 1897 0826 C0000000 		.4byte	.LC14
- 1898 082a 00       		.byte	0
- 1899 082b 0C       		.uleb128 0xc
- 1900 082c A0010000 		.4byte	.LVL99
- 1901 0830 010A0000 		.4byte	0xa01
- 1902 0834 40080000 		.4byte	0x840
- 1903 0838 08       		.uleb128 0x8
- 1904 0839 01       		.uleb128 0x1
- 1905 083a 50       		.byte	0x50
- 1906 083b 03       		.uleb128 0x3
- 1907 083c 0A       		.byte	0xa
- 1908 083d F401     		.2byte	0x1f4
- 1909 083f 00       		.byte	0
- 1910 0840 0C       		.uleb128 0xc
- 1911 0841 A8010000 		.4byte	.LVL100
- 1912 0845 D5090000 		.4byte	0x9d5
- 1913 0849 58080000 		.4byte	0x858
- 1914 084d 08       		.uleb128 0x8
- 1915 084e 01       		.uleb128 0x1
- 1916 084f 50       		.byte	0x50
- 1917 0850 01       		.uleb128 0x1
- 1918 0851 30       		.byte	0x30
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 40
-
-
- 1919 0852 08       		.uleb128 0x8
- 1920 0853 01       		.uleb128 0x1
- 1921 0854 51       		.byte	0x51
- 1922 0855 01       		.uleb128 0x1
- 1923 0856 30       		.byte	0x30
- 1924 0857 00       		.byte	0
- 1925 0858 0C       		.uleb128 0xc
- 1926 0859 AE010000 		.4byte	.LVL101
- 1927 085d E0090000 		.4byte	0x9e0
- 1928 0861 6F080000 		.4byte	0x86f
- 1929 0865 08       		.uleb128 0x8
- 1930 0866 01       		.uleb128 0x1
- 1931 0867 50       		.byte	0x50
- 1932 0868 05       		.uleb128 0x5
- 1933 0869 03       		.byte	0x3
- 1934 086a D0000000 		.4byte	.LC15
- 1935 086e 00       		.byte	0
- 1936 086f 0C       		.uleb128 0xc
- 1937 0870 DE010000 		.4byte	.LVL109
- 1938 0874 CA090000 		.4byte	0x9ca
- 1939 0878 82080000 		.4byte	0x882
- 1940 087c 08       		.uleb128 0x8
- 1941 087d 01       		.uleb128 0x1
- 1942 087e 50       		.byte	0x50
- 1943 087f 01       		.uleb128 0x1
- 1944 0880 31       		.byte	0x31
- 1945 0881 00       		.byte	0
- 1946 0882 0C       		.uleb128 0xc
- 1947 0883 E4010000 		.4byte	.LVL110
- 1948 0887 E0090000 		.4byte	0x9e0
- 1949 088b 99080000 		.4byte	0x899
- 1950 088f 08       		.uleb128 0x8
- 1951 0890 01       		.uleb128 0x1
- 1952 0891 50       		.byte	0x50
- 1953 0892 05       		.uleb128 0x5
- 1954 0893 03       		.byte	0x3
- 1955 0894 E4000000 		.4byte	.LC16
- 1956 0898 00       		.byte	0
- 1957 0899 07       		.uleb128 0x7
- 1958 089a EC010000 		.4byte	.LVL111
- 1959 089e 010A0000 		.4byte	0xa01
- 1960 08a2 08       		.uleb128 0x8
- 1961 08a3 01       		.uleb128 0x1
- 1962 08a4 50       		.byte	0x50
- 1963 08a5 03       		.uleb128 0x3
- 1964 08a6 0A       		.byte	0xa
- 1965 08a7 D007     		.2byte	0x7d0
- 1966 08a9 00       		.byte	0
- 1967 08aa 00       		.byte	0
- 1968 08ab 0D       		.uleb128 0xd
- 1969 08ac 0A000000 		.4byte	.LVL37
- 1970 08b0 380A0000 		.4byte	0xa38
- 1971 08b4 0C       		.uleb128 0xc
- 1972 08b5 10000000 		.4byte	.LVL38
- 1973 08b9 CA090000 		.4byte	0x9ca
- 1974 08bd C7080000 		.4byte	0x8c7
- 1975 08c1 08       		.uleb128 0x8
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 41
-
-
- 1976 08c2 01       		.uleb128 0x1
- 1977 08c3 50       		.byte	0x50
- 1978 08c4 01       		.uleb128 0x1
- 1979 08c5 31       		.byte	0x31
- 1980 08c6 00       		.byte	0
- 1981 08c7 0C       		.uleb128 0xc
- 1982 08c8 16000000 		.4byte	.LVL39
- 1983 08cc 010A0000 		.4byte	0xa01
- 1984 08d0 DB080000 		.4byte	0x8db
- 1985 08d4 08       		.uleb128 0x8
- 1986 08d5 01       		.uleb128 0x1
- 1987 08d6 50       		.byte	0x50
- 1988 08d7 02       		.uleb128 0x2
- 1989 08d8 08       		.byte	0x8
- 1990 08d9 64       		.byte	0x64
- 1991 08da 00       		.byte	0
- 1992 08db 0C       		.uleb128 0xc
- 1993 08dc 1C000000 		.4byte	.LVL40
- 1994 08e0 430A0000 		.4byte	0xa43
- 1995 08e4 EE080000 		.4byte	0x8ee
- 1996 08e8 08       		.uleb128 0x8
- 1997 08e9 01       		.uleb128 0x1
- 1998 08ea 50       		.byte	0x50
- 1999 08eb 01       		.uleb128 0x1
- 2000 08ec 31       		.byte	0x31
- 2001 08ed 00       		.byte	0
- 2002 08ee 0C       		.uleb128 0xc
- 2003 08ef 22000000 		.4byte	.LVL41
- 2004 08f3 010A0000 		.4byte	0xa01
- 2005 08f7 02090000 		.4byte	0x902
- 2006 08fb 08       		.uleb128 0x8
- 2007 08fc 01       		.uleb128 0x1
- 2008 08fd 50       		.byte	0x50
- 2009 08fe 02       		.uleb128 0x2
- 2010 08ff 08       		.byte	0x8
- 2011 0900 64       		.byte	0x64
- 2012 0901 00       		.byte	0
- 2013 0902 0C       		.uleb128 0xc
- 2014 0903 28000000 		.4byte	.LVL42
- 2015 0907 430A0000 		.4byte	0xa43
- 2016 090b 15090000 		.4byte	0x915
- 2017 090f 08       		.uleb128 0x8
- 2018 0910 01       		.uleb128 0x1
- 2019 0911 50       		.byte	0x50
- 2020 0912 01       		.uleb128 0x1
- 2021 0913 30       		.byte	0x30
- 2022 0914 00       		.byte	0
- 2023 0915 0C       		.uleb128 0xc
- 2024 0916 2E000000 		.4byte	.LVL43
- 2025 091a 010A0000 		.4byte	0xa01
- 2026 091e 29090000 		.4byte	0x929
- 2027 0922 08       		.uleb128 0x8
- 2028 0923 01       		.uleb128 0x1
- 2029 0924 50       		.byte	0x50
- 2030 0925 02       		.uleb128 0x2
- 2031 0926 08       		.byte	0x8
- 2032 0927 64       		.byte	0x64
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 42
-
-
- 2033 0928 00       		.byte	0
- 2034 0929 07       		.uleb128 0x7
- 2035 092a 34000000 		.4byte	.LVL44
- 2036 092e 0C0A0000 		.4byte	0xa0c
- 2037 0932 08       		.uleb128 0x8
- 2038 0933 01       		.uleb128 0x1
- 2039 0934 50       		.byte	0x50
- 2040 0935 01       		.uleb128 0x1
- 2041 0936 30       		.byte	0x30
- 2042 0937 00       		.byte	0
- 2043 0938 00       		.byte	0
- 2044 0939 0E       		.uleb128 0xe
- 2045 093a A5000000 		.4byte	0xa5
- 2046 093e 49090000 		.4byte	0x949
- 2047 0942 0F       		.uleb128 0xf
- 2048 0943 AC000000 		.4byte	0xac
- 2049 0947 00       		.byte	0
- 2050 0948 00       		.byte	0
- 2051 0949 17       		.uleb128 0x17
- 2052 094a 92010000 		.4byte	.LASF35
- 2053 094e 05       		.byte	0x5
- 2054 094f 1207     		.2byte	0x712
- 2055 0951 55090000 		.4byte	0x955
- 2056 0955 18       		.uleb128 0x18
- 2057 0956 8C000000 		.4byte	0x8c
- 2058 095a 0E       		.uleb128 0xe
- 2059 095b BA000000 		.4byte	0xba
- 2060 095f 6A090000 		.4byte	0x96a
- 2061 0963 0F       		.uleb128 0xf
- 2062 0964 AC000000 		.4byte	0xac
- 2063 0968 04       		.byte	0x4
- 2064 0969 00       		.byte	0
- 2065 096a 19       		.uleb128 0x19
- 2066 096b 90000000 		.4byte	.LASF36
- 2067 096f 01       		.byte	0x1
- 2068 0970 05       		.byte	0x5
- 2069 0971 5A090000 		.4byte	0x95a
- 2070 0975 05       		.uleb128 0x5
- 2071 0976 03       		.byte	0x3
- 2072 0977 00000000 		.4byte	cmdBytes
- 2073 097b 19       		.uleb128 0x19
- 2074 097c 0E000000 		.4byte	.LASF37
- 2075 0980 01       		.byte	0x1
- 2076 0981 0C       		.byte	0xc
- 2077 0982 73000000 		.4byte	0x73
- 2078 0986 05       		.uleb128 0x5
- 2079 0987 03       		.byte	0x3
- 2080 0988 00000000 		.4byte	b1Val
- 2081 098c 19       		.uleb128 0x19
- 2082 098d 75000000 		.4byte	.LASF38
- 2083 0991 01       		.byte	0x1
- 2084 0992 0D       		.byte	0xd
- 2085 0993 73000000 		.4byte	0x73
- 2086 0997 05       		.uleb128 0x5
- 2087 0998 03       		.byte	0x3
- 2088 0999 00000000 		.4byte	b2Val
- 2089 099d 19       		.uleb128 0x19
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 43
-
-
- 2090 099e AA010000 		.4byte	.LASF39
- 2091 09a2 01       		.byte	0x1
- 2092 09a3 0E       		.byte	0xe
- 2093 09a4 73000000 		.4byte	0x73
- 2094 09a8 05       		.uleb128 0x5
- 2095 09a9 03       		.byte	0x3
- 2096 09aa 00000000 		.4byte	b3Val
- 2097 09ae 19       		.uleb128 0x19
- 2098 09af 5A020000 		.4byte	.LASF40
- 2099 09b3 01       		.byte	0x1
- 2100 09b4 0F       		.byte	0xf
- 2101 09b5 73000000 		.4byte	0x73
- 2102 09b9 05       		.uleb128 0x5
- 2103 09ba 03       		.byte	0x3
- 2104 09bb 00000000 		.4byte	b4Val
- 2105 09bf 1A       		.uleb128 0x1a
- 2106 09c0 7B000000 		.4byte	.LASF41
- 2107 09c4 7B000000 		.4byte	.LASF41
- 2108 09c8 06       		.byte	0x6
- 2109 09c9 2F       		.byte	0x2f
- 2110 09ca 1A       		.uleb128 0x1a
- 2111 09cb 90020000 		.4byte	.LASF42
- 2112 09cf 90020000 		.4byte	.LASF42
- 2113 09d3 07       		.byte	0x7
- 2114 09d4 3A       		.byte	0x3a
- 2115 09d5 1A       		.uleb128 0x1a
- 2116 09d6 04030000 		.4byte	.LASF43
- 2117 09da 04030000 		.4byte	.LASF43
- 2118 09de 07       		.byte	0x7
- 2119 09df 3D       		.byte	0x3d
- 2120 09e0 1A       		.uleb128 0x1a
- 2121 09e1 EA010000 		.4byte	.LASF44
- 2122 09e5 EA010000 		.4byte	.LASF44
- 2123 09e9 07       		.byte	0x7
- 2124 09ea 3C       		.byte	0x3c
- 2125 09eb 1A       		.uleb128 0x1a
- 2126 09ec A1020000 		.4byte	.LASF45
- 2127 09f0 A1020000 		.4byte	.LASF45
- 2128 09f4 08       		.byte	0x8
- 2129 09f5 29       		.byte	0x29
- 2130 09f6 1A       		.uleb128 0x1a
- 2131 09f7 11030000 		.4byte	.LASF46
- 2132 09fb 11030000 		.4byte	.LASF46
- 2133 09ff 09       		.byte	0x9
- 2134 0a00 E7       		.byte	0xe7
- 2135 0a01 1A       		.uleb128 0x1a
- 2136 0a02 19030000 		.4byte	.LASF47
- 2137 0a06 19030000 		.4byte	.LASF47
- 2138 0a0a 0A       		.byte	0xa
- 2139 0a0b 76       		.byte	0x76
- 2140 0a0c 1A       		.uleb128 0x1a
- 2141 0a0d 2C020000 		.4byte	.LASF48
- 2142 0a11 2C020000 		.4byte	.LASF48
- 2143 0a15 0B       		.byte	0xb
- 2144 0a16 26       		.byte	0x26
- 2145 0a17 1A       		.uleb128 0x1a
- 2146 0a18 C5010000 		.4byte	.LASF49
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 44
-
-
- 2147 0a1c C5010000 		.4byte	.LASF49
- 2148 0a20 0C       		.byte	0xc
- 2149 0a21 29       		.byte	0x29
- 2150 0a22 1A       		.uleb128 0x1a
- 2151 0a23 AA020000 		.4byte	.LASF50
- 2152 0a27 AA020000 		.4byte	.LASF50
- 2153 0a2b 07       		.byte	0x7
- 2154 0a2c 5D       		.byte	0x5d
- 2155 0a2d 1A       		.uleb128 0x1a
- 2156 0a2e 00000000 		.4byte	.LASF51
- 2157 0a32 00000000 		.4byte	.LASF51
- 2158 0a36 0A       		.byte	0xa
- 2159 0a37 79       		.byte	0x79
- 2160 0a38 1A       		.uleb128 0x1a
- 2161 0a39 1E000000 		.4byte	.LASF52
- 2162 0a3d 1E000000 		.4byte	.LASF52
- 2163 0a41 07       		.byte	0x7
- 2164 0a42 38       		.byte	0x38
- 2165 0a43 1A       		.uleb128 0x1a
- 2166 0a44 4C010000 		.4byte	.LASF53
- 2167 0a48 4C010000 		.4byte	.LASF53
- 2168 0a4c 0D       		.byte	0xd
- 2169 0a4d 26       		.byte	0x26
- 2170 0a4e 00       		.byte	0
- 2171              		.section	.debug_abbrev,"",%progbits
- 2172              	.Ldebug_abbrev0:
- 2173 0000 01       		.uleb128 0x1
- 2174 0001 11       		.uleb128 0x11
- 2175 0002 01       		.byte	0x1
- 2176 0003 25       		.uleb128 0x25
- 2177 0004 0E       		.uleb128 0xe
- 2178 0005 13       		.uleb128 0x13
- 2179 0006 0B       		.uleb128 0xb
- 2180 0007 03       		.uleb128 0x3
- 2181 0008 0E       		.uleb128 0xe
- 2182 0009 1B       		.uleb128 0x1b
- 2183 000a 0E       		.uleb128 0xe
- 2184 000b 55       		.uleb128 0x55
- 2185 000c 17       		.uleb128 0x17
- 2186 000d 11       		.uleb128 0x11
- 2187 000e 01       		.uleb128 0x1
- 2188 000f 10       		.uleb128 0x10
- 2189 0010 17       		.uleb128 0x17
- 2190 0011 00       		.byte	0
- 2191 0012 00       		.byte	0
- 2192 0013 02       		.uleb128 0x2
- 2193 0014 24       		.uleb128 0x24
- 2194 0015 00       		.byte	0
- 2195 0016 0B       		.uleb128 0xb
- 2196 0017 0B       		.uleb128 0xb
- 2197 0018 3E       		.uleb128 0x3e
- 2198 0019 0B       		.uleb128 0xb
- 2199 001a 03       		.uleb128 0x3
- 2200 001b 0E       		.uleb128 0xe
- 2201 001c 00       		.byte	0
- 2202 001d 00       		.byte	0
- 2203 001e 03       		.uleb128 0x3
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 45
-
-
- 2204 001f 16       		.uleb128 0x16
- 2205 0020 00       		.byte	0
- 2206 0021 03       		.uleb128 0x3
- 2207 0022 0E       		.uleb128 0xe
- 2208 0023 3A       		.uleb128 0x3a
- 2209 0024 0B       		.uleb128 0xb
- 2210 0025 3B       		.uleb128 0x3b
- 2211 0026 0B       		.uleb128 0xb
- 2212 0027 49       		.uleb128 0x49
- 2213 0028 13       		.uleb128 0x13
- 2214 0029 00       		.byte	0
- 2215 002a 00       		.byte	0
- 2216 002b 04       		.uleb128 0x4
- 2217 002c 24       		.uleb128 0x24
- 2218 002d 00       		.byte	0
- 2219 002e 0B       		.uleb128 0xb
- 2220 002f 0B       		.uleb128 0xb
- 2221 0030 3E       		.uleb128 0x3e
- 2222 0031 0B       		.uleb128 0xb
- 2223 0032 03       		.uleb128 0x3
- 2224 0033 08       		.uleb128 0x8
- 2225 0034 00       		.byte	0
- 2226 0035 00       		.byte	0
- 2227 0036 05       		.uleb128 0x5
- 2228 0037 2E       		.uleb128 0x2e
- 2229 0038 01       		.byte	0x1
- 2230 0039 3F       		.uleb128 0x3f
- 2231 003a 19       		.uleb128 0x19
- 2232 003b 03       		.uleb128 0x3
- 2233 003c 0E       		.uleb128 0xe
- 2234 003d 3A       		.uleb128 0x3a
- 2235 003e 0B       		.uleb128 0xb
- 2236 003f 3B       		.uleb128 0x3b
- 2237 0040 0B       		.uleb128 0xb
- 2238 0041 27       		.uleb128 0x27
- 2239 0042 19       		.uleb128 0x19
- 2240 0043 11       		.uleb128 0x11
- 2241 0044 01       		.uleb128 0x1
- 2242 0045 12       		.uleb128 0x12
- 2243 0046 06       		.uleb128 0x6
- 2244 0047 40       		.uleb128 0x40
- 2245 0048 18       		.uleb128 0x18
- 2246 0049 9742     		.uleb128 0x2117
- 2247 004b 19       		.uleb128 0x19
- 2248 004c 01       		.uleb128 0x1
- 2249 004d 13       		.uleb128 0x13
- 2250 004e 00       		.byte	0
- 2251 004f 00       		.byte	0
- 2252 0050 06       		.uleb128 0x6
- 2253 0051 05       		.uleb128 0x5
- 2254 0052 00       		.byte	0
- 2255 0053 03       		.uleb128 0x3
- 2256 0054 0E       		.uleb128 0xe
- 2257 0055 3A       		.uleb128 0x3a
- 2258 0056 0B       		.uleb128 0xb
- 2259 0057 3B       		.uleb128 0x3b
- 2260 0058 0B       		.uleb128 0xb
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 46
-
-
- 2261 0059 49       		.uleb128 0x49
- 2262 005a 13       		.uleb128 0x13
- 2263 005b 02       		.uleb128 0x2
- 2264 005c 17       		.uleb128 0x17
- 2265 005d 00       		.byte	0
- 2266 005e 00       		.byte	0
- 2267 005f 07       		.uleb128 0x7
- 2268 0060 898201   		.uleb128 0x4109
- 2269 0063 01       		.byte	0x1
- 2270 0064 11       		.uleb128 0x11
- 2271 0065 01       		.uleb128 0x1
- 2272 0066 31       		.uleb128 0x31
- 2273 0067 13       		.uleb128 0x13
- 2274 0068 00       		.byte	0
- 2275 0069 00       		.byte	0
- 2276 006a 08       		.uleb128 0x8
- 2277 006b 8A8201   		.uleb128 0x410a
- 2278 006e 00       		.byte	0
- 2279 006f 02       		.uleb128 0x2
- 2280 0070 18       		.uleb128 0x18
- 2281 0071 9142     		.uleb128 0x2111
- 2282 0073 18       		.uleb128 0x18
- 2283 0074 00       		.byte	0
- 2284 0075 00       		.byte	0
- 2285 0076 09       		.uleb128 0x9
- 2286 0077 2E       		.uleb128 0x2e
- 2287 0078 01       		.byte	0x1
- 2288 0079 3F       		.uleb128 0x3f
- 2289 007a 19       		.uleb128 0x19
- 2290 007b 03       		.uleb128 0x3
- 2291 007c 0E       		.uleb128 0xe
- 2292 007d 3A       		.uleb128 0x3a
- 2293 007e 0B       		.uleb128 0xb
- 2294 007f 3B       		.uleb128 0x3b
- 2295 0080 0B       		.uleb128 0xb
- 2296 0081 11       		.uleb128 0x11
- 2297 0082 01       		.uleb128 0x1
- 2298 0083 12       		.uleb128 0x12
- 2299 0084 06       		.uleb128 0x6
- 2300 0085 40       		.uleb128 0x40
- 2301 0086 18       		.uleb128 0x18
- 2302 0087 9742     		.uleb128 0x2117
- 2303 0089 19       		.uleb128 0x19
- 2304 008a 01       		.uleb128 0x1
- 2305 008b 13       		.uleb128 0x13
- 2306 008c 00       		.byte	0
- 2307 008d 00       		.byte	0
- 2308 008e 0A       		.uleb128 0xa
- 2309 008f 34       		.uleb128 0x34
- 2310 0090 00       		.byte	0
- 2311 0091 03       		.uleb128 0x3
- 2312 0092 0E       		.uleb128 0xe
- 2313 0093 3A       		.uleb128 0x3a
- 2314 0094 0B       		.uleb128 0xb
- 2315 0095 3B       		.uleb128 0x3b
- 2316 0096 0B       		.uleb128 0xb
- 2317 0097 49       		.uleb128 0x49
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 47
-
-
- 2318 0098 13       		.uleb128 0x13
- 2319 0099 02       		.uleb128 0x2
- 2320 009a 18       		.uleb128 0x18
- 2321 009b 00       		.byte	0
- 2322 009c 00       		.byte	0
- 2323 009d 0B       		.uleb128 0xb
- 2324 009e 34       		.uleb128 0x34
- 2325 009f 00       		.byte	0
- 2326 00a0 03       		.uleb128 0x3
- 2327 00a1 0E       		.uleb128 0xe
- 2328 00a2 3A       		.uleb128 0x3a
- 2329 00a3 0B       		.uleb128 0xb
- 2330 00a4 3B       		.uleb128 0x3b
- 2331 00a5 0B       		.uleb128 0xb
- 2332 00a6 49       		.uleb128 0x49
- 2333 00a7 13       		.uleb128 0x13
- 2334 00a8 02       		.uleb128 0x2
- 2335 00a9 17       		.uleb128 0x17
- 2336 00aa 00       		.byte	0
- 2337 00ab 00       		.byte	0
- 2338 00ac 0C       		.uleb128 0xc
- 2339 00ad 898201   		.uleb128 0x4109
- 2340 00b0 01       		.byte	0x1
- 2341 00b1 11       		.uleb128 0x11
- 2342 00b2 01       		.uleb128 0x1
- 2343 00b3 31       		.uleb128 0x31
- 2344 00b4 13       		.uleb128 0x13
- 2345 00b5 01       		.uleb128 0x1
- 2346 00b6 13       		.uleb128 0x13
- 2347 00b7 00       		.byte	0
- 2348 00b8 00       		.byte	0
- 2349 00b9 0D       		.uleb128 0xd
- 2350 00ba 898201   		.uleb128 0x4109
- 2351 00bd 00       		.byte	0
- 2352 00be 11       		.uleb128 0x11
- 2353 00bf 01       		.uleb128 0x1
- 2354 00c0 31       		.uleb128 0x31
- 2355 00c1 13       		.uleb128 0x13
- 2356 00c2 00       		.byte	0
- 2357 00c3 00       		.byte	0
- 2358 00c4 0E       		.uleb128 0xe
- 2359 00c5 01       		.uleb128 0x1
- 2360 00c6 01       		.byte	0x1
- 2361 00c7 49       		.uleb128 0x49
- 2362 00c8 13       		.uleb128 0x13
- 2363 00c9 01       		.uleb128 0x1
- 2364 00ca 13       		.uleb128 0x13
- 2365 00cb 00       		.byte	0
- 2366 00cc 00       		.byte	0
- 2367 00cd 0F       		.uleb128 0xf
- 2368 00ce 21       		.uleb128 0x21
- 2369 00cf 00       		.byte	0
- 2370 00d0 49       		.uleb128 0x49
- 2371 00d1 13       		.uleb128 0x13
- 2372 00d2 2F       		.uleb128 0x2f
- 2373 00d3 0B       		.uleb128 0xb
- 2374 00d4 00       		.byte	0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 48
-
-
- 2375 00d5 00       		.byte	0
- 2376 00d6 10       		.uleb128 0x10
- 2377 00d7 05       		.uleb128 0x5
- 2378 00d8 00       		.byte	0
- 2379 00d9 03       		.uleb128 0x3
- 2380 00da 0E       		.uleb128 0xe
- 2381 00db 3A       		.uleb128 0x3a
- 2382 00dc 0B       		.uleb128 0xb
- 2383 00dd 3B       		.uleb128 0x3b
- 2384 00de 0B       		.uleb128 0xb
- 2385 00df 49       		.uleb128 0x49
- 2386 00e0 13       		.uleb128 0x13
- 2387 00e1 02       		.uleb128 0x2
- 2388 00e2 18       		.uleb128 0x18
- 2389 00e3 00       		.byte	0
- 2390 00e4 00       		.byte	0
- 2391 00e5 11       		.uleb128 0x11
- 2392 00e6 0F       		.uleb128 0xf
- 2393 00e7 00       		.byte	0
- 2394 00e8 0B       		.uleb128 0xb
- 2395 00e9 0B       		.uleb128 0xb
- 2396 00ea 49       		.uleb128 0x49
- 2397 00eb 13       		.uleb128 0x13
- 2398 00ec 00       		.byte	0
- 2399 00ed 00       		.byte	0
- 2400 00ee 12       		.uleb128 0x12
- 2401 00ef 2E       		.uleb128 0x2e
- 2402 00f0 01       		.byte	0x1
- 2403 00f1 3F       		.uleb128 0x3f
- 2404 00f2 19       		.uleb128 0x19
- 2405 00f3 03       		.uleb128 0x3
- 2406 00f4 0E       		.uleb128 0xe
- 2407 00f5 3A       		.uleb128 0x3a
- 2408 00f6 0B       		.uleb128 0xb
- 2409 00f7 3B       		.uleb128 0x3b
- 2410 00f8 0B       		.uleb128 0xb
- 2411 00f9 27       		.uleb128 0x27
- 2412 00fa 19       		.uleb128 0x19
- 2413 00fb 49       		.uleb128 0x49
- 2414 00fc 13       		.uleb128 0x13
- 2415 00fd 8701     		.uleb128 0x87
- 2416 00ff 19       		.uleb128 0x19
- 2417 0100 11       		.uleb128 0x11
- 2418 0101 01       		.uleb128 0x1
- 2419 0102 12       		.uleb128 0x12
- 2420 0103 06       		.uleb128 0x6
- 2421 0104 40       		.uleb128 0x40
- 2422 0105 18       		.uleb128 0x18
- 2423 0106 9742     		.uleb128 0x2117
- 2424 0108 19       		.uleb128 0x19
- 2425 0109 01       		.uleb128 0x1
- 2426 010a 13       		.uleb128 0x13
- 2427 010b 00       		.byte	0
- 2428 010c 00       		.byte	0
- 2429 010d 13       		.uleb128 0x13
- 2430 010e 34       		.uleb128 0x34
- 2431 010f 00       		.byte	0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 49
-
-
- 2432 0110 03       		.uleb128 0x3
- 2433 0111 0E       		.uleb128 0xe
- 2434 0112 3A       		.uleb128 0x3a
- 2435 0113 0B       		.uleb128 0xb
- 2436 0114 3B       		.uleb128 0x3b
- 2437 0115 0B       		.uleb128 0xb
- 2438 0116 49       		.uleb128 0x49
- 2439 0117 13       		.uleb128 0x13
- 2440 0118 00       		.byte	0
- 2441 0119 00       		.byte	0
- 2442 011a 14       		.uleb128 0x14
- 2443 011b 0B       		.uleb128 0xb
- 2444 011c 01       		.byte	0x1
- 2445 011d 11       		.uleb128 0x11
- 2446 011e 01       		.uleb128 0x1
- 2447 011f 12       		.uleb128 0x12
- 2448 0120 06       		.uleb128 0x6
- 2449 0121 01       		.uleb128 0x1
- 2450 0122 13       		.uleb128 0x13
- 2451 0123 00       		.byte	0
- 2452 0124 00       		.byte	0
- 2453 0125 15       		.uleb128 0x15
- 2454 0126 34       		.uleb128 0x34
- 2455 0127 00       		.byte	0
- 2456 0128 03       		.uleb128 0x3
- 2457 0129 0E       		.uleb128 0xe
- 2458 012a 3A       		.uleb128 0x3a
- 2459 012b 0B       		.uleb128 0xb
- 2460 012c 3B       		.uleb128 0x3b
- 2461 012d 0B       		.uleb128 0xb
- 2462 012e 49       		.uleb128 0x49
- 2463 012f 13       		.uleb128 0x13
- 2464 0130 1C       		.uleb128 0x1c
- 2465 0131 0B       		.uleb128 0xb
- 2466 0132 00       		.byte	0
- 2467 0133 00       		.byte	0
- 2468 0134 16       		.uleb128 0x16
- 2469 0135 34       		.uleb128 0x34
- 2470 0136 00       		.byte	0
- 2471 0137 03       		.uleb128 0x3
- 2472 0138 08       		.uleb128 0x8
- 2473 0139 3A       		.uleb128 0x3a
- 2474 013a 0B       		.uleb128 0xb
- 2475 013b 3B       		.uleb128 0x3b
- 2476 013c 0B       		.uleb128 0xb
- 2477 013d 49       		.uleb128 0x49
- 2478 013e 13       		.uleb128 0x13
- 2479 013f 02       		.uleb128 0x2
- 2480 0140 17       		.uleb128 0x17
- 2481 0141 00       		.byte	0
- 2482 0142 00       		.byte	0
- 2483 0143 17       		.uleb128 0x17
- 2484 0144 34       		.uleb128 0x34
- 2485 0145 00       		.byte	0
- 2486 0146 03       		.uleb128 0x3
- 2487 0147 0E       		.uleb128 0xe
- 2488 0148 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 50
-
-
- 2489 0149 0B       		.uleb128 0xb
- 2490 014a 3B       		.uleb128 0x3b
- 2491 014b 05       		.uleb128 0x5
- 2492 014c 49       		.uleb128 0x49
- 2493 014d 13       		.uleb128 0x13
- 2494 014e 3F       		.uleb128 0x3f
- 2495 014f 19       		.uleb128 0x19
- 2496 0150 3C       		.uleb128 0x3c
- 2497 0151 19       		.uleb128 0x19
- 2498 0152 00       		.byte	0
- 2499 0153 00       		.byte	0
- 2500 0154 18       		.uleb128 0x18
- 2501 0155 35       		.uleb128 0x35
- 2502 0156 00       		.byte	0
- 2503 0157 49       		.uleb128 0x49
- 2504 0158 13       		.uleb128 0x13
- 2505 0159 00       		.byte	0
- 2506 015a 00       		.byte	0
- 2507 015b 19       		.uleb128 0x19
- 2508 015c 34       		.uleb128 0x34
- 2509 015d 00       		.byte	0
- 2510 015e 03       		.uleb128 0x3
- 2511 015f 0E       		.uleb128 0xe
- 2512 0160 3A       		.uleb128 0x3a
- 2513 0161 0B       		.uleb128 0xb
- 2514 0162 3B       		.uleb128 0x3b
- 2515 0163 0B       		.uleb128 0xb
- 2516 0164 49       		.uleb128 0x49
- 2517 0165 13       		.uleb128 0x13
- 2518 0166 3F       		.uleb128 0x3f
- 2519 0167 19       		.uleb128 0x19
- 2520 0168 02       		.uleb128 0x2
- 2521 0169 18       		.uleb128 0x18
- 2522 016a 00       		.byte	0
- 2523 016b 00       		.byte	0
- 2524 016c 1A       		.uleb128 0x1a
- 2525 016d 2E       		.uleb128 0x2e
- 2526 016e 00       		.byte	0
- 2527 016f 3F       		.uleb128 0x3f
- 2528 0170 19       		.uleb128 0x19
- 2529 0171 3C       		.uleb128 0x3c
- 2530 0172 19       		.uleb128 0x19
- 2531 0173 6E       		.uleb128 0x6e
- 2532 0174 0E       		.uleb128 0xe
- 2533 0175 03       		.uleb128 0x3
- 2534 0176 0E       		.uleb128 0xe
- 2535 0177 3A       		.uleb128 0x3a
- 2536 0178 0B       		.uleb128 0xb
- 2537 0179 3B       		.uleb128 0x3b
- 2538 017a 0B       		.uleb128 0xb
- 2539 017b 00       		.byte	0
- 2540 017c 00       		.byte	0
- 2541 017d 00       		.byte	0
- 2542              		.section	.debug_loc,"",%progbits
- 2543              	.Ldebug_loc0:
- 2544              	.LLST0:
- 2545 0000 00000000 		.4byte	.LVL0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 51
-
-
- 2546 0004 04000000 		.4byte	.LVL1
- 2547 0008 0100     		.2byte	0x1
- 2548 000a 50       		.byte	0x50
- 2549 000b 04000000 		.4byte	.LVL1
- 2550 000f 0A000000 		.4byte	.LFE64
- 2551 0013 0400     		.2byte	0x4
- 2552 0015 F3       		.byte	0xf3
- 2553 0016 01       		.uleb128 0x1
- 2554 0017 50       		.byte	0x50
- 2555 0018 9F       		.byte	0x9f
- 2556 0019 00000000 		.4byte	0
- 2557 001d 00000000 		.4byte	0
- 2558              	.LLST1:
- 2559 0021 00000000 		.4byte	.LVL3
- 2560 0025 08000000 		.4byte	.LVL4
- 2561 0029 0100     		.2byte	0x1
- 2562 002b 50       		.byte	0x50
- 2563 002c 08000000 		.4byte	.LVL4
- 2564 0030 20010000 		.4byte	.LVL35
- 2565 0034 0100     		.2byte	0x1
- 2566 0036 55       		.byte	0x55
- 2567 0037 20010000 		.4byte	.LVL35
- 2568 003b 44010000 		.4byte	.LFE65
- 2569 003f 0400     		.2byte	0x4
- 2570 0041 F3       		.byte	0xf3
- 2571 0042 01       		.uleb128 0x1
- 2572 0043 50       		.byte	0x50
- 2573 0044 9F       		.byte	0x9f
- 2574 0045 00000000 		.4byte	0
- 2575 0049 00000000 		.4byte	0
- 2576              	.LLST2:
- 2577 004d 4C000000 		.4byte	.LVL12
- 2578 0051 52000000 		.4byte	.LVL13
- 2579 0055 0200     		.2byte	0x2
- 2580 0057 30       		.byte	0x30
- 2581 0058 9F       		.byte	0x9f
- 2582 0059 52000000 		.4byte	.LVL13
- 2583 005d 20010000 		.4byte	.LVL35
- 2584 0061 0100     		.2byte	0x1
- 2585 0063 56       		.byte	0x56
- 2586 0064 00000000 		.4byte	0
- 2587 0068 00000000 		.4byte	0
- 2588              	.LLST3:
- 2589 006c 4C000000 		.4byte	.LVL12
- 2590 0070 52000000 		.4byte	.LVL13
- 2591 0074 0200     		.2byte	0x2
- 2592 0076 30       		.byte	0x30
- 2593 0077 9F       		.byte	0x9f
- 2594 0078 52000000 		.4byte	.LVL13
- 2595 007c 20010000 		.4byte	.LVL35
- 2596 0080 0100     		.2byte	0x1
- 2597 0082 54       		.byte	0x54
- 2598 0083 00000000 		.4byte	0
- 2599 0087 00000000 		.4byte	0
- 2600              	.LLST4:
- 2601 008b 10000000 		.4byte	.LVL38
- 2602 008f 5E000000 		.4byte	.LVL51
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 52
-
-
- 2603 0093 0200     		.2byte	0x2
- 2604 0095 30       		.byte	0x30
- 2605 0096 9F       		.byte	0x9f
- 2606 0097 5E000000 		.4byte	.LVL51
- 2607 009b 86000000 		.4byte	.LVL57
- 2608 009f 0100     		.2byte	0x1
- 2609 00a1 55       		.byte	0x55
- 2610 00a2 00000000 		.4byte	0
- 2611 00a6 00000000 		.4byte	0
- 2612              	.LLST5:
- 2613 00aa 10000000 		.4byte	.LVL38
- 2614 00ae 38000000 		.4byte	.LVL45
- 2615 00b2 0200     		.2byte	0x2
- 2616 00b4 30       		.byte	0x30
- 2617 00b5 9F       		.byte	0x9f
- 2618 00b6 38000000 		.4byte	.LVL45
- 2619 00ba 20020000 		.4byte	.LFE67
- 2620 00be 0100     		.2byte	0x1
- 2621 00c0 56       		.byte	0x56
- 2622 00c1 00000000 		.4byte	0
- 2623 00c5 00000000 		.4byte	0
- 2624              	.LLST6:
- 2625 00c9 10000000 		.4byte	.LVL38
- 2626 00cd 38000000 		.4byte	.LVL45
- 2627 00d1 0200     		.2byte	0x2
- 2628 00d3 30       		.byte	0x30
- 2629 00d4 9F       		.byte	0x9f
- 2630 00d5 38000000 		.4byte	.LVL45
- 2631 00d9 20020000 		.4byte	.LFE67
- 2632 00dd 0100     		.2byte	0x1
- 2633 00df 54       		.byte	0x54
- 2634 00e0 00000000 		.4byte	0
- 2635 00e4 00000000 		.4byte	0
- 2636              	.LLST7:
- 2637 00e8 CA000000 		.4byte	.LVL66
- 2638 00ec CE000000 		.4byte	.LVL67
- 2639 00f0 0200     		.2byte	0x2
- 2640 00f2 31       		.byte	0x31
- 2641 00f3 9F       		.byte	0x9f
- 2642 00f4 CE000000 		.4byte	.LVL67
- 2643 00f8 F8000000 		.4byte	.LVL74
- 2644 00fc 0100     		.2byte	0x1
- 2645 00fe 55       		.byte	0x55
- 2646 00ff 00000000 		.4byte	0
- 2647 0103 00000000 		.4byte	0
- 2648              	.LLST8:
- 2649 0107 AE010000 		.4byte	.LVL101
- 2650 010b B2010000 		.4byte	.LVL102
- 2651 010f 0200     		.2byte	0x2
- 2652 0111 31       		.byte	0x31
- 2653 0112 9F       		.byte	0x9f
- 2654 0113 B2010000 		.4byte	.LVL102
- 2655 0117 20020000 		.4byte	.LFE67
- 2656 011b 0100     		.2byte	0x1
- 2657 011d 55       		.byte	0x55
- 2658 011e 00000000 		.4byte	0
- 2659 0122 00000000 		.4byte	0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 53
-
-
- 2660              		.section	.debug_aranges,"",%progbits
- 2661 0000 34000000 		.4byte	0x34
- 2662 0004 0200     		.2byte	0x2
- 2663 0006 00000000 		.4byte	.Ldebug_info0
- 2664 000a 04       		.byte	0x4
- 2665 000b 00       		.byte	0
- 2666 000c 0000     		.2byte	0
- 2667 000e 0000     		.2byte	0
- 2668 0010 00000000 		.4byte	.LFB64
- 2669 0014 0A000000 		.4byte	.LFE64-.LFB64
- 2670 0018 00000000 		.4byte	.LFB65
- 2671 001c 44010000 		.4byte	.LFE65-.LFB65
- 2672 0020 00000000 		.4byte	.LFB66
- 2673 0024 02000000 		.4byte	.LFE66-.LFB66
- 2674 0028 00000000 		.4byte	.LFB67
- 2675 002c 20020000 		.4byte	.LFE67-.LFB67
- 2676 0030 00000000 		.4byte	0
- 2677 0034 00000000 		.4byte	0
- 2678              		.section	.debug_ranges,"",%progbits
- 2679              	.Ldebug_ranges0:
- 2680 0000 00000000 		.4byte	.LFB64
- 2681 0004 0A000000 		.4byte	.LFE64
- 2682 0008 00000000 		.4byte	.LFB65
- 2683 000c 44010000 		.4byte	.LFE65
- 2684 0010 00000000 		.4byte	.LFB66
- 2685 0014 02000000 		.4byte	.LFE66
- 2686 0018 00000000 		.4byte	.LFB67
- 2687 001c 20020000 		.4byte	.LFE67
- 2688 0020 00000000 		.4byte	0
- 2689 0024 00000000 		.4byte	0
- 2690              		.section	.debug_line,"",%progbits
- 2691              	.Ldebug_line0:
- 2692 0000 22030000 		.section	.debug_str,"MS",%progbits,1
- 2692      02001F02 
- 2692      00000201 
- 2692      FB0E0D00 
- 2692      01010101 
- 2693              	.LASF51:
- 2694 0000 43794465 		.ascii	"CyDelayCycles\000"
- 2694      6C617943 
- 2694      79636C65 
- 2694      7300
- 2695              	.LASF37:
- 2696 000e 62315661 		.ascii	"b1Val\000"
- 2696      6C00
- 2697              	.LASF4:
- 2698 0014 5F5F7569 		.ascii	"__uint8_t\000"
- 2698      6E74385F 
- 2698      7400
- 2699              	.LASF52:
- 2700 001e 4C43445F 		.ascii	"LCD_Start\000"
- 2700      53746172 
- 2700      7400
- 2701              	.LASF29:
- 2702 0028 72637664 		.ascii	"rcvdStatus\000"
- 2702      53746174 
- 2702      757300
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 54
-
-
- 2703              	.LASF5:
- 2704 0033 5F5F696E 		.ascii	"__int32_t\000"
- 2704      7433325F 
- 2704      7400
- 2705              	.LASF56:
- 2706 003d 483A5C53 		.ascii	"H:\\Senior-Project-2023\\PSoC\\HostDesign.cydsn\000"
- 2706      656E696F 
- 2706      722D5072 
- 2706      6F6A6563 
- 2706      742D3230 
- 2707              	.LASF19:
- 2708 006a 62797465 		.ascii	"byte\000"
- 2708      00
- 2709              	.LASF20:
- 2710 006f 73746167 		.ascii	"stage\000"
- 2710      6500
- 2711              	.LASF38:
- 2712 0075 62325661 		.ascii	"b2Val\000"
- 2712      6C00
- 2713              	.LASF41:
- 2714 007b 4F55545F 		.ascii	"OUT_BYTE_Write\000"
- 2714      42595445 
- 2714      5F577269 
- 2714      746500
- 2715              	.LASF13:
- 2716 008a 666C6F61 		.ascii	"float\000"
- 2716      7400
- 2717              	.LASF36:
- 2718 0090 636D6442 		.ascii	"cmdBytes\000"
- 2718      79746573 
- 2718      00
- 2719              	.LASF9:
- 2720 0099 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2720      206C6F6E 
- 2720      6720756E 
- 2720      7369676E 
- 2720      65642069 
- 2721              	.LASF1:
- 2722 00b0 756E7369 		.ascii	"unsigned char\000"
- 2722      676E6564 
- 2722      20636861 
- 2722      7200
- 2723              	.LASF54:
- 2724 00be 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 2724      43313120 
- 2724      352E342E 
- 2724      31203230 
- 2724      31363036 
- 2725 00f1 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 2725      20726576 
- 2725      6973696F 
- 2725      6E203233 
- 2725      37373135 
- 2726 0124 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 2726      66756E63 
- 2726      74696F6E 
- 2726      2D736563 
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 55
-
-
- 2726      74696F6E 
- 2727              	.LASF53:
- 2728 014c 50534F43 		.ascii	"PSOC_RESET_RAW_Write\000"
- 2728      5F524553 
- 2728      45545F52 
- 2728      41575F57 
- 2728      72697465 
- 2729              	.LASF7:
- 2730 0161 6C6F6E67 		.ascii	"long unsigned int\000"
- 2730      20756E73 
- 2730      69676E65 
- 2730      6420696E 
- 2730      7400
- 2731              	.LASF3:
- 2732 0173 73686F72 		.ascii	"short unsigned int\000"
- 2732      7420756E 
- 2732      7369676E 
- 2732      65642069 
- 2732      6E7400
- 2733              	.LASF0:
- 2734 0186 7369676E 		.ascii	"signed char\000"
- 2734      65642063 
- 2734      68617200 
- 2735              	.LASF35:
- 2736 0192 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 2736      52784275 
- 2736      66666572 
- 2736      00
- 2737              	.LASF34:
- 2738 019f 64697370 		.ascii	"dispString\000"
- 2738      53747269 
- 2738      6E6700
- 2739              	.LASF39:
- 2740 01aa 62335661 		.ascii	"b3Val\000"
- 2740      6C00
- 2741              	.LASF14:
- 2742 01b0 646F7562 		.ascii	"double\000"
- 2742      6C6500
- 2743              	.LASF31:
- 2744 01b7 70736F63 		.ascii	"psoc_fpga_xfc\000"
- 2744      5F667067 
- 2744      615F7866 
- 2744      6300
- 2745              	.LASF49:
- 2746 01c5 4832475F 		.ascii	"H2G_STRB_IN_Read\000"
- 2746      53545242 
- 2746      5F494E5F 
- 2746      52656164 
- 2746      00
- 2747              	.LASF2:
- 2748 01d6 73686F72 		.ascii	"short int\000"
- 2748      7420696E 
- 2748      7400
- 2749              	.LASF26:
- 2750 01e0 7265675F 		.ascii	"reg_write\000"
- 2750      77726974 
- 2750      6500
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 56
-
-
- 2751              	.LASF44:
- 2752 01ea 4C43445F 		.ascii	"LCD_PrintString\000"
- 2752      5072696E 
- 2752      74537472 
- 2752      696E6700 
- 2753              	.LASF18:
- 2754 01fa 75696E74 		.ascii	"uint\000"
- 2754      00
- 2755              	.LASF32:
- 2756 01ff 66706761 		.ascii	"fpga_psoc_xfc\000"
- 2756      5F70736F 
- 2756      635F7866 
- 2756      6300
- 2757              	.LASF10:
- 2758 020d 756E7369 		.ascii	"unsigned int\000"
- 2758      676E6564 
- 2758      20696E74 
- 2758      00
- 2759              	.LASF30:
- 2760 021a 61646472 		.ascii	"addr_flag\000"
- 2760      5F666C61 
- 2760      6700
- 2761              	.LASF11:
- 2762 0224 75696E74 		.ascii	"uint8_t\000"
- 2762      385F7400 
- 2763              	.LASF48:
- 2764 022c 4832475F 		.ascii	"H2G_STRB_OUT_Write\000"
- 2764      53545242 
- 2764      5F4F5554 
- 2764      5F577269 
- 2764      746500
- 2765              	.LASF24:
- 2766 023f 62797465 		.ascii	"byteVal\000"
- 2766      56616C00 
- 2767              	.LASF57:
- 2768 0247 73656C65 		.ascii	"selectPayloadValue\000"
- 2768      63745061 
- 2768      796C6F61 
- 2768      6456616C 
- 2768      756500
- 2769              	.LASF40:
- 2770 025a 62345661 		.ascii	"b4Val\000"
- 2770      6C00
- 2771              	.LASF12:
- 2772 0260 696E7433 		.ascii	"int32_t\000"
- 2772      325F7400 
- 2773              	.LASF16:
- 2774 0268 73697A65 		.ascii	"sizetype\000"
- 2774      74797065 
- 2774      00
- 2775              	.LASF58:
- 2776 0271 6D61696E 		.ascii	"main\000"
- 2776      00
- 2777              	.LASF8:
- 2778 0276 6C6F6E67 		.ascii	"long long int\000"
- 2778      206C6F6E 
- 2778      6720696E 
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 57
-
-
- 2778      7400
- 2779              	.LASF55:
- 2780 0284 6D61696E 		.ascii	"main.c\000"
- 2780      2E6300
- 2781              	.LASF15:
- 2782 028b 63686172 		.ascii	"char\000"
- 2782      00
- 2783              	.LASF42:
- 2784 0290 4C43445F 		.ascii	"LCD_WriteControl\000"
- 2784      57726974 
- 2784      65436F6E 
- 2784      74726F6C 
- 2784      00
- 2785              	.LASF45:
- 2786 02a1 5357335F 		.ascii	"SW3_Read\000"
- 2786      52656164 
- 2786      00
- 2787              	.LASF50:
- 2788 02aa 4C43445F 		.ascii	"LCD_PrintInt8\000"
- 2788      5072696E 
- 2788      74496E74 
- 2788      3800
- 2789              	.LASF25:
- 2790 02b8 73656E64 		.ascii	"sendByte\000"
- 2790      42797465 
- 2790      00
- 2791              	.LASF23:
- 2792 02c1 73656C65 		.ascii	"selected\000"
- 2792      63746564 
- 2792      00
- 2793              	.LASF33:
- 2794 02ca 61646472 		.ascii	"addrVal\000"
- 2794      56616C00 
- 2795              	.LASF6:
- 2796 02d2 6C6F6E67 		.ascii	"long int\000"
- 2796      20696E74 
- 2796      00
- 2797              	.LASF28:
- 2798 02db 64697370 		.ascii	"dispVal\000"
- 2798      56616C00 
- 2799              	.LASF27:
- 2800 02e3 62797465 		.ascii	"bytes\000"
- 2800      7300
- 2801              	.LASF17:
- 2802 02e9 6C6F6E67 		.ascii	"long double\000"
- 2802      20646F75 
- 2802      626C6500 
- 2803              	.LASF21:
- 2804 02f5 64697370 		.ascii	"dispStr\000"
- 2804      53747200 
- 2805              	.LASF22:
- 2806 02fd 7365744D 		.ascii	"setMsg\000"
- 2806      736700
- 2807              	.LASF43:
- 2808 0304 4C43445F 		.ascii	"LCD_Position\000"
- 2808      506F7369 
- 2808      74696F6E 
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccYfmHfx.s 			page 58
-
-
- 2808      00
- 2809              	.LASF46:
- 2810 0311 73707269 		.ascii	"sprintf\000"
- 2810      6E746600 
- 2811              	.LASF47:
- 2812 0319 43794465 		.ascii	"CyDelay\000"
- 2812      6C617900 
- 2813              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+  70:main.c        ****         
+  71:main.c        ****         LCD_ClearDisplay();
+ 298              		.loc 2 71 0 discriminator 1
+ 299 0060 0120     		movs	r0, #1
+ 300 0062 FFF7FEFF 		bl	LCD_WriteControl
+ 301              	.LVL25:
+  72:main.c        ****         LCD_PrintString("Command sent!");
+ 302              		.loc 2 72 0 discriminator 1
+ 303 0066 0E48     		ldr	r0, .L13+40
+ 304 0068 FFF7FEFF 		bl	LCD_PrintString
+ 305              	.LVL26:
+  73:main.c        ****         CyDelay(2000);
+ 306              		.loc 2 73 0 discriminator 1
+ 307 006c 4FF4FA60 		mov	r0, #2000
+ 308 0070 FFF7FEFF 		bl	CyDelay
+ 309              	.LVL27:
+ 310 0074 E5E7     		b	.L11
+ 311              	.L14:
+ 312 0076 00BF     		.align	2
+ 313              	.L13:
+ 314 0078 00000000 		.word	psoc_fpga_xfc
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 9
+
+
+ 315 007c 00000000 		.word	fpga_psoc_xfc
+ 316 0080 78000000 		.word	rect_full+120
+ 317 0084 00000000 		.word	x1
+ 318 0088 00000000 		.word	y1
+ 319 008c 00000000 		.word	x2
+ 320 0090 00000000 		.word	y2
+ 321 0094 00000000 		.word	fill_color
+ 322 0098 00000000 		.word	test_pat_mode
+ 323 009c 00000000 		.word	engine_id
+ 324 00a0 00000000 		.word	.LC0
+ 325              	.LBE3:
+ 326              		.cfi_endproc
+ 327              	.LFE67:
+ 328              		.size	main, .-main
+ 329              		.comm	engine_id,4,4
+ 330              		.comm	test_pat_mode,4,4
+ 331              		.comm	fill_color,4,4
+ 332              		.comm	y2,4,4
+ 333              		.comm	x2,4,4
+ 334              		.comm	y1,4,4
+ 335              		.comm	x1,4,4
+ 336              		.comm	rect_full,100,4
+ 337              		.comm	fpga_psoc_xfc,4,4
+ 338              		.comm	psoc_fpga_xfc,4,4
+ 339              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 340              		.align	2
+ 341              	.LC0:
+ 342 0000 436F6D6D 		.ascii	"Command sent!\000"
+ 342      616E6420 
+ 342      73656E74 
+ 342      2100
+ 343              		.text
+ 344              	.Letext0:
+ 345              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 346              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 347              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 348              		.file 6 "Generated_Source\\PSoC5/OUT_BYTE.h"
+ 349              		.file 7 "Generated_Source\\PSoC5/CyLib.h"
+ 350              		.file 8 "Generated_Source\\PSoC5/H2G_STRB_OUT.h"
+ 351              		.file 9 "Generated_Source\\PSoC5/H2G_STRB_IN.h"
+ 352              		.file 10 "Generated_Source\\PSoC5/LCD.h"
+ 353              		.file 11 "Generated_Source\\PSoC5/PSOC_RESET_RAW.h"
+ 354              		.section	.debug_info,"",%progbits
+ 355              	.Ldebug_info0:
+ 356 0000 40040000 		.4byte	0x440
+ 357 0004 0400     		.2byte	0x4
+ 358 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 359 000a 04       		.byte	0x4
+ 360 000b 01       		.uleb128 0x1
+ 361 000c AC000000 		.4byte	.LASF44
+ 362 0010 0C       		.byte	0xc
+ 363 0011 5E020000 		.4byte	.LASF45
+ 364 0015 3B000000 		.4byte	.LASF46
+ 365 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 366 001d 00000000 		.4byte	0
+ 367 0021 00000000 		.4byte	.Ldebug_line0
+ 368 0025 02       		.uleb128 0x2
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 10
+
+
+ 369 0026 01       		.byte	0x1
+ 370 0027 06       		.byte	0x6
+ 371 0028 BF020000 		.4byte	.LASF0
+ 372 002c 03       		.uleb128 0x3
+ 373 002d 1C000000 		.4byte	.LASF4
+ 374 0031 03       		.byte	0x3
+ 375 0032 1D       		.byte	0x1d
+ 376 0033 37000000 		.4byte	0x37
+ 377 0037 02       		.uleb128 0x2
+ 378 0038 01       		.byte	0x1
+ 379 0039 08       		.byte	0x8
+ 380 003a 9E000000 		.4byte	.LASF1
+ 381 003e 02       		.uleb128 0x2
+ 382 003f 02       		.byte	0x2
+ 383 0040 05       		.byte	0x5
+ 384 0041 C7010000 		.4byte	.LASF2
+ 385 0045 02       		.uleb128 0x2
+ 386 0046 02       		.byte	0x2
+ 387 0047 07       		.byte	0x7
+ 388 0048 61010000 		.4byte	.LASF3
+ 389 004c 03       		.uleb128 0x3
+ 390 004d 31000000 		.4byte	.LASF5
+ 391 0051 03       		.byte	0x3
+ 392 0052 3F       		.byte	0x3f
+ 393 0053 57000000 		.4byte	0x57
+ 394 0057 02       		.uleb128 0x2
+ 395 0058 04       		.byte	0x4
+ 396 0059 05       		.byte	0x5
+ 397 005a 9C020000 		.4byte	.LASF6
+ 398 005e 02       		.uleb128 0x2
+ 399 005f 04       		.byte	0x4
+ 400 0060 07       		.byte	0x7
+ 401 0061 4F010000 		.4byte	.LASF7
+ 402 0065 02       		.uleb128 0x2
+ 403 0066 08       		.byte	0x8
+ 404 0067 05       		.byte	0x5
+ 405 0068 00000000 		.4byte	.LASF8
+ 406 006c 02       		.uleb128 0x2
+ 407 006d 08       		.byte	0x8
+ 408 006e 07       		.byte	0x7
+ 409 006f 87000000 		.4byte	.LASF9
+ 410 0073 04       		.uleb128 0x4
+ 411 0074 04       		.byte	0x4
+ 412 0075 05       		.byte	0x5
+ 413 0076 696E7400 		.ascii	"int\000"
+ 414 007a 02       		.uleb128 0x2
+ 415 007b 04       		.byte	0x4
+ 416 007c 07       		.byte	0x7
+ 417 007d F9010000 		.4byte	.LASF10
+ 418 0081 03       		.uleb128 0x3
+ 419 0082 10020000 		.4byte	.LASF11
+ 420 0086 04       		.byte	0x4
+ 421 0087 18       		.byte	0x18
+ 422 0088 2C000000 		.4byte	0x2c
+ 423 008c 03       		.uleb128 0x3
+ 424 008d 3D020000 		.4byte	.LASF12
+ 425 0091 04       		.byte	0x4
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 11
+
+
+ 426 0092 2C       		.byte	0x2c
+ 427 0093 4C000000 		.4byte	0x4c
+ 428 0097 02       		.uleb128 0x2
+ 429 0098 04       		.byte	0x4
+ 430 0099 04       		.byte	0x4
+ 431 009a 77000000 		.4byte	.LASF13
+ 432 009e 02       		.uleb128 0x2
+ 433 009f 08       		.byte	0x8
+ 434 00a0 04       		.byte	0x4
+ 435 00a1 A1010000 		.4byte	.LASF14
+ 436 00a5 02       		.uleb128 0x2
+ 437 00a6 01       		.byte	0x1
+ 438 00a7 08       		.byte	0x8
+ 439 00a8 65020000 		.4byte	.LASF15
+ 440 00ac 02       		.uleb128 0x2
+ 441 00ad 04       		.byte	0x4
+ 442 00ae 07       		.byte	0x7
+ 443 00af 6A020000 		.4byte	.LASF16
+ 444 00b3 02       		.uleb128 0x2
+ 445 00b4 08       		.byte	0x8
+ 446 00b5 04       		.byte	0x4
+ 447 00b6 B3020000 		.4byte	.LASF17
+ 448 00ba 05       		.uleb128 0x5
+ 449 00bb 74010000 		.4byte	.LASF18
+ 450 00bf 01       		.byte	0x1
+ 451 00c0 0A       		.byte	0xa
+ 452 00c1 00000000 		.4byte	.LFB64
+ 453 00c5 50000000 		.4byte	.LFE64-.LFB64
+ 454 00c9 01       		.uleb128 0x1
+ 455 00ca 9C       		.byte	0x9c
+ 456 00cb DD000000 		.4byte	0xdd
+ 457 00cf 06       		.uleb128 0x6
+ 458 00d0 84010000 		.4byte	.LASF20
+ 459 00d4 01       		.byte	0x1
+ 460 00d5 0A       		.byte	0xa
+ 461 00d6 ED000000 		.4byte	0xed
+ 462 00da 01       		.uleb128 0x1
+ 463 00db 50       		.byte	0x50
+ 464 00dc 00       		.byte	0
+ 465 00dd 07       		.uleb128 0x7
+ 466 00de 73000000 		.4byte	0x73
+ 467 00e2 ED000000 		.4byte	0xed
+ 468 00e6 08       		.uleb128 0x8
+ 469 00e7 AC000000 		.4byte	0xac
+ 470 00eb 04       		.byte	0x4
+ 471 00ec 00       		.byte	0
+ 472 00ed 09       		.uleb128 0x9
+ 473 00ee 04       		.byte	0x4
+ 474 00ef DD000000 		.4byte	0xdd
+ 475 00f3 05       		.uleb128 0x5
+ 476 00f4 8E020000 		.4byte	.LASF19
+ 477 00f8 01       		.byte	0x1
+ 478 00f9 2D       		.byte	0x2d
+ 479 00fa 00000000 		.4byte	.LFB65
+ 480 00fe 0A000000 		.4byte	.LFE65-.LFB65
+ 481 0102 01       		.uleb128 0x1
+ 482 0103 9C       		.byte	0x9c
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 12
+
+
+ 483 0104 29010000 		.4byte	0x129
+ 484 0108 0A       		.uleb128 0xa
+ 485 0109 97020000 		.4byte	.LASF21
+ 486 010d 01       		.byte	0x1
+ 487 010e 2D       		.byte	0x2d
+ 488 010f 73000000 		.4byte	0x73
+ 489 0113 00000000 		.4byte	.LLST0
+ 490 0117 0B       		.uleb128 0xb
+ 491 0118 08000000 		.4byte	.LVL3
+ 492 011c E0030000 		.4byte	0x3e0
+ 493 0120 0C       		.uleb128 0xc
+ 494 0121 01       		.uleb128 0x1
+ 495 0122 50       		.byte	0x50
+ 496 0123 03       		.uleb128 0x3
+ 497 0124 F3       		.byte	0xf3
+ 498 0125 01       		.uleb128 0x1
+ 499 0126 50       		.byte	0x50
+ 500 0127 00       		.byte	0
+ 501 0128 00       		.byte	0
+ 502 0129 05       		.uleb128 0x5
+ 503 012a D1010000 		.4byte	.LASF22
+ 504 012e 01       		.byte	0x1
+ 505 012f 34       		.byte	0x34
+ 506 0130 00000000 		.4byte	.LFB66
+ 507 0134 3C000000 		.4byte	.LFE66-.LFB66
+ 508 0138 01       		.uleb128 0x1
+ 509 0139 9C       		.byte	0x9c
+ 510 013a CB010000 		.4byte	0x1cb
+ 511 013e 0A       		.uleb128 0xa
+ 512 013f AD020000 		.4byte	.LASF23
+ 513 0143 01       		.byte	0x1
+ 514 0144 34       		.byte	0x34
+ 515 0145 CB010000 		.4byte	0x1cb
+ 516 0149 21000000 		.4byte	.LLST1
+ 517 014d 0A       		.uleb128 0xa
+ 518 014e A8010000 		.4byte	.LASF24
+ 519 0152 01       		.byte	0x1
+ 520 0153 34       		.byte	0x34
+ 521 0154 73000000 		.4byte	0x73
+ 522 0158 3F000000 		.4byte	.LLST2
+ 523 015c 0A       		.uleb128 0xa
+ 524 015d EB010000 		.4byte	.LASF25
+ 525 0161 01       		.byte	0x1
+ 526 0162 34       		.byte	0x34
+ 527 0163 73000000 		.4byte	0x73
+ 528 0167 5D000000 		.4byte	.LLST3
+ 529 016b 0D       		.uleb128 0xd
+ 530 016c 08000000 		.4byte	.LBB2
+ 531 0170 32000000 		.4byte	.LBE2-.LBB2
+ 532 0174 0E       		.uleb128 0xe
+ 533 0175 6900     		.ascii	"i\000"
+ 534 0177 01       		.byte	0x1
+ 535 0178 37       		.byte	0x37
+ 536 0179 73000000 		.4byte	0x73
+ 537 017d 7B000000 		.4byte	.LLST4
+ 538 0181 0F       		.uleb128 0xf
+ 539 0182 12000000 		.4byte	.LVL7
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 13
+
+
+ 540 0186 F3000000 		.4byte	0xf3
+ 541 018a 10       		.uleb128 0x10
+ 542 018b 18000000 		.4byte	.LVL8
+ 543 018f EB030000 		.4byte	0x3eb
+ 544 0193 9D010000 		.4byte	0x19d
+ 545 0197 0C       		.uleb128 0xc
+ 546 0198 01       		.uleb128 0x1
+ 547 0199 50       		.byte	0x50
+ 548 019a 01       		.uleb128 0x1
+ 549 019b 31       		.byte	0x31
+ 550 019c 00       		.byte	0
+ 551 019d 10       		.uleb128 0x10
+ 552 019e 22000000 		.4byte	.LVL10
+ 553 01a2 F6030000 		.4byte	0x3f6
+ 554 01a6 B1010000 		.4byte	0x1b1
+ 555 01aa 0C       		.uleb128 0xc
+ 556 01ab 01       		.uleb128 0x1
+ 557 01ac 50       		.byte	0x50
+ 558 01ad 02       		.uleb128 0x2
+ 559 01ae 76       		.byte	0x76
+ 560 01af 00       		.sleb128 0
+ 561 01b0 00       		.byte	0
+ 562 01b1 0F       		.uleb128 0xf
+ 563 01b2 26000000 		.4byte	.LVL11
+ 564 01b6 01040000 		.4byte	0x401
+ 565 01ba 0B       		.uleb128 0xb
+ 566 01bb 30000000 		.4byte	.LVL12
+ 567 01bf EB030000 		.4byte	0x3eb
+ 568 01c3 0C       		.uleb128 0xc
+ 569 01c4 01       		.uleb128 0x1
+ 570 01c5 50       		.byte	0x50
+ 571 01c6 01       		.uleb128 0x1
+ 572 01c7 31       		.byte	0x31
+ 573 01c8 00       		.byte	0
+ 574 01c9 00       		.byte	0
+ 575 01ca 00       		.byte	0
+ 576 01cb 09       		.uleb128 0x9
+ 577 01cc 04       		.byte	0x4
+ 578 01cd 81000000 		.4byte	0x81
+ 579 01d1 11       		.uleb128 0x11
+ 580 01d2 2B020000 		.4byte	.LASF47
+ 581 01d6 02       		.byte	0x2
+ 582 01d7 0B       		.byte	0xb
+ 583 01d8 73000000 		.4byte	0x73
+ 584 01dc 00000000 		.4byte	.LFB67
+ 585 01e0 A4000000 		.4byte	.LFE67-.LFB67
+ 586 01e4 01       		.uleb128 0x1
+ 587 01e5 9C       		.byte	0x9c
+ 588 01e6 FD020000 		.4byte	0x2fd
+ 589 01ea 12       		.uleb128 0x12
+ 590 01eb A5020000 		.4byte	.LASF26
+ 591 01ef 02       		.byte	0x2
+ 592 01f0 12       		.byte	0x12
+ 593 01f1 FD020000 		.4byte	0x2fd
+ 594 01f5 12       		.uleb128 0x12
+ 595 01f6 26000000 		.4byte	.LASF27
+ 596 01fa 02       		.byte	0x2
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 14
+
+
+ 597 01fb 13       		.byte	0x13
+ 598 01fc FD020000 		.4byte	0x2fd
+ 599 0200 13       		.uleb128 0x13
+ 600 0201 06020000 		.4byte	.LASF28
+ 601 0205 02       		.byte	0x2
+ 602 0206 15       		.byte	0x15
+ 603 0207 73000000 		.4byte	0x73
+ 604 020b 00       		.byte	0
+ 605 020c 14       		.uleb128 0x14
+ 606 020d 42000000 		.4byte	.LBB3
+ 607 0211 62000000 		.4byte	.LBE3-.LBB3
+ 608 0215 61020000 		.4byte	0x261
+ 609 0219 13       		.uleb128 0x13
+ 610 021a 30020000 		.4byte	.LASF29
+ 611 021e 02       		.byte	0x2
+ 612 021f 30       		.byte	0x30
+ 613 0220 73000000 		.4byte	0x73
+ 614 0224 00       		.byte	0
+ 615 0225 10       		.uleb128 0x10
+ 616 0226 66000000 		.4byte	.LVL25
+ 617 022a 0C040000 		.4byte	0x40c
+ 618 022e 38020000 		.4byte	0x238
+ 619 0232 0C       		.uleb128 0xc
+ 620 0233 01       		.uleb128 0x1
+ 621 0234 50       		.byte	0x50
+ 622 0235 01       		.uleb128 0x1
+ 623 0236 31       		.byte	0x31
+ 624 0237 00       		.byte	0
+ 625 0238 10       		.uleb128 0x10
+ 626 0239 6C000000 		.4byte	.LVL26
+ 627 023d 17040000 		.4byte	0x417
+ 628 0241 4F020000 		.4byte	0x24f
+ 629 0245 0C       		.uleb128 0xc
+ 630 0246 01       		.uleb128 0x1
+ 631 0247 50       		.byte	0x50
+ 632 0248 05       		.uleb128 0x5
+ 633 0249 03       		.byte	0x3
+ 634 024a 00000000 		.4byte	.LC0
+ 635 024e 00       		.byte	0
+ 636 024f 0B       		.uleb128 0xb
+ 637 0250 74000000 		.4byte	.LVL27
+ 638 0254 22040000 		.4byte	0x422
+ 639 0258 0C       		.uleb128 0xc
+ 640 0259 01       		.uleb128 0x1
+ 641 025a 50       		.byte	0x50
+ 642 025b 03       		.uleb128 0x3
+ 643 025c 0A       		.byte	0xa
+ 644 025d D007     		.2byte	0x7d0
+ 645 025f 00       		.byte	0
+ 646 0260 00       		.byte	0
+ 647 0261 0F       		.uleb128 0xf
+ 648 0262 08000000 		.4byte	.LVL15
+ 649 0266 2D040000 		.4byte	0x42d
+ 650 026a 10       		.uleb128 0x10
+ 651 026b 0E000000 		.4byte	.LVL16
+ 652 026f 0C040000 		.4byte	0x40c
+ 653 0273 7D020000 		.4byte	0x27d
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 15
+
+
+ 654 0277 0C       		.uleb128 0xc
+ 655 0278 01       		.uleb128 0x1
+ 656 0279 50       		.byte	0x50
+ 657 027a 01       		.uleb128 0x1
+ 658 027b 31       		.byte	0x31
+ 659 027c 00       		.byte	0
+ 660 027d 10       		.uleb128 0x10
+ 661 027e 1E000000 		.4byte	.LVL17
+ 662 0282 22040000 		.4byte	0x422
+ 663 0286 91020000 		.4byte	0x291
+ 664 028a 0C       		.uleb128 0xc
+ 665 028b 01       		.uleb128 0x1
+ 666 028c 50       		.byte	0x50
+ 667 028d 02       		.uleb128 0x2
+ 668 028e 08       		.byte	0x8
+ 669 028f 64       		.byte	0x64
+ 670 0290 00       		.byte	0
+ 671 0291 10       		.uleb128 0x10
+ 672 0292 24000000 		.4byte	.LVL18
+ 673 0296 38040000 		.4byte	0x438
+ 674 029a A4020000 		.4byte	0x2a4
+ 675 029e 0C       		.uleb128 0xc
+ 676 029f 01       		.uleb128 0x1
+ 677 02a0 50       		.byte	0x50
+ 678 02a1 01       		.uleb128 0x1
+ 679 02a2 31       		.byte	0x31
+ 680 02a3 00       		.byte	0
+ 681 02a4 10       		.uleb128 0x10
+ 682 02a5 2A000000 		.4byte	.LVL19
+ 683 02a9 22040000 		.4byte	0x422
+ 684 02ad B8020000 		.4byte	0x2b8
+ 685 02b1 0C       		.uleb128 0xc
+ 686 02b2 01       		.uleb128 0x1
+ 687 02b3 50       		.byte	0x50
+ 688 02b4 02       		.uleb128 0x2
+ 689 02b5 08       		.byte	0x8
+ 690 02b6 64       		.byte	0x64
+ 691 02b7 00       		.byte	0
+ 692 02b8 10       		.uleb128 0x10
+ 693 02b9 30000000 		.4byte	.LVL20
+ 694 02bd 38040000 		.4byte	0x438
+ 695 02c1 CC020000 		.4byte	0x2cc
+ 696 02c5 0C       		.uleb128 0xc
+ 697 02c6 01       		.uleb128 0x1
+ 698 02c7 50       		.byte	0x50
+ 699 02c8 02       		.uleb128 0x2
+ 700 02c9 74       		.byte	0x74
+ 701 02ca 00       		.sleb128 0
+ 702 02cb 00       		.byte	0
+ 703 02cc 10       		.uleb128 0x10
+ 704 02cd 36000000 		.4byte	.LVL21
+ 705 02d1 22040000 		.4byte	0x422
+ 706 02d5 E0020000 		.4byte	0x2e0
+ 707 02d9 0C       		.uleb128 0xc
+ 708 02da 01       		.uleb128 0x1
+ 709 02db 50       		.byte	0x50
+ 710 02dc 02       		.uleb128 0x2
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 16
+
+
+ 711 02dd 08       		.byte	0x8
+ 712 02de 64       		.byte	0x64
+ 713 02df 00       		.byte	0
+ 714 02e0 0F       		.uleb128 0xf
+ 715 02e1 3C000000 		.4byte	.LVL22
+ 716 02e5 F6030000 		.4byte	0x3f6
+ 717 02e9 0B       		.uleb128 0xb
+ 718 02ea 42000000 		.4byte	.LVL23
+ 719 02ee BA000000 		.4byte	0xba
+ 720 02f2 0C       		.uleb128 0xc
+ 721 02f3 01       		.uleb128 0x1
+ 722 02f4 50       		.byte	0x50
+ 723 02f5 05       		.uleb128 0x5
+ 724 02f6 03       		.byte	0x3
+ 725 02f7 78000000 		.4byte	rect_full+120
+ 726 02fb 00       		.byte	0
+ 727 02fc 00       		.byte	0
+ 728 02fd 07       		.uleb128 0x7
+ 729 02fe A5000000 		.4byte	0xa5
+ 730 0302 0D030000 		.4byte	0x30d
+ 731 0306 08       		.uleb128 0x8
+ 732 0307 AC000000 		.4byte	0xac
+ 733 030b 00       		.byte	0
+ 734 030c 00       		.byte	0
+ 735 030d 15       		.uleb128 0x15
+ 736 030e 8A010000 		.4byte	.LASF30
+ 737 0312 05       		.byte	0x5
+ 738 0313 1207     		.2byte	0x712
+ 739 0315 19030000 		.4byte	0x319
+ 740 0319 16       		.uleb128 0x16
+ 741 031a 8C000000 		.4byte	0x8c
+ 742 031e 17       		.uleb128 0x17
+ 743 031f A8010000 		.4byte	.LASF24
+ 744 0323 02       		.byte	0x2
+ 745 0324 05       		.byte	0x5
+ 746 0325 73000000 		.4byte	0x73
+ 747 0329 05       		.uleb128 0x5
+ 748 032a 03       		.byte	0x3
+ 749 032b 00000000 		.4byte	psoc_fpga_xfc
+ 750 032f 17       		.uleb128 0x17
+ 751 0330 EB010000 		.4byte	.LASF25
+ 752 0334 02       		.byte	0x2
+ 753 0335 06       		.byte	0x6
+ 754 0336 73000000 		.4byte	0x73
+ 755 033a 05       		.uleb128 0x5
+ 756 033b 03       		.byte	0x3
+ 757 033c 00000000 		.4byte	fpga_psoc_xfc
+ 758 0340 07       		.uleb128 0x7
+ 759 0341 56030000 		.4byte	0x356
+ 760 0345 56030000 		.4byte	0x356
+ 761 0349 08       		.uleb128 0x8
+ 762 034a AC000000 		.4byte	0xac
+ 763 034e 04       		.byte	0x4
+ 764 034f 08       		.uleb128 0x8
+ 765 0350 AC000000 		.4byte	0xac
+ 766 0354 04       		.byte	0x4
+ 767 0355 00       		.byte	0
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 17
+
+
+ 768 0356 09       		.uleb128 0x9
+ 769 0357 04       		.byte	0x4
+ 770 0358 73000000 		.4byte	0x73
+ 771 035c 17       		.uleb128 0x17
+ 772 035d 97010000 		.4byte	.LASF31
+ 773 0361 02       		.byte	0x2
+ 774 0362 08       		.byte	0x8
+ 775 0363 40030000 		.4byte	0x340
+ 776 0367 05       		.uleb128 0x5
+ 777 0368 03       		.byte	0x3
+ 778 0369 00000000 		.4byte	rect_full
+ 779 036d 18       		.uleb128 0x18
+ 780 036e 783100   		.ascii	"x1\000"
+ 781 0371 02       		.byte	0x2
+ 782 0372 09       		.byte	0x9
+ 783 0373 73000000 		.4byte	0x73
+ 784 0377 05       		.uleb128 0x5
+ 785 0378 03       		.byte	0x3
+ 786 0379 00000000 		.4byte	x1
+ 787 037d 18       		.uleb128 0x18
+ 788 037e 793100   		.ascii	"y1\000"
+ 789 0381 02       		.byte	0x2
+ 790 0382 09       		.byte	0x9
+ 791 0383 73000000 		.4byte	0x73
+ 792 0387 05       		.uleb128 0x5
+ 793 0388 03       		.byte	0x3
+ 794 0389 00000000 		.4byte	y1
+ 795 038d 18       		.uleb128 0x18
+ 796 038e 783200   		.ascii	"x2\000"
+ 797 0391 02       		.byte	0x2
+ 798 0392 09       		.byte	0x9
+ 799 0393 73000000 		.4byte	0x73
+ 800 0397 05       		.uleb128 0x5
+ 801 0398 03       		.byte	0x3
+ 802 0399 00000000 		.4byte	x2
+ 803 039d 18       		.uleb128 0x18
+ 804 039e 793200   		.ascii	"y2\000"
+ 805 03a1 02       		.byte	0x2
+ 806 03a2 09       		.byte	0x9
+ 807 03a3 73000000 		.4byte	0x73
+ 808 03a7 05       		.uleb128 0x5
+ 809 03a8 03       		.byte	0x3
+ 810 03a9 00000000 		.4byte	y2
+ 811 03ad 17       		.uleb128 0x17
+ 812 03ae 53020000 		.4byte	.LASF32
+ 813 03b2 02       		.byte	0x2
+ 814 03b3 09       		.byte	0x9
+ 815 03b4 73000000 		.4byte	0x73
+ 816 03b8 05       		.uleb128 0x5
+ 817 03b9 03       		.byte	0x3
+ 818 03ba 00000000 		.4byte	fill_color
+ 819 03be 17       		.uleb128 0x17
+ 820 03bf 45020000 		.4byte	.LASF33
+ 821 03c3 02       		.byte	0x2
+ 822 03c4 09       		.byte	0x9
+ 823 03c5 73000000 		.4byte	0x73
+ 824 03c9 05       		.uleb128 0x5
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 18
+
+
+ 825 03ca 03       		.byte	0x3
+ 826 03cb 00000000 		.4byte	test_pat_mode
+ 827 03cf 17       		.uleb128 0x17
+ 828 03d0 84020000 		.4byte	.LASF34
+ 829 03d4 02       		.byte	0x2
+ 830 03d5 09       		.byte	0x9
+ 831 03d6 73000000 		.4byte	0x73
+ 832 03da 05       		.uleb128 0x5
+ 833 03db 03       		.byte	0x3
+ 834 03dc 00000000 		.4byte	engine_id
+ 835 03e0 19       		.uleb128 0x19
+ 836 03e1 68000000 		.4byte	.LASF35
+ 837 03e5 68000000 		.4byte	.LASF35
+ 838 03e9 06       		.byte	0x6
+ 839 03ea 2F       		.byte	0x2f
+ 840 03eb 19       		.uleb128 0x19
+ 841 03ec 0E000000 		.4byte	.LASF36
+ 842 03f0 0E000000 		.4byte	.LASF36
+ 843 03f4 07       		.byte	0x7
+ 844 03f5 79       		.byte	0x79
+ 845 03f6 19       		.uleb128 0x19
+ 846 03f7 18020000 		.4byte	.LASF37
+ 847 03fb 18020000 		.4byte	.LASF37
+ 848 03ff 08       		.byte	0x8
+ 849 0400 26       		.byte	0x26
+ 850 0401 19       		.uleb128 0x19
+ 851 0402 B6010000 		.4byte	.LASF38
+ 852 0406 B6010000 		.4byte	.LASF38
+ 853 040a 09       		.byte	0x9
+ 854 040b 29       		.byte	0x29
+ 855 040c 19       		.uleb128 0x19
+ 856 040d 73020000 		.4byte	.LASF39
+ 857 0411 73020000 		.4byte	.LASF39
+ 858 0415 0A       		.byte	0xa
+ 859 0416 3A       		.byte	0x3a
+ 860 0417 19       		.uleb128 0x19
+ 861 0418 DB010000 		.4byte	.LASF40
+ 862 041c DB010000 		.4byte	.LASF40
+ 863 0420 0A       		.byte	0xa
+ 864 0421 3C       		.byte	0x3c
+ 865 0422 19       		.uleb128 0x19
+ 866 0423 CB020000 		.4byte	.LASF41
+ 867 0427 CB020000 		.4byte	.LASF41
+ 868 042b 07       		.byte	0x7
+ 869 042c 76       		.byte	0x76
+ 870 042d 19       		.uleb128 0x19
+ 871 042e 7D000000 		.4byte	.LASF42
+ 872 0432 7D000000 		.4byte	.LASF42
+ 873 0436 0A       		.byte	0xa
+ 874 0437 38       		.byte	0x38
+ 875 0438 19       		.uleb128 0x19
+ 876 0439 3A010000 		.4byte	.LASF43
+ 877 043d 3A010000 		.4byte	.LASF43
+ 878 0441 0B       		.byte	0xb
+ 879 0442 26       		.byte	0x26
+ 880 0443 00       		.byte	0
+ 881              		.section	.debug_abbrev,"",%progbits
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 19
+
+
+ 882              	.Ldebug_abbrev0:
+ 883 0000 01       		.uleb128 0x1
+ 884 0001 11       		.uleb128 0x11
+ 885 0002 01       		.byte	0x1
+ 886 0003 25       		.uleb128 0x25
+ 887 0004 0E       		.uleb128 0xe
+ 888 0005 13       		.uleb128 0x13
+ 889 0006 0B       		.uleb128 0xb
+ 890 0007 03       		.uleb128 0x3
+ 891 0008 0E       		.uleb128 0xe
+ 892 0009 1B       		.uleb128 0x1b
+ 893 000a 0E       		.uleb128 0xe
+ 894 000b 55       		.uleb128 0x55
+ 895 000c 17       		.uleb128 0x17
+ 896 000d 11       		.uleb128 0x11
+ 897 000e 01       		.uleb128 0x1
+ 898 000f 10       		.uleb128 0x10
+ 899 0010 17       		.uleb128 0x17
+ 900 0011 00       		.byte	0
+ 901 0012 00       		.byte	0
+ 902 0013 02       		.uleb128 0x2
+ 903 0014 24       		.uleb128 0x24
+ 904 0015 00       		.byte	0
+ 905 0016 0B       		.uleb128 0xb
+ 906 0017 0B       		.uleb128 0xb
+ 907 0018 3E       		.uleb128 0x3e
+ 908 0019 0B       		.uleb128 0xb
+ 909 001a 03       		.uleb128 0x3
+ 910 001b 0E       		.uleb128 0xe
+ 911 001c 00       		.byte	0
+ 912 001d 00       		.byte	0
+ 913 001e 03       		.uleb128 0x3
+ 914 001f 16       		.uleb128 0x16
+ 915 0020 00       		.byte	0
+ 916 0021 03       		.uleb128 0x3
+ 917 0022 0E       		.uleb128 0xe
+ 918 0023 3A       		.uleb128 0x3a
+ 919 0024 0B       		.uleb128 0xb
+ 920 0025 3B       		.uleb128 0x3b
+ 921 0026 0B       		.uleb128 0xb
+ 922 0027 49       		.uleb128 0x49
+ 923 0028 13       		.uleb128 0x13
+ 924 0029 00       		.byte	0
+ 925 002a 00       		.byte	0
+ 926 002b 04       		.uleb128 0x4
+ 927 002c 24       		.uleb128 0x24
+ 928 002d 00       		.byte	0
+ 929 002e 0B       		.uleb128 0xb
+ 930 002f 0B       		.uleb128 0xb
+ 931 0030 3E       		.uleb128 0x3e
+ 932 0031 0B       		.uleb128 0xb
+ 933 0032 03       		.uleb128 0x3
+ 934 0033 08       		.uleb128 0x8
+ 935 0034 00       		.byte	0
+ 936 0035 00       		.byte	0
+ 937 0036 05       		.uleb128 0x5
+ 938 0037 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 20
+
+
+ 939 0038 01       		.byte	0x1
+ 940 0039 3F       		.uleb128 0x3f
+ 941 003a 19       		.uleb128 0x19
+ 942 003b 03       		.uleb128 0x3
+ 943 003c 0E       		.uleb128 0xe
+ 944 003d 3A       		.uleb128 0x3a
+ 945 003e 0B       		.uleb128 0xb
+ 946 003f 3B       		.uleb128 0x3b
+ 947 0040 0B       		.uleb128 0xb
+ 948 0041 27       		.uleb128 0x27
+ 949 0042 19       		.uleb128 0x19
+ 950 0043 11       		.uleb128 0x11
+ 951 0044 01       		.uleb128 0x1
+ 952 0045 12       		.uleb128 0x12
+ 953 0046 06       		.uleb128 0x6
+ 954 0047 40       		.uleb128 0x40
+ 955 0048 18       		.uleb128 0x18
+ 956 0049 9742     		.uleb128 0x2117
+ 957 004b 19       		.uleb128 0x19
+ 958 004c 01       		.uleb128 0x1
+ 959 004d 13       		.uleb128 0x13
+ 960 004e 00       		.byte	0
+ 961 004f 00       		.byte	0
+ 962 0050 06       		.uleb128 0x6
+ 963 0051 05       		.uleb128 0x5
+ 964 0052 00       		.byte	0
+ 965 0053 03       		.uleb128 0x3
+ 966 0054 0E       		.uleb128 0xe
+ 967 0055 3A       		.uleb128 0x3a
+ 968 0056 0B       		.uleb128 0xb
+ 969 0057 3B       		.uleb128 0x3b
+ 970 0058 0B       		.uleb128 0xb
+ 971 0059 49       		.uleb128 0x49
+ 972 005a 13       		.uleb128 0x13
+ 973 005b 02       		.uleb128 0x2
+ 974 005c 18       		.uleb128 0x18
+ 975 005d 00       		.byte	0
+ 976 005e 00       		.byte	0
+ 977 005f 07       		.uleb128 0x7
+ 978 0060 01       		.uleb128 0x1
+ 979 0061 01       		.byte	0x1
+ 980 0062 49       		.uleb128 0x49
+ 981 0063 13       		.uleb128 0x13
+ 982 0064 01       		.uleb128 0x1
+ 983 0065 13       		.uleb128 0x13
+ 984 0066 00       		.byte	0
+ 985 0067 00       		.byte	0
+ 986 0068 08       		.uleb128 0x8
+ 987 0069 21       		.uleb128 0x21
+ 988 006a 00       		.byte	0
+ 989 006b 49       		.uleb128 0x49
+ 990 006c 13       		.uleb128 0x13
+ 991 006d 2F       		.uleb128 0x2f
+ 992 006e 0B       		.uleb128 0xb
+ 993 006f 00       		.byte	0
+ 994 0070 00       		.byte	0
+ 995 0071 09       		.uleb128 0x9
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 21
+
+
+ 996 0072 0F       		.uleb128 0xf
+ 997 0073 00       		.byte	0
+ 998 0074 0B       		.uleb128 0xb
+ 999 0075 0B       		.uleb128 0xb
+ 1000 0076 49       		.uleb128 0x49
+ 1001 0077 13       		.uleb128 0x13
+ 1002 0078 00       		.byte	0
+ 1003 0079 00       		.byte	0
+ 1004 007a 0A       		.uleb128 0xa
+ 1005 007b 05       		.uleb128 0x5
+ 1006 007c 00       		.byte	0
+ 1007 007d 03       		.uleb128 0x3
+ 1008 007e 0E       		.uleb128 0xe
+ 1009 007f 3A       		.uleb128 0x3a
+ 1010 0080 0B       		.uleb128 0xb
+ 1011 0081 3B       		.uleb128 0x3b
+ 1012 0082 0B       		.uleb128 0xb
+ 1013 0083 49       		.uleb128 0x49
+ 1014 0084 13       		.uleb128 0x13
+ 1015 0085 02       		.uleb128 0x2
+ 1016 0086 17       		.uleb128 0x17
+ 1017 0087 00       		.byte	0
+ 1018 0088 00       		.byte	0
+ 1019 0089 0B       		.uleb128 0xb
+ 1020 008a 898201   		.uleb128 0x4109
+ 1021 008d 01       		.byte	0x1
+ 1022 008e 11       		.uleb128 0x11
+ 1023 008f 01       		.uleb128 0x1
+ 1024 0090 31       		.uleb128 0x31
+ 1025 0091 13       		.uleb128 0x13
+ 1026 0092 00       		.byte	0
+ 1027 0093 00       		.byte	0
+ 1028 0094 0C       		.uleb128 0xc
+ 1029 0095 8A8201   		.uleb128 0x410a
+ 1030 0098 00       		.byte	0
+ 1031 0099 02       		.uleb128 0x2
+ 1032 009a 18       		.uleb128 0x18
+ 1033 009b 9142     		.uleb128 0x2111
+ 1034 009d 18       		.uleb128 0x18
+ 1035 009e 00       		.byte	0
+ 1036 009f 00       		.byte	0
+ 1037 00a0 0D       		.uleb128 0xd
+ 1038 00a1 0B       		.uleb128 0xb
+ 1039 00a2 01       		.byte	0x1
+ 1040 00a3 11       		.uleb128 0x11
+ 1041 00a4 01       		.uleb128 0x1
+ 1042 00a5 12       		.uleb128 0x12
+ 1043 00a6 06       		.uleb128 0x6
+ 1044 00a7 00       		.byte	0
+ 1045 00a8 00       		.byte	0
+ 1046 00a9 0E       		.uleb128 0xe
+ 1047 00aa 34       		.uleb128 0x34
+ 1048 00ab 00       		.byte	0
+ 1049 00ac 03       		.uleb128 0x3
+ 1050 00ad 08       		.uleb128 0x8
+ 1051 00ae 3A       		.uleb128 0x3a
+ 1052 00af 0B       		.uleb128 0xb
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 22
+
+
+ 1053 00b0 3B       		.uleb128 0x3b
+ 1054 00b1 0B       		.uleb128 0xb
+ 1055 00b2 49       		.uleb128 0x49
+ 1056 00b3 13       		.uleb128 0x13
+ 1057 00b4 02       		.uleb128 0x2
+ 1058 00b5 17       		.uleb128 0x17
+ 1059 00b6 00       		.byte	0
+ 1060 00b7 00       		.byte	0
+ 1061 00b8 0F       		.uleb128 0xf
+ 1062 00b9 898201   		.uleb128 0x4109
+ 1063 00bc 00       		.byte	0
+ 1064 00bd 11       		.uleb128 0x11
+ 1065 00be 01       		.uleb128 0x1
+ 1066 00bf 31       		.uleb128 0x31
+ 1067 00c0 13       		.uleb128 0x13
+ 1068 00c1 00       		.byte	0
+ 1069 00c2 00       		.byte	0
+ 1070 00c3 10       		.uleb128 0x10
+ 1071 00c4 898201   		.uleb128 0x4109
+ 1072 00c7 01       		.byte	0x1
+ 1073 00c8 11       		.uleb128 0x11
+ 1074 00c9 01       		.uleb128 0x1
+ 1075 00ca 31       		.uleb128 0x31
+ 1076 00cb 13       		.uleb128 0x13
+ 1077 00cc 01       		.uleb128 0x1
+ 1078 00cd 13       		.uleb128 0x13
+ 1079 00ce 00       		.byte	0
+ 1080 00cf 00       		.byte	0
+ 1081 00d0 11       		.uleb128 0x11
+ 1082 00d1 2E       		.uleb128 0x2e
+ 1083 00d2 01       		.byte	0x1
+ 1084 00d3 3F       		.uleb128 0x3f
+ 1085 00d4 19       		.uleb128 0x19
+ 1086 00d5 03       		.uleb128 0x3
+ 1087 00d6 0E       		.uleb128 0xe
+ 1088 00d7 3A       		.uleb128 0x3a
+ 1089 00d8 0B       		.uleb128 0xb
+ 1090 00d9 3B       		.uleb128 0x3b
+ 1091 00da 0B       		.uleb128 0xb
+ 1092 00db 27       		.uleb128 0x27
+ 1093 00dc 19       		.uleb128 0x19
+ 1094 00dd 49       		.uleb128 0x49
+ 1095 00de 13       		.uleb128 0x13
+ 1096 00df 8701     		.uleb128 0x87
+ 1097 00e1 19       		.uleb128 0x19
+ 1098 00e2 11       		.uleb128 0x11
+ 1099 00e3 01       		.uleb128 0x1
+ 1100 00e4 12       		.uleb128 0x12
+ 1101 00e5 06       		.uleb128 0x6
+ 1102 00e6 40       		.uleb128 0x40
+ 1103 00e7 18       		.uleb128 0x18
+ 1104 00e8 9742     		.uleb128 0x2117
+ 1105 00ea 19       		.uleb128 0x19
+ 1106 00eb 01       		.uleb128 0x1
+ 1107 00ec 13       		.uleb128 0x13
+ 1108 00ed 00       		.byte	0
+ 1109 00ee 00       		.byte	0
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 23
+
+
+ 1110 00ef 12       		.uleb128 0x12
+ 1111 00f0 34       		.uleb128 0x34
+ 1112 00f1 00       		.byte	0
+ 1113 00f2 03       		.uleb128 0x3
+ 1114 00f3 0E       		.uleb128 0xe
+ 1115 00f4 3A       		.uleb128 0x3a
+ 1116 00f5 0B       		.uleb128 0xb
+ 1117 00f6 3B       		.uleb128 0x3b
+ 1118 00f7 0B       		.uleb128 0xb
+ 1119 00f8 49       		.uleb128 0x49
+ 1120 00f9 13       		.uleb128 0x13
+ 1121 00fa 00       		.byte	0
+ 1122 00fb 00       		.byte	0
+ 1123 00fc 13       		.uleb128 0x13
+ 1124 00fd 34       		.uleb128 0x34
+ 1125 00fe 00       		.byte	0
+ 1126 00ff 03       		.uleb128 0x3
+ 1127 0100 0E       		.uleb128 0xe
+ 1128 0101 3A       		.uleb128 0x3a
+ 1129 0102 0B       		.uleb128 0xb
+ 1130 0103 3B       		.uleb128 0x3b
+ 1131 0104 0B       		.uleb128 0xb
+ 1132 0105 49       		.uleb128 0x49
+ 1133 0106 13       		.uleb128 0x13
+ 1134 0107 1C       		.uleb128 0x1c
+ 1135 0108 0B       		.uleb128 0xb
+ 1136 0109 00       		.byte	0
+ 1137 010a 00       		.byte	0
+ 1138 010b 14       		.uleb128 0x14
+ 1139 010c 0B       		.uleb128 0xb
+ 1140 010d 01       		.byte	0x1
+ 1141 010e 11       		.uleb128 0x11
+ 1142 010f 01       		.uleb128 0x1
+ 1143 0110 12       		.uleb128 0x12
+ 1144 0111 06       		.uleb128 0x6
+ 1145 0112 01       		.uleb128 0x1
+ 1146 0113 13       		.uleb128 0x13
+ 1147 0114 00       		.byte	0
+ 1148 0115 00       		.byte	0
+ 1149 0116 15       		.uleb128 0x15
+ 1150 0117 34       		.uleb128 0x34
+ 1151 0118 00       		.byte	0
+ 1152 0119 03       		.uleb128 0x3
+ 1153 011a 0E       		.uleb128 0xe
+ 1154 011b 3A       		.uleb128 0x3a
+ 1155 011c 0B       		.uleb128 0xb
+ 1156 011d 3B       		.uleb128 0x3b
+ 1157 011e 05       		.uleb128 0x5
+ 1158 011f 49       		.uleb128 0x49
+ 1159 0120 13       		.uleb128 0x13
+ 1160 0121 3F       		.uleb128 0x3f
+ 1161 0122 19       		.uleb128 0x19
+ 1162 0123 3C       		.uleb128 0x3c
+ 1163 0124 19       		.uleb128 0x19
+ 1164 0125 00       		.byte	0
+ 1165 0126 00       		.byte	0
+ 1166 0127 16       		.uleb128 0x16
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 24
+
+
+ 1167 0128 35       		.uleb128 0x35
+ 1168 0129 00       		.byte	0
+ 1169 012a 49       		.uleb128 0x49
+ 1170 012b 13       		.uleb128 0x13
+ 1171 012c 00       		.byte	0
+ 1172 012d 00       		.byte	0
+ 1173 012e 17       		.uleb128 0x17
+ 1174 012f 34       		.uleb128 0x34
+ 1175 0130 00       		.byte	0
+ 1176 0131 03       		.uleb128 0x3
+ 1177 0132 0E       		.uleb128 0xe
+ 1178 0133 3A       		.uleb128 0x3a
+ 1179 0134 0B       		.uleb128 0xb
+ 1180 0135 3B       		.uleb128 0x3b
+ 1181 0136 0B       		.uleb128 0xb
+ 1182 0137 49       		.uleb128 0x49
+ 1183 0138 13       		.uleb128 0x13
+ 1184 0139 3F       		.uleb128 0x3f
+ 1185 013a 19       		.uleb128 0x19
+ 1186 013b 02       		.uleb128 0x2
+ 1187 013c 18       		.uleb128 0x18
+ 1188 013d 00       		.byte	0
+ 1189 013e 00       		.byte	0
+ 1190 013f 18       		.uleb128 0x18
+ 1191 0140 34       		.uleb128 0x34
+ 1192 0141 00       		.byte	0
+ 1193 0142 03       		.uleb128 0x3
+ 1194 0143 08       		.uleb128 0x8
+ 1195 0144 3A       		.uleb128 0x3a
+ 1196 0145 0B       		.uleb128 0xb
+ 1197 0146 3B       		.uleb128 0x3b
+ 1198 0147 0B       		.uleb128 0xb
+ 1199 0148 49       		.uleb128 0x49
+ 1200 0149 13       		.uleb128 0x13
+ 1201 014a 3F       		.uleb128 0x3f
+ 1202 014b 19       		.uleb128 0x19
+ 1203 014c 02       		.uleb128 0x2
+ 1204 014d 18       		.uleb128 0x18
+ 1205 014e 00       		.byte	0
+ 1206 014f 00       		.byte	0
+ 1207 0150 19       		.uleb128 0x19
+ 1208 0151 2E       		.uleb128 0x2e
+ 1209 0152 00       		.byte	0
+ 1210 0153 3F       		.uleb128 0x3f
+ 1211 0154 19       		.uleb128 0x19
+ 1212 0155 3C       		.uleb128 0x3c
+ 1213 0156 19       		.uleb128 0x19
+ 1214 0157 6E       		.uleb128 0x6e
+ 1215 0158 0E       		.uleb128 0xe
+ 1216 0159 03       		.uleb128 0x3
+ 1217 015a 0E       		.uleb128 0xe
+ 1218 015b 3A       		.uleb128 0x3a
+ 1219 015c 0B       		.uleb128 0xb
+ 1220 015d 3B       		.uleb128 0x3b
+ 1221 015e 0B       		.uleb128 0xb
+ 1222 015f 00       		.byte	0
+ 1223 0160 00       		.byte	0
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 25
+
+
+ 1224 0161 00       		.byte	0
+ 1225              		.section	.debug_loc,"",%progbits
+ 1226              	.Ldebug_loc0:
+ 1227              	.LLST0:
+ 1228 0000 00000000 		.4byte	.LVL1
+ 1229 0004 04000000 		.4byte	.LVL2
+ 1230 0008 0100     		.2byte	0x1
+ 1231 000a 50       		.byte	0x50
+ 1232 000b 04000000 		.4byte	.LVL2
+ 1233 000f 0A000000 		.4byte	.LFE65
+ 1234 0013 0400     		.2byte	0x4
+ 1235 0015 F3       		.byte	0xf3
+ 1236 0016 01       		.uleb128 0x1
+ 1237 0017 50       		.byte	0x50
+ 1238 0018 9F       		.byte	0x9f
+ 1239 0019 00000000 		.4byte	0
+ 1240 001d 00000000 		.4byte	0
+ 1241              	.LLST1:
+ 1242 0021 00000000 		.4byte	.LVL4
+ 1243 0025 0C000000 		.4byte	.LVL6
+ 1244 0029 0100     		.2byte	0x1
+ 1245 002b 50       		.byte	0x50
+ 1246 002c 0C000000 		.4byte	.LVL6
+ 1247 0030 3C000000 		.4byte	.LFE66
+ 1248 0034 0100     		.2byte	0x1
+ 1249 0036 57       		.byte	0x57
+ 1250 0037 00000000 		.4byte	0
+ 1251 003b 00000000 		.4byte	0
+ 1252              	.LLST2:
+ 1253 003f 00000000 		.4byte	.LVL4
+ 1254 0043 0C000000 		.4byte	.LVL6
+ 1255 0047 0100     		.2byte	0x1
+ 1256 0049 51       		.byte	0x51
+ 1257 004a 0C000000 		.4byte	.LVL6
+ 1258 004e 3C000000 		.4byte	.LFE66
+ 1259 0052 0100     		.2byte	0x1
+ 1260 0054 56       		.byte	0x56
+ 1261 0055 00000000 		.4byte	0
+ 1262 0059 00000000 		.4byte	0
+ 1263              	.LLST3:
+ 1264 005d 00000000 		.4byte	.LVL4
+ 1265 0061 0C000000 		.4byte	.LVL6
+ 1266 0065 0100     		.2byte	0x1
+ 1267 0067 52       		.byte	0x52
+ 1268 0068 0C000000 		.4byte	.LVL6
+ 1269 006c 3C000000 		.4byte	.LFE66
+ 1270 0070 0100     		.2byte	0x1
+ 1271 0072 54       		.byte	0x54
+ 1272 0073 00000000 		.4byte	0
+ 1273 0077 00000000 		.4byte	0
+ 1274              	.LLST4:
+ 1275 007b 08000000 		.4byte	.LVL5
+ 1276 007f 0C000000 		.4byte	.LVL6
+ 1277 0083 0200     		.2byte	0x2
+ 1278 0085 30       		.byte	0x30
+ 1279 0086 9F       		.byte	0x9f
+ 1280 0087 0C000000 		.4byte	.LVL6
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 26
+
+
+ 1281 008b 3C000000 		.4byte	.LFE66
+ 1282 008f 0100     		.2byte	0x1
+ 1283 0091 55       		.byte	0x55
+ 1284 0092 00000000 		.4byte	0
+ 1285 0096 00000000 		.4byte	0
+ 1286              		.section	.debug_aranges,"",%progbits
+ 1287 0000 34000000 		.4byte	0x34
+ 1288 0004 0200     		.2byte	0x2
+ 1289 0006 00000000 		.4byte	.Ldebug_info0
+ 1290 000a 04       		.byte	0x4
+ 1291 000b 00       		.byte	0
+ 1292 000c 0000     		.2byte	0
+ 1293 000e 0000     		.2byte	0
+ 1294 0010 00000000 		.4byte	.LFB64
+ 1295 0014 50000000 		.4byte	.LFE64-.LFB64
+ 1296 0018 00000000 		.4byte	.LFB65
+ 1297 001c 0A000000 		.4byte	.LFE65-.LFB65
+ 1298 0020 00000000 		.4byte	.LFB66
+ 1299 0024 3C000000 		.4byte	.LFE66-.LFB66
+ 1300 0028 00000000 		.4byte	.LFB67
+ 1301 002c A4000000 		.4byte	.LFE67-.LFB67
+ 1302 0030 00000000 		.4byte	0
+ 1303 0034 00000000 		.4byte	0
+ 1304              		.section	.debug_ranges,"",%progbits
+ 1305              	.Ldebug_ranges0:
+ 1306 0000 00000000 		.4byte	.LFB64
+ 1307 0004 50000000 		.4byte	.LFE64
+ 1308 0008 00000000 		.4byte	.LFB65
+ 1309 000c 0A000000 		.4byte	.LFE65
+ 1310 0010 00000000 		.4byte	.LFB66
+ 1311 0014 3C000000 		.4byte	.LFE66
+ 1312 0018 00000000 		.4byte	.LFB67
+ 1313 001c A4000000 		.4byte	.LFE67
+ 1314 0020 00000000 		.4byte	0
+ 1315 0024 00000000 		.4byte	0
+ 1316              		.section	.debug_line,"",%progbits
+ 1317              	.Ldebug_line0:
+ 1318 0000 72020000 		.section	.debug_str,"MS",%progbits,1
+ 1318      0200AE01 
+ 1318      00000201 
+ 1318      FB0E0D00 
+ 1318      01010101 
+ 1319              	.LASF8:
+ 1320 0000 6C6F6E67 		.ascii	"long long int\000"
+ 1320      206C6F6E 
+ 1320      6720696E 
+ 1320      7400
+ 1321              	.LASF36:
+ 1322 000e 43794465 		.ascii	"CyDelayCycles\000"
+ 1322      6C617943 
+ 1322      79636C65 
+ 1322      7300
+ 1323              	.LASF4:
+ 1324 001c 5F5F7569 		.ascii	"__uint8_t\000"
+ 1324      6E74385F 
+ 1324      7400
+ 1325              	.LASF27:
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 27
+
+
+ 1326 0026 72637664 		.ascii	"rcvdStatus\000"
+ 1326      53746174 
+ 1326      757300
+ 1327              	.LASF5:
+ 1328 0031 5F5F696E 		.ascii	"__int32_t\000"
+ 1328      7433325F 
+ 1328      7400
+ 1329              	.LASF46:
+ 1330 003b 483A5C53 		.ascii	"H:\\Senior-Project-2023\\PSoC\\HostDesign.cydsn\000"
+ 1330      656E696F 
+ 1330      722D5072 
+ 1330      6F6A6563 
+ 1330      742D3230 
+ 1331              	.LASF35:
+ 1332 0068 4F55545F 		.ascii	"OUT_BYTE_Write\000"
+ 1332      42595445 
+ 1332      5F577269 
+ 1332      746500
+ 1333              	.LASF13:
+ 1334 0077 666C6F61 		.ascii	"float\000"
+ 1334      7400
+ 1335              	.LASF42:
+ 1336 007d 4C43445F 		.ascii	"LCD_Start\000"
+ 1336      53746172 
+ 1336      7400
+ 1337              	.LASF9:
+ 1338 0087 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1338      206C6F6E 
+ 1338      6720756E 
+ 1338      7369676E 
+ 1338      65642069 
+ 1339              	.LASF1:
+ 1340 009e 756E7369 		.ascii	"unsigned char\000"
+ 1340      676E6564 
+ 1340      20636861 
+ 1340      7200
+ 1341              	.LASF44:
+ 1342 00ac 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1342      43313120 
+ 1342      352E342E 
+ 1342      31203230 
+ 1342      31363036 
+ 1343 00df 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1343      20726576 
+ 1343      6973696F 
+ 1343      6E203233 
+ 1343      37373135 
+ 1344 0112 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1344      66756E63 
+ 1344      74696F6E 
+ 1344      2D736563 
+ 1344      74696F6E 
+ 1345              	.LASF43:
+ 1346 013a 50534F43 		.ascii	"PSOC_RESET_RAW_Write\000"
+ 1346      5F524553 
+ 1346      45545F52 
+ 1346      41575F57 
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 28
+
+
+ 1346      72697465 
+ 1347              	.LASF7:
+ 1348 014f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1348      20756E73 
+ 1348      69676E65 
+ 1348      6420696E 
+ 1348      7400
+ 1349              	.LASF3:
+ 1350 0161 73686F72 		.ascii	"short unsigned int\000"
+ 1350      7420756E 
+ 1350      7369676E 
+ 1350      65642069 
+ 1350      6E7400
+ 1351              	.LASF18:
+ 1352 0174 7265715F 		.ascii	"req_user_values\000"
+ 1352      75736572 
+ 1352      5F76616C 
+ 1352      75657300 
+ 1353              	.LASF20:
+ 1354 0184 61727261 		.ascii	"array\000"
+ 1354      7900
+ 1355              	.LASF30:
+ 1356 018a 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1356      52784275 
+ 1356      66666572 
+ 1356      00
+ 1357              	.LASF31:
+ 1358 0197 72656374 		.ascii	"rect_full\000"
+ 1358      5F66756C 
+ 1358      6C00
+ 1359              	.LASF14:
+ 1360 01a1 646F7562 		.ascii	"double\000"
+ 1360      6C6500
+ 1361              	.LASF24:
+ 1362 01a8 70736F63 		.ascii	"psoc_fpga_xfc\000"
+ 1362      5F667067 
+ 1362      615F7866 
+ 1362      6300
+ 1363              	.LASF38:
+ 1364 01b6 4832475F 		.ascii	"H2G_STRB_IN_Read\000"
+ 1364      53545242 
+ 1364      5F494E5F 
+ 1364      52656164 
+ 1364      00
+ 1365              	.LASF2:
+ 1366 01c7 73686F72 		.ascii	"short int\000"
+ 1366      7420696E 
+ 1366      7400
+ 1367              	.LASF22:
+ 1368 01d1 7265675F 		.ascii	"reg_write\000"
+ 1368      77726974 
+ 1368      6500
+ 1369              	.LASF40:
+ 1370 01db 4C43445F 		.ascii	"LCD_PrintString\000"
+ 1370      5072696E 
+ 1370      74537472 
+ 1370      696E6700 
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 29
+
+
+ 1371              	.LASF25:
+ 1372 01eb 66706761 		.ascii	"fpga_psoc_xfc\000"
+ 1372      5F70736F 
+ 1372      635F7866 
+ 1372      6300
+ 1373              	.LASF10:
+ 1374 01f9 756E7369 		.ascii	"unsigned int\000"
+ 1374      676E6564 
+ 1374      20696E74 
+ 1374      00
+ 1375              	.LASF28:
+ 1376 0206 61646472 		.ascii	"addr_flag\000"
+ 1376      5F666C61 
+ 1376      6700
+ 1377              	.LASF11:
+ 1378 0210 75696E74 		.ascii	"uint8_t\000"
+ 1378      385F7400 
+ 1379              	.LASF37:
+ 1380 0218 4832475F 		.ascii	"H2G_STRB_OUT_Write\000"
+ 1380      53545242 
+ 1380      5F4F5554 
+ 1380      5F577269 
+ 1380      746500
+ 1381              	.LASF47:
+ 1382 022b 6D61696E 		.ascii	"main\000"
+ 1382      00
+ 1383              	.LASF29:
+ 1384 0230 776F7264 		.ascii	"word32_count\000"
+ 1384      33325F63 
+ 1384      6F756E74 
+ 1384      00
+ 1385              	.LASF12:
+ 1386 023d 696E7433 		.ascii	"int32_t\000"
+ 1386      325F7400 
+ 1387              	.LASF33:
+ 1388 0245 74657374 		.ascii	"test_pat_mode\000"
+ 1388      5F706174 
+ 1388      5F6D6F64 
+ 1388      6500
+ 1389              	.LASF32:
+ 1390 0253 66696C6C 		.ascii	"fill_color\000"
+ 1390      5F636F6C 
+ 1390      6F7200
+ 1391              	.LASF45:
+ 1392 025e 6D61696E 		.ascii	"main.c\000"
+ 1392      2E6300
+ 1393              	.LASF15:
+ 1394 0265 63686172 		.ascii	"char\000"
+ 1394      00
+ 1395              	.LASF16:
+ 1396 026a 73697A65 		.ascii	"sizetype\000"
+ 1396      74797065 
+ 1396      00
+ 1397              	.LASF39:
+ 1398 0273 4C43445F 		.ascii	"LCD_WriteControl\000"
+ 1398      57726974 
+ 1398      65436F6E 
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccXHUTdA.s 			page 30
+
+
+ 1398      74726F6C 
+ 1398      00
+ 1399              	.LASF34:
+ 1400 0284 656E6769 		.ascii	"engine_id\000"
+ 1400      6E655F69 
+ 1400      6400
+ 1401              	.LASF19:
+ 1402 028e 73656E64 		.ascii	"sendByte\000"
+ 1402      42797465 
+ 1402      00
+ 1403              	.LASF21:
+ 1404 0297 62797465 		.ascii	"byte\000"
+ 1404      00
+ 1405              	.LASF6:
+ 1406 029c 6C6F6E67 		.ascii	"long int\000"
+ 1406      20696E74 
+ 1406      00
+ 1407              	.LASF26:
+ 1408 02a5 64697370 		.ascii	"dispVal\000"
+ 1408      56616C00 
+ 1409              	.LASF23:
+ 1410 02ad 62797465 		.ascii	"bytes\000"
+ 1410      7300
+ 1411              	.LASF17:
+ 1412 02b3 6C6F6E67 		.ascii	"long double\000"
+ 1412      20646F75 
+ 1412      626C6500 
+ 1413              	.LASF0:
+ 1414 02bf 7369676E 		.ascii	"signed char\000"
+ 1414      65642063 
+ 1414      68617200 
+ 1415              	.LASF41:
+ 1416 02cb 43794465 		.ascii	"CyDelay\000"
+ 1416      6C617900 
+ 1417              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
