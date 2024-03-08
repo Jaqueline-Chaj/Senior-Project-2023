@@ -1,42 +1,25 @@
---------------- Build Started: 02/28/2024 14:33:31 Project: HostDesign, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Build Started: 03/08/2024 17:43:17 Project: HostDesign, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
-main.c:9:9: warning: built-in function 'y1' declared as non-function
- int x1, y1, x2, y2, fill_color, test_pat_mode, engine_id; //values required for commands
-         ^
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
+main.c: In function 'pack_values':
+main.c:29:10: warning: unused variable 'tmp' [-Wunused-variable]
+     long tmp[3] = {coord1, coord2, color};
+          ^
 main.c: In function 'main':
-main.c:37:21: warning: passing argument 1 of 'req_user_values' from incompatible pointer type [-Wincompatible-pointer-types]
-     req_user_values(&rect_full[5][5]);
-                     ^
-In file included from main.c:3:0:
-helper_functions.c:10:6: note: expected 'int (*)[5]' but argument is of type 'int **'
- void req_user_values(int array[5][5]){
-      ^
-main.c:48:13: warning: unused variable 'word32_count' [-Wunused-variable]
-         int word32_count = 0;
-             ^
-main.c:21:9: warning: unused variable 'addr_flag' [-Wunused-variable]
-     int addr_flag = 0;
-         ^
-main.c:19:10: warning: unused variable 'rcvdStatus' [-Wunused-variable]
+main.c:118:10: warning: unused variable 'line' [-Wunused-variable]
+     char line[30];
+          ^
+main.c:97:10: warning: unused variable 'rcvdStatus' [-Wunused-variable]
      char rcvdStatus[1];
           ^
-main.c:18:10: warning: unused variable 'dispVal' [-Wunused-variable]
-     char dispVal[1];
-          ^
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/helper_functions.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c helper_functions.c -o .\CortexM3\ARM_GCC_541\Debug\helper_functions.o
 arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_541\Debug\HostDesign.a .\CortexM3\ARM_GCC_541\Debug\CyDmac.o .\CortexM3\ARM_GCC_541\Debug\CyFlash.o .\CortexM3\ARM_GCC_541\Debug\CyLib.o .\CortexM3\ARM_GCC_541\Debug\cyPm.o .\CortexM3\ARM_GCC_541\Debug\CySpc.o .\CortexM3\ARM_GCC_541\Debug\cyutils.o .\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM3\ARM_GCC_541\Debug\LCD.o .\CortexM3\ARM_GCC_541\Debug\LCD_PM.o .\CortexM3\ARM_GCC_541\Debug\LCD_LCDPort.o .\CortexM3\ARM_GCC_541\Debug\SW2.o .\CortexM3\ARM_GCC_541\Debug\H2G_STRB_IN.o .\CortexM3\ARM_GCC_541\Debug\H2G_STRB_OUT.o .\CortexM3\ARM_GCC_541\Debug\SW3.o .\CortexM3\ARM_GCC_541\Debug\OUT_BYTE.o .\CortexM3\ARM_GCC_541\Debug\OUT_BYTE_PM.o .\CortexM3\ARM_GCC_541\Debug\PSOC_RESET_RAW.o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o
 arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_541\Debug\HostDesign.a
-arm-none-eabi-gcc.exe -Wl,--start-group -o H:\Senior-Project-2023\PSoC\HostDesign.cydsn\CortexM3\ARM_GCC_541\Debug\HostDesign.elf .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\helper_functions.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\HostDesign.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/HostDesign.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
-.\CortexM3\ARM_GCC_541\Debug\helper_functions.o: In function `req_user_values':
-H:\Senior-Project-2023\PSoC\HostDesign.cydsn/helper_functions.c:10: multiple definition of `req_user_values'
-.\CortexM3\ARM_GCC_541\Debug\main.o:H:\Senior-Project-2023\PSoC\HostDesign.cydsn/helper_functions.c:10: first defined here
-.\CortexM3\ARM_GCC_541\Debug\helper_functions.o: In function `req_user_values':
-The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
-H:\Senior-Project-2023\PSoC\HostDesign.cydsn/helper_functions.c:10: multiple definition of `sendByte'
-.\CortexM3\ARM_GCC_541\Debug\main.o:H:\Senior-Project-2023\PSoC\HostDesign.cydsn/helper_functions.c:10: first defined here
-.\CortexM3\ARM_GCC_541\Debug\helper_functions.o: In function `req_user_values':
-H:\Senior-Project-2023\PSoC\HostDesign.cydsn/helper_functions.c:10: multiple definition of `reg_write'
-.\CortexM3\ARM_GCC_541\Debug\main.o:H:\Senior-Project-2023\PSoC\HostDesign.cydsn/helper_functions.c:10: first defined here
-collect2.exe: error: ld returned 1 exit status
---------------- Build Failed: 02/28/2024 14:33:32 ---------------
+arm-none-eabi-gcc.exe -Wl,--start-group -o H:\Senior-Project-2023\PSoC\HostDesign.cydsn\CortexM3\ARM_GCC_541\Debug\HostDesign.elf .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\squares_data.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\HostDesign.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/HostDesign.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
+cyelftool.exe -C H:\Senior-Project-2023\PSoC\HostDesign.cydsn\CortexM3\ARM_GCC_541\Debug\HostDesign.elf --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
+No ELF section .cychecksum found, creating one
+Application checksum calculated and stored in ELF section .cychecksum
+Checksum calculated and stored in ELF section .cymeta
+cyelftool.exe -S H:\Senior-Project-2023\PSoC\HostDesign.cydsn\CortexM3\ARM_GCC_541\Debug\HostDesign.elf
+Flash used: 15032 of 262144 bytes (5.7%).
+SRAM used: 12713 of 65536 bytes (19.4%). Stack: 2048 bytes. Heap: 128 bytes.
+--------------- Build Succeeded: 03/08/2024 17:43:19 ---------------

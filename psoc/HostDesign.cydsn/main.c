@@ -1,24 +1,99 @@
 #include "project.h"
 #include "stdio.h"
-#include "helper_functions.c"
+#include "SQR_PARAMS.h"
+
 
 int psoc_fpga_xfc;  // state of output strobe
 int fpga_psoc_xfc;  // state of input strobe
 
-int *rect_full[5][5];
-int x1, y1, x2, y2, fill_color, test_pat_mode, engine_id; //values required for commands
+uint8_t array[5][5] = {0};
+int params[7];
+
+uint8_t rect_full[5][5] = {0};
+//int x1, y1, x2, y2, fill_color, test_pat_mode, engine_id; //values required for commands
+
+void pack_values(int values[]){
+    //printf("inside pack values\n");
+    long zero32 = 0;
+    //printf("x1: %d, y1: %d, x2: %d, y2: %d, color: %d, testpat: %d, eng_id: %d\n", values[0], values[1], values[2], values[3], values[4], values[5], values[6]);
+    //printf("x1 hex: %x\n", values[0] & 0x7FF);
+    //printf("y1 hex: %x\n", values[1] & 0x7FF);
+    
+    long coord1 = zero32 | (values[0] & 0x7FF) | ((values[1] & 0x7FF) << 11);
+    //printf("coord1: %x\n", coord1);
+    long coord2 = zero32 | (values[2] & 0x7FF) | ((values[3] & 0x7FF) << 11);
+    long color = zero32 | (values[4] & 0xFF) | ((values[5] & 0xFF) << 8) | ((values[6] & 0xFF) << 16);
+    long tmp[3] = {coord1, coord2, color};
+
+    array[0][0] = 0x00; //reg addr
+    array[0][1] = coord1 & 0xFF;   //bottom byte
+    array[0][2] = (coord1 >> 8) & 0xFF;   //next byte
+    array[0][3] = (coord1 >> 16) & 0xFF;   //
+    array[0][4] = (coord1 >> 24) & 0xFF;   //top byte
+
+    array[1][0] = 0x01; //reg addr
+    array[1][1] = coord2 & 0xFF;   //bottom byte
+    array[1][2] = (coord2 >> 8) & 0xFF;   //next byte
+    array[1][3] = (coord2 >> 16) & 0xFF;   //
+    array[1][4] = (coord2 >> 24) & 0xFF;   //top byte
+
+    array[2][0] = 0x02; //reg addr
+    array[2][1] = color & 0xFF;   //bottom byte
+    array[2][2] = (color >> 8) & 0xFF;   //next byte
+    array[2][3] = (color >> 16) & 0xFF;   //
+    array[2][4] = (color >> 24) & 0xFF;   //top byte
+
+    array[3][0] = 0x03; //just set addr byte of test pat and engine_id right now.
+    array[4][0] = 0x04;
+}
+
+
+
+
+void sendByte(uint8_t byte){
+    OUT_BYTE_Write(byte);
+}
+
+void reg_write(uint8_t bytes[5])
+{
+    char byteDispStr[16];
+    // send each of the 5 bytes, wait until handshake is complete to return
+    for(int i = 0; i < 5; i++){
+        LCD_Position(0,0);
+        LCD_ClearDisplay();
+        sprintf(byteDispStr, "Sending byte %d", i);
+        LCD_PrintString(byteDispStr);
+        sendByte(bytes[i]);
+        CyDelayCycles(1);
+        psoc_fpga_xfc = 1 - psoc_fpga_xfc;
+        H2G_STRB_OUT_Write(psoc_fpga_xfc);
+        
+        while(H2G_STRB_IN_Read() == fpga_psoc_xfc){
+            //Idle until incoming handshake is toggled
+        }
+        CyDelayCycles(1);
+        fpga_psoc_xfc = 1 - fpga_psoc_xfc;
+        LCD_Position(0,0);
+        LCD_ClearDisplay();
+        sprintf(byteDispStr, "Byte %d rcvd", i);
+        LCD_PrintString(byteDispStr);
+    }
+}
+
 
 int main(void)
 {
+    int row_idx = 0;
+
     CyGlobalIntEnable; /* Enable global interrupts. */
 
     LCD_Start();
     LCD_ClearDisplay();
     
-    char dispVal[1];
+    char dispStr[16];
     char rcvdStatus[1];
 
-    int addr_flag = 0;
+    
     psoc_fpga_xfc = 0;  // state of output strobe
     fpga_psoc_xfc = 0;  // state of output strobe
     
@@ -33,44 +108,58 @@ int main(void)
     //write initial handshake to Nexys FPGA.
     H2G_STRB_OUT_Write(psoc_fpga_xfc);
     
-    //manually set defatult Stest rectangle payloads to draw a rectangle with coords (200, 150) and (750, 600), color Royal Blue
-    req_user_values(&rect_full[5][5]);
-    
+    //open file
+    //open csv file of rectangle data
+//    FILE* file = fopen("SQR_PARAMS.csv", "r");
+    // csv has values in order: x1, y1, x2, y2, R, B, G
+    char line[30];
+    int values[7];
+
+
     for(;;)
-    {   
-        x1 = 0; //reset all user values to 0 before a new command is parsed.
-        y1 = 0;
-        x2 = 0;
-        y2 = 0;
-        fill_color = 0;
-        test_pat_mode = 0;
-        engine_id = 0; 
-        int word32_count = 0;
+    {    
+        LCD_Position(0,0);
+        LCD_PrintString("Rect CMD Test");
+        CyDelay(1000);
         
-        //get command type from user.
-        engine_id = 0x0; //update to let user choose via knob, always rect command right now
         
-        //get values from user, stored in global vars.
+//        while(fgets(line, sizeof(line), file)){
+//        char* token = strtok(line, ", ");
+//        int col = 0;
+//
+//        while(token != NULL && col < 7){
+//            values[col] = atoi(token);
+//            col++;
+//            token = strtok(NULL,", ");
+//        }
+            for (int idx=0; idx < 7; ++idx)
+                values[idx]=squares_dat_linear[row_idx * 7 + idx];
+                
+            //once all values have been stored in array, print to verify
+            //printf("x1: %d, y1: %d, x2: %d, y2: %d, R: %d, B: %d, G: %d\n", values[0], values[1], values[2], values[3], values[4], values[5], values[6]);
+            pack_values(values);
+            row_idx = (row_idx + 1) % 360;
+            
+            
+            LCD_ClearDisplay();
+            LCD_PrintString("About to send arrays");
         
-        //while(word32_cnt < 5){
-            //pack into specific row of 2d array
-        //}
+            for(int i = 0; i < 5; i++){
+                LCD_ClearDisplay();
+                sprintf(dispStr, "Sending array %d", i);
+                LCD_PrintString(dispStr);
+                CyDelay(500);
+                reg_write(array[i]);
+                CyDelay(500);
+            }
+                
+            CyDelay(500);
         
-        //display all values given by user and "ready to send" msg
         
-        //wait for button press
+        //LCD_ClearDisplay();
+        //LCD_PrintString("Full cmd sent!");
         
-        //on button press
-            //iterate over each row and send each 
-
-        
-        //write bytes to output
-        //send CMDcode/adderss byte first, then loop through payload bytes to send correctly
-
-        
-        LCD_ClearDisplay();
-        LCD_PrintString("Command sent!");
-        CyDelay(2000);
+        //CyDelay(2000);
     }
     
 
