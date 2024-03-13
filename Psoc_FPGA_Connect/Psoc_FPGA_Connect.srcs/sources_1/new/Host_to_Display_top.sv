@@ -69,11 +69,11 @@ module Host_to_Display_top(
   TopLevelInterface Host(
   .clk(PixelClk),
   .reset_n(reset_n),
-  .psoc_reset_raw(1'b0),
+  .psoc_reset_raw(psoc_reset_raw),
   .host_hostif_d(host_hostif_d),
   .host_hostif_host_xfc_raw(host_hostif_host_xfc_raw),
   .host_hostif_fpga_xfc(host_hostif_fpga_xfc),
-  .reset(reset),
+  .reset(reset),//output
   .reg_top_left_x(reg_top_left_x),
   .reg_top_left_y(reg_top_left_y),
   .reg_bot_right_x(reg_bot_right_x),
