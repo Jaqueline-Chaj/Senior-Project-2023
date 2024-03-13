@@ -37,7 +37,6 @@
       <Folder BuildType="STRICT" Path="H:\Senior-Project-2023\PSoC\HostDesign.cydsn">
         <Files Root="H:\Senior-Project-2023\PSoC\HostDesign.cydsn">
           <File BuildType="BUILD" Toolchain="">main.c</File>
-          <File BuildType="BUILD" Toolchain="">squares_data.c</File>
           <File BuildType="BUILD" Toolchain="">cyapicallbacks.h</File>
           <File BuildType="BUILD" Toolchain="">..\..\SQR_PARAMS.h</File>
         </Files>

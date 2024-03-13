@@ -415,7 +415,6 @@
 <CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
 <file name=".\CortexM3\ARM_GCC_541\Debug\HostDesign.hex">
 <dep name=".\CortexM3\ARM_GCC_541\Debug\main.o" />
-<dep name=".\CortexM3\ARM_GCC_541\Debug\squares_data.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\cymetadata.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\Cm3Start.o" />
@@ -715,14 +714,27 @@
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
 <link_deps_times>
-<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="133544113989088366" />
+<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="133548407490355551" />
 </link_deps_times>
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 <dataGuid v="504337dd-7d07-4bc7-9057-90e60cf6c469">
 <CyGuid_504337dd-7d07-4bc7-9057-90e60cf6c469 type_name="CyDesigner.Common.Debugger.CyBreakpointList" version="1">
-<debugger_breakpoint_list />
+<debugger_breakpoint_list>
+<CyGuid_76464711-0ae1-4583-b869-f07a0403fc6e type_name="CyDesigner.Common.Debugger.CyFileLineBreakpoint" version="1" hitcount="0" condition="" enabled="True" hardware="True" temparary="False" filename=".\main.c" linenumber="41" />
+<CyGuid_76464711-0ae1-4583-b869-f07a0403fc6e type_name="CyDesigner.Common.Debugger.CyFileLineBreakpoint" version="1" hitcount="0" condition="" enabled="True" hardware="True" temparary="False" filename=".\main.c" linenumber="47" />
+<CyGuid_da1648eb-f713-4789-813b-89e33e3769c0 type_name="CyDesigner.Common.Debugger.CyWatchpoint" version="1" hitcount="0" condition="" enabled="True" hardware="True" temparary="False" variable="color" access="WRITE" />
+<CyGuid_da1648eb-f713-4789-813b-89e33e3769c0 type_name="CyDesigner.Common.Debugger.CyWatchpoint" version="1" hitcount="0" condition="" enabled="True" hardware="True" temparary="False" variable="color" access="ACCESS" />
+</debugger_breakpoint_list>
 </CyGuid_504337dd-7d07-4bc7-9057-90e60cf6c469>
+</dataGuid>
+<dataGuid v="bf610382-39c6-441f-80b8-b04622ea7845">
+<CyGuid_bf610382-39c6-441f-80b8-b04622ea7845 type_name="CyDesigner.Common.Debugger.CyWatchedVariableList" version="1">
+<debugger_watch_list>
+<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="byte" radix="Default" />
+<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="color" radix="Default" />
+</debugger_watch_list>
+</CyGuid_bf610382-39c6-441f-80b8-b04622ea7845>
 </dataGuid>
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>

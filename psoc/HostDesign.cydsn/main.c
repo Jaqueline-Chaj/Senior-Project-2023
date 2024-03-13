@@ -5,25 +5,17 @@
 
 int psoc_fpga_xfc;  // state of output strobe
 int fpga_psoc_xfc;  // state of input strobe
-
+int x1, y1, x2, y2, r, b, g = 0;
 uint8_t array[5][5] = {0};
-int params[7];
-
-uint8_t rect_full[5][5] = {0};
 //int x1, y1, x2, y2, fill_color, test_pat_mode, engine_id; //values required for commands
+long color = 0; 
 
 void pack_values(int values[]){
-    //printf("inside pack values\n");
     long zero32 = 0;
-    //printf("x1: %d, y1: %d, x2: %d, y2: %d, color: %d, testpat: %d, eng_id: %d\n", values[0], values[1], values[2], values[3], values[4], values[5], values[6]);
-    //printf("x1 hex: %x\n", values[0] & 0x7FF);
-    //printf("y1 hex: %x\n", values[1] & 0x7FF);
-    
     long coord1 = zero32 | (values[0] & 0x7FF) | ((values[1] & 0x7FF) << 11);
-    //printf("coord1: %x\n", coord1);
     long coord2 = zero32 | (values[2] & 0x7FF) | ((values[3] & 0x7FF) << 11);
-    long color = zero32 | (values[4] & 0xFF) | ((values[5] & 0xFF) << 8) | ((values[6] & 0xFF) << 16);
-    long tmp[3] = {coord1, coord2, color};
+    //long color = zero32 | (values[6] & 0xFF) | ((values[5] & 0xFF) << 8) | ((values[4] & 0xFF) << 16);
+    
 
     array[0][0] = 0x00; //reg addr
     array[0][1] = coord1 & 0xFF;   //bottom byte
@@ -45,9 +37,14 @@ void pack_values(int values[]){
 
     array[3][0] = 0x03; //just set addr byte of test pat and engine_id right now.
     array[4][0] = 0x04;
+    
+    if (color != 0x00FFFFFF){
+        color = color + 0x08;    
+    }
+    else{
+        color = 0;
+    }
 }
-
-
 
 
 void sendByte(uint8_t byte){
@@ -59,24 +56,14 @@ void reg_write(uint8_t bytes[5])
     char byteDispStr[16];
     // send each of the 5 bytes, wait until handshake is complete to return
     for(int i = 0; i < 5; i++){
-        LCD_Position(0,0);
-        LCD_ClearDisplay();
-        sprintf(byteDispStr, "Sending byte %d", i);
-        LCD_PrintString(byteDispStr);
         sendByte(bytes[i]);
-        CyDelayCycles(1);
         psoc_fpga_xfc = 1 - psoc_fpga_xfc;
         H2G_STRB_OUT_Write(psoc_fpga_xfc);
         
         while(H2G_STRB_IN_Read() == fpga_psoc_xfc){
             //Idle until incoming handshake is toggled
         }
-        CyDelayCycles(1);
         fpga_psoc_xfc = 1 - fpga_psoc_xfc;
-        LCD_Position(0,0);
-        LCD_ClearDisplay();
-        sprintf(byteDispStr, "Byte %d rcvd", i);
-        LCD_PrintString(byteDispStr);
     }
 }
 
@@ -91,12 +78,10 @@ int main(void)
     LCD_ClearDisplay();
     
     char dispStr[16];
-    char rcvdStatus[1];
+    char dispStr2[16];
 
-    
     psoc_fpga_xfc = 0;  // state of output strobe
     fpga_psoc_xfc = 0;  // state of output strobe
-    
     
     //Send reset signal to Nexys board
     CyDelay(100);
@@ -108,59 +93,77 @@ int main(void)
     //write initial handshake to Nexys FPGA.
     H2G_STRB_OUT_Write(psoc_fpga_xfc);
     
-    //open file
-    //open csv file of rectangle data
-//    FILE* file = fopen("SQR_PARAMS.csv", "r");
-    // csv has values in order: x1, y1, x2, y2, R, B, G
     char line[30];
     int values[7];
-
-
+    int loop = 0;
+    int trns_idx = 45;
     for(;;)
     {    
-        LCD_Position(0,0);
-        LCD_PrintString("Rect CMD Test");
-        CyDelay(1000);
-        
-        
-//        while(fgets(line, sizeof(line), file)){
-//        char* token = strtok(line, ", ");
-//        int col = 0;
-//
-//        while(token != NULL && col < 7){
-//            values[col] = atoi(token);
-//            col++;
-//            token = strtok(NULL,", ");
-//        }
+        //uint8_t color_idx = 0; 
+
             for (int idx=0; idx < 7; ++idx)
                 values[idx]=squares_dat_linear[row_idx * 7 + idx];
+//
+//           if(loop == 0){ //R
+//                values[6] = 0; //g
+//                values[5] = 0;  //b
+//                values[4] = 0xd1;  //r
+//            }
+//            if(loop == 1){  //O
+//                values[6] = 0x66; //g
+//                values[5] = 0x22;  //b
+//                values[4] = 0xff;  //r
+//            }
+//            if(loop == 2){ // Y
+//                values[6] = 0xda; //g
+//                values[5] = 0x21;  //b
+//                values[4] = 0xff;  //r
+//            }
+//            if(loop == 3){ //G
+//                values[6] = 0xdd; //g
+//                values[5] = 0x00;  //b
+//                values[4] = 0x33;  //r
+//            }
+//            if(loop == 4){ //B
+//                values[6] = 0x33; //g
+//                values[5] = 0xcc;  //b
+//                values[4] = 0x11;  //r
+//            }            
+//            if(loop == 5){ //I
+//                values[6] = 0x00; //g
+//                values[5] = 0x66;  //b
+//                values[4] = 0x22;  //r
+//            }            
+//            if(loop == 6){ //V
+//                values[6] = 0x00; //g
+//                values[5] = 0x44;  //b
+//                values[4] = 0x33;  //r
+//            }            
+//            if(loop == 7){ //Purple
+//                values[6] = 0x00; //g
+//                values[5] = 0x99;  //b
+//                values[4] = 0x99;  //r
+//            }               
+//            if(loop == 8){ //white
+//                values[6] = 0xff; //g
+//                values[5] = 0xff;  //b
+//                values[4] = 0xff;  //r
+//            }                   
                 
-            //once all values have been stored in array, print to verify
-            //printf("x1: %d, y1: %d, x2: %d, y2: %d, R: %d, B: %d, G: %d\n", values[0], values[1], values[2], values[3], values[4], values[5], values[6]);
-            pack_values(values);
-            row_idx = (row_idx + 1) % 360;
-            
-            
-            LCD_ClearDisplay();
-            LCD_PrintString("About to send arrays");
+            pack_values(values); //pack values for square into array[][]
+//            if(row_idx == 359 || row_idx == trns_idx || row_idx == trns_idx*2 || row_idx == trns_idx*3 || row_idx == trns_idx*4 || row_idx == trns_idx*5 || row_idx == trns_idx*6 || row_idx == trns_idx*7){
+//                loop = (loop + 1) % 9;
+//            }
+            row_idx = (row_idx + 1) % 360; //increment row index to read
         
             for(int i = 0; i < 5; i++){
-                LCD_ClearDisplay();
-                sprintf(dispStr, "Sending array %d", i);
-                LCD_PrintString(dispStr);
-                CyDelay(500);
                 reg_write(array[i]);
-                CyDelay(500);
             }
+            CyDelayUs(15000);
                 
-            CyDelay(500);
+        }
         
-        
-        //LCD_ClearDisplay();
-        //LCD_PrintString("Full cmd sent!");
-        
-        //CyDelay(2000);
     }
     
 
-}
+
