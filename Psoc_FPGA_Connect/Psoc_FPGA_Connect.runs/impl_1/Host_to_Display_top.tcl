@@ -124,7 +124,6 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 5
-  set_param xicom.use_bs_reader 1
   open_checkpoint Host_to_Display_top_routed.dcp
   set_property webtalk.parent_dir H:/Senior-Project-2023/Psoc_FPGA_Connect/Psoc_FPGA_Connect.cache/wt [current_project]
 set_property TOP Host_to_Display_top [current_fileset]
