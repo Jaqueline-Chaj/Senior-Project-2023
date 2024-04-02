@@ -1,115 +1,87 @@
 #include "project.h"
 #include "stdio.h"
+#include "SQR_PARAMS.h"
 
 
-uint cmdBytes[5];
+int psoc_fpga_xfc;  // state of output strobe
+int fpga_psoc_xfc;  // state of input strobe
+int x1, y1, x2, y2, r, b, g = 0;
+uint8_t array[5][5] = {0};
+//int x1, y1, x2, y2, fill_color, test_pat_mode, engine_id; //values required for commands
+long color = 0; 
 
-//Method to write a byte value to the output port
-void sendByte(int byte){
+void pack_values(int values[]){
+    long zero32 = 0;
+    long coord1 = zero32 | (values[0] & 0x7FF) | ((values[1] & 0x7FF) << 11);
+    long coord2 = zero32 | (values[2] & 0x7FF) | ((values[3] & 0x7FF) << 11);
+    //long color = zero32 | (values[6] & 0xFF) | ((values[5] & 0xFF) << 8) | ((values[4] & 0xFF) << 16);
+    
+
+    array[0][0] = 0x00; //reg addr
+    array[0][1] = coord1 & 0xFF;   //bottom byte
+    array[0][2] = (coord1 >> 8) & 0xFF;   //next byte
+    array[0][3] = (coord1 >> 16) & 0xFF;   //
+    array[0][4] = (coord1 >> 24) & 0xFF;   //top byte
+
+    array[1][0] = 0x01; //reg addr
+    array[1][1] = coord2 & 0xFF;   //bottom byte
+    array[1][2] = (coord2 >> 8) & 0xFF;   //next byte
+    array[1][3] = (coord2 >> 16) & 0xFF;   //
+    array[1][4] = (coord2 >> 24) & 0xFF;   //top byte
+
+    array[2][0] = 0x02; //reg addr
+    array[2][1] = color & 0xFF;   //bottom byte
+    array[2][2] = (color >> 8) & 0xFF;   //next byte
+    array[2][3] = (color >> 16) & 0xFF;   //
+    array[2][4] = (color >> 24) & 0xFF;   //top byte
+
+    array[3][0] = 0x03; //just set addr byte of test pat and engine_id right now.
+    array[4][0] = 0x04;
+    
+    if (color != 0x00FFFFFF){
+        color = color + 0x08;    
+    }
+    else{
+        color = 0;
+    }
+}
+
+
+void sendByte(uint8_t byte){
     OUT_BYTE_Write(byte);
 }
 
-int b1Val = 0x01;
-int b2Val = 0x02;
-int b3Val = 0x03;
-int b4Val = 0x04;
-
-//Method to set the values for each of the payload bytes
-void selectPayloadValue(stage){
-    LCD_ClearDisplay();
-    LCD_Position(0,0);
-    if(stage == 1){
-    LCD_PrintString("Set b7:0 ");   
-    }
-    else if(stage == 2){
-    LCD_PrintString("Set b15:8 ");
-    }
-    else if(stage == 3){
-    LCD_PrintString("Set b23:16 ");
-    }
-    else{
-    LCD_PrintString("Set b31:24 ");
-    }
-    
-    LCD_Position(1,0);
-    LCD_PrintString("Value:");
-    
-    char dispStr[2];
-    char setMsg[16];
-    int selected = 0;
-    int byteVal = 0x00;
-    
-    while(selected != 1){
-        if(!SW3_Read()){
-            selected = 1;
-        }
-        
-        LCD_Position(1,6);
-        sprintf(dispStr, "%x", byteVal);
-        LCD_PrintString(dispStr);
-        CyDelay(100);
-    
-        if(stage == 1){
-            byteVal = b1Val;
-            b1Val++;
-        }
-        else if (stage == 2){
-            byteVal = b2Val;
-            b2Val++;
-        }    
-        else if (stage == 3){
-            byteVal = b3Val;        
-            b3Val++;
-        }
-        else{
-            byteVal = b4Val;
-            b4Val++;
-        }
-    }
-
-    if(stage == 1){
-        cmdBytes[1] = byteVal;    
-    }
-    else if(stage == 2){
-        cmdBytes[2] = byteVal;
-    }
-    else if(stage == 3){
-        cmdBytes[3] = byteVal;
-    }
-    else{
-        cmdBytes[4] = byteVal;
-    }
-    
-    LCD_ClearDisplay();
-    LCD_Position(0,0);
-    sprintf(setMsg, "Byte%d value set.", stage);
-    LCD_PrintString(setMsg);
-    LCD_Position(1,0);
-    LCD_PrintString("Value:");
-    LCD_Position(1,6);
-    sprintf(dispStr, "%x", byteVal);
-    LCD_PrintString(dispStr);
-    CyDelay(1000);
-}
-
-void reg_write( uint8_t bytes[8] )
+void reg_write(uint8_t bytes[5])
 {
+    char byteDispStr[16];
     // send each of the 5 bytes, wait until handshake is complete to return
+    for(int i = 0; i < 5; i++){
+        sendByte(bytes[i]);
+        psoc_fpga_xfc = 1 - psoc_fpga_xfc;
+        H2G_STRB_OUT_Write(psoc_fpga_xfc);
+        
+        while(H2G_STRB_IN_Read() == fpga_psoc_xfc){
+            //Idle until incoming handshake is toggled
+        }
+        fpga_psoc_xfc = 1 - fpga_psoc_xfc;
+    }
 }
+
 
 int main(void)
 {
+    int row_idx = 0;
+
     CyGlobalIntEnable; /* Enable global interrupts. */
 
     LCD_Start();
     LCD_ClearDisplay();
     
-    char dispVal[1];
-    char rcvdStatus[1];
+    char dispStr[16];
+    char dispStr2[16];
 
-    int addr_flag = 0;
-    int psoc_fpga_xfc = 0;  // state of output strobe
-    int fpga_psoc_xfc = 0;  // state of input strobe
+    psoc_fpga_xfc = 0;  // state of output strobe
+    fpga_psoc_xfc = 0;  // state of output strobe
     
     //Send reset signal to Nexys board
     CyDelay(100);
@@ -120,135 +92,80 @@ int main(void)
     
     //write initial handshake to Nexys FPGA.
     H2G_STRB_OUT_Write(psoc_fpga_xfc);
-
-    //SW2 used for selection of data
-    //SW3 used to progress to next stage
     
+    char line[30];
+    int values[7];
+    int loop = 0;
+    int trns_idx = 45;
+    int counter = 0;
     for(;;)
-    {   
-        addr_flag = 0;
-        
-        LCD_ClearDisplay();
-        //LCD_Position(0,0);
-        //LCD_PrintString("RegWrite CMD");
-        //LCD_Position(1,0);
-        //LCD_PrintString("5 bytes total");
+    {    
+        //uint8_t color_idx = 0; 
+        while(counter < 200){
+            for (int idx=0; idx < 7; ++idx)
+                values[idx]=squares_dat_linear[row_idx * 7 + idx];
 
-        //CyDelay(750);
-        
-        //LCD_ClearDisplay();
-        
-        int addrVal = 0;
-        
-        char dispString[2];
-        
-        LCD_Position(0,0);
-        LCD_PrintString("Select an addr:");
-        LCD_Position(1,0);
-        LCD_PrintString("Addr:");
-        
-        //loop for user to select one of 8 registers to write to
-        while(addr_flag != 1){
-            if(!SW3_Read()){
-                addr_flag = 1;
+           if(loop == 0){ //R
+                values[6] = 0; //g
+                values[5] = 0;  //b
+                values[4] = 0xd1;  //r
             }
+            if(loop == 1){  //O
+                values[6] = 0x66; //g
+                values[5] = 0x22;  //b
+                values[4] = 0xff;  //r
+            }
+            if(loop == 2){ // Y
+                values[6] = 0xda; //g
+                values[5] = 0x21;  //b
+                values[4] = 0xff;  //r
+            }
+            if(loop == 3){ //G
+                values[6] = 0xdd; //g
+                values[5] = 0x00;  //b
+                values[4] = 0x33;  //r
+            }
+            if(loop == 4){ //B
+                values[6] = 0x33; //g
+                values[5] = 0xcc;  //b
+                values[4] = 0x11;  //r
+            }            
+            if(loop == 5){ //I
+                values[6] = 0x00; //g
+                values[5] = 0x66;  //b
+                values[4] = 0x22;  //r
+            }            
+            if(loop == 6){ //V
+                values[6] = 0x00; //g
+                values[5] = 0x44;  //b
+                values[4] = 0x33;  //r
+            }            
+            if(loop == 7){ //Purple
+                values[6] = 0x00; //g
+                values[5] = 0x99;  //b
+                values[4] = 0x99;  //r
+            }               
+            if(loop == 8){ //white
+                values[6] = 0xff; //g
+                values[5] = 0xff;  //b
+                values[4] = 0xff;  //r
+            }                   
+                
+            pack_values(values); //pack values for square into array[][]
+            if(row_idx == 359 || row_idx == trns_idx || row_idx == trns_idx*2 || row_idx == trns_idx*3 || row_idx == trns_idx*4 || row_idx == trns_idx*5 || row_idx == trns_idx*6 || row_idx == trns_idx*7){
+                loop = (loop + 1) % 9;
+            }
+            if(row_idx == 359) counter++;
+            row_idx = (row_idx + 1) % 360; //increment row index to read
             
-            LCD_Position(1,5);
-            sprintf(dispString, "%x", addrVal);
-            LCD_PrintString(dispString);
-
-            addrVal = 0x00;  //setting explicitly for testing fpga
-            /*
-            CyDelay(100);
-            
-            if( addrVal == 15){
-                addrVal = 0x00;
+            for(int i = 0; i < 5; i++){
+                reg_write(array[i]);
             }
-            else{
-            addrVal = addrVal + 1;
-            }
-            */
+            CyDelayUs(1);
+        }        
         }
-        cmdBytes[0] = addrVal;
-        
-        LCD_ClearDisplay();
-        LCD_Position(0,0);
-        LCD_PrintString("Address set.");
-        LCD_Position(1,0);
-        LCD_PrintString("Address:");
-        sprintf(dispString, "%x", cmdBytes[0]);
-        LCD_Position(1,8);
-        LCD_PrintString(dispString);
-        CyDelay(1000);
-        
-        //small loop for user to select values for each payload byte, stored to be sent after all have been selected.
-        for(int stage = 1; stage <5; stage++){
-            //selectPayloadValue function, taking stage as argument
-            selectPayloadValue(stage);
-        }    
-        LCD_ClearDisplay();
-        
-        //while(SW3_Read()){
-        
-        LCD_Position(0,0);
-        LCD_PrintString("CMD to be sent: ");
-        LCD_Position(1,0);
-        LCD_PrintHexUint8(cmdBytes[0]);
-        LCD_Position(1,3);
-        LCD_PrintHexUint8(cmdBytes[4]);
-        LCD_Position(1,6);
-        LCD_PrintHexUint8(cmdBytes[3]);
-        LCD_Position(1,9);
-        LCD_PrintHexUint8(cmdBytes[2]);
-        LCD_Position(1,12);
-        LCD_PrintHexUint8(cmdBytes[1]);
-        CyDelay(1000);
-        LCD_Position(0,0);
-        LCD_PrintString("Addr,B4,B3,B2,B1");
-        CyDelay(1000);
-       
-        
-
-        LCD_Position(0,0);
-        LCD_PrintString("Sending addr... ");
-        
-        //write bytes to output
-        //send CMDcode/addrss byte first, then loop through payload bytes to send correctly
-        sendByte(cmdBytes[0]);
-        CyDelayCycles(1);
-        psoc_fpga_xfc = 1 - psoc_fpga_xfc;
-        H2G_STRB_OUT_Write(psoc_fpga_xfc);
-        
-        while(H2G_STRB_IN_Read() == fpga_psoc_xfc){
-            //Idle until incoming handshake is toggled
-        }
-        CyDelayCycles(1);
-        fpga_psoc_xfc = 1 - fpga_psoc_xfc;
-        
-
-        LCD_Position(0,0);
-        LCD_PrintString("Addr received");
-        CyDelay(500);
-        LCD_Position(0,0);
-        LCD_PrintString("Sending payload...");
-        for(int i = 1 ; i <5; i++){
-            sendByte(cmdBytes[i]); 
-            
-            
-            psoc_fpga_xfc = 1 - psoc_fpga_xfc;
-            H2G_STRB_OUT_Write(psoc_fpga_xfc);
-        
-            while(H2G_STRB_IN_Read() == fpga_psoc_xfc){
-            //Idle until incoming handshake is toggled
-            }
-            fpga_psoc_xfc = 1 - fpga_psoc_xfc;
-        }
-        
-        LCD_ClearDisplay();
-        LCD_PrintString("Command sent!");
-        CyDelay(2000);
         
     }
     
 
-}
+

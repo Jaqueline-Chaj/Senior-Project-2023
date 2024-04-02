@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Mon Dec  4 11:21:49 2023
+# Process ID: 17020
+# Current directory: H:/Senior-Project-2023/vivado/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17188 H:\Senior-Project-2023\vivado\project_1\project_1.xpr
+# Log file: H:/Senior-Project-2023/vivado/project_1/vivado.log
+# Journal file: H:/Senior-Project-2023/vivado/project_1\vivado.jou
+# Running On: ARM144-10, OS: Windows, CPU Frequency: 2112 MHz, CPU Physical cores: 12, Host memory: 34050 MB
+#-----------------------------------------------------------
+start_gui
+open_project H:/Senior-Project-2023/vivado/project_1/project_1.xpr
+update_compile_order -fileset sources_1
+launch_simulation -simset [get_filesets sim_4 ]
+open_wave_config H:/Senior-Project-2023/vivado/project_1/topleveltb_behav.wcfg
+source topleveltb.tcl
+current_wave_config {topleveltb_behav.wcfg}
+add_wave {{/topleveltb/TLIF/host_hostif_host_xfc_raw}} 
+close_sim

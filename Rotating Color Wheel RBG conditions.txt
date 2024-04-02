@@ -1,0 +1,48 @@
+PASTE RIGHT BEFORE PACK_VALUES(VALUES);
+
+ 
+           if(loop == 0){ //R
+                values[6] = 0; //g
+                values[5] = 0;  //b
+                values[4] = 0xd1;  //r
+            }
+            if(loop == 1){  //O
+                values[6] = 0x66; //g
+                values[5] = 0x22;  //b
+                values[4] = 0xff;  //r
+            }
+            if(loop == 2){ // Y
+                values[6] = 0xda; //g
+                values[5] = 0x21;  //b
+                values[4] = 0xff;  //r
+            }
+            if(loop == 3){ //G
+                values[6] = 0xdd; //g
+                values[5] = 0x00;  //b
+                values[4] = 0x33;  //r
+            }
+            if(loop == 4){ //B
+                values[6] = 0x33; //g
+                values[5] = 0xcc;  //b
+                values[4] = 0x11;  //r
+            }            
+            if(loop == 5){ //I
+                values[6] = 0x00; //g
+                values[5] = 0x66;  //b
+                values[4] = 0x22;  //r
+            }            
+            if(loop == 6){ //V
+                values[6] = 0x00; //g
+                values[5] = 0x44;  //b
+                values[4] = 0x33;  //r
+            }            
+            if(loop == 7){ //Purple
+                values[6] = 0x00; //g
+                values[5] = 0x99;  //b
+                values[4] = 0x99;  //r
+            }               
+            if(loop == 8){ //white
+                values[6] = 0xff; //g
+                values[5] = 0xff;  //b
+                values[4] = 0xff;  //r
+            }   

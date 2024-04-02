@@ -1,0 +1,5 @@
+3.25 seconds
+200 circles	
+360 squares = 3600 handshakes (To and From fpga)
+
+25 B/command * 360 command/ circle * 200 circle =  1,800,000 Bytes total / 3.25 seconds = 0.553 MB/s

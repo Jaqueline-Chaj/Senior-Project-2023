@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 1
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\cciuLhBZ.s 			page 1
 
 
    1              		.syntax unified
@@ -10,7 +10,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 1
    7              		.eabi_attribute 24, 1
    8              		.eabi_attribute 25, 1
    9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 30, 2
   11              		.eabi_attribute 34, 1
   12              		.eabi_attribute 18, 4
   13              		.thumb
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 1
   28:Generated_Source\PSoC5/OUT_BYTE.c **** *  Write a byte to the Control Register.
   29:Generated_Source\PSoC5/OUT_BYTE.c **** *
   30:Generated_Source\PSoC5/OUT_BYTE.c **** * Parameters:
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 2
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\cciuLhBZ.s 			page 2
 
 
   31:Generated_Source\PSoC5/OUT_BYTE.c **** *  control:  The value to be assigned to the Control Register.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 1
   54              		.cfi_startproc
   55              		@ args = 0, pretend = 0, frame = 0
   56              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 3
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\cciuLhBZ.s 			page 3
 
 
   57              		@ link register save eliminated.
@@ -146,7 +146,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 1
   77 0006 00000000 		.4byte	.Ldebug_abbrev0
   78 000a 04       		.byte	0x4
   79 000b 01       		.uleb128 0x1
-  80 000c 23000000 		.4byte	.LASF14
+  80 000c 00000000 		.4byte	.LASF14
   81 0010 0C       		.byte	0xc
   82 0011 81010000 		.4byte	.LASF15
   83 0015 E3000000 		.4byte	.LASF16
@@ -160,7 +160,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 1
   91 002c 02       		.uleb128 0x2
   92 002d 01       		.byte	0x1
   93 002e 08       		.byte	0x8
-  94 002f 15000000 		.4byte	.LASF1
+  94 002f A3000000 		.4byte	.LASF1
   95 0033 02       		.uleb128 0x2
   96 0034 02       		.byte	0x2
   97 0035 05       		.byte	0x5
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 1
  109 004a 07       		.byte	0x7
  110 004b B6000000 		.4byte	.LASF5
  111 004f 02       		.uleb128 0x2
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 4
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\cciuLhBZ.s 			page 4
 
 
  112 0050 08       		.byte	0x8
@@ -199,12 +199,12 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 1
  127 006b 04       		.uleb128 0x4
  128 006c 66010000 		.4byte	.LASF12
  129 0070 02       		.byte	0x2
- 130 0071 E901     		.2byte	0x1e9
+ 130 0071 E801     		.2byte	0x1e8
  131 0073 2C000000 		.4byte	0x2c
  132 0077 02       		.uleb128 0x2
  133 0078 04       		.byte	0x4
  134 0079 04       		.byte	0x4
- 135 007a 0F000000 		.4byte	.LASF9
+ 135 007a 9D000000 		.4byte	.LASF9
  136 007e 02       		.uleb128 0x2
  137 007f 08       		.byte	0x8
  138 0080 04       		.byte	0x4
@@ -216,12 +216,12 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 1
  144 008c 04       		.uleb128 0x4
  145 008d B1000000 		.4byte	.LASF13
  146 0091 02       		.byte	0x2
- 147 0092 9302     		.2byte	0x293
+ 147 0092 9202     		.2byte	0x292
  148 0094 98000000 		.4byte	0x98
  149 0098 05       		.uleb128 0x5
  150 0099 6B000000 		.4byte	0x6b
  151 009d 06       		.uleb128 0x6
- 152 009e 00000000 		.4byte	.LASF17
+ 152 009e 8E000000 		.4byte	.LASF17
  153 00a2 01       		.byte	0x1
  154 00a3 25       		.byte	0x25
  155 00a4 00000000 		.4byte	.LFB0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 1
  166 00be 50       		.byte	0x50
  167 00bf 00       		.byte	0
  168 00c0 08       		.uleb128 0x8
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 5
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\cciuLhBZ.s 			page 5
 
 
  169 00c1 17010000 		.4byte	.LASF19
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 1
  223 002b 00       		.byte	0
  224 002c 03       		.uleb128 0x3
  225 002d 0E       		.uleb128 0xe
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 6
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\cciuLhBZ.s 			page 6
 
 
  226 002e 3A       		.uleb128 0x3a
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 1
  280 0065 00       		.byte	0
  281 0066 08       		.uleb128 0x8
  282 0067 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 7
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\cciuLhBZ.s 			page 7
 
 
  283 0068 00       		.byte	0
@@ -414,38 +414,38 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 1
  331      00000201 
  331      FB0E0D00 
  331      01010101 
- 332              	.LASF17:
- 333 0000 4F55545F 		.ascii	"OUT_BYTE_Write\000"
- 333      42595445 
- 333      5F577269 
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 8
+ 332              	.LASF14:
+ 333 0000 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 333      43313120 
+ 333      352E342E 
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\cciuLhBZ.s 			page 8
 
 
- 333      746500
- 334              	.LASF9:
- 335 000f 666C6F61 		.ascii	"float\000"
- 335      7400
- 336              	.LASF1:
- 337 0015 756E7369 		.ascii	"unsigned char\000"
- 337      676E6564 
- 337      20636861 
- 337      7200
- 338              	.LASF14:
- 339 0023 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 339      43313120 
- 339      352E342E 
- 339      31203230 
- 339      31363036 
- 340 0056 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 340      20726576 
- 340      6973696F 
- 340      6E203233 
- 340      37373135 
- 341 0089 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 341      66756E63 
- 341      74696F6E 
- 341      2D736563 
- 341      74696F6E 
+ 333      31203230 
+ 333      31363036 
+ 334 0033 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 334      20726576 
+ 334      6973696F 
+ 334      6E203233 
+ 334      37373135 
+ 335 0066 33202D66 		.ascii	"3 -ffunction-sections -ffat-lto-objects\000"
+ 335      66756E63 
+ 335      74696F6E 
+ 335      2D736563 
+ 335      74696F6E 
+ 336              	.LASF17:
+ 337 008e 4F55545F 		.ascii	"OUT_BYTE_Write\000"
+ 337      42595445 
+ 337      5F577269 
+ 337      746500
+ 338              	.LASF9:
+ 339 009d 666C6F61 		.ascii	"float\000"
+ 339      7400
+ 340              	.LASF1:
+ 341 00a3 756E7369 		.ascii	"unsigned char\000"
+ 341      676E6564 
+ 341      20636861 
+ 341      7200
  342              	.LASF13:
  343 00b1 72656738 		.ascii	"reg8\000"
  343      00
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 1
  355      42595445 
  355      5F526561 
  355      6400
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccz0yiWm.s 			page 9
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\cciuLhBZ.s 			page 9
 
 
  356              	.LASF8:
