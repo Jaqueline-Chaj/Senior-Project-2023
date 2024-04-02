@@ -120,6 +120,7 @@ end
 
 always @(y_acc, x_acc)  begin   //Big x trakcer:  Updates mary based on when marx increments.
    if (~(reset || line_state==0)) begin    
+    
     case(linecase)
        
     2'b00: begin  //big x, positive y
