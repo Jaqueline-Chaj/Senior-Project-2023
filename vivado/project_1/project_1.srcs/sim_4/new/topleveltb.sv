@@ -36,7 +36,7 @@ module topleveltb(
     logic[10:0] reg_bot_right_y;
     logic[23:0] fill_color;
     logic[4:0] test_pat_mode;
-    logic[3:0] engine_trigger;
+    logic engine_trigger;
     
     assign reset = ~reset_n;
     

@@ -97,70 +97,72 @@ int main(void)
     int values[7];
     int loop = 0;
     int trns_idx = 45;
+    int counter = 0;
     for(;;)
     {    
         //uint8_t color_idx = 0; 
-
+        while(counter < 200){
             for (int idx=0; idx < 7; ++idx)
                 values[idx]=squares_dat_linear[row_idx * 7 + idx];
-//
-//           if(loop == 0){ //R
-//                values[6] = 0; //g
-//                values[5] = 0;  //b
-//                values[4] = 0xd1;  //r
-//            }
-//            if(loop == 1){  //O
-//                values[6] = 0x66; //g
-//                values[5] = 0x22;  //b
-//                values[4] = 0xff;  //r
-//            }
-//            if(loop == 2){ // Y
-//                values[6] = 0xda; //g
-//                values[5] = 0x21;  //b
-//                values[4] = 0xff;  //r
-//            }
-//            if(loop == 3){ //G
-//                values[6] = 0xdd; //g
-//                values[5] = 0x00;  //b
-//                values[4] = 0x33;  //r
-//            }
-//            if(loop == 4){ //B
-//                values[6] = 0x33; //g
-//                values[5] = 0xcc;  //b
-//                values[4] = 0x11;  //r
-//            }            
-//            if(loop == 5){ //I
-//                values[6] = 0x00; //g
-//                values[5] = 0x66;  //b
-//                values[4] = 0x22;  //r
-//            }            
-//            if(loop == 6){ //V
-//                values[6] = 0x00; //g
-//                values[5] = 0x44;  //b
-//                values[4] = 0x33;  //r
-//            }            
-//            if(loop == 7){ //Purple
-//                values[6] = 0x00; //g
-//                values[5] = 0x99;  //b
-//                values[4] = 0x99;  //r
-//            }               
-//            if(loop == 8){ //white
-//                values[6] = 0xff; //g
-//                values[5] = 0xff;  //b
-//                values[4] = 0xff;  //r
-//            }                   
+
+           if(loop == 0){ //R
+                values[6] = 0; //g
+                values[5] = 0;  //b
+                values[4] = 0xd1;  //r
+            }
+            if(loop == 1){  //O
+                values[6] = 0x66; //g
+                values[5] = 0x22;  //b
+                values[4] = 0xff;  //r
+            }
+            if(loop == 2){ // Y
+                values[6] = 0xda; //g
+                values[5] = 0x21;  //b
+                values[4] = 0xff;  //r
+            }
+            if(loop == 3){ //G
+                values[6] = 0xdd; //g
+                values[5] = 0x00;  //b
+                values[4] = 0x33;  //r
+            }
+            if(loop == 4){ //B
+                values[6] = 0x33; //g
+                values[5] = 0xcc;  //b
+                values[4] = 0x11;  //r
+            }            
+            if(loop == 5){ //I
+                values[6] = 0x00; //g
+                values[5] = 0x66;  //b
+                values[4] = 0x22;  //r
+            }            
+            if(loop == 6){ //V
+                values[6] = 0x00; //g
+                values[5] = 0x44;  //b
+                values[4] = 0x33;  //r
+            }            
+            if(loop == 7){ //Purple
+                values[6] = 0x00; //g
+                values[5] = 0x99;  //b
+                values[4] = 0x99;  //r
+            }               
+            if(loop == 8){ //white
+                values[6] = 0xff; //g
+                values[5] = 0xff;  //b
+                values[4] = 0xff;  //r
+            }                   
                 
             pack_values(values); //pack values for square into array[][]
-//            if(row_idx == 359 || row_idx == trns_idx || row_idx == trns_idx*2 || row_idx == trns_idx*3 || row_idx == trns_idx*4 || row_idx == trns_idx*5 || row_idx == trns_idx*6 || row_idx == trns_idx*7){
-//                loop = (loop + 1) % 9;
-//            }
+            if(row_idx == 359 || row_idx == trns_idx || row_idx == trns_idx*2 || row_idx == trns_idx*3 || row_idx == trns_idx*4 || row_idx == trns_idx*5 || row_idx == trns_idx*6 || row_idx == trns_idx*7){
+                loop = (loop + 1) % 9;
+            }
+            if(row_idx == 359) counter++;
             row_idx = (row_idx + 1) % 360; //increment row index to read
-        
+            
             for(int i = 0; i < 5; i++){
                 reg_write(array[i]);
             }
-            CyDelayUs(15000);
-                
+            CyDelayUs(1);
+        }        
         }
         
     }

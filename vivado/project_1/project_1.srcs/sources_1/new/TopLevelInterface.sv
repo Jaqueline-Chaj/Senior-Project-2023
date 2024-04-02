@@ -107,7 +107,7 @@ module TopLevelInterface(
     .reg_bot_right_y(reg_bot_right_y),
     .fill_color(fill_color),
     .test_pat_mode(test_pat_mode),
-    .engine_trigger(engine_trigger)
+    .engine_rect_fill_trigger(engine_trigger)
     );
 
 

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 1
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccFEk5zk.s 			page 1
 
 
    1              		.syntax unified
@@ -10,7 +10,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 1
    7              		.eabi_attribute 24, 1
    8              		.eabi_attribute 25, 1
    9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 30, 2
   11              		.eabi_attribute 34, 1
   12              		.eabi_attribute 18, 4
   13              		.thumb
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 1
   28:Generated_Source\PSoC5/LCD_LCDPort.c **** *
   29:Generated_Source\PSoC5/LCD_LCDPort.c **** * \brief Writes the value to the physical port (data output register), masking
   30:Generated_Source\PSoC5/LCD_LCDPort.c **** *  and shifting the bits appropriately. 
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 2
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccFEk5zk.s 			page 2
 
 
   31:Generated_Source\PSoC5/LCD_LCDPort.c **** *
@@ -98,34 +98,38 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 1
   59:Generated_Source\PSoC5/LCD_LCDPort.c ****     uint8 staticBits = (LCD_LCDPort_DR & (uint8)(~LCD_LCDPort_MASK));
   34              		.loc 1 59 0
   35 0000 044A     		ldr	r2, .L2
-  36 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  37 0004 03F08003 		and	r3, r3, #128
-  38              	.LVL1:
   60:Generated_Source\PSoC5/LCD_LCDPort.c ****     LCD_LCDPort_DR = staticBits | ((uint8)(value << LCD_LCDPort_SHIFT) & LCD_LCDPort_MASK);
-  39              		.loc 1 60 0
-  40 0008 00F07F00 		and	r0, r0, #127
+  36              		.loc 1 60 0
+  37 0002 00F07F00 		and	r0, r0, #127
+  38              	.LVL1:
+  59:Generated_Source\PSoC5/LCD_LCDPort.c ****     uint8 staticBits = (LCD_LCDPort_DR & (uint8)(~LCD_LCDPort_MASK));
+  39              		.loc 1 59 0
+  40 0006 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
   41              	.LVL2:
-  42 000c 1843     		orrs	r0, r0, r3
-  43 000e 1070     		strb	r0, [r2]
-  44 0010 7047     		bx	lr
-  45              	.L3:
-  46 0012 00BF     		.align	2
-  47              	.L2:
-  48 0014 20510040 		.word	1073762592
-  49              		.cfi_endproc
-  50              	.LFE0:
-  51              		.size	LCD_LCDPort_Write, .-LCD_LCDPort_Write
-  52              		.section	.text.LCD_LCDPort_SetDriveMode,"ax",%progbits
-  53              		.align	2
-  54              		.global	LCD_LCDPort_SetDriveMode
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 3
+  42              		.loc 1 60 0
+  43 0008 03F08003 		and	r3, r3, #128
+  44              	.LVL3:
+  45 000c 1843     		orrs	r0, r0, r3
+  46 000e 1070     		strb	r0, [r2]
+  47 0010 7047     		bx	lr
+  48              	.L3:
+  49 0012 00BF     		.align	2
+  50              	.L2:
+  51 0014 20510040 		.word	1073762592
+  52              		.cfi_endproc
+  53              	.LFE0:
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccFEk5zk.s 			page 3
 
 
-  55              		.thumb
-  56              		.thumb_func
-  57              		.type	LCD_LCDPort_SetDriveMode, %function
-  58              	LCD_LCDPort_SetDriveMode:
-  59              	.LFB1:
+  54              		.size	LCD_LCDPort_Write, .-LCD_LCDPort_Write
+  55              		.section	.text.LCD_LCDPort_SetDriveMode,"ax",%progbits
+  56              		.align	2
+  57              		.global	LCD_LCDPort_SetDriveMode
+  58              		.thumb
+  59              		.thumb_func
+  60              		.type	LCD_LCDPort_SetDriveMode, %function
+  61              	LCD_LCDPort_SetDriveMode:
+  62              	.LFB1:
   61:Generated_Source\PSoC5/LCD_LCDPort.c **** }
   62:Generated_Source\PSoC5/LCD_LCDPort.c **** 
   63:Generated_Source\PSoC5/LCD_LCDPort.c **** 
@@ -157,90 +161,89 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 1
   89:Generated_Source\PSoC5/LCD_LCDPort.c **** *******************************************************************************/
   90:Generated_Source\PSoC5/LCD_LCDPort.c **** void LCD_LCDPort_SetDriveMode(uint8 mode)
   91:Generated_Source\PSoC5/LCD_LCDPort.c **** {
-  60              		.loc 1 91 0
-  61              		.cfi_startproc
-  62              		@ args = 0, pretend = 0, frame = 0
-  63              		@ frame_needed = 0, uses_anonymous_args = 0
-  64              		@ link register save eliminated.
-  65              	.LVL3:
+  63              		.loc 1 91 0
+  64              		.cfi_startproc
+  65              		@ args = 0, pretend = 0, frame = 0
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67              		@ link register save eliminated.
+  68              	.LVL4:
   92:Generated_Source\PSoC5/LCD_LCDPort.c **** 	CyPins_SetPinDriveMode(LCD_LCDPort_0, mode);
-  66              		.loc 1 92 0
-  67 0000 164A     		ldr	r2, .L5
-  68 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  69 0004 00F00E00 		and	r0, r0, #14
-  70              	.LVL4:
-  71 0008 03F0F103 		and	r3, r3, #241
-  72 000c 0343     		orrs	r3, r3, r0
-  73 000e 1370     		strb	r3, [r2]
+  69              		.loc 1 92 0
+  70 0000 134A     		ldr	r2, .L5
+  71 0002 00F00E00 		and	r0, r0, #14
+  72              	.LVL5:
+  73 0006 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
   93:Generated_Source\PSoC5/LCD_LCDPort.c **** 	CyPins_SetPinDriveMode(LCD_LCDPort_1, mode);
   74              		.loc 1 93 0
-  75 0010 0132     		adds	r2, r2, #1
-  76 0012 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  77 0014 03F0F103 		and	r3, r3, #241
-  78 0018 0343     		orrs	r3, r3, r0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 4
+  75 0008 1249     		ldr	r1, .L5+4
+  92:Generated_Source\PSoC5/LCD_LCDPort.c **** 	CyPins_SetPinDriveMode(LCD_LCDPort_0, mode);
+  76              		.loc 1 92 0
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccFEk5zk.s 			page 4
 
 
-  79 001a 1370     		strb	r3, [r2]
+  77 000a 03F0F103 		and	r3, r3, #241
+  78 000e 0343     		orrs	r3, r3, r0
+  79 0010 1370     		strb	r3, [r2]
+  80              		.loc 1 93 0
+  81 0012 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
+  82 0014 03F0F103 		and	r3, r3, #241
+  83 0018 0343     		orrs	r3, r3, r0
+  84 001a 0B70     		strb	r3, [r1]
   94:Generated_Source\PSoC5/LCD_LCDPort.c **** 	CyPins_SetPinDriveMode(LCD_LCDPort_2, mode);
-  80              		.loc 1 94 0
-  81 001c 0132     		adds	r2, r2, #1
-  82 001e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  83 0020 03F0F103 		and	r3, r3, #241
-  84 0024 0343     		orrs	r3, r3, r0
-  85 0026 1370     		strb	r3, [r2]
+  85              		.loc 1 94 0
+  86 001c 9378     		ldrb	r3, [r2, #2]	@ zero_extendqisi2
+  87 001e 03F0F103 		and	r3, r3, #241
+  88 0022 0343     		orrs	r3, r3, r0
+  89 0024 9370     		strb	r3, [r2, #2]
   95:Generated_Source\PSoC5/LCD_LCDPort.c **** 	CyPins_SetPinDriveMode(LCD_LCDPort_3, mode);
-  86              		.loc 1 95 0
-  87 0028 0132     		adds	r2, r2, #1
-  88 002a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  89 002c 03F0F103 		and	r3, r3, #241
-  90 0030 0343     		orrs	r3, r3, r0
-  91 0032 1370     		strb	r3, [r2]
+  90              		.loc 1 95 0
+  91 0026 8B78     		ldrb	r3, [r1, #2]	@ zero_extendqisi2
+  92 0028 03F0F103 		and	r3, r3, #241
+  93 002c 0343     		orrs	r3, r3, r0
+  94 002e 8B70     		strb	r3, [r1, #2]
   96:Generated_Source\PSoC5/LCD_LCDPort.c **** 	CyPins_SetPinDriveMode(LCD_LCDPort_4, mode);
-  92              		.loc 1 96 0
-  93 0034 0132     		adds	r2, r2, #1
-  94 0036 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  95 0038 03F0F103 		and	r3, r3, #241
-  96 003c 0343     		orrs	r3, r3, r0
-  97 003e 1370     		strb	r3, [r2]
+  95              		.loc 1 96 0
+  96 0030 1379     		ldrb	r3, [r2, #4]	@ zero_extendqisi2
+  97 0032 03F0F103 		and	r3, r3, #241
+  98 0036 0343     		orrs	r3, r3, r0
+  99 0038 1371     		strb	r3, [r2, #4]
   97:Generated_Source\PSoC5/LCD_LCDPort.c **** 	CyPins_SetPinDriveMode(LCD_LCDPort_5, mode);
-  98              		.loc 1 97 0
-  99 0040 0132     		adds	r2, r2, #1
- 100 0042 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
- 101 0044 03F0F103 		and	r3, r3, #241
- 102 0048 0343     		orrs	r3, r3, r0
- 103 004a 1370     		strb	r3, [r2]
+ 100              		.loc 1 97 0
+ 101 003a 0B79     		ldrb	r3, [r1, #4]	@ zero_extendqisi2
+ 102 003c 03F0F103 		and	r3, r3, #241
+ 103 0040 0343     		orrs	r3, r3, r0
+ 104 0042 0B71     		strb	r3, [r1, #4]
   98:Generated_Source\PSoC5/LCD_LCDPort.c **** 	CyPins_SetPinDriveMode(LCD_LCDPort_6, mode);
- 104              		.loc 1 98 0
- 105 004c 0132     		adds	r2, r2, #1
- 106 004e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
- 107 0050 03F0F103 		and	r3, r3, #241
- 108 0054 1843     		orrs	r0, r0, r3
- 109 0056 1070     		strb	r0, [r2]
- 110 0058 7047     		bx	lr
+ 105              		.loc 1 98 0
+ 106 0044 9379     		ldrb	r3, [r2, #6]	@ zero_extendqisi2
+ 107 0046 03F0F103 		and	r3, r3, #241
+ 108 004a 1843     		orrs	r0, r0, r3
+ 109 004c 9071     		strb	r0, [r2, #6]
+ 110 004e 7047     		bx	lr
  111              	.L6:
- 112 005a 00BF     		.align	2
+ 112              		.align	2
  113              	.L5:
- 114 005c 10500040 		.word	1073762320
- 115              		.cfi_endproc
- 116              	.LFE1:
- 117              		.size	LCD_LCDPort_SetDriveMode, .-LCD_LCDPort_SetDriveMode
- 118              		.section	.text.LCD_LCDPort_Read,"ax",%progbits
- 119              		.align	2
- 120              		.global	LCD_LCDPort_Read
- 121              		.thumb
- 122              		.thumb_func
- 123              		.type	LCD_LCDPort_Read, %function
- 124              	LCD_LCDPort_Read:
- 125              	.LFB2:
+ 114 0050 10500040 		.word	1073762320
+ 115 0054 11500040 		.word	1073762321
+ 116              		.cfi_endproc
+ 117              	.LFE1:
+ 118              		.size	LCD_LCDPort_SetDriveMode, .-LCD_LCDPort_SetDriveMode
+ 119              		.section	.text.LCD_LCDPort_Read,"ax",%progbits
+ 120              		.align	2
+ 121              		.global	LCD_LCDPort_Read
+ 122              		.thumb
+ 123              		.thumb_func
+ 124              		.type	LCD_LCDPort_Read, %function
+ 125              	LCD_LCDPort_Read:
+ 126              	.LFB2:
   99:Generated_Source\PSoC5/LCD_LCDPort.c **** }
  100:Generated_Source\PSoC5/LCD_LCDPort.c **** 
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccFEk5zk.s 			page 5
+
+
  101:Generated_Source\PSoC5/LCD_LCDPort.c **** 
  102:Generated_Source\PSoC5/LCD_LCDPort.c **** /*******************************************************************************
  103:Generated_Source\PSoC5/LCD_LCDPort.c **** * Function Name: LCD_LCDPort_Read
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 5
-
-
  104:Generated_Source\PSoC5/LCD_LCDPort.c **** ****************************************************************************//**
  105:Generated_Source\PSoC5/LCD_LCDPort.c **** *
  106:Generated_Source\PSoC5/LCD_LCDPort.c **** * \brief Reads the associated physical port (pin status register) and masks 
@@ -258,34 +261,34 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 1
  118:Generated_Source\PSoC5/LCD_LCDPort.c **** *******************************************************************************/
  119:Generated_Source\PSoC5/LCD_LCDPort.c **** uint8 LCD_LCDPort_Read(void)
  120:Generated_Source\PSoC5/LCD_LCDPort.c **** {
- 126              		.loc 1 120 0
- 127              		.cfi_startproc
- 128              		@ args = 0, pretend = 0, frame = 0
- 129              		@ frame_needed = 0, uses_anonymous_args = 0
- 130              		@ link register save eliminated.
+ 127              		.loc 1 120 0
+ 128              		.cfi_startproc
+ 129              		@ args = 0, pretend = 0, frame = 0
+ 130              		@ frame_needed = 0, uses_anonymous_args = 0
+ 131              		@ link register save eliminated.
  121:Generated_Source\PSoC5/LCD_LCDPort.c ****     return (LCD_LCDPort_PS & LCD_LCDPort_MASK) >> LCD_LCDPort_SHIFT;
- 131              		.loc 1 121 0
- 132 0000 024B     		ldr	r3, .L8
- 133 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 132              		.loc 1 121 0
+ 133 0000 024B     		ldr	r3, .L8
+ 134 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
  122:Generated_Source\PSoC5/LCD_LCDPort.c **** }
- 134              		.loc 1 122 0
- 135 0004 00F07F00 		and	r0, r0, #127
- 136 0008 7047     		bx	lr
- 137              	.L9:
- 138 000a 00BF     		.align	2
- 139              	.L8:
- 140 000c 21510040 		.word	1073762593
- 141              		.cfi_endproc
- 142              	.LFE2:
- 143              		.size	LCD_LCDPort_Read, .-LCD_LCDPort_Read
- 144              		.section	.text.LCD_LCDPort_ReadDataReg,"ax",%progbits
- 145              		.align	2
- 146              		.global	LCD_LCDPort_ReadDataReg
- 147              		.thumb
- 148              		.thumb_func
- 149              		.type	LCD_LCDPort_ReadDataReg, %function
- 150              	LCD_LCDPort_ReadDataReg:
- 151              	.LFB3:
+ 135              		.loc 1 122 0
+ 136 0004 00F07F00 		and	r0, r0, #127
+ 137 0008 7047     		bx	lr
+ 138              	.L9:
+ 139 000a 00BF     		.align	2
+ 140              	.L8:
+ 141 000c 21510040 		.word	1073762593
+ 142              		.cfi_endproc
+ 143              	.LFE2:
+ 144              		.size	LCD_LCDPort_Read, .-LCD_LCDPort_Read
+ 145              		.section	.text.LCD_LCDPort_ReadDataReg,"ax",%progbits
+ 146              		.align	2
+ 147              		.global	LCD_LCDPort_ReadDataReg
+ 148              		.thumb
+ 149              		.thumb_func
+ 150              		.type	LCD_LCDPort_ReadDataReg, %function
+ 151              	LCD_LCDPort_ReadDataReg:
+ 152              	.LFB3:
  123:Generated_Source\PSoC5/LCD_LCDPort.c **** 
  124:Generated_Source\PSoC5/LCD_LCDPort.c **** 
  125:Generated_Source\PSoC5/LCD_LCDPort.c **** /*******************************************************************************
@@ -295,12 +298,12 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 1
  129:Generated_Source\PSoC5/LCD_LCDPort.c **** * \brief Reads the associated physical port's data output register and masks 
  130:Generated_Source\PSoC5/LCD_LCDPort.c **** *  the correct bits according to the width and bit position of the component 
  131:Generated_Source\PSoC5/LCD_LCDPort.c **** *  instance. 
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccFEk5zk.s 			page 6
+
+
  132:Generated_Source\PSoC5/LCD_LCDPort.c **** *
  133:Generated_Source\PSoC5/LCD_LCDPort.c **** * The data output register controls the signal applied to the physical pin in 
  134:Generated_Source\PSoC5/LCD_LCDPort.c **** * conjunction with the drive mode parameter. This is not the same as the 
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 6
-
-
  135:Generated_Source\PSoC5/LCD_LCDPort.c **** * preferred LCD_LCDPort_Read() API because the 
  136:Generated_Source\PSoC5/LCD_LCDPort.c **** * LCD_LCDPort_ReadDataReg() reads the data register instead of the status 
  137:Generated_Source\PSoC5/LCD_LCDPort.c **** * register. For output pins this is a useful function to determine the value 
@@ -315,174 +318,173 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 1
  146:Generated_Source\PSoC5/LCD_LCDPort.c **** *******************************************************************************/
  147:Generated_Source\PSoC5/LCD_LCDPort.c **** uint8 LCD_LCDPort_ReadDataReg(void)
  148:Generated_Source\PSoC5/LCD_LCDPort.c **** {
- 152              		.loc 1 148 0
- 153              		.cfi_startproc
- 154              		@ args = 0, pretend = 0, frame = 0
- 155              		@ frame_needed = 0, uses_anonymous_args = 0
- 156              		@ link register save eliminated.
+ 153              		.loc 1 148 0
+ 154              		.cfi_startproc
+ 155              		@ args = 0, pretend = 0, frame = 0
+ 156              		@ frame_needed = 0, uses_anonymous_args = 0
+ 157              		@ link register save eliminated.
  149:Generated_Source\PSoC5/LCD_LCDPort.c ****     return (LCD_LCDPort_DR & LCD_LCDPort_MASK) >> LCD_LCDPort_SHIFT;
- 157              		.loc 1 149 0
- 158 0000 024B     		ldr	r3, .L11
- 159 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 158              		.loc 1 149 0
+ 159 0000 024B     		ldr	r3, .L11
+ 160 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
  150:Generated_Source\PSoC5/LCD_LCDPort.c **** }
- 160              		.loc 1 150 0
- 161 0004 00F07F00 		and	r0, r0, #127
- 162 0008 7047     		bx	lr
- 163              	.L12:
- 164 000a 00BF     		.align	2
- 165              	.L11:
- 166 000c 20510040 		.word	1073762592
- 167              		.cfi_endproc
- 168              	.LFE3:
- 169              		.size	LCD_LCDPort_ReadDataReg, .-LCD_LCDPort_ReadDataReg
- 170              		.text
- 171              	.Letext0:
- 172              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
- 173              		.section	.debug_info,"",%progbits
- 174              	.Ldebug_info0:
- 175 0000 1B010000 		.4byte	0x11b
- 176 0004 0400     		.2byte	0x4
- 177 0006 00000000 		.4byte	.Ldebug_abbrev0
- 178 000a 04       		.byte	0x4
- 179 000b 01       		.uleb128 0x1
- 180 000c 57000000 		.4byte	.LASF20
- 181 0010 0C       		.byte	0xc
- 182 0011 07010000 		.4byte	.LASF21
- 183 0015 45010000 		.4byte	.LASF22
- 184 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 185 001d 00000000 		.4byte	0
- 186 0021 00000000 		.4byte	.Ldebug_line0
- 187 0025 02       		.uleb128 0x2
- 188 0026 01       		.byte	0x1
- 189 0027 06       		.byte	0x6
- 190 0028 DF010000 		.4byte	.LASF0
- 191 002c 02       		.uleb128 0x2
- 192 002d 01       		.byte	0x1
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 7
+ 161              		.loc 1 150 0
+ 162 0004 00F07F00 		and	r0, r0, #127
+ 163 0008 7047     		bx	lr
+ 164              	.L12:
+ 165 000a 00BF     		.align	2
+ 166              	.L11:
+ 167 000c 20510040 		.word	1073762592
+ 168              		.cfi_endproc
+ 169              	.LFE3:
+ 170              		.size	LCD_LCDPort_ReadDataReg, .-LCD_LCDPort_ReadDataReg
+ 171              		.text
+ 172              	.Letext0:
+ 173              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 174              		.section	.debug_info,"",%progbits
+ 175              	.Ldebug_info0:
+ 176 0000 1D010000 		.4byte	0x11d
+ 177 0004 0400     		.2byte	0x4
+ 178 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 179 000a 04       		.byte	0x4
+ 180 000b 01       		.uleb128 0x1
+ 181 000c 00000000 		.4byte	.LASF20
+ 182 0010 0C       		.byte	0xc
+ 183 0011 07010000 		.4byte	.LASF21
+ 184 0015 45010000 		.4byte	.LASF22
+ 185 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 186 001d 00000000 		.4byte	0
+ 187 0021 00000000 		.4byte	.Ldebug_line0
+ 188 0025 02       		.uleb128 0x2
+ 189 0026 01       		.byte	0x1
+ 190 0027 06       		.byte	0x6
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccFEk5zk.s 			page 7
 
 
- 193 002e 08       		.byte	0x8
- 194 002f 49000000 		.4byte	.LASF1
- 195 0033 02       		.uleb128 0x2
- 196 0034 02       		.byte	0x2
- 197 0035 05       		.byte	0x5
- 198 0036 B5010000 		.4byte	.LASF2
- 199 003a 02       		.uleb128 0x2
- 200 003b 02       		.byte	0x2
- 201 003c 07       		.byte	0x7
- 202 003d 18000000 		.4byte	.LASF3
- 203 0041 02       		.uleb128 0x2
- 204 0042 04       		.byte	0x4
- 205 0043 05       		.byte	0x5
- 206 0044 D6010000 		.4byte	.LASF4
- 207 0048 02       		.uleb128 0x2
- 208 0049 04       		.byte	0x4
- 209 004a 07       		.byte	0x7
- 210 004b F5000000 		.4byte	.LASF5
- 211 004f 02       		.uleb128 0x2
- 212 0050 08       		.byte	0x8
- 213 0051 05       		.byte	0x5
- 214 0052 A2010000 		.4byte	.LASF6
- 215 0056 02       		.uleb128 0x2
- 216 0057 08       		.byte	0x8
- 217 0058 07       		.byte	0x7
- 218 0059 86010000 		.4byte	.LASF7
- 219 005d 03       		.uleb128 0x3
- 220 005e 04       		.byte	0x4
- 221 005f 05       		.byte	0x5
- 222 0060 696E7400 		.ascii	"int\000"
- 223 0064 02       		.uleb128 0x2
- 224 0065 04       		.byte	0x4
- 225 0066 07       		.byte	0x7
- 226 0067 79010000 		.4byte	.LASF8
- 227 006b 04       		.uleb128 0x4
- 228 006c BF010000 		.4byte	.LASF12
- 229 0070 02       		.byte	0x2
- 230 0071 E801     		.2byte	0x1e8
- 231 0073 2C000000 		.4byte	0x2c
- 232 0077 02       		.uleb128 0x2
- 233 0078 04       		.byte	0x4
- 234 0079 04       		.byte	0x4
- 235 007a 43000000 		.4byte	.LASF9
- 236 007e 02       		.uleb128 0x2
- 237 007f 08       		.byte	0x8
- 238 0080 04       		.byte	0x4
- 239 0081 72010000 		.4byte	.LASF10
- 240 0085 02       		.uleb128 0x2
- 241 0086 01       		.byte	0x1
- 242 0087 08       		.byte	0x8
- 243 0088 B0010000 		.4byte	.LASF11
- 244 008c 04       		.uleb128 0x4
- 245 008d F0000000 		.4byte	.LASF13
- 246 0091 02       		.byte	0x2
- 247 0092 9202     		.2byte	0x292
- 248 0094 98000000 		.4byte	0x98
- 249 0098 05       		.uleb128 0x5
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 8
+ 191 0028 DF010000 		.4byte	.LASF0
+ 192 002c 02       		.uleb128 0x2
+ 193 002d 01       		.byte	0x1
+ 194 002e 08       		.byte	0x8
+ 195 002f D7000000 		.4byte	.LASF1
+ 196 0033 02       		.uleb128 0x2
+ 197 0034 02       		.byte	0x2
+ 198 0035 05       		.byte	0x5
+ 199 0036 B5010000 		.4byte	.LASF2
+ 200 003a 02       		.uleb128 0x2
+ 201 003b 02       		.byte	0x2
+ 202 003c 07       		.byte	0x7
+ 203 003d A6000000 		.4byte	.LASF3
+ 204 0041 02       		.uleb128 0x2
+ 205 0042 04       		.byte	0x4
+ 206 0043 05       		.byte	0x5
+ 207 0044 D6010000 		.4byte	.LASF4
+ 208 0048 02       		.uleb128 0x2
+ 209 0049 04       		.byte	0x4
+ 210 004a 07       		.byte	0x7
+ 211 004b F5000000 		.4byte	.LASF5
+ 212 004f 02       		.uleb128 0x2
+ 213 0050 08       		.byte	0x8
+ 214 0051 05       		.byte	0x5
+ 215 0052 A2010000 		.4byte	.LASF6
+ 216 0056 02       		.uleb128 0x2
+ 217 0057 08       		.byte	0x8
+ 218 0058 07       		.byte	0x7
+ 219 0059 86010000 		.4byte	.LASF7
+ 220 005d 03       		.uleb128 0x3
+ 221 005e 04       		.byte	0x4
+ 222 005f 05       		.byte	0x5
+ 223 0060 696E7400 		.ascii	"int\000"
+ 224 0064 02       		.uleb128 0x2
+ 225 0065 04       		.byte	0x4
+ 226 0066 07       		.byte	0x7
+ 227 0067 79010000 		.4byte	.LASF8
+ 228 006b 04       		.uleb128 0x4
+ 229 006c BF010000 		.4byte	.LASF12
+ 230 0070 02       		.byte	0x2
+ 231 0071 E801     		.2byte	0x1e8
+ 232 0073 2C000000 		.4byte	0x2c
+ 233 0077 02       		.uleb128 0x2
+ 234 0078 04       		.byte	0x4
+ 235 0079 04       		.byte	0x4
+ 236 007a D1000000 		.4byte	.LASF9
+ 237 007e 02       		.uleb128 0x2
+ 238 007f 08       		.byte	0x8
+ 239 0080 04       		.byte	0x4
+ 240 0081 72010000 		.4byte	.LASF10
+ 241 0085 02       		.uleb128 0x2
+ 242 0086 01       		.byte	0x1
+ 243 0087 08       		.byte	0x8
+ 244 0088 B0010000 		.4byte	.LASF11
+ 245 008c 04       		.uleb128 0x4
+ 246 008d F0000000 		.4byte	.LASF13
+ 247 0091 02       		.byte	0x2
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccFEk5zk.s 			page 8
 
 
- 250 0099 6B000000 		.4byte	0x6b
- 251 009d 06       		.uleb128 0x6
- 252 009e 06000000 		.4byte	.LASF14
- 253 00a2 01       		.byte	0x1
- 254 00a3 39       		.byte	0x39
- 255 00a4 00000000 		.4byte	.LFB0
- 256 00a8 18000000 		.4byte	.LFE0-.LFB0
- 257 00ac 01       		.uleb128 0x1
- 258 00ad 9C       		.byte	0x9c
- 259 00ae CF000000 		.4byte	0xcf
- 260 00b2 07       		.uleb128 0x7
- 261 00b3 00000000 		.4byte	.LASF16
- 262 00b7 01       		.byte	0x1
- 263 00b8 39       		.byte	0x39
- 264 00b9 6B000000 		.4byte	0x6b
- 265 00bd 00000000 		.4byte	.LLST0
- 266 00c1 08       		.uleb128 0x8
- 267 00c2 E5000000 		.4byte	.LASF23
- 268 00c6 01       		.byte	0x1
- 269 00c7 3B       		.byte	0x3b
- 270 00c8 6B000000 		.4byte	0x6b
- 271 00cc 01       		.uleb128 0x1
- 272 00cd 53       		.byte	0x53
- 273 00ce 00       		.byte	0
- 274 00cf 06       		.uleb128 0x6
- 275 00d0 2C010000 		.4byte	.LASF15
- 276 00d4 01       		.byte	0x1
- 277 00d5 5A       		.byte	0x5a
- 278 00d6 00000000 		.4byte	.LFB1
- 279 00da 60000000 		.4byte	.LFE1-.LFB1
- 280 00de 01       		.uleb128 0x1
- 281 00df 9C       		.byte	0x9c
- 282 00e0 F4000000 		.4byte	0xf4
- 283 00e4 07       		.uleb128 0x7
- 284 00e5 9D010000 		.4byte	.LASF17
- 285 00e9 01       		.byte	0x1
- 286 00ea 5A       		.byte	0x5a
- 287 00eb 6B000000 		.4byte	0x6b
- 288 00ef 21000000 		.4byte	.LLST1
- 289 00f3 00       		.byte	0
- 290 00f4 09       		.uleb128 0x9
- 291 00f5 C5010000 		.4byte	.LASF18
- 292 00f9 01       		.byte	0x1
- 293 00fa 77       		.byte	0x77
- 294 00fb 6B000000 		.4byte	0x6b
- 295 00ff 00000000 		.4byte	.LFB2
- 296 0103 10000000 		.4byte	.LFE2-.LFB2
- 297 0107 01       		.uleb128 0x1
- 298 0108 9C       		.byte	0x9c
- 299 0109 09       		.uleb128 0x9
- 300 010a 2B000000 		.4byte	.LASF19
- 301 010e 01       		.byte	0x1
- 302 010f 93       		.byte	0x93
- 303 0110 6B000000 		.4byte	0x6b
- 304 0114 00000000 		.4byte	.LFB3
- 305 0118 10000000 		.4byte	.LFE3-.LFB3
- 306 011c 01       		.uleb128 0x1
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 9
+ 248 0092 9202     		.2byte	0x292
+ 249 0094 98000000 		.4byte	0x98
+ 250 0098 05       		.uleb128 0x5
+ 251 0099 6B000000 		.4byte	0x6b
+ 252 009d 06       		.uleb128 0x6
+ 253 009e 94000000 		.4byte	.LASF14
+ 254 00a2 01       		.byte	0x1
+ 255 00a3 39       		.byte	0x39
+ 256 00a4 00000000 		.4byte	.LFB0
+ 257 00a8 18000000 		.4byte	.LFE0-.LFB0
+ 258 00ac 01       		.uleb128 0x1
+ 259 00ad 9C       		.byte	0x9c
+ 260 00ae D1000000 		.4byte	0xd1
+ 261 00b2 07       		.uleb128 0x7
+ 262 00b3 8E000000 		.4byte	.LASF16
+ 263 00b7 01       		.byte	0x1
+ 264 00b8 39       		.byte	0x39
+ 265 00b9 6B000000 		.4byte	0x6b
+ 266 00bd 00000000 		.4byte	.LLST0
+ 267 00c1 08       		.uleb128 0x8
+ 268 00c2 E5000000 		.4byte	.LASF23
+ 269 00c6 01       		.byte	0x1
+ 270 00c7 3B       		.byte	0x3b
+ 271 00c8 6B000000 		.4byte	0x6b
+ 272 00cc 21000000 		.4byte	.LLST1
+ 273 00d0 00       		.byte	0
+ 274 00d1 06       		.uleb128 0x6
+ 275 00d2 2C010000 		.4byte	.LASF15
+ 276 00d6 01       		.byte	0x1
+ 277 00d7 5A       		.byte	0x5a
+ 278 00d8 00000000 		.4byte	.LFB1
+ 279 00dc 58000000 		.4byte	.LFE1-.LFB1
+ 280 00e0 01       		.uleb128 0x1
+ 281 00e1 9C       		.byte	0x9c
+ 282 00e2 F6000000 		.4byte	0xf6
+ 283 00e6 07       		.uleb128 0x7
+ 284 00e7 9D010000 		.4byte	.LASF17
+ 285 00eb 01       		.byte	0x1
+ 286 00ec 5A       		.byte	0x5a
+ 287 00ed 6B000000 		.4byte	0x6b
+ 288 00f1 39000000 		.4byte	.LLST2
+ 289 00f5 00       		.byte	0
+ 290 00f6 09       		.uleb128 0x9
+ 291 00f7 C5010000 		.4byte	.LASF18
+ 292 00fb 01       		.byte	0x1
+ 293 00fc 77       		.byte	0x77
+ 294 00fd 6B000000 		.4byte	0x6b
+ 295 0101 00000000 		.4byte	.LFB2
+ 296 0105 10000000 		.4byte	.LFE2-.LFB2
+ 297 0109 01       		.uleb128 0x1
+ 298 010a 9C       		.byte	0x9c
+ 299 010b 09       		.uleb128 0x9
+ 300 010c B9000000 		.4byte	.LASF19
+ 301 0110 01       		.byte	0x1
+ 302 0111 93       		.byte	0x93
+ 303 0112 6B000000 		.4byte	0x6b
+ 304 0116 00000000 		.4byte	.LFB3
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccFEk5zk.s 			page 9
 
 
- 307 011d 9C       		.byte	0x9c
- 308 011e 00       		.byte	0
+ 305 011a 10000000 		.4byte	.LFE3-.LFB3
+ 306 011e 01       		.uleb128 0x1
+ 307 011f 9C       		.byte	0x9c
+ 308 0120 00       		.byte	0
  309              		.section	.debug_abbrev,"",%progbits
  310              	.Ldebug_abbrev0:
  311 0000 01       		.uleb128 0x1
@@ -536,11 +538,11 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 1
  359 0030 3B       		.uleb128 0x3b
  360 0031 05       		.uleb128 0x5
  361 0032 49       		.uleb128 0x49
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccFEk5zk.s 			page 10
+
+
  362 0033 13       		.uleb128 0x13
  363 0034 00       		.byte	0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 10
-
-
  364 0035 00       		.byte	0
  365 0036 05       		.uleb128 0x5
  366 0037 35       		.uleb128 0x35
@@ -596,15 +598,15 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 1
  416 006a 0E       		.uleb128 0xe
  417 006b 3A       		.uleb128 0x3a
  418 006c 0B       		.uleb128 0xb
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccFEk5zk.s 			page 11
+
+
  419 006d 3B       		.uleb128 0x3b
  420 006e 0B       		.uleb128 0xb
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 11
-
-
  421 006f 49       		.uleb128 0x49
  422 0070 13       		.uleb128 0x13
  423 0071 02       		.uleb128 0x2
- 424 0072 18       		.uleb128 0x18
+ 424 0072 17       		.uleb128 0x17
  425 0073 00       		.byte	0
  426 0074 00       		.byte	0
  427 0075 09       		.uleb128 0x9
@@ -637,10 +639,10 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 1
  454              	.Ldebug_loc0:
  455              	.LLST0:
  456 0000 00000000 		.4byte	.LVL0
- 457 0004 0C000000 		.4byte	.LVL2
+ 457 0004 06000000 		.4byte	.LVL1
  458 0008 0100     		.2byte	0x1
  459 000a 50       		.byte	0x50
- 460 000b 0C000000 		.4byte	.LVL2
+ 460 000b 06000000 		.4byte	.LVL1
  461 000f 18000000 		.4byte	.LFE0
  462 0013 0400     		.2byte	0x4
  463 0015 F3       		.byte	0xf3
@@ -650,185 +652,200 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 1
  467 0019 00000000 		.4byte	0
  468 001d 00000000 		.4byte	0
  469              	.LLST1:
- 470 0021 00000000 		.4byte	.LVL3
- 471 0025 08000000 		.4byte	.LVL4
- 472 0029 0100     		.2byte	0x1
- 473 002b 50       		.byte	0x50
- 474 002c 08000000 		.4byte	.LVL4
- 475 0030 60000000 		.4byte	.LFE1
- 476 0034 0400     		.2byte	0x4
- 477 0036 F3       		.byte	0xf3
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 12
+ 470 0021 08000000 		.4byte	.LVL2
+ 471 0025 0C000000 		.4byte	.LVL3
+ 472 0029 0600     		.2byte	0x6
+ 473 002b 73       		.byte	0x73
+ 474 002c 00       		.sleb128 0
+ 475 002d 09       		.byte	0x9
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccFEk5zk.s 			page 12
 
 
- 478 0037 01       		.uleb128 0x1
- 479 0038 50       		.byte	0x50
- 480 0039 9F       		.byte	0x9f
- 481 003a 00000000 		.4byte	0
- 482 003e 00000000 		.4byte	0
- 483              		.section	.debug_aranges,"",%progbits
- 484 0000 34000000 		.4byte	0x34
- 485 0004 0200     		.2byte	0x2
- 486 0006 00000000 		.4byte	.Ldebug_info0
- 487 000a 04       		.byte	0x4
- 488 000b 00       		.byte	0
- 489 000c 0000     		.2byte	0
- 490 000e 0000     		.2byte	0
- 491 0010 00000000 		.4byte	.LFB0
- 492 0014 18000000 		.4byte	.LFE0-.LFB0
- 493 0018 00000000 		.4byte	.LFB1
- 494 001c 60000000 		.4byte	.LFE1-.LFB1
- 495 0020 00000000 		.4byte	.LFB2
- 496 0024 10000000 		.4byte	.LFE2-.LFB2
- 497 0028 00000000 		.4byte	.LFB3
- 498 002c 10000000 		.4byte	.LFE3-.LFB3
- 499 0030 00000000 		.4byte	0
- 500 0034 00000000 		.4byte	0
- 501              		.section	.debug_ranges,"",%progbits
- 502              	.Ldebug_ranges0:
- 503 0000 00000000 		.4byte	.LFB0
- 504 0004 18000000 		.4byte	.LFE0
- 505 0008 00000000 		.4byte	.LFB1
- 506 000c 60000000 		.4byte	.LFE1
- 507 0010 00000000 		.4byte	.LFB2
- 508 0014 10000000 		.4byte	.LFE2
- 509 0018 00000000 		.4byte	.LFB3
- 510 001c 10000000 		.4byte	.LFE3
- 511 0020 00000000 		.4byte	0
- 512 0024 00000000 		.4byte	0
- 513              		.section	.debug_line,"",%progbits
- 514              	.Ldebug_line0:
- 515 0000 9A000000 		.section	.debug_str,"MS",%progbits,1
- 515      02004800 
- 515      00000201 
- 515      FB0E0D00 
- 515      01010101 
- 516              	.LASF16:
- 517 0000 76616C75 		.ascii	"value\000"
- 517      6500
- 518              	.LASF14:
- 519 0006 4C43445F 		.ascii	"LCD_LCDPort_Write\000"
- 519      4C434450 
- 519      6F72745F 
- 519      57726974 
- 519      6500
- 520              	.LASF3:
- 521 0018 73686F72 		.ascii	"short unsigned int\000"
- 521      7420756E 
- 521      7369676E 
- 521      65642069 
- 521      6E7400
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 13
-
-
- 522              	.LASF19:
- 523 002b 4C43445F 		.ascii	"LCD_LCDPort_ReadDataReg\000"
- 523      4C434450 
- 523      6F72745F 
- 523      52656164 
- 523      44617461 
- 524              	.LASF9:
- 525 0043 666C6F61 		.ascii	"float\000"
- 525      7400
- 526              	.LASF1:
- 527 0049 756E7369 		.ascii	"unsigned char\000"
- 527      676E6564 
- 527      20636861 
- 527      7200
+ 476 002e 80       		.byte	0x80
+ 477 002f 1A       		.byte	0x1a
+ 478 0030 9F       		.byte	0x9f
+ 479 0031 00000000 		.4byte	0
+ 480 0035 00000000 		.4byte	0
+ 481              	.LLST2:
+ 482 0039 00000000 		.4byte	.LVL4
+ 483 003d 06000000 		.4byte	.LVL5
+ 484 0041 0100     		.2byte	0x1
+ 485 0043 50       		.byte	0x50
+ 486 0044 06000000 		.4byte	.LVL5
+ 487 0048 58000000 		.4byte	.LFE1
+ 488 004c 0400     		.2byte	0x4
+ 489 004e F3       		.byte	0xf3
+ 490 004f 01       		.uleb128 0x1
+ 491 0050 50       		.byte	0x50
+ 492 0051 9F       		.byte	0x9f
+ 493 0052 00000000 		.4byte	0
+ 494 0056 00000000 		.4byte	0
+ 495              		.section	.debug_aranges,"",%progbits
+ 496 0000 34000000 		.4byte	0x34
+ 497 0004 0200     		.2byte	0x2
+ 498 0006 00000000 		.4byte	.Ldebug_info0
+ 499 000a 04       		.byte	0x4
+ 500 000b 00       		.byte	0
+ 501 000c 0000     		.2byte	0
+ 502 000e 0000     		.2byte	0
+ 503 0010 00000000 		.4byte	.LFB0
+ 504 0014 18000000 		.4byte	.LFE0-.LFB0
+ 505 0018 00000000 		.4byte	.LFB1
+ 506 001c 58000000 		.4byte	.LFE1-.LFB1
+ 507 0020 00000000 		.4byte	.LFB2
+ 508 0024 10000000 		.4byte	.LFE2-.LFB2
+ 509 0028 00000000 		.4byte	.LFB3
+ 510 002c 10000000 		.4byte	.LFE3-.LFB3
+ 511 0030 00000000 		.4byte	0
+ 512 0034 00000000 		.4byte	0
+ 513              		.section	.debug_ranges,"",%progbits
+ 514              	.Ldebug_ranges0:
+ 515 0000 00000000 		.4byte	.LFB0
+ 516 0004 18000000 		.4byte	.LFE0
+ 517 0008 00000000 		.4byte	.LFB1
+ 518 000c 58000000 		.4byte	.LFE1
+ 519 0010 00000000 		.4byte	.LFB2
+ 520 0014 10000000 		.4byte	.LFE2
+ 521 0018 00000000 		.4byte	.LFB3
+ 522 001c 10000000 		.4byte	.LFE3
+ 523 0020 00000000 		.4byte	0
+ 524 0024 00000000 		.4byte	0
+ 525              		.section	.debug_line,"",%progbits
+ 526              	.Ldebug_line0:
+ 527 0000 9E000000 		.section	.debug_str,"MS",%progbits,1
+ 527      02004800 
+ 527      00000201 
+ 527      FB0E0D00 
+ 527      01010101 
  528              	.LASF20:
- 529 0057 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccFEk5zk.s 			page 13
+
+
+ 529 0000 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  529      43313120 
  529      352E342E 
  529      31203230 
  529      31363036 
- 530 008a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 530 0033 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
  530      20726576 
  530      6973696F 
  530      6E203233 
  530      37373135 
- 531 00bd 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 531 0066 33202D66 		.ascii	"3 -ffunction-sections -ffat-lto-objects\000"
  531      66756E63 
  531      74696F6E 
  531      2D736563 
  531      74696F6E 
- 532              	.LASF23:
- 533 00e5 73746174 		.ascii	"staticBits\000"
- 533      69634269 
- 533      747300
- 534              	.LASF13:
- 535 00f0 72656738 		.ascii	"reg8\000"
- 535      00
- 536              	.LASF5:
- 537 00f5 6C6F6E67 		.ascii	"long unsigned int\000"
- 537      20756E73 
- 537      69676E65 
- 537      6420696E 
- 537      7400
- 538              	.LASF21:
- 539 0107 47656E65 		.ascii	"Generated_Source\\PSoC5\\LCD_LCDPort.c\000"
- 539      72617465 
- 539      645F536F 
- 539      75726365 
- 539      5C50536F 
- 540              	.LASF15:
- 541 012c 4C43445F 		.ascii	"LCD_LCDPort_SetDriveMode\000"
- 541      4C434450 
- 541      6F72745F 
- 541      53657444 
- 541      72697665 
- 542              	.LASF22:
- 543 0145 483A5C53 		.ascii	"H:\\Senior-Project-2023\\PSoC\\HostDesign.cydsn\000"
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccWIjqQD.s 			page 14
-
-
- 543      656E696F 
- 543      722D5072 
- 543      6F6A6563 
- 543      742D3230 
- 544              	.LASF10:
- 545 0172 646F7562 		.ascii	"double\000"
- 545      6C6500
- 546              	.LASF8:
- 547 0179 756E7369 		.ascii	"unsigned int\000"
- 547      676E6564 
- 547      20696E74 
+ 532              	.LASF16:
+ 533 008e 76616C75 		.ascii	"value\000"
+ 533      6500
+ 534              	.LASF14:
+ 535 0094 4C43445F 		.ascii	"LCD_LCDPort_Write\000"
+ 535      4C434450 
+ 535      6F72745F 
+ 535      57726974 
+ 535      6500
+ 536              	.LASF3:
+ 537 00a6 73686F72 		.ascii	"short unsigned int\000"
+ 537      7420756E 
+ 537      7369676E 
+ 537      65642069 
+ 537      6E7400
+ 538              	.LASF19:
+ 539 00b9 4C43445F 		.ascii	"LCD_LCDPort_ReadDataReg\000"
+ 539      4C434450 
+ 539      6F72745F 
+ 539      52656164 
+ 539      44617461 
+ 540              	.LASF9:
+ 541 00d1 666C6F61 		.ascii	"float\000"
+ 541      7400
+ 542              	.LASF1:
+ 543 00d7 756E7369 		.ascii	"unsigned char\000"
+ 543      676E6564 
+ 543      20636861 
+ 543      7200
+ 544              	.LASF23:
+ 545 00e5 73746174 		.ascii	"staticBits\000"
+ 545      69634269 
+ 545      747300
+ 546              	.LASF13:
+ 547 00f0 72656738 		.ascii	"reg8\000"
  547      00
- 548              	.LASF7:
- 549 0186 6C6F6E67 		.ascii	"long long unsigned int\000"
- 549      206C6F6E 
- 549      6720756E 
- 549      7369676E 
- 549      65642069 
- 550              	.LASF17:
- 551 019d 6D6F6465 		.ascii	"mode\000"
- 551      00
- 552              	.LASF6:
- 553 01a2 6C6F6E67 		.ascii	"long long int\000"
- 553      206C6F6E 
- 553      6720696E 
- 553      7400
- 554              	.LASF11:
- 555 01b0 63686172 		.ascii	"char\000"
- 555      00
- 556              	.LASF2:
- 557 01b5 73686F72 		.ascii	"short int\000"
- 557      7420696E 
- 557      7400
- 558              	.LASF12:
- 559 01bf 75696E74 		.ascii	"uint8\000"
- 559      3800
- 560              	.LASF18:
- 561 01c5 4C43445F 		.ascii	"LCD_LCDPort_Read\000"
- 561      4C434450 
- 561      6F72745F 
- 561      52656164 
- 561      00
- 562              	.LASF4:
- 563 01d6 6C6F6E67 		.ascii	"long int\000"
- 563      20696E74 
+ 548              	.LASF5:
+ 549 00f5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 549      20756E73 
+ 549      69676E65 
+ 549      6420696E 
+ 549      7400
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccFEk5zk.s 			page 14
+
+
+ 550              	.LASF21:
+ 551 0107 47656E65 		.ascii	"Generated_Source\\PSoC5\\LCD_LCDPort.c\000"
+ 551      72617465 
+ 551      645F536F 
+ 551      75726365 
+ 551      5C50536F 
+ 552              	.LASF15:
+ 553 012c 4C43445F 		.ascii	"LCD_LCDPort_SetDriveMode\000"
+ 553      4C434450 
+ 553      6F72745F 
+ 553      53657444 
+ 553      72697665 
+ 554              	.LASF22:
+ 555 0145 483A5C53 		.ascii	"H:\\Senior-Project-2023\\PSoC\\HostDesign.cydsn\000"
+ 555      656E696F 
+ 555      722D5072 
+ 555      6F6A6563 
+ 555      742D3230 
+ 556              	.LASF10:
+ 557 0172 646F7562 		.ascii	"double\000"
+ 557      6C6500
+ 558              	.LASF8:
+ 559 0179 756E7369 		.ascii	"unsigned int\000"
+ 559      676E6564 
+ 559      20696E74 
+ 559      00
+ 560              	.LASF7:
+ 561 0186 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 561      206C6F6E 
+ 561      6720756E 
+ 561      7369676E 
+ 561      65642069 
+ 562              	.LASF17:
+ 563 019d 6D6F6465 		.ascii	"mode\000"
  563      00
- 564              	.LASF0:
- 565 01df 7369676E 		.ascii	"signed char\000"
- 565      65642063 
- 565      68617200 
- 566              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 564              	.LASF6:
+ 565 01a2 6C6F6E67 		.ascii	"long long int\000"
+ 565      206C6F6E 
+ 565      6720696E 
+ 565      7400
+ 566              	.LASF11:
+ 567 01b0 63686172 		.ascii	"char\000"
+ 567      00
+ 568              	.LASF2:
+ 569 01b5 73686F72 		.ascii	"short int\000"
+ 569      7420696E 
+ 569      7400
+ 570              	.LASF12:
+ 571 01bf 75696E74 		.ascii	"uint8\000"
+ 571      3800
+ 572              	.LASF18:
+ 573 01c5 4C43445F 		.ascii	"LCD_LCDPort_Read\000"
+ 573      4C434450 
+ 573      6F72745F 
+ 573      52656164 
+ 573      00
+ 574              	.LASF4:
+ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccFEk5zk.s 			page 15
+
+
+ 575 01d6 6C6F6E67 		.ascii	"long int\000"
+ 575      20696E74 
+ 575      00
+ 576              	.LASF0:
+ 577 01df 7369676E 		.ascii	"signed char\000"
+ 577      65642063 
+ 577      68617200 
+ 578              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

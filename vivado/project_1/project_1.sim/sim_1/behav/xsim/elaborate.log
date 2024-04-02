@@ -4,11 +4,8 @@ Running: C:/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.host_interface
-Compiling module xil_defaultlib.tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_behav
+ERROR: [VRFC 10-3180] cannot find port 'fpga_psoc_xfc' on this module [H:/Senior-Project-2023/vivado/project_1/project_1.srcs/sim_1/new/tb.sv:29]
+ERROR: [VRFC 10-3180] cannot find port 'reset_n' on this module [H:/Senior-Project-2023/vivado/project_1/project_1.srcs/sim_1/new/tb.sv:28]
+ERROR: [VRFC 10-3180] cannot find port 'psoc_fpga_xfc' on this module [H:/Senior-Project-2023/vivado/project_1/project_1.srcs/sim_1/new/tb.sv:26]
+ERROR: [VRFC 10-3180] cannot find port 'psoc_if_d' on this module [H:/Senior-Project-2023/vivado/project_1/project_1.srcs/sim_1/new/tb.sv:25]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
