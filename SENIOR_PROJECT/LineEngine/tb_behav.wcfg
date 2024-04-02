@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="66.560 ns"></ZoomStartTime>
+      <ZoomEndTime time="187.461 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="23" />
+   <wvobject fp_name="/tb/waddr" type="array">
+      <obj_property name="ElementShortName">waddr[19:0]</obj_property>
+      <obj_property name="ObjectShortName">waddr[19:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/start_trigger" type="logic">
+      <obj_property name="ElementShortName">start_trigger</obj_property>
+      <obj_property name="ObjectShortName">start_trigger</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/x1" type="array">
+      <obj_property name="ElementShortName">x1[10:0]</obj_property>
+      <obj_property name="ObjectShortName">x1[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/y1" type="array">
+      <obj_property name="ElementShortName">y1[10:0]</obj_property>
+      <obj_property name="ObjectShortName">y1[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/x2" type="array">
+      <obj_property name="ElementShortName">x2[10:0]</obj_property>
+      <obj_property name="ObjectShortName">x2[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/y2" type="array">
+      <obj_property name="ElementShortName">y2[10:0]</obj_property>
+      <obj_property name="ObjectShortName">y2[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/start_trigger" type="logic">
+      <obj_property name="ElementShortName">start_trigger</obj_property>
+      <obj_property name="ObjectShortName">start_trigger</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/line_wr_en" type="logic">
+      <obj_property name="ElementShortName">line_wr_en</obj_property>
+      <obj_property name="ObjectShortName">line_wr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/marx" type="array">
+      <obj_property name="ElementShortName">marx[10:0]</obj_property>
+      <obj_property name="ObjectShortName">marx[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/mary" type="array">
+      <obj_property name="ElementShortName">mary[9:0]</obj_property>
+      <obj_property name="ObjectShortName">mary[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/x_acc" type="array">
+      <obj_property name="ElementShortName">x_acc[10:0]</obj_property>
+      <obj_property name="ObjectShortName">x_acc[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/y_acc" type="array">
+      <obj_property name="ElementShortName">y_acc[10:0]</obj_property>
+      <obj_property name="ObjectShortName">y_acc[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/y_acc_neg" type="array">
+      <obj_property name="ElementShortName">y_acc_neg[10:0]</obj_property>
+      <obj_property name="ObjectShortName">y_acc_neg[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/line_state" type="logic">
+      <obj_property name="ElementShortName">line_state</obj_property>
+      <obj_property name="ObjectShortName">line_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/xdiff" type="array">
+      <obj_property name="ElementShortName">xdiff[11:0]</obj_property>
+      <obj_property name="ObjectShortName">xdiff[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/ydiff" type="array">
+      <obj_property name="ElementShortName">ydiff[11:0]</obj_property>
+      <obj_property name="ObjectShortName">ydiff[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/ydiffabs" type="array">
+      <obj_property name="ElementShortName">ydiffabs[10:0]</obj_property>
+      <obj_property name="ObjectShortName">ydiffabs[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/linecase" type="array">
+      <obj_property name="ElementShortName">linecase[1:0]</obj_property>
+      <obj_property name="ObjectShortName">linecase[1:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb/lineEng/prod" type="array">
+      <obj_property name="ElementShortName">prod[19:0]</obj_property>
+      <obj_property name="ObjectShortName">prod[19:0]</obj_property>
+   </wvobject>
+</wave_config>

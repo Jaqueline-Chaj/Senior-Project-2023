@@ -15,7 +15,8 @@ module TopLevelInterface(
     output logic [10:0] reg_bot_right_y,
     output logic [23:0] fill_color,
     output logic [4:0] test_pat_mode,
-    output logic [3:0] engine_trigger,
+    //output logic [3:0] engine_trigger,
+   output engine_rect_fill_trigger,
     output logic led0,
     output logic led1,
     output logic led2,
@@ -31,6 +32,7 @@ module TopLevelInterface(
     
     logic psoc_reset;
     logic psoc_reset_rawp1;
+
     
     always_ff @ (posedge clk)
     begin
@@ -107,23 +109,23 @@ module TopLevelInterface(
     .reg_bot_right_y(reg_bot_right_y),
     .fill_color(fill_color),
     .test_pat_mode(test_pat_mode),
-    .engine_rect_fill_trigger(engine_trigger)
+    .engine_rect_fill_trigger(engine_rect_fill_trigger)
     );
 
 
-assign led0 = reg_top_left_x[0];
-assign led1 = reg_top_left_x[1];
-assign led2 = reg_top_left_x[2];
-assign led3 = reg_top_left_x[3];
-assign led4 = reg_top_left_x[4];
-assign led5 = reg_top_left_x[5];
-assign led6 = reg_top_left_x[6];
-assign led7 = reg_top_left_x[7];
-//assign led0 = host_hostif_host_xfc_raw;
-//assign led1 = host_hostif_fpga_xfc;
-//assign led2 = psoc_reset_raw;
-//assign led3 = reset_n;
-//assign led4 = fpga_reset;
-//assign led5 = reset;
+//assign led0 = reg_top_left_x[0];
+//assign led1 = reg_top_left_x[1];
+//assign led2 = reg_top_left_x[2];
+//assign led3 = reg_top_left_x[3];
+//assign led4 = reg_top_left_x[4];
+//assign led5 = reg_top_left_x[5];
+//assign led6 = reg_top_left_x[6];
+//assign led7 = reg_top_left_x[7];
+assign led0 = host_hostif_host_xfc_raw;
+assign led1 = host_hostif_fpga_xfc;
+assign led2 = psoc_reset_raw;
+assign led3 = reset_n;
+assign led4 = fpga_reset;
+assign led5 = reset;
 
 endmodule  

@@ -16,7 +16,7 @@ module host_interface(
 
 logic host_hostif_host_xfc_prev;
 logic state;
-logic reset;
+
 
 logic host_hostif_host_xfc1;
 logic host_hostif_host_xfc2;

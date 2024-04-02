@@ -1,0 +1,2 @@
+v_tc_0.vhd,vhdl,xil_defaultlib,../../../../../SENIOR_PROJECT/New_Vram/New_Vram.gen/sources_1/ip/v_tc_0/sim/v_tc_0.vhd,
+glbl.v,Verilog,xil_defaultlib,glbl.v
