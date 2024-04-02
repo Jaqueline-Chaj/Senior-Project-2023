@@ -50,7 +50,7 @@ initial begin
 initial begin
   
 x1=10;
-y1=10;
+y1=100;
 x2=20;
 y2=0;
 

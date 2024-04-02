@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="66.560 ns"></ZoomStartTime>
-      <ZoomEndTime time="187.461 ns"></ZoomEndTime>
-      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,286.001 ns"></ZoomEndTime>
+      <Cursor1Time time="11,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="276"></NameColumnWidth>
-      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+      <ValueColumnWidth column_width="112"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="23" />
    <wvobject fp_name="/tb/waddr" type="array">
@@ -93,12 +93,12 @@
       <obj_property name="ObjectShortName">line_state</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/lineEng/xdiff" type="array">
-      <obj_property name="ElementShortName">xdiff[11:0]</obj_property>
-      <obj_property name="ObjectShortName">xdiff[11:0]</obj_property>
+      <obj_property name="ElementShortName">xdiff[10:0]</obj_property>
+      <obj_property name="ObjectShortName">xdiff[10:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/lineEng/ydiff" type="array">
-      <obj_property name="ElementShortName">ydiff[11:0]</obj_property>
-      <obj_property name="ObjectShortName">ydiff[11:0]</obj_property>
+      <obj_property name="ElementShortName">ydiff[10:0]</obj_property>
+      <obj_property name="ObjectShortName">ydiff[10:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/lineEng/ydiffabs" type="array">
       <obj_property name="ElementShortName">ydiffabs[10:0]</obj_property>

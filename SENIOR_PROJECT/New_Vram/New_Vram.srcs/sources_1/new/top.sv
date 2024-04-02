@@ -6,7 +6,8 @@ input PixelClk, reset,
 input[10:0] lft, rgt,
 input[10:0] top, bot,
 input[23:0] foreground_color,
-input start_trigger,
+input rect_start_trigger,
+input line_start_trigger, 
 output hdmi_tx_clk_p,
 
 output hdmi_tx_clk_n,
@@ -52,6 +53,9 @@ logic[7:0] pat_wr_data;
 logic[7:0] rect_wr_data;
 logic[7:0] wr_data;
 
+logic[19:0] line_waddr;
+logic[7:0] line_wr_data;
+logic line_wr_en;
 logic[2:0] start_trigger_ff;  //Im delaying the start trigger so it doesnt proc at the same time as reset.
 logic start_trigger_p1;
 
@@ -73,7 +77,18 @@ always@(posedge PixelClk) begin
 end
 
 
-
+LineEngine LineEng(
+.clk(PixelClk),
+.reset(reset),
+.waddr(line_waddr),
+.color(foreground_color),
+.start_trigger(line_start_trigger),
+.x1(top),
+.x2(lft),
+.y1(bot),
+.y2(rgt),
+.line_wr_data(line_wr_data),
+.line_wr_en(line_wr_en));
 
 
 RectFill RectFill(
@@ -81,7 +96,7 @@ RectFill RectFill(
 .reset(reset),
 .waddr(rect_waddr),
 .foreground_color(foreground_color),
-.start_trigger(start_trigger),
+.start_trigger(rect_start_trigger),
 .top(top), 
 .lft(lft),
 .bot(bot), 
@@ -96,8 +111,10 @@ RectFill RectFill(
 
 logic[19:0] pat_bitwise_and;
 logic[19:0] rect_bitwise_and;
+logic[19:0] line_bitwise_and;
 logic[7:0] pat_wr_bitwise_and;
 logic[7:0] rect_wr_bitwise_and;
+logic[7:0] line_wr_bitwise_and;
 
 //Chooses which engine adddress and color value we want.
 assign pat_bitwise_and=pattern_waddr & {20{pat_wr_en}};  //If the pattern write enable is active, then bitwise and returns the pattern write address
@@ -105,11 +122,15 @@ assign pat_bitwise_and=pattern_waddr & {20{pat_wr_en}};  //If the pattern write 
     
 assign rect_bitwise_and=rect_waddr & {20{rect_wr_en}};  //Similar
 
-assign waddr=rect_bitwise_and | pat_bitwise_and;
+
+assign line_bitwise_and=line_waddr & {20{line_wr_en}};
+
+assign waddr=rect_bitwise_and | pat_bitwise_and | line_bitwise_and;
 
 assign pat_wr_bitwise_and=pat_wr_data & {8{pat_wr_en}};  //If the pattern write enable is active, then bitwise and returns the pattern write address
 assign rect_wr_bitwise_and=rect_wr_data & {8{rect_wr_en}};
-assign wr_data=rect_wr_bitwise_and | pat_wr_bitwise_and;
+assign line_wr_bitwise_and=rect_wr_data & {8{line_wr_en}};
+assign wr_data=rect_wr_bitwise_and | pat_wr_bitwise_and | line_wr_bitwise_and;
 
 
 

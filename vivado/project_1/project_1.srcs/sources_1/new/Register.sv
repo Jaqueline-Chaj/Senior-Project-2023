@@ -14,6 +14,8 @@ module Register(
     output logic[10:0] reg_bot_right_y,
     output logic[23:0] fill_color,
     output logic[4:0] test_pat_mode,
+    
+    output logic engine_line_fill_trigger, 
     //output logic[3:0] engine_trigger,
     output logic engine_rect_fill_trigger
     //output logic engine_test_pat_trigger
@@ -58,5 +60,5 @@ assign test_pat_mode    = reg_3[5:0];
 //assign engine_trigger   = reg_4[3:0];
 
 assign engine_rect_fill_trigger = (addr == 4) && (wr_en) && (M_dat[3:0] == 0);
-
+assign engine_line_fill_trigger = (addr == 4) && (wr_en) && (M_dat[3:0] == 4'b0001);
 endmodule

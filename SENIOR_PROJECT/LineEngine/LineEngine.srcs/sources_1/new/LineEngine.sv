@@ -20,6 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
+
 module LineEngine(input logic clk,reset,
 input logic[10:0] x1, y1, x2, y2,
 input logic start_trigger,
@@ -83,7 +84,7 @@ always@(posedge clk) begin   //Detirmining case
 end
 logic[11:0] x_compare, y_compare, x_neg_compare, y_neg_compare;
 
-always@(posedge clk) begin
+always@(posedge clk) begin   //This is the clock incremenation.  Increments the control counter.
 if(reset || line_state==0) begin
         marx<=x1;
         mary<=y1;
@@ -98,35 +99,57 @@ else if(line_state==1) begin
         if(marx<x2) begin
             marx<=marx+1; end
         y_acc<=y_acc+2*ydiff;
-        if(y_acc>2*xdiff) begin 
-            mary<=mary+1;
-            y_acc<=(y_acc-2*xdiff);end
-        end
+    end
    2'b01: begin //big x, negative y(We reflect over x axis for algorithm but continue to decrement y)
         if(marx<x2) begin
             marx<=marx+1; end;
         y_acc<=y_acc+2*ydiffabs;
-        if(y_acc>2*xdiff) begin
-            mary<=mary-1;
-            y_acc<=(y_acc-2*xdiff);end
-        end
+    end
    2'b10: begin  //Small x, positive y
         if(mary  <  y2) mary<=mary+1;
         x_acc<=x_acc+2*xdiff;
-        if(x_acc>2*ydiff)begin
-            marx<=marx+1;
-           x_acc<=x_acc-2*ydiff; end
+    
         end
    2'b11: begin  //Small x, negative y
         if(mary  >  y2) mary<=mary-1;
-        x_acc<=x_acc+2*xdiff;
-        if(x_acc>2*ydiffabs)begin
-            marx<=marx+1;
-           x_acc<=x_acc-2*ydiffabs; end
-        end
+        x_acc<=x_acc+2*xdiff; end
    endcase
     end
 end
+
+
+always @(y_acc, x_acc)  begin   //Big x trakcer:  Updates mary based on when marx increments.
+   if (~(reset || line_state==0)) begin    
+    case(linecase)
+       
+    2'b00: begin  //big x, positive y
+        if(y_acc>2*xdiff) begin 
+            mary=mary+1;
+            y_acc<=(y_acc-2*xdiff);end
+        end
+   2'b01: begin //big x, negative y(We reflect over x axis for algorithm but continue to decrement y)
+         if(y_acc>2*xdiff) begin
+            mary=mary-1;
+            y_acc=(y_acc-2*xdiff);end
+        end
+   2'b10: begin
+        if(x_acc>2*ydiff)begin
+            marx=marx+1;
+           x_acc=x_acc-2*ydiff; end
+    end
+    
+    2'b11: begin
+       if(x_acc>2*ydiffabs)begin
+            marx=marx+1;
+           x_acc=x_acc-2*ydiffabs; end
+    end
+
+        
+    endcase
+    end
+end
+
+
 logic[19:0] prod;
 assign prod=mary * 5;
 assign waddr= {prod, 8'b0} +marx;

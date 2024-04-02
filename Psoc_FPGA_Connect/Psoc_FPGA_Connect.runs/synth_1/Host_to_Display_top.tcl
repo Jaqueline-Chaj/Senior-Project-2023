@@ -71,7 +71,6 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 5
-set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-1
 
@@ -103,6 +102,7 @@ read_verilog -library xil_defaultlib -sv {
   H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/tb.sv
   H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/top.sv
   H:/Senior-Project-2023/Psoc_FPGA_Connect/Psoc_FPGA_Connect.srcs/sources_1/new/Host_to_Display_top.sv
+  H:/Senior-Project-2023/SENIOR_PROJECT/LineEngine/LineEngine.srcs/sources_1/new/LineEngine.sv
 }
 read_ip -quiet H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/ip/v_tc_0/v_tc_0.xci
 set_property used_in_implementation false [get_files -all h:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.gen/sources_1/ip/v_tc_0/v_tc_0_clocks.xdc]

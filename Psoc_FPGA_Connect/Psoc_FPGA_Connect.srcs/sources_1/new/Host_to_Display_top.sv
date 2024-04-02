@@ -44,6 +44,7 @@ module Host_to_Display_top(
   logic[23:0] fill_color;
   //logic[3:0] engine_trigger;
   logic engine_rect_fill_trigger;
+  logic engine_line_fill_trigger;
   //Initialize the Host interface
   
   logic PixelClk;
@@ -66,6 +67,7 @@ module Host_to_Display_top(
   
   
   
+  
   TopLevelInterface Host(
   .clk(PixelClk),
   .reset_n(reset_n),
@@ -79,12 +81,15 @@ module Host_to_Display_top(
   .reg_bot_right_x(reg_bot_right_x),
   .reg_bot_right_y(reg_bot_right_y),
   .fill_color(fill_color),
-  .engine_rect_fill_trigger(engine_rect_fill_trigger));
+  .engine_rect_fill_trigger(engine_rect_fill_trigger),
+  .engine_line_fill_trigger(engine_line_fill_trigger)
+  );
   
   //Initialize the display generator
   Display_gen Display(.PixelClk(PixelClk),
   .reset(reset),
-  .start_trigger(engine_rect_fill_trigger),
+  .rect_start_trigger(engine_rect_fill_trigger),
+  .line_start_trigger(engine_line_fill_trigger),
   .lft(reg_top_left_x),
   .top(reg_top_left_y),
   .rgt(reg_bot_right_x),

@@ -16,7 +16,10 @@ module TopLevelInterface(
     output logic [23:0] fill_color,
     output logic [4:0] test_pat_mode,
     //output logic [3:0] engine_trigger,
-   output engine_rect_fill_trigger,
+    output logic  engine_rect_fill_trigger,
+    output logic  engine_line_fill_trigger,
+    
+    //Unused LED's
     output logic led0,
     output logic led1,
     output logic led2,
@@ -109,7 +112,8 @@ module TopLevelInterface(
     .reg_bot_right_y(reg_bot_right_y),
     .fill_color(fill_color),
     .test_pat_mode(test_pat_mode),
-    .engine_rect_fill_trigger(engine_rect_fill_trigger)
+    .engine_rect_fill_trigger(engine_rect_fill_trigger),
+    .engine_line_fill_trigger(engine_line_fill_trigger)
     );
 
 
