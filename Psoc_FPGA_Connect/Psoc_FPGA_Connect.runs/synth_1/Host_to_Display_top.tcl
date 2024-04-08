@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 5
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a200tsbg484-1
 
@@ -99,7 +98,6 @@ read_verilog -library xil_defaultlib -sv {
   H:/Senior-Project-2023/vivado/project_1/project_1.srcs/sim_1/new/command_queue.sv
   H:/Senior-Project-2023/vivado/project_1/project_1.srcs/sim_1/new/interface.v
   H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/pattern_gen.sv
-  H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/tb.sv
   H:/Senior-Project-2023/SENIOR_PROJECT/New_Vram/New_Vram.srcs/sources_1/new/top.sv
   H:/Senior-Project-2023/Psoc_FPGA_Connect/Psoc_FPGA_Connect.srcs/sources_1/new/Host_to_Display_top.sv
   H:/Senior-Project-2023/SENIOR_PROJECT/LineEngine/LineEngine.srcs/sources_1/new/LineEngine.sv

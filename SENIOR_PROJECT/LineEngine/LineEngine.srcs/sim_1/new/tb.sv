@@ -48,11 +48,11 @@ initial begin
  #63  start_trigger=1; 
  #5 start_trigger=0; end
 initial begin
-  
+ color=23'h000000;
 x1=10;
-y1=100;
-x2=20;
-y2=0;
+y1=200;
+x2=300;
+y2=100;
 
 end
 
