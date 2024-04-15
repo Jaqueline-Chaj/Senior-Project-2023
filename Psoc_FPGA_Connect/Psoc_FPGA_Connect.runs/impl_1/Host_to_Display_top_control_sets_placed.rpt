@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Mon Apr  8 13:09:25 2024
+| Date         : Tue Apr  9 14:24:42 2024
 | Host         : ARM144-12 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Host_to_Display_top_control_sets_placed.rpt
 | Design       : Host_to_Display_top
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    45 |
-|    Minimum number of control sets                        |    45 |
+| Total control sets                                       |    46 |
+|    Minimum number of control sets                        |    46 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   103 |
+| Unused register locations in slices containing registers |   114 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,13 +39,13 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    45 |
-| >= 0 to < 4        |     1 |
+| Total control sets |    46 |
+| >= 0 to < 4        |     2 |
 | >= 4 to < 6        |     4 |
 | >= 6 to < 8        |     0 |
-| >= 8 to < 10       |    21 |
+| >= 8 to < 10       |    20 |
 | >= 10 to < 12      |     9 |
-| >= 12 to < 14      |     2 |
+| >= 12 to < 14      |     3 |
 | >= 14 to < 16      |     1 |
 | >= 16              |     7 |
 +--------------------+-------+
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             137 |           83 |
-| No           | No                    | Yes                    |               8 |            4 |
-| No           | Yes                   | No                     |             147 |           69 |
-| Yes          | No                    | No                     |              63 |           24 |
+| No           | No                    | No                     |             138 |           78 |
+| No           | No                    | Yes                    |               8 |            3 |
+| No           | Yes                   | No                     |             147 |           62 |
+| Yes          | No                    | No                     |              62 |           27 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             278 |          155 |
+| Yes          | Yes                   | No                     |             283 |          145 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,51 +73,52 @@ Table of Contents
 +------------------------+--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
 |      Clock Signal      |                            Enable Signal                           |                                          Set/Reset Signal                                         | Slice Load Count | Bel Load Count | Bels / Slice |
 +------------------------+--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|  clk_wiz/inst/clk_out1 | Host/CMDP/on_state0                                                | Host/reset                                                                                        |                1 |              1 |         1.00 |
 |  clk_wiz/inst/clk_out1 |                                                                    | Display/Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/in0                                     |                1 |              2 |         2.00 |
-|  clk_wiz/inst/clk_out1 | Host/CMDQ/CMDP/p_10_in                                             | Host/reset                                                                                        |                1 |              4 |         4.00 |
 |  clk_wiz/inst/clk_out1 | Host/CMDQ/IN_XFC                                                   | Host/reset                                                                                        |                2 |              4 |         2.00 |
-|  clk_wiz/inst/clk_out1 |                                                                    | Display/Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/LockLostReset/SyncAsyncx/oSyncStages[1] |                2 |              4 |         2.00 |
+|  clk_wiz/inst/clk_out1 | Host/CMDQ/CMDP/p_10_in                                             | Host/reset                                                                                        |                2 |              4 |         2.00 |
+|  clk_wiz/inst/clk_out1 |                                                                    | Display/Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/LockLostReset/SyncAsyncx/oSyncStages[1] |                1 |              4 |         4.00 |
 |  clk_wiz/inst/clk_out1 | Host/CMDP/state111_out                                             | Host/reset                                                                                        |                1 |              4 |         4.00 |
-|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[0][7]_i_1_n_0                                      | Host/reset                                                                                        |                5 |              8 |         1.60 |
-|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[9][7]_i_1_n_0                                      | Host/reset                                                                                        |                4 |              8 |         2.00 |
-|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[1][7]_i_1_n_0                                      | Host/reset                                                                                        |                6 |              8 |         1.33 |
-|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[14][7]_i_1_n_0                                     | Host/reset                                                                                        |                8 |              8 |         1.00 |
-|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[12][7]_i_1_n_0                                     | Host/reset                                                                                        |                5 |              8 |         1.60 |
-|  clk_wiz/inst/clk_out1 | Host/HOST_IF/state_reg_n_0                                         | Host/reset                                                                                        |                8 |              8 |         1.00 |
+|  clk_wiz/inst/clk_out1 | Host/CMDP/tempData[15]_i_1_n_0                                     | Host/reset                                                                                        |                4 |              8 |         2.00 |
 |  clk_wiz/inst/clk_out1 | Host/CMDQ/array                                                    | Host/reset                                                                                        |                8 |              8 |         1.00 |
-|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[10][7]_i_1_n_0                                     | Host/reset                                                                                        |                7 |              8 |         1.14 |
-|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[13][7]_i_1_n_0                                     | Host/reset                                                                                        |                8 |              8 |         1.00 |
-|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[2][7]_i_1_n_0                                      | Host/reset                                                                                        |                6 |              8 |         1.33 |
-|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[4][7]_i_1_n_0                                      | Host/reset                                                                                        |                5 |              8 |         1.60 |
-|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[3][7]_i_1_n_0                                      | Host/reset                                                                                        |                7 |              8 |         1.14 |
-|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[5][7]_i_1_n_0                                      | Host/reset                                                                                        |                7 |              8 |         1.14 |
-|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[6][7]_i_1_n_0                                      | Host/reset                                                                                        |                7 |              8 |         1.14 |
-|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[7][7]_i_1_n_0                                      | Host/reset                                                                                        |                7 |              8 |         1.14 |
+|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[4][7]_i_1_n_0                                      | Host/reset                                                                                        |                6 |              8 |         1.33 |
+|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[1][7]_i_1_n_0                                      | Host/reset                                                                                        |                5 |              8 |         1.60 |
+|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[10][7]_i_1_n_0                                     | Host/reset                                                                                        |                5 |              8 |         1.60 |
+|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[2][7]_i_1_n_0                                      | Host/reset                                                                                        |                5 |              8 |         1.60 |
 |  clk_wiz/inst/clk_out1 | Host/CMDQ/array[8][7]_i_1_n_0                                      | Host/reset                                                                                        |                5 |              8 |         1.60 |
-|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[11][7]_i_1_n_0                                     | Host/reset                                                                                        |                5 |              8 |         1.60 |
-|  clk_wiz/inst/clk_out1 | Host/CMDP/tempData[15]_i_1_n_0                                     | Host/reset                                                                                        |                2 |              8 |         4.00 |
-|  clk_wiz/inst/clk_out1 | Host/CMDP/state1                                                   | Host/reset                                                                                        |                2 |              8 |         4.00 |
-|  clk_wiz/inst/clk_out1 | Host/CMDP/tempData[7]_i_1_n_0                                      | Host/reset                                                                                        |                3 |              8 |         2.67 |
+|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[12][7]_i_1_n_0                                     | Host/reset                                                                                        |                4 |              8 |         2.00 |
+|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[11][7]_i_1_n_0                                     | Host/reset                                                                                        |                6 |              8 |         1.33 |
+|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[7][7]_i_1_n_0                                      | Host/reset                                                                                        |                4 |              8 |         2.00 |
+|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[5][7]_i_1_n_0                                      | Host/reset                                                                                        |                7 |              8 |         1.14 |
+|  clk_wiz/inst/clk_out1 | Host/HOST_IF/state_reg_n_0                                         | Host/reset                                                                                        |                7 |              8 |         1.14 |
+|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[6][7]_i_1_n_0                                      | Host/reset                                                                                        |                4 |              8 |         2.00 |
 |  clk_wiz/inst/clk_out1 | Host/CMDP/E[0]                                                     | Host/reset                                                                                        |                3 |              8 |         2.67 |
-|  clk_wiz/inst/clk_out1 | Display/RectFill/mary[9]_i_1__0_n_0                                |                                                                                                   |                5 |             10 |         2.00 |
-|  clk_wiz/inst/clk_out1 | Display/pattern_gen/my                                             | Display/pattern_gen/mx1                                                                           |                2 |             10 |         5.00 |
+|  clk_wiz/inst/clk_out1 | Host/CMDP/state1                                                   | Host/reset                                                                                        |                3 |              8 |         2.67 |
+|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[3][7]_i_1_n_0                                      | Host/reset                                                                                        |                6 |              8 |         1.33 |
+|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[9][7]_i_1_n_0                                      | Host/reset                                                                                        |                4 |              8 |         2.00 |
+|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[14][7]_i_1_n_0                                     | Host/reset                                                                                        |                4 |              8 |         2.00 |
+|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[13][7]_i_1_n_0                                     | Host/reset                                                                                        |                5 |              8 |         1.60 |
+|  clk_wiz/inst/clk_out1 | Host/CMDQ/array[0][7]_i_1_n_0                                      | Host/reset                                                                                        |                5 |              8 |         1.60 |
 |  clk_wiz/inst/clk_out1 |                                                                    | Display/Display_Gen/rgb2dvi/U0/DataEncoders[0].DataEncoder/pDataOutRaw[9]_i_1__1_n_0              |                3 |             10 |         3.33 |
-|  clk_wiz/inst/clk_out1 | Display/Display_Gen/disp_y                                         | Display/Display_Gen/clear                                                                         |                2 |             10 |         5.00 |
-|  clk_wiz/inst/clk_out1 | Display/Display_Gen/disp_x[10]_i_2_n_0                             | Display/Display_Gen/disp_x[10]_i_1_n_0                                                            |                4 |             11 |         2.75 |
-|  clk_wiz/inst/clk_out1 | Display/pattern_gen/mx[10]_i_2_n_0                                 | Display/pattern_gen/mx[10]_i_1_n_0                                                                |                4 |             11 |         2.75 |
+|  clk_wiz/inst/clk_out1 | Display/RectFill/mary[9]_i_1__0_n_0                                |                                                                                                   |                4 |             10 |         2.50 |
+|  clk_wiz/inst/clk_out1 | Display/Display_Gen/disp_y                                         | Display/Display_Gen/clear                                                                         |                3 |             10 |         3.33 |
+|  clk_wiz/inst/clk_out1 | Display/pattern_gen/my                                             | Display/pattern_gen/mx1                                                                           |                3 |             10 |         3.33 |
 |  clk_wiz/inst/clk_out1 | Display/LineEng/CEC                                                |                                                                                                   |                3 |             11 |         3.67 |
-|  clk_wiz/inst/clk_out1 | Display/LineEng/marx[10]_i_1_n_0                                   |                                                                                                   |                5 |             11 |         2.20 |
-|  clk_wiz/inst/clk_out1 | Display/LineEng/x_acc[10]_i_1_n_0                                  |                                                                                                   |                7 |             11 |         1.57 |
+|  clk_wiz/inst/clk_out1 | Display/LineEng/x_acc[10]_i_1_n_0                                  |                                                                                                   |                6 |             11 |         1.83 |
+|  clk_wiz/inst/clk_out1 | Display/Display_Gen/disp_x[10]_i_2_n_0                             | Display/Display_Gen/disp_x[10]_i_1_n_0                                                            |                4 |             11 |         2.75 |
+|  clk_wiz/inst/clk_out1 | Display/pattern_gen/mx[10]_i_2_n_0                                 | Display/pattern_gen/mx[10]_i_1_n_0                                                                |                5 |             11 |         2.20 |
+|  clk_wiz/inst/clk_out1 | Display/LineEng/marx[10]_i_1_n_0                                   |                                                                                                   |                6 |             11 |         1.83 |
+|  clk_wiz/inst/clk_out1 | Host/CMDP/tempData[7]_i_1_n_0                                      | Host/reset                                                                                        |                5 |             12 |         2.40 |
 |  clk_wiz/inst/clk_out1 |                                                                    | Display/Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/h_count[0]_i_1_n_0                     |                3 |             12 |         4.00 |
 |  clk_wiz/inst/clk_out1 | Display/Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/v_count | Display/Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/v_count[0]_i_1_n_0                     |                3 |             12 |         4.00 |
-|  clk_wiz/inst/clk_out1 |                                                                    | Host/reset                                                                                        |                9 |             15 |         1.67 |
-|  clk_wiz/inst/clk_out1 | Display/LineEng/sel                                                |                                                                                                   |                4 |             20 |         5.00 |
-|  clk_wiz/inst/clk_out1 | Host/CMDP/REG_ADDR_reg[1]_1[0]                                     | Host/reset                                                                                        |                9 |             22 |         2.44 |
-|  clk_wiz/inst/clk_out1 |                                                                    | Display/Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/p_4_in                                 |               11 |             22 |         2.00 |
-|  clk_wiz/inst/clk_out1 | Host/CMDP/REG_ADDR_reg[3]_0[0]                                     | Host/reset                                                                                        |                9 |             22 |         2.44 |
+|  clk_wiz/inst/clk_out1 |                                                                    | Host/reset                                                                                        |               10 |             15 |         1.50 |
+|  clk_wiz/inst/clk_out1 | Display/LineEng/sel                                                |                                                                                                   |                8 |             19 |         2.38 |
+|  clk_wiz/inst/clk_out1 | Host/CMDP/REG_ADDR_reg[0]_0[0]                                     | Host/reset                                                                                        |                8 |             22 |         2.75 |
+|  clk_wiz/inst/clk_out1 | Host/CMDP/REG_ADDR_reg[0]_1[0]                                     | Host/reset                                                                                        |                8 |             22 |         2.75 |
+|  clk_wiz/inst/clk_out1 |                                                                    | Display/Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/p_4_in                                 |                9 |             22 |         2.44 |
 |  clk_wiz/inst/clk_out1 |                                                                    | Display/Display_Gen/rgb2dvi/U0/DataEncoders[0].DataEncoder/SR[0]                                  |               18 |             32 |         1.78 |
-|  clk_wiz/inst/clk_out1 |                                                                    | Display/Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/htotal[11]_i_1_n_0                     |               26 |             58 |         2.23 |
-|  clk_wiz/inst/clk_out1 |                                                                    |                                                                                                   |               83 |            137 |         1.65 |
+|  clk_wiz/inst/clk_out1 |                                                                    | Display/Display_Gen/vtc/U0/U_TC_TOP/GEN_GENERATOR.U_TC_GEN/htotal[11]_i_1_n_0                     |               20 |             58 |         2.90 |
+|  clk_wiz/inst/clk_out1 |                                                                    |                                                                                                   |               78 |            138 |         1.77 |
 +------------------------+--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
 
 

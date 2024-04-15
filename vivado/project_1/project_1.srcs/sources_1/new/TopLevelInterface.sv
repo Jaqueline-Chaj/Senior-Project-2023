@@ -19,7 +19,7 @@ module TopLevelInterface(
     output logic  engine_rect_fill_trigger,
     output logic  engine_line_fill_trigger,
     
-    //Unused LED's
+    //LEDs
     output logic led0,
     output logic led1,
     output logic led2,
@@ -117,19 +117,23 @@ module TopLevelInterface(
     );
 
 
-//assign led0 = reg_top_left_x[0];
-//assign led1 = reg_top_left_x[1];
-//assign led2 = reg_top_left_x[2];
-//assign led3 = reg_top_left_x[3];
-//assign led4 = reg_top_left_x[4];
-//assign led5 = reg_top_left_x[5];
-//assign led6 = reg_top_left_x[6];
-//assign led7 = reg_top_left_x[7];
-assign led0 = host_hostif_host_xfc_raw;
-assign led1 = host_hostif_fpga_xfc;
-assign led2 = psoc_reset_raw;
-assign led3 = reset_n;
-assign led4 = fpga_reset;
-assign led5 = reset;
+logic on_state;
+
+always @(posedge clk) begin
+
+if(reset)
+on_state<=0;
+ else begin  
+ if(engine_line_fill_trigger || engine_rect_fill_trigger )
+        on_state <=1;
+ end
+ end
+     
+assign led0 = REG_DATA[0];
+assign led1 = REG_DATA[1];
+assign led2 = REG_DATA[2];
+assign led3 = REG_DATA[3];
+assign led4 = on_state;
+
 
 endmodule  

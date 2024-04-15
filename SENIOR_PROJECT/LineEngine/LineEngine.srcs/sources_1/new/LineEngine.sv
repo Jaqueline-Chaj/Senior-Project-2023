@@ -19,6 +19,24 @@ logic[10:0] x_acc;
 logic[10:0] y_acc;
 logic[10:0] y_acc_neg;
 logic line_state;
+
+logic[10:0] x1_prime, x2_prime, y1_prime, y2_prime;
+
+always@(x1, x2, y1, y2) begin
+    if(x1> x2) begin
+        x1_prime=x2;
+        y1_prime=y2;
+        x2_prime=x1;
+        y2_prime=y1;
+        end
+    else begin
+        x1_prime=x1;
+        y1_prime=y1;
+        x2_prime=x2;
+        y2_prime=y2;
+    end
+end   
+        
 always_ff@(posedge clk) begin  //Sets the conditions for the state machine to progress
 
     if(reset) begin
@@ -27,13 +45,13 @@ always_ff@(posedge clk) begin  //Sets the conditions for the state machine to pr
     else  begin
         if(start_trigger)
             line_state<=1;
-        else if(marx==x2 && mary==y2)
+        else if(marx==x2_prime && mary==y2_prime)
             line_state<=0;
     end
 end
 logic[10:0] xdiff, ydiff;
-assign xdiff=x2-x1;
-assign ydiff=y2-y1;
+assign xdiff=x2_prime-x1_prime;
+assign ydiff=y2_prime-y1_prime;
 
 logic[10:0] ydiffabs;
 
@@ -72,8 +90,8 @@ logic [11:0] potential_next_acc;
 
 always@(posedge clk) begin   //This is the clock incremenation.  Increments the control counter.
 if(reset || line_state==0) begin
-        marx<=x1;
-        mary<=y1;
+        marx<=x1_prime;
+        mary<=y1_prime;
         y_acc<=xdiff;
         x_acc<=ydiffabs;
        

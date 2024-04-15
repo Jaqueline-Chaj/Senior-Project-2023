@@ -81,7 +81,7 @@ always_ff@(posedge clk) begin
         if(mx[4]== my[4]) begin 
             pat_wr_data<=8'b00011000; end //Blue 
         else begin
-            pat_wr_data=8'h10010000; end //Purpleish
+            pat_wr_data=8'b10010000; end //Purpleish
 end    
 
 endmodule

@@ -56,8 +56,7 @@ logic[7:0] wr_data;
 logic[19:0] line_waddr;
 logic[7:0] line_wr_data;
 logic line_wr_en;
-logic[2:0] start_trigger_ff;  //Im delaying the start trigger so it doesnt proc at the same time as reset.
-logic start_trigger_p1;
+
 
 
 
