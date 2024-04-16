@@ -22,7 +22,7 @@ module tb(
     logic hdmi_tx_clk_n;
     logic[2:0] hdmi_tx_p, hdmi_tx_n;  
     
-    Host_to_Display_top Host(.clk(clk),
+      Host_to_Display_top Host(.clk(clk),
     .reset_n(reset_n),
     .psoc_reset_raw(psoc_reset_raw),
     .host_hostif_d(data),
@@ -31,7 +31,8 @@ module tb(
     .hdmi_tx_clk_p(hdmi_tx_clk_p),
     .hdmi_tx_clk_n(hdmi_tx_clk_n),
     .hdmi_tx_p(hdmi_tx_p),
-    .hdmi_tx_n(hdmi_tx_n) 
+    .hdmi_tx_n(hdmi_tx_n)
+
     );
  
    

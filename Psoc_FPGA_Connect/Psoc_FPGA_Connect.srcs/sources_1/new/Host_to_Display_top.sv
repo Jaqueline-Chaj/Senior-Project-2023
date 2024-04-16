@@ -41,9 +41,9 @@ module Host_to_Display_top(
     output logic led4,
     output logic led5,
     output logic led6,
-    output logic led7 
-    
+    output logic led7
     );
+    
   logic reset;
   logic start_trigger;
   logic [10:0] reg_top_left_x; //lft

@@ -124,13 +124,13 @@ assign rect_bitwise_and=rect_waddr & {20{rect_wr_en}};  //Similar
 
 assign line_bitwise_and=line_waddr & {20{line_wr_en}};
 
-assign waddr=rect_bitwise_and | pat_bitwise_and | line_bitwise_and;
-
+assign waddr=rect_bitwise_and |  pat_bitwise_and | line_bitwise_and;
+                               //
 assign pat_wr_bitwise_and=pat_wr_data & {8{pat_wr_en}};  //If the pattern write enable is active, then bitwise and returns the pattern write address
 assign rect_wr_bitwise_and=rect_wr_data & {8{rect_wr_en}};
 assign line_wr_bitwise_and=rect_wr_data & {8{line_wr_en}};
 assign wr_data=rect_wr_bitwise_and | pat_wr_bitwise_and | line_wr_bitwise_and;
-
+                //  
 
 
 VRAM VRAM(
