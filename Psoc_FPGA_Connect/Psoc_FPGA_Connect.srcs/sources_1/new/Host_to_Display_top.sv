@@ -35,7 +35,7 @@ module Host_to_Display_top(
 
     output [2:0] hdmi_tx_n,
     output logic led0,
-    output logic led1,
+   // output logic led1,
     output logic led2,
     output logic led3,
     output logic led4,
@@ -93,7 +93,7 @@ module Host_to_Display_top(
   .engine_rect_fill_trigger(engine_rect_fill_trigger),
   .engine_line_fill_trigger(engine_line_fill_trigger),
   .led0(led0),
-  .led1(led1),
+  //.led1(led1),
   .led2(led2),
   .led3(led3),
   .led4(led4)

@@ -135,7 +135,7 @@ assign wr_data=rect_wr_bitwise_and | pat_wr_bitwise_and | line_wr_bitwise_and;
 
 VRAM VRAM(
 .clk(PixelClk),
-.wr_en(pat_wr_en | rect_wr_en),
+.wr_en(pat_wr_en | rect_wr_en | line_wr_en),
 .waddr(waddr),
 .wr_data(wr_data),
 .rd_addr(rd_addr),

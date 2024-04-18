@@ -21,7 +21,7 @@ module TopLevelInterface(
     
     //LEDs
     output logic led0,
-    output logic led1,
+  //  output logic led1,
     output logic led2,
     output logic led3,
     output logic led4,
@@ -130,7 +130,7 @@ on_state<=0;
  end
      
 assign led0 = REG_DATA[0];
-assign led1 = REG_DATA[1];
+//assign led1 = REG_DATA[1];
 assign led2 = REG_DATA[2];
 assign led3 = REG_DATA[3];
 assign led4 = on_state;
