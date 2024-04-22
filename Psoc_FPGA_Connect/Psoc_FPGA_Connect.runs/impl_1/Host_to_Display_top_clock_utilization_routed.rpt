@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Thu Apr 18 15:07:34 2024
-| Host         : ARM144-09 running 64-bit major release  (build 9200)
+| Date         : Mon Apr 22 12:55:50 2024
+| Host         : ARM144-12 running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file Host_to_Display_top_clock_utilization_routed.rpt
 | Design       : Host_to_Display_top
 | Device       : 7a200t-sbg484
@@ -51,14 +51,14 @@ Table of Contents
 2. Global Clock Resources
 -------------------------
 
-+-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+----------------------+---------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| Global Id | Source Id | Driver Type/Pin | Constraint | Site          | Clock Region | Load Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock                | Driver Pin                                                                      | Net                                                                      |
-+-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+----------------------+---------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y2 | n/a          |                 8 |        1150 |               0 |       13.468 | clk_out1_clk_wiz_0   | clk_wiz/inst/clkout1_buf/O                                                      | clk_wiz/inst/clk_out1                                                    |
-| g1        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y0 | n/a          |                 1 |           8 |               0 |       13.468 | PixelClkIO_1         | Display/Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/PixelClk_BUFG_inst/O  | Display/Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/PixelClk_BUFG  |
-| g2        | src2      | BUFG/O          | None       | BUFGCTRL_X0Y1 | n/a          |                 1 |           8 |               0 |        2.694 | SerialClkIO_1        | Display/Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/SerialClk_BUFG_inst/O | Display/Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/SerialClk_BUFG |
-| g3        | src3      | BUFG/O          | None       | BUFGCTRL_X0Y3 | n/a          |                 1 |           1 |               0 |       40.000 | clkfbout_clk_wiz_0_1 | clk_wiz/inst/clkf_buf/O                                                         | clk_wiz/inst/clkfbout_buf_clk_wiz_0                                      |
-+-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+----------------------+---------------------------------------------------------------------------------+--------------------------------------------------------------------------+
++-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+--------------------+---------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Global Id | Source Id | Driver Type/Pin | Constraint | Site          | Clock Region | Load Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock              | Driver Pin                                                                      | Net                                                                      |
++-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+--------------------+---------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y2 | n/a          |                 8 |        1150 |               0 |       13.468 | clk_out1_clk_wiz_0 | clk_wiz/inst/clkout1_buf/O                                                      | clk_wiz/inst/clk_out1                                                    |
+| g1        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y0 | n/a          |                 1 |           8 |               0 |       13.468 | PixelClkIO_1       | Display/Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/PixelClk_BUFG_inst/O  | Display/Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/PixelClk_BUFG  |
+| g2        | src2      | BUFG/O          | None       | BUFGCTRL_X0Y1 | n/a          |                 1 |           8 |               0 |        2.694 | SerialClkIO        | Display/Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/SerialClk_BUFG_inst/O | Display/Display_Gen/rgb2dvi/U0/ClockGenInternal.ClockGenX/SerialClk_BUFG |
+| g3        | src3      | BUFG/O          | None       | BUFGCTRL_X0Y3 | n/a          |                 1 |           1 |               0 |       40.000 | clkfbout_clk_wiz_0 | clk_wiz/inst/clkf_buf/O                                                         | clk_wiz/inst/clkfbout_buf_clk_wiz_0                                      |
++-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+--------------------+---------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
 

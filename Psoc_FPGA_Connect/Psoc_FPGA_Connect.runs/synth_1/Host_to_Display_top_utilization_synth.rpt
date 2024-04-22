@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Thu Apr 18 15:04:54 2024
-| Host         : ARM144-09 running 64-bit major release  (build 9200)
+| Date         : Mon Apr 22 12:53:12 2024
+| Host         : ARM144-12 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file Host_to_Display_top_utilization_synth.rpt -pb Host_to_Display_top_utilization_synth.pb
 | Design       : Host_to_Display_top
 | Device       : xc7a200tsbg484-1
