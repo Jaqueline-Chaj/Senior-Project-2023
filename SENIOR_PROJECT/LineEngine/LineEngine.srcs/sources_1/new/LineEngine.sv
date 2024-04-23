@@ -100,8 +100,8 @@ if(reset || line_state==0) begin
 else if(line_state==1) begin
     case(linecase)
     2'b00: begin  //big x, positive y
-       // if(marx<x2) begin
-            marx<=marx+1;// end
+        if(marx<x2) begin
+            marx<=marx+1; end
 
         potential_next_acc = y_acc+2*ydiff;   // temp variable
          
@@ -113,8 +113,8 @@ else if(line_state==1) begin
 
     end
    2'b01: begin //big x, negative y(We reflect over x axis for algorithm but continue to decrement y)
-        //if(marx<x2) begin
-        marx<=marx+1; //end;
+        if(marx<x2) begin
+        marx<=marx+1; end;
         potential_next_acc = y_acc+2*ydiffabs;
         
         if(potential_next_acc>2*xdiff) begin
@@ -124,7 +124,7 @@ else if(line_state==1) begin
             y_acc <= potential_next_acc;
     end
    2'b10: begin  //Small x, positive y
-        //if(mary  <  y2)
+        if(mary  <  y2)
          mary<=mary+1;
         potential_next_acc = x_acc+2*xdiff;
         if(potential_next_acc>2*ydiff)begin
@@ -134,7 +134,7 @@ else if(line_state==1) begin
             x_acc <= potential_next_acc;
         end
    2'b11: begin  //Small x, negative y
-        //if(mary  >  y2) 
+        if(mary  >  y2) 
         mary<=mary-1;
         potential_next_acc = x_acc+2*xdiff;
         if(potential_next_acc>2*ydiffabs)begin

@@ -49,10 +49,11 @@ initial begin
  #5 start_trigger=0; end
 initial begin
  color=23'h000000;
-x1=10;
-y1=200;
-x2=300;
-y2=100;
+x1=100;
+y1=100;
+x2=400;;
+
+y2=300;
 
 end
 

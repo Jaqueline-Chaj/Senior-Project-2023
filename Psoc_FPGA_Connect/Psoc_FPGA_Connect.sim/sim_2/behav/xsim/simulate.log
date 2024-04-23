@@ -1,0 +1,22 @@
+Time resolution is 1 ps
+Block Memory Generator module tb.Host.Display.VRAM.blk_mem.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+Time: 5 ns  Iteration: 2  Process: /tb/Host/Display/Display_Gen/rgb2dvi/U0/\DataEncoders(0)\/DataEncoder/line__154  File: H:/Senior-Project-2023/Psoc_FPGA_Connect/Psoc_FPGA_Connect.ip_user_files/ipstatic/src/TMDS_Encoder.vhd
+Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+Time: 5 ns  Iteration: 2  Process: /tb/Host/Display/Display_Gen/rgb2dvi/U0/\DataEncoders(1)\/DataEncoder/line__154  File: H:/Senior-Project-2023/Psoc_FPGA_Connect/Psoc_FPGA_Connect.ip_user_files/ipstatic/src/TMDS_Encoder.vhd
+Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+Time: 5 ns  Iteration: 2  Process: /tb/Host/Display/Display_Gen/rgb2dvi/U0/\DataEncoders(2)\/DataEncoder/line__154  File: H:/Senior-Project-2023/Psoc_FPGA_Connect/Psoc_FPGA_Connect.ip_user_files/ipstatic/src/TMDS_Encoder.vhd
+Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+Time: 3435 ns  Iteration: 3  Process: /tb/Host/Display/Display_Gen/rgb2dvi/U0/\DataEncoders(0)\/DataEncoder/line__154  File: H:/Senior-Project-2023/Psoc_FPGA_Connect/Psoc_FPGA_Connect.ip_user_files/ipstatic/src/TMDS_Encoder.vhd
+Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+Time: 3435 ns  Iteration: 3  Process: /tb/Host/Display/Display_Gen/rgb2dvi/U0/\DataEncoders(1)\/DataEncoder/line__154  File: H:/Senior-Project-2023/Psoc_FPGA_Connect/Psoc_FPGA_Connect.ip_user_files/ipstatic/src/TMDS_Encoder.vhd
+Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+Time: 3435 ns  Iteration: 3  Process: /tb/Host/Display/Display_Gen/rgb2dvi/U0/\DataEncoders(2)\/DataEncoder/line__154  File: H:/Senior-Project-2023/Psoc_FPGA_Connect/Psoc_FPGA_Connect.ip_user_files/ipstatic/src/TMDS_Encoder.vhd
+Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+Time: 3461936 ps  Iteration: 2  Process: /tb/Host/Display/Display_Gen/rgb2dvi/U0/\DataEncoders(0)\/DataEncoder/line__154  File: H:/Senior-Project-2023/Psoc_FPGA_Connect/Psoc_FPGA_Connect.ip_user_files/ipstatic/src/TMDS_Encoder.vhd
+Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+Time: 3461936 ps  Iteration: 2  Process: /tb/Host/Display/Display_Gen/rgb2dvi/U0/\DataEncoders(1)\/DataEncoder/line__154  File: H:/Senior-Project-2023/Psoc_FPGA_Connect/Psoc_FPGA_Connect.ip_user_files/ipstatic/src/TMDS_Encoder.vhd
+Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+Time: 3461936 ps  Iteration: 2  Process: /tb/Host/Display/Display_Gen/rgb2dvi/U0/\DataEncoders(2)\/DataEncoder/line__154  File: H:/Senior-Project-2023/Psoc_FPGA_Connect/Psoc_FPGA_Connect.ip_user_files/ipstatic/src/TMDS_Encoder.vhd
+Warning: Warning : input CLKIN1 period and attribute CLKIN1_PERIOD are not same.
+Time: 4283484 ps  Iteration: 4  Process: /tb/Host/Display/Display_Gen/rgb2dvi/U0/clockgeninternal/ClockGenX/genpll/DVI_ClkGenerator/pchk_p  File: C:/Xilinx/Vivado/2021.2/data/vhdl/src/unisims/primitive/PLLE2_ADV.vhd
