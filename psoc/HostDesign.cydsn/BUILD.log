@@ -1,43 +1,23 @@
---------------- Build Started: 03/26/2024 13:13:41 Project: HostDesign, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Build Started: 04/23/2024 14:46:47 Project: HostDesign, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
 main.c:8:9: warning: built-in function 'y1' declared as non-function
  int x1, y1, x2, y2, r, b, g = 0;
          ^
 main.c: In function 'reg_write':
-main.c:56:10: warning: unused variable 'byteDispStr' [-Wunused-variable]
+main.c:60:10: warning: unused variable 'byteDispStr' [-Wunused-variable]
      char byteDispStr[16];
           ^
 main.c: In function 'main':
-main.c:96:10: warning: unused variable 'line' [-Wunused-variable]
+main.c:100:10: warning: unused variable 'line' [-Wunused-variable]
      char line[30];
           ^
-main.c:81:10: warning: unused variable 'dispStr2' [-Wunused-variable]
+main.c:85:10: warning: unused variable 'dispStr2' [-Wunused-variable]
      char dispStr2[16];
           ^
-main.c:80:10: warning: unused variable 'dispStr' [-Wunused-variable]
+main.c:84:10: warning: unused variable 'dispStr' [-Wunused-variable]
      char dispStr[16];
           ^
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cyfitter_cfg.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\cyfitter_cfg.c -o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cymetadata.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\cymetadata.c -o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Cm3Start.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\Cm3Start.c -o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/CyDmac.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\CyDmac.c -o .\CortexM3\ARM_GCC_541\Debug\CyDmac.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/CyFlash.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\CyFlash.c -o .\CortexM3\ARM_GCC_541\Debug\CyFlash.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/CyLib.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\CyLib.c -o .\CortexM3\ARM_GCC_541\Debug\CyLib.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cyPm.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\cyPm.c -o .\CortexM3\ARM_GCC_541\Debug\cyPm.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/CySpc.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\CySpc.c -o .\CortexM3\ARM_GCC_541\Debug\CySpc.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cyutils.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\cyutils.c -o .\CortexM3\ARM_GCC_541\Debug\cyutils.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cy_em_eeprom.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\cy_em_eeprom.c -o .\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/LCD.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\LCD.c -o .\CortexM3\ARM_GCC_541\Debug\LCD.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/LCD_PM.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\LCD_PM.c -o .\CortexM3\ARM_GCC_541\Debug\LCD_PM.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/LCD_LCDPort.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\LCD_LCDPort.c -o .\CortexM3\ARM_GCC_541\Debug\LCD_LCDPort.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/SW2.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\SW2.c -o .\CortexM3\ARM_GCC_541\Debug\SW2.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/H2G_STRB_IN.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\H2G_STRB_IN.c -o .\CortexM3\ARM_GCC_541\Debug\H2G_STRB_IN.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/H2G_STRB_OUT.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\H2G_STRB_OUT.c -o .\CortexM3\ARM_GCC_541\Debug\H2G_STRB_OUT.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/SW3.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\SW3.c -o .\CortexM3\ARM_GCC_541\Debug\SW3.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/OUT_BYTE.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\OUT_BYTE.c -o .\CortexM3\ARM_GCC_541\Debug\OUT_BYTE.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/OUT_BYTE_PM.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\OUT_BYTE_PM.c -o .\CortexM3\ARM_GCC_541\Debug\OUT_BYTE_PM.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/PSOC_RESET_RAW.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c Generated_Source\PSoC5\PSOC_RESET_RAW.c -o .\CortexM3\ARM_GCC_541\Debug\PSOC_RESET_RAW.o
 arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_541\Debug\HostDesign.a .\CortexM3\ARM_GCC_541\Debug\CyDmac.o .\CortexM3\ARM_GCC_541\Debug\CyFlash.o .\CortexM3\ARM_GCC_541\Debug\CyLib.o .\CortexM3\ARM_GCC_541\Debug\cyPm.o .\CortexM3\ARM_GCC_541\Debug\CySpc.o .\CortexM3\ARM_GCC_541\Debug\cyutils.o .\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM3\ARM_GCC_541\Debug\LCD.o .\CortexM3\ARM_GCC_541\Debug\LCD_PM.o .\CortexM3\ARM_GCC_541\Debug\LCD_LCDPort.o .\CortexM3\ARM_GCC_541\Debug\SW2.o .\CortexM3\ARM_GCC_541\Debug\H2G_STRB_IN.o .\CortexM3\ARM_GCC_541\Debug\H2G_STRB_OUT.o .\CortexM3\ARM_GCC_541\Debug\SW3.o .\CortexM3\ARM_GCC_541\Debug\OUT_BYTE.o .\CortexM3\ARM_GCC_541\Debug\OUT_BYTE_PM.o .\CortexM3\ARM_GCC_541\Debug\PSOC_RESET_RAW.o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o
 arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_541\Debug\HostDesign.a
 arm-none-eabi-gcc.exe -Wl,--start-group -o H:\Senior-Project-2023\PSoC\HostDesign.cydsn\CortexM3\ARM_GCC_541\Debug\HostDesign.elf .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\HostDesign.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/HostDesign.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -O3 -ffat-lto-objects -Wl,--end-group
@@ -46,6 +26,6 @@ No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
 cyelftool.exe -S H:\Senior-Project-2023\PSoC\HostDesign.cydsn\CortexM3\ARM_GCC_541\Debug\HostDesign.elf
-Flash used: 13088 of 262144 bytes (5.0%).
-SRAM used: 12673 of 65536 bytes (19.3%). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 03/26/2024 13:13:50 ---------------
+Flash used: 14104 of 262144 bytes (5.4%).
+SRAM used: 12905 of 65536 bytes (19.7%). Stack: 2048 bytes. Heap: 128 bytes.
+--------------- Build Succeeded: 04/23/2024 14:46:54 ---------------
