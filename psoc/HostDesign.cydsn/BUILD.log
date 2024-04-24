@@ -1,4 +1,4 @@
---------------- Build Started: 04/23/2024 14:46:47 Project: HostDesign, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Build Started: 04/24/2024 16:36:12 Project: HostDesign, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -IH:\Senior-Project-2023 -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
 main.c:8:9: warning: built-in function 'y1' declared as non-function
@@ -26,6 +26,6 @@ No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
 cyelftool.exe -S H:\Senior-Project-2023\PSoC\HostDesign.cydsn\CortexM3\ARM_GCC_541\Debug\HostDesign.elf
-Flash used: 14104 of 262144 bytes (5.4%).
-SRAM used: 12905 of 65536 bytes (19.7%). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 04/23/2024 14:46:54 ---------------
+Flash used: 14288 of 262144 bytes (5.5%).
+SRAM used: 12929 of 65536 bytes (19.7%). Stack: 2048 bytes. Heap: 128 bytes.
+--------------- Build Succeeded: 04/24/2024 16:36:15 ---------------

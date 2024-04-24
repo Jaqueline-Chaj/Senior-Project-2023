@@ -9,7 +9,7 @@ int x1, y1, x2, y2, r, b, g = 0;
 uint8_t array[5][5] = {0};
 //int x1, y1, x2, y2, fill_color, test_pat_mode, engine_id; //values required for commands
 long color = 0; 
-int demo_mode = 3;
+int demo_mode = 0;
 
 void pack_values(int values[]){ //pack values for rect, pixel, circle, and line demos. Image demo will need another pack function for just 8bit color
     long zero32 = 0;
@@ -90,7 +90,7 @@ int main(void)
     //Send reset signal to Nexys board
     CyDelay(100);
     PSOC_RESET_RAW_Write(1);
-    CyDelay(100);
+    CyDelay(300);
     PSOC_RESET_RAW_Write(0);
     CyDelay(100);
     
@@ -101,25 +101,31 @@ int main(void)
     int values[7];
     int loop = 0;
     int trns_idx = 45;
+    int wait_for_press = 0;
     for(;;)
-    {    
+    {   
+
         if(demo_mode == 0){
             maxrows = 2; //however many rectangles we will draw
+            //CyDelay(50);
             for (int idx=0; idx < 7; ++idx)
                 values[idx]=squares_dat_linear_rect_demo[row_idx * 7 + idx];   
         }
         else if(demo_mode == 1){
             maxrows = 4; //however many pixels we will draw
+            //CyDelay(50);
             for (int idx=0; idx < 7; ++idx)
                 values[idx]=squares_dat_linear_pixel_demo[row_idx * 7 + idx];              
         }
         else if(demo_mode == 2){
             maxrows = 360; //number of squares to draw for each circle
+            //CyDelay(50);
             for (int idx=0; idx < 7; ++idx)
                 values[idx]=squares_dat_linear_circle_demo[row_idx * 7 + idx];              
         }
         else if(demo_mode == 3){
             maxrows = 1; //however many lines we will draw
+            //CyDelay(50);
             for (int idx=0; idx < 7; ++idx)
                 values[idx]=squares_dat_linear_line_demo[row_idx * 7 + idx];              
         }               
@@ -191,21 +197,40 @@ int main(void)
         for(int i = 0; i < 5; i++){
             reg_write(array[i]);
         }
-        
-        while(row_idx == maxrows){
+        if(row_idx == maxrows){ wait_for_press = 1;}
+        while(wait_for_press){
             if(!SW2_Read()){ //if SW2 is pressed, change demo mode
-                CyDelay(50);
+                CyDelay(100);
+                wait_for_press = 0;
                 demo_mode = (demo_mode + 1) % 4; //move to next demo mode
                 row_idx = 0; //set row_idx back to 0 for next demo
+                
+                
                 for (int idx=0; idx < 7; ++idx)
                     values[idx]=clear_screen_dat[row_idx * 7 + idx];
+                    
                 pack_values(values);
                 for(int i = 0; i < 5; i++){
                     reg_write(array[i]); //clear screen by displaying black box
                 }
-                CyDelay(50);
+                CyDelay(100);
             }
         }
+        if(!SW2_Read()){ //polling for when in demo mode 2 (circle)
+            CyDelay(100);
+            row_idx = 0; //set row_idx back to 0 for next demo
+                
+                
+            for (int idx=0; idx < 7; ++idx)
+                values[idx]=clear_screen_dat[row_idx * 7 + idx];
+                    
+            pack_values(values);
+            for(int i = 0; i < 5; i++){
+                reg_write(array[i]); //clear screen by displaying black box
+            }
+            demo_mode = (demo_mode + 1) % 4; //move to next demo mode
+            CyDelay(100);
+        }        
         CyDelayUs(200);
                
     }

@@ -1,6 +1,7 @@
 int squares_dat_linear_rect_demo[] = { //data for rectangle demo
 300,300,400,400,0,0,255,
-100,100,200,200,0,255,0
+100,100,200,200,0,255,0,
+0,0,1279,719,255,0,0
 };
 
 int squares_dat_linear_pixel_demo[] = { //data for pixel demo
@@ -11,11 +12,11 @@ int squares_dat_linear_pixel_demo[] = { //data for pixel demo
 };
 
 int squares_dat_linear_line_demo[] = {  //data for line demo
-0,0,1278,718,0,0,255
+0,0,1279,719,0,0,255
 };
 
 int clear_screen_dat[] = { //black box to clear screen
-1,1,1278,718,200,200,200
+0,0,1279,719,255,255,255
 };
 
 int squares_dat_linear_circle_demo[] = {
