@@ -74,7 +74,11 @@ logic pat_wr_en_p1;
 always@(posedge PixelClk) begin
     pat_wr_en_p1<=pat_wr_en; 
 end
-
+logic[10:0] x1, x2, y1, y2;
+assign x1=lft;
+assign x2=rgt;
+assign y1=top;
+assign y2=bot;
 
 LineEngine LineEng(
 .clk(PixelClk),
@@ -82,10 +86,10 @@ LineEngine LineEng(
 .waddr(line_waddr),
 .color(foreground_color),
 .start_trigger(line_start_trigger),
-.x1(lft),
-.x2(rgt),
-.y1(top),
-.y2(bot),
+.x1(x1),
+.x2(x2),
+.y1(y1),
+.y2(y2),
 .line_wr_data(line_wr_data),
 .line_wr_en(line_wr_en));
 
