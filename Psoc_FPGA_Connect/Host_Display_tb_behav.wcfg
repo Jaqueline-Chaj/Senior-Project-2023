@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="2,968.349 ns"></ZoomStartTime>
-      <ZoomEndTime time="3,186.502 ns"></ZoomEndTime>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="173.704 ns"></ZoomEndTime>
       <Cursor1Time time="11,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="276"></NameColumnWidth>
-      <ValueColumnWidth column_width="104"></ValueColumnWidth>
+      <ValueColumnWidth column_width="100"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="27" />
    <wvobject fp_name="/tb/lineEng/clk" type="logic">
@@ -31,18 +31,22 @@
    <wvobject fp_name="/tb/lineEng/x1" type="array">
       <obj_property name="ElementShortName">x1[10:0]</obj_property>
       <obj_property name="ObjectShortName">x1[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/lineEng/y1" type="array">
       <obj_property name="ElementShortName">y1[10:0]</obj_property>
       <obj_property name="ObjectShortName">y1[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/lineEng/x2" type="array">
       <obj_property name="ElementShortName">x2[10:0]</obj_property>
       <obj_property name="ObjectShortName">x2[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/lineEng/y2" type="array">
       <obj_property name="ElementShortName">y2[10:0]</obj_property>
       <obj_property name="ObjectShortName">y2[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/lineEng/start_trigger" type="logic">
       <obj_property name="ElementShortName">start_trigger</obj_property>
@@ -75,10 +79,12 @@
    <wvobject fp_name="/tb/lineEng/x_acc" type="array">
       <obj_property name="ElementShortName">x_acc[10:0]</obj_property>
       <obj_property name="ObjectShortName">x_acc[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/lineEng/y_acc" type="array">
       <obj_property name="ElementShortName">y_acc[10:0]</obj_property>
       <obj_property name="ObjectShortName">y_acc[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb/lineEng/y_acc_neg" type="array">
       <obj_property name="ElementShortName">y_acc_neg[10:0]</obj_property>

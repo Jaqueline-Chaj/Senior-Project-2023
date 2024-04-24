@@ -15,9 +15,9 @@ assign line_wr_data[2:0]=color[7:5];
 
 logic[10:0] marx;
 logic[9:0] mary;
-logic[10:0] x_acc;
-logic[10:0] y_acc;
-logic[10:0] y_acc_neg;
+logic[12:0] x_acc;
+logic[12:0] y_acc;
+//logic[10:0] y_acc_neg;
 logic line_state;
 
 logic[10:0] x1_prime, x2_prime, y1_prime, y2_prime;
@@ -86,7 +86,7 @@ always@(posedge clk) begin   //Determining case
 end
 //logic[11:0] x_compare, y_compare, x_neg_compare, y_neg_compare;
 
-logic [11:0] potential_next_acc;
+logic [12:0] potential_next_acc;
 
 always@(posedge clk) begin   //This is the clock incremenation.  Increments the control counter.
 if(reset || line_state==0) begin
@@ -100,8 +100,8 @@ if(reset || line_state==0) begin
 else if(line_state==1) begin
     case(linecase)
     2'b00: begin  //big x, positive y
-        if(marx<x2) begin
-            marx<=marx+1; end
+       // if(marx<x2) begin
+            marx<=marx+1; //end
 
         potential_next_acc = y_acc+2*ydiff;   // temp variable
          
@@ -113,8 +113,8 @@ else if(line_state==1) begin
 
     end
    2'b01: begin //big x, negative y(We reflect over x axis for algorithm but continue to decrement y)
-        if(marx<x2) begin
-        marx<=marx+1; end;
+       // if(marx<x2) begin
+        marx<=marx+1;// end;
         potential_next_acc = y_acc+2*ydiffabs;
         
         if(potential_next_acc>2*xdiff) begin
@@ -124,7 +124,7 @@ else if(line_state==1) begin
             y_acc <= potential_next_acc;
     end
    2'b10: begin  //Small x, positive y
-        if(mary  <  y2)
+       // if(mary  <  y2)
          mary<=mary+1;
         potential_next_acc = x_acc+2*xdiff;
         if(potential_next_acc>2*ydiff)begin
@@ -134,7 +134,7 @@ else if(line_state==1) begin
             x_acc <= potential_next_acc;
         end
    2'b11: begin  //Small x, negative y
-        if(mary  >  y2) 
+      //  if(mary  >  y2) 
         mary<=mary-1;
         potential_next_acc = x_acc+2*xdiff;
         if(potential_next_acc>2*ydiffabs)begin
