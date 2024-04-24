@@ -82,10 +82,10 @@ LineEngine LineEng(
 .waddr(line_waddr),
 .color(foreground_color),
 .start_trigger(line_start_trigger),
-.x1(top),
-.x2(lft),
-.y1(bot),
-.y2(rgt),
+.x1(lft),
+.x2(rgt),
+.y1(top),
+.y2(bot),
 .line_wr_data(line_wr_data),
 .line_wr_en(line_wr_en));
 

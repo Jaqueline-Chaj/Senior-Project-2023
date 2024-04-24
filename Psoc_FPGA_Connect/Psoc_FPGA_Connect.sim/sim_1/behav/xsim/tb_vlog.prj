@@ -23,9 +23,9 @@ sv xil_defaultlib  --include "../../../../../SENIOR_PROJECT/New_Vram/New_Vram.ge
 "../../../../Psoc_FPGA_Connect.srcs/sources_1/new/Host_to_Display_top.sv" \
 "../../../../../SENIOR_PROJECT/LineEngine/LineEngine.srcs/sources_1/new/LineEngine.sv" \
 "../../../../Psoc_FPGA_Connect.srcs/sim_1/new/Host_Display_tb.v" \
-"../../../../../SENIOR_PROJECT/LineEngine/LineEngine.srcs/sim_1/new/tb.sv" \
 "../../../../Psoc_FPGA_Connect.srcs/sim_1/new/TopLevelTb.sv" \
 "../../../../Psoc_FPGA_Connect.srcs/sim_1/new/Host_IF_TB.sv" \
+"../../../../Psoc_FPGA_Connect.srcs/sim_1/new/Line_eng_Tb.sv" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"
