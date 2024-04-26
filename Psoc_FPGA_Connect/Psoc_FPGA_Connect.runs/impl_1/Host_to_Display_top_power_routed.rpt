@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date             : Fri Apr 26 13:56:13 2024
+| Date             : Fri Apr 26 14:24:50 2024
 | Host             : ARM144-12 running 64-bit major release  (build 9200)
 | Command          : report_power -file Host_to_Display_top_power_routed.rpt -pb Host_to_Display_top_power_summary_routed.pb -rpx Host_to_Display_top_power_routed.rpx
 | Design           : Host_to_Display_top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.598        |
+| Total On-Chip Power (W)  | 0.584        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.433        |
-| Device Static (W)        | 0.165        |
+| Dynamic (W)              | 0.432        |
+| Device Static (W)        | 0.153        |
 | Effective TJA (C/W)      | 3.3          |
-| Max Ambient (C)          | 83.0         |
-| Junction Temperature (C) | 27.0         |
+| Max Ambient (C)          | 83.1         |
+| Junction Temperature (C) | 26.9         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,20 +52,20 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.013 |       14 |       --- |             --- |
-| Slice Logic    |     0.006 |     4558 |       --- |             --- |
-|   LUT as Logic |     0.006 |     1941 |    133800 |            1.45 |
+| Clocks         |     0.014 |       14 |       --- |             --- |
+| Slice Logic    |     0.006 |     4553 |       --- |             --- |
+|   LUT as Logic |     0.006 |     1945 |    133800 |            1.45 |
 |   CARRY4       |    <0.001 |      111 |     33450 |            0.33 |
-|   Register     |    <0.001 |      641 |    269200 |            0.24 |
+|   Register     |    <0.001 |      637 |    269200 |            0.24 |
 |   F7/F8 Muxes  |    <0.001 |      410 |    133800 |            0.31 |
-|   Others       |     0.000 |     1083 |       --- |             --- |
-| Signals        |     0.022 |     4350 |       --- |             --- |
+|   Others       |     0.000 |     1081 |       --- |             --- |
+| Signals        |     0.022 |     4348 |       --- |             --- |
 | Block RAM      |     0.002 |      256 |       365 |           70.14 |
 | MMCM           |     0.116 |        1 |        10 |           10.00 |
 | PLL            |     0.135 |        1 |        10 |           10.00 |
-| I/O            |     0.137 |       28 |       285 |            9.82 |
-| Static Power   |     0.165 |          |           |                 |
-| Total          |     0.598 |          |           |                 |
+| I/O            |     0.137 |       21 |       285 |            7.37 |
+| Static Power   |     0.153 |          |           |                 |
+| Total          |     0.584 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,7 +78,7 @@ Table of Contents
 | Vccint    |       1.000 |     0.097 |       0.059 |      0.038 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.163 |       0.132 |      0.031 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.046 |       0.041 |      0.005 |       NA    | Unspecified | NA         |
-| Vcco25    |       2.500 |     0.005 |       0.000 |      0.005 |       NA    | Unspecified | NA         |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -155,16 +155,16 @@ Table of Contents
 +---------------------+-----------+
 | Name                | Power (W) |
 +---------------------+-----------+
-| Host_to_Display_top |     0.433 |
+| Host_to_Display_top |     0.432 |
 |   Display           |     0.310 |
-|     Display_Gen     |     0.280 |
+|     Display_Gen     |     0.281 |
 |       rgb2dvi       |     0.276 |
 |       vtc           |     0.001 |
 |     LineEng         |     0.005 |
 |     RectFill        |     0.002 |
 |     VRAM            |     0.016 |
 |       blk_mem       |     0.016 |
-|     pattern_gen     |     0.008 |
+|     pattern_gen     |     0.007 |
 |   Host              |     0.004 |
 |     CMDQ            |     0.002 |
 |   clk_wiz           |     0.117 |

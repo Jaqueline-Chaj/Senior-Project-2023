@@ -116,7 +116,7 @@ module TopLevelInterface(
     .engine_line_fill_trigger(engine_line_fill_trigger)
     );
 
-
+/*
 logic rect_on_state;
 logic line_on_state;
 
@@ -128,18 +128,25 @@ if(reset)
     end
     else begin  
         if(engine_rect_fill_trigger )
+            begin
             rect_on_state <=1;
+            line_on_state <= 0;
+            end
         else if(engine_line_fill_trigger)
+            begin
+            rect_on_state <=0;
             line_on_state <=1;
+            end
     end
 end
      
-assign led0 = REG_DATA[0];
+//assign led0 = REG_DATA[0];
 //assign led1 = REG_DATA[1];
-assign led2 = REG_DATA[2];
-assign led3 = REG_DATA[3];
-assign led4 = rect_on_state;
-assign led5 = line_on_state;
+//assign led2 = REG_DATA[2];
+//assign led3 = REG_DATA[3];
+//assign led4 = rect_on_state;
+//assign led5 = line_on_state;
 
-
+*/
 endmodule  
+
