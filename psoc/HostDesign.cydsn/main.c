@@ -106,7 +106,7 @@ int main(void)
     {   
 
         if(demo_mode == 0){
-            maxrows = 2; //however many rectangles we will draw
+            maxrows = 3; //however many rectangles we will draw
             //CyDelay(50);
             for (int idx=0; idx < 7; ++idx)
                 values[idx]=squares_dat_linear_rect_demo[row_idx * 7 + idx];   
@@ -124,7 +124,7 @@ int main(void)
                 values[idx]=squares_dat_linear_circle_demo[row_idx * 7 + idx];              
         }
         else if(demo_mode == 3){
-            maxrows = 1; //however many lines we will draw
+            maxrows = 724; //however many lines we will draw
             //CyDelay(50);
             for (int idx=0; idx < 7; ++idx)
                 values[idx]=squares_dat_linear_line_demo[row_idx * 7 + idx];              
@@ -219,8 +219,9 @@ int main(void)
         if(!SW2_Read()){ //polling for when in demo mode 2 (circle)
             CyDelay(100);
             row_idx = 0; //set row_idx back to 0 for next demo
+            int current_demo = demo_mode;
                 
-                
+            demo_mode = 0;
             for (int idx=0; idx < 7; ++idx)
                 values[idx]=clear_screen_dat[row_idx * 7 + idx];
                     
@@ -228,11 +229,15 @@ int main(void)
             for(int i = 0; i < 5; i++){
                 reg_write(array[i]); //clear screen by displaying black box
             }
-            demo_mode = (demo_mode + 1) % 4; //move to next demo mode
+            demo_mode = (current_demo + 1) % 4; //move to next demo mode
             CyDelay(100);
         }        
-        CyDelayUs(200);
-               
+        if(demo_mode == 3){
+            CyDelayUs(40000); //to show line by line drawing
+        }
+        else{
+            CyDelayUs(250); //to print circle at a moderate speed
+        }               
     }
         
 }
