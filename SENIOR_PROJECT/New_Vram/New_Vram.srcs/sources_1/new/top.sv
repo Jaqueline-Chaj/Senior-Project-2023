@@ -3,8 +3,8 @@
 
 module Display_gen(
 input PixelClk, reset, 
-input[10:0] lft, rgt,
-input[10:0] top, bot,
+input[10:0] tl_x, br_x,
+input[10:0] tl_y, br_y,
 input[23:0] foreground_color,
 input rect_start_trigger,
 input line_start_trigger, 
@@ -74,11 +74,11 @@ logic pat_wr_en_p1;
 always@(posedge PixelClk) begin
     pat_wr_en_p1<=pat_wr_en; 
 end
-logic[10:0] x1, x2, y1, y2;
+/*logic[10:0] x1, x2, y1, y2;
 assign x1=lft;
 assign x2=rgt;
 assign y1=top;
-assign y2=bot;
+assign y2=bot; */
 
 LineEngine LineEng(
 .clk(PixelClk),
@@ -86,10 +86,10 @@ LineEngine LineEng(
 .waddr(line_waddr),
 .color(foreground_color),
 .start_trigger(line_start_trigger),
-.x1(x1),
-.x2(x2),
-.y1(y1),
-.y2(y2),
+.x1(tl_x),
+.x2(br_x),
+.y1(tl_y),
+.y2(br_y),
 .line_wr_data(line_wr_data),
 .line_wr_en(line_wr_en));
 
@@ -100,10 +100,10 @@ RectFill RectFill(
 .waddr(rect_waddr),
 .foreground_color(foreground_color),
 .start_trigger(rect_start_trigger),
-.top(top), 
-.lft(lft),
-.bot(bot), 
-.rgt(rgt),
+.top(tl_y), 
+.lft(tl_x),
+.bot(br_y), 
+.rgt(br_x),
 .rect_wr_data(rect_wr_data),
 .rect_wr_en(rect_wr_en)
 );  

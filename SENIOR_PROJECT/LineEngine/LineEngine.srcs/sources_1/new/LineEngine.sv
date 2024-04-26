@@ -159,4 +159,5 @@ assign prod=mary * 5;
 assign waddr= {prod, 8'b0} +marx;
 
 assign line_wr_en=line_state;
+//assign line_wr_en=0;
 endmodule

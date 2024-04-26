@@ -117,23 +117,29 @@ module TopLevelInterface(
     );
 
 
-logic on_state;
+logic rect_on_state;
+logic line_on_state;
 
 always @(posedge clk) begin
-
 if(reset)
-on_state<=0;
- else begin  
- if(engine_line_fill_trigger || engine_rect_fill_trigger )
-        on_state <=1;
- end
- end
+    begin
+    rect_on_state <= 0;
+    line_on_state <= 0;
+    end
+    else begin  
+        if(engine_rect_fill_trigger )
+            rect_on_state <=1;
+        else if(engine_line_fill_trigger)
+            line_on_state <=1;
+    end
+end
      
 assign led0 = REG_DATA[0];
 //assign led1 = REG_DATA[1];
 assign led2 = REG_DATA[2];
 assign led3 = REG_DATA[3];
-assign led4 = on_state;
+assign led4 = rect_on_state;
+assign led5 = line_on_state;
 
 
 endmodule  
