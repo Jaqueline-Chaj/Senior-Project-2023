@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccP0aEif.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
   28:Generated_Source\PSoC5/SW3.c **** *
   29:Generated_Source\PSoC5/SW3.c **** * \brief Writes the value to the physical port (data output register), masking
   30:Generated_Source\PSoC5/SW3.c **** *  and shifting the bits appropriately. 
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 2
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccP0aEif.s 			page 2
 
 
   31:Generated_Source\PSoC5/SW3.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
   51              	.L2:
   52 0014 F0510040 		.word	1073762800
   53              		.cfi_endproc
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 3
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccP0aEif.s 			page 3
 
 
   54              	.LFE0:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
   76 000c 1843     		orrs	r0, r0, r3
   77 000e 1070     		strb	r0, [r2]
   78 0010 7047     		bx	lr
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 4
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccP0aEif.s 			page 4
 
 
   79              	.L6:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
  109              		.cfi_endproc
  110              	.LFE2:
  111              		.size	SW3_Read, .-SW3_Read
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 5
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccP0aEif.s 			page 5
 
 
  112              		.section	.text.SW3_ReadDataReg,"ax",%progbits
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
  138              		.text
  139              	.Letext0:
  140              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 6
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccP0aEif.s 			page 6
 
 
  141              		.section	.debug_info,"",%progbits
@@ -310,15 +310,15 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
  147 000b 01       		.uleb128 0x1
  148 000c 00000000 		.4byte	.LASF20
  149 0010 0C       		.byte	0xc
- 150 0011 64010000 		.4byte	.LASF21
- 151 0015 E6000000 		.4byte	.LASF22
+ 150 0011 37010000 		.4byte	.LASF21
+ 151 0015 8C010000 		.4byte	.LASF22
  152 0019 00000000 		.4byte	.Ldebug_ranges0+0
  153 001d 00000000 		.4byte	0
  154 0021 00000000 		.4byte	.Ldebug_line0
  155 0025 02       		.uleb128 0x2
  156 0026 01       		.byte	0x1
  157 0027 06       		.byte	0x6
- 158 0028 AD010000 		.4byte	.LASF0
+ 158 0028 80010000 		.4byte	.LASF0
  159 002c 02       		.uleb128 0x2
  160 002d 01       		.byte	0x1
  161 002e 08       		.byte	0x8
@@ -326,7 +326,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
  163 0033 02       		.uleb128 0x2
  164 0034 02       		.byte	0x2
  165 0035 05       		.byte	0x5
- 166 0036 94010000 		.4byte	.LASF2
+ 166 0036 67010000 		.4byte	.LASF2
  167 003a 02       		.uleb128 0x2
  168 003b 02       		.byte	0x2
  169 003c 07       		.byte	0x7
@@ -334,7 +334,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
  171 0041 02       		.uleb128 0x2
  172 0042 04       		.byte	0x4
  173 0043 05       		.byte	0x5
- 174 0044 A4010000 		.4byte	.LASF4
+ 174 0044 77010000 		.4byte	.LASF4
  175 0048 02       		.uleb128 0x2
  176 0049 04       		.byte	0x4
  177 004a 07       		.byte	0x7
@@ -342,11 +342,11 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
  179 004f 02       		.uleb128 0x2
  180 0050 08       		.byte	0x8
  181 0051 05       		.byte	0x5
- 182 0052 81010000 		.4byte	.LASF6
+ 182 0052 54010000 		.4byte	.LASF6
  183 0056 02       		.uleb128 0x2
  184 0057 08       		.byte	0x8
  185 0058 07       		.byte	0x7
- 186 0059 48010000 		.4byte	.LASF7
+ 186 0059 1B010000 		.4byte	.LASF7
  187 005d 03       		.uleb128 0x3
  188 005e 04       		.byte	0x4
  189 005f 05       		.byte	0x5
@@ -354,14 +354,14 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
  191 0064 02       		.uleb128 0x2
  192 0065 04       		.byte	0x4
  193 0066 07       		.byte	0x7
- 194 0067 2B010000 		.4byte	.LASF8
+ 194 0067 FE000000 		.4byte	.LASF8
  195 006b 04       		.uleb128 0x4
- 196 006c 9E010000 		.4byte	.LASF12
+ 196 006c 71010000 		.4byte	.LASF12
  197 0070 02       		.byte	0x2
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 7
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccP0aEif.s 			page 7
 
 
- 198 0071 E801     		.2byte	0x1e8
+ 198 0071 E901     		.2byte	0x1e9
  199 0073 2C000000 		.4byte	0x2c
  200 0077 02       		.uleb128 0x2
  201 0078 04       		.byte	0x4
@@ -370,20 +370,20 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
  204 007e 02       		.uleb128 0x2
  205 007f 08       		.byte	0x8
  206 0080 04       		.byte	0x4
- 207 0081 24010000 		.4byte	.LASF10
+ 207 0081 F7000000 		.4byte	.LASF10
  208 0085 02       		.uleb128 0x2
  209 0086 01       		.byte	0x1
  210 0087 08       		.byte	0x8
- 211 0088 8F010000 		.4byte	.LASF11
+ 211 0088 62010000 		.4byte	.LASF11
  212 008c 04       		.uleb128 0x4
  213 008d BC000000 		.4byte	.LASF13
  214 0091 02       		.byte	0x2
- 215 0092 9202     		.2byte	0x292
+ 215 0092 9302     		.2byte	0x293
  216 0094 98000000 		.4byte	0x98
  217 0098 05       		.uleb128 0x5
  218 0099 6B000000 		.4byte	0x6b
  219 009d 06       		.uleb128 0x6
- 220 009e B9010000 		.4byte	.LASF14
+ 220 009e D6010000 		.4byte	.LASF14
  221 00a2 01       		.byte	0x1
  222 00a3 39       		.byte	0x39
  223 00a4 00000000 		.4byte	.LFB0
@@ -405,7 +405,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
  239 00cc 21000000 		.4byte	.LLST1
  240 00d0 00       		.byte	0
  241 00d1 06       		.uleb128 0x6
- 242 00d2 13010000 		.4byte	.LASF15
+ 242 00d2 E6000000 		.4byte	.LASF15
  243 00d6 01       		.byte	0x1
  244 00d7 5A       		.byte	0x5a
  245 00d8 00000000 		.4byte	.LFB1
@@ -414,11 +414,11 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
  248 00e1 9C       		.byte	0x9c
  249 00e2 F6000000 		.4byte	0xf6
  250 00e6 07       		.uleb128 0x7
- 251 00e7 5F010000 		.4byte	.LASF17
+ 251 00e7 32010000 		.4byte	.LASF17
  252 00eb 01       		.byte	0x1
  253 00ec 5A       		.byte	0x5a
  254 00ed 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 8
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccP0aEif.s 			page 8
 
 
  255 00f1 39000000 		.4byte	.LLST2
@@ -433,7 +433,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
  264 0109 01       		.uleb128 0x1
  265 010a 9C       		.byte	0x9c
  266 010b 09       		.uleb128 0x9
- 267 010c 38010000 		.4byte	.LASF19
+ 267 010c 0B010000 		.4byte	.LASF19
  268 0110 01       		.byte	0x1
  269 0111 8D       		.byte	0x8d
  270 0112 6B000000 		.4byte	0x6b
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
  309 001f 24       		.uleb128 0x24
  310 0020 00       		.byte	0
  311 0021 0B       		.uleb128 0xb
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 9
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccP0aEif.s 			page 9
 
 
  312 0022 0B       		.uleb128 0xb
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
  366 0059 00       		.byte	0
  367 005a 03       		.uleb128 0x3
  368 005b 0E       		.uleb128 0xe
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 10
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccP0aEif.s 			page 10
 
 
  369 005c 3A       		.uleb128 0x3a
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
  423 0000 00000000 		.4byte	.LVL0
  424 0004 04000000 		.4byte	.LVL1
  425 0008 0100     		.2byte	0x1
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 11
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccP0aEif.s 			page 11
 
 
  426 000a 50       		.byte	0x50
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
  480              		.section	.debug_ranges,"",%progbits
  481              	.Ldebug_ranges0:
  482 0000 00000000 		.4byte	.LFB0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 12
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccP0aEif.s 			page 12
 
 
  483 0004 18000000 		.4byte	.LFE0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
  511              	.LASF5:
  512 00c1 6C6F6E67 		.ascii	"long unsigned int\000"
  512      20756E73 
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 13
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccP0aEif.s 			page 13
 
 
  512      69676E65 
@@ -730,74 +730,79 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 1
  514      7369676E 
  514      65642069 
  514      6E7400
- 515              	.LASF22:
- 516 00e6 483A5C53 		.ascii	"H:\\Senior-Project-2023\\PSoC\\HostDesign.cydsn\000"
- 516      656E696F 
- 516      722D5072 
- 516      6F6A6563 
- 516      742D3230 
- 517              	.LASF15:
- 518 0113 5357335F 		.ascii	"SW3_SetDriveMode\000"
- 518      53657444 
- 518      72697665 
- 518      4D6F6465 
- 518      00
- 519              	.LASF10:
- 520 0124 646F7562 		.ascii	"double\000"
- 520      6C6500
- 521              	.LASF8:
- 522 012b 756E7369 		.ascii	"unsigned int\000"
- 522      676E6564 
- 522      20696E74 
- 522      00
- 523              	.LASF19:
- 524 0138 5357335F 		.ascii	"SW3_ReadDataReg\000"
- 524      52656164 
- 524      44617461 
- 524      52656700 
- 525              	.LASF7:
- 526 0148 6C6F6E67 		.ascii	"long long unsigned int\000"
- 526      206C6F6E 
- 526      6720756E 
- 526      7369676E 
- 526      65642069 
- 527              	.LASF17:
- 528 015f 6D6F6465 		.ascii	"mode\000"
- 528      00
- 529              	.LASF21:
- 530 0164 47656E65 		.ascii	"Generated_Source\\PSoC5\\SW3.c\000"
- 530      72617465 
- 530      645F536F 
- 530      75726365 
- 530      5C50536F 
- 531              	.LASF6:
- 532 0181 6C6F6E67 		.ascii	"long long int\000"
- 532      206C6F6E 
- 532      6720696E 
- 532      7400
- 533              	.LASF11:
- 534 018f 63686172 		.ascii	"char\000"
- 534      00
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIbDuKL.s 			page 14
+ 515              	.LASF15:
+ 516 00e6 5357335F 		.ascii	"SW3_SetDriveMode\000"
+ 516      53657444 
+ 516      72697665 
+ 516      4D6F6465 
+ 516      00
+ 517              	.LASF10:
+ 518 00f7 646F7562 		.ascii	"double\000"
+ 518      6C6500
+ 519              	.LASF8:
+ 520 00fe 756E7369 		.ascii	"unsigned int\000"
+ 520      676E6564 
+ 520      20696E74 
+ 520      00
+ 521              	.LASF19:
+ 522 010b 5357335F 		.ascii	"SW3_ReadDataReg\000"
+ 522      52656164 
+ 522      44617461 
+ 522      52656700 
+ 523              	.LASF7:
+ 524 011b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 524      206C6F6E 
+ 524      6720756E 
+ 524      7369676E 
+ 524      65642069 
+ 525              	.LASF17:
+ 526 0132 6D6F6465 		.ascii	"mode\000"
+ 526      00
+ 527              	.LASF21:
+ 528 0137 47656E65 		.ascii	"Generated_Source\\PSoC5\\SW3.c\000"
+ 528      72617465 
+ 528      645F536F 
+ 528      75726365 
+ 528      5C50536F 
+ 529              	.LASF6:
+ 530 0154 6C6F6E67 		.ascii	"long long int\000"
+ 530      206C6F6E 
+ 530      6720696E 
+ 530      7400
+ 531              	.LASF11:
+ 532 0162 63686172 		.ascii	"char\000"
+ 532      00
+ 533              	.LASF2:
+ 534 0167 73686F72 		.ascii	"short int\000"
+ 534      7420696E 
+ 534      7400
+ 535              	.LASF12:
+ 536 0171 75696E74 		.ascii	"uint8\000"
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccP0aEif.s 			page 14
 
 
- 535              	.LASF2:
- 536 0194 73686F72 		.ascii	"short int\000"
- 536      7420696E 
- 536      7400
- 537              	.LASF12:
- 538 019e 75696E74 		.ascii	"uint8\000"
- 538      3800
- 539              	.LASF4:
- 540 01a4 6C6F6E67 		.ascii	"long int\000"
- 540      20696E74 
- 540      00
- 541              	.LASF0:
- 542 01ad 7369676E 		.ascii	"signed char\000"
- 542      65642063 
- 542      68617200 
- 543              	.LASF14:
- 544 01b9 5357335F 		.ascii	"SW3_Write\000"
- 544      57726974 
- 544      6500
- 545              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 536      3800
+ 537              	.LASF4:
+ 538 0177 6C6F6E67 		.ascii	"long int\000"
+ 538      20696E74 
+ 538      00
+ 539              	.LASF0:
+ 540 0180 7369676E 		.ascii	"signed char\000"
+ 540      65642063 
+ 540      68617200 
+ 541              	.LASF22:
+ 542 018c 433A5C55 		.ascii	"C:\\Users\\alexd\\OneDrive\\Desktop\\Senior-Project"
+ 542      73657273 
+ 542      5C616C65 
+ 542      78645C4F 
+ 542      6E654472 
+ 543 01ba 2D323032 		.ascii	"-2023\\psoc\\HostDesign.cydsn\000"
+ 543      335C7073 
+ 543      6F635C48 
+ 543      6F737444 
+ 543      65736967 
+ 544              	.LASF14:
+ 545 01d6 5357335F 		.ascii	"SW3_Write\000"
+ 545      57726974 
+ 545      6500
+ 546              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

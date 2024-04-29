@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 1
 
 
    1              		.syntax unified
@@ -30,7 +30,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
   27              		.file 1 "Generated_Source\\PSoC5\\CyDmac.c"
    1:Generated_Source\PSoC5/CyDmac.c **** /***************************************************************************//**
    2:Generated_Source\PSoC5/CyDmac.c **** * \file CyDmac.c
-   3:Generated_Source\PSoC5/CyDmac.c **** * \version 6.0
+   3:Generated_Source\PSoC5/CyDmac.c **** * \version 6.10
    4:Generated_Source\PSoC5/CyDmac.c **** *
    5:Generated_Source\PSoC5/CyDmac.c **** * \brief
    6:Generated_Source\PSoC5/CyDmac.c **** * Provides an API for the DMAC component. The API includes functions for the
@@ -50,7 +50,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
   20:Generated_Source\PSoC5/CyDmac.c **** *
   21:Generated_Source\PSoC5/CyDmac.c **** ********************************************************************************
   22:Generated_Source\PSoC5/CyDmac.c **** * \copyright
-  23:Generated_Source\PSoC5/CyDmac.c **** * Copyright 2008-2018, Cypress Semiconductor Corporation.  All rights reserved.
+  23:Generated_Source\PSoC5/CyDmac.c **** * Copyright 2008-2021, Cypress Semiconductor Corporation.  All rights reserved.
   24:Generated_Source\PSoC5/CyDmac.c **** * You may use this file only in accordance with the license, terms, conditions,
   25:Generated_Source\PSoC5/CyDmac.c **** * disclaimers, and limitations in the end user license agreement accompanying
   26:Generated_Source\PSoC5/CyDmac.c **** * the software package with which this file was provided.
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
   28:Generated_Source\PSoC5/CyDmac.c **** 
   29:Generated_Source\PSoC5/CyDmac.c **** #include "CyDmac.h"
   30:Generated_Source\PSoC5/CyDmac.c **** 
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 2
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 2
 
 
   31:Generated_Source\PSoC5/CyDmac.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
   46              		.loc 1 58 0
   47 000c 0870     		strb	r0, [r1]
   59:Generated_Source\PSoC5/CyDmac.c ****     CyDmaTdCurrentNumber = CY_DMA_NUMBEROF_TDS;
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 3
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 3
 
 
   48              		.loc 1 59 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
   78:Generated_Source\PSoC5/CyDmac.c **** * \return Errors of the last failed DMA transaction.
   79:Generated_Source\PSoC5/CyDmac.c **** *
   80:Generated_Source\PSoC5/CyDmac.c **** *  DMAC_PERIPH_ERR:
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 4
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 4
 
 
   81:Generated_Source\PSoC5/CyDmac.c **** *   Set to 1 when a peripheral responds to a bus transaction with an error
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  109:Generated_Source\PSoC5/CyDmac.c **** *   Clears the error bits in the DMAC error register.
  110:Generated_Source\PSoC5/CyDmac.c **** *
  111:Generated_Source\PSoC5/CyDmac.c **** *  \param DMAC_PERIPH_ERR:
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 5
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 5
 
 
  112:Generated_Source\PSoC5/CyDmac.c **** *   Set to 1 when a peripheral responds to a bus transaction with an error
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  139:Generated_Source\PSoC5/CyDmac.c **** *  with this function.
  140:Generated_Source\PSoC5/CyDmac.c **** *
  141:Generated_Source\PSoC5/CyDmac.c **** *  If there are multiple errors, only the address of the first is saved.
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 6
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 6
 
 
  142:Generated_Source\PSoC5/CyDmac.c **** *
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  170              		.cfi_def_cfa_offset 16
  171              		.cfi_offset 3, -16
  172              		.cfi_offset 4, -12
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 7
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 7
 
 
  173              		.cfi_offset 5, -8
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  204 0024 2A60     		str	r2, [r5]
  184:Generated_Source\PSoC5/CyDmac.c ****     }
  185:Generated_Source\PSoC5/CyDmac.c **** 
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 8
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 8
 
 
  186:Generated_Source\PSoC5/CyDmac.c ****     if(dmaIndex >= CY_DMA_NUMBEROF_CHANNELS)
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  205:Generated_Source\PSoC5/CyDmac.c **** * DMA_DmaInitalize().
  206:Generated_Source\PSoC5/CyDmac.c **** *
  207:Generated_Source\PSoC5/CyDmac.c **** * \return CYRET_SUCCESS if successful.
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 9
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 9
 
 
  208:Generated_Source\PSoC5/CyDmac.c **** * \return CYRET_BAD_PARAM if chHandle is invalid.
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  271              		.loc 1 226 0
  272 0024 0020     		movs	r0, #0
  273 0026 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 10
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 10
 
 
  274              	.L33:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  266:Generated_Source\PSoC5/CyDmac.c **** * \return CYRET_BAD_PARAM if chHandle is invalid.
  267:Generated_Source\PSoC5/CyDmac.c **** *
  268:Generated_Source\PSoC5/CyDmac.c **** *******************************************************************************/
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 11
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 11
 
 
  269:Generated_Source\PSoC5/CyDmac.c **** cystatus CyDmaChEnable(uint8 chHandle, uint8 preserveTds) 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  319 0020 7047     		bx	lr
  320              	.LVL26:
  321              	.L39:
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 12
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 12
 
 
  280:Generated_Source\PSoC5/CyDmac.c ****         }
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  311:Generated_Source\PSoC5/CyDmac.c **** *
  312:Generated_Source\PSoC5/CyDmac.c **** * \return CYRET_SUCCESS if successful.
  313:Generated_Source\PSoC5/CyDmac.c **** * \return CYRET_BAD_PARAM if chHandle is invalid.
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 13
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 13
 
 
  314:Generated_Source\PSoC5/CyDmac.c **** *
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  335:Generated_Source\PSoC5/CyDmac.c ****     return(status);
  336:Generated_Source\PSoC5/CyDmac.c **** }
  385              		.loc 1 336 0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 14
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 14
 
 
  386 001e 7047     		bx	lr
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  418 000a 1A44     		add	r2, r2, r3
  419 000c 1179     		ldrb	r1, [r2, #4]	@ zero_extendqisi2
  420 000e 064C     		ldr	r4, .L52
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 15
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 15
 
 
  421 0010 41F00401 		orr	r1, r1, #4
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  373:Generated_Source\PSoC5/CyDmac.c **** *
  374:Generated_Source\PSoC5/CyDmac.c **** *  \param chHandle A handle previously returned by \ref CyDmaChAlloc() or \ref
  375:Generated_Source\PSoC5/CyDmac.c **** *  DMA_DmaInitalize().
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 16
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 16
 
 
  376:Generated_Source\PSoC5/CyDmac.c **** *
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  397:Generated_Source\PSoC5/CyDmac.c ****     return(status);
  398:Generated_Source\PSoC5/CyDmac.c **** }
  490              		.loc 1 398 0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 17
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 17
 
 
  491 001e 7047     		bx	lr
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  429:Generated_Source\PSoC5/CyDmac.c ****         {
  430:Generated_Source\PSoC5/CyDmac.c ****             source = 0x2000u;
  515              		.loc 1 430 0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 18
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 18
 
 
  516 0004 9942     		cmp	r1, r3
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  451:Generated_Source\PSoC5/CyDmac.c ****     }
  452:Generated_Source\PSoC5/CyDmac.c **** 
  453:Generated_Source\PSoC5/CyDmac.c ****     return(status);
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 19
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 19
 
 
  454:Generated_Source\PSoC5/CyDmac.c **** }
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  575 000a 5972     		strb	r1, [r3, #9]
  576              	.LVL60:
  481:Generated_Source\PSoC5/CyDmac.c ****         status = CYRET_SUCCESS;
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 20
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 20
 
 
  577              		.loc 1 481 0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  602              		.loc 1 509 0
  603              		.cfi_startproc
  604              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 21
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 21
 
 
  605              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  521:Generated_Source\PSoC5/CyDmac.c **** 
  522:Generated_Source\PSoC5/CyDmac.c **** /*******************************************************************************
  523:Generated_Source\PSoC5/CyDmac.c **** * Function Name: CyDmaChGetRequest
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 22
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 22
 
 
  524:Generated_Source\PSoC5/CyDmac.c **** ****************************************************************************//**
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  673 0016 00BF     		.align	2
  674              	.L78:
  675 0018 10700040 		.word	1073770512
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 23
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 23
 
 
  676              		.cfi_endproc
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  587:Generated_Source\PSoC5/CyDmac.c ****     if(chHandle < CY_DMA_NUMBEROF_CHANNELS)
  693              		.loc 1 587 0
  694 0000 1728     		cmp	r0, #23
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 24
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 24
 
 
  695 0002 11D8     		bhi	.L83
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  585:Generated_Source\PSoC5/CyDmac.c **** 
  731              		.loc 1 585 0
  732 0028 0120     		movs	r0, #1
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 25
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 25
 
 
  733              	.LVL78:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  631:Generated_Source\PSoC5/CyDmac.c **** *
  632:Generated_Source\PSoC5/CyDmac.c **** *  \param uint8 tdDone1:
  633:Generated_Source\PSoC5/CyDmac.c **** *   Selects one of the TERMOUT1 interrupt lines to signal completion. The line
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 26
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 26
 
 
  634:Generated_Source\PSoC5/CyDmac.c **** *   connected to the nrq terminal will determine the TERMOUT1_SEL definition and
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  789 0020 43EA0613 		orr	r3, r3, r6, lsl #4
  654:Generated_Source\PSoC5/CyDmac.c ****         CY_DMA_CFGMEM_STRUCT_PTR[chHandle].CFG0[1] = ((uint8)((tdDone1 & 0xFu) << 4u)) | (tdDone0 &
  790              		.loc 1 654 0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 27
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 27
 
 
  791 0024 04F5EC44 		add	r4, r4, #30208
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  831              		.cfi_restore 5
  832              		.cfi_restore 6
  833              		.cfi_def_cfa_offset 0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 28
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 28
 
 
  834              	.LVL91:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  682:Generated_Source\PSoC5/CyDmac.c **** 
  864              		.loc 1 682 0
  865 000e FF24     		movs	r4, #255
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 29
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 29
 
 
  866              	.LVL94:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  898              	.L100:
  899 0034 00000000 		.word	.LANCHOR0
  900              		.cfi_endproc
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 30
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 30
 
 
  901              	.LFE16:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  933 000e E300     		lsls	r3, r4, #3
  725:Generated_Source\PSoC5/CyDmac.c **** 
  726:Generated_Source\PSoC5/CyDmac.c ****         /* Set new Next Available. */
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 31
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 31
 
 
  727:Generated_Source\PSoC5/CyDmac.c ****         CyDmaTdFreeIndex = tdHandle;
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  975              		.type	CyDmaTdFreeCount, %function
  976              	CyDmaTdFreeCount:
  977              	.LFB18:
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 32
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 32
 
 
  736:Generated_Source\PSoC5/CyDmac.c **** 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  763:Generated_Source\PSoC5/CyDmac.c **** *  \param uint16 transferCount:
  764:Generated_Source\PSoC5/CyDmac.c **** *   The size of the data transfer (in bytes) for this TD. A size of zero will
  765:Generated_Source\PSoC5/CyDmac.c **** *   cause the transfer to continue indefinitely. This parameter is limited to
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 33
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 33
 
 
  766:Generated_Source\PSoC5/CyDmac.c **** *   4095 bytes; the TD is not initialized at all when a higher value is passed.
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1012 0000 10F0800F 		tst	r0, #128
  1013 0004 11D1     		bne	.L113
  809:Generated_Source\PSoC5/CyDmac.c ****     cystatus status = CYRET_BAD_PARAM;
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 34
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 34
 
 
  1014              		.loc 1 809 0 discriminator 1
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1051 0024 0120     		movs	r0, #1
  1052              	.LVL109:
  1053              		.loc 1 828 0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 35
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 35
 
 
  1054 0026 30BC     		pop	{r4, r5}
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  859:Generated_Source\PSoC5/CyDmac.c **** *  If TD has a transfer count of N and is executed, the transfer count becomes
  860:Generated_Source\PSoC5/CyDmac.c **** *  0. If it is reexecuted, the Transfer count of zero will be interpreted as a
  861:Generated_Source\PSoC5/CyDmac.c **** *  request for indefinite transfer. Be careful when requesting TD with a
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 36
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 36
 
 
  862:Generated_Source\PSoC5/CyDmac.c **** *  transfer count of zero.
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  884:Generated_Source\PSoC5/CyDmac.c ****             *nextTd = CY_DMA_TDMEM_STRUCT_PTR[tdHandle].TD0[2u];
  1108              		.loc 1 884 0
  1109 001e C100     		lsls	r1, r0, #3
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 37
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 37
 
 
  1110              	.LVL116:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1147              		.loc 1 894 0
  1148 0046 1846     		mov	r0, r3
  1149              	.LVL123:
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 38
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 38
 
 
  1150 0048 F9E7     		b	.L117
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1172 0004 C000     		lsls	r0, r0, #3
  1173              	.LVL125:
  1174 0006 00F18043 		add	r3, r0, #1073741824
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 39
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 39
 
 
  1175 000a 03F5F043 		add	r3, r3, #30720
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  954:Generated_Source\PSoC5/CyDmac.c **** *
  955:Generated_Source\PSoC5/CyDmac.c **** *  \param uint16 * source:
  956:Generated_Source\PSoC5/CyDmac.c **** *   The address to store the lower 16 address bits of the source of the data
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 40
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 40
 
 
  957:Generated_Source\PSoC5/CyDmac.c **** *   transfer.
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  987:Generated_Source\PSoC5/CyDmac.c ****             convert = (reg16 *) &CY_DMA_TDMEM_STRUCT_PTR[tdHandle].TD1[2u];
  1228              		.loc 1 987 0
  1229 0016 C000     		lsls	r0, r0, #3
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 41
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 41
 
 
  1230              	.LVL135:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
 1004:Generated_Source\PSoC5/CyDmac.c **** *
 1005:Generated_Source\PSoC5/CyDmac.c **** * \param uint8 chHandle:
 1006:Generated_Source\PSoC5/CyDmac.c **** *  A handle previously returned by CyDmaChAlloc() or Dma_DmaInitialize().
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 42
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 42
 
 
 1007:Generated_Source\PSoC5/CyDmac.c **** *
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
 1033:Generated_Source\PSoC5/CyDmac.c ****     }
 1034:Generated_Source\PSoC5/CyDmac.c **** 
 1035:Generated_Source\PSoC5/CyDmac.c ****     return(status);
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 43
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 43
 
 
 1036:Generated_Source\PSoC5/CyDmac.c **** }
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1341              		.text
  1342              	.Letext0:
  1343              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 44
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 44
 
 
  1344              		.file 3 "Generated_Source\\PSoC5\\CyDmac.h"
@@ -2590,10 +2590,10 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1350 0006 00000000 		.4byte	.Ldebug_abbrev0
  1351 000a 04       		.byte	0x4
  1352 000b 01       		.uleb128 0x1
- 1353 000c B5030000 		.4byte	.LASF88
+ 1353 000c D2030000 		.4byte	.LASF88
  1354 0010 0C       		.byte	0xc
- 1355 0011 58020000 		.4byte	.LASF89
- 1356 0015 22010000 		.4byte	.LASF90
+ 1355 0011 2B020000 		.4byte	.LASF89
+ 1356 0015 5C020000 		.4byte	.LASF90
  1357 0019 18000000 		.4byte	.Ldebug_ranges0+0x18
  1358 001d 00000000 		.4byte	0
  1359 0021 00000000 		.4byte	.Ldebug_line0
@@ -2604,15 +2604,15 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1364 002c 02       		.uleb128 0x2
  1365 002d 01       		.byte	0x1
  1366 002e 08       		.byte	0x8
- 1367 002f 51030000 		.4byte	.LASF1
+ 1367 002f 6E030000 		.4byte	.LASF1
  1368 0033 02       		.uleb128 0x2
  1369 0034 02       		.byte	0x2
  1370 0035 05       		.byte	0x5
- 1371 0036 5F030000 		.4byte	.LASF2
+ 1371 0036 7C030000 		.4byte	.LASF2
  1372 003a 02       		.uleb128 0x2
  1373 003b 02       		.byte	0x2
  1374 003c 07       		.byte	0x7
- 1375 003d 2B020000 		.4byte	.LASF3
+ 1375 003d FE010000 		.4byte	.LASF3
  1376 0041 02       		.uleb128 0x2
  1377 0042 04       		.byte	0x4
  1378 0043 05       		.byte	0x5
@@ -2620,7 +2620,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1380 0048 02       		.uleb128 0x2
  1381 0049 04       		.byte	0x4
  1382 004a 07       		.byte	0x7
- 1383 004b B6010000 		.4byte	.LASF5
+ 1383 004b 89010000 		.4byte	.LASF5
  1384 004f 02       		.uleb128 0x2
  1385 0050 08       		.byte	0x8
  1386 0051 05       		.byte	0x5
@@ -2636,69 +2636,69 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1396 0064 02       		.uleb128 0x2
  1397 0065 04       		.byte	0x4
  1398 0066 07       		.byte	0x7
- 1399 0067 A9010000 		.4byte	.LASF8
+ 1399 0067 7C010000 		.4byte	.LASF8
  1400 006b 04       		.uleb128 0x4
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 45
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 45
 
 
- 1401 006c 4F010000 		.4byte	.LASF9
+ 1401 006c 28010000 		.4byte	.LASF9
  1402 0070 02       		.byte	0x2
- 1403 0071 E801     		.2byte	0x1e8
+ 1403 0071 E901     		.2byte	0x1e9
  1404 0073 2C000000 		.4byte	0x2c
  1405 0077 04       		.uleb128 0x4
  1406 0078 00000000 		.4byte	.LASF10
  1407 007c 02       		.byte	0x2
- 1408 007d E901     		.2byte	0x1e9
+ 1408 007d EA01     		.2byte	0x1ea
  1409 007f 3A000000 		.4byte	0x3a
  1410 0083 04       		.uleb128 0x4
- 1411 0084 70010000 		.4byte	.LASF11
+ 1411 0084 43010000 		.4byte	.LASF11
  1412 0088 02       		.byte	0x2
- 1413 0089 EA01     		.2byte	0x1ea
+ 1413 0089 EB01     		.2byte	0x1eb
  1414 008b 48000000 		.4byte	0x48
  1415 008f 02       		.uleb128 0x2
  1416 0090 04       		.byte	0x4
  1417 0091 04       		.byte	0x4
- 1418 0092 05030000 		.4byte	.LASF12
+ 1418 0092 22030000 		.4byte	.LASF12
  1419 0096 02       		.uleb128 0x2
  1420 0097 08       		.byte	0x8
  1421 0098 04       		.byte	0x4
- 1422 0099 55010000 		.4byte	.LASF13
+ 1422 0099 2E010000 		.4byte	.LASF13
  1423 009d 02       		.uleb128 0x2
  1424 009e 01       		.byte	0x1
  1425 009f 08       		.byte	0x8
- 1426 00a0 43040000 		.4byte	.LASF14
+ 1426 00a0 60040000 		.4byte	.LASF14
  1427 00a4 04       		.uleb128 0x4
- 1428 00a5 00050000 		.4byte	.LASF15
+ 1428 00a5 1D050000 		.4byte	.LASF15
  1429 00a9 02       		.byte	0x2
- 1430 00aa 8A02     		.2byte	0x28a
+ 1430 00aa 8B02     		.2byte	0x28b
  1431 00ac 48000000 		.4byte	0x48
  1432 00b0 05       		.uleb128 0x5
  1433 00b1 6B000000 		.4byte	0x6b
  1434 00b5 04       		.uleb128 0x4
- 1435 00b6 5C010000 		.4byte	.LASF16
+ 1435 00b6 22010000 		.4byte	.LASF16
  1436 00ba 02       		.byte	0x2
- 1437 00bb 9302     		.2byte	0x293
+ 1437 00bb 9402     		.2byte	0x294
  1438 00bd C1000000 		.4byte	0xc1
  1439 00c1 05       		.uleb128 0x5
  1440 00c2 77000000 		.4byte	0x77
  1441 00c6 04       		.uleb128 0x4
- 1442 00c7 89020000 		.4byte	.LASF17
+ 1442 00c7 A6020000 		.4byte	.LASF17
  1443 00cb 02       		.byte	0x2
- 1444 00cc 9402     		.2byte	0x294
+ 1444 00cc 9502     		.2byte	0x295
  1445 00ce D2000000 		.4byte	0xd2
  1446 00d2 05       		.uleb128 0x5
  1447 00d3 83000000 		.4byte	0x83
  1448 00d7 02       		.uleb128 0x2
  1449 00d8 08       		.byte	0x8
  1450 00d9 04       		.byte	0x4
- 1451 00da AC020000 		.4byte	.LASF18
+ 1451 00da C9020000 		.4byte	.LASF18
  1452 00de 02       		.uleb128 0x2
  1453 00df 04       		.byte	0x4
  1454 00e0 07       		.byte	0x7
- 1455 00e1 A3020000 		.4byte	.LASF19
+ 1455 00e1 C0020000 		.4byte	.LASF19
  1456 00e5 06       		.uleb128 0x6
- 1457 00e6 42030000 		.4byte	.LASF25
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 46
+ 1457 00e6 5F030000 		.4byte	.LASF25
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 46
 
 
  1458 00ea 10       		.byte	0x10
@@ -2706,25 +2706,25 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1460 00ec 47       		.byte	0x47
  1461 00ed 22010000 		.4byte	0x122
  1462 00f1 07       		.uleb128 0x7
- 1463 00f2 21020000 		.4byte	.LASF20
+ 1463 00f2 F4010000 		.4byte	.LASF20
  1464 00f6 03       		.byte	0x3
  1465 00f7 49       		.byte	0x49
  1466 00f8 32010000 		.4byte	0x132
  1467 00fc 00       		.byte	0
  1468 00fd 07       		.uleb128 0x7
- 1469 00fe 77010000 		.4byte	.LASF21
+ 1469 00fe 4A010000 		.4byte	.LASF21
  1470 0102 03       		.byte	0x3
  1471 0103 4A       		.byte	0x4a
  1472 0104 37010000 		.4byte	0x137
  1473 0108 04       		.byte	0x4
  1474 0109 07       		.uleb128 0x7
- 1475 010a 96020000 		.4byte	.LASF22
+ 1475 010a B3020000 		.4byte	.LASF22
  1476 010e 03       		.byte	0x3
  1477 010f 4B       		.byte	0x4b
  1478 0110 3C010000 		.4byte	0x13c
  1479 0114 08       		.byte	0x8
  1480 0115 07       		.uleb128 0x7
- 1481 0116 7E010000 		.4byte	.LASF23
+ 1481 0116 51010000 		.4byte	.LASF23
  1482 011a 03       		.byte	0x3
  1483 011b 4C       		.byte	0x4c
  1484 011c 41010000 		.4byte	0x141
@@ -2746,19 +2746,19 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1500 0141 05       		.uleb128 0x5
  1501 0142 22010000 		.4byte	0x122
  1502 0146 0A       		.uleb128 0xa
- 1503 0147 63040000 		.4byte	.LASF24
+ 1503 0147 80040000 		.4byte	.LASF24
  1504 014b 03       		.byte	0x3
  1505 014c 4E       		.byte	0x4e
  1506 014d E5000000 		.4byte	0xe5
  1507 0151 06       		.uleb128 0x6
- 1508 0152 C8010000 		.4byte	.LASF26
+ 1508 0152 9B010000 		.4byte	.LASF26
  1509 0156 08       		.byte	0x8
  1510 0157 03       		.byte	0x3
  1511 0158 51       		.byte	0x51
  1512 0159 76010000 		.4byte	0x176
  1513 015d 07       		.uleb128 0x7
- 1514 015e C1040000 		.4byte	.LASF27
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 47
+ 1514 015e DE040000 		.4byte	.LASF27
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 47
 
 
  1515 0162 03       		.byte	0x3
@@ -2766,7 +2766,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1517 0164 76010000 		.4byte	0x176
  1518 0168 00       		.byte	0
  1519 0169 07       		.uleb128 0x7
- 1520 016a C6040000 		.4byte	.LASF28
+ 1520 016a E3040000 		.4byte	.LASF28
  1521 016e 03       		.byte	0x3
  1522 016f 54       		.byte	0x54
  1523 0170 7B010000 		.4byte	0x17b
@@ -2805,7 +2805,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1556 01b5 05       		.uleb128 0x5
  1557 01b6 22010000 		.4byte	0x122
  1558 01ba 0A       		.uleb128 0xa
- 1559 01bb 8F040000 		.4byte	.LASF31
+ 1559 01bb AC040000 		.4byte	.LASF31
  1560 01bf 03       		.byte	0x3
  1561 01c0 5E       		.byte	0x5e
  1562 01c1 8B010000 		.4byte	0x18b
@@ -2818,18 +2818,18 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1569 01d4 01       		.uleb128 0x1
  1570 01d5 9C       		.byte	0x9c
  1571 01d6 EA010000 		.4byte	0x1ea
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 48
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 48
 
 
  1572 01da 0D       		.uleb128 0xd
- 1573 01db DC020000 		.4byte	.LASF36
+ 1573 01db F9020000 		.4byte	.LASF36
  1574 01df 01       		.byte	0x1
  1575 01e0 37       		.byte	0x37
  1576 01e1 6B000000 		.4byte	0x6b
  1577 01e5 00000000 		.4byte	.LLST0
  1578 01e9 00       		.byte	0
  1579 01ea 0E       		.uleb128 0xe
- 1580 01eb 4C020000 		.4byte	.LASF34
+ 1580 01eb 1F020000 		.4byte	.LASF34
  1581 01ef 01       		.byte	0x1
  1582 01f0 60       		.byte	0x60
  1583 01f1 6B000000 		.4byte	0x6b
@@ -2838,7 +2838,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1586 01fd 01       		.uleb128 0x1
  1587 01fe 9C       		.byte	0x9c
  1588 01ff 0C       		.uleb128 0xc
- 1589 0200 78020000 		.4byte	.LASF33
+ 1589 0200 4B020000 		.4byte	.LASF33
  1590 0204 01       		.byte	0x1
  1591 0205 7F       		.byte	0x7f
  1592 0206 00000000 		.4byte	.LFB2
@@ -2847,7 +2847,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1595 020f 9C       		.byte	0x9c
  1596 0210 24020000 		.4byte	0x224
  1597 0214 0F       		.uleb128 0xf
- 1598 0215 0B030000 		.4byte	.LASF41
+ 1598 0215 28030000 		.4byte	.LASF41
  1599 0219 01       		.byte	0x1
  1600 021a 7F       		.byte	0x7f
  1601 021b 6B000000 		.4byte	0x6b
@@ -2863,7 +2863,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1611 0237 01       		.uleb128 0x1
  1612 0238 9C       		.byte	0x9c
  1613 0239 10       		.uleb128 0x10
- 1614 023a 9E030000 		.4byte	.LASF39
+ 1614 023a BB030000 		.4byte	.LASF39
  1615 023e 01       		.byte	0x1
  1616 023f A3       		.byte	0xa3
  1617 0240 6B000000 		.4byte	0x6b
@@ -2878,17 +2878,17 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1626 0258 A5       		.byte	0xa5
  1627 0259 6B000000 		.4byte	0x6b
  1628 025d 3F000000 		.4byte	.LLST2
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 49
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 49
 
 
  1629 0261 0D       		.uleb128 0xd
- 1630 0262 DC020000 		.4byte	.LASF36
+ 1630 0262 F9020000 		.4byte	.LASF36
  1631 0266 01       		.byte	0x1
  1632 0267 A6       		.byte	0xa6
  1633 0268 6B000000 		.4byte	0x6b
  1634 026c 5D000000 		.4byte	.LLST3
  1635 0270 0D       		.uleb128 0xd
- 1636 0271 79030000 		.4byte	.LASF38
+ 1636 0271 96030000 		.4byte	.LASF38
  1637 0275 01       		.byte	0x1
  1638 0276 A7       		.byte	0xa7
  1639 0277 83000000 		.4byte	0x83
@@ -2904,7 +2904,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1649 0296 52090000 		.4byte	0x952
  1650 029a 00       		.byte	0
  1651 029b 10       		.uleb128 0x10
- 1652 029c 29050000 		.4byte	.LASF40
+ 1652 029c 46050000 		.4byte	.LASF40
  1653 02a0 01       		.byte	0x1
  1654 02a1 D3       		.byte	0xd3
  1655 02a2 A4000000 		.4byte	0xa4
@@ -2914,13 +2914,13 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1659 02af 9C       		.byte	0x9c
  1660 02b0 F4020000 		.4byte	0x2f4
  1661 02b4 0F       		.uleb128 0xf
- 1662 02b5 70030000 		.4byte	.LASF42
+ 1662 02b5 8D030000 		.4byte	.LASF42
  1663 02b9 01       		.byte	0x1
  1664 02ba D3       		.byte	0xd3
  1665 02bb 6B000000 		.4byte	0x6b
  1666 02bf D2000000 		.4byte	.LLST5
  1667 02c3 0D       		.uleb128 0xd
- 1668 02c4 CB040000 		.4byte	.LASF43
+ 1668 02c4 E8040000 		.4byte	.LASF43
  1669 02c8 01       		.byte	0x1
  1670 02c9 D5       		.byte	0xd5
  1671 02ca A4000000 		.4byte	0xa4
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1683 02eb 24000000 		.4byte	.LVL21
  1684 02ef 52090000 		.4byte	0x952
  1685 02f3 00       		.byte	0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 50
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 50
 
 
  1686 02f4 12       		.uleb128 0x12
@@ -2952,26 +2952,26 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1694 0309 9C       		.byte	0x9c
  1695 030a 3F030000 		.4byte	0x33f
  1696 030e 13       		.uleb128 0x13
- 1697 030f 70030000 		.4byte	.LASF42
+ 1697 030f 8D030000 		.4byte	.LASF42
  1698 0313 01       		.byte	0x1
  1699 0314 0D01     		.2byte	0x10d
  1700 0316 6B000000 		.4byte	0x6b
  1701 031a 3F010000 		.4byte	.LLST8
  1702 031e 13       		.uleb128 0x13
- 1703 031f 7B040000 		.4byte	.LASF45
+ 1703 031f 98040000 		.4byte	.LASF45
  1704 0323 01       		.byte	0x1
  1705 0324 0D01     		.2byte	0x10d
  1706 0326 6B000000 		.4byte	0x6b
  1707 032a 92010000 		.4byte	.LLST9
  1708 032e 14       		.uleb128 0x14
- 1709 032f CB040000 		.4byte	.LASF43
+ 1709 032f E8040000 		.4byte	.LASF43
  1710 0333 01       		.byte	0x1
  1711 0334 0F01     		.2byte	0x10f
  1712 0336 A4000000 		.4byte	0xa4
  1713 033a D7010000 		.4byte	.LLST10
  1714 033e 00       		.byte	0
  1715 033f 12       		.uleb128 0x12
- 1716 0340 8F030000 		.4byte	.LASF46
+ 1716 0340 AC030000 		.4byte	.LASF46
  1717 0344 01       		.byte	0x1
  1718 0345 3C01     		.2byte	0x13c
  1719 0347 A4000000 		.4byte	0xa4
@@ -2981,24 +2981,24 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1723 0354 9C       		.byte	0x9c
  1724 0355 7A030000 		.4byte	0x37a
  1725 0359 13       		.uleb128 0x13
- 1726 035a 70030000 		.4byte	.LASF42
+ 1726 035a 8D030000 		.4byte	.LASF42
  1727 035e 01       		.byte	0x1
  1728 035f 3C01     		.2byte	0x13c
  1729 0361 6B000000 		.4byte	0x6b
  1730 0365 0E020000 		.4byte	.LLST11
  1731 0369 14       		.uleb128 0x14
- 1732 036a CB040000 		.4byte	.LASF43
+ 1732 036a E8040000 		.4byte	.LASF43
  1733 036e 01       		.byte	0x1
  1734 036f 3E01     		.2byte	0x13e
  1735 0371 A4000000 		.4byte	0xa4
  1736 0375 48020000 		.4byte	.LLST12
  1737 0379 00       		.byte	0
  1738 037a 12       		.uleb128 0x12
- 1739 037b E5020000 		.4byte	.LASF47
+ 1739 037b 02030000 		.4byte	.LASF47
  1740 037f 01       		.byte	0x1
  1741 0380 5F01     		.2byte	0x15f
  1742 0382 A4000000 		.4byte	0xa4
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 51
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 51
 
 
  1743 0386 00000000 		.4byte	.LFB8
@@ -3007,20 +3007,20 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1746 038f 9C       		.byte	0x9c
  1747 0390 B5030000 		.4byte	0x3b5
  1748 0394 13       		.uleb128 0x13
- 1749 0395 70030000 		.4byte	.LASF42
+ 1749 0395 8D030000 		.4byte	.LASF42
  1750 0399 01       		.byte	0x1
  1751 039a 5F01     		.2byte	0x15f
  1752 039c 6B000000 		.4byte	0x6b
  1753 03a0 7F020000 		.4byte	.LLST13
  1754 03a4 14       		.uleb128 0x14
- 1755 03a5 CB040000 		.4byte	.LASF43
+ 1755 03a5 E8040000 		.4byte	.LASF43
  1756 03a9 01       		.byte	0x1
  1757 03aa 6101     		.2byte	0x161
  1758 03ac A4000000 		.4byte	0xa4
  1759 03b0 B9020000 		.4byte	.LLST14
  1760 03b4 00       		.byte	0
  1761 03b5 12       		.uleb128 0x12
- 1762 03b6 99010000 		.4byte	.LASF48
+ 1762 03b6 6C010000 		.4byte	.LASF48
  1763 03ba 01       		.byte	0x1
  1764 03bb 7F01     		.2byte	0x17f
  1765 03bd A4000000 		.4byte	0xa4
@@ -3030,35 +3030,35 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1769 03ca 9C       		.byte	0x9c
  1770 03cb 10040000 		.4byte	0x410
  1771 03cf 13       		.uleb128 0x13
- 1772 03d0 70030000 		.4byte	.LASF42
+ 1772 03d0 8D030000 		.4byte	.LASF42
  1773 03d4 01       		.byte	0x1
  1774 03d5 7F01     		.2byte	0x17f
  1775 03d7 6B000000 		.4byte	0x6b
  1776 03db E4020000 		.4byte	.LLST15
  1777 03df 13       		.uleb128 0x13
- 1778 03e0 48040000 		.4byte	.LASF49
+ 1778 03e0 65040000 		.4byte	.LASF49
  1779 03e4 01       		.byte	0x1
  1780 03e5 7F01     		.2byte	0x17f
  1781 03e7 6B000000 		.4byte	0x6b
  1782 03eb 1E030000 		.4byte	.LLST16
  1783 03ef 14       		.uleb128 0x14
- 1784 03f0 87010000 		.4byte	.LASF50
+ 1784 03f0 5A010000 		.4byte	.LASF50
  1785 03f4 01       		.byte	0x1
  1786 03f5 8101     		.2byte	0x181
  1787 03f7 6B000000 		.4byte	0x6b
  1788 03fb 4A030000 		.4byte	.LLST17
  1789 03ff 14       		.uleb128 0x14
- 1790 0400 CB040000 		.4byte	.LASF43
+ 1790 0400 E8040000 		.4byte	.LASF43
  1791 0404 01       		.byte	0x1
  1792 0405 8201     		.2byte	0x182
  1793 0407 A4000000 		.4byte	0xa4
  1794 040b 62030000 		.4byte	.LLST18
  1795 040f 00       		.byte	0
  1796 0410 12       		.uleb128 0x12
- 1797 0411 F2010000 		.4byte	.LASF51
+ 1797 0411 C5010000 		.4byte	.LASF51
  1798 0415 01       		.byte	0x1
  1799 0416 A301     		.2byte	0x1a3
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 52
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 52
 
 
  1800 0418 A4000000 		.4byte	0xa4
@@ -3068,31 +3068,31 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1804 0425 9C       		.byte	0x9c
  1805 0426 7B040000 		.4byte	0x47b
  1806 042a 13       		.uleb128 0x13
- 1807 042b 70030000 		.4byte	.LASF42
+ 1807 042b 8D030000 		.4byte	.LASF42
  1808 042f 01       		.byte	0x1
  1809 0430 A301     		.2byte	0x1a3
  1810 0432 6B000000 		.4byte	0x6b
  1811 0436 99030000 		.4byte	.LLST19
  1812 043a 13       		.uleb128 0x13
- 1813 043b 8F020000 		.4byte	.LASF52
+ 1813 043b AC020000 		.4byte	.LASF52
  1814 043f 01       		.byte	0x1
  1815 0440 A301     		.2byte	0x1a3
  1816 0442 77000000 		.4byte	0x77
  1817 0446 D3030000 		.4byte	.LLST20
  1818 044a 13       		.uleb128 0x13
- 1819 044b 8D010000 		.4byte	.LASF53
+ 1819 044b 60010000 		.4byte	.LASF53
  1820 044f 01       		.byte	0x1
  1821 0450 A301     		.2byte	0x1a3
  1822 0452 77000000 		.4byte	0x77
  1823 0456 F1030000 		.4byte	.LLST21
  1824 045a 14       		.uleb128 0x14
- 1825 045b CB040000 		.4byte	.LASF43
+ 1825 045b E8040000 		.4byte	.LASF43
  1826 045f 01       		.byte	0x1
  1827 0460 A601     		.2byte	0x1a6
  1828 0462 A4000000 		.4byte	0xa4
  1829 0466 0F040000 		.4byte	.LLST22
  1830 046a 14       		.uleb128 0x14
- 1831 046b 87040000 		.4byte	.LASF54
+ 1831 046b A4040000 		.4byte	.LASF54
  1832 046f 01       		.byte	0x1
  1833 0470 A701     		.2byte	0x1a7
  1834 0472 7B040000 		.4byte	0x47b
@@ -3102,7 +3102,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1838 047c 04       		.byte	0x4
  1839 047d B5000000 		.4byte	0xb5
  1840 0481 12       		.uleb128 0x12
- 1841 0482 EC040000 		.4byte	.LASF55
+ 1841 0482 09050000 		.4byte	.LASF55
  1842 0486 01       		.byte	0x1
  1843 0487 DA01     		.2byte	0x1da
  1844 0489 A4000000 		.4byte	0xa4
@@ -3112,30 +3112,30 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1848 0496 9C       		.byte	0x9c
  1849 0497 CA040000 		.4byte	0x4ca
  1850 049b 13       		.uleb128 0x13
- 1851 049c 70030000 		.4byte	.LASF42
+ 1851 049c 8D030000 		.4byte	.LASF42
  1852 04a0 01       		.byte	0x1
  1853 04a1 DA01     		.2byte	0x1da
  1854 04a3 6B000000 		.4byte	0x6b
  1855 04a7 68040000 		.4byte	.LLST24
  1856 04ab 16       		.uleb128 0x16
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 53
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 53
 
 
- 1857 04ac 9A040000 		.4byte	.LASF56
+ 1857 04ac B7040000 		.4byte	.LASF56
  1858 04b0 01       		.byte	0x1
  1859 04b1 DA01     		.2byte	0x1da
  1860 04b3 6B000000 		.4byte	0x6b
  1861 04b7 01       		.uleb128 0x1
  1862 04b8 51       		.byte	0x51
  1863 04b9 14       		.uleb128 0x14
- 1864 04ba CB040000 		.4byte	.LASF43
+ 1864 04ba E8040000 		.4byte	.LASF43
  1865 04be 01       		.byte	0x1
  1866 04bf DC01     		.2byte	0x1dc
  1867 04c1 A4000000 		.4byte	0xa4
  1868 04c5 A2040000 		.4byte	.LLST25
  1869 04c9 00       		.byte	0
  1870 04ca 12       		.uleb128 0x12
- 1871 04cb 30030000 		.4byte	.LASF57
+ 1871 04cb 4D030000 		.4byte	.LASF57
  1872 04cf 01       		.byte	0x1
  1873 04d0 FC01     		.2byte	0x1fc
  1874 04d2 A4000000 		.4byte	0xa4
@@ -3145,26 +3145,26 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1878 04df 9C       		.byte	0x9c
  1879 04e0 15050000 		.4byte	0x515
  1880 04e4 13       		.uleb128 0x13
- 1881 04e5 70030000 		.4byte	.LASF42
+ 1881 04e5 8D030000 		.4byte	.LASF42
  1882 04e9 01       		.byte	0x1
  1883 04ea FC01     		.2byte	0x1fc
  1884 04ec 6B000000 		.4byte	0x6b
  1885 04f0 D9040000 		.4byte	.LLST26
  1886 04f4 13       		.uleb128 0x13
- 1887 04f5 E4040000 		.4byte	.LASF58
+ 1887 04f5 01050000 		.4byte	.LASF58
  1888 04f9 01       		.byte	0x1
  1889 04fa FC01     		.2byte	0x1fc
  1890 04fc 6B000000 		.4byte	0x6b
  1891 0500 13050000 		.4byte	.LLST27
  1892 0504 14       		.uleb128 0x14
- 1893 0505 CB040000 		.4byte	.LASF43
+ 1893 0505 E8040000 		.4byte	.LASF43
  1894 0509 01       		.byte	0x1
  1895 050a FE01     		.2byte	0x1fe
  1896 050c A4000000 		.4byte	0xa4
  1897 0510 3F050000 		.4byte	.LLST28
  1898 0514 00       		.byte	0
  1899 0515 12       		.uleb128 0x12
- 1900 0516 D2040000 		.4byte	.LASF59
+ 1900 0516 EF040000 		.4byte	.LASF59
  1901 051a 01       		.byte	0x1
  1902 051b 1A02     		.2byte	0x21a
  1903 051d A4000000 		.4byte	0xa4
@@ -3174,23 +3174,23 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1907 052a 9C       		.byte	0x9c
  1908 052b 50050000 		.4byte	0x550
  1909 052f 13       		.uleb128 0x13
- 1910 0530 70030000 		.4byte	.LASF42
+ 1910 0530 8D030000 		.4byte	.LASF42
  1911 0534 01       		.byte	0x1
  1912 0535 1A02     		.2byte	0x21a
  1913 0537 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 54
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 54
 
 
  1914 053b 76050000 		.4byte	.LLST29
  1915 053f 14       		.uleb128 0x14
- 1916 0540 CB040000 		.4byte	.LASF43
+ 1916 0540 E8040000 		.4byte	.LASF43
  1917 0544 01       		.byte	0x1
  1918 0545 1C02     		.2byte	0x21c
  1919 0547 A4000000 		.4byte	0xa4
  1920 054b B0050000 		.4byte	.LLST30
  1921 054f 00       		.byte	0
  1922 0550 12       		.uleb128 0x12
- 1923 0551 81030000 		.4byte	.LASF60
+ 1923 0551 9E030000 		.4byte	.LASF60
  1924 0555 01       		.byte	0x1
  1925 0556 4702     		.2byte	0x247
  1926 0558 A4000000 		.4byte	0xa4
@@ -3200,13 +3200,13 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1930 0565 9C       		.byte	0x9c
  1931 0566 A7050000 		.4byte	0x5a7
  1932 056a 13       		.uleb128 0x13
- 1933 056b 70030000 		.4byte	.LASF42
+ 1933 056b 8D030000 		.4byte	.LASF42
  1934 056f 01       		.byte	0x1
  1935 0570 4702     		.2byte	0x247
  1936 0572 6B000000 		.4byte	0x6b
  1937 0576 E8050000 		.4byte	.LLST31
  1938 057a 16       		.uleb128 0x16
- 1939 057b AB030000 		.4byte	.LASF61
+ 1939 057b C8030000 		.4byte	.LASF61
  1940 057f 01       		.byte	0x1
  1941 0580 4702     		.2byte	0x247
  1942 0582 A7050000 		.4byte	0x5a7
@@ -3220,7 +3220,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1950 0594 01       		.uleb128 0x1
  1951 0595 52       		.byte	0x52
  1952 0596 14       		.uleb128 0x14
- 1953 0597 CB040000 		.4byte	.LASF43
+ 1953 0597 E8040000 		.4byte	.LASF43
  1954 059b 01       		.byte	0x1
  1955 059c 4902     		.2byte	0x249
  1956 059e A4000000 		.4byte	0xa4
@@ -3230,7 +3230,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1960 05a8 04       		.byte	0x4
  1961 05a9 6B000000 		.4byte	0x6b
  1962 05ad 12       		.uleb128 0x12
- 1963 05ae 09050000 		.4byte	.LASF63
+ 1963 05ae 26050000 		.4byte	.LASF63
  1964 05b2 01       		.byte	0x1
  1965 05b3 8702     		.2byte	0x287
  1966 05b5 A4000000 		.4byte	0xa4
@@ -3238,24 +3238,24 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  1968 05bd 46000000 		.4byte	.LFE15-.LFB15
  1969 05c1 01       		.uleb128 0x1
  1970 05c2 9C       		.byte	0x9c
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 55
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 55
 
 
  1971 05c3 38060000 		.4byte	0x638
  1972 05c7 13       		.uleb128 0x13
- 1973 05c8 70030000 		.4byte	.LASF42
+ 1973 05c8 8D030000 		.4byte	.LASF42
  1974 05cc 01       		.byte	0x1
  1975 05cd 8702     		.2byte	0x287
  1976 05cf 6B000000 		.4byte	0x6b
  1977 05d3 7D060000 		.4byte	.LLST33
  1978 05d7 13       		.uleb128 0x13
- 1979 05d8 FA020000 		.4byte	.LASF64
+ 1979 05d8 17030000 		.4byte	.LASF64
  1980 05dc 01       		.byte	0x1
  1981 05dd 8702     		.2byte	0x287
  1982 05df 6B000000 		.4byte	0x6b
  1983 05e3 B7060000 		.4byte	.LLST34
  1984 05e7 13       		.uleb128 0x13
- 1985 05e8 6B040000 		.4byte	.LASF65
+ 1985 05e8 88040000 		.4byte	.LASF65
  1986 05ec 01       		.byte	0x1
  1987 05ed 8702     		.2byte	0x287
  1988 05ef 6B000000 		.4byte	0x6b
@@ -3273,13 +3273,13 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2000 060f 6B000000 		.4byte	0x6b
  2001 0613 3B070000 		.4byte	.LLST37
  2002 0617 13       		.uleb128 0x13
- 2003 0618 69030000 		.4byte	.LASF68
+ 2003 0618 86030000 		.4byte	.LASF68
  2004 061c 01       		.byte	0x1
  2005 061d 8802     		.2byte	0x288
  2006 061f 6B000000 		.4byte	0x6b
  2007 0623 73070000 		.4byte	.LLST38
  2008 0627 14       		.uleb128 0x14
- 2009 0628 CB040000 		.4byte	.LASF43
+ 2009 0628 E8040000 		.4byte	.LASF43
  2010 062c 01       		.byte	0x1
  2011 062d 8A02     		.2byte	0x28a
  2012 062f A4000000 		.4byte	0xa4
@@ -3298,14 +3298,14 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2025 0652 14       		.uleb128 0x14
  2026 0653 D9000000 		.4byte	.LASF37
  2027 0657 01       		.byte	0x1
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 56
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 56
 
 
  2028 0658 A902     		.2byte	0x2a9
  2029 065a 6B000000 		.4byte	0x6b
  2030 065e ED070000 		.4byte	.LLST40
  2031 0662 14       		.uleb128 0x14
- 2032 0663 21050000 		.4byte	.LASF70
+ 2032 0663 3E050000 		.4byte	.LASF70
  2033 0667 01       		.byte	0x1
  2034 0668 AA02     		.2byte	0x2aa
  2035 066a 6B000000 		.4byte	0x6b
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2082 06e5 6B000000 		.4byte	0x6b
  2083 06e9 00000000 		.4byte	.LFB18
  2084 06ed 10000000 		.4byte	.LFE18-.LFB18
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 57
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 57
 
 
  2085 06f1 01       		.uleb128 0x1
@@ -3380,28 +3380,28 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2101 0715 6B000000 		.4byte	0x6b
  2102 0719 8D080000 		.4byte	.LLST44
  2103 071d 16       		.uleb128 0x16
- 2104 071e B3040000 		.4byte	.LASF75
+ 2104 071e D0040000 		.4byte	.LASF75
  2105 0722 01       		.byte	0x1
  2106 0723 2703     		.2byte	0x327
  2107 0725 77000000 		.4byte	0x77
  2108 0729 01       		.uleb128 0x1
  2109 072a 51       		.byte	0x51
  2110 072b 16       		.uleb128 0x16
- 2111 072c 29030000 		.4byte	.LASF76
+ 2111 072c 46030000 		.4byte	.LASF76
  2112 0730 01       		.byte	0x1
  2113 0731 2703     		.2byte	0x327
  2114 0733 6B000000 		.4byte	0x6b
  2115 0737 01       		.uleb128 0x1
  2116 0738 52       		.byte	0x52
  2117 0739 16       		.uleb128 0x16
- 2118 073a 3E020000 		.4byte	.LASF77
+ 2118 073a 11020000 		.4byte	.LASF77
  2119 073e 01       		.byte	0x1
  2120 073f 2703     		.2byte	0x327
  2121 0741 6B000000 		.4byte	0x6b
  2122 0745 01       		.uleb128 0x1
  2123 0746 53       		.byte	0x53
  2124 0747 14       		.uleb128 0x14
- 2125 0748 CB040000 		.4byte	.LASF43
+ 2125 0748 E8040000 		.4byte	.LASF43
  2126 074c 01       		.byte	0x1
  2127 074d 2A03     		.2byte	0x32a
  2128 074f A4000000 		.4byte	0xa4
@@ -3410,7 +3410,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2131 0758 0E000000 		.4byte	.LBB4
  2132 075c 12000000 		.4byte	.LBE4-.LBB4
  2133 0760 14       		.uleb128 0x14
- 2134 0761 87040000 		.4byte	.LASF54
+ 2134 0761 A4040000 		.4byte	.LASF54
  2135 0765 01       		.byte	0x1
  2136 0766 2F03     		.2byte	0x32f
  2137 0768 7B040000 		.4byte	0x47b
@@ -3418,10 +3418,10 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2139 0770 00       		.byte	0
  2140 0771 00       		.byte	0
  2141 0772 12       		.uleb128 0x12
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 58
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 58
 
 
- 2142 0773 11030000 		.4byte	.LASF78
+ 2142 0773 2E030000 		.4byte	.LASF78
  2143 0777 01       		.byte	0x1
  2144 0778 6103     		.2byte	0x361
  2145 077a A4000000 		.4byte	0xa4
@@ -3437,26 +3437,26 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2155 0794 6B000000 		.4byte	0x6b
  2156 0798 4C090000 		.4byte	.LLST47
  2157 079c 13       		.uleb128 0x13
- 2158 079d B3040000 		.4byte	.LASF75
+ 2158 079d D0040000 		.4byte	.LASF75
  2159 07a1 01       		.byte	0x1
  2160 07a2 6103     		.2byte	0x361
  2161 07a4 F5070000 		.4byte	0x7f5
  2162 07a8 9F090000 		.4byte	.LLST48
  2163 07ac 13       		.uleb128 0x13
- 2164 07ad 29030000 		.4byte	.LASF76
+ 2164 07ad 46030000 		.4byte	.LASF76
  2165 07b1 01       		.byte	0x1
  2166 07b2 6103     		.2byte	0x361
  2167 07b4 A7050000 		.4byte	0x5a7
  2168 07b8 D9090000 		.4byte	.LLST49
  2169 07bc 16       		.uleb128 0x16
- 2170 07bd 3E020000 		.4byte	.LASF77
+ 2170 07bd 11020000 		.4byte	.LASF77
  2171 07c1 01       		.byte	0x1
  2172 07c2 6103     		.2byte	0x361
  2173 07c4 A7050000 		.4byte	0x5a7
  2174 07c8 01       		.uleb128 0x1
  2175 07c9 53       		.byte	0x53
  2176 07ca 14       		.uleb128 0x14
- 2177 07cb CB040000 		.4byte	.LASF43
+ 2177 07cb E8040000 		.4byte	.LASF43
  2178 07cf 01       		.byte	0x1
  2179 07d0 6403     		.2byte	0x364
  2180 07d2 A4000000 		.4byte	0xa4
@@ -3465,7 +3465,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2183 07db 0A000000 		.4byte	.LBB5
  2184 07df 12000000 		.4byte	.LBE5-.LBB5
  2185 07e3 14       		.uleb128 0x14
- 2186 07e4 87040000 		.4byte	.LASF54
+ 2186 07e4 A4040000 		.4byte	.LASF54
  2187 07e8 01       		.byte	0x1
  2188 07e9 6C03     		.2byte	0x36c
  2189 07eb 7B040000 		.4byte	0x47b
@@ -3476,9 +3476,9 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2194 07f6 04       		.byte	0x4
  2195 07f7 77000000 		.4byte	0x77
  2196 07fb 12       		.uleb128 0x12
- 2197 07fc CA020000 		.4byte	.LASF79
+ 2197 07fc E7020000 		.4byte	.LASF79
  2198 0800 01       		.byte	0x1
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 59
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 59
 
 
  2199 0801 9A03     		.2byte	0x39a
@@ -3495,34 +3495,34 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2210 081d 6B000000 		.4byte	0x6b
  2211 0821 6F0A0000 		.4byte	.LLST52
  2212 0825 16       		.uleb128 0x16
- 2213 0826 8F020000 		.4byte	.LASF52
+ 2213 0826 AC020000 		.4byte	.LASF52
  2214 082a 01       		.byte	0x1
  2215 082b 9A03     		.2byte	0x39a
  2216 082d 77000000 		.4byte	0x77
  2217 0831 01       		.uleb128 0x1
  2218 0832 51       		.byte	0x51
  2219 0833 16       		.uleb128 0x16
- 2220 0834 8D010000 		.4byte	.LASF53
+ 2220 0834 60010000 		.4byte	.LASF53
  2221 0838 01       		.byte	0x1
  2222 0839 9A03     		.2byte	0x39a
  2223 083b 77000000 		.4byte	0x77
  2224 083f 01       		.uleb128 0x1
  2225 0840 52       		.byte	0x52
  2226 0841 14       		.uleb128 0x14
- 2227 0842 CB040000 		.4byte	.LASF43
+ 2227 0842 E8040000 		.4byte	.LASF43
  2228 0846 01       		.byte	0x1
  2229 0847 9C03     		.2byte	0x39c
  2230 0849 A4000000 		.4byte	0xa4
  2231 084d A90A0000 		.4byte	.LLST53
  2232 0851 14       		.uleb128 0x14
- 2233 0852 87040000 		.4byte	.LASF54
+ 2233 0852 A4040000 		.4byte	.LASF54
  2234 0856 01       		.byte	0x1
  2235 0857 9D03     		.2byte	0x39d
  2236 0859 7B040000 		.4byte	0x47b
  2237 085d E00A0000 		.4byte	.LLST54
  2238 0861 00       		.byte	0
  2239 0862 12       		.uleb128 0x12
- 2240 0863 51040000 		.4byte	.LASF80
+ 2240 0863 6E040000 		.4byte	.LASF80
  2241 0867 01       		.byte	0x1
  2242 0868 C803     		.2byte	0x3c8
  2243 086a A4000000 		.4byte	0xa4
@@ -3538,37 +3538,37 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2253 0884 6B000000 		.4byte	0x6b
  2254 0888 020B0000 		.4byte	.LLST55
  2255 088c 16       		.uleb128 0x16
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 60
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 60
 
 
- 2256 088d 8F020000 		.4byte	.LASF52
+ 2256 088d AC020000 		.4byte	.LASF52
  2257 0891 01       		.byte	0x1
  2258 0892 C803     		.2byte	0x3c8
  2259 0894 F5070000 		.4byte	0x7f5
  2260 0898 01       		.uleb128 0x1
  2261 0899 51       		.byte	0x51
  2262 089a 16       		.uleb128 0x16
- 2263 089b 8D010000 		.4byte	.LASF53
+ 2263 089b 60010000 		.4byte	.LASF53
  2264 089f 01       		.byte	0x1
  2265 08a0 C803     		.2byte	0x3c8
  2266 08a2 F5070000 		.4byte	0x7f5
  2267 08a6 01       		.uleb128 0x1
  2268 08a7 52       		.byte	0x52
  2269 08a8 14       		.uleb128 0x14
- 2270 08a9 CB040000 		.4byte	.LASF43
+ 2270 08a9 E8040000 		.4byte	.LASF43
  2271 08ad 01       		.byte	0x1
  2272 08ae CA03     		.2byte	0x3ca
  2273 08b0 A4000000 		.4byte	0xa4
  2274 08b4 550B0000 		.4byte	.LLST56
  2275 08b8 14       		.uleb128 0x14
- 2276 08b9 87040000 		.4byte	.LASF54
+ 2276 08b9 A4040000 		.4byte	.LASF54
  2277 08bd 01       		.byte	0x1
  2278 08be CB03     		.2byte	0x3cb
  2279 08c0 7B040000 		.4byte	0x47b
  2280 08c4 740B0000 		.4byte	.LLST57
  2281 08c8 00       		.byte	0
  2282 08c9 12       		.uleb128 0x12
- 2283 08ca B8020000 		.4byte	.LASF81
+ 2283 08ca D5020000 		.4byte	.LASF81
  2284 08ce 01       		.byte	0x1
  2285 08cf F903     		.2byte	0x3f9
  2286 08d1 A4000000 		.4byte	0xa4
@@ -3578,7 +3578,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2290 08de 9C       		.byte	0x9c
  2291 08df 14090000 		.4byte	0x914
  2292 08e3 13       		.uleb128 0x13
- 2293 08e4 70030000 		.4byte	.LASF42
+ 2293 08e4 8D030000 		.4byte	.LASF42
  2294 08e8 01       		.byte	0x1
  2295 08e9 F903     		.2byte	0x3f9
  2296 08eb 6B000000 		.4byte	0x6b
@@ -3590,15 +3590,15 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2302 08fb 6B000000 		.4byte	0x6b
  2303 08ff FE0B0000 		.4byte	.LLST59
  2304 0903 14       		.uleb128 0x14
- 2305 0904 CB040000 		.4byte	.LASF43
+ 2305 0904 E8040000 		.4byte	.LASF43
  2306 0908 01       		.byte	0x1
  2307 0909 FB03     		.2byte	0x3fb
  2308 090b A4000000 		.4byte	0xa4
  2309 090f 2A0C0000 		.4byte	.LLST60
  2310 0913 00       		.byte	0
  2311 0914 1C       		.uleb128 0x1c
- 2312 0915 0C020000 		.4byte	.LASF83
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 61
+ 2312 0915 DF010000 		.4byte	.LASF83
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 61
 
 
  2313 0919 01       		.byte	0x1
@@ -3608,7 +3608,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2317 0920 03       		.byte	0x3
  2318 0921 01000000 		.4byte	CyDmaTdCurrentNumber
  2319 0925 1C       		.uleb128 0x1c
- 2320 0926 A2040000 		.4byte	.LASF84
+ 2320 0926 BF040000 		.4byte	.LASF84
  2321 092a 01       		.byte	0x1
  2322 092b 28       		.byte	0x28
  2323 092c 6B000000 		.4byte	0x6b
@@ -3616,7 +3616,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2325 0931 03       		.byte	0x3
  2326 0932 00000000 		.4byte	CyDmaTdFreeIndex
  2327 0936 1C       		.uleb128 0x1c
- 2328 0937 62010000 		.4byte	.LASF85
+ 2328 0937 35010000 		.4byte	.LASF85
  2329 093b 01       		.byte	0x1
  2330 093c 29       		.byte	0x29
  2331 093d 83000000 		.4byte	0x83
@@ -3624,8 +3624,8 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2333 0942 03       		.byte	0x3
  2334 0943 00000000 		.4byte	CyDmaChannels
  2335 0947 1D       		.uleb128 0x1d
- 2336 0948 DB010000 		.4byte	.LASF86
- 2337 094c DB010000 		.4byte	.LASF86
+ 2336 0948 AE010000 		.4byte	.LASF86
+ 2337 094c AE010000 		.4byte	.LASF86
  2338 0950 04       		.byte	0x4
  2339 0951 7D       		.byte	0x7d
  2340 0952 1D       		.uleb128 0x1d
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2367 0013 02       		.uleb128 0x2
  2368 0014 24       		.uleb128 0x24
  2369 0015 00       		.byte	0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 62
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 62
 
 
  2370 0016 0B       		.uleb128 0xb
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2424 004c 07       		.uleb128 0x7
  2425 004d 0D       		.uleb128 0xd
  2426 004e 00       		.byte	0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 63
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 63
 
 
  2427 004f 03       		.uleb128 0x3
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2481 0085 38       		.uleb128 0x38
  2482 0086 0B       		.uleb128 0xb
  2483 0087 00       		.byte	0
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 64
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 64
 
 
  2484 0088 00       		.byte	0
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2538 00bf 49       		.uleb128 0x49
  2539 00c0 13       		.uleb128 0x13
  2540 00c1 11       		.uleb128 0x11
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 65
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 65
 
 
  2541 00c2 01       		.uleb128 0x1
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2595 00fc 11       		.uleb128 0x11
  2596 00fd 01       		.uleb128 0x1
  2597 00fe 31       		.uleb128 0x31
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 66
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 66
 
 
  2598 00ff 13       		.uleb128 0x13
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2652 0136 49       		.uleb128 0x49
  2653 0137 13       		.uleb128 0x13
  2654 0138 02       		.uleb128 0x2
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 67
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 67
 
 
  2655 0139 17       		.uleb128 0x17
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2709 0170 01       		.byte	0x1
  2710 0171 55       		.uleb128 0x55
  2711 0172 17       		.uleb128 0x17
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 68
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 68
 
 
  2712 0173 00       		.byte	0
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2766 01ad 3B       		.uleb128 0x3b
  2767 01ae 0B       		.uleb128 0xb
  2768 01af 49       		.uleb128 0x49
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 69
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 69
 
 
  2769 01b0 13       		.uleb128 0x13
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2823 0049 50       		.byte	0x50
  2824 004a 2E000000 		.4byte	.LVL13
  2825 004e 33000000 		.4byte	.LVL15-1
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 70
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 70
 
 
  2826 0052 0100     		.2byte	0x1
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2880 00e1 08000000 		.4byte	.LVL19
  2881 00e5 0400     		.2byte	0x4
  2882 00e7 F3       		.byte	0xf3
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 71
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 71
 
 
  2883 00e8 01       		.uleb128 0x1
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2937 016b 0400     		.2byte	0x4
  2938 016d F3       		.byte	0xf3
  2939 016e 01       		.uleb128 0x1
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 72
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 72
 
 
  2940 016f 50       		.byte	0x50
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  2994 01ee 9F       		.byte	0x9f
  2995 01ef 22000000 		.4byte	.LVL26
  2996 01f3 36000000 		.4byte	.LVL30
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 73
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 73
 
 
  2997 01f7 0200     		.2byte	0x2
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  3051 0277 00000000 		.4byte	0
  3052 027b 00000000 		.4byte	0
  3053              	.LLST13:
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 74
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 74
 
 
  3054 027f 00000000 		.4byte	.LVL36
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  3108 0301 1E000000 		.4byte	.LVL48
  3109 0305 0100     		.2byte	0x1
  3110 0307 50       		.byte	0x50
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 75
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 75
 
 
  3111 0308 1E000000 		.4byte	.LVL48
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  3165 0385 9F       		.byte	0x9f
  3166 0386 1E000000 		.4byte	.LVL48
  3167 038a 24000000 		.4byte	.LFE9
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 76
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 76
 
 
  3168 038e 0100     		.2byte	0x1
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  3222 0417 0200     		.2byte	0x2
  3223 0419 31       		.byte	0x31
  3224 041a 9F       		.byte	0x9f
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 77
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 77
 
 
  3225 041b 28000000 		.4byte	.LVL55
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  3279 049a 00000000 		.4byte	0
  3280 049e 00000000 		.4byte	0
  3281              	.LLST25:
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 78
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 78
 
 
  3282 04a2 00000000 		.4byte	.LVL58
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  3336 0528 F3       		.byte	0xf3
  3337 0529 01       		.uleb128 0x1
  3338 052a 51       		.byte	0x51
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 79
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 79
 
 
  3339 052b 9F       		.byte	0x9f
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  3393              	.LLST30:
  3394 05b0 00000000 		.4byte	.LVL69
  3395 05b4 06000000 		.4byte	.LVL70
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 80
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 80
 
 
  3396 05b8 0300     		.2byte	0x3
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  3450 0633 00000000 		.4byte	0
  3451 0637 00000000 		.4byte	0
  3452              	.LLST32:
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 81
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 81
 
 
  3453 063b 00000000 		.4byte	.LVL74
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  3507 06c1 51       		.byte	0x51
  3508 06c2 14000000 		.4byte	.LVL83
  3509 06c6 40000000 		.4byte	.LVL89
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 82
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 82
 
 
  3510 06ca 0400     		.2byte	0x4
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  3564 074b 40000000 		.4byte	.LVL89
  3565 074f 0200     		.2byte	0x2
  3566 0751 7D       		.byte	0x7d
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 83
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 83
 
 
  3567 0752 00       		.sleb128 0
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  3621 07d8 31       		.byte	0x31
  3622 07d9 9F       		.byte	0x9f
  3623 07da 42000000 		.4byte	.LVL90
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 84
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 84
 
 
  3624 07de 46000000 		.4byte	.LFE15
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  3678 0866 9F       		.byte	0x9f
  3679 0867 2C000000 		.4byte	.LVL102
  3680 086b 34000000 		.4byte	.LFE17
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 85
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 85
 
 
  3681 086f 0100     		.2byte	0x1
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  3735 08f0 20000000 		.4byte	.LVL106
  3736 08f4 0200     		.2byte	0x2
  3737 08f6 30       		.byte	0x30
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 86
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 86
 
 
  3738 08f7 9F       		.byte	0x9f
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  3792 097d 9F       		.byte	0x9f
  3793 097e 46000000 		.4byte	.LVL122
  3794 0982 48000000 		.4byte	.LVL123
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 87
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 87
 
 
  3795 0986 0100     		.2byte	0x1
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  3849              	.LLST50:
  3850 0a05 00000000 		.4byte	.LVL112
  3851 0a09 3E000000 		.4byte	.LVL119
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 88
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 88
 
 
  3852 0a0d 0200     		.2byte	0x2
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  3905 0a8c 18000000 		.4byte	.LVL130
  3906 0a90 0100     		.2byte	0x1
  3907 0a92 50       		.byte	0x50
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 89
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 89
 
 
  3908 0a93 18000000 		.4byte	.LVL130
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  3962 0b17 F3       		.byte	0xf3
  3963 0b18 01       		.uleb128 0x1
  3964 0b19 50       		.byte	0x50
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 90
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 90
 
 
  3965 0b1a 9F       		.byte	0x9f
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  4018 0b95 9F       		.byte	0x9f
  4019 0b96 20000000 		.4byte	.LVL136
  4020 0b9a 24000000 		.4byte	.LVL137
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 91
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 91
 
 
  4021 0b9e 0300     		.2byte	0x3
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  4075 0c17 2A000000 		.4byte	.LVL148
  4076 0c1b 34000000 		.4byte	.LFE23
  4077 0c1f 0100     		.2byte	0x1
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 92
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 92
 
 
  4078 0c21 51       		.byte	0x51
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  4132 0078 00000000 		.4byte	.LFB13
  4133 007c 1C000000 		.4byte	.LFE13-.LFB13
  4134 0080 00000000 		.4byte	.LFB14
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 93
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 93
 
 
  4135 0084 34000000 		.4byte	.LFE14-.LFB14
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  4189 007c 20000000 		.4byte	.LFE12
  4190 0080 00000000 		.4byte	.LFB13
  4191 0084 1C000000 		.4byte	.LFE13
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 94
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 94
 
 
  4192 0088 00000000 		.4byte	.LFB14
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  4228 004c 4379446D 		.ascii	"CyDmaTdFree\000"
  4228      61546446 
  4228      72656500 
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 95
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 95
 
 
  4229              	.LASF44:
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  4250      74727563 
  4250      7400
  4251              	.LASF62:
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 96
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 96
 
 
  4252 0103 73746174 		.ascii	"state\000"
@@ -5713,339 +5713,344 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 1
  4257              	.LASF67:
  4258 011a 7464446F 		.ascii	"tdDone1\000"
  4258      6E653100 
- 4259              	.LASF90:
- 4260 0122 483A5C53 		.ascii	"H:\\Senior-Project-2023\\PSoC\\HostDesign.cydsn\000"
- 4260      656E696F 
- 4260      722D5072 
- 4260      6F6A6563 
- 4260      742D3230 
+ 4259              	.LASF16:
+ 4260 0122 72656731 		.ascii	"reg16\000"
+ 4260      3600
  4261              	.LASF9:
- 4262 014f 75696E74 		.ascii	"uint8\000"
+ 4262 0128 75696E74 		.ascii	"uint8\000"
  4262      3800
  4263              	.LASF13:
- 4264 0155 646F7562 		.ascii	"double\000"
+ 4264 012e 646F7562 		.ascii	"double\000"
  4264      6C6500
- 4265              	.LASF16:
- 4266 015c 72656731 		.ascii	"reg16\000"
- 4266      3600
- 4267              	.LASF85:
- 4268 0162 4379446D 		.ascii	"CyDmaChannels\000"
- 4268      61436861 
- 4268      6E6E656C 
- 4268      7300
- 4269              	.LASF11:
- 4270 0170 75696E74 		.ascii	"uint32\000"
- 4270      333200
- 4271              	.LASF21:
- 4272 0177 61637469 		.ascii	"action\000"
- 4272      6F6E00
- 4273              	.LASF23:
- 4274 017e 72657365 		.ascii	"reserved\000"
- 4274      72766564 
- 4274      00
- 4275              	.LASF50:
- 4276 0187 76616C75 		.ascii	"value\000"
- 4276      6500
- 4277              	.LASF53:
- 4278 018d 64657374 		.ascii	"destination\000"
- 4278      696E6174 
- 4278      696F6E00 
- 4279              	.LASF48:
- 4280 0199 4379446D 		.ascii	"CyDmaChPriority\000"
- 4280      61436850 
- 4280      72696F72 
- 4280      69747900 
- 4281              	.LASF8:
- 4282 01a9 756E7369 		.ascii	"unsigned int\000"
- 4282      676E6564 
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 97
+ 4265              	.LASF85:
+ 4266 0135 4379446D 		.ascii	"CyDmaChannels\000"
+ 4266      61436861 
+ 4266      6E6E656C 
+ 4266      7300
+ 4267              	.LASF11:
+ 4268 0143 75696E74 		.ascii	"uint32\000"
+ 4268      333200
+ 4269              	.LASF21:
+ 4270 014a 61637469 		.ascii	"action\000"
+ 4270      6F6E00
+ 4271              	.LASF23:
+ 4272 0151 72657365 		.ascii	"reserved\000"
+ 4272      72766564 
+ 4272      00
+ 4273              	.LASF50:
+ 4274 015a 76616C75 		.ascii	"value\000"
+ 4274      6500
+ 4275              	.LASF53:
+ 4276 0160 64657374 		.ascii	"destination\000"
+ 4276      696E6174 
+ 4276      696F6E00 
+ 4277              	.LASF48:
+ 4278 016c 4379446D 		.ascii	"CyDmaChPriority\000"
+ 4278      61436850 
+ 4278      72696F72 
+ 4278      69747900 
+ 4279              	.LASF8:
+ 4280 017c 756E7369 		.ascii	"unsigned int\000"
+ 4280      676E6564 
+ 4280      20696E74 
+ 4280      00
+ 4281              	.LASF5:
+ 4282 0189 6C6F6E67 		.ascii	"long unsigned int\000"
+ 4282      20756E73 
+ 4282      69676E65 
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 97
 
 
- 4282      20696E74 
- 4282      00
- 4283              	.LASF5:
- 4284 01b6 6C6F6E67 		.ascii	"long unsigned int\000"
- 4284      20756E73 
- 4284      69676E65 
- 4284      6420696E 
- 4284      7400
- 4285              	.LASF26:
- 4286 01c8 646D6163 		.ascii	"dmac_cfgmem_struct\000"
- 4286      5F636667 
- 4286      6D656D5F 
- 4286      73747275 
- 4286      637400
- 4287              	.LASF86:
- 4288 01db 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 4288      74657243 
- 4288      72697469 
- 4288      63616C53 
- 4288      65637469 
- 4289              	.LASF51:
- 4290 01f2 4379446D 		.ascii	"CyDmaChSetExtendedAddress\000"
- 4290      61436853 
- 4290      65744578 
- 4290      74656E64 
- 4290      65644164 
- 4291              	.LASF83:
- 4292 020c 4379446D 		.ascii	"CyDmaTdCurrentNumber\000"
- 4292      61546443 
- 4292      75727265 
- 4292      6E744E75 
- 4292      6D626572 
- 4293              	.LASF20:
- 4294 0221 62617369 		.ascii	"basic_cfg\000"
- 4294      635F6366 
- 4294      6700
- 4295              	.LASF3:
- 4296 022b 73686F72 		.ascii	"short unsigned int\000"
- 4296      7420756E 
- 4296      7369676E 
- 4296      65642069 
- 4296      6E7400
- 4297              	.LASF77:
- 4298 023e 636F6E66 		.ascii	"configuration\000"
- 4298      69677572 
- 4298      6174696F 
- 4298      6E00
- 4299              	.LASF34:
- 4300 024c 4379446D 		.ascii	"CyDmacError\000"
- 4300      61634572 
- 4300      726F7200 
- 4301              	.LASF89:
- 4302 0258 47656E65 		.ascii	"Generated_Source\\PSoC5\\CyDmac.c\000"
- 4302      72617465 
- 4302      645F536F 
- 4302      75726365 
- 4302      5C50536F 
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 98
+ 4282      6420696E 
+ 4282      7400
+ 4283              	.LASF26:
+ 4284 019b 646D6163 		.ascii	"dmac_cfgmem_struct\000"
+ 4284      5F636667 
+ 4284      6D656D5F 
+ 4284      73747275 
+ 4284      637400
+ 4285              	.LASF86:
+ 4286 01ae 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 4286      74657243 
+ 4286      72697469 
+ 4286      63616C53 
+ 4286      65637469 
+ 4287              	.LASF51:
+ 4288 01c5 4379446D 		.ascii	"CyDmaChSetExtendedAddress\000"
+ 4288      61436853 
+ 4288      65744578 
+ 4288      74656E64 
+ 4288      65644164 
+ 4289              	.LASF83:
+ 4290 01df 4379446D 		.ascii	"CyDmaTdCurrentNumber\000"
+ 4290      61546443 
+ 4290      75727265 
+ 4290      6E744E75 
+ 4290      6D626572 
+ 4291              	.LASF20:
+ 4292 01f4 62617369 		.ascii	"basic_cfg\000"
+ 4292      635F6366 
+ 4292      6700
+ 4293              	.LASF3:
+ 4294 01fe 73686F72 		.ascii	"short unsigned int\000"
+ 4294      7420756E 
+ 4294      7369676E 
+ 4294      65642069 
+ 4294      6E7400
+ 4295              	.LASF77:
+ 4296 0211 636F6E66 		.ascii	"configuration\000"
+ 4296      69677572 
+ 4296      6174696F 
+ 4296      6E00
+ 4297              	.LASF34:
+ 4298 021f 4379446D 		.ascii	"CyDmacError\000"
+ 4298      61634572 
+ 4298      726F7200 
+ 4299              	.LASF89:
+ 4300 022b 47656E65 		.ascii	"Generated_Source\\PSoC5\\CyDmac.c\000"
+ 4300      72617465 
+ 4300      645F536F 
+ 4300      75726365 
+ 4300      5C50536F 
+ 4301              	.LASF33:
+ 4302 024b 4379446D 		.ascii	"CyDmacClearError\000"
+ 4302      6163436C 
+ 4302      65617245 
+ 4302      72726F72 
+ 4302      00
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 98
 
 
- 4303              	.LASF33:
- 4304 0278 4379446D 		.ascii	"CyDmacClearError\000"
- 4304      6163436C 
- 4304      65617245 
- 4304      72726F72 
- 4304      00
- 4305              	.LASF17:
- 4306 0289 72656733 		.ascii	"reg32\000"
- 4306      3200
- 4307              	.LASF52:
- 4308 028f 736F7572 		.ascii	"source\000"
- 4308      636500
- 4309              	.LASF22:
- 4310 0296 62617369 		.ascii	"basic_status\000"
- 4310      635F7374 
- 4310      61747573 
- 4310      00
- 4311              	.LASF19:
- 4312 02a3 73697A65 		.ascii	"sizetype\000"
- 4312      74797065 
- 4312      00
- 4313              	.LASF18:
- 4314 02ac 6C6F6E67 		.ascii	"long double\000"
- 4314      20646F75 
- 4314      626C6500 
- 4315              	.LASF81:
- 4316 02b8 4379446D 		.ascii	"CyDmaChRoundRobin\000"
- 4316      61436852 
- 4316      6F756E64 
- 4316      526F6269 
- 4316      6E00
- 4317              	.LASF79:
- 4318 02ca 4379446D 		.ascii	"CyDmaTdSetAddress\000"
- 4318      61546453 
- 4318      65744164 
- 4318      64726573 
- 4318      7300
- 4319              	.LASF36:
- 4320 02dc 646D6149 		.ascii	"dmaIndex\000"
- 4320      6E646578 
- 4320      00
- 4321              	.LASF47:
- 4322 02e5 4379446D 		.ascii	"CyDmaClearPendingDrq\000"
- 4322      61436C65 
- 4322      61725065 
- 4322      6E64696E 
- 4322      67447271 
- 4323              	.LASF64:
- 4324 02fa 62757273 		.ascii	"burstCount\000"
- 4324      74436F75 
- 4324      6E7400
- 4325              	.LASF12:
- 4326 0305 666C6F61 		.ascii	"float\000"
- 4326      7400
- 4327              	.LASF41:
- 4328 030b 6572726F 		.ascii	"error\000"
- 4328      7200
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 99
+ 4303              	.LASF90:
+ 4304 025c 433A5C55 		.ascii	"C:\\Users\\alexd\\OneDrive\\Desktop\\Senior-Project"
+ 4304      73657273 
+ 4304      5C616C65 
+ 4304      78645C4F 
+ 4304      6E654472 
+ 4305 028a 2D323032 		.ascii	"-2023\\psoc\\HostDesign.cydsn\000"
+ 4305      335C7073 
+ 4305      6F635C48 
+ 4305      6F737444 
+ 4305      65736967 
+ 4306              	.LASF17:
+ 4307 02a6 72656733 		.ascii	"reg32\000"
+ 4307      3200
+ 4308              	.LASF52:
+ 4309 02ac 736F7572 		.ascii	"source\000"
+ 4309      636500
+ 4310              	.LASF22:
+ 4311 02b3 62617369 		.ascii	"basic_status\000"
+ 4311      635F7374 
+ 4311      61747573 
+ 4311      00
+ 4312              	.LASF19:
+ 4313 02c0 73697A65 		.ascii	"sizetype\000"
+ 4313      74797065 
+ 4313      00
+ 4314              	.LASF18:
+ 4315 02c9 6C6F6E67 		.ascii	"long double\000"
+ 4315      20646F75 
+ 4315      626C6500 
+ 4316              	.LASF81:
+ 4317 02d5 4379446D 		.ascii	"CyDmaChRoundRobin\000"
+ 4317      61436852 
+ 4317      6F756E64 
+ 4317      526F6269 
+ 4317      6E00
+ 4318              	.LASF79:
+ 4319 02e7 4379446D 		.ascii	"CyDmaTdSetAddress\000"
+ 4319      61546453 
+ 4319      65744164 
+ 4319      64726573 
+ 4319      7300
+ 4320              	.LASF36:
+ 4321 02f9 646D6149 		.ascii	"dmaIndex\000"
+ 4321      6E646578 
+ 4321      00
+ 4322              	.LASF47:
+ 4323 0302 4379446D 		.ascii	"CyDmaClearPendingDrq\000"
+ 4323      61436C65 
+ 4323      61725065 
+ 4323      6E64696E 
+ 4323      67447271 
+ 4324              	.LASF64:
+ 4325 0317 62757273 		.ascii	"burstCount\000"
+ 4325      74436F75 
+ 4325      6E7400
+ 4326              	.LASF12:
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 99
 
 
- 4329              	.LASF78:
- 4330 0311 4379446D 		.ascii	"CyDmaTdGetConfiguration\000"
- 4330      61546447 
- 4330      6574436F 
- 4330      6E666967 
- 4330      75726174 
- 4331              	.LASF76:
- 4332 0329 6E657874 		.ascii	"nextTd\000"
- 4332      546400
- 4333              	.LASF57:
- 4334 0330 4379446D 		.ascii	"CyDmaChSetRequest\000"
- 4334      61436853 
- 4334      65745265 
- 4334      71756573 
- 4334      7400
- 4335              	.LASF25:
- 4336 0342 646D6163 		.ascii	"dmac_ch_struct\000"
- 4336      5F63685F 
- 4336      73747275 
- 4336      637400
- 4337              	.LASF1:
- 4338 0351 756E7369 		.ascii	"unsigned char\000"
- 4338      676E6564 
- 4338      20636861 
- 4338      7200
- 4339              	.LASF2:
- 4340 035f 73686F72 		.ascii	"short int\000"
- 4340      7420696E 
- 4340      7400
- 4341              	.LASF68:
- 4342 0369 74645374 		.ascii	"tdStop\000"
- 4342      6F7000
- 4343              	.LASF42:
- 4344 0370 63684861 		.ascii	"chHandle\000"
- 4344      6E646C65 
- 4344      00
- 4345              	.LASF38:
- 4346 0379 6368616E 		.ascii	"channel\000"
- 4346      6E656C00 
- 4347              	.LASF60:
- 4348 0381 4379446D 		.ascii	"CyDmaChStatus\000"
- 4348      61436853 
- 4348      74617475 
- 4348      7300
- 4349              	.LASF46:
- 4350 038f 4379446D 		.ascii	"CyDmaChDisable\000"
- 4350      61436844 
- 4350      69736162 
- 4350      6C6500
- 4351              	.LASF39:
- 4352 039e 4379446D 		.ascii	"CyDmaChAlloc\000"
- 4352      61436841 
- 4352      6C6C6F63 
- 4352      00
- 4353              	.LASF61:
- 4354 03ab 63757272 		.ascii	"currentTd\000"
- 4354      656E7454 
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 100
+ 4327 0322 666C6F61 		.ascii	"float\000"
+ 4327      7400
+ 4328              	.LASF41:
+ 4329 0328 6572726F 		.ascii	"error\000"
+ 4329      7200
+ 4330              	.LASF78:
+ 4331 032e 4379446D 		.ascii	"CyDmaTdGetConfiguration\000"
+ 4331      61546447 
+ 4331      6574436F 
+ 4331      6E666967 
+ 4331      75726174 
+ 4332              	.LASF76:
+ 4333 0346 6E657874 		.ascii	"nextTd\000"
+ 4333      546400
+ 4334              	.LASF57:
+ 4335 034d 4379446D 		.ascii	"CyDmaChSetRequest\000"
+ 4335      61436853 
+ 4335      65745265 
+ 4335      71756573 
+ 4335      7400
+ 4336              	.LASF25:
+ 4337 035f 646D6163 		.ascii	"dmac_ch_struct\000"
+ 4337      5F63685F 
+ 4337      73747275 
+ 4337      637400
+ 4338              	.LASF1:
+ 4339 036e 756E7369 		.ascii	"unsigned char\000"
+ 4339      676E6564 
+ 4339      20636861 
+ 4339      7200
+ 4340              	.LASF2:
+ 4341 037c 73686F72 		.ascii	"short int\000"
+ 4341      7420696E 
+ 4341      7400
+ 4342              	.LASF68:
+ 4343 0386 74645374 		.ascii	"tdStop\000"
+ 4343      6F7000
+ 4344              	.LASF42:
+ 4345 038d 63684861 		.ascii	"chHandle\000"
+ 4345      6E646C65 
+ 4345      00
+ 4346              	.LASF38:
+ 4347 0396 6368616E 		.ascii	"channel\000"
+ 4347      6E656C00 
+ 4348              	.LASF60:
+ 4349 039e 4379446D 		.ascii	"CyDmaChStatus\000"
+ 4349      61436853 
+ 4349      74617475 
+ 4349      7300
+ 4350              	.LASF46:
+ 4351 03ac 4379446D 		.ascii	"CyDmaChDisable\000"
+ 4351      61436844 
+ 4351      69736162 
+ 4351      6C6500
+ 4352              	.LASF39:
+ 4353 03bb 4379446D 		.ascii	"CyDmaChAlloc\000"
+ 4353      61436841 
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 100
 
 
- 4354      6400
- 4355              	.LASF88:
- 4356 03b5 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 4356      43313120 
- 4356      352E342E 
- 4356      31203230 
- 4356      31363036 
- 4357 03e8 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 4357      20726576 
- 4357      6973696F 
- 4357      6E203233 
- 4357      37373135 
- 4358 041b 33202D66 		.ascii	"3 -ffunction-sections -ffat-lto-objects\000"
- 4358      66756E63 
- 4358      74696F6E 
- 4358      2D736563 
- 4358      74696F6E 
- 4359              	.LASF14:
- 4360 0443 63686172 		.ascii	"char\000"
- 4360      00
- 4361              	.LASF49:
- 4362 0448 7072696F 		.ascii	"priority\000"
- 4362      72697479 
- 4362      00
- 4363              	.LASF80:
- 4364 0451 4379446D 		.ascii	"CyDmaTdGetAddress\000"
- 4364      61546447 
- 4364      65744164 
- 4364      64726573 
- 4364      7300
- 4365              	.LASF24:
- 4366 0463 646D6163 		.ascii	"dmac_ch\000"
- 4366      5F636800 
- 4367              	.LASF65:
- 4368 046b 72657175 		.ascii	"requestPerBurst\000"
- 4368      65737450 
- 4368      65724275 
- 4368      72737400 
- 4369              	.LASF45:
- 4370 047b 70726573 		.ascii	"preserveTds\000"
- 4370      65727665 
- 4370      54647300 
- 4371              	.LASF54:
- 4372 0487 636F6E76 		.ascii	"convert\000"
- 4372      65727400 
- 4373              	.LASF31:
- 4374 048f 646D6163 		.ascii	"dmac_tdmem\000"
- 4374      5F74646D 
- 4374      656D00
- 4375              	.LASF56:
- 4376 049a 73746172 		.ascii	"startTd\000"
- 4376      74546400 
- 4377              	.LASF84:
- 4378 04a2 4379446D 		.ascii	"CyDmaTdFreeIndex\000"
- 4378      61546446 
- 4378      72656549 
- 4378      6E646578 
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccIPiCNh.s 			page 101
+ 4353      6C6C6F63 
+ 4353      00
+ 4354              	.LASF61:
+ 4355 03c8 63757272 		.ascii	"currentTd\000"
+ 4355      656E7454 
+ 4355      6400
+ 4356              	.LASF88:
+ 4357 03d2 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 4357      43313120 
+ 4357      352E342E 
+ 4357      31203230 
+ 4357      31363036 
+ 4358 0405 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 4358      20726576 
+ 4358      6973696F 
+ 4358      6E203233 
+ 4358      37373135 
+ 4359 0438 33202D66 		.ascii	"3 -ffunction-sections -ffat-lto-objects\000"
+ 4359      66756E63 
+ 4359      74696F6E 
+ 4359      2D736563 
+ 4359      74696F6E 
+ 4360              	.LASF14:
+ 4361 0460 63686172 		.ascii	"char\000"
+ 4361      00
+ 4362              	.LASF49:
+ 4363 0465 7072696F 		.ascii	"priority\000"
+ 4363      72697479 
+ 4363      00
+ 4364              	.LASF80:
+ 4365 046e 4379446D 		.ascii	"CyDmaTdGetAddress\000"
+ 4365      61546447 
+ 4365      65744164 
+ 4365      64726573 
+ 4365      7300
+ 4366              	.LASF24:
+ 4367 0480 646D6163 		.ascii	"dmac_ch\000"
+ 4367      5F636800 
+ 4368              	.LASF65:
+ 4369 0488 72657175 		.ascii	"requestPerBurst\000"
+ 4369      65737450 
+ 4369      65724275 
+ 4369      72737400 
+ 4370              	.LASF45:
+ 4371 0498 70726573 		.ascii	"preserveTds\000"
+ 4371      65727665 
+ 4371      54647300 
+ 4372              	.LASF54:
+ 4373 04a4 636F6E76 		.ascii	"convert\000"
+ 4373      65727400 
+ 4374              	.LASF31:
+ 4375 04ac 646D6163 		.ascii	"dmac_tdmem\000"
+ 4375      5F74646D 
+ 4375      656D00
+ 4376              	.LASF56:
+ 4377 04b7 73746172 		.ascii	"startTd\000"
+ 4377      74546400 
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\cckrn8g6.s 			page 101
 
 
- 4378      00
- 4379              	.LASF75:
- 4380 04b3 7472616E 		.ascii	"transferCount\000"
- 4380      73666572 
- 4380      436F756E 
- 4380      7400
- 4381              	.LASF27:
- 4382 04c1 43464730 		.ascii	"CFG0\000"
- 4382      00
- 4383              	.LASF28:
- 4384 04c6 43464731 		.ascii	"CFG1\000"
- 4384      00
- 4385              	.LASF43:
- 4386 04cb 73746174 		.ascii	"status\000"
- 4386      757300
- 4387              	.LASF59:
- 4388 04d2 4379446D 		.ascii	"CyDmaChGetRequest\000"
- 4388      61436847 
- 4388      65745265 
- 4388      71756573 
- 4388      7400
- 4389              	.LASF58:
- 4390 04e4 72657175 		.ascii	"request\000"
- 4390      65737400 
- 4391              	.LASF55:
- 4392 04ec 4379446D 		.ascii	"CyDmaChSetInitialTd\000"
- 4392      61436853 
- 4392      6574496E 
- 4392      69746961 
- 4392      6C546400 
- 4393              	.LASF15:
- 4394 0500 63797374 		.ascii	"cystatus\000"
- 4394      61747573 
- 4394      00
- 4395              	.LASF63:
- 4396 0509 4379446D 		.ascii	"CyDmaChSetConfiguration\000"
- 4396      61436853 
- 4396      6574436F 
- 4396      6E666967 
- 4396      75726174 
- 4397              	.LASF70:
- 4398 0521 656C656D 		.ascii	"element\000"
- 4398      656E7400 
- 4399              	.LASF40:
- 4400 0529 4379446D 		.ascii	"CyDmaChFree\000"
- 4400      61436846 
- 4400      72656500 
- 4401              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 4378              	.LASF84:
+ 4379 04bf 4379446D 		.ascii	"CyDmaTdFreeIndex\000"
+ 4379      61546446 
+ 4379      72656549 
+ 4379      6E646578 
+ 4379      00
+ 4380              	.LASF75:
+ 4381 04d0 7472616E 		.ascii	"transferCount\000"
+ 4381      73666572 
+ 4381      436F756E 
+ 4381      7400
+ 4382              	.LASF27:
+ 4383 04de 43464730 		.ascii	"CFG0\000"
+ 4383      00
+ 4384              	.LASF28:
+ 4385 04e3 43464731 		.ascii	"CFG1\000"
+ 4385      00
+ 4386              	.LASF43:
+ 4387 04e8 73746174 		.ascii	"status\000"
+ 4387      757300
+ 4388              	.LASF59:
+ 4389 04ef 4379446D 		.ascii	"CyDmaChGetRequest\000"
+ 4389      61436847 
+ 4389      65745265 
+ 4389      71756573 
+ 4389      7400
+ 4390              	.LASF58:
+ 4391 0501 72657175 		.ascii	"request\000"
+ 4391      65737400 
+ 4392              	.LASF55:
+ 4393 0509 4379446D 		.ascii	"CyDmaChSetInitialTd\000"
+ 4393      61436853 
+ 4393      6574496E 
+ 4393      69746961 
+ 4393      6C546400 
+ 4394              	.LASF15:
+ 4395 051d 63797374 		.ascii	"cystatus\000"
+ 4395      61747573 
+ 4395      00
+ 4396              	.LASF63:
+ 4397 0526 4379446D 		.ascii	"CyDmaChSetConfiguration\000"
+ 4397      61436853 
+ 4397      6574436F 
+ 4397      6E666967 
+ 4397      75726174 
+ 4398              	.LASF70:
+ 4399 053e 656C656D 		.ascii	"element\000"
+ 4399      656E7400 
+ 4400              	.LASF40:
+ 4401 0546 4379446D 		.ascii	"CyDmaChFree\000"
+ 4401      61436846 
+ 4401      72656500 
+ 4402              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

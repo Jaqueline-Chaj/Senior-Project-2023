@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccna3PRu.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
   55              		@ link register save eliminated.
   56 0000 024A     		ldr	r2, .L5
   57 0002 034B     		ldr	r3, .L5+4
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 2
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccna3PRu.s 			page 2
 
 
   58 0004 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
   35:Generated_Source\PSoC5/OUT_BYTE_PM.c **** *
   36:Generated_Source\PSoC5/OUT_BYTE_PM.c **** * Return:
   37:Generated_Source\PSoC5/OUT_BYTE_PM.c **** *  None
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 3
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccna3PRu.s 			page 3
 
 
   38:Generated_Source\PSoC5/OUT_BYTE_PM.c **** *
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
   86 0000 024A     		ldr	r2, .L8
   87 0002 034B     		ldr	r3, .L8+4
   88 0004 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 4
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccna3PRu.s 			page 4
 
 
   89 0006 1A70     		strb	r2, [r3]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
  122              	.L12:
  123 000a 00BF     		.align	2
  124              	.L11:
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 5
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccna3PRu.s 			page 5
 
 
  125 000c 00000000 		.word	.LANCHOR0
@@ -268,15 +268,15 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
  149 000b 01       		.uleb128 0x1
  150 000c 00000000 		.4byte	.LASF19
  151 0010 0C       		.byte	0xc
- 152 0011 AF010000 		.4byte	.LASF20
- 153 0015 3A010000 		.4byte	.LASF21
+ 152 0011 82010000 		.4byte	.LASF20
+ 153 0015 D2010000 		.4byte	.LASF21
  154 0019 00000000 		.4byte	.Ldebug_ranges0+0
  155 001d 00000000 		.4byte	0
  156 0021 00000000 		.4byte	.Ldebug_line0
  157 0025 02       		.uleb128 0x2
  158 0026 01       		.byte	0x1
  159 0027 06       		.byte	0x6
- 160 0028 E3010000 		.4byte	.LASF0
+ 160 0028 B6010000 		.4byte	.LASF0
  161 002c 02       		.uleb128 0x2
  162 002d 01       		.byte	0x1
  163 002e 08       		.byte	0x8
@@ -284,7 +284,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
  165 0033 02       		.uleb128 0x2
  166 0034 02       		.byte	0x2
  167 0035 05       		.byte	0x5
- 168 0036 A5010000 		.4byte	.LASF2
+ 168 0036 78010000 		.4byte	.LASF2
  169 003a 02       		.uleb128 0x2
  170 003b 02       		.byte	0x2
  171 003c 07       		.byte	0x7
@@ -292,22 +292,22 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
  173 0041 02       		.uleb128 0x2
  174 0042 04       		.byte	0x4
  175 0043 05       		.byte	0x5
- 176 0044 DA010000 		.4byte	.LASF4
+ 176 0044 AD010000 		.4byte	.LASF4
  177 0048 02       		.uleb128 0x2
  178 0049 04       		.byte	0x4
  179 004a 07       		.byte	0x7
  180 004b F1000000 		.4byte	.LASF5
  181 004f 02       		.uleb128 0x2
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 6
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccna3PRu.s 			page 6
 
 
  182 0050 08       		.byte	0x8
  183 0051 05       		.byte	0x5
- 184 0052 92010000 		.4byte	.LASF6
+ 184 0052 65010000 		.4byte	.LASF6
  185 0056 02       		.uleb128 0x2
  186 0057 08       		.byte	0x8
  187 0058 07       		.byte	0x7
- 188 0059 7B010000 		.4byte	.LASF7
+ 188 0059 4E010000 		.4byte	.LASF7
  189 005d 03       		.uleb128 0x3
  190 005e 04       		.byte	0x4
  191 005f 05       		.byte	0x5
@@ -315,11 +315,11 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
  193 0064 02       		.uleb128 0x2
  194 0065 04       		.byte	0x4
  195 0066 07       		.byte	0x7
- 196 0067 6E010000 		.4byte	.LASF8
+ 196 0067 41010000 		.4byte	.LASF8
  197 006b 04       		.uleb128 0x4
- 198 006c D4010000 		.4byte	.LASF12
+ 198 006c A7010000 		.4byte	.LASF12
  199 0070 02       		.byte	0x2
- 200 0071 E801     		.2byte	0x1e8
+ 200 0071 E901     		.2byte	0x1e9
  201 0073 2C000000 		.4byte	0x2c
  202 0077 02       		.uleb128 0x2
  203 0078 04       		.byte	0x4
@@ -328,15 +328,15 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
  206 007e 02       		.uleb128 0x2
  207 007f 08       		.byte	0x8
  208 0080 04       		.byte	0x4
- 209 0081 67010000 		.4byte	.LASF10
+ 209 0081 3A010000 		.4byte	.LASF10
  210 0085 02       		.uleb128 0x2
  211 0086 01       		.byte	0x1
  212 0087 08       		.byte	0x8
- 213 0088 A0010000 		.4byte	.LASF11
+ 213 0088 73010000 		.4byte	.LASF11
  214 008c 04       		.uleb128 0x4
  215 008d EC000000 		.4byte	.LASF13
  216 0091 02       		.byte	0x2
- 217 0092 9202     		.2byte	0x292
+ 217 0092 9302     		.2byte	0x293
  218 0094 98000000 		.4byte	0x98
  219 0098 05       		.uleb128 0x5
  220 0099 6B000000 		.4byte	0x6b
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
  236 00b8 28       		.byte	0x28
  237 00b9 9D000000 		.4byte	0x9d
  238 00bd 09       		.uleb128 0x9
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 7
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccna3PRu.s 			page 7
 
 
  239 00be 8E000000 		.4byte	.LASF15
@@ -409,7 +409,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
  284 0121 67       		.byte	0x67
  285 0122 00       		.byte	0
  286 0123 0C       		.uleb128 0xc
- 287 0124 EF010000 		.4byte	.LASF23
+ 287 0124 C2010000 		.4byte	.LASF23
  288 0128 01       		.byte	0x1
  289 0129 17       		.byte	0x17
  290 012a B2000000 		.4byte	0xb2
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
  293 0130 00000000 		.4byte	OUT_BYTE_backup
  294 0134 00       		.byte	0
  295              		.section	.debug_abbrev,"",%progbits
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 8
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccna3PRu.s 			page 8
 
 
  296              	.Ldebug_abbrev0:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
  350 0035 00       		.byte	0
  351 0036 05       		.uleb128 0x5
  352 0037 35       		.uleb128 0x35
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 9
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccna3PRu.s 			page 9
 
 
  353 0038 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
  407 006e 0B       		.uleb128 0xb
  408 006f 3B       		.uleb128 0x3b
  409 0070 0B       		.uleb128 0xb
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 10
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccna3PRu.s 			page 10
 
 
  410 0071 27       		.uleb128 0x27
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
  464              		.section	.debug_aranges,"",%progbits
  465 0000 24000000 		.4byte	0x24
  466 0004 0200     		.2byte	0x2
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 11
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccna3PRu.s 			page 11
 
 
  467 0006 00000000 		.4byte	.Ldebug_info0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
  498 00b2 4F55545F 		.ascii	"OUT_BYTE_Sleep\000"
  498      42595445 
  498      5F536C65 
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 12
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccna3PRu.s 			page 12
 
 
  498      657000
@@ -702,61 +702,66 @@ ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 1
  514      726F6C53 
  514      74617465 
  514      00
- 515              	.LASF21:
- 516 013a 483A5C53 		.ascii	"H:\\Senior-Project-2023\\PSoC\\HostDesign.cydsn\000"
- 516      656E696F 
- 516      722D5072 
- 516      6F6A6563 
- 516      742D3230 
- 517              	.LASF10:
- 518 0167 646F7562 		.ascii	"double\000"
- 518      6C6500
- 519              	.LASF8:
- 520 016e 756E7369 		.ascii	"unsigned int\000"
- 520      676E6564 
- 520      20696E74 
- 520      00
- 521              	.LASF7:
- 522 017b 6C6F6E67 		.ascii	"long long unsigned int\000"
-ARM GAS  C:\Users\dibiana1\AppData\Local\Temp\ccg7LzW4.s 			page 13
+ 515              	.LASF10:
+ 516 013a 646F7562 		.ascii	"double\000"
+ 516      6C6500
+ 517              	.LASF8:
+ 518 0141 756E7369 		.ascii	"unsigned int\000"
+ 518      676E6564 
+ 518      20696E74 
+ 518      00
+ 519              	.LASF7:
+ 520 014e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 520      206C6F6E 
+ 520      6720756E 
+ 520      7369676E 
+ 520      65642069 
+ 521              	.LASF6:
+ 522 0165 6C6F6E67 		.ascii	"long long int\000"
+ARM GAS  C:\Users\alexd\AppData\Local\Temp\ccna3PRu.s 			page 13
 
 
  522      206C6F6E 
- 522      6720756E 
- 522      7369676E 
- 522      65642069 
- 523              	.LASF6:
- 524 0192 6C6F6E67 		.ascii	"long long int\000"
- 524      206C6F6E 
- 524      6720696E 
- 524      7400
- 525              	.LASF11:
- 526 01a0 63686172 		.ascii	"char\000"
- 526      00
- 527              	.LASF2:
- 528 01a5 73686F72 		.ascii	"short int\000"
- 528      7420696E 
- 528      7400
- 529              	.LASF20:
- 530 01af 47656E65 		.ascii	"Generated_Source\\PSoC5\\OUT_BYTE_PM.c\000"
- 530      72617465 
- 530      645F536F 
- 530      75726365 
- 530      5C50536F 
- 531              	.LASF12:
- 532 01d4 75696E74 		.ascii	"uint8\000"
- 532      3800
- 533              	.LASF4:
- 534 01da 6C6F6E67 		.ascii	"long int\000"
- 534      20696E74 
- 534      00
- 535              	.LASF0:
- 536 01e3 7369676E 		.ascii	"signed char\000"
- 536      65642063 
- 536      68617200 
- 537              	.LASF23:
- 538 01ef 4F55545F 		.ascii	"OUT_BYTE_backup\000"
- 538      42595445 
- 538      5F626163 
- 538      6B757000 
- 539              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 522      6720696E 
+ 522      7400
+ 523              	.LASF11:
+ 524 0173 63686172 		.ascii	"char\000"
+ 524      00
+ 525              	.LASF2:
+ 526 0178 73686F72 		.ascii	"short int\000"
+ 526      7420696E 
+ 526      7400
+ 527              	.LASF20:
+ 528 0182 47656E65 		.ascii	"Generated_Source\\PSoC5\\OUT_BYTE_PM.c\000"
+ 528      72617465 
+ 528      645F536F 
+ 528      75726365 
+ 528      5C50536F 
+ 529              	.LASF12:
+ 530 01a7 75696E74 		.ascii	"uint8\000"
+ 530      3800
+ 531              	.LASF4:
+ 532 01ad 6C6F6E67 		.ascii	"long int\000"
+ 532      20696E74 
+ 532      00
+ 533              	.LASF0:
+ 534 01b6 7369676E 		.ascii	"signed char\000"
+ 534      65642063 
+ 534      68617200 
+ 535              	.LASF23:
+ 536 01c2 4F55545F 		.ascii	"OUT_BYTE_backup\000"
+ 536      42595445 
+ 536      5F626163 
+ 536      6B757000 
+ 537              	.LASF21:
+ 538 01d2 433A5C55 		.ascii	"C:\\Users\\alexd\\OneDrive\\Desktop\\Senior-Project"
+ 538      73657273 
+ 538      5C616C65 
+ 538      78645C4F 
+ 538      6E654472 
+ 539 0200 2D323032 		.ascii	"-2023\\psoc\\HostDesign.cydsn\000"
+ 539      335C7073 
+ 539      6F635C48 
+ 539      6F737444 
+ 539      65736967 
+ 540              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

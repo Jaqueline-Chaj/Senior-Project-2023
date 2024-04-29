@@ -42,7 +42,7 @@ void pack_values(int values[]){ //pack values for rect, pixel, circle, and line 
     if(demo_mode == 0 || demo_mode == 1 || demo_mode == 2){
         array[4][1] = 0x00; //rectangle engine used for rect, pixel, circle demos
     }
-    else if(demo_mode == 3){ //line engine used for line demo
+    else if(demo_mode == 3 || demo_mode == 4){ //line engine used for line demo
         array[4][1] = 0x01; //Engine ID value (bottom byte 7:0)
     }
     array[4][2] = 0x00; //Engine ID value (bottom byte 15:8)
@@ -106,13 +106,13 @@ int main(void)
     {   
 
         if(demo_mode == 0){
-            maxrows = 3; //however many rectangles we will draw
+            maxrows = 12; //however many rectangles we will draw
             //CyDelay(50);
             for (int idx=0; idx < 7; ++idx)
                 values[idx]=squares_dat_linear_rect_demo[row_idx * 7 + idx];   
         }
         else if(demo_mode == 1){
-            maxrows = 4; //however many pixels we will draw
+            maxrows = 16; //however many pixels we will draw
             //CyDelay(50);
             for (int idx=0; idx < 7; ++idx)
                 values[idx]=squares_dat_linear_pixel_demo[row_idx * 7 + idx];              
@@ -124,11 +124,17 @@ int main(void)
                 values[idx]=squares_dat_linear_circle_demo[row_idx * 7 + idx];              
         }
         else if(demo_mode == 3){
-            maxrows = 724; //however many lines we will draw
+            maxrows = 540; //however many lines we will draw
             //CyDelay(50);
             for (int idx=0; idx < 7; ++idx)
-                values[idx]=squares_dat_linear_line_demo[row_idx * 7 + idx];              
-        }               
+                values[idx]=line_dat_linear_line_demo[row_idx * 7 + idx];              
+        }
+        else if(demo_mode == 4){
+            maxrows = 540; //Max speed line demo
+            //CyDelay(50);
+            for (int idx=0; idx < 7; ++idx)
+                values[idx]=line_dat_linear_line_demo[row_idx * 7 + idx];                 
+        }
 
         // area to set color data procedurally for demo_mode == 2 (circle)
         if(demo_mode == 2){
@@ -186,8 +192,8 @@ int main(void)
                 loop = (loop + 1) % 9;
             }   
         }
-        if(demo_mode == 0 || demo_mode == 1 || demo_mode == 3){
-            row_idx = row_idx + 1;   //increment row index for demos 0, 1, 3
+        if(demo_mode == 0 || demo_mode == 1 || demo_mode == 3 || demo_mode == 4){
+            row_idx = row_idx + 1;   //increment row index for demos 0, 1, 3, 4
         }
         else if(demo_mode == 2){
             row_idx = (row_idx + 1) % maxrows;   //circularly increment row_idx for circle
@@ -202,7 +208,8 @@ int main(void)
             if(!SW2_Read()){ //if SW2 is pressed, change demo mode
                 CyDelay(100);
                 wait_for_press = 0;
-                demo_mode = (demo_mode + 1) % 4; //move to next demo mode
+                int original_demo = demo_mode;
+                demo_mode = 0;
                 row_idx = 0; //set row_idx back to 0 for next demo
                 
                 
@@ -213,6 +220,8 @@ int main(void)
                 for(int i = 0; i < 5; i++){
                     reg_write(array[i]); //clear screen by displaying black box
                 }
+                
+                demo_mode = (original_demo + 1) % 5; //move to next demo mode
                 CyDelay(100);
             }
         }
@@ -229,15 +238,21 @@ int main(void)
             for(int i = 0; i < 5; i++){
                 reg_write(array[i]); //clear screen by displaying black box
             }
-            demo_mode = (current_demo + 1) % 4; //move to next demo mode
+            demo_mode = (current_demo + 1) % 5; //move to next demo mode
             CyDelay(100);
-        }        
-        if(demo_mode == 3){
-            CyDelayUs(40000); //to show line by line drawing
+        }       
+        if(demo_mode == 0 || demo_mode == 1){
+            CyDelay(1);//to print squares and pixel without   
         }
-        else{
+        else if(demo_mode == 2){
             CyDelayUs(250); //to print circle at a moderate speed
-        }               
+        }  
+        else if(demo_mode == 3){
+            CyDelayUs(1); //to show line by line drawing
+        }
+        else if(demo_mode == 4){
+            CyDelayUs(20000);
+        }             
     }
         
 }
