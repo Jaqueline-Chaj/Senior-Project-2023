@@ -5,11 +5,6 @@
 <CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
 <CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
 <userData>
-<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
-<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
-<indicators />
-</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
-</dataGuid>
 <dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
 <CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
 <TreeKeys>
@@ -18,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="HostDesign-000\HostDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="HostDesign-000\HostDesign\Source Files\SQR_PARAMS.h">
 <ExpandedNodeIds>
 <v>HostDesign-000</v>
 <v>HostDesign-000\HostDesign</v>
@@ -35,18 +30,13 @@
 <v>HostDesign-000\HostDesign\HostDesign.cydwr\EEPROM</v>
 <v>HostDesign-000\HostDesign\Header Files</v>
 <v>HostDesign-000\HostDesign\Header Files\cyapicallbacks.h</v>
-<v>HostDesign-000\HostDesign\Header Files\SQR_PARAMS.h</v>
 <v>HostDesign-000\HostDesign\Source Files</v>
 <v>HostDesign-000\HostDesign\Source Files\main.c</v>
+<v>HostDesign-000\HostDesign\Source Files\SQR_PARAMS.h</v>
 <v>HostDesign-000\HostDesign\Generated_Source</v>
 <v>HostDesign-000\HostDesign\Generated_Source\PSoC5</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>HostDesign-000</v>
-<v>HostDesign-000\HostDesign</v>
-<v>HostDesign-000\HostDesign\TopDesign</v>
-<v>HostDesign-000\HostDesign\HostDesign.cydwr</v>
 <v>HostDesign-000\HostDesign\HostDesign.cydwr\Pins</v>
 <v>HostDesign-000\HostDesign\HostDesign.cydwr\Analog</v>
 <v>HostDesign-000\HostDesign\HostDesign.cydwr\Clocks</v>
@@ -58,45 +48,31 @@
 <v>HostDesign-000\HostDesign\HostDesign.cydwr\EEPROM</v>
 <v>HostDesign-000\HostDesign\Header Files</v>
 <v>HostDesign-000\HostDesign\Header Files\cyapicallbacks.h</v>
-<v>HostDesign-000\HostDesign\Header Files\SQR_PARAMS.h</v>
 <v>HostDesign-000\HostDesign\Source Files</v>
 <v>HostDesign-000\HostDesign\Source Files\main.c</v>
+<v>HostDesign-000\HostDesign\Source Files\SQR_PARAMS.h</v>
 <v>HostDesign-000\HostDesign\Generated_Source</v>
 <v>HostDesign-000\HostDesign\Generated_Source\PSoC5</v>
 <v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\cm3gcc.ld</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\Cm3Iar.icf</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\Cm3RealView.scat</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\Cm3Start.c</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\cmsis_armcc.h</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\cmsis_compiler.h</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\cmsis_gcc.h</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\core_cm3.h</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\core_cm3_psoc5.h</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\core_cmFunc.h</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\core_cmInstr.h</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\CyBootAsmGnu.s</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\CyBootAsmIar.s</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\CyBootAsmRv.s</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\CyDmac.c</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\CyDmac.h</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\CyFlash.c</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\CyFlash.h</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\CyLib.c</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\CyLib.h</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\cypins.h</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\cyPm.c</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\cyPm.h</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\CySpc.c</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\CySpc.h</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\cytypes.h</v>
-<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cy_boot\cyutils.c</v>
 <v>HostDesign-000\HostDesign\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
 <v>HostDesign-000\HostDesign\Generated_Source\PSoC5\H2G_STRB_IN</v>
 <v>HostDesign-000\HostDesign\Generated_Source\PSoC5\H2G_STRB_OUT</v>
 <v>HostDesign-000\HostDesign\Generated_Source\PSoC5\LCD</v>
 <v>HostDesign-000\HostDesign\Generated_Source\PSoC5\LCD_LCDPort</v>
 <v>HostDesign-000\HostDesign\Generated_Source\PSoC5\OUT_BYTE</v>
+<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\OUT_PINS</v>
+<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\PSOC_RESET_RAW</v>
+<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\SW2</v>
+<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\SW3</v>
+<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cycodeshareexport.ld</v>
+<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cycodeshareimport.ld</v>
+<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cycodeshareimport.scat</v>
+<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cydevice.h</v>
+<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cydevice_trm.h</v>
+<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cydevicegnu.inc</v>
+<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cydevicegnu_trm.inc</v>
+<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cydeviceiar.inc</v>
+<v>HostDesign-000\HostDesign\Generated_Source\PSoC5\cydeviceiar_trm.inc</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -153,6 +129,36 @@
 <VisibleNodeIds>
 <v>HostDesign-000</v>
 <v>HostDesign-000\HostDesign</v>
+<v>HostDesign-000\HostDesign\CortexM3</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\H2G_STRB_IN.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\H2G_STRB_OUT.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\LCD_PM.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\OUT_BYTE.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\OUT_BYTE_PM.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\PSOC_RESET_RAW.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\SW2.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\Listing Files\SW3.lst</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\HostDesign.elf</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\HostDesign.hex</v>
+<v>HostDesign-000\HostDesign\CortexM3\ARM_GCC_541\Debug\HostDesign.map</v>
+<v>HostDesign-000\HostDesign\HostDesign.gpdsc</v>
 <v>HostDesign-000\HostDesign\HostDesign.rpt</v>
 <v>HostDesign-000\HostDesign\HostDesign_timing.html</v>
 </VisibleNodeIds>
@@ -169,7 +175,7 @@
 <v>HostDesign-000\HostDesign\PSoC 5LP Architecture TRM</v>
 <v>HostDesign-000\HostDesign\CY8C58LP Family Datasheet</v>
 <v>HostDesign-000\HostDesign\System Reference Guides</v>
-<v>HostDesign-000\HostDesign\System Reference Guides\cy_boot_v6_0</v>
+<v>HostDesign-000\HostDesign\System Reference Guides\cy_boot_v6_10</v>
 <v>HostDesign-000\HostDesign\CharLCD_v2_20.pdf</v>
 <v>HostDesign-000\HostDesign\cy_pins_v2_20</v>
 <v>HostDesign-000\HostDesign\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
@@ -181,7 +187,7 @@
 <v>HostDesign-000\HostDesign\PSoC 5LP Architecture TRM</v>
 <v>HostDesign-000\HostDesign\CY8C58LP Family Datasheet</v>
 <v>HostDesign-000\HostDesign\System Reference Guides</v>
-<v>HostDesign-000\HostDesign\System Reference Guides\cy_boot_v6_0</v>
+<v>HostDesign-000\HostDesign\System Reference Guides\cy_boot_v6_10</v>
 <v>HostDesign-000\HostDesign\CharLCD_v2_20.pdf</v>
 <v>HostDesign-000\HostDesign\cy_pins_v2_20</v>
 <v>HostDesign-000\HostDesign\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
@@ -194,19 +200,8 @@
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
-<OpenDocs>
-<name v=".\main.c" />
-<name v=".\TopDesign\TopDesign.cysch" />
-<name v="..\..\SQR_PARAMS.h" />
-</OpenDocs>
-<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
-
-  Actipro Docking/MDI for WinForms
-  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
-  http://www.actiprosoftware.com
-
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="855, 831" SelectedTabbedMdiWindow="f76f6d9c-459b-4d6f-b6f3-de0f8cc0d4a9"><DocumentWindow Key="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\main.c" Guid="f76f6d9c-459b-4d6f-b6f3-de0f8cc0d4a9" /><DocumentWindow Key="H:\Senior-Project-2023\PSoC\HostDesign.cydsn\TopDesign\TopDesign.cysch" Guid="736f9e37-b961-458d-98d6-981ffd275c88" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="73f05d71-c893-46cc-9ff6-251089799aab" /></TabbedMdiContainer><TabbedMdiContainer Size="580, 831" SelectedTabbedMdiWindow="757a4069-9b92-4b0c-99a0-1d10bc7434d1"><DocumentWindow Key="H:\Senior-Project-2023\SQR_PARAMS.h" Guid="757a4069-9b92-4b0c-99a0-1d10bc7434d1" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
-<config v="Debug" />
+<OpenDocs />
+<config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
 </CyXmlSerializer>
