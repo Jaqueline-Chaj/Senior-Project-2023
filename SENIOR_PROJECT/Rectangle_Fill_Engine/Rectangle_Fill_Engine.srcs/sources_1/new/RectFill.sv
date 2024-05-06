@@ -37,14 +37,7 @@ always_ff@(posedge clk) begin  //Sets the conditions for the state machine to pr
     end
 end
 
-logic[19:0] pace_counter;
 
-always@(posedge clk) begin
-    if(reset)
-        pace_counter<=0;
-      else
-        pace_counter<= pace_counter+1;
-end
 
 always_ff@(posedge clk) begin //Sets the actions at each state
 if(reset || rect_state==0) begin

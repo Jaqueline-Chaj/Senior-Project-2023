@@ -9,7 +9,7 @@ output pat_wr_en
     );
 logic[10:0] mx;
 logic[9:0]  my;
-logic[19:0] pace_counter;  
+
 
 
 
@@ -28,7 +28,7 @@ always_ff@(posedge clk) begin
        pat_state<=0;
     else
     begin
-//                          my==719
+//                      
         if( (mx==1279 && my==719) || (pat_state == 2) )
             pat_state<=2;
         else
@@ -58,12 +58,7 @@ always@(posedge clk) begin
                 end
             end
     end
-   /* else
-    begin
-        waddr <= 0;
-        mx <= 0;
-        my <= 0;
-    end */
+ 
    
 end
 

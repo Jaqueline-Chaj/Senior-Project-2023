@@ -1,23 +1,5 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 02/26/2024 01:25:00 PM
-// Design Name: 
-// Module Name: Host_to_Display_top
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+
 
 
 module Host_to_Display_top(
@@ -34,14 +16,7 @@ module Host_to_Display_top(
     output [2:0] hdmi_tx_p,
 
     output [2:0] hdmi_tx_n
-  /*  output logic led0,
-   // output logic led1,
-    output logic led2,
-    output logic led3,
-    output logic led4,
-    output logic led5,
-    output logic led6,
-    output logic led7 */
+
     );
     
   logic reset;
@@ -51,7 +26,6 @@ module Host_to_Display_top(
   logic [10:0] reg_bot_right_x; //bot
   logic [10:0] reg_bot_right_y; //rgt
   logic[23:0] fill_color;
-  //logic[3:0] engine_trigger;
   logic engine_rect_fill_trigger;
   logic engine_line_fill_trigger;
   //Initialize the Host interface
@@ -92,12 +66,7 @@ module Host_to_Display_top(
   .fill_color(fill_color),
   .engine_rect_fill_trigger(engine_rect_fill_trigger),
   .engine_line_fill_trigger(engine_line_fill_trigger)
-  //.led0(led0),
-  //.led1(led1),
- // .led2(led2),
-  //.led3(led3),
-  //.led4(led4),
-  //.led5(led5)
+
   );
   
   //Initialize the display generator

@@ -23,28 +23,10 @@ logic[7:0] blue;
 logic[7:0] green;
 logic[23:0] rgbtodvi;
 
-/*
-logic reset_p1;
-logic reset_p2;
-logic reset;*/
-
-//Clocking wizard
 
 
 logic pat_wr_en;
-/*
-always_ff @ (posedge PixelClk)
-begin
-    reset_p1 <= ~cpu_resetn;
-    reset_p2 <= reset_p1;
-    reset <= reset_p2;
-end   */
- //Not permanent:  Meant to just simulate rectangle engine.
 
-
-//assign rgbtodvi[23:16]=RD_data[7:5];
-//assign rgbtodvi[15:8]=RD_data[4:2];
-//assign rgbtodvi[7:0]=RD_data[1:0];
 logic[19:0] rd_addr; //Read address
 logic[19:0] pattern_waddr;  //Write address from the pattern generator
 logic[19:0] rect_waddr;
@@ -74,11 +56,7 @@ logic pat_wr_en_p1;
 always@(posedge PixelClk) begin
     pat_wr_en_p1<=pat_wr_en; 
 end
-/*logic[10:0] x1, x2, y1, y2;
-assign x1=lft;
-assign x2=rgt;
-assign y1=top;
-assign y2=bot; */
+
 
 LineEngine LineEng(
 .clk(PixelClk),
@@ -109,7 +87,7 @@ RectFill RectFill(
 );  
  
 
- //Temporary
+
 
 
 logic[19:0] pat_bitwise_and;
@@ -163,6 +141,6 @@ Display_Gen_Digilent Display_Gen(
 .hdmi_tx_n(hdmi_tx_n),
 .hdmi_tx_p(hdmi_tx_p));
 
-//assign ja[1]=hdmi_tx_clk_p;
+
 
 endmodule

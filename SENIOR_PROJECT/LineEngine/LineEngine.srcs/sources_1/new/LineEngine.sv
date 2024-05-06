@@ -17,7 +17,6 @@ logic[10:0] marx;
 logic[9:0] mary;
 logic[12:0] x_acc;
 logic[12:0] y_acc;
-//logic[10:0] y_acc_neg;
 logic line_state;
 
 logic[10:0] x1_prime, x2_prime, y1_prime, y2_prime;
@@ -159,5 +158,5 @@ assign prod=mary * 5;
 assign waddr= {prod, 8'b0} +marx;
 
 assign line_wr_en=line_state;
-//assign line_wr_en=0;
+
 endmodule

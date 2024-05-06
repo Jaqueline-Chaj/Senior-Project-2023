@@ -147,7 +147,6 @@ always_ff@(posedge PixelClk) begin
 	else begin 
         if(~v_blank) begin
             if(h_drive_start) begin
-            //if(disp_x==1279) begin  //Same here- Should we do this via blanking rather than #'s(?)
               if(disp_y<719) 
                 disp_y<=disp_y+1;
             else
